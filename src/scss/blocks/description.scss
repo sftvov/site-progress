@@ -1,0 +1,117 @@
+.description {
+	width: 100%;
+	margin-bottom: 45px;
+
+	&__container {
+		display: flex;
+		column-gap: 47px;
+		@media (max-width: $md2+px) {
+			flex-direction: column;
+		}
+	}
+
+	&__left-section {
+		flex-grow: 1;
+	}
+
+	&__block {
+		@media (min-width: $md2+px) {
+			max-width: 463px;
+		}
+		& h2 {
+			font-family: 'RobotoCondensed';
+			font-size: 19px;
+			line-height: 22.13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-top: 45px;
+		}
+		& p {
+			margin-top: 25px;
+			& + p {
+				margin-top: 30px;
+			}
+		}
+	}
+
+	&__teacher {
+	}
+
+	&__right-section {
+		& p {
+			@media (min-width: $md2+px) {
+				max-width: 355px;
+			}
+		}
+	}
+}
+
+.teacher {
+	display: flex;
+	column-gap: 63px;
+	margin-top: 25px;
+	@media (max-width: $md1+px) {
+		flex-direction: column;
+	}
+	@media (max-width: $md2+px) {
+		align-items: center;
+	}
+	&__photo {
+		min-height: 100%;
+		position: relative;
+		flex-grow: 1;
+		@media (max-width: $md1+px) {
+			height: 300px;
+		}
+		& img {
+			@media (min-width: $md1+px) {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			display: inline;
+			margin: 0 auto;
+			height: 100%;
+		}
+	}
+
+	&__description {
+		max-width: 355px;
+	}
+
+	&__title {
+		font-family: 'RobotoCondensed';
+		font-size: 18px;
+		line-height: 22.13px;
+		@media (max-width: $md1+px) {
+			margin-top: 25px;
+		}
+	}
+
+	&__about {
+		& li {
+			position: relative;
+			font-family: 'RobotoCondensed';
+			font-size: 13px;
+			line-height: 17px;
+			font-weight: 300;
+			color: $colorTextLight;
+			margin-top: 20px;
+			@media (max-width: $md1+px) {
+				display: flex;
+			}
+			&::before {
+				@media (min-width: $md1+px) {
+					position: absolute;
+					left: -40px;
+					font-size: 28px;
+				}
+				font-size: 20px;
+				color: $TextBlue;
+				@media (max-width: $md1+px) {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}

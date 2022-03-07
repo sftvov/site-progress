@@ -1,0 +1,41 @@
+.wideBlock {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 45%;
+		// @media (max-width: $md3+px) {
+		// 	object-position: 60%;
+		// }
+	}
+
+	&__title-wrapper {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (min-width: $md3+px) {
+			width: 30%;
+		}
+		height: 100%;
+		padding: 40px;
+		background-color: #{$colorSecond + '85'};
+		@media (max-width: $md3+px) {
+			height: auto;
+			border-radius: 0 0 0 60px;
+		}
+	}
+
+	&__title {
+		color: $colorLight;
+		font-weight: 600;
+		text-align: center;
+		font-size: 2em;
+		font-style: italic;
+	}
+}

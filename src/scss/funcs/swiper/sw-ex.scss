@@ -1,0 +1,26 @@
+.swiper .swiper-pagination-bullet {
+	transition: background-color 0.4s linear;
+	@media (min-width: $md1+px) {
+		width: 20px;
+		height: 20px;
+		margin-right: 30px;
+	}
+	@media (min-width: $md2+px) {
+		width: 14px;
+		height: 14px;
+		margin-right: 20px;
+		background-color: $colorLight;
+	}
+	width: 10px;
+	height: 10px;
+	margin-right: 13px;
+
+	&-active {
+		@media (min-width: $md2+px) {
+			background-color: $colorText;
+		}
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+}
