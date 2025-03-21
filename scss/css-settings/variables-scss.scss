@@ -1,0 +1,45 @@
+$fontFamily: 'Circe';
+$fz: 16;
+
+$maxWidth: 2560;
+$minWidth: 320;
+
+$mobileSpace: 20;
+// $mdSpace: 79.95;
+
+$minContainer: $minWidth - $mobileSpace;
+
+/* Fixed container variant 1 */
+
+// $md1: 1359.95;
+// $md2: 1023.95;
+// $md3: 767.95;
+// $md4: 539.95;
+
+// $maxContainer: $md1 - $mdSpace;
+// $laptopContainer: $md2 - $mdSpace;
+// $padContainer: $md3 - $mdSpace;
+// $mobileContainer: $md4 - $mdSpace;
+
+/* Fixed container variant 2 */
+
+// $maxContainer: 1280;
+// $laptopContainer: 1080;
+// $padContainer: 770;
+// $mobileContainer: 560;
+
+// $md1: $maxContainer + $mdSpace;
+// $md2: $laptopContainer + $mdSpace;
+// $md3: $padContainer + $mdSpace;
+// $md4: $mobileContainer + $mdSpace;
+
+/* Adaptive container variant */
+
+$maxContainer: 1280;
+// $maxContainer: 1412;
+
+// $md0: $maxContainer - 0.05;
+$md1: $maxContainer - 0.05;
+$md2: 1023.95;
+$md3: 767.95;
+$md4: 539.95;

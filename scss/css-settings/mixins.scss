@@ -1,0 +1,28 @@
+@import '../../../web-template/src/css-libs/mixins.scss';
+
+//Адаптивное свойство для одинаковых пропорций
+//v1//
+@mixin common-value($property, $value) {
+	@include adaptiv-value($property, $value, $value * 0.8, $md1, $minWidth);
+}
+
+//v2//
+// @mixin common-value($property, $value) {
+// 	$reduce: $value * 0.125;
+// 	#{$property}: $value + $reduce * 2 + px;
+// 	@media (max-width: $md1+px) {
+// 		#{$property}: $value + $reduce + px;
+// 	}
+// 	@media (max-width: $md2+px) {
+// 		#{$property}: $value + px;
+// 	}
+// 	@media (max-width: $md3+px) {
+// 		#{$property}: $value - $reduce + px;
+// 	}
+// 	@media (max-width: $md4+px) {
+// 		#{$property}: $value - $reduce * 2 + px;
+// 	}
+// 	$startValue: $value - $reduce * 2;
+// 	$minValue: $value - $reduce * 3;
+// 	@include adaptiv-value-under($property, $startValue, $minValue, $md5, $minWidth);
+// }

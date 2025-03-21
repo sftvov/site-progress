@@ -1,0 +1,168 @@
+:root {
+  // @include common-value('--adaptive-1', 1);
+  // @include common-value('--adaptive-4', 4);
+  // @include common-value('--adaptive-7', 7);
+  // @include common-value('--adaptive-10', 10);
+  // @include common-value('--adaptive-13', 13);
+  // @include common-value('--adaptive-16', 16);
+  // @include common-value('--adaptive-19', 19);
+  // @include common-value('--adaptive-22', 22);
+  // @include common-value('--adaptive-25', 25);
+  // @include common-value('--adaptive-28', 28);
+  // @include common-value('--adaptive-31', 31);
+  // @include common-value('--adaptive-34', 34);
+  // @include common-value('--adaptive-37', 37);
+  // @include common-value('--adaptive-40', 40);
+  // @include common-value('--adaptive-43', 43);
+  // @include common-value('--adaptive-46', 46);
+  // @include common-value('--adaptive-49', 49);
+  // @include common-value('--adaptive-52', 52);
+  // @include common-value('--adaptive-55', 55);
+  // @include common-value('--adaptive-58', 58);
+  // @include common-value('--adaptive-61', 61);
+  // @include common-value('--adaptive-64', 64);
+  // @include common-value('--adaptive-67', 67);
+  // @include common-value('--adaptive-70', 70);
+  // @include common-value('--adaptive-73', 73);
+  // @include common-value('--adaptive-76', 76);
+  // @include common-value('--adaptive-79', 79);
+  // @include common-value('--adaptive-82', 82);
+  // @include common-value('--adaptive-85', 85);
+  // @include common-value('--adaptive-88', 88);
+  // @include common-value('--adaptive-91', 91);
+  // @include common-value('--adaptive-94', 94);
+  // @include common-value('--adaptive-97', 97);
+  // @include common-value('--adaptive-100', 100);
+
+  --fs: #{$fz}px;
+
+  --md1: #{$md1};
+  --md2: #{$md2};
+  --md3: #{$md3};
+  --md4: #{$md4};
+
+  --transition: 0.3s;
+  --header-height: 79px;
+  --special-menu-height: 139px;
+
+  // --cyan: #00ffff;
+  --yellow: #ffff00;
+  // --black: #252525;
+  // --purple: #8434e1;
+  // --navy: #345eff;
+  // --grey: #e4e5e8;
+  --red: #bf0000;
+  --broom: #c05a17;
+  --orange: #ed9256;
+  --brown-05: #ed92560d;
+  // --pink: #e08d9d;
+  // @include rgbVar(#f3975d, --orange);
+  // --orange-ok: #f2720c;
+  // --green: #2ab194;
+  // @include rgbVar(#7099a9, --green-gray);
+  // --green-wa: #12af0a;
+  // @include rgbVar(#748dc1, --lilac-strong);
+  // @include rgbVar(#d3d6df, --lilac-light);
+  // @include rgbVar(#95a4d1, --lilac);
+  --blue-bright: #0080ff;
+  --blue: #063152;
+  --blue-60: #06315299;
+  --blue-gray: #8795a6;
+  --blue-gray-20: #8795a633;
+  // --blue-tg: #2ca5e0;
+  // --blue-vk: #587ea3;
+  // --gold: #edd146;
+
+  // --black: #000000;
+  // @include rgbVar(#3b3b3f, --dark);
+  // --dark-70: #2d2d2db3;
+  // @include rgbVar(#bcc5c4, --gray-medium);
+  // @include rgbVar(#cfd5d5, --gray-light);
+  --light: #f2f1eb;
+  --white: #ffffff;
+  --white-60: #ffffff99;
+  --white-40: #ffffff66;
+
+  // --hover: var(--broom);
+  // --hover-second: var(--lilac-strong);
+
+  --text-main: var(--blue);
+  --text-second: var(--white);
+  --text-bright: var(--broom);
+  --text-light: var(--blue-60);
+  --text-second-light: var(--white-60);
+  // --text-bright: var(--blue-bright);
+  // --text-accent: var(--broom);
+  // --text-gray: var(--gray);
+
+  --bg-main: var(--white);
+  --bg-accent: var(--orange);
+  --bg-second: var(--blue);
+  --bg-light: var(--light);
+  // --bg-bright: var(--blue-bright);
+  // --bg-gray: var(--gray);
+
+  --border: var(--broom);
+  --border-light: var(--white-40);
+  // --border-second: var(--white);
+  // --border-gray: var(--gray);
+
+  --shadow: var(--blue-gray-20);
+
+  // @media (prefers-color-scheme: dark) {
+  // 	--white--dark: var(--dark);
+  // 	--nw--main: var(--main);
+  // 	--nw--dark: var(--dark);
+  // 	--nw--black: var(--black);
+  // 	--gray--light: var(--light);
+  // 	--dark--nw: var(--not-white);
+  // 	--dark--main: var(--main);
+  // 	--dark--black: var(--black);
+  // }
+
+  // --white--dark: var(--white);
+  // --nw--main: var(--not-white);
+  // --nw--dark: var(--not-white);
+  // --nw--black: var(--not-white);
+  // --gray--light: var(--gray);
+  // --dark--nw: var(--dark);
+  // --dark--main: var(--dark);
+  // --dark--black: var(--dark);
+
+  --swiper-theme-color: var(--bg-accent);
+  // --swiper-preloader-color: var(--swiper-theme-color);
+  --swiper-wrapper-transition-timing-function: var(--transition);
+
+  // --swiper-navigation-size: 50px;
+  // --swiper-navigation-top-offset: 50%;
+  // --swiper-navigation-sides-offset: 10px;
+  // --swiper-navigation-color: #000000;
+
+  // --swiper-pagination-color: var(--swiper-theme-color);
+  // --swiper-pagination-left: auto;
+  // --swiper-pagination-right: 8px;
+  // --swiper-pagination-bottom: 8px;
+  // --swiper-pagination-top: auto;
+  // --swiper-pagination-fraction-color: inherit;
+  // --swiper-pagination-progressbar-bg-color: rgba(0,0,0,0.25);
+  // --swiper-pagination-progressbar-size: 4px;
+  // --swiper-pagination-bullet-size: 8px;
+  // --swiper-pagination-bullet-width: 8px;
+  // --swiper-pagination-bullet-height: 8px;
+  // --swiper-pagination-bullet-border-radius: 50%;
+  // --swiper-pagination-bullet-inactive-color: #000;
+  // --swiper-pagination-bullet-inactive-opacity: 0.2;
+  // --swiper-pagination-bullet-opacity: 1;
+  // --swiper-pagination-bullet-horizontal-gap: 4px;
+  // --swiper-pagination-bullet-vertical-gap: 6px;
+
+  // --swiper-scrollbar-border-radius: 10px;
+  // --swiper-scrollbar-top: auto;
+  // --swiper-scrollbar-bottom: 4px;
+  // --swiper-scrollbar-left: auto;
+  // --swiper-scrollbar-right: 4px;
+  // --swiper-scrollbar-sides-offset: 1%;
+  // --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+  // --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+  // --swiper-scrollbar-size: 4px;
+}

@@ -1,0 +1,82 @@
+@use 'sass:math';
+@import 'scss-tools';
+@import 'css-settings/fonts';
+@import '../../web-template/src/css-libs/null';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-main);
+  font-size: var(--fs);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  height: 100%;
+  background-color: rgb(var(--bg-light));
+}
+
+section {
+  z-index: 1;
+  scroll-margin-top: var(--header-height);
+}
+
+// strong {
+//   font-weight: 700;
+// }
+
+// b {
+// 	font-weight: 700;
+// }
+
+.wrapper {
+  overflow-x: hidden;
+  // position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  // max-width: $maxWidth+px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // max-width: $maxWidth + px;
+  flex: 1 1 auto;
+  margin-top: var(--header-height);
+}
+
+// @import '../../web-template/src/css-libs/lightgallery';
+// @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
+
+@import 'css-settings/functions';
+@import 'css-settings/elements';
+
+// @import 'css-sections/popups';
+// @import 'css-sections/breadcrumbs';
+@import 'css-sections/header';
+@import 'css-sections/footer';
+
+// @import 'css-sections/content';
+// @import 'css-sections/frame-navigation';
+
+// @import 'css-sections/form-sign.scss';
+// @import 'css-sections/form-popup-sign.scss';
+
+// @import 'css-sections/slider-hero.scss';
+// @import 'css-sections/slider-doctors.scss';
+
+// @import 'css-sections/grid-videos.scss';
+
+// @import 'css-sections/spollersPrice.scss';
+
+// @import 'css-sections/about.scss';
+// @import 'css-sections/categories.scss';
+
+@import 'css-settings/variables-css';
