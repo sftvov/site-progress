@@ -10,12 +10,12 @@ html {
 body {
   color: var(--text-main);
   font-size: var(--fs);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   height: 100%;
-  background-color: rgb(var(--bg-light));
+  background-color: var(--bg-main);
 }
 
 section {
@@ -73,7 +73,7 @@ section {
 // @import 'css-sections/slider-doctors.scss';
 
 // @import 'css-sections/grid-videos.scss';
-
+  
 // @import 'css-sections/spollersPrice.scss';
 
 // @import 'css-sections/about.scss';

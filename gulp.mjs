@@ -1,4 +1,4 @@
-export const font_names = '{Inter,}';
+export const font_names = '{Roboto,}';
 
 // const maxWidth = 2560;
 // const maxContainer = 1920;

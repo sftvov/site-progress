@@ -1,3 +1,30 @@
+.city-select {
+  &__current {
+  }
+
+  &__variants {
+  }
+
+  &__variant {
+  }
+}
+
+.phone-select {
+  &__first {
+  }
+
+  &__variants {
+  }
+
+  &__variant {
+  }
+}
+
+.square {
+  &--orange {
+  }
+}
+
 // .breadcrumbs {
 //   translate: -10px 0;
 //   width: 100%;
@@ -380,7 +407,7 @@
 //   height: 25px;
 //   background: url(../img/icons/marker-icon.svg) center/cover no-repeat;
 //   &._active {
-//     & .tooltip {      
+//     & .tooltip {
 //       opacity: 1;
 //       visibility: visible;
 //     }

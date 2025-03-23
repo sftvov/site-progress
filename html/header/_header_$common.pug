@@ -1,8 +1,43 @@
 header.header._lp
   .header__container._container
-    a.header__logo(href="")
-      img.header__img(src="", alt="")
-    nav.header__navigation 
-      include _header_#template_wp-menu
+    .header__top-level
+      .city-select
+        p.city-select__current Санкт-Петербург
+        .city-select__variants
+          a.city-select__variant(href="#") Москва
+      .header__icon-links
+        a.header__icon-link(href="#")
+          svg.header__icon-link-svg
+            use(xlink:href='img/sprite/symbols.svg#plan')
+          | Составить план 2025
+      .phone-select
+        a.phone-select__first(href="#") 8 (800) 333-88-44
+        .phone-select__variants
+          a.phone-select__variant(href="#") 8 (812) 331-88-88
+      a.header__mail(href="#")
+        svg.header__mail-svg
+          use(xlink:href='img/sprite/symbols.svg#')
+        | client@cntiprogress.ru
+    .header__body
+      a.header__logo-link(href="#") 
+        img(src="../img/logo.svg", alt="")
+      form.header__search
+        .header__search-input-wrapper
+          input.header__search-input
+        input.header__search-btn(type="submit" value="Найти курс")
+    .header-menu
+      .header-menu__items
+        .header-menu__item.header-menu__item--has-children 
+          a(href="#")  СЕМИНАРЫ И КУРСЫ
+        .header-menu__item.header-menu__item--has-children 
+          a(href="#")  О КОМПАНИИ
+        .header-menu__item 
+          a(href="#")  АКЦИИ
+        .header-menu__item 
+          a(href="#")  КОНТАКТЫ
+      .header__square.square
+      .header__square.square.square--orange
+    .header__info-panel
+      p Готов учебный план на 2025 год. Расписание курсов по всем отраслевым направлениям — в одной брошюре. #[a.header__info-link(href="#") скачать]
 
 //- scss/css-sections/header.scss
