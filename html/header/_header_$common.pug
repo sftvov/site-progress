@@ -1,7 +1,7 @@
 header.header._lp
   .header__container._container
     .header__top-level
-      .city-select
+      .header__city.city-select
         p.city-select__current Санкт-Петербург
         .city-select__variants
           a.city-select__variant(href="#") Москва
@@ -10,34 +10,43 @@ header.header._lp
           svg.header__icon-link-svg
             use(xlink:href='img/sprite/symbols.svg#plan')
           | Составить план 2025
-      .phone-select
+        a.header__icon-link(href="#")
+          svg.header__icon-link-svg
+            use(xlink:href='img/sprite/symbols.svg#key')
+          | Бронь отелей
+        a.header__icon-link(href="#")
+          svg.header__icon-link-svg
+            use(xlink:href='img/sprite/symbols.svg#mail')
+          | Рассылка
+      .header__phone.phone-select
         a.phone-select__first(href="#") 8 (800) 333-88-44
         .phone-select__variants
           a.phone-select__variant(href="#") 8 (812) 331-88-88
       a.header__mail(href="#")
         svg.header__mail-svg
-          use(xlink:href='img/sprite/symbols.svg#')
+          use(xlink:href='img/sprite/symbols.svg#email')
         | client@cntiprogress.ru
     .header__body
       a.header__logo-link(href="#") 
-        img(src="../img/logo.svg", alt="")
+        img.header__logo-link-img(src="img/logo.svg", alt="")
       form.header__search
-        .header__search-input-wrapper
-          input.header__search-input
+        input.header__search-input(placeholder='Поиск по сайту')
         input.header__search-btn(type="submit" value="Найти курс")
     .header-menu
       .header-menu__items
         .header-menu__item.header-menu__item--has-children 
-          a(href="#")  СЕМИНАРЫ И КУРСЫ
+          a.header-menu__item-link(href="#")  СЕМИНАРЫ И КУРСЫ
         .header-menu__item.header-menu__item--has-children 
-          a(href="#")  О КОМПАНИИ
+          a.header-menu__item-link(href="#")  О КОМПАНИИ
         .header-menu__item 
-          a(href="#")  АКЦИИ
+          a.header-menu__item-link(href="#")  АКЦИИ
         .header-menu__item 
-          a(href="#")  КОНТАКТЫ
-      .header__square.square
-      .header__square.square.square--orange
+          a.header-menu__item-link(href="#")  КОНТАКТЫ
+      .square
+      .square.square--orange
+      .header-menu__add
     .header__info-panel
-      p Готов учебный план на 2025 год. Расписание курсов по всем отраслевым направлениям — в одной брошюре. #[a.header__info-link(href="#") скачать]
+      p.header__info-panel-p Готов учебный план на 2025 год. Расписание курсов по всем отраслевым направлениям — в одной брошюре. 
+      a.header__info-link(href="#") скачать
 
 //- scss/css-sections/header.scss

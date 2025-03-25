@@ -1,62 +1,155 @@
 .header {
-
+  width: 100%;
+  padding-top: 40px;
   &__container {
   }
 
   &__top-level {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+  }
+
+  &__city {
+    width: var(--2column);
   }
 
   &__icon-links {
+    display: flex;
+    gap: 40px;
   }
 
   &__icon-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   &__icon-link-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__phone {
+    width: var(--2column);
+    margin-left: auto;
   }
 
   &__mail {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: var(--2column);
   }
 
   &__mail-svg {
+    width: 20px;
+    height: 20px;
   }
 
   &__body {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+    padding-top: 20px;
   }
 
   &__logo-link {
+    width: var(--2column);
+  }
+
+  &__logo-link-img {
+    width: 100%;
   }
 
   &__search {
-  }
-
-  &__search-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border: 2px solid var(--border);
   }
 
   &__search-input {
+    flex-grow: 1;
+    padding: 0 18px;
   }
 
   &__search-btn {
-  }
-
-  &__square {
+    color: var(--text-second);
+    font-weight: 700;
+    display: inline-block;
+    width: var(--2column);
+    padding: 10px 0;
+    background-color: var(--bg-bright);
   }
 
   &__info-panel {
+    color: var(--text-second);
+    font-family: 'RobotoCondensed';
+    $fs: 15;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: var(--bg-accent);
+  }
+
+  &__info-panel-p {
   }
 
   &__info-link {
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 0;
+    &::after {
+      content: url(../img/icons/arrow-right-white.svg);
+      line-height: 0;
+    }
   }
 }
 
 .header-menu {
-
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
   &__items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 50px;
+    background-color: var(--bg-second);
   }
 
   &__item {
   }
 
+  &__item-link {
+    font-family: 'RobotoCondensed';
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    padding: 10px 0;
+  }
+
   &__item--has-children {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &::after {
+      content: url(../img/icons/chevron-down.svg);
+      line-height: 0;
+    }
+  }
+
+  &__add {
+    flex-grow: 1;
+    background-color: var(--bg-second);
   }
 }
