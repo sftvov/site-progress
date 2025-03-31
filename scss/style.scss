@@ -18,11 +18,6 @@ body {
   background-color: var(--bg-main);
 }
 
-section {
-  z-index: 1;
-  scroll-margin-top: var(--header-height);
-}
-
 // strong {
 //   font-weight: 700;
 // }
@@ -73,7 +68,7 @@ section {
 // @import 'css-sections/slider-doctors.scss';
 
 // @import 'css-sections/grid-videos.scss';
-  
+
 // @import 'css-sections/spollersPrice.scss';
 
 // @import 'css-sections/about.scss';

@@ -2,21 +2,20 @@ const body = document.querySelector('body');
 const wrapper = document.querySelector('.wrapper');
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
-const specialMenu = document.querySelector('.special-menu');
 const footer = document.querySelector('.footer');
 
 // ----------------------------------------------------------------------
 
 const md1 = getComputedStyle(document.documentElement).getPropertyValue('--md1');
-const md1Query = window.matchMedia(`(min-width: ${md1}px)`);
+// let md1Query = window.matchMedia(`(min-width: ${md1}px)`);
 const md2 = getComputedStyle(document.documentElement).getPropertyValue('--md2');
-const md2Query = window.matchMedia(`(min-width: ${md2}px)`);
+// let md2Query = window.matchMedia(`(min-width: ${md2}px)`);
 const md3 = getComputedStyle(document.documentElement).getPropertyValue('--md3');
-const md3Query = window.matchMedia(`(min-width: ${md3}px)`);
+// let md3Query = window.matchMedia(`(min-width: ${md3}px)`);
 const md4 = getComputedStyle(document.documentElement).getPropertyValue('--md4');
-const md4Query = window.matchMedia(`(min-width: ${md4}px)`);
+// let md4Query = window.matchMedia(`(min-width: ${md4}px)`);
 const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5');
-const md5Query = window.matchMedia(`(min-width: ${md5}px)`);
+// let md5Query = window.matchMedia(`(min-width: ${md5}px)`);
 
 // ----------------------------------------------------------------------
 
@@ -25,8 +24,8 @@ const md5Query = window.matchMedia(`(min-width: ${md5}px)`);
 //include('../../web-template/src/functions/sendmail.js');
 //include('../../web-template/src/functions/isMobile.js');
 //include('../../web-template/src/functions/webp.js');
-//include('../../web-template/src/functions/slide.js');
-//include('../../web-template/src/functions/activator_v3.0.1_now.js');
+@@include('../../web-template/src/functions/slide.js');
+@@include('../../web-template/src/functions/activator_v3.0.1_now.js');
 //include('../../web-template/src/functions/body_lock.js');
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
@@ -44,6 +43,21 @@ const md5Query = window.matchMedia(`(min-width: ${md5}px)`);
 //include('../../web-template/src/js-elements/items_v2.0.0_now.js');
 
 // ----------------------------------------------------------------------
+
+document.querySelector('.header__search-close').addEventListener('click', function(e) {
+	e.preventDefault(); // Предотвращаем отправку формы (если кнопка типа submit)
+	const input = document.querySelector('.header__search-input');
+	input.value = '';    // Очищаем поле
+	input.focus();       // Возвращаем фокус
+});
+
+new Activator('._menu-btn', {
+	stops: ['._menu-body'],
+	removedOwn: ['._menu-body'],
+	clickOutClose: true,
+	escClose: true,
+	onlyOne: true,
+});
 
 // function headerHeight() {
 // 	let hh = header.offsetHeight + 'px';
@@ -76,7 +90,7 @@ const md5Query = window.matchMedia(`(min-width: ${md5}px)`);
 // 	clickOutClose: true,
 // 	escClose: true,
 // 	effects: 'U',
-// 	effectDuration: 200,
+// 	effectDuration: 300,
 // 	//bodyLock: true,
 // 	onlyOne: true,
 // 	//deactivate: false,

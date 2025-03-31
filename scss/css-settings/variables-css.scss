@@ -47,11 +47,8 @@
   }
 
   --columns: 4;
-  @media (min-width: $md1+px) {
-    --columns: 12;
-  }
   @media (min-width: $md3+px) {
-    --columns: 6;
+    --columns: 12;
   }
 
   --fields: 20px;
@@ -80,14 +77,13 @@
   // --grey: #e4e5e8;
   // --red: #bf0000;
   // --broom: #c05a17;
-  --orange: #f7933f;
+  --orange: #eb9036;
   --orange-light: #f9b277;
   // --pink: #e08d9d;
   // --orange-ok: #f2720c;
   // --green: #2ab194;
   // --green-wa: #12af0a;
   --blue: #6195bb;
-  --blue-gray: #555a65;
   --blue-light: #d9eafb;
   // --blue-tg: #2ca5e0;
   // --blue-vk: #587ea3;
@@ -95,17 +91,19 @@
 
   // --black: #000000;
   --dark: #2b2d33;
-  --gray: #a0a1a3;
-  --light: #d5d3d0;
+  --gray-dark: #555a65;
+  --gray: #999ead;
+  --gray-light: #d8dce5;
+  --light: #e5e8ef;
   --white: #ffffff;
 
   // --hover: var(--broom);
   // --hover-second: var(--lilac-strong);
 
-  --text-main: var(--blue-gray);
+  --text-main: var(--gray-dark);
   --text-second: var(--white);
   --text-accent: var(--blue);
-  // --text-bright: var(--broom);
+  --text-bright: var(--orange);
   // --text-light: var(--blue-60);
   // --text-second-light: var(--white-60);
   // --text-bright: var(--blue-bright);
@@ -119,6 +117,7 @@
   // --bg-gray: var(--gray);
 
   --border: var(--orange);
+  --border-accent: var(--blue);
   // --border-light: var(--white-40);
   // --border-second: var(--white);
   // --border-gray: var(--gray);

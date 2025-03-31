@@ -1,53 +1,202 @@
-.city-select {
-  $fs: 16;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 20;
-  line-height: round-to(math.div($lh, $fs), 3);
+.triangle {
+  transition-duration: var(--transition);
+  z-index: 2;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 13px solid var(--bg-bright); /* Цвет заливки */
+  /* Левая рамка */
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: -5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-bottom: 9px solid var(--bg-main); /* Цвет левой рамки */
+    z-index: 1;
+  }
+
+  /* Правая рамка */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 5px solid transparent;
+    border-bottom: 9px solid var(--bg-main); /* Цвет правой рамки */
+    z-index: 1;
+  }
+}
+
+.header-select {
+  text-align: left;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
+
   &::after {
+    transition-duration: var(--transition);
     content: url(../img/icons/chevron-down.svg);
     line-height: 0;
   }
 
-  &__current {
+  &--accent {
+    &::after {
+      content: url(../img/icons/chevron-down-blue.svg);
+    }
+  }
+
+  &._active {
+    &::after {
+      rotate: 180deg;
+    }
+    & .header-select__triangle {
+      opacity: 1;
+      visibility: visible;
+    }
+    & .header-select__variants-wrapper {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @media (hover: hover) {
+    &._active {
+      & .header-select__variants-wrapper {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &::after {
+        rotate: 0deg;
+      }
+      & .header-select__triangle {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    &:hover {
+      &::after {
+        rotate: 180deg;
+      }
+      & .header-select__triangle {
+        opacity: 1;
+        visibility: visible;
+      }
+      & .header-select__variants-wrapper {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &:focus-visible,
+  &:has(:focus-visible) {
+    &._active {
+      &::after {
+        rotate: 180deg;
+      }
+      & .header-select__triangle {
+        opacity: 1;
+        visibility: visible;
+      }
+      & .header-select__variants-wrapper {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__triangle {
+  }
+
+  &__current-city {
+    $fs: 16;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+
+  &__first-phone {
+    color: var(--text-accent);
+    font-family: 'RobotoCondensed';
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+
+  &__variants-wrapper {
+    cursor: auto;
+    transition-duration: var(--transition);
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    padding-top: 11px;
   }
 
   &__variants {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 17px 18px 18px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--border);
   }
 
-  &__variant {
-  }
-}
-
-.phone-select {
-  color: var(--text-accent);
-  font-family: 'RobotoCondensed';
-  $fs: 20;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 20;
-  line-height: round-to(math.div($lh, $fs), 3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  &::after {
-    content: url(../img/icons/chevron-down-blue.svg);
-    line-height: 0;
-  }
-  &__first {
-  }
-
-  &__variants {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
+  &__city {
+    transition-duration: var(--transition);
+    font-family: 'RobotoCondensed';
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    &._active {
+      color: var(--text-accent);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: var(--text-bright);
+      }
+    }
+    &:active,
+    &:focus-visible {
+      color: var(--text-bright);
+    }
   }
 
-  &__variant {
+  &__phone {
+    transition-duration: var(--transition);
+    font-family: 'RobotoCondensed';
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    &._active {
+      color: var(--text-accent);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: var(--text-bright);
+      }
+    }
+    &:active,
+    &:focus-visible {
+      color: var(--text-bright);
+    }
   }
 }
 
@@ -59,7 +208,6 @@
     background-color: var(--bg-bright);
   }
 }
-
 // .breadcrumbs {
 //   translate: -10px 0;
 //   width: 100%;
