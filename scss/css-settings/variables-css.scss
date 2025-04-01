@@ -64,6 +64,8 @@
     --column: calc((1280px - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
   }
   --2column: calc(var(--column) * 2 + var(--gutter));
+  --3column: calc(var(--column) * 3 + var(--gutter) * 2);
+  --4column: calc(var(--column) * 4 + var(--gutter) * 3);
 
   --transition: 0.3s;
   // --header-height: 79px;
@@ -121,8 +123,11 @@
   // --border-light: var(--white-40);
   // --border-second: var(--white);
   // --border-gray: var(--gray);
-
-  // --shadow: var(--blue-gray-20);
+  
+  // --shadow: -10px -10px 20px 0 #595F6F26, 10px 10px 20px 0 #595F6F26;
+  --shadow: 0 0 20px 10px #595F6F26;
+  // --shadow-big: -15px -15px 20px 0 #595F6F26, 15px 15px 20px 0 #595F6F26;
+  --shadow-big: 0 0 20px 15px #595F6F26;
 
   // @media (prefers-color-scheme: dark) {
   // 	--white--dark: var(--dark);

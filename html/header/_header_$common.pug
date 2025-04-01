@@ -49,17 +49,18 @@ header.header._lp
           svg.header__icon-link-svg
             use(xlink:href='img/sprite/symbols.svg#mail')
           | Рассылка
-      button.header__phone.header-select.header-select--accent._menu-btn
-        .header-select__triangle.triangle
-        .header-select__first-phone 8 (800) 333-88-44
-        .header-select__variants-wrapper._menu-body
-          .header-select__variants
-            a.header-select__phone._active(href="tel:88003338844") 8 (800) 333-88-44
-            a.header-select__phone(href="tel:88123318888") 8 (812) 331-88-88
-      a.header__mail(href="mailto:client@cntiprogress.ru")
-        svg.header__mail-svg
-          use(xlink:href='img/sprite/symbols.svg#email')
-        | client@cntiprogress.ru
+      .header__contacts
+        button.header__phone.header-select.header-select--accent._menu-btn
+          .header-select__triangle.triangle
+          .header-select__first-phone 8 (800) 333-88-44
+          .header-select__variants-wrapper._menu-body
+            .header-select__variants
+              a.header-select__phone._active(href="tel:88003338844") 8 (800) 333-88-44
+              a.header-select__phone(href="tel:88123318888") 8 (812) 331-88-88
+        a.header__mail(href="mailto:client@cntiprogress.ru")
+          svg.header__mail-svg
+            use(xlink:href='img/sprite/symbols.svg#email')
+          span.header__mail-span client@cntiprogress.ru
     .header__body
       a.header__logo-link(href="/") 
         img.header__logo-link-img(src="img/logo.svg" alt="")

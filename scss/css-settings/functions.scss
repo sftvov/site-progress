@@ -142,10 +142,10 @@ svg {
   /* Adaptive container variant 2 */
   padding-left: 40px;
   padding-right: 40px;
-  @media (max-width: $md1+px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  // @media (max-width: $md1+px) {
+  //   padding-left: 10px;
+  //   padding-right: 10px;
+  // }
 }
 
 // ._mob-hide {

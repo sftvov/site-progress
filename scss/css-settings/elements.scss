@@ -11,7 +11,7 @@
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom: 13px solid var(--bg-bright); /* Цвет заливки */
+  border-bottom: 12px solid var(--bg-bright); /* Цвет заливки */
   /* Левая рамка */
   &::before {
     content: '';
@@ -45,7 +45,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
+  @media (max-width: $md1+px) {
+    gap: 5px;
+  }
   &::after {
     transition-duration: var(--transition);
     content: url(../img/icons/chevron-down.svg);
@@ -71,50 +73,50 @@
       visibility: visible;
     }
   }
-  @media (hover: hover) {
-    &._active {
-      & .header-select__variants-wrapper {
-        opacity: 0;
-        visibility: hidden;
-      }
-      &::after {
-        rotate: 0deg;
-      }
-      & .header-select__triangle {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-    &:hover {
-      &::after {
-        rotate: 180deg;
-      }
-      & .header-select__triangle {
-        opacity: 1;
-        visibility: visible;
-      }
-      & .header-select__variants-wrapper {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-  &:focus-visible,
-  &:has(:focus-visible) {
-    &._active {
-      &::after {
-        rotate: 180deg;
-      }
-      & .header-select__triangle {
-        opacity: 1;
-        visibility: visible;
-      }
-      & .header-select__variants-wrapper {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
+  // @media (hover: hover) {
+  //   &._active {
+  //     & .header-select__variants-wrapper {
+  //       opacity: 0;
+  //       visibility: hidden;
+  //     }
+  //     &::after {
+  //       rotate: 0deg;
+  //     }
+  //     & .header-select__triangle {
+  //       opacity: 0;
+  //       visibility: hidden;
+  //     }
+  //   }
+  //   &:hover {
+  //     &::after {
+  //       rotate: 180deg;
+  //     }
+  //     & .header-select__triangle {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     }
+  //     & .header-select__variants-wrapper {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     }
+  //   }
+  // }
+  // &:focus-visible,
+  // &:has(:focus-visible) {
+  //   &._active {
+  //     &::after {
+  //       rotate: 180deg;
+  //     }
+  //     & .header-select__triangle {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     }
+  //     & .header-select__variants-wrapper {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     }
+  //   }
+  // }
 
   &__triangle {
   }
@@ -124,6 +126,10 @@
     font-size: math.div($fs, $fz) + em;
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
+    @media (max-width: $md1+px) {
+      $fs: 14;
+      font-size: math.div($fs, $fz) + em;
+    }
   }
 
   &__first-phone {
@@ -133,6 +139,12 @@
     font-size: math.div($fs, $fz) + em;
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
+    @media (max-width: $md1+px) {
+      $fs: 14;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
   }
 
   &__variants-wrapper {
@@ -145,7 +157,10 @@
     opacity: 0;
     visibility: hidden;
     width: 100%;
-    padding-top: 11px;
+    padding-top: 10px;
+    @media (max-width: $md1+px) {
+      width: var(--2column);
+    }
   }
 
   &__variants {
@@ -155,6 +170,7 @@
     padding: 18px 17px 18px 18px;
     background-color: var(--bg-main);
     border: 2px solid var(--border);
+    box-shadow: var(--shadow);
   }
 
   &__city {
@@ -162,8 +178,11 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
+    line-height: 20px;
+    @media (max-width: $md1+px) {
+      $fs: 14;
+      font-size: math.div($fs, $fz) + em;
+    }
     &._active {
       color: var(--text-accent);
     }
@@ -183,8 +202,11 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
+    line-height: 20px;
+    @media (max-width: $md1+px) {
+      $fs: 14;
+      font-size: math.div($fs, $fz) + em;
+    }
     &._active {
       color: var(--text-accent);
     }
@@ -204,6 +226,10 @@
   width: 44px;
   height: 44px;
   background-color: var(--bg-accent);
+  @media (max-width: $md1+px) {
+    width: 34px;
+    height: 34px;
+  }
   &--orange {
     background-color: var(--bg-bright);
   }
