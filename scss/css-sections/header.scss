@@ -1,6 +1,9 @@
 .header {
   width: 100%;
   padding-top: 40px;
+  @media (max-width: $md2+px) {
+    padding-top: 20px;
+  }
   &__container {
   }
 
@@ -11,7 +14,9 @@
   }
 
   &__city {
-    width: var(--2column);
+    @media (min-width: $md2+px) {
+      width: var(--2columns);
+    }
   }
 
   &__icon-links {
@@ -19,6 +24,9 @@
     gap: 40px;
     @media (max-width: $md1+px) {
       gap: 20px;
+    }
+    @media (max-width: $md2+px) {
+      display: none;
     }
   }
 
@@ -45,7 +53,7 @@
     display: flex;
     justify-content: space-between;
     margin-left: auto;
-    width: var(--4column);
+    width: var(--4columns);
     @media (min-width: $md1+px) {
       display: contents;
     }
@@ -62,7 +70,7 @@
 
   &__phone {
     @media (min-width: $md1+px) {
-      width: var(--2column);
+      width: var(--2columns);
       margin-left: auto;
     }
   }
@@ -70,11 +78,16 @@
   &__mail {
     transition-duration: var(--transition);
     stroke: var(--text-main);
+    line-height: 20px;
     display: flex;
     align-items: center;
     gap: 5px;
     @media (min-width: $md1+px) {
-      width: var(--2column);
+      width: var(--2columns);
+    }
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
     }
     @media (hover: hover) {
       &:hover {
@@ -92,20 +105,31 @@
   &__mail-svg {
     width: 20px;
     height: 20px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__body {
     display: flex;
     align-items: center;
-    gap: var(--gutter);
     margin-top: 20px;
+    @media (min-width: $md2+px) {
+      gap: var(--gutter);
+    }
     @media (max-width: $md1+px) {
       margin-top: 18px;
+    }
+    @media (max-width: $md2+px) {
+      margin-top: 15px;
     }
   }
 
   &__logo-link {
-    width: var(--2column);
+    width: var(--2columns);
+    @media (max-width: $md2+px) {
+      margin-right: var(--gutter);
+    }
   }
 
   &__logo-link-img {
@@ -114,6 +138,9 @@
     }
     @media (max-width: $md1+px) {
       height: 40px;
+    }
+    @media (max-width: $md2+px) {
+      height: 30px;
     }
   }
 
@@ -135,10 +162,16 @@
     position: relative;
     display: flex;
     align-items: center;
-    flex-grow: 1;
     padding: 6px 20px 6px 0;
     border: 2px solid var(--border);
     border-right: none;
+    @media (min-width: $md2+px) {
+      flex-grow: 1;
+    }
+    @media (max-width: $md2+px) {
+      width: var(--8columns);
+      padding: 3px 20px 3px 0;
+    }
     @media (hover: hover) {
       &:hover {
         & .header__search-close {
@@ -156,10 +189,13 @@
   }
 
   &__search-input {
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
+    line-height: 20px;
     flex-grow: 1;
     padding: 0 18px;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+    }
     &:focus-visible {
       outline: none;
     }
@@ -175,6 +211,10 @@
   &__search-close-svg {
     width: 24px;
     height: 24px;
+    @media (max-width: $md2+px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__search-btn {
@@ -182,9 +222,19 @@
     color: var(--text-second);
     font-weight: 700;
     display: inline-block;
-    width: var(--2column);
     padding: 10px 0;
     background-color: var(--bg-bright);
+    @media (min-width: $md2+px) {
+      width: var(--2columns);
+    }
+    @media (max-width: $md2+px) {
+      flex-grow: 1;
+    }
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      padding: 5px 0;
+    }
     @media (hover: hover) {
       cursor: pointer;
       &:hover {
@@ -197,26 +247,38 @@
     }
   }
 
+  &__burger-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: $md2+px) {
+      width: var(--column);
+    }
+    @media (min-width: $md2+px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+  }
+
   &__info-panel {
     color: var(--text-second);
     font-family: 'RobotoCondensed';
     $fs: 15;
     font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    line-height: 20px;
+    text-align: center;
     margin-top: 20px;
     padding: 5px 0;
     background-color: var(--bg-accent);
     @media (max-width: $md1+px) {
       margin-top: 10px;
     }
-  }
-
-  &__info-panel-p {
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      margin-top: 15px;
+    }
   }
 
   &__info-link {
@@ -226,6 +288,7 @@
     display: inline-flex;
     align-items: center;
     gap: 3px;
+    margin-left: 10px;
     @media (hover: hover) {
       &:hover {
         color: var(--text-bright);
@@ -246,85 +309,94 @@
 }
 
 .header-menu {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  @media (min-width: $md2+px) {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  @media (max-width: $md2+px) {
+    transition-duration: var(--transition);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #555a6580;
+    &:not(:has(.header-menu__items._active)) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__icon-links {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+    flex-basis: 100%;
+    padding: 20px;
+    background-color: var(--bg-accent);
+    @media (min-width: $md2+px) {
+      display: none;
+    }
+  }
+
+  &__icon-link {
+    transition-duration: var(--transition);
+    color: var(--text-second);
+    stroke: var(--text-second);
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: var(--3columns) 0 0;
+    @media (hover: hover) {
+      &:hover {
+        color: var(--text-main);
+        stroke: var(--text-main);
+      }
+    }
+    &:active,
+    &:focus-visible {
+      color: var(--text-main);
+      stroke: var(--text-main);
+    }
+  }
+
+  &__icon-link-svg {
+    width: 16px;
+    height: 16px;
+  }
 
   &__items {
     position: relative;
     display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 0 50px;
-    background-color: var(--bg-second);
+    @media (min-width: $md2+px) {
+      align-items: center;
+      gap: 40px;
+      padding: 0 50px;
+      background-color: var(--bg-second);
+    }
+    @media (max-width: $md2+px) {
+      overflow-y: auto;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: calc(100% - var(--fields));
+      max-height: calc(100vh - 115px);
+      margin: 100px auto 0;
+      background-color: var(--bg-main);
+      // border: 2px solid var(--border-accent);
+    }
+  }
+
+  &__dropdown-wrapper {
+    @media (min-width: $md2+px) {
+      display: contents;
+    }
   }
 
   &__dropdown {
-    &._active {
-      & .header-menu__item {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
-      }
-
-      & .header-menu__item-svg {
-        rotate: 180deg;
-      }
-
-      & .header-menu__triangle {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      & .header-menu__submenu {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-    @media (hover: hover) {
-      &._active {
-        & .header-menu__item {
-          color: var(--text-main);
-          stroke: var(--text-main);
-        }
-
-        & .header-menu__item-svg {
-          rotate: 0deg;
-        }
-
-        & .header-menu__triangle {
-          opacity: 0;
-          visibility: hidden;
-        }
-
-        & .header-menu__submenu {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-      &:hover,
-      &:active {
-        & .header-menu__item {
-          color: var(--text-bright);
-          stroke: var(--text-bright);
-        }
-
-        & .header-menu__item-svg {
-          rotate: 180deg;
-        }
-
-        & .header-menu__triangle {
-          opacity: 1;
-          visibility: visible;
-        }
-
-        & .header-menu__submenu {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-    &:focus-visible,
-    &:has(:focus-visible) {
+    @media (min-width: $md2+px) {
       &._active {
         & .header-menu__item {
           color: var(--text-bright);
@@ -345,16 +417,91 @@
           visibility: visible;
         }
       }
+      @media (hover: hover) {
+        &._active {
+          & .header-menu__item {
+            color: var(--text-main);
+            stroke: var(--text-main);
+          }
+
+          & .header-menu__item-svg {
+            rotate: 0deg;
+          }
+
+          & .header-menu__triangle {
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          & .header-menu__submenu {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+        &:hover,
+        &:active {
+          & .header-menu__item {
+            color: var(--text-bright);
+            stroke: var(--text-bright);
+          }
+
+          & .header-menu__item-svg {
+            rotate: 180deg;
+          }
+
+          & .header-menu__triangle {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          & .header-menu__submenu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      &:focus-visible,
+      &:has(:focus-visible) {
+        &._active {
+          & .header-menu__item {
+            color: var(--text-bright);
+            stroke: var(--text-bright);
+          }
+
+          & .header-menu__item-svg {
+            rotate: 180deg;
+          }
+
+          & .header-menu__triangle {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          & .header-menu__submenu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+    @media (max-width: $md2+px) {
+      display: contents;
     }
   }
 
   &__item {
-    transition-duration: var(--transition);
-    stroke: var(--text-main);
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    @media (min-width: $md2+px) {
+      transition-duration: var(--transition);
+      stroke: var(--text-main);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    @media (max-width: $md2+px) {
+      text-align-last: left;
+      flex-basis: var(--3columns);
+    }
     @media (hover: hover) {
       &:hover {
         color: var(--text-bright);
@@ -375,6 +522,9 @@
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
     padding: 12px 0;
+    @media (max-width: $md2+px) {
+      display: block;
+    }
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
@@ -387,26 +537,37 @@
     transition-property: rotate;
     width: 24px;
     height: 24px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__triangle {
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__submenu {
-    position: absolute;
-    left: 50px;
-    top: 100%;
-    opacity: 0;
-    visibility: hidden;
-    width: 797px;
     @media (min-width: $md1+px) {
       width: calc(100% + 58px);
+    }
+    @media (min-width: $md2+px) {
+      position: absolute;
+      left: 50px;
+      top: 100%;
+      opacity: 0;
+      visibility: hidden;
+      width: 797px;
     }
   }
 
   &__add {
     flex-grow: 1;
     background-color: var(--bg-second);
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 }
 
@@ -414,12 +575,14 @@
   transition-duration: var(--transition);
   padding-top: 10px;
   &__items {
-    columns: 3 225px;
-    column-fill: balance;
-    padding: 25px 28px 28px;
-    background-color: var(--bg-main);
-    border: 2px solid var(--border);
-    box-shadow: var(--shadow);
+    @media (min-width: $md2+px) {
+      columns: 3 225px;
+      column-fill: balance;
+      padding: 25px 28px 28px;
+      background-color: var(--bg-main);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+    }
   }
 
   &__item {
@@ -522,11 +685,14 @@
   box-shadow: var(--shadow-big);
   &__item {
     transition-duration: var(--transition);
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
+    line-height: 20px;
     display: flex;
     gap: 20px;
     padding: 10px 20px;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+    }
     @media (hover: hover) {
       &:hover {
         background-color: var(--bg-second);
@@ -547,5 +713,8 @@
 
   &__dates {
     flex: 159px 0 0;
+    @media (max-width: $md2+px) {
+      flex-basis: 100px;
+    }
   }
 }

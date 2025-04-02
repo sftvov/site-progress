@@ -26,7 +26,7 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/functions/webp.js');
 @@include('../../web-template/src/functions/slide.js');
 @@include('../../web-template/src/functions/activator_v3.0.1_now.js');
-//include('../../web-template/src/functions/body_lock.js');
+@@include('../../web-template/src/functions/body_lock.js');
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
 //include('../../web-template/src/functions/calculateAge.js');
@@ -57,6 +57,14 @@ new Activator('._menu-btn', {
 	clickOutClose: true,
 	escClose: true,
 	onlyOne: true,
+});
+
+
+new Activator('.burger', {
+	removed: ['.header-menu__items'],
+	clickOutClose: true,
+	escClose: true,
+	bodyLock: true,
 });
 
 // function headerHeight() {

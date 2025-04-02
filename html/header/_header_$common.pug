@@ -26,12 +26,14 @@
     }
   ];
 
-header.header._lp
+header.header
   .header__container._container
     .header__top-level
       button.header__city.header-select._menu-btn
         .header-select__triangle.triangle
         .header-select__current-city Санкт-Петербург
+        svg.header-select__svg
+          use(xlink:href='img/sprite/symbols.svg#chevron-down')
         .header-select__variants-wrapper._menu-body
           .header-select__variants
             a.header-select__city._active(href="/page-main.html") Санкт-Петербург
@@ -50,9 +52,11 @@ header.header._lp
             use(xlink:href='img/sprite/symbols.svg#mail')
           | Рассылка
       .header__contacts
-        button.header__phone.header-select.header-select--accent._menu-btn
+        button.header__phone.header-select._menu-btn
           .header-select__triangle.triangle
           .header-select__first-phone 8 (800) 333-88-44
+          svg.header-select__svg.header-select__svg--accent
+            use(xlink:href='img/sprite/symbols.svg#chevron-down')
           .header-select__variants-wrapper._menu-body
             .header-select__variants
               a.header-select__phone._active(href="tel:88003338844") 8 (800) 333-88-44
@@ -76,13 +80,17 @@ header.header._lp
                 p.search-results__number 71455
                 p.search-results__name !{course.name}
                 p.search-results__dates !{course.date}  
-        input.header__search-btn(type="submit" value="Найти курс")
-        
+        button.header__search-btn Найти #[span._x2-hide курс]
+      .header__burger-wrapper
+        .header__burger.burger
+          span.burger__line
+          span.burger__line
+          span.burger__line
     include _header_#template_menu.pug
     .header__info-panel
-      p.header__info-panel-p Готов учебный план на 2025 год. Расписание курсов по всем отраслевым направлениям — в одной брошюре. 
-      a.header__info-link(href="#") скачать
-        svg.header__info-link-svg
-          use(xlink:href='img/sprite/symbols.svg#arrow-right')
+      p #[span._x3-hide Готов учебный план на 2025 год.] Расписание курсов по всем отраслевым направлениям — в одной брошюре. #[br._n3-hide] #[span._n3-hide Готов учебный план на 2025 год.]
+        a.header__info-link(href="#") скачать
+          svg.header__info-link-svg
+            use(xlink:href='img/sprite/symbols.svg#arrow-right')
 
 //- scss/css-sections/header.scss

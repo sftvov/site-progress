@@ -17,16 +17,17 @@ mixin submenuItem(item)
 //- Миксин для основного меню
 mixin menuItem(item)
   if item.subitems
-    button.header-menu__dropdown._menu-btn
-      .header-menu__item
-        span.header-menu__item-name= item.name
-        svg.header-menu__item-svg
-          use(xlink:href='img/sprite/symbols.svg#chevron-down')
-        .header-menu__triangle.triangle
-      .header-menu__submenu.submenu._menu-body
-        .submenu__items
-          each subitem in item.subitems
-            +submenuItem(subitem)
+    .header-menu__dropdown-wrapper
+      button.header-menu__dropdown._menu-btn
+        .header-menu__item
+          span.header-menu__item-name= item.name
+          svg.header-menu__item-svg
+            use(xlink:href='img/sprite/symbols.svg#chevron-down')
+          .header-menu__triangle.triangle
+        .header-menu__submenu.submenu._menu-body
+          .submenu__items
+            each subitem in item.subitems
+              +submenuItem(subitem)
   else
     a.header-menu__item(href=item.link)
       span.header-menu__item-name= item.name
@@ -65,13 +66,28 @@ mixin menuItem(item)
     { name: "КОНТАКТЫ", link: "#" }
   ];
 
+  
+
 //- Основная разметка меню
 .header-menu
   .header-menu__items
+    .header-menu__icon-links
+      a.header-menu__icon-link(href="#")
+        svg.header-menu__icon-link-svg
+          use(xlink:href='img/sprite/symbols.svg#plan')
+        | Составить план 2025
+      a.header-menu__icon-link(href="#")
+        svg.header-menu__icon-link-svg
+          use(xlink:href='img/sprite/symbols.svg#key')
+        | Бронь отелей
+      a.header-menu__icon-link(href="#")
+        svg.header-menu__icon-link-svg
+          use(xlink:href='img/sprite/symbols.svg#mail')
+        | Рассылка
     each item in menuItems
       +menuItem(item)
-  .square
-  .square.square--orange
+  .square._x2-hide
+  .square.square--orange._x2-hide
   .header-menu__add
 
 //- scss/css-sections/header.scsss
