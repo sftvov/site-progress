@@ -13,9 +13,15 @@
     gap: var(--gutter);
   }
 
-  &__city {
+  &__city-wrapper {
     @media (min-width: $md2+px) {
       width: var(--2columns);
+    }
+  }
+
+  &__city {
+    @media (min-width: $md1+px) {
+      width: 100%;
     }
   }
 
@@ -130,6 +136,9 @@
     @media (max-width: $md2+px) {
       margin-right: var(--gutter);
     }
+    @media (max-width: $md3+px) {
+      display: none;
+    }
   }
 
   &__logo-link-img {
@@ -171,6 +180,10 @@
     @media (max-width: $md2+px) {
       width: var(--8columns);
       padding: 3px 20px 3px 0;
+    }
+    @media (max-width: $md3+px) {
+      width: var(--3columns);
+      
     }
     @media (hover: hover) {
       &:hover {
@@ -256,9 +269,15 @@
     @media (min-width: $md2+px) {
       display: none;
     }
+    @media (max-width: $md3+px) {
+      display: contents;
+    }
   }
 
   &__burger {
+    @media (max-width: $md3+px) {
+      margin-left: 16px;
+    }
   }
 
   &__info-panel {
@@ -322,17 +341,33 @@
     top: 0;
     left: 0;
     background-color: #555a6580;
-    &:not(:has(.header-menu__items._active)) {
+    &:not(:has(.header-menu__mobile-container._active)) {
       opacity: 0;
       visibility: hidden;
     }
   }
 
+  &__mobile-container {
+    @media (min-width: $md2+px) {
+      display: contents;
+    }
+    @media (max-width: $md2+px) {
+      overflow-y: auto;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: calc(100% - var(--fields));
+      max-height: calc(100vh - 115px);
+      margin: 100px auto 0;
+      background-color: var(--bg-main);
+    }
+  }
+
   &__icon-links {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    gap: var(--gutter);
-    flex-basis: 100%;
+    gap: 39px;
     padding: 20px;
     background-color: var(--bg-accent);
     @media (min-width: $md2+px) {
@@ -348,11 +383,14 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    flex: var(--3columns) 0 0;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+    }
     @media (hover: hover) {
       &:hover {
-        color: var(--text-main);
-        stroke: var(--text-main);
+        color: var(--text-bright);
+        stroke: var(--text-bright);
       }
     }
     &:active,
@@ -369,23 +407,21 @@
 
   &__items {
     position: relative;
-    display: flex;
     @media (min-width: $md2+px) {
+      display: flex;
       align-items: center;
       gap: 40px;
       padding: 0 50px;
       background-color: var(--bg-second);
     }
     @media (max-width: $md2+px) {
-      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       align-items: flex-start;
       justify-content: space-between;
-      flex-wrap: wrap;
-      width: calc(100% - var(--fields));
-      max-height: calc(100vh - 115px);
-      margin: 100px auto 0;
-      background-color: var(--bg-main);
-      // border: 2px solid var(--border-accent);
+      gap: 39px;
+      padding: 8px 17px 8px 18px;
+      border: 2px solid var(--border-accent);
     }
   }
 
@@ -499,8 +535,10 @@
       gap: 10px;
     }
     @media (max-width: $md2+px) {
-      text-align-last: left;
-      flex-basis: var(--3columns);
+      $fs: 16;
+      font-size: math.div($fs, $fz) + em;
+      font-weight: 700;
+      text-align: left;
     }
     @media (hover: hover) {
       &:hover {
@@ -516,19 +554,16 @@
   }
 
   &__item-name {
+    display: block;
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
+    line-height: 20px;
     padding: 12px 0;
-    @media (max-width: $md2+px) {
-      display: block;
-    }
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
-      padding: 10px 0;
+      padding: 7px 0;
     }
   }
 
@@ -574,6 +609,9 @@
 .submenu {
   transition-duration: var(--transition);
   padding-top: 10px;
+  @media (max-width: $md2+px) {
+    padding-top: 5px;
+  }
   &__items {
     @media (min-width: $md2+px) {
       columns: 3 225px;
@@ -626,8 +664,13 @@
 
   &__item-name {
     transition-duration: var(--transition);
-    $lh: 24;
-    line-height: round-to(math.div($lh, $fz), 4);
+    line-height: 24px;
+    text-align: left;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      line-height: 15px;
+    }
   }
 
   &__item-svg {
@@ -635,21 +678,36 @@
     rotate: -90deg;
     width: 24px;
     height: 24px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__links {
-    margin-top: 5px;
+    @media (min-width: $md2+px) {
+      margin-top: 5px;
+    }
   }
 
   &__link {
     transition-duration: var(--transition);
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
-    break-before: avoid-column;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding-left: 20px;
+    text-align: left;
+    @media (min-width: $md2+px) {
+      line-height: 20px;
+      break-before: avoid-column;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 20px;
+    }
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      line-height: 15px;
+      display: block;
+      margin-top: 5px;
+      padding-left: 15px;
+    }
     @media (hover: hover) {
       &:hover {
         color: var(--text-bright);
@@ -668,6 +726,9 @@
     rotate: -90deg;
     width: 20px;
     height: 20px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 }
 
@@ -692,6 +753,8 @@
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      padding: 10px 15px;
+      gap: 10px;
     }
     @media (hover: hover) {
       &:hover {
@@ -705,6 +768,7 @@
   }
 
   &__number {
+    min-width: 50px;
   }
 
   &__name {

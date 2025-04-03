@@ -61,7 +61,8 @@ new Activator('._menu-btn', {
 
 
 new Activator('.burger', {
-	removed: ['.header-menu__items'],
+	removed: ['.header-menu__mobile-container'],
+	removing: ['.header-menu__icon-close'],
 	clickOutClose: true,
 	escClose: true,
 	bodyLock: true,

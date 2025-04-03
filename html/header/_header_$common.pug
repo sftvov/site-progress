@@ -29,15 +29,17 @@
 header.header
   .header__container._container
     .header__top-level
-      button.header__city.header-select._menu-btn
-        .header-select__triangle.triangle
-        .header-select__current-city Санкт-Петербург
-        svg.header-select__svg
-          use(xlink:href='img/sprite/symbols.svg#chevron-down')
-        .header-select__variants-wrapper._menu-body
-          .header-select__variants
-            a.header-select__city._active(href="/page-main.html") Санкт-Петербург
-            a.header-select__city(href="/page-main.html") Москва
+      .header__city-wrapper
+        button.header__city.header-select._menu-btn
+          .header-select__triangle.triangle
+          .header-select__current-city Санкт-Петербург
+          svg.header-select__svg
+            use(xlink:href='img/sprite/symbols.svg#chevron-down')
+          .header-select__variants-wrapper._menu-body
+            .header-select__variants-border
+              .header-select__variants
+                a.header-select__city._active(href="/page-main.html") Санкт-Петербург
+                a.header-select__city(href="/page-main.html") Москва
       .header__icon-links
         a.header__icon-link(href="#")
           svg.header__icon-link-svg
@@ -58,9 +60,10 @@ header.header
           svg.header-select__svg.header-select__svg--accent
             use(xlink:href='img/sprite/symbols.svg#chevron-down')
           .header-select__variants-wrapper._menu-body
-            .header-select__variants
-              a.header-select__phone._active(href="tel:88003338844") 8 (800) 333-88-44
-              a.header-select__phone(href="tel:88123318888") 8 (812) 331-88-88
+            .header-select__variants-border
+              .header-select__variants
+                a.header-select__phone._active(href="tel:88003338844") 8 (800) 333-88-44
+                a.header-select__phone(href="tel:88123318888") 8 (812) 331-88-88
         a.header__mail(href="mailto:client@cntiprogress.ru")
           svg.header__mail-svg
             use(xlink:href='img/sprite/symbols.svg#email')
