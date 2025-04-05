@@ -44,14 +44,14 @@
     gap: 5px;
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover);
+        stroke: var(--hover);
       }
     }
     &:active,
     &:focus-visible {
-      color: var(--text-bright);
-      stroke: var(--text-bright);
+      color: var(--hover);
+      stroke: var(--hover);
     }
   }
 
@@ -97,14 +97,14 @@
     }
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover);
+        stroke: var(--hover);
       }
     }
     &:active,
     &:focus-visible {
-      color: var(--text-bright);
-      stroke: var(--text-bright);
+      color: var(--hover);
+      stroke: var(--hover);
     }
   }
 
@@ -183,7 +183,6 @@
     }
     @media (max-width: $md3+px) {
       width: var(--3columns);
-      
     }
     @media (hover: hover) {
       &:hover {
@@ -310,14 +309,14 @@
     margin-left: 10px;
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover-light);
+        stroke: var(--hover-light);
       }
     }
     &:active,
     &:focus-visible {
-      color: var(--text-bright);
-      stroke: var(--text-bright);
+      color: var(--hover-light);
+      stroke: var(--hover-light);
     }
   }
 
@@ -367,6 +366,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
+    justify-items: start;
     gap: 39px;
     padding: 20px;
     background-color: var(--bg-accent);
@@ -389,14 +389,14 @@
     }
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover-light);
+        stroke: var(--hover-light);
       }
     }
     &:active,
     &:focus-visible {
-      color: var(--text-main);
-      stroke: var(--text-main);
+      color: var(--hover-light);
+      stroke: var(--hover-light);
     }
   }
 
@@ -477,8 +477,8 @@
         &:hover,
         &:active {
           & .header-menu__item {
-            color: var(--text-bright);
-            stroke: var(--text-bright);
+            color: var(--hover);
+            stroke: var(--hover);
           }
 
           & .header-menu__item-svg {
@@ -500,8 +500,8 @@
       &:has(:focus-visible) {
         &._active {
           & .header-menu__item {
-            color: var(--text-bright);
-            stroke: var(--text-bright);
+            color: var(--hover);
+            stroke: var(--hover);
           }
 
           & .header-menu__item-svg {
@@ -542,8 +542,8 @@
     }
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover);
+        stroke: var(--hover);
       }
     }
     &:active,
@@ -632,20 +632,20 @@
     @media (hover: hover) {
       &:hover {
         > .submenu__item-name {
-          color: var(--text-bright);
+          color: var(--hover);
         }
         > .submenu__item-svg {
-          stroke: var(--text-bright);
+          stroke: var(--hover);
         }
       }
     }
     &:active,
     &:focus-visible {
       > .submenu__item-name {
-        color: var(--text-bright);
+        color: var(--hover);
       }
       > .submenu__item-svg {
-        stroke: var(--text-bright);
+        stroke: var(--hover);
       }
     }
     &--has-children {
@@ -710,14 +710,14 @@
     }
     @media (hover: hover) {
       &:hover {
-        color: var(--text-bright);
-        stroke: var(--text-bright);
+        color: var(--hover);
+        stroke: var(--hover);
       }
     }
     &:active,
     &:focus-visible {
-      color: var(--text-bright);
-      stroke: var(--text-bright);
+      color: var(--hover);
+      stroke: var(--hover);
     }
   }
 
