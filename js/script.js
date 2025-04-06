@@ -51,13 +51,31 @@ document.querySelector('.header__search-close').addEventListener('click', functi
 	input.focus();       // Возвращаем фокус
 });
 
-new Activator('._menu-btn', {
-	stops: ['._menu-body'],
-	removedOwn: ['._menu-body'],
+new Activator('._select-btn', {
+	stops: ['._select-body'],
+	removedOwn: ['._select-body'],
 	clickOutClose: true,
 	escClose: true,
 	onlyOne: true,
 });
+
+new Activator('._menu-btn', {
+	stops: ['._menu-body'],
+	removedOwn: ['._menu-body'],
+	escClose: true,
+	onlyOne: true,
+	effects: 'U',
+	effectDuration: 300,
+	activeElements: [0],
+	breakpoints: {
+		[md3]: {			
+			effects: null,
+			effectDuration: null,
+			activeElements: [null],
+			clickOutClose: true,
+		}
+	}
+}, true);
 
 
 new Activator('.burger', {

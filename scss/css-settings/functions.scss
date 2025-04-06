@@ -4,6 +4,12 @@ section {
   scroll-margin-top: var(--header-height);
 }
 
+body {
+  &._lock {
+    overflow: hidden;
+  }
+}
+
 svg {
   stroke-width: 1.5;
   stroke-linecap: round;
@@ -18,12 +24,6 @@ svg {
 // input[type='checkbox']:not(:checked) {
 //   opacity: 0.3;
 // }
-
-body {
-  &._lock {
-    overflow: hidden;
-  }
-}
 
 // [data-item]:not(._active) {
 //   display: none;
@@ -71,6 +71,10 @@ body {
     padding-left: 16px;
     padding-right: 16px;
   }
+  @media (max-width: $md4+px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   // @media (max-width: $md1+px) {
   //   padding-left: 10px;
   //   padding-right: 10px;
@@ -97,6 +101,18 @@ body {
 
 ._x3-hide {
   @media (max-width: $md3+px) {
+    display: none;
+  }
+}
+
+._n4-hide {
+  @media (min-width: $md4+px) {
+    display: none;
+  }
+}
+
+._x4-hide {
+  @media (max-width: $md4+px) {
     display: none;
   }
 }

@@ -119,10 +119,8 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
+    width: 100%;
     padding-top: 10px;
-    @media (min-width: $md3+px) {
-      width: 100%;
-    }
   }
 
   &__variants-border {
