@@ -25,7 +25,7 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/functions/isMobile.js');
 //include('../../web-template/src/functions/webp.js');
 @@include('../../web-template/src/functions/slide.js');
-@@include('../../web-template/src/functions/activator_v3.0.1_now.js');
+@@include('../../web-template/src/functions/activator_v3.0.2_now.js');
 @@include('../../web-template/src/functions/body_lock.js');
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
@@ -66,12 +66,10 @@ new Activator('._menu-btn', {
 	onlyOne: true,
 	effects: 'U',
 	effectDuration: 300,
-	activeElements: [0],
 	breakpoints: {
 		[md3]: {			
 			effects: null,
 			effectDuration: null,
-			activeElements: [null],
 			clickOutClose: true,
 		}
 	}
@@ -81,6 +79,8 @@ new Activator('._menu-btn', {
 new Activator('.burger', {
 	removed: ['.header-menu__mobile-container'],
 	removing: ['.header-menu__icon-close'],
+	// effects: 'F',
+	// effectDuration: 300,
 	clickOutClose: true,
 	escClose: true,
 	bodyLock: true,

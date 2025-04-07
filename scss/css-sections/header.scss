@@ -274,8 +274,7 @@
     flex-grow: 1;
     padding: 0 18px;
     @media (max-width: $md2+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
+      font-size: 12px;
     }
     &:focus-visible {
       outline: none;
@@ -427,15 +426,14 @@
     left: 0;
     background-color: #555a6580;
     &:not(:has(.header-menu__mobile-container._active)) {
-      opacity: 0;
-      visibility: hidden;
+      @media (max-width: $md2+px) {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
 
   &__mobile-container {
-    @media (min-width: $md2+px) {
-      display: contents;
-    }
     overflow-y: auto;
     align-items: flex-start;
     justify-content: space-between;
@@ -444,6 +442,9 @@
     max-height: calc(100vh - 115px);
     margin: 100px auto 0;
     background-color: var(--bg-main);
+    @media (min-width: $md2+px) {
+      display: contents;
+    }
     @media (max-width: $md3+px) {
       width: 100%;
       height: 100dvh;
@@ -465,12 +466,10 @@
     }
     @media (max-width: $md3+px) {
       display: flex;
-      justify-content: space-between;
-      background: linear-gradient(var(--bg-accent) 60px, var(--bg-main) 0);
-      padding: 80px calc(var(--fields) / 2) 20px;
-    }
-    @media (max-width: $md4+px) {
       flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 80px calc(var(--fields) / 2) 20px;
+      background-color: var(--bg-main);
     }
   }
 
@@ -508,14 +507,28 @@
     height: 16px;
   }
 
+  &__icon-close-wrapper {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 60px;
+    padding: 0 calc(var(--fields) / 2);
+    background: var(--bg-accent);
+    @media (min-width: $md3+px) {
+      display: contents;
+    }
+  }
+
   &__icon-close {
     @media (max-width: $md3+px) {
       color: var(--text-second);
       stroke: var(--text-second);
-      position: absolute;
       flex-direction: row-reverse;
-      top: 20px;
-      right: calc(var(--fields) / 2);
     }
   }
 
@@ -614,9 +627,10 @@
 
   &__dropdown {
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
+      cursor: auto;
       display: contents;
     }
-    @media (min-width: $md2+px) OR (max-width: $md3+px) {
+    @media (min-width: $md2+px) {
       &._active {
         & .header-menu__item {
           color: var(--text-bright);
@@ -627,39 +641,48 @@
           rotate: 180deg;
         }
 
-        & + .header-menu__submenu {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-    @media (min-width: $md2+px) {
-      &._active {
         & .header-menu__triangle {
           opacity: 1;
           visibility: visible;
         }
+
+        & + .header-menu__submenu {
+          opacity: 1;
+          visibility: visible;
+        }
+        @media (hover: hover) {
+          &._active {
+            & .header-menu__item {
+              color: var(--text-main);
+              stroke: var(--text-main);
+            }
+
+            & .header-menu__item-svg {
+              rotate: 0deg;
+            }
+
+            & .header-menu__triangle {
+              opacity: 0;
+              visibility: hidden;
+            }
+
+            & + .header-menu__submenu {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+        }
       }
-      @media (hover: hover) {
-        &._active {
-          & .header-menu__item {
-            color: var(--text-main);
-            stroke: var(--text-main);
-          }
+    }
+    @media (max-width: $md3+px) {
+      &._active {
+        & .header-menu__item {
+          color: var(--text-bright);
+          stroke: var(--text-bright);
+        }
 
-          & .header-menu__item-svg {
-            rotate: 0deg;
-          }
-
-          & .header-menu__triangle {
-            opacity: 0;
-            visibility: hidden;
-          }
-
-          & + .header-menu__submenu {
-            opacity: 0;
-            visibility: hidden;
-          }
+        & .header-menu__item-svg {
+          rotate: 180deg;
         }
       }
     }
@@ -745,6 +768,7 @@
       display: none;
     }
     @media (max-width: $md3+px) {
+      stroke-width: 2px;
       width: 16px;
       height: 16px;
     }

@@ -85,10 +85,11 @@ mixin menuItem(item)
         svg.header-menu__icon-link-svg
           use(xlink:href='img/sprite/symbols.svg#mail')
         | Рассылка
-      button.header-menu__icon-link.header-menu__icon-close(href="#")
-        svg.header-menu__icon-link-svg
-          use(xlink:href='img/sprite/symbols.svg#x-close')
-        | Закрыть
+      .header-menu__icon-close-wrapper
+        button.header-menu__icon-link.header-menu__icon-close(href="#")
+          svg.header-menu__icon-link-svg
+            use(xlink:href='img/sprite/symbols.svg#x-close')
+          | Закрыть
     .header-menu__items
       each item in menuItems
         +menuItem(item)
