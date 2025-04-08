@@ -1,0 +1,173 @@
+.footer {
+  color: var(--text-second);
+  width: 100%;
+  padding: 40px 0;
+  background-color: var(--bg-dark);
+
+  &__title {
+  }
+
+  &__container {
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px var(--gutter);
+    @media (max-width: $md3+px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $md4+px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__column {
+    position: relative;
+    &--last {
+      grid-row: span 2;
+    }
+    @media (max-width: $md4+px) {
+      &::after {
+        content: '';
+        position: absolute;
+        left: -100vw;
+        bottom: -20px;
+        width: 200vw;
+        height: 2px;
+        background-color: var(--bg-main);
+      }
+    }
+  }
+
+  &__column-title {
+    font-family: 'RobotoCondensed';
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    font-weight: 700;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    text-transform: uppercase;
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
+  }
+
+  &__column-body {
+    margin-top: 25px;
+    @media (max-width: $md2+px) {
+      margin-top: 20px;
+    }
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+  }
+
+  &__list-item {
+    $lh: 14;
+    line-height: round-to(math.div($lh, $fz), 3);
+    margin-top: 15px;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 14;
+      line-height: round-to(math.div($lh, $fs), 3);
+      margin-top: 10px;
+    }
+  }
+
+  &__list-link {
+    &--bright {
+      color: var(--text-bright);
+    }
+
+    &--accent {
+      color: var(--text-accent);
+    }
+  }
+
+  &__column-p {
+    $fs: 14;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+    margin-top: 14px;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
+      margin-top: 10px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    @media (max-width: $md2+px) {
+      margin-top: 20px;
+    }
+    @media (max-width: $md4+px) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    line-height: 0;
+    &--stroke {
+      stroke: var(--text-second);
+      &:hover,
+      &:focus-visible {
+        stroke: var(--hover);
+      }
+    }
+    &--fill {
+      fill: var(--text-second);
+      &:hover,
+      &:focus-visible {
+        fill: var(--hover);
+      }
+    }
+  }
+
+  &__icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__additional {
+    @media (min-width: $md3+px) {
+      grid-column: span 3;
+    }
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
+  }
+
+  &__rating-widget {
+  }
+
+  &__rating-widget-img {
+  }
+
+  &__additional-p {
+    color: var(--text-light);
+    $fs: 14;
+    font-size: math.div($fs, $fz) + em;
+    font-style: italic;
+    $lh: 14;
+    line-height: round-to(math.div($lh, $fs), 3);
+    margin-top: 14px;
+    @media (max-width: $md2+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 14;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+  }
+}

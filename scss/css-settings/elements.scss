@@ -69,14 +69,19 @@
   &__current-city {
     $fs: 16;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
   }
 
@@ -85,14 +90,19 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
   }
 
@@ -152,24 +162,24 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     &._active {
       color: var(--text-accent);
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover);
-      }
-    }
-    &:active,
+    &:hover ,
     &:focus-visible {
       color: var(--hover);
     }
@@ -180,24 +190,24 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     &._active {
       color: var(--text-accent);
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover);
     }
@@ -216,28 +226,6 @@
     background-color: var(--bg-bright);
   }
 }
-// .breadcrumbs {
-//   translate: -10px 0;
-//   width: 100%;
-//   padding: 20px 0;
-//   &__container {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 5px;
-//   }
-//   &__item {
-//     color: var(--text-main);
-//     $fs: 14;
-//     font-weight: 400;
-//     font-size: math.div($fs, $fz) + em;
-//     $lh: 17;
-//     line-height: round-to(math.div($lh, $fs), 4);
-//     padding: 0 10px;
-//     &:is(a) {
-//       border-right: 1px solid var(--text-main);
-//     }
-//   }
-// }
 
 .burger {
   cursor: pointer;
@@ -271,6 +259,29 @@
     border-radius: 2px;
   }
 }
+
+// .breadcrumbs {
+//   translate: -10px 0;
+//   width: 100%;
+//   padding: 20px 0;
+//   &__container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 5px;
+//   }
+//   &__item {
+//     color: var(--text-main);
+//     $fs: 14;
+//     font-weight: 400;
+//     font-size: math.div($fs, $fz) + em;
+//     $lh: 17;
+//     line-height: round-to(math.div($lh, $fs), 4);
+//     padding: 0 10px;
+//     &:is(a) {
+//       border-right: 1px solid var(--text-main);
+//     }
+//   }
+// }
 
 // .button {
 //   transition-duration: var(--transition);

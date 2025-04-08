@@ -82,13 +82,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover);
-        stroke: var(--hover);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover);
       stroke: var(--hover);
@@ -147,7 +141,8 @@
   &__mail {
     transition-duration: var(--transition);
     stroke: var(--text-main);
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fz), 3);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -157,14 +152,10 @@
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover);
-        stroke: var(--hover);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover);
       stroke: var(--hover);
@@ -270,11 +261,15 @@
   }
 
   &__search-input {
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fz), 3);
     flex-grow: 1;
     padding: 0 18px;
     @media (max-width: $md2+px) {
-      font-size: 12px;
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     &:focus-visible {
       outline: none;
@@ -316,13 +311,8 @@
       flex-grow: 1;
       padding: 5px 0;
     }
-    @media (hover: hover) {
-      cursor: pointer;
-      &:hover {
-        background-color: var(--bg-accent);
-      }
-    }
-    &:active,
+    cursor: pointer;
+    &:hover,
     &:focus-visible {
       background-color: var(--bg-accent);
     }
@@ -363,7 +353,8 @@
     font-family: 'RobotoCondensed';
     $fs: 15;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     text-align: center;
     margin-top: 20px;
     padding: 5px 0;
@@ -374,6 +365,8 @@
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
       translate: calc(var(--fields) / -2) 0;
       width: calc(100% + var(--fields));
       margin-top: 15px;
@@ -391,13 +384,7 @@
     align-items: center;
     gap: 3px;
     margin-left: 10px;
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover-light);
-        stroke: var(--hover-light);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover-light);
       stroke: var(--hover-light);
@@ -477,28 +464,32 @@
     transition-duration: var(--transition);
     color: var(--text-second);
     stroke: var(--text-second);
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fz), 3);
     display: flex;
     align-items: center;
     gap: 5px;
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
     @media (max-width: $md3+px) {
       color: var(--text-main);
       stroke: var(--text-main);
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover-light);
-        stroke: var(--hover-light);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover-light);
       stroke: var(--hover-light);
+    }
+    @media (max-width: $md3+px) {
+      &:hover,
+      &:focus-visible {
+        color: var(--hover);
+        stroke: var(--hover);
+      }
     }
   }
 
@@ -584,8 +575,7 @@
             opacity: 1;
             visibility: visible;
           }
-        }
-        &:focus-within {
+
           & .header-menu__dropdown._active {
             & .header-menu__item {
               color: var(--hover);
@@ -605,6 +595,26 @@
               opacity: 1;
               visibility: visible;
             }
+          }
+        }
+        &:has(.header-menu__dropdown._active + .header-menu__submenu:focus-within) {
+          & .header-menu__item {
+            color: var(--hover);
+            stroke: var(--hover);
+          }
+
+          & .header-menu__item-svg {
+            rotate: 180deg;
+          }
+
+          & .header-menu__triangle {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          & .header-menu__submenu {
+            opacity: 1;
+            visibility: visible;
           }
         }
       }
@@ -650,27 +660,54 @@
           opacity: 1;
           visibility: visible;
         }
+
         @media (hover: hover) {
-          &._active {
+          & .header-menu__item {
+            color: var(--text-main);
+            stroke: var(--text-main);
+          }
+
+          & .header-menu__item-svg {
+            rotate: 0deg;
+          }
+
+          & .header-menu__triangle {
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          & + .header-menu__submenu {
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          &:focus-visible {
             & .header-menu__item {
-              color: var(--text-main);
-              stroke: var(--text-main);
+              color: var(--text-bright);
+              stroke: var(--text-bright);
             }
 
             & .header-menu__item-svg {
-              rotate: 0deg;
+              rotate: 180deg;
             }
 
             & .header-menu__triangle {
-              opacity: 0;
-              visibility: hidden;
+              opacity: 1;
+              visibility: visible;
             }
 
             & + .header-menu__submenu {
-              opacity: 0;
-              visibility: hidden;
+              opacity: 1;
+              visibility: visible;
             }
           }
+        }
+      }
+
+      &:focus-visible {
+        & .header-menu__item {
+          color: var(--hover);
+          stroke: var(--hover);
         }
       }
     }
@@ -696,24 +733,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    &:is(a) {
+      &:hover,
+      &:focus-visible {
+        color: var(--hover);
+        stroke: var(--hover);
+      }
+    }
     @media (min-width: $md2+px) {
       stroke: var(--text-main);
       position: relative;
-    }
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      &:is(a) {
-        @media (hover: hover) {
-          &:hover {
-            color: var(--hover);
-            stroke: var(--hover);
-          }
-        }
-        &:active,
-        &:focus-visible {
-          color: var(--hover);
-          stroke: var(--hover);
-        }
-      }
     }
     @media (max-width: $md2+px) {
       $fs: 16;
@@ -723,13 +752,7 @@
     }
     @media (max-width: $md3+px) {
       stroke: var(--text-main);
-      @media (hover: hover) {
-        &:hover {
-          color: var(--hover);
-          stroke: var(--hover);
-        }
-      }
-      &:active,
+      &:hover,
       &:focus-visible {
         color: var(--hover);
         stroke: var(--hover);
@@ -744,11 +767,14 @@
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
     padding: 12px 0;
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
       padding: 7px 0;
     }
     @media (max-width: $md2+px) {
@@ -842,17 +868,7 @@
     &:not(:last-child) {
       margin-bottom: 10px;
     }
-    @media (hover: hover) {
-      &:hover {
-        > .submenu__item-name {
-          color: var(--hover);
-        }
-        > .submenu__item-svg {
-          stroke: var(--hover);
-        }
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       > .submenu__item-name {
         color: var(--hover);
@@ -865,15 +881,7 @@
       cursor: auto;
       flex-direction: column;
       align-items: flex-start;
-      @media (hover: hover) {
-        &:hover {
-          > .submenu__item-name {
-            color: var(--text-main);
-          }
-        }
-      }
-
-      &:active,
+      &:hover,
       &:focus-visible {
         > .submenu__item-name {
           color: var(--text-main);
@@ -884,12 +892,14 @@
 
   &__item-name {
     transition-duration: var(--transition);
-    line-height: 24px;
+    $lh: 24;
+    line-height: round-to(math.div($lh, $fz), 3);
     text-align: left;
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
-      line-height: 15px;
+      $lh: 15;
+      line-height: round-to(math.div($lh, $fs), 3);
     }
   }
 
@@ -913,7 +923,8 @@
     transition-duration: var(--transition);
     text-align: left;
     @media (min-width: $md2+px) {
-      line-height: 20px;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fz), 3);
       break-before: avoid-column;
       display: flex;
       align-items: center;
@@ -923,18 +934,13 @@
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
-      line-height: 15px;
+      $lh: 15;
+      line-height: round-to(math.div($lh, $fs), 3);
       display: block;
       margin-top: 5px;
       padding-left: 15px;
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover);
-        stroke: var(--hover);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       color: var(--hover);
       stroke: var(--hover);
@@ -969,22 +975,20 @@
   }
   &__item {
     transition-duration: var(--transition);
-    line-height: 20px;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fz), 3);
     display: flex;
     gap: 20px;
     padding: 10px 20px;
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
       padding: 10px 15px;
       gap: 10px;
     }
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--bg-second);
-      }
-    }
-    &:active,
+    &:hover,
     &:focus-visible {
       background-color: var(--bg-second);
     }
