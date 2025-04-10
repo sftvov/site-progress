@@ -130,6 +130,13 @@
     }
   }
 
+  &__column-link {
+    &:hover,
+    &:focus-visible {
+      color: var(--hover);
+    }
+  }
+
   &__icons {
     display: flex;
     gap: 10px;
