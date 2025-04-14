@@ -1,0 +1,178 @@
+.rubric-tabs {
+  margin: 60px 0;
+  @media (max-width: $md2+px) {
+    margin: 50px 0;
+  }
+  @media (max-width: $md3+px) {
+    margin: 40px 0;
+  }
+  &__container {
+  }
+
+  &__title {
+    font-family: 'RobotoCondensed';
+    $fs: 24;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 30;
+    line-height: round-to(math.div($lh, $fs), 3);
+    text-align: center;
+    text-transform: uppercase;
+    @media (max-width: $md2+px) {
+      $fs: 20;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 24;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (max-width: $md4+px) {
+      $fs: 16;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+  }
+
+  &__body {
+    margin-top: 40px;
+    @media (max-width: $md3+px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__tab-titles {
+    position: relative;
+    display: flex;
+    border-bottom: 2px solid var(--border-light);
+    @media (max-width: $md4+px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__indicator {
+    transition-duration: var(--transition);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: var(--indicator-left);
+    width: var(--indicator-width);
+    height: 100%;
+    background-color: var(--bg-second);
+  }
+
+  &__tab-title {
+    transition-duration: var(--transition);
+    stroke: var(--text-main);
+    font-family: 'RobotoCondensed';
+    $fs: 16;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 22;
+    line-height: round-to(math.div($lh, $fs), 3);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    @media (max-width: $md2+px) {
+      padding: 10px 15px;
+    }
+    @media (max-width: $md3+px) {
+      padding: 5px 15px;
+    }
+    @media (max-width: $md4+px) {
+      flex: 50% 0 0;
+      justify-content: center;
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--hover);
+      stroke: var(--hover);
+    }
+  }
+
+  &__tab-title-svg {
+    width: 24px;
+    height: 24px;
+    @media (max-width: $md2+px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__tab-blocks {
+    margin-top: 40px;
+  }
+
+  &__tab-block {
+  }
+}
+
+.rubrics {
+  &__body {
+    column-gap: var(--gutter);
+    column-width: auto;
+    @media (min-width: $md3+px) {
+      column-count: 3;
+    }
+    @media (min-width: $md4+px) {
+      column-count: 2;
+    }
+  }
+
+  &__group {
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__group-title {
+    position: relative;
+    font-family: 'RobotoCondensed';
+    $fs: 18;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 24;
+    // line-height: round-to(math.div($lh, $fs), 3);
+    line-height: 1.334;
+    text-wrap: balance;
+    gap: 10px;
+    @media (max-width: $md2+px) {
+      $fs: 16;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+  }
+
+  &__group-title-square {
+    translate: 0 2px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-color: var(--group-color);
+  }
+
+  &__group-body {
+    margin-top: 15px;
+  }
+
+  &__item {
+    color: var(--text-light);
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fz), 3);
+    break-before: avoid-column;
+    margin-top: 7px;
+    @media (max-width: $md1+px) {
+      $fs: 13;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 18;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+  }
+
+  &__link {
+    transition-duration: var(--transition);
+    &:hover,
+    &:focus-visible {
+      color: var(--group-color);
+    }
+  }
+}

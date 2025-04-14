@@ -41,6 +41,8 @@
   --md3: #{$md3};
   --md4: #{$md4};
 
+  --scrollbar: 0px;
+
   --gutter: 20px;
   @media (min-width: $md1+px) {
     --gutter: 24px;
@@ -59,7 +61,7 @@
     --fields: 32px;
   }
 
-  --column: calc((100vw - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
+  --column: calc((100vw - (var(--columns) - 1) * var(--gutter) - var(--fields) - var(--scrollbar)) / var(--columns));
   @media (min-width: $md1+px) {
     --column: calc((1280px - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
   }
@@ -67,6 +69,7 @@
   --3columns: calc(var(--column) * 3 + var(--gutter) * 2);
   --4columns: calc(var(--column) * 4 + var(--gutter) * 3);
   --8columns: calc(var(--column) * 8 + var(--gutter) * 7);
+  --12columns: calc(var(--column) * 12 + var(--gutter) * 11);
 
   --transition: 0.2s;
   // --header-height: 79px;
@@ -80,17 +83,32 @@
   // --grey: #e4e5e8;
   // --red: #bf0000;
   // --broom: #c05a17;
-  --orange: #ed6824;
-  --orange-light: #f9b277;
   // --pink: #e08d9d;
   // --orange-ok: #f2720c;
   // --green: #2ab194;
   // --green-wa: #12af0a;
-  --blue: #0083c1;
-  --blue-light: #d9eafb;
   // --blue-tg: #2ca5e0;
   // --blue-vk: #587ea3;
   // --gold: #edd146;
+
+  --jade: #00775F;        /* Тёмно-зелёный (нефритовый) */
+  --turquoise: #00B5AA;   /* Бирюзовый */
+  --lime: #B1D355;        /* Лаймовый */
+  --apricot: #F89F65;     /* Абрикосовый */
+  --gold: #DCA90E;        /* Золотой */
+  --graphite: #4D4D4F;    /* Графитовый */
+  --ocean: #00749E;       /* Океанский синий */
+  --lavender: #9056A3;    /* Лавандовый */
+  --berry: #AE2763;       /* Ягодный */
+  --periwinkle: #685BC7;  /* Барвинковый */
+  --blush: #DE82A9;       /* Розоватый (румянец) */
+  --scarlet: #FF1B22;     /* Алый */
+
+
+  --orange: #ed6824;
+  --orange-light: #f9b277;
+  --blue: #0083c1;
+  --blue-light: #d9eafb;
 
   // --black: #000000;
   --dark: #2b2d33;
@@ -120,8 +138,9 @@
   // --bg-gray: var(--gray);
 
   --border: var(--orange);
+  --border-second: var(--white);
   --border-accent: var(--blue);
-  // --border-light: var(--white-40);
+  --border-light: var(--blue-light);
   // --border-second: var(--white);
   // --border-gray: var(--gray);
 

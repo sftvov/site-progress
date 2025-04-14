@@ -38,45 +38,47 @@ footer.footer
   .footer__container.container
     .footer__grid
       each column, columnIndex in footerColumns
-        .footer__column
-          h2.footer__column-title= column.title
+        .footer__column-wrapper
+          .footer__column
+            h2.footer__column-title= column.title
+            .footer__column-body
+              ul.footer__list
+                each item, itemIndex in column.list
+                  li.footer__list-item
+                    a.footer__list-link(class=(columnIndex === 2) ? (itemIndex === 1 ? 'footer__list-link--accent' : (itemIndex === 2 ? 'footer__list-link--bright' : false)) : false href="#")= item
+      .footer__column-wrapper
+        .footer__column.footer__column--last
+          h2.footer__column-title Контакты
           .footer__column-body
-            ul.footer__list
-              each item, itemIndex in column.list
-                li.footer__list-item
-                  a.footer__list-link(class=(columnIndex === 2) ? (itemIndex === 1 ? 'footer__list-link--accent' : (itemIndex === 2 ? 'footer__list-link--bright' : false)) : false href="#")= item
-      .footer__column.footer__column--last
-        h2.footer__column-title Контакты
-        .footer__column-body
-          p.footer__column-p
-            | Санкт-Петербург, 199004, 
-            br
-            | Средний пр-т Васильевского 
-            br
-            | острова, д. 36/40
-            br
-            a.footer__column-link(href="tel:88123318888")  8 (812) 331-88-88
-            br
-            a.footer__column-link(href="tel:88003338844")  8 (800) 333-88-44
-          p.footer__column-p
-            | Москва, 125040, 
-            br 
-            | 3-я ул. Ямского Поля, д. 2, к#[span._x2-hide орп]. 1
-            br
-            a.footer__column-link(href="tel:84952287020") 8 (495) 228-70-20
-          p.footer__column-p Пн-Пт с 8:00 до 18:00 (Мск)
-          p.footer__column-p
-            a.footer__column-link(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
-        .footer__icons
-          a.footer__icon.footer__icon--fill(href="https://t.me/cntiprogress")
-            svg.footer__icon-svg
-              use(xlink:href='img/sprite/symbols.svg#vk')
-          a.footer__icon.footer__icon--stroke(href="https://vk.com/cntiprogress")
-            svg.footer__icon-svg
-              use(xlink:href='img/sprite/symbols.svg#tg')
-          a.footer__icon.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
-            svg.footer__icon-svg
-              use(xlink:href='img/sprite/symbols.svg#mail')
+            p.footer__column-p
+              | Санкт-Петербург, 199004, 
+              br
+              | Средний пр-т Васильевского 
+              br._x4-hide
+              | острова, д. 36/40
+              br
+              a.footer__column-link(href="tel:88123318888")  8 (812) 331-88-88
+              br
+              a.footer__column-link(href="tel:88003338844")  8 (800) 333-88-44
+            p.footer__column-p
+              | Москва, 125040, 
+              br 
+              | 3-я ул. Ямского Поля, д. 2, к#[span._x2-hide орп]. 1
+              br
+              a.footer__column-link(href="tel:84952287020") 8 (495) 228-70-20
+            p.footer__column-p Пн-Пт с 8:00 до 18:00 (Мск)
+            p.footer__column-p
+              a.footer__column-link(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
+          .footer__icons
+            a.footer__icon.footer__icon--fill(href="https://vk.com/cntiprogress")
+              svg.footer__icon-svg
+                use(xlink:href='img/sprite/symbols.svg#vk')
+            a.footer__icon.footer__icon--stroke(href="https://t.me/cntiprogress")
+              svg.footer__icon-svg
+                use(xlink:href='img/sprite/symbols.svg#tg')
+            a.footer__icon.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
+              svg.footer__icon-svg
+                use(xlink:href='img/sprite/symbols.svg#mail')
       .footer__additional
         iframe(src="https://yandex.ru/sprav/widget/rating-badge/43759856765" width="150" height="50" frameborder="0")
         p.footer__additional-p 

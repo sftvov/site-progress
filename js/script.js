@@ -26,7 +26,7 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/functions/webp.js');
 @@include('../../web-template/src/functions/slide.js');
 @@include('../../web-template/src/functions/activator_v3.0.2_now.js');
-@@include('../../web-template/src/functions/body_lock.js');
+@@include('../../web-template/src/functions/body_lock_v1.2.0_now.js');
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
 //include('../../web-template/src/functions/calculateAge.js');
@@ -34,8 +34,8 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/js-elements/quantity.js');
 //include('../../web-template/src/js-elements/calendar.js');
 //include('../../web-template/src/js-elements/search.js');
-//include('../../web-template/src/js-elements/indicator.js');
-//include('../../web-template/src/js-elements/tabs_v2.0.0_now.js');
+@@include('../../web-template/src/js-elements/indicator.js');
+@@include('../../web-template/src/js-elements/tabs_v2.0.0_now.js');
 //include('../../web-template/src/js-elements/popups.js');
 //include('../../web-template/src/js-elements/gallery.js');
 //include('../../web-template/src/js-elements/scroll.js');
@@ -134,15 +134,17 @@ new Activator('.burger', {
 //include('_swipers.js');
 //include('_map.js');
 
-// window.onload = () => {
-// 	headerHeight();
-// 	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-// 	// addTouchClassForMobile();
-// }
+window.onload = () => {
+	// headerHeight();
+	calculateScrollbarWidth();
+	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+	// addTouchClassForMobile();
+}
 
-// window.onresize = () => {
-// 	headerHeight();
-// 	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-// 	// addTouchClassForMobile();
-// }
+window.onresize = () => {
+	// headerHeight();
+	calculateScrollbarWidth();
+	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+	// addTouchClassForMobile();
+}
 

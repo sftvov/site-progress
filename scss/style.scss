@@ -27,13 +27,13 @@ body {
 // }
 
 .wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
   // position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  // max-width: $maxWidth+px;
+  max-width: $maxWidth+px;
   min-height: 100%;
   margin: 0 auto;
 }
@@ -119,7 +119,7 @@ body {
 
 // @import 'css-sections/spollersPrice.scss';
 
-// @import 'css-sections/about.scss';
+@import 'css-sections/rubrics.scss';
 // @import 'css-sections/categories.scss';
 
 @import 'css-settings/variables-css';

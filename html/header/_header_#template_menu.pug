@@ -9,7 +9,7 @@ mixin submenuItem(item)
             svg.submenu__link-svg
               use(xlink:href='img/sprite/symbols.svg#chevron-down')
   else
-    a.submenu__item(href="#")(style=item.style ? item.style : false)
+    a.submenu__item(href=item.link ? item.link : "#")(style=item.style ? item.style : false)
       span.submenu__item-name= item.name
       svg.submenu__item-svg
         use(xlink:href='img/sprite/symbols.svg#chevron-down')
@@ -39,7 +39,9 @@ mixin menuItem(item)
     {
       name: "СЕМИНАРЫ И КУРСЫ",
       subitems: [
-        { name: "Семинары и курсы" },
+        { 
+          name: "Семинары и курсы", link: "page-rubrics.html",
+        },
         { name: "Онлайн-обучение" },
         { 
           name: "Дистанционные курсы",
@@ -71,7 +73,7 @@ mixin menuItem(item)
 
 //- Основная разметка меню
 .header-menu
-  .header-menu__mobile-container
+  .header-menu__mobile-container._lmr
     .header-menu__icon-links
       a.header-menu__icon-link(href="#")
         svg.header-menu__icon-link-svg

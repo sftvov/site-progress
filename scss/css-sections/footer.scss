@@ -7,7 +7,7 @@
     padding: 30px 0;
   }
   @media (max-width: $md4+px) {
-    padding: 20px 15px;
+    padding: 20px 0 15px;
   }
 
   &__title {
@@ -17,24 +17,24 @@
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px var(--gutter);
-    @media (max-width: $md3+px) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (min-width: $md3+px) {
+      grid-template-columns: repeat(4, 1fr);
     }
-    @media (max-width: $md4+px) {
-      grid-template-columns: 1fr;
-      justify-items: center;
+    @media (min-width: $md4+px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px var(--gutter);
     }
   }
 
-  &__column {
+  &__column-wrapper {
     position: relative;
-    &--last {
-      grid-row: span 2;
+    @media (min-width: $md4+px) {
+      display: contents;
     }
     @media (max-width: $md4+px) {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
       &:first-child {
         display: none;
       }
@@ -44,12 +44,20 @@
       &::after {
         content: '';
         position: absolute;
-        left: -100vw;
-        bottom: -20px;
-        width: 200vw;
+        bottom: 0;
+        left: -10px;
+        display: block;
+        width: calc(100% + 20px);
         height: 2px;
-        background-color: var(--bg-main);
+        background-color: var(--bg-second);
       }
+    }
+  }
+
+  &__column {
+    position: relative;
+    &--last {
+      grid-row: span 2;
     }
   }
 
@@ -131,6 +139,7 @@
   }
 
   &__column-link {
+    transition-duration: var(--transition);
     &:hover,
     &:focus-visible {
       color: var(--hover);
