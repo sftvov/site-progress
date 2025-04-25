@@ -1,5 +1,4 @@
 .checkbox {
-  line-height: 0;
   &__input {
     display: none;
     &:checked {
@@ -11,30 +10,53 @@
     }
   }
   &__span {
+    @extend .p2;
     position: relative;
     display: flex;
     align-items: center;
     gap: 5px;
     &::before {
       transition-duration: var(--transition);
-      content: url(../img/icons/checkbox-empty.svg);
+      content: url(../img/icons/checkbox-empty-l.svg);
+      line-height: 0;
     }
     &::after {
       transition-duration: var(--transition);
-      content: url(../img/icons/checkbox-check.svg);
+      content: url(../img/icons/checkbox-check-l.svg);
+      line-height: 0;
       position: absolute;
       left: 0;
       opacity: 0;
+    }
+    @media (max-width: $md2+px) {
+      &::before {
+        content: url(../img/icons/checkbox-empty-m.svg);
+      }
+      &::after {
+        content: url(../img/icons/checkbox-check-m.svg);
+      }
     }
   }
 }
 
 .datepicker {
   &__input {
-    @extend .p1;
-    width: 91px;
-    padding: 3px 0 3px 8px;
+    transition-duration: var(--transition);
+    @extend .p2;
+    text-align: center;
+    width: 100%;
+    padding: 4px;
     border: 2px solid var(--border-light);
+    @media (min-width: $md2+px) {
+      width: 91px;
+    }
+    @media (min-width: $md4+px) {
+      width: 81px;
+    }
+    &:focus {
+      outline: none;
+      border: 2px solid var(--border);
+    }
   }
 
   // &__header {

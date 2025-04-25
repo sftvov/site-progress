@@ -152,21 +152,38 @@
 }
 
 .button {
+  transition-duration: var(--transition);
   @extend .btn;
-  padding: 8px;
-  border: 2px solid var(--border);
 }
 
 .button--primary {
   color: var(--text-second);
   @extend .button;
+  padding: 10px;
   background-color: var(--bg-bright);
+  @media (max-width: $md2+px) {
+    padding: 5px 10px;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-accent);
+  }
 }
 
 .button--second {
   color: var(--text-bright);
   @extend .button;
+  padding: 8px;
   background-color: var(--bg-main);
+  border: 2px solid var(--border);
+  @media (max-width: $md2+px) {
+    padding: 3px 8px;
+  }
+  &:hover,
+  &:focus-visible {
+    color: var(--text-accent);
+    border-color: var(--border-accent);
+  }
 }
 
 .main {
