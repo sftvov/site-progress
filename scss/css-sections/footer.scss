@@ -88,52 +88,58 @@
   }
 
   &__list-item {
-    $lh: 14;
-    line-height: round-to(math.div($lh, $fz), 3);
+    @extend .p1;
+    // $lh: 14;
+    // line-height: round-to(math.div($lh, $fz), 3);
     margin-top: 15px;
     @media (max-width: $md2+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 14;
-      line-height: round-to(math.div($lh, $fs), 3);
+      // $fs: 12;
+      // font-size: math.div($fs, $fz) + em;
+      // $lh: 14;
+      // line-height: round-to(math.div($lh, $fs), 3);
       margin-top: 10px;
     }
   }
 
   &__list-link {
     transition-duration: var(--transition);
+    position: relative;
     &:hover,
     &:focus-visible {
       color: var(--hover);
     }
+
+    &--bright,
+    &--accent {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        translate: 0 -50%;
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
     &--bright {
-      color: var(--text-bright);
-      &:hover,
-      &:focus-visible {
-        color: var(--hover-light);
+      &::before {
+        background-color: var(--bg-bright);
       }
     }
 
     &--accent {
-      color: var(--text-accent);
-      &:hover,
-      &:focus-visible {
-        color: var(--hover-light);
+      &::before {
+        background-color: var(--bg-accent);
       }
     }
   }
 
   &__column-p {
-    $fs: 14;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
+    @extend .p1;
     margin-top: 14px;
     @media (max-width: $md2+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fs), 3);
       margin-top: 10px;
     }
   }
@@ -201,11 +207,9 @@
 
   &__additional-p {
     color: var(--text-light);
-    $fs: 14;
-    font-size: math.div($fs, $fz) + em;
-    font-style: italic;
     $lh: 14;
-    line-height: round-to(math.div($lh, $fs), 3);
+    line-height: round-to(math.div($lh, $fz), 3);
+    font-style: italic;
     @media (max-width: $md2+px) {
       $fs: 12;
       font-size: math.div($fs, $fz) + em;

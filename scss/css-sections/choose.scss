@@ -1,0 +1,64 @@
+.choose {
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__main {
+    display: flex;
+    gap: var(--gutter);
+    @media (min-width: $md1+px) {
+      margin-inline: var(--column);
+      padding: 0 var(--gutter);
+    }
+  }
+
+  &__block {
+    flex: var(--3columns) 0 0;
+    @media (max-width: $md1+px) {
+      flex-basis: var(--4columns);
+    }
+  }
+
+  &__block-name {
+    color: var(--text-accent);
+    @extend .t2;
+  }
+
+  &__checkboxes {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    padding: 3px 0;
+  }
+
+  &__dates {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__date-span {
+    color: var(--text-accent);
+    @extend .p1;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--gutter);
+    flex-grow: 1;
+  }
+
+  &__button {
+    flex: var(--2columns) 0 0;
+  }
+}

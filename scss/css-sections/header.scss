@@ -141,8 +141,6 @@
   &__mail {
     transition-duration: var(--transition);
     stroke: var(--text-main);
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -261,8 +259,6 @@
   }
 
   &__search-input {
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
     flex-grow: 1;
     padding: 0 18px;
     @media (max-width: $md2+px) {
@@ -464,8 +460,6 @@
     transition-duration: var(--transition);
     color: var(--text-second);
     stroke: var(--text-second);
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fz), 3);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -744,12 +738,6 @@
       stroke: var(--text-main);
       position: relative;
     }
-    @media (max-width: $md2+px) {
-      $fs: 16;
-      font-size: math.div($fs, $fz) + em;
-      font-weight: 700;
-      text-align: left;
-    }
     @media (max-width: $md3+px) {
       stroke: var(--text-main);
       &:hover,
@@ -765,19 +753,23 @@
 
   &__item-name {
     font-family: 'RobotoCondensed';
-    $fs: 20;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
     padding: 12px 0;
-    @media (max-width: $md1+px) {
-      $fs: 14;
+    @media (min-width: $md1+px) {
+      $fs: 20;
       font-size: math.div($fs, $fz) + em;
       $lh: 20;
       line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (max-width: $md1+px) {
       padding: 7px 0;
     }
     @media (max-width: $md2+px) {
+      $fs: 16;
+      font-size: math.div($fs, $fz) + em;
+      font-weight: 700;
+      $lh: 20;
+      line-height: round-to(math.div($lh, $fs), 3);
+      text-align: left;
       padding: 10px 0;
     }
     @media (max-width: $md3+px) {
@@ -923,8 +915,6 @@
     transition-duration: var(--transition);
     text-align: left;
     @media (min-width: $md2+px) {
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fz), 3);
       break-before: avoid-column;
       display: flex;
       align-items: center;

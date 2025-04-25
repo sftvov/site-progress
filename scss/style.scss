@@ -12,7 +12,8 @@ body {
   font-size: var(--fs);
   font-weight: 400;
   font-style: normal;
-  line-height: 1.2;
+  $lh: 20;
+  line-height: round-to(math.div($lh, $fz), 3);
   letter-spacing: 0;
   height: 100%;
   background-color: var(--bg-main);
@@ -39,74 +40,25 @@ body {
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   width: 100%;
   // max-width: $maxWidth + px;
   flex: 1 1 auto;
   margin-top: var(--header-height);
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: $maxContainer + px;
-
-  /* Fixed container variant */
-  // @media (max-width: $md1+px) {
-  //   max-width: $laptopContainer + px;
-  // }
-  // @media (max-width: $md2+px) {
-  //   max-width: $padContainer + px;
-  // }
-  // @media (max-width: $md3+px) {
-  //   max-width: $mobileContainer + px;
-  // }
-  // @media (max-width: $md4+px) {
-  //   max-width: 100%;
-  //   padding-left: math.div($mobileSpace, 2) + px;
-  //   padding-right: math.div($mobileSpace, 2) + px;
-  // }
-
-  /* Adaptive container variant 1 */
-  // padding-left: 60px;
-  // padding-right: 60px;
-  // @include adaptiv-value-under('padding-left', 60, 10, $md1, $md4);
-  // @include adaptiv-value-under('padding-right', 60, 10, $md1, $md4);
-  // @media (max-width: $md4+px) {
-  //   padding-left: 10px;
-  //   padding-right: 10px;
-  // }
-
-  /* Adaptive container variant 2 */
-  padding-left: 40px;
-  padding-right: 40px;
-  @media (max-width: $md2+px) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  @media (max-width: $md4+px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  // @media (max-width: $md1+px) {
-  //   padding-left: 10px;
-  //   padding-right: 10px;
-  // }
-}
-
 // @import '../../web-template/src/css-libs/lightgallery';
 // @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
 
 @import 'css-settings/functions';
+@import 'css-sections/content';
 @import 'css-settings/elements';
 
 // @import 'css-sections/popups';
-// @import 'css-sections/breadcrumbs';
 @import 'css-sections/header';
 @import 'css-sections/footer';
-
-// @import 'css-sections/content';
+@import 'css-sections/breadcrumbs';
 // @import 'css-sections/frame-navigation';
 
 // @import 'css-sections/form-sign.scss';
@@ -119,7 +71,11 @@ body {
 
 // @import 'css-sections/spollersPrice.scss';
 
+@import 'css-sections/choose.scss';
+@import 'css-sections/programms.scss';
+@import 'css-sections/recommended.scss';
 @import 'css-sections/rubrics.scss';
-// @import 'css-sections/categories.scss';
+@import 'css-sections/subrubrics.scss';
+@import 'css-sections/trust.scss';
 
 @import 'css-settings/variables-css';

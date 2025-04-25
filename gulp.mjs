@@ -1,4 +1,4 @@
-export const font_names = '{Roboto,RobotoCondensed}';
+export const font_names = '{Roboto,RobotoCondensed,Intro}';
 
 // const maxWidth = 2560;
 // const maxContainer = 1920;
@@ -31,4 +31,4 @@ export const renameObj = {
 	name: 'in-',
 };
 // gulp getHtml
-export const pugFile = 'gallery/_gallery_$common';
+export const pugFile = 'programms/_programms_main';

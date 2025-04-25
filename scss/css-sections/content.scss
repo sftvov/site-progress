@@ -11,37 +11,173 @@
 
 // .subtitle {
 //   color: var(--text-bright);
-//   $fs: 24;
-//   font-size: math.div($fs, $fz) + em;
 //   font-weight: 700;
-//   @media (max-width: $md4+px) {
-//     $fs: 20;
-//     font-size: math.div($fs, $fz) + em;
-//     line-height: 1.3;
-//   }
 // }
 
-// .title,
-// .text :is(h1, h2, h3) {
-//   $fs: 32;
-//   font-size: math.div($fs, $fz) + em;
-//   $lh: 38;
-//   font-weight: 400;
-//   line-height: round-to(math.div($lh, $fs), 4);
-//   text-transform: uppercase;
-//   @media (max-width: $md2+px) {
-//     $fs: 20;
-//     font-size: math.div($fs, $fz) + em;
-//     $lh: 24;
-//     line-height: round-to(math.div($lh, $fs), 3);
-//   }
-// }
+.section {
+  width: 100%;
+  margin: 60px 0;
+  @media (max-width: $md2+px) {
+    margin: 50px 0;
+  }
+  @media (max-width: $md3+px) {
+    margin: 40px 0;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $maxContainer + px;
+  padding-left: 40px;
+  padding-right: 40px;
+  @media (max-width: $md2+px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @media (max-width: $md4+px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.body {
+  padding-top: 60px;
+  border-top: 2px solid var(--border-light);
+  @media (max-width: $md2+px) {
+    padding-top: 50px;
+  }
+  @media (max-width: $md3+px) {
+    padding-top: 40px;
+  }
+}
+
+.t1 {
+  font-family: 'RobotoCondensed';
+  $fs: 24;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 30;
+  line-height: round-to(math.div($lh, $fs), 3);
+  text-transform: uppercase;
+  @media (max-width: $md2+px) {
+    $fs: 20;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 24;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+  @media (max-width: $md4+px) {
+    $fs: 16;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.title {
+  @extend .t1;
+  text-align: center;
+}
+
+.t2 {
+  font-family: 'RobotoCondensed';
+  $fs: 18;
+  font-size: math.div($fs, $fz) + em;
+  // $lh: 24;
+  // line-height: round-to(math.div($lh, $fs), 3);
+  line-height: 1.334;
+  @media (max-width: $md2+px) {
+    $fs: 16;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.a1 {
+  font-family: 'Intro';
+  $fs: 48;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 60;
+  line-height: round-to(math.div($lh, $fs), 3);
+  @media (max-width: $md3+px) {
+    $fs: 40;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 60;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.p1 {
+  @media (max-width: $md2+px) AND (min-width: $md4+px) {
+    $fs: 13;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 18;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.p2 {
+  $fs: 13;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 18;
+  line-height: round-to(math.div($lh, $fs), 3);
+  @media (max-width: $md2+px) {
+    $fs: 12;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 18;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.b1 {
+  font-family: 'RobotoCondensed';
+  text-transform: uppercase;
+  @media (min-width: $md2+px) {
+    $fs: 16;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 22;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.btn {
+  font-weight: 700;
+  text-align: center;
+  @media (max-width: $md2+px) {
+    $fs: 12;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 20;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
+}
+
+.button {
+  @extend .btn;
+  padding: 8px;
+  border: 2px solid var(--border);
+}
+
+.button--primary {
+  color: var(--text-second);
+  @extend .button;
+  background-color: var(--bg-bright);
+}
+
+.button--second {
+  color: var(--text-bright);
+  @extend .button;
+  background-color: var(--bg-main);
+}
+
+.main {
+  margin-top: 40px;
+  @media (max-width: $md2+px) {
+    margin-top: 30px;
+  }
+}
 
 // .text {
 //   & :is(h1, h2, h3) {
-//     $fs: 32;
-//     $lh: 49;
-//     line-height: round-to(math.div($lh, $fs), 4);
 //     margin-bottom: 40px;
 //   }
 //   & p {

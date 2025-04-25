@@ -38,9 +38,9 @@
       color: "turquoise",
       rubrics: [
         { name: "Энергосбережение", courses: 12 },
-        { name: "Экономика и&nbsp;инвестиции&nbsp;в энергетике", courses: 9 },
-        { name: "Правовое регулирование в энергетике", courses: 5 },
-        { name: "Эксплуатация объектов ТЭК", courses: 20 }
+        { name: "Экономика и&nbsp;инвестиции&nbsp;в&nbsp;энергетике", courses: 9 },
+        { name: "Правовое регулирование в&nbsp;энергетике", courses: 5 },
+        { name: "Эксплуатация объектов&nbsp;ТЭК", courses: 20 }
       ]
     },
     construction: {
@@ -152,14 +152,14 @@
       title: "Связь",
       color: "ocean",
       rubrics: [
-        { name: "Проектирование и&nbsp;строительство объектов связи", courses: 12 }
+        { name: "Проектирование и&nbsp;строительство объектов&nbsp;связи", courses: 12 }
       ]
     },
     government: {
       title: "Государственное и&nbsp;муниципальное управление",
       color: "lavender",
       rubrics: [
-        { name: "Организация деятельности&nbsp;учреждений и&nbsp;органов власти", courses: 74 },
+        { name: "Организация деятельности&nbsp;учреждений и&nbsp;органов&nbsp;власти", courses: 74 },
         { name: "Бюджетное финансирование", courses: 48 },
         { name: "Некоммерческие организации", courses: 3 }
       ]
@@ -168,7 +168,7 @@
       title: "Социальная защита",
       color: "berry",
       rubrics: [
-        { name: "Организация работы органов социальной защиты населения", courses: 4 },
+        { name: "Организация работы органов&nbsp;социальной защиты населения", courses: 4 },
         { name: "Технологии&nbsp;социального обслуживания", courses: 3 }
       ]
     },
@@ -177,8 +177,8 @@
       color: "berry",
       rubrics: [
         { name: "Организация здравоохранения", courses: 21 },
-        { name: "Право в здравоохранении", courses: 5 },
-        { name: "Экономика и финансы в здравоохранении", courses: 10 }
+        { name: "Право в&nbsp;здравоохранении", courses: 5 },
+        { name: "Экономика и финансы в&nbsp;здравоохранении", courses: 10 }
       ]
     },
     education: {
@@ -195,7 +195,7 @@
       title: "Культура",
       color: "blush",
       rubrics: [
-        { name: "Управление в сфере культуры", courses: 4 },
+        { name: "Управление в&nbsp;сфере культуры", courses: 4 },
         { name: "Театры. ДК", courses: 9 },
         { name: "Музеи. Библиотеки", courses: 18 },
         { name: "Организация культурно-досуговых мероприятий", courses: 6 },
@@ -231,10 +231,10 @@
   };
 
 
-section.rubric-tabs
+section.rubric-tabs.section
   .rubric-tabs__container.container
-    h1.rubric-tabs__title Семинары и&nbsp;курсы по направлениям
-    .rubric-tabs__body._tabs
+    h1.rubric-tabs__title.title Семинары и&nbsp;курсы по направлениям
+    .rubric-tabs__main.main._tabs
       .rubric-tabs__tab-titles
         .rubric-tabs__indicator._tabs-indicator
         button.rubric-tabs__tab-title._active._tabs-title 
@@ -247,27 +247,21 @@ section.rubric-tabs
           | Онлайн
       .rubric-tabs__tab-blocks._tabs-blocks
         .rubric-tabs__tab-block._tabs-block._active
-          .rubrics
-            .rubrics__body
-              each group in rubricsArchive
-                .rubrics__group(style="--group-color:var(--" + group.color + ")")
-                  h2.rubrics__group-title
-                    span.rubrics__group-title-square
-                    | !{group.title} 
-                  .rubrics__group-body
-                    each rubric in group.rubrics
-                      p.rubrics__item
-                        a.rubrics__link(href="#") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}
+          each group in rubricsArchive
+            .rubrics-group(style="--group-color:var(--" + group.color + ")")
+              h2.rubrics-group__title
+                span.rubrics-group__title-main !{group.title} 
+              .rubrics-group__body
+                each rubric in group.rubrics
+                  p.rubrics-group__rubric
+                    a.rubrics-group__link(href="archive-courses.html") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}
         .rubric-tabs__tab-block._tabs-block
-          .rubrics
-            .rubrics__body
-              each group in rubricsArchive
-                .rubrics__group(style="--group-color:var(--" + group.color + ")")
-                  h2.rubrics__group-title
-                    span.rubrics__group-title-square
-                    | !{group.title} 
-                  .rubrics__group-body
-                    -
-                      rubric = group.rubrics[0]
-                    p.rubrics__item
-                      a.rubrics__link(href="#") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}
+          each group in rubricsArchive
+            .rubrics-group(style="--group-color:var(--" + group.color + ")")
+              h2.rubrics-group__title
+                span.rubrics-group__title-main !{group.title} 
+              .rubrics-group__body
+                -
+                  rubric = group.rubrics[0]
+                p.rubrics-group__rubric
+                  a.rubrics-group__link(href="archive-courses.html") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}

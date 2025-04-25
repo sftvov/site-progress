@@ -1,0 +1,110 @@
+-
+  nearestProgramms = [
+    {
+      title: 'Образование',
+      date: '(15–18 апреля)',
+      name: 'Государственный контроль (надзор) в&nbsp;сфере образования',
+      color: 'periwinkle',
+    },
+    {
+      title: 'Энергетика',
+      date: '(15–18 апреля)',
+      name: 'Наружное освещение. Проектирование, монтаж, эксплуатация',
+      color: 'turquoise',
+    },
+    {
+      title: 'Промышленность',
+      date: '(15–19 апреля)',
+      name: 'Сварочное производство: организация, подготовка, контроль и&nbsp;управление',
+      color: 'jade',
+    },
+    {
+      title: 'Промышленность',
+      date: '(15–18 апреля)',
+      name: 'Выполнение опытно-конструкторских работ в&nbsp;соответствии с ГОСТ РВ 15.203-2001, ГОСТ РВ 15.205-2004',
+      color: 'jade',
+    },
+  ]
+
+-
+  newProgramms = [
+    {
+      title: 'Управление персоналом',
+      date: '(15–18 апреля)',
+      name: 'Инструменты управления персоналом в&nbsp;период дефицита кадров',
+      color: 'apricot',
+    },
+    {
+      title: 'HoReCa',
+      date: '(22–25 апреля)',
+      name: 'Бережливое производство в&nbsp;индустрии питания',
+      color: 'scarlet',
+    },
+    {
+      title: 'Промышленность',
+      date: '(23–25 апреля)',
+      name: 'Применение методологии FMEA при разработке конструкторской документации',
+      color: 'jade',
+    },
+    {
+      title: 'Промышленность',
+      date: '(28–30 апреля)',
+      name: 'Особенности подготовки и&nbsp;проведения конкурсных процедур на закупку услуг обязательного аудита бухгалтерской (финансовой) отчетности организации',
+      color: 'jade',
+    },
+    {
+      title: 'Экономика. Финансы. Бухгалтерский учет',
+      date: '(28–30 апреля)',
+      name: 'Налогообложение доходов физических лиц и&nbsp;страховые взносы. Сложные вопросы исчисления и&nbsp;уплаты',
+      color: 'gold',
+    },
+    {
+      title: 'Управление персоналом',
+      date: '(6–7 мая)',
+      name: 'Работник и&nbsp;работодатель: кадровые, финансовые и&nbsp;правовые аспекты трудовых отношений в&nbsp;2025 году',
+      color: 'apricot',
+    },
+    {
+      title: 'Строительство и&nbsp;инженерные сети',
+      date: '(7–8 мая)',
+      name: 'Правовые, финансовые, учетные и&nbsp;налоговые аспекты долевого строительства многоквартирных домов и&nbsp;иных объектов недвижимости',
+      color: 'turquoise',
+    },
+    {
+      title: 'Промышленность',
+      date: '(12–14 мая)',
+      name: 'Организация и&nbsp;проведение сервисного обслуживания изделий военной техники',
+      color: 'jade',
+    },
+  ]
+  
+
+
+
+section.programms.section
+  .programms__container.container
+    .programms__body.body
+      .programms__block.programms__block--nearest
+        h2.programms__title.t1 ближайшие курсы
+        .programms__main.main
+          each group in nearestProgramms
+            .rubrics-group(style="--group-color:var(--" + group.color + ")")
+              h2.rubrics-group__title
+                span.rubrics-group__title-main !{group.title} 
+                |  
+                span.rubrics-group__date !{group.date}
+              .rubrics-group__body
+                p.rubrics-group__rubric
+                  a.rubrics-group__link(href="archive-courses.html") !{group.name}
+      .programms__block.programms__block--new
+        h2.programms__title.t1 новые программы
+        .programms__main.main
+          each group in newProgramms
+            .rubrics-group(style="--group-color:var(--" + group.color + ")")
+              h2.rubrics-group__title
+                span.rubrics-group__title-main !{group.title} 
+                |  
+                span.rubrics-group__date !{group.date}
+              .rubrics-group__body
+                p.rubrics-group__rubric
+                  a.rubrics-group__link(href="archive-courses.html") !{group.name}
