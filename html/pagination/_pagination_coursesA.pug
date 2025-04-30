@@ -1,0 +1,15 @@
+-
+  const totalPages = 10; // Общее количество страниц
+  const currentPage = 2; // Текущая активная страница
+
+.courses__pagination.pagination
+  if currentPage > 1
+    a.pagination__prev(href=`?page=${currentPage - 1}`) Назад
+  .pagination__pages
+    each page in Array.from({length: totalPages}, (_, i) => i + 1)
+      a.pagination__num(
+        href=`?page=${page}`,
+        class=(page === currentPage ? '_active' : '')
+      )= page
+  if currentPage < totalPages
+    a.pagination__next(href=`?page=${currentPage + 1}`) Вперед

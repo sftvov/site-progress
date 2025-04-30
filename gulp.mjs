@@ -31,4 +31,4 @@ export const renameObj = {
 	name: 'in-',
 };
 // gulp getHtml
-export const pugFile = 'programms/_programms_main';
+export const pugFile = 'pagination/_pagination_coursesA';

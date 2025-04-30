@@ -1,5 +1,5 @@
 -
-  const courses = [
+  searchResults = [
     {
       name: "Строительство и эксплуатация автомобильных дорог",
       date: "25 октября - 6 ноября 2025"
@@ -81,7 +81,7 @@ header.header
             svg.header__search-close-svg
               use(xlink:href='img/sprite/symbols.svg#x-close')
           .header__search-results.search-results
-            each course in courses
+            each course in searchResults
               a.search-results__item(href="#") 
                 p.search-results__number 71455
                 p.search-results__name !{course.name}

@@ -1,4 +1,5 @@
 .checkbox {
+  cursor: pointer;
   &__input {
     display: none;
     &:checked {
