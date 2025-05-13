@@ -44,39 +44,6 @@
   &__main {
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    @media (max-width: $md2+px) {
-      gap: 15px;
-    }
-  }
-
-  &__list-item {
-    @extend .p1;
-    display: flex;
-    &::before {
-      content: '';
-      vertical-align: top;
-      display: inline-block;
-      flex: 3px 0 0;
-      height: 3px;
-      margin: 8px 10px 9px 9px;
-      border-radius: 50%;
-      background-color: var(--text-main);
-    }
-    &--bright {
-      &::before {
-        background-color: var(--text-bright);
-      }
-    }
-  }
-
-  &__list-item-bright {
-    color: var(--text-bright);
-  }
-
   &__photos {
     display: flex;
     gap: var(--gutter);

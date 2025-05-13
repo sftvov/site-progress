@@ -1,0 +1,12 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('ПОИСК (РЕЗУЛЬТАТЫ)', 'description', [], [])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main.page#page
+				include html/breadcrumbs/_breadcrumbs_search
+				include html/results/_results_search
+			include html/footer/_footer_$common
+		+js('')

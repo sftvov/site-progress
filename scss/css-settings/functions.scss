@@ -33,6 +33,18 @@ svg {
 //   display: none;
 // }
 
+._n1-hide {
+  @media (min-width: $md1+px) {
+    display: none;
+  }
+}
+
+._x1-hide {
+  @media (max-width: $md1+px) {
+    display: none;
+  }
+}
+
 ._n2-hide {
   @media (min-width: $md2+px) {
     display: none;

@@ -1,10 +1,20 @@
 %pagination-item {
   @extend .t2;
+  transition-duration: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 45px;
   border: 2px solid var(--border-light);
+  @media (max-width: $md2+px) {
+    height: 35px;    
+  }
+  &:hover,
+  &:focus-visible {
+    color: var(--text-second);
+    background-color: var(--bg-bright);
+    border: none;
+  }
 }
 
 .pagination {
@@ -16,22 +26,23 @@
   }
   @media (max-width: $md4+px) {
     flex-wrap: wrap;
+    gap: 15px var(--gutter);
   }
   &__prev {
     @extend %pagination-item;
     flex: 95px 0 0;
     @media (max-width: $md4+px) {
-      flex-basis: var(--2columns);
+      flex: var(--2columns) 0 0;
     }
   }
 
   &__pages {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     @media (max-width: $md4+px) {
-      order: 1;
+      order: -1;
+      justify-content: flex-start;
       flex-basis: 100%;
     }
   }
@@ -39,6 +50,9 @@
   &__num {
     @extend %pagination-item;
     min-width: 45px;
+    @media (max-width: $md2+px) {
+      min-width: 35px;
+    }
     &._active {
       color: var(--text-second);
       background-color: var(--bg-bright);
