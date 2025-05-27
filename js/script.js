@@ -30,6 +30,7 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
 //include('../../web-template/src/functions/calculateAge.js');
+@@include('../../web-template/src/js-elements/all_checkboxes.js');
 //include('../../web-template/src/js-elements/select.js');
 //include('../../web-template/src/js-elements/quantity.js');
 //include('../../web-template/src/js-elements/calendar.js');
@@ -39,7 +40,7 @@ const md5 = getComputedStyle(document.documentElement).getPropertyValue('--md5')
 //include('../../web-template/src/js-elements/popups.js');
 //include('../../web-template/src/js-elements/gallery.js');
 //include('../../web-template/src/js-elements/scroll.js');
-//include('../../web-template/src/js-elements/spollers.js');
+@@include('../../web-template/src/js-elements/spollers_v2.0.0_now.js');
 //include('../../web-template/src/js-elements/items_v2.0.0_now.js');
 
 // ----------------------------------------------------------------------
@@ -74,7 +75,6 @@ new Activator('._menu-btn', {
 		}
 	}
 }, true);
-
 
 new Activator('.burger', {
 	removed: ['.header-menu__mobile-container'],

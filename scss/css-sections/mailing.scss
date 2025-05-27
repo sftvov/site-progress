@@ -1,0 +1,239 @@
+.mailing {
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+  }
+
+  &__main {
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @media (max-width: $md2+px) {
+      gap: 50px;
+    }
+  }
+
+  &__top {
+    justify-content: flex-end;
+    @include adaptiv-value-on('height', 457, 361, $md1, $md2);
+    @include adaptiv-value-on('padding-bottom', 40, 20, $md1, $md2);
+    @media (min-width: $md2+px) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background: url(../img/mailing/mailing.png) bottom right / calc(100% - 30px) no-repeat;
+    }
+  }
+
+  &__top-title {
+    @include adaptiv-value-on('margin-right', 165, 66, $md1, $md2);
+    @include adaptiv-value-on('top', 135, 104, $md1, $md2);
+    @media (min-width: $md2+px) {
+      color: var(--text-second);
+      position: absolute;
+    }
+    @media (max-width: $md2+px) {
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+
+  &__top-main {
+    @media (min-width: $md2+px) {
+      width: var(--9columns);
+    }
+    @media (max-width: $md2+px) {
+      margin-top: 50px;
+    }
+  }
+
+  &__top-main-title {
+    margin-bottom: 30px;
+    @media (max-width: $md1+px) AND (min-width: $md2+px) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: $md3+px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__top-inputs {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px var(--gutter);
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__top-input-wrapper {
+    position: relative;
+    flex: var(--3columns) 0 0;
+    @media (max-width: $md2+px) {
+      flex: var(--4columns) 0 0;
+    }
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      flex: var(--2columns) 0 0;
+    }
+    &--bright {
+      @extend .mailing__top-input-wrapper;
+      @media (min-width: $md2+px) {
+        &::before {
+          content: '';
+          position: absolute;
+          right: 100%;
+          display: block;
+          width: 40px;
+          height: 40px;
+          background-color: var(--bg-bright);
+        }
+      }
+    }
+    &--accent {
+      @extend .mailing__top-input-wrapper--bright;
+      @media (min-width: $md2+px) {
+        &::before {
+          background-color: var(--bg-accent);
+        }
+      }
+    }
+  }
+
+  &__top-input {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid var(--border-dark);
+    @media (max-width: $md2+px) {
+      padding: 8px;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid var(--border);
+    }
+  }
+
+  &__top-checkboxes-wrapper {
+    flex: var(--3columns) 0 0;
+    @media (max-width: $md2+px) {
+      flex: var(--4columns) 0 0;
+    }
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      flex: var(--2columns) 0 0;
+    }
+  }
+
+  &__top-checkboxes-title {
+    // text-wrap: nowrap;
+  }
+
+  &__top-checkboxes {
+    display: flex;
+    gap: 40px;
+    margin-top: 5px;
+  }
+
+  &__choose {
+  }
+
+  &__choose-title {
+    margin-bottom: 50px;
+    @media (max-width: $md2+px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__choose-main {
+    @media (min-width: $md3+px) {
+      columns: 3 var(--4columns);
+    }
+    @media (min-width: $md4+px) {
+      columns: 2 var(--2columns);
+      gap: var(--gutter);
+    }
+  }
+
+  &__group {
+    break-inside: avoid-column;
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  &__checkbox-wrapper {
+  }
+
+  &__subrubrics {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 7px;
+    padding-left: 27px;
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__action-title {
+    margin-bottom: 30px;
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
+  }
+
+  &__action-submit {
+    width: var(--4columns);
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      width: var(--2columns);
+    }
+  }
+
+  &__action-checkbox {
+    margin-top: 17px;
+    @media (max-width: $md2+px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 30px var(--gutter);
+    @media (min-width: $md2+px) {
+      padding-inline: calc(var(--column) + var(--gutter));
+    }
+    @media (max-width: $md4+px) {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    flex: var(--5columns) 0 0;
+    @media (max-width: $md2+px) {
+      flex: var(--6columns) 0 0;
+    }
+    @media (max-width: $md3+px) {
+      flex: var(--2columns) 0 0;
+    }
+  }
+
+  &__column-title {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+  }
+}

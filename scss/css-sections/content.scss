@@ -154,18 +154,20 @@
 .button {
   transition-duration: var(--transition);
   @extend .btn;
+  display: inline-block;
+  padding: 10px;
+  @media (max-width: $md2+px) {
+    padding: 5px 10px;
+  }
 }
 
 .button--primary {
   color: var(--text-second);
   @extend .button;
-  padding: 10px;
   background-color: var(--bg-bright);
-  @media (max-width: $md2+px) {
-    padding: 5px 10px;
-  }
   &:hover,
   &:focus-visible {
+    color: var(--text-second);
     background-color: var(--bg-accent);
   }
 }
@@ -183,6 +185,17 @@
   &:focus-visible {
     color: var(--text-accent);
     border-color: var(--border-accent);
+  }
+}
+
+.button--accent {
+  color: var(--text-second);
+  @extend .button;
+  background-color: var(--bg-accent);
+  &:hover,
+  &:focus-visible {
+    color: var(--text-second);
+    background-color: var(--bg-dark);
   }
 }
 
@@ -247,7 +260,7 @@
 
 .link {
   transition-duration: var(--transition);
-  @extend .accent;
+  color: var(--text-accent);
   &:hover,
   &:focus-visible {
     color: var(--hover);

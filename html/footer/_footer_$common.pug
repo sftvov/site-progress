@@ -44,13 +44,13 @@ footer.footer
             .footer__column-body
               ul.footer__list
                 each item, itemIndex in column.list
-                  li.footer__list-item
+                  li.footer__list-item.p1
                     a.footer__list-link(class=(columnIndex === 2) ? (itemIndex === 1 ? 'footer__list-link--accent' : (itemIndex === 2 ? 'footer__list-link--bright' : false)) : false href="#")= item
       .footer__column-wrapper
         .footer__column.footer__column--last
           h2.footer__column-title Контакты
           .footer__column-body
-            p.footer__column-p
+            p.footer__column-p.p1
               | Санкт-Петербург, 199004, 
               br
               | Средний пр-т Васильевского 
@@ -60,14 +60,14 @@ footer.footer
               a.footer__column-link(href="tel:88123318888")  8 (812) 331-88-88
               br
               a.footer__column-link(href="tel:88003338844")  8 (800) 333-88-44
-            p.footer__column-p
+            p.footer__column-p.p1
               | Москва, 125040, 
               br 
               | 3-я ул. Ямского Поля, д. 2, к#[span._x2-hide орп]. 1
               br
               a.footer__column-link(href="tel:84952287020") 8 (495) 228-70-20
-            p.footer__column-p Пн-Пт с 8:00 до 18:00 (Мск)
-            p.footer__column-p
+            p.footer__column-p.p1 Пн-Пт с 8:00 до 18:00 (Мск)
+            p.footer__column-p.p1
               a.footer__column-link(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
           .footer__icons
             a.footer__icon.footer__icon--fill(href="https://vk.com/cntiprogress")

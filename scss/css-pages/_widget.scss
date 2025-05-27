@@ -1,0 +1,92 @@
+@use 'sass:math';
+@import '../scss-tools';
+
+.download-plan {
+  cursor: pointer;
+  z-index: 2000;
+  position: fixed;
+  left: 50px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #0083c1;
+  border-radius: 50%;
+  @media (max-width: 1024px) {
+    left: 10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+  }
+  &__svg {
+    stroke: #fff;
+    stroke-width: 2px;
+    width: 20px;
+    height: 25px;
+  }
+
+  &__window {
+    transition-duration: 0.2s;
+    cursor: auto;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 364px;
+    max-width: calc(100vw - 20px);
+    &:not(._active) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__window-top {
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: #0083c1;
+  }
+
+  &__window-top-text {
+    font-family: 'Roboto Condensed', 'RobotoCondensed';
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  &__window-top-svg {
+    cursor: pointer;
+    stroke: #fff;
+    stroke-width: 2px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__window-main {
+    padding: 18px;
+    background: #fff;
+    border: 2px solid #0083c1;
+  }
+
+  &__window-p {
+    color: #555a65;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  &__window-link {
+    color: #0083c1;
+    font-family: 'Roboto Condensed', 'RobotoCondensed';
+    font-size: 18px;
+    line-height: 24px;
+    display: inline-block;
+    margin-top: 20px;
+  }
+}

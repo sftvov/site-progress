@@ -57,12 +57,13 @@
     @media (max-width: $md4+px) {
       width: 35px;
     }
+    &--new {
+      @extend .courses__square;
+      background-color: var(--bg-bright);
+    }
   }
 
-  &__square--new {
-    @extend .courses__square;
-    background-color: var(--bg-bright);
-  }
+  
 
   &__main {
   }
@@ -217,17 +218,17 @@
     @media (max-width: $md4+px) {
       min-width: var(--2columns);
     }
-  }
 
-  &__info-item--link {
-    @extend .course__info-item;
-    transition-duration: var(--transition);
-    stroke: var(--text-accent);
-    color: var(--text-accent);
-    &:hover,
-    &:focus-visible {
-      stroke: var(--hover);
-      color: var(--hover);
+    &--link {
+      @extend .course__info-item;
+      transition-duration: var(--transition);
+      stroke: var(--text-accent);
+      color: var(--text-accent);
+      &:hover,
+      &:focus-visible {
+        stroke: var(--hover);
+        color: var(--hover);
+      }
     }
   }
 

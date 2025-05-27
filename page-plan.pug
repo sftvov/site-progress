@@ -1,0 +1,12 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('ПЛАН', 'description', [], [])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main.page#page
+				include html/plan/_plan_plan
+				include html/bottom/_bottom_plan
+			include html/footer/_footer_$common
+		+js('')

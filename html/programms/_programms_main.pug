@@ -88,23 +88,23 @@ section.programms.section
         h2.programms__title.t1 ближайшие курсы
         .programms__main.main
           each group in nearestProgramms
-            .rubrics-group(style="--group-color:var(--" + group.color + ")")
-              h2.rubrics-group__title
-                span.rubrics-group__title-main !{group.title} 
-                |  
-                span.rubrics-group__date !{group.date}
-              .rubrics-group__body
-                p.rubrics-group__rubric
-                  a.rubrics-group__link(href="archive-courses.html") !{group.name}
+            .branch(style="--group-color:var(--" + group.color + ")")
+              h2.branch-title
+                span.branch-title__main 
+                  span.branch-title__title !{group.title} 
+                  |  
+                  span.branch-title__date !{group.date}
+              .branch__body
+                a.branch__link(href="archive-courses.html") !{group.name}
       .programms__block.programms__block--new
         h2.programms__title.t1 новые программы
         .programms__main.main
           each group in newProgramms
-            .rubrics-group(style="--group-color:var(--" + group.color + ")")
-              h2.rubrics-group__title
-                span.rubrics-group__title-main !{group.title} 
-                |  
-                span.rubrics-group__date !{group.date}
-              .rubrics-group__body
-                p.rubrics-group__rubric
-                  a.rubrics-group__link(href="archive-courses.html") !{group.name}
+            .branch(style="--group-color:var(--" + group.color + ")")
+              h2.branch-title
+                span.branch-title__main
+                  span.branch-title__title !{group.title} 
+                  |  
+                  span.branch-title__date !{group.date}
+              .branch__body
+                a.branch__link(href="archive-courses.html") !{group.name}

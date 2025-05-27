@@ -3,25 +3,27 @@ section.choose.section
     h1.choose__title.title семинары и курсы по управлению производством
     .choose__main.main
       .choose__block
-        .choose__block-name Показать курсы в:
+        .choose__block-name.t2 Показать курсы в:
         .choose__checkboxes
           label.checkbox
             input.checkbox__input(type="checkbox" checked)
-            span.checkbox__span Санкт-Петербурге
+            .checkbox__span-wrapper
+              span.checkbox__span Санкт-Петербурге
           label.checkbox
             input.checkbox__input(type="checkbox" checked)
-            span.checkbox__span Москве
+            .checkbox__span-wrapper
+              span.checkbox__span Москве
       .choose__block
-        .choose__block-name Период проведения:
-        .choose__dates
-          .choose__date
-            span.choose__date-span с
+        .choose__block-name.t2 Период проведения:
+        .choose__dates.dates
+          .choose__date.dates__date
+            span.dates__date-span.p1 с
             .datepicker.choose__datepicker
-              input.datepicker__input(value="17.02.2025")
-          .choose__date
-            span.choose__date-span по
+              input.choose__input.datepicker__input(value="17.02.2025")
+          .choose__date.dates__date
+            span.dates__date-span.p1 по
             .datepicker.choose__datepicker
-              input.datepicker__input(value="16.02.2026")
+              input.choose__input.datepicker__input(value="16.02.2026")
       .choose__buttons
         button.choose__button.button--primary Подобрать
         a.choose__button.button--second(href="#" download)  Скачать PDF

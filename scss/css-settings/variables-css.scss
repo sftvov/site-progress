@@ -71,6 +71,7 @@
   --5columns: calc(var(--column) * 5 + var(--gutter) * 4);
   --6columns: calc(var(--column) * 6 + var(--gutter) * 5);
   --8columns: calc(var(--column) * 8 + var(--gutter) * 7);
+  --9columns: calc(var(--column) * 9 + var(--gutter) * 8);
   --11columns: calc(var(--column) * 11 + var(--gutter) * 10);
   --12columns: calc(var(--column) * 12 + var(--gutter) * 11);
 
@@ -147,6 +148,7 @@
   --border-second: var(--white);
   --border-accent: var(--blue);
   --border-light: var(--blue-light);
+  --border-dark: var(--gray-dark);
   // --border-second: var(--white);
   // --border-gray: var(--gray);
 

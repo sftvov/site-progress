@@ -1,0 +1,166 @@
+.plan {
+  &__container {
+  }
+
+  &__body {
+    @media (min-width: $md3+px) {
+      padding-inline: calc(var(--column) + var(--gutter));
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+    @media (max-width: $md2+px) {
+      margin-top: 50px;
+    }
+    @media (max-width: $md3+px) {
+      margin-top: 40px;
+      gap: 30px;
+    }
+  }
+
+  &__intro {
+  }
+
+  &__intro-text {
+    text-wrap: balance;
+  }
+
+  &__block {
+  }
+
+  &__block-top {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+  }
+
+  &__block-num {
+    color: var(--text-accent);
+    @media (min-width: $md3+px) {
+      display: flex;
+      justify-content: flex-end;
+      flex: var(--column) 0 0;
+    }
+  }
+
+  &__block-top-main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__block-name {
+    color: var(--text-dark);
+  }
+
+  &__dates {
+  }
+
+  &__checkboxes {
+    display: flex;
+    align-items: center;
+    gap: 7px 30px;
+    min-height: 30px;
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__spollers {
+    margin-top: 20px;
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+    margin-top: 60px;
+    @media (max-width: $md2+px) {
+      margin-top: 50px;
+    }
+    @media (max-width: $md4+px) {
+      margin-top: 40px;
+      flex-direction: column;
+    }
+  }
+
+  &__download-title {
+    @media (min-width: $md1+px) {
+      flex: var(--3columns) 0 0;
+    }
+    @media (min-width: $md3+px) {
+      flex: var(--4columns) 0 0;
+    }
+    @media (min-width: $md4+px) {
+      flex: var(--2columns) 0 0;
+    }
+  }
+
+  &__download-link {
+    @media (min-width: $md3+px) {
+      flex: var(--3columns) 0 0;
+    }
+    @media (min-width: $md4+px) {
+      flex: var(--2columns) 0 0;
+    }
+    @media (max-width: $md4+px) {
+      width: var(--4columns);
+    }
+  }
+}
+
+.branch-spollers {
+  &__spoller {
+    padding: 20px calc(var(--column) + var(--gutter)) 18px;
+    border-bottom: 2px solid var(--border-light);
+    @media (max-width: $md2+px) {
+      padding-top: 15px;
+      padding-bottom: 13px;
+    }
+    @media (max-width: $md3+px) {
+      padding-inline: 63px;
+    }
+    @media (max-width: $md4+px) {
+      padding-inline: 20px;
+    }
+  }
+
+  &__spoller-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &::after {
+      transition-duration: var(--transition);
+      content: url('../img/icons/chevron-l.svg');
+      height: 24px;
+      @media (max-width: $md3+px) {
+        content: url('../img/icons/chevron-m.svg');
+        height: 20px;
+      }
+    }
+    &._active {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__spoller-body {
+    margin-top: 15px;
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+}

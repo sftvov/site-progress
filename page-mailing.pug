@@ -1,0 +1,11 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('РАССЫЛКА', 'description', [], [])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main.page#page
+				include html/mailing/_mailing_mailing.pug
+			include html/footer/_footer_$common
+		+js('')

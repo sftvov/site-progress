@@ -31,7 +31,6 @@
   &__tab-title {
     transition-duration: var(--transition);
     stroke: var(--text-main);
-    @extend .b1;
     display: flex;
     align-items: center;
     gap: 10px;

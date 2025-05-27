@@ -88,15 +88,8 @@
   }
 
   &__list-item {
-    @extend .p1;
-    // $lh: 14;
-    // line-height: round-to(math.div($lh, $fz), 3);
     margin-top: 15px;
     @media (max-width: $md2+px) {
-      // $fs: 12;
-      // font-size: math.div($fs, $fz) + em;
-      // $lh: 14;
-      // line-height: round-to(math.div($lh, $fs), 3);
       margin-top: 10px;
     }
   }
@@ -137,7 +130,6 @@
   }
 
   &__column-p {
-    @extend .p1;
     margin-top: 14px;
     @media (max-width: $md2+px) {
       margin-top: 10px;

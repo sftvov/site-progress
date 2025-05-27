@@ -1,5 +1,4 @@
 %pagination-item {
-  @extend .t2;
   transition-duration: var(--transition);
   display: flex;
   align-items: center;
@@ -18,6 +17,7 @@
 }
 
 .pagination {
+  @extend .t2;
   display: flex;
   gap: 15px;
   @media (min-width: $md2+px) {

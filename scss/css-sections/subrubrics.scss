@@ -23,7 +23,6 @@
 
   &__link {
     transition-duration: var(--transition);
-    @extend .t2;
     &:hover,
     &:focus-visible {
       color: var(--hover);
