@@ -136,6 +136,7 @@
   --blush: #de82a9; /* Розоватый (румянец) */
   --scarlet: #ff1b22; /* Алый */
 
+  --red: #f34759;
   --orange: #ed6824;
   --orange-light: #f9b277;
   --blue: #0083c1;
@@ -159,6 +160,7 @@
   --text-accent: var(--blue);
   --text-dark: var(--dark);
   --text-light: var(--gray);
+  --text-invalid: var(--red);
   // --text-second-light: var(--white-60);
   // --text-bright: var(--blue-bright);
   // --text-gray: var(--gray);
@@ -176,6 +178,8 @@
   --border-accent: var(--blue);
   --border-light: var(--blue-light);
   --border-dark: var(--gray-dark);
+  --border-gray: var(--gray);
+  --border-invalid: var(--red);
   // --border-second: var(--white);
   // --border-gray: var(--gray);
 

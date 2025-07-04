@@ -599,6 +599,34 @@
   }
 }
 
+.input-wrapper {
+  @extend .col6;
+  &__label {
+    transition-duration: var(--transition);
+    @extend .p2;
+  }
+  &:focus-within {
+    & .input-wrapper__label {
+      color: var(--text-bright);
+    }
+  }
+  &:has(.select._active) {
+    & .input-wrapper__label {
+      color: var(--text-bright);
+    }
+  }
+  &:has(.input:invalid) {
+    & .input-wrapper__label {
+      color: var(--text-invalid);
+    }
+  }
+  &:has(.input:disabled) {
+    & .input-wrapper__label {
+      color: var(--text-light);
+    }
+  }
+}
+
 .select {
   cursor: pointer;
   @extend %input;

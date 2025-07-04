@@ -314,10 +314,6 @@
   @extend .hover;
 }
 
-.input-wrapper {
-  @extend .col6;
-}
-
 %input {
   -webkit-appearance: none; /* Отключаем стандартные стили Safari */
   appearance: none; /* Для современных браузеров */
@@ -329,12 +325,25 @@
   background-color: var(--bg-main);
   border: 1px solid var(--border-dark);
   border-radius: 0; /* Явно убираем скругления */
-  &:hover,
+  @media (hover: hover) {
+    &:hover{
+      color: var(--border);
+    }
+  }
   &:focus-visible {
     border-color: var(--border);
   }
+
   &::placeholder {
     color: var(--text-light);
+  }
+
+  &:disabled {
+    border-color: var(--border-gray);
+  }
+
+  &:invalid {
+    border-color: var(--border-invalid);
   }
 }
 

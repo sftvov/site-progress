@@ -6,22 +6,22 @@
           h2.t1d обратная связь
           p.p1.twb Если у вас есть вопросы, пожелания или вы хотите оставить отзыв о сайте или курсе, напишите нам, мы с удовольствием ответим.
         form.col5.m2
-          label.col6
-            p.p2 Фамилия
+          label.input-wrapper
+            p.input-wrapper__label Фамилия
             input.input(id="lastName" placeholder="Иванов")
-          label.col6
-            p.p2 Имя
-            input.input(id="firstName" placeholder="Иван")
-          label.col6
-            p.p2 Электронная почта
+          label.input-wrapper
+            p.input-wrapper__label Имя
+            input.input(id="firstName" placeholder="Иван" requaired) 
+          label.input-wrapper
+            p.input-wrapper__label Электронная почта
             input.input(type="email" id="email" placeholder="example@mail.ru")
-          label.col6
-            p.p2 Телефон
-            input.input(type="tel" id="phone" placeholder="8 (999) 999-99-99")
-          .col6
-            p.p2 Сообщение для:
+          label.input-wrapper
+            p.input-wrapper__label Телефон
+            input.input(type="tel" id="phone" placeholder="8 (999) 999-99-99" requaired)
+          .input-wrapper
+            p.input-wrapper__label Сообщение для:
             .select
-              input.select__input(id="service" value="Службы записи" readonly inert)
+              input.select__input(id="service" value="Службы записи" readonly)
               .select__variants
                 .select__variant Службы записи
                 .select__variant Службы корпоративных семинаров
@@ -29,8 +29,8 @@
                 .select__variant Отзыв о сайте или курсе
                 .select__variant Другое
           .col3
-            label.col6
-              p.p2 Ваш вопрос или пожелание
+            label.input-wrapper
+              p.input-wrapper__label Ваш вопрос или пожелание
               textarea.textarea(id="message" placeholder="Напишите свое сообщение")
             .row.x4col.g5
               button(type="submit").button--primary.n1w2.n3w3.x3w2.x4w4 Отправить
@@ -49,7 +49,7 @@
             .contacts-card__main.col5
               .col6
                 h2.t2d Наталия Парамонова
-                p.p2 руководитель службы записи
+                p.input-wrapper__label руководитель службы записи
               .contacts-card__links.col6
                 a.p2.hover(href="tel:88123318888") 8 (812) 331-88-88
                 a.p2.hover(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
@@ -58,7 +58,7 @@
             .contacts-card__main.col5
               .col6
                 h2.t2d Ирина Кутаренко
-                p.p2 руководитель службы по работе с клиентами
+                p.input-wrapper__label руководитель службы по работе с клиентами
               .contacts-card__links.col6
                 a.p2.hover(href="tel:88123274220") 8 (812) 327-42-20
                 a.p2.hover(href="mailto:srk@cntiprogress.ru") srk@cntiprogress.ru
@@ -67,7 +67,7 @@
             .contacts-card__main.col5
               .col6
                 h2.t2d Ирина Кутаренко
-                p.p2 руководитель службы по работе с клиентами
+                p.input-wrapper__label руководитель службы по работе с клиентами
               .contacts-card__links.col6
                 a.p2.hover(href="tel:88123274220") 8 (812) 327-42-20
                 a.p2.hover(href="mailto:srk@cntiprogress.ru") srk@cntiprogress.ru

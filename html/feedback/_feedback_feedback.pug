@@ -5,21 +5,21 @@ section.section#feedback
     form.m2.n1o1
       .row.x3col.g5
         fieldset.col5.n1w5.n3w6.x3w4
-          label.col6
-            p.p2 Фамилия
+          label.input-wrapper
+            p.input-wrapper__label Фамилия
             input.input(placeholder="Иванов")
-          label.col6
-            p.p2 Имя
+          label.input-wrapper
+            p.input-wrapper__label Имя
             input.input(placeholder="Иван")
-          label.col6
-            p.p2 Электронная почта
+          label.input-wrapper
+            p.input-wrapper__label Электронная почта
             input.input(type="email" placeholder="example@mail.ru")
-          label.col6
-            p.p2 Телефон
+          label.input-wrapper
+            p.input-wrapper__label Телефон
             input.input(type="tel" placeholder="8 (999) 999-99-99")      
         fieldset.col5.n1w5.n3w6.x3w4
-          .col6
-            p.p2  Сообщение для:
+          .input-wrapper
+            p.input-wrapper__label Сообщение для:
             .select
               input.select__input(value="Службы записи" readonly inert)
               .select__variants
@@ -28,8 +28,8 @@ section.section#feedback
                 .select__variant Службы гостиниц
                 .select__variant Отзыв о сайте или курсе
                 .select__variant Другое
-          label.col6
-            p.p2 Выш вопрос или пожелание
+          label.input-wrapper
+            p.input-wrapper__label Выш вопрос или пожелание
             textarea.textarea(placeholder="Напишите свое сообщение")      
       .col5.m3
         .row

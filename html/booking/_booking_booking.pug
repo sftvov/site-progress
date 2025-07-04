@@ -8,59 +8,59 @@ section.booking.section#booking
         fieldset.n1w4.n2w5.n3w6
           legend.t2d Информация об отеле
           .col5.m4
-            .col6
-              p.p2 Гостиница
+            .input-wrapper
+              p.input-wrapper__label Гостиница
               .select
                 input.select__input(value=hotelsArchive[0].name readonly inert)
                 .select__variants
                   each hotel in hotelsArchive
                     .select__variant !{hotel.name}
-            .col6
-              p.p2 Категория номера
+            .input-wrapper
+              p.input-wrapper__label Категория номера
               .select
                 input.select__input(value="Стандарт" readonly inert)
                 .select__variants
                   .select__variant Стандарт
                   .select__variant Комфорт
                   .select__variant Эконом
-            .col6
-              p.p2 Размещение в номере
+            .input-wrapper
+              p.input-wrapper__label Размещение в номере
               .select
                 input.select__input(value="Одноместное" readonly inert)
                 .select__variants
                   .select__variant Одноместное
                   .select__variant Двуместное
-            label.col6
-              p.p2 Дата заезда
+            label.input-wrapper
+              p.input-wrapper__label Дата заезда
               input.input--date(value="2025-06-10" type="date")
-            label.col6
-              p.p2 Дата выезда
+            label.input-wrapper
+              p.input-wrapper__label Дата выезда
               input.input--date(value="2025-06-17" type="date")
         fieldset.n1w5.n3w6
           legend.t2d Информация о слушателе
           .col5.m4
-            label.col6
-              p.p2 Код семинара
+            label.input-wrapper
+              p.input-wrapper__label Код семинара
               input.input(placeholder="789765")
-            label.col6
-              p.p2 ФИО участника
+            label.input-wrapper
+              p.input-wrapper__label ФИО участника
               input.input(placeholder="Иванов Иван Иванович")
-            label.col6
-              p.p2 Электронная почта
+            label.input-wrapper
+              p.input-wrapper__label Электронная почта
               input.input(type="email" placeholder="example@mail.ru")
-            label.col6
-              p.p2 Телефон
+            label.input-wrapper
+              p.input-wrapper__label Телефон
               input.input(type="tel" placeholder="8 (999) 999-99-99")
-            .col6
-              p.p2 Вид оплаты
+            .input-wrapper
+              p.input-wrapper__label Вид оплаты
               .select
                 input.select__input(value="Наличные/Карта" readonly inert)
                 .select__variants
                   .select__variant Наличные/Карта
                   .select__variant Безналичный от юрлица
       footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3
-        label.col6
-          p.p2 Примечание
+        label.input-wrapper
+          p.input-wrapper__label Примечание
           textarea.textarea(placeholder="Напишите свое сообщение")
         .col5
           .row.g5.x4col
