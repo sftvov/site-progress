@@ -4,21 +4,35 @@ html(lang="ru")
   +head('NAVIGATION', 'description', [], [])
   body
     .wrapper
-      main#page.page(style="padding-left:20px;")
-        ._container
-          ol
-            li
-              a(href="page-main.html") ГЛАВНАЯ СТРАНИЦА
-            li
-              a(href="page-search.html") ПОИСК (РЕЗУЛЬТАТЫ)
-            li
-              a(href="page-search-empty.html") ПОИСК (ПУСТОЙ)
-            li
-              a(href="page-plan.html") ПЛАН
-            li
-              a(href="page-mailing.html") РАССЫЛКА
-            li
-              a(href="page-rubrics.html") РУБРИКАТОР
-            li
-              a(href="archive-courses.html") РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)
+      include html/header/_header_$common
+      main#page.page
+        .section
+          .container
+            ol.ol
+              li.ol__li
+                a.link(href="page-rubrics.html") РУБРИКАТОР
+              li.ol__li
+                a.link(href="page-main.html") ГЛАВНАЯ СТРАНИЦА
+              li.ol__li
+                a.link(href="archive-courses.html") РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)
+              li.ol__li
+                a.link(href="page-search.html") ПОИСК (РЕЗУЛЬТАТЫ)
+              li.ol__li
+                a.link(href="page-search-empty.html") ПОИСК (ПУСТОЙ)
+              li.ol__li
+                a.link(href="page-plan.html") ПЛАН
+              li.ol__li
+                a.link(href="page-mailing.html") РАССЫЛКА
+              li.ol__li
+                a.link(href="page-hotels.html") ОТЕЛИ
+              li.ol__li
+                a.link(href="page-booking.html") БРОНИРОВАНИЕ
+              li.ol__li
+                a.link(href="page-feedback.html") ОБРАТНАЯ СВЯЗЬ
+              li.ol__li
+                a.link(href="page-contacts.html") КОНТАКТЫ
+            ul.ul.m2
+              li.ul__li
+                a.link(href="service-pagination.html") ПАГИНАЦИЯ
+      include html/footer/_footer_$common
     +js('')

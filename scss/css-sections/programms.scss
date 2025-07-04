@@ -1,31 +1,4 @@
 .programms {
-  &__container {
-  }
-
-  &__body {
-    display: flex;
-    gap: 40px var(--gutter);
-    @media (max-width: $md3+px) {
-      flex-direction: column;
-    }
-  }
-
-  &__block {
-    @media (max-width: $md3+px) {
-      width: var(--4columns);
-    }
-    @media (min-width: $md3+px) {
-      &--nearest {
-        flex: var(--4columns) 0 0;
-      }
-      &--new {
-        flex: var(--8columns) 0 0;
-      }
-    }
-  }
-
-  &__title {
-  }
 
   &__main {
     columns: 2 var(--4columns);

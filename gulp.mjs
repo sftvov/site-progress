@@ -1,4 +1,4 @@
-export const font_names = '{Roboto,RobotoCondensed,Intro}';
+export const font_names = '{Roboto,RobotoCondensed,Montserrat}';
 
 // const maxWidth = 2560;
 // const maxContainer = 1920;

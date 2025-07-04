@@ -1,24 +1,25 @@
 @use 'sass:math';
 
-section {
-  scroll-margin-top: var(--header-height);
-}
-
 body {
   &._lock {
     overflow: hidden;
   }
 }
 
-svg {
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+._tabs-blocks {
+  position: relative;
 }
 
-*:focus-visible {
-  outline: 1px solid var(--border);
-  outline-offset: 3px;
+._tabs-block {
+  transition-duration: var(--transition);
+  &:not(._active) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+  }
 }
 
 // input[type='checkbox']:not(:checked) {
@@ -33,54 +34,43 @@ svg {
 //   display: none;
 // }
 
-._n1-hide {
-  @media (min-width: $md1+px) {
-    display: none;
-  }
-}
 
-._x1-hide {
-  @media (max-width: $md1+px) {
-    display: none;
-  }
-}
+// ._blur-container {
+//   position: relative;
 
-._n2-hide {
-  @media (min-width: $md2+px) {
-    display: none;
-  }
-}
+//   &:has(:is(._blur-container__blur-left, ._blur-container__blur-right)._active) ._blur-container__scroll-container {
+//     cursor: grab;
+//     &._active {
+//       cursor: grabbing;
+//     }
+//   }
 
-._x2-hide {
-  @media (max-width: $md2+px) {
-    display: none;
-  }
-}
+//   &__scroll-container {
+//   }
 
-._n3-hide {
-  @media (min-width: $md3+px) {
-    display: none;
-  }
-}
+//   &__blur-left,
+//   &__blur-right {
+//     transition-duration: var(--transition);
+//     position: absolute;
+//     top: 0;
+//     width: 70px;
+//     height: 100%;
+//     &:not(._active) {
+//       opacity: 0;
+//       visibility: hidden;
+//     }
+//   }
 
-._x3-hide {
-  @media (max-width: $md3+px) {
-    display: none;
-  }
-}
+//   &__blur-left {
+//     left: -1px;
+//     background-image: linear-gradient(to right, var(--bg-main) 20px, transparent);
+//   }
 
-._n4-hide {
-  @media (min-width: $md4+px) {
-    display: none;
-  }
-}
-
-._x4-hide {
-  @media (max-width: $md4+px) {
-    display: none;
-  }
-}
-
+//   &__blur-right {
+//     right: -1px;
+//     background-image: linear-gradient(to left, var(--bg-main) 20px, transparent);
+//   }
+// }
 // ._disable {
 //   pointer-events: none;
 // }
@@ -92,53 +82,15 @@ svg {
 //   }
 // }
 
-// ._block-hidden {
+// ._hidden {
 //   &:not(._active) {
 //     display: none;
-//   }
-// }
-
-// ._text-second {
-//   color: rgba(var(--text-second), 0.6);
-// }
-
-// ._left {
-//   flex: 260px 0 0;
-//   @media (min-width: $md2+px) {
-//     margin-right: 40px;
-//   }
-// }
-
-// ._blue {
-// 	color: var(--blue-dark);
-// 	font-weight: 500;
-// }
-
-// ._checkbox {
-//   &:not(:has(input:checked)) + ._input {
-//     pointer-events: none;
-//     background-color: var(--bg-second);
 //   }
 // }
 
 // [data-item]:not(._active) {
 //   display: none;
 // }
-
-._tabs-blocks {
-  position: relative;
-}
-._tabs-block {
-  transition-duration: var(--transition);
-  &:not(._active) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    width: 100%;
-  }
-}
 
 // ._hidden-title {
 // 	overflow: hidden;

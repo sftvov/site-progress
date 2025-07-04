@@ -1,0 +1,41 @@
+script.
+  ymaps.ready(initContactsMap);
+
+  function initContactsMap() {
+    const map = new ymaps.Map("ymaps", {
+      center: [59.942227, 30.27578], // Точные координаты ЦНТИ
+      zoom: 15,
+      controls: ['geolocationControl', 'trafficControl', 'typeSelector', 'rulerControl', 'fullscreenControl'],
+    });
+
+    // Параметры для маркера
+    const specialIconOptions = {
+      iconLayout: 'default#image',
+      iconImageHref: 'https://img.cntiprogress.ru/file/ivksenia/map_icon_cnti.png',
+      iconImageSize: [37.34, 54],
+      iconImageOffset: [-18.67, -54]
+    };
+
+    // Создаем маркер
+    const cntiPlacemark = new ymaps.Placemark(
+      [59.942227, 30.27578], // Точные координаты ЦНТИ
+      {},
+      specialIconOptions
+    );
+
+    map.geoObjects.add(cntiPlacemark);
+
+    // Добавляем контрол
+    const zoomControl = new ymaps.control.ZoomControl({
+      options: {
+        position: {
+          top: 60,
+          left: 10
+        },
+      }
+    });
+    map.controls.add(zoomControl);
+
+    // Отключаем скролл колесиком мыши
+    map.behaviors.disable('scrollZoom');
+  }

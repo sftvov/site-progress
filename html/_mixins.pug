@@ -1,1 +1,18 @@
 include ../../web-template/src/_mixins.pug
+
+
+
+mixin head(title, description, [...arr], [...scripts])
+	head
+		meta(name="robots" content="noindex") 
+		link(rel="stylesheet", href=`css/style.min.css?_v=${version}`)
+		each link in arr
+			link(rel="stylesheet", href=`css/${link}.min.css?_v=${version}`)
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		title= title
+		meta(name="description", content=description)
+		meta(name="theme-color" content="")
+		link(rel="canonical" href="")
+		each link in scripts
+			script(src=link)

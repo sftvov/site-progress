@@ -1,0 +1,21 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+  +head('NAVIGATION', 'description', [], [])
+  body
+    .wrapper
+      include html/header/_header_$common
+      main#page.page
+        .section
+          .container
+            each i, total in Array(11).fill()
+              - 
+                totalPages = total + 1;
+              p.m3 Количество страниц пагинации: !{totalPages} 
+              each y, current in Array(total + 1).fill()
+                -
+                  currentPage = current + 1;
+                include html/pagination/_pagination_!template
+          
+      include html/footer/_footer_$common
+    +js('')

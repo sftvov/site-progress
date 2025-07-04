@@ -3,7 +3,7 @@
     {
       title: 'Образование',
       date: '(15–18 апреля)',
-      name: 'Государственный контроль (надзор) в&nbsp;сфере образования',
+      name: 'Государственный контроль (надзор) в сфере образования',
       color: 'periwinkle',
     },
     {
@@ -15,13 +15,13 @@
     {
       title: 'Промышленность',
       date: '(15–19 апреля)',
-      name: 'Сварочное производство: организация, подготовка, контроль и&nbsp;управление',
+      name: 'Сварочное производство: организация, подготовка, контроль и управление',
       color: 'jade',
     },
     {
       title: 'Промышленность',
       date: '(15–18 апреля)',
-      name: 'Выполнение опытно-конструкторских работ в&nbsp;соответствии с ГОСТ РВ 15.203-2001, ГОСТ РВ 15.205-2004',
+      name: 'Выполнение опытно-конструкторских работ в соответствии с ГОСТ РВ 15.203-2001, ГОСТ РВ 15.205-2004',
       color: 'jade',
     },
   ]
@@ -31,13 +31,13 @@
     {
       title: 'Управление персоналом',
       date: '(15–18 апреля)',
-      name: 'Инструменты управления персоналом в&nbsp;период дефицита кадров',
+      name: 'Инструменты управления персоналом в период дефицита кадров',
       color: 'apricot',
     },
     {
       title: 'HoReCa',
       date: '(22–25 апреля)',
-      name: 'Бережливое производство в&nbsp;индустрии питания',
+      name: 'Бережливое производство в индустрии питания',
       color: 'scarlet',
     },
     {
@@ -49,31 +49,31 @@
     {
       title: 'Промышленность',
       date: '(28–30 апреля)',
-      name: 'Особенности подготовки и&nbsp;проведения конкурсных процедур на закупку услуг обязательного аудита бухгалтерской (финансовой) отчетности организации',
+      name: 'Особенности подготовки и проведения конкурсных процедур на закупку услуг обязательного аудита бухгалтерской (финансовой) отчетности организации',
       color: 'jade',
     },
     {
       title: 'Экономика. Финансы. Бухгалтерский учет',
       date: '(28–30 апреля)',
-      name: 'Налогообложение доходов физических лиц и&nbsp;страховые взносы. Сложные вопросы исчисления и&nbsp;уплаты',
+      name: 'Налогообложение доходов физических лиц и страховые взносы. Сложные вопросы исчисления и уплаты',
       color: 'gold',
     },
     {
       title: 'Управление персоналом',
       date: '(6–7 мая)',
-      name: 'Работник и&nbsp;работодатель: кадровые, финансовые и&nbsp;правовые аспекты трудовых отношений в&nbsp;2025 году',
+      name: 'Работник и работодатель: кадровые, финансовые и правовые аспекты трудовых отношений в 2025 году',
       color: 'apricot',
     },
     {
-      title: 'Строительство и&nbsp;инженерные сети',
+      title: 'Строительство и инженерные сети',
       date: '(7–8 мая)',
-      name: 'Правовые, финансовые, учетные и&nbsp;налоговые аспекты долевого строительства многоквартирных домов и&nbsp;иных объектов недвижимости',
+      name: 'Правовые, финансовые, учетные и налоговые аспекты долевого строительства многоквартирных домов и иных объектов недвижимости',
       color: 'turquoise',
     },
     {
       title: 'Промышленность',
       date: '(12–14 мая)',
-      name: 'Организация и&nbsp;проведение сервисного обслуживания изделий военной техники',
+      name: 'Организация и проведение сервисного обслуживания изделий военной техники',
       color: 'jade',
     },
   ]
@@ -81,30 +81,32 @@
 
 
 
-section.programms.section
-  .programms__container.container
-    .programms__body.body
-      .programms__block.programms__block--nearest
-        h2.programms__title.t1 ближайшие курсы
-        .programms__main.main
+.section#programms
+  .container
+    .body.row.x3col.g1
+      section.n3w4.x3w4
+        h2.t1d ближайшие курсы
+        .programms__main.m2
           each group in nearestProgramms
-            .branch(style="--group-color:var(--" + group.color + ")")
-              h2.branch-title
+            article.branch(style="--group-color:var(--" + group.color + ")")
+              h3.branch-title
                 span.branch-title__main 
                   span.branch-title__title !{group.title} 
                   |  
                   span.branch-title__date !{group.date}
               .branch__body
                 a.branch__link(href="archive-courses.html") !{group.name}
-      .programms__block.programms__block--new
-        h2.programms__title.t1 новые программы
-        .programms__main.main
+      section.n3w8.x3w4
+        h2.t1d новые программы
+        .programms__main.m2
           each group in newProgramms
-            .branch(style="--group-color:var(--" + group.color + ")")
-              h2.branch-title
+            article.branch(style="--group-color:var(--" + group.color + ")")
+              h3.branch-title
                 span.branch-title__main
                   span.branch-title__title !{group.title} 
                   |  
                   span.branch-title__date !{group.date}
               .branch__body
                 a.branch__link(href="archive-courses.html") !{group.name}
+
+//- http://localhost:1709/page-main.html#programms

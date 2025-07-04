@@ -1,0 +1,12 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('БРОНИРОВАНИЕ', 'description', [], [])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main#page.page
+				include html/breadcrumbs/_breadcrumbs_booking.pug
+				include html/booking/_booking_booking
+			include html/footer/_footer_$common
+		+js('')

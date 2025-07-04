@@ -1,0 +1,75 @@
+.section#support
+  .container
+    .row.x3col.g3.n1o1
+      section.n1w5.n3w6
+        .x4c.col5
+          h2.t1d обратная связь
+          p.p1.twb Если у вас есть вопросы, пожелания или вы хотите оставить отзыв о сайте или курсе, напишите нам, мы с удовольствием ответим.
+        form.col5.m2
+          label.col6
+            p.p2 Фамилия
+            input.input(id="lastName" placeholder="Иванов")
+          label.col6
+            p.p2 Имя
+            input.input(id="firstName" placeholder="Иван")
+          label.col6
+            p.p2 Электронная почта
+            input.input(type="email" id="email" placeholder="example@mail.ru")
+          label.col6
+            p.p2 Телефон
+            input.input(type="tel" id="phone" placeholder="8 (999) 999-99-99")
+          .col6
+            p.p2 Сообщение для:
+            .select
+              input.select__input(id="service" value="Службы записи" readonly inert)
+              .select__variants
+                .select__variant Службы записи
+                .select__variant Службы корпоративных семинаров
+                .select__variant Службы гостиниц
+                .select__variant Отзыв о сайте или курсе
+                .select__variant Другое
+          .col3
+            label.col6
+              p.p2 Ваш вопрос или пожелание
+              textarea.textarea(id="message" placeholder="Напишите свое сообщение")
+            .row.x4col.g5
+              button(type="submit").button--primary.n1w2.n3w3.x3w2.x4w4 Отправить
+              input(type="reset" value="Отмена").button--second.n1w2.n3w3.x3w2.x4w4
+          label.checkbox
+            input.checkbox__input(type="checkbox" checked)
+            .checkbox__span-wrapper--blue
+              span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+      section.n1w5.n3w6
+        header.x4c.col5
+          h2.t1d на ваши вопросы ответят
+          p.p1.twb Если у вас сложный вопрос по обучению, обратитесь напрямую к руководителю отдела.
+        .col3.m2
+          article.contacts-card
+            img.contacts-card__img(src="img/feedback/paramonova.png" alt="")
+            .contacts-card__main.col5
+              .col6
+                h2.t2d Наталия Парамонова
+                p.p2 руководитель службы записи
+              .contacts-card__links.col6
+                a.p2.hover(href="tel:88123318888") 8 (812) 331-88-88
+                a.p2.hover(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
+          article.contacts-card
+            img.contacts-card__img(src="img/feedback/kutarenko.png" alt="")
+            .contacts-card__main.col5
+              .col6
+                h2.t2d Ирина Кутаренко
+                p.p2 руководитель службы по работе с клиентами
+              .contacts-card__links.col6
+                a.p2.hover(href="tel:88123274220") 8 (812) 327-42-20
+                a.p2.hover(href="mailto:srk@cntiprogress.ru") srk@cntiprogress.ru
+          article.contacts-card
+            img.contacts-card__img(src="img/feedback/kutarenko.png" alt="")
+            .contacts-card__main.col5
+              .col6
+                h2.t2d Ирина Кутаренко
+                p.p2 руководитель службы по работе с клиентами
+              .contacts-card__links.col6
+                a.p2.hover(href="tel:88123274220") 8 (812) 327-42-20
+                a.p2.hover(href="mailto:srk@cntiprogress.ru") srk@cntiprogress.ru
+
+//- http://localhost:1709/page-contacts.html#support

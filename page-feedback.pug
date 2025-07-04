@@ -1,0 +1,13 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('ОБРАТНАЯ СВЯЗЬ', 'description', [], [])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main#page.page
+				include html/breadcrumbs/_breadcrumbs_feedback
+				include html/feedback/_feedback_feedback
+				include html/contacts-feedback/_contacts-feedback_feedback
+			include html/footer/_footer_$common
+		+js('')

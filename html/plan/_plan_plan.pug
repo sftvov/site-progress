@@ -1,43 +1,40 @@
 include ../../data/rubricsArchive
 
-section.plan.section
-  .plan__container.container
-    .plan__body
-      .plan__intro
-        h1.plan__title.t1 Создайте учебный план в конструкторе
-        .plan__intro-text
-          p.p1 Создайте свой план в 3 простых шага — выберите время обучения, тематику курсов и город. Конструктор сформирует для вас pdf-расписание, с которым удобно планировать обучение.
-      .plan__main
-        .plan__block
-          .plan__block-top
-            p.plan__block-num.a1 1.
-            .plan__block-top-main
-              h2.plan__block-name.t2 Выберите интервал
-              .plan__dates.dates
-                .dates__date
-                  span.dates__date-span.p1 с
-                  .datepicker
-                    input.datepicker__input(value="17.02.2025")
-                .dates__date
-                  span.dates__date-span.p1 по
-                  .datepicker
-                    input.datepicker__input(value="16.02.2026")
-        .plan__block
-          .plan__block-top
-            p.plan__block-num.a1 2.
-            .plan__block-top-main
-              h2.plan__block-name.t2 Выберите рубрики. Кликните на рубрику, чтобы увидеть подрубрики и выбрать нужные. Это займет полминуты.        
-          .plan__spollers.branch-spollers(data-spollers)
+section.section.plan#plan
+  .container
+    .n3o1
+      .col2
+        h1.t1d Создайте учебный план в конструкторе
+        p.twb.p1 Создайте свой план в 3 простых шага — выберите время обучения, тематику курсов и город. Конструктор сформирует для вас pdf-расписание, с которым удобно планировать обучение.
+      form.m1
+        .row.aic
+          p.plan__section-num 1.
+          fieldset
+            legend.t2d Выберите интервал
+            .dates.m5
+              label.dates__date
+                span.p1.accent с
+                .datepicker
+                  input.datepicker__input(value="17.02.2025")
+              label.dates__date
+                span.p1.accent по
+                .datepicker
+                  input.datepicker__input(value="16.02.2026")
+        section.m3
+          .row.aic
+            p.plan__section-num 2.
+            h2.t2d Выберите рубрики. Кликните на рубрику, чтобы увидеть подрубрики и выбрать нужные. Это займет полминуты.        
+          .branch-spollers.m5(data-spollers)
             each branch in rubricsArchive
               .branch-spollers__spoller(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
                 button.branch-spollers__spoller-title(data-spoller)
-                  h2.branch-title
+                  span.branch-title
                     span.branch-title__main
                       span.branch-title__title !{branch.title}
                       |  
                       span.branch-title__num(data-checkbox-num)
-                .branch-spollers__spoller-body
-                  .branch-spollers__checkboxes
+                .m5
+                  fieldset.branch-spollers__checkboxes
                     label.checkbox
                       input.checkbox__input(type="checkbox" data-checkbox-all)
                       .checkbox__span-wrapper
@@ -47,24 +44,25 @@ section.plan.section
                         input.checkbox__input(type="checkbox" data-checkbox-item)
                         .checkbox__span-wrapper
                           span.checkbox__span !{rubric.name}
-        .plan__block
-          .plan__block-top
-            p.plan__block-num.a1 3.
-            .plan__block-top-main
-              h2.plan__block-name.t2 Выберите место
-              .plan__checkboxes
-                label.checkbox
-                  input.checkbox__input(type="checkbox" checked)
-                  .checkbox__span-wrapper
-                    span.checkbox__span Санкт-Петербург
-                label.checkbox
-                  input.checkbox__input(type="checkbox")
-                  .checkbox__span-wrapper
-                    span.checkbox__span Москва
-                label.checkbox
-                  input.checkbox__input(type="checkbox")
-                  .checkbox__span-wrapper
-                    span.checkbox__span Онлайн
-      .plan__download
-        h3.plan__download-title.t1 готово! теперь можно
-        a.plan__download-link.button--primary(href="#" download) Скачать план
+        .row.aic.m3
+          p.plan__section-num 3.
+          fieldset
+            legend.t2d Выберите место
+            .plan__checkboxes.x4wrap.m5
+              label.checkbox
+                input.checkbox__input(type="checkbox" checked)
+                .checkbox__span-wrapper
+                  span.checkbox__span Санкт-Петербург
+              label.checkbox
+                input.checkbox__input(type="checkbox")
+                .checkbox__span-wrapper
+                  span.checkbox__span Москва
+              label.checkbox
+                input.checkbox__input(type="checkbox")
+                .checkbox__span-wrapper
+                  span.checkbox__span Онлайн
+        section.row.aic.x4col.m1
+          h2.t1d.n1w3.n3w4.n4w2 готово! теперь можно
+          button.button--primary.n3w3.x3w2.x4w4(type="submit") Скачать план
+
+//- http://localhost:1709/page-plan.html#plan

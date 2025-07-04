@@ -1,4 +1,4 @@
-.bottom-plan {
+.plan-bottom {
   &__container {
     @media (max-width: $md3+px) {
       background-color: var(--bg-second);
@@ -6,21 +6,18 @@
   }
 
   &__body {
-    padding-bottom: 60px;
+    padding-bottom: var(--spaceXXL);
     background-color: var(--bg-second);
     @media (max-width: $md1+px) {
-      padding-bottom: 40px;
-    }
-    @media (max-width: $md2+px) {
-      padding-bottom: 20px;
-    }
-    @media (max-width: $md4+px) {
-      padding-bottom: 30px;
+      padding-bottom: var(--spaceL);
     }
   }
 
   &__img {
-    width: 100%;
+    @media (min-width: $md1+px) {
+      height: 300px;
+      object-fit: cover;
+    }
     @media (max-width: $md3+px) {
       translate: -40px 0;
       width: calc(100% + 237px);
@@ -32,74 +29,12 @@
   }
 
   &__main {
-    display: flex;
     align-items: flex-end;
-    gap: 30px var(--gutter);
-    @media (min-width: $md1+px) {
-      margin-top: 14px;
-      padding-left: calc(var(--2columns) + var(--gutter));
-    }
     @media (min-width: $md2+px) {
-      margin-top: -10px;
-    }
-    @media (min-width: $md3+px) {
-      padding-left: calc(var(--column) + var(--gutter));
-    }
-    @media (min-width: $md4+px) {
-      margin-top: -8px;
-    }
-    @media (max-width: $md4+px) {
-      flex-direction: column;
-      margin-top: 15px;
-    }
-  }
-
-  &__phone-column {
-    @media (min-width: $md1+px) {
-      flex: var(--5columns) 0 0;
-    }
-    @media (min-width: $md2+px) {
-      flex: var(--6columns) 0 0;
-    }
-    @media (min-width: $md3+px) {
-      flex: var(--5columns) 0 0;
-    }
-    @media (min-width: $md4+px) {
-      flex: var(--2columns) 0 0;
-    }
-  }
-
-  &__download-column {
-    @media (min-width: $md2+px) {
-      flex: var(--4columns) 0 0;
-    }
-    @media (min-width: $md3+px) {
-      flex: var(--6columns) 0 0;
-    }
-    @media (min-width: $md4+px) {
-      flex: var(--2columns) 0 0;
-    }
-  }
-
-  &__column-title {
-    color: var(--text-dark);
-    margin-bottom: 15px;
-  }
-
-  &__column-text {
-  }
-
-  &__column-link {
-    width: var(--3columns);
-    margin-top: 15px;
-    @media (max-width: $md1+px) {
-      width: var(--4columns);
+      margin-top: calc(-1 * var(--spaceS)) ;
     }
     @media (max-width: $md3+px) {
-      width: var(--2columns);
-    }
-    @media (max-width: $md4+px) {
-      width: var(--4columns);
+      margin-top: var(--spaceS);
     }
   }
 }

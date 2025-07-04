@@ -1,0 +1,9 @@
+section.breadcrumbs
+  .container
+    .breadcrumbs__body
+      a.breadcrumbs__item(href="/page-main.html") Главная
+      each b, index in breadcrumbs
+        if index === breadcrumbs.length - 1
+          span.breadcrumbs__item !{b}
+        else
+          a.breadcrumbs__item(href="#") !{b}

@@ -1,0 +1,25 @@
+.route {
+  &__heading {
+    color: var(--text-dark);
+    stroke: var(--text-dark);
+    stroke-width: 2px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__link {
+    transition-duration: var(--transition);
+    --arrow-color: var(--text-bright);
+    display: flex;
+    gap: 15px;
+    &:hover,
+    &:focus-visible {
+      color: var(--hover);
+    }
+  }
+
+  &__arrow {
+    width: 100px;
+  }
+}

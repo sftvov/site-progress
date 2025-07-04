@@ -41,7 +41,21 @@
   --md3: #{$md3};
   --md4: #{$md4};
 
+  --transition: 0.2s;
+  --header-height: 196px;
   --scrollbar: 0px;
+  @media (min-width: $md1+px) {
+    --header-height: 216px;
+  }
+  @media (min-width: $md2+px) {
+    --header-height: 195px;
+  }
+  @media (min-width: $md3+px) {
+    --header-height: 128px;
+  }
+  @media (min-width: $md4+px) {
+    --header-height: 187px;
+  }
 
   --gutter: 20px;
   @media (min-width: $md1+px) {
@@ -63,28 +77,42 @@
 
   --column: calc((100vw - (var(--columns) - 1) * var(--gutter) - var(--fields) - var(--scrollbar)) / var(--columns));
   @media (min-width: $md1+px) {
-    --column: calc((1280px - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
+    --column: calc((#{$maxContainer + px} - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
   }
   --2columns: calc(var(--column) * 2 + var(--gutter));
   --3columns: calc(var(--column) * 3 + var(--gutter) * 2);
   --4columns: calc(var(--column) * 4 + var(--gutter) * 3);
   --5columns: calc(var(--column) * 5 + var(--gutter) * 4);
   --6columns: calc(var(--column) * 6 + var(--gutter) * 5);
+  --7columns: calc(var(--column) * 7 + var(--gutter) * 6);
   --8columns: calc(var(--column) * 8 + var(--gutter) * 7);
   --9columns: calc(var(--column) * 9 + var(--gutter) * 8);
+  --10columns: calc(var(--column) * 10 + var(--gutter) * 9);
   --11columns: calc(var(--column) * 11 + var(--gutter) * 10);
   --12columns: calc(var(--column) * 12 + var(--gutter) * 11);
+  --columnG: calc(var(--column) + var(--gutter));
+  --columnGG: calc(var(--column) + var(--gutter) * 2);
+  --2columnsG: calc(var(--2columns) + var(--gutter));
 
-  --transition: 0.2s;
-  // --header-height: 79px;
-  // --special-menu-height: 139px;
+  --spaceXXL: 50px;
+  --spaceXL: 30px;
+  --spaceL: 30px;
+  --spaceM: 15px;
+  --spaceS: 15px;
+  --spaceXS: 7px;
+
+  @media (min-width: $md2+px) {
+    --spaceXXL: 60px;
+    --spaceXL: 40px;
+    --spaceM: 30px;
+  }
 
   // --cyan: #00ffff;
   // --yellow: #ffff00;
   // --black: #252525;
   // --purple: #8434e1;
   // --navy: #345eff;
-  // --grey: #e4e5e8;
+  // --grey: #e4e5e8;6
   // --red: #bf0000;
   // --broom: #c05a17;
   // --pink: #e08d9d;
@@ -95,19 +123,18 @@
   // --blue-vk: #587ea3;
   // --gold: #edd146;
 
-  --jade: #00775F;        /* Тёмно-зелёный (нефритовый) */
-  --turquoise: #00B5AA;   /* Бирюзовый */
-  --lime: #B1D355;        /* Лаймовый */
-  --apricot: #F89F65;     /* Абрикосовый */
-  --gold: #DCA90E;        /* Золотой */
-  --graphite: #4D4D4F;    /* Графитовый */
-  --ocean: #00749E;       /* Океанский синий */
-  --lavender: #9056A3;    /* Лавандовый */
-  --berry: #AE2763;       /* Ягодный */
-  --periwinkle: #685BC7;  /* Барвинковый */
-  --blush: #DE82A9;       /* Розоватый (румянец) */
-  --scarlet: #FF1B22;     /* Алый */
-
+  --jade: #00775f; /* Тёмно-зелёный (нефритовый) */
+  --turquoise: #00b5aa; /* Бирюзовый */
+  --lime: #b1d355; /* Лаймовый */
+  --apricot: #f89f65; /* Абрикосовый */
+  --gold: #dca90e; /* Золотой */
+  --graphite: #4d4d4f; /* Графитовый */
+  --ocean: #00749e; /* Океанский синий */
+  --lavender: #9056a3; /* Лавандовый */
+  --berry: #ae2763; /* Ягодный */
+  --periwinkle: #685bc7; /* Барвинковый */
+  --blush: #de82a9; /* Розоватый (румянец) */
+  --scarlet: #ff1b22; /* Алый */
 
   --orange: #ed6824;
   --orange-light: #f9b277;
@@ -152,20 +179,18 @@
   // --border-second: var(--white);
   // --border-gray: var(--gray);
 
-  // --shadow: -10px -10px 20px 0 #595F6F26, 10px 10px 20px 0 #595F6F26;
   --shadow: 0 0 20px 10px #595f6f26;
-  // --shadow-big: -15px -15px 20px 0 #595F6F26, 15px 15px 20px 0 #595F6F26;
   --shadow-big: 0 0 20px 15px #595f6f26;
 
   // @media (prefers-color-scheme: dark) {
-  // 	--white--dark: var(--dark);
-  // 	--nw--main: var(--main);
-  // 	--nw--dark: var(--dark);
-  // 	--nw--black: var(--black);
-  // 	--gray--light: var(--light);
-  // 	--dark--nw: var(--not-white);
-  // 	--dark--main: var(--main);
-  // 	--dark--black: var(--black);
+  //   --text-main: var(--gray-light);
+  //   --text-dark: var(--white);
+
+  //   --bg-main: var(--gray-dark);
+  //   --bg-second: var(--gray);
+  //   --bg-dark: var(--dark);
+
+  //   --border-dark: var(--white);
   // }
 
   // --white--dark: var(--white);

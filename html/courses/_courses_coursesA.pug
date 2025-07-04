@@ -253,27 +253,30 @@
     }
   ];
 
-section.courses.section
-  .courses__container.container
-    .courses__body.body
-      .courses__links.b1
-        a.courses__link._active(href="#") ОЧНые
-          svg.courses__link-svg
+.courses.section#courses
+  .container
+    .body
+      .courses__links.row
+        a.courses__link.b1.n3w3.x3w2._active(href="#") ОЧНые
+          svg.courses__link-svg.icon
             use(xlink:href='img/sprite/symbols.svg#attention')
-        a.courses__link(href="#") онлайн
-          svg.courses__link-svg
+        a.courses__link.b1.n3w3.x3w2(href="#") онлайн
+          svg.courses__link-svg.icon
             use(xlink:href='img/sprite/symbols.svg#attention')
-      .courses__main.main
-        each course in courses
-          .courses__item
-            .courses__squares.t1
+  .m2
+    each course in courses
+      article.courses__item
+        .container
+          .courses__item-body
+            header.courses__squares
               .courses__square !{course.hours}
               if course.isNew 
                 .courses__square--new NEW
             .courses__course.course
               p.p2 Курс повышения квалификации
-              a.course__name.t2(href="#")  !{course.name}
-              .course__info-row.p1
+              h2.m6
+                a.course__name(href="#")  !{course.name}
+              .course__info-row
                 p.course__info-item
                   svg.course__info-svg
                     use(xlink:href='img/sprite/symbols.svg#location')
@@ -286,23 +289,25 @@ section.courses.section
                   svg.course__info-svg
                     use(xlink:href='img/sprite/symbols.svg#wifi')
                   | Доступна онлайн-трансляция
-              .course__description
-                p.p2 !{course.description}
-            .courses__dates-wrapper
+              p.p2.m4 !{course.description}
+            footer.courses__dates-wrapper
               .courses__dates.course-dates
-                .course-dates__headers.t2
-                  h3.course-dates__header Дата
-                  h3.course-dates__header Код
+                .course-dates__headers
+                  p.course-dates__header Дата
+                  p.course-dates__header Код
                     svg.course-dates__code-svg
                       use(xlink:href='img/sprite/symbols.svg#attention')
                 each date in course.dates
                   .course-dates__row
-                    a.course-dates__date-link.p1 !{date.date}
-                    p.p1 !{date.code}
-              a.courses__arrow-link(href="#") 
-                span.courses__arrow-span.b1 узнать всё о курсе
-                .courses__arrow.arrow
-                  .courses__arrow-line.arrow__line
-                  svg.courses__arrowhead.arrow__head
+                    a.course-dates__date-link !{date.date}
+                    span !{date.code}
+              a.courses__arrow-link.m4(href="#") 
+                span.courses__arrow-span узнать всё о курсе
+                .courses__arrow.arr
+                  .arr__line
+                  svg.arr__head
                     use(xlink:href='img/sprite/symbols.svg#arrowhead')
+  .container
     include ../pagination/_pagination_$common
+
+//- http://localhost:1709/archive-courses.html#courses

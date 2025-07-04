@@ -8,10 +8,12 @@
     'Автоматизация',
   ]
   
-section.subrubrics.section
-  .subrubrics__container.container
-    .subrubrics__body.body
-      h2.subrubrics__title.title показать курсы по теме
-      .subrubrics__main.main
+section#subrubrics.subrubrics.section
+  .container
+    .body
+      h2.title показать курсы по теме
+      .subrubrics__main.m2
         each link in subrubrics
-          a.subrubrics__link.t2(href="#") !{link}
+          a.subrubrics__link(href="#") !{link}
+
+//- http://localhost:1709/archive-courses.html#subrubrics

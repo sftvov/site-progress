@@ -1,10 +1,10 @@
-section.choose.section
-  .choose__container.container
-    h1.choose__title.title семинары и курсы по управлению производством
-    .choose__main.main
-      .choose__block
-        .choose__block-name.t2 Показать курсы в:
-        .choose__checkboxes
+section.choose.section#choose
+  .container
+    h1.title семинары и курсы по управлению производством
+    form.row.x3wrap.g3.m2.n1o1
+      fieldset.n1w3.n3w4.x3w2.x4w4
+        legend.t2.accent Показать курсы в:
+        .choose__checkboxes.row.m5
           label.checkbox
             input.checkbox__input(type="checkbox" checked)
             .checkbox__span-wrapper
@@ -13,17 +13,19 @@ section.choose.section
             input.checkbox__input(type="checkbox" checked)
             .checkbox__span-wrapper
               span.checkbox__span Москве
-      .choose__block
-        .choose__block-name.t2 Период проведения:
-        .choose__dates.dates
-          .choose__date.dates__date
-            span.dates__date-span.p1 с
-            .datepicker.choose__datepicker
+      fieldset.n1w3.n3w4.x3w2.x4w4
+        legend.t2.accent Период проведения:
+        .dates.m5
+          label.dates__date.x4w2
+            span.p1.accent с
+            .choose__datepicker.datepicker
               input.choose__input.datepicker__input(value="17.02.2025")
-          .choose__date.dates__date
-            span.dates__date-span.p1 по
-            .datepicker.choose__datepicker
+          label.dates__date.x4w2
+            span.p1.accent по
+            .choose__datepicker.datepicker
               input.choose__input.datepicker__input(value="16.02.2026")
-      .choose__buttons
-        button.choose__button.button--primary Подобрать
-        a.choose__button.button--second(href="#" download)  Скачать PDF
+      .choose__buttons.row
+        button.button--primary.n3w2.x3w1.x4w2 Подобрать
+        a.button--second.n3w2.x3w1.x4w2(href="#" download)  Скачать PDF
+
+//- http://localhost:1709/archive-courses.html#choose

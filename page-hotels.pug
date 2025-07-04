@@ -1,0 +1,16 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('ОТЕЛИ', 'description', [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'])
+	body
+		.wrapper
+			include html/header/_header_$common
+			main.page#page
+				include html/first/_first_hotels
+				include html/conditions/_conditions_hotels
+				include html/contacts-hotels/_contacts-hotels_hotels
+				include html/hotels/_hotels_hotels
+				include html/conditions/_conditions_hotels
+				include html/contacts-hotels/_contacts-hotels_hotels
+			include html/footer/_footer_$common
+		+js('')

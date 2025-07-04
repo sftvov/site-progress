@@ -1,75 +1,77 @@
 include ../../data/rubricsArchive
 
-section.mailing.section
-  .mailing__container.container
-    .mailing__body
-      h1.mailing__title.title Простая рассылка #[br._n4-hide]о серьёзном обучении
-      form.mailing__form
-        .mailing__top
-          h2.mailing__top-title.t2 В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
-          .mailing__top-main
-            h3.mailing__top-main-title.t2 Заполните данные о себе
-            .mailing__top-inputs
-              .mailing__top-input-wrapper--bright
-                input.mailing__top-input(type="text" placeholder="Фамилия")
-              .mailing__top-input-wrapper
-                input.mailing__top-input(type="text" placeholder="Имя")
-              .mailing__top-input-wrapper
-                input.mailing__top-input(type="text" placeholder="Отчество")
-              .mailing__top-input-wrapper--accent
-                input.mailing__top-input(type="email" placeholder="Электронная почта")
-              .mailing__top-input-wrapper
-                input.mailing__top-input(type="text" placeholder="Должность")
-              .mailing__top-checkboxes-wrapper
-                p.mailing__top-checkboxes-title.p2 Я отвечаю за обучение сотрудников
-                .mailing__top-checkboxes
-                  label.checkbox
-                    input.checkbox__input(type="radio" name="employee_training_responsible" checked)
-                    .checkbox__span-wrapper
-                      span.checkbox__span Да
-                  label.checkbox
-                    input.checkbox__input(type="radio" name="employee_training_responsible")
-                    .checkbox__span-wrapper
-                      span.checkbox__span Нет
+section.mailing.section#mailing
+  .container
+    h1.title Простая рассылка #[br.n4hide]о серьёзном обучении
+    form.col1
+      section.mailing__top
+        h2.mailing__top-title.t2d.x2c В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
+        fieldset.mailing__top-main.n2w9
+          legend.t2d Заполните данные о себе
+          .row-wrap.g5.m5
+            .wrapper-square--bright.col6.n2w3.n3w4.x3w2.x4w4
+              input.input(type="text" placeholder="Фамилия")
+            .col6.n2w3.n3w4.x3w2.x4w4
+              input.input(type="text" placeholder="Имя")
+            .col6.n2w3.n3w4.x3w2.x4w4
+              input.input(type="text" placeholder="Отчество")
+            .wrapper-square--accent.col6.n2w3.n3w4.x3w2.x4w4
+              input.input(type="email" placeholder="Электронная почта")
+            .col6.n2w3.n3w4.x3w2.x4w4
+              input.input(type="text" placeholder="Должность")
+            .n2w3.n3w4.x3w2.x4w4
+              p.p2 Я отвечаю за обучение сотрудников
+              .mailing__top-checkboxes
+                label.checkbox
+                  input.checkbox__input(type="radio" name="employee_training_responsible" checked)
+                  .checkbox__span-wrapper
+                    span.checkbox__span Да
+                label.checkbox
+                  input.checkbox__input(type="radio" name="employee_training_responsible")
+                  .checkbox__span-wrapper
+                    span.checkbox__span Нет
+      section.col2
+        h2.t1d Выберите рубрики — это займёт полминуты
         .mailing__choose
-          h2.mailing__choose-title.t1 Выберите рубрики — это займёт полминуты
-          .mailing__choose-main
-            each group in rubricsArchive
-              .mailing__group(style="--group-color:var(--" + group.color + ")")
-                h2.branch-title
-                  span.branch-title__main
-                    span.branch-title__title !{group.title}
-                .mailing__checkboxes
-                  each rubric in group.rubrics
-                    .mailing__checkbox-wrapper(data-checkbox-group=rubric.subrubrics ? true : false)
-                      label.checkbox
-                        input.checkbox__input(type="checkbox" data-checkbox-all=rubric.subrubrics ? true : false)
-                        .checkbox__span-wrapper
-                          span.checkbox__span !{rubric.name}
-                      if rubric.subrubrics
-                        .mailing__subrubrics
-                          each subrubric in rubric.subrubrics
-                            label.checkbox
-                              input.checkbox__input(type="checkbox" data-checkbox-item)
-                              .checkbox__span-wrapper
-                                span.checkbox__span !{subrubric}
-        .mailing__action
-          h2.mailing__action-title.t1 Вы у цели! Осталось нажать #[br._n4-hide]главную кнопку...
-          input.mailing__action-submit.button--primary(type="submit" value="Подписаться на рассылку")
-          label.mailing__action-checkbox.checkbox
+          each group in rubricsArchive
+            fieldset.mailing__group(style="--group-color:var(--" + group.color + ")")
+              legend.branch-title
+                span.branch-title__main
+                  span.branch-title__title !{group.title}
+              .mailing__checkboxes
+                each rubric in group.rubrics
+                  .col6(data-checkbox-group=rubric.subrubrics ? true : false)
+                    label.checkbox
+                      input.checkbox__input(type="checkbox" data-checkbox-all=rubric.subrubrics ? true : false)
+                      .checkbox__span-wrapper
+                        span.checkbox__span !{rubric.name}
+                    if rubric.subrubrics
+                      .mailing__subrubrics
+                        each subrubric in rubric.subrubrics
+                          label.checkbox
+                            input.checkbox__input(type="checkbox" data-checkbox-item)
+                            .checkbox__span-wrapper
+                              span.checkbox__span !{subrubric}
+      section.col3.aic
+        h2.t1d.x4c Вы у цели! Осталось нажать #[br.n4hide]главную кнопку...
+        .col5.aic
+          button.button--primary.n3w4.x3w2.x4w4(type="submit") Подписаться на рассылку
+          label.checkbox
             input.checkbox__input(type="checkbox" checked)
             .checkbox__span-wrapper--blue
               span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
-        .mailing__bottom
-          .mailing__column
-            h2.mailing__column-title.t2 Как получить скидку 3%
-            ol.ol
-              li.ol__li Заполните форму на этой странице и подпишитесь на рассылку.
-              li.ol__li Вы получите письмо для потверждения подписки — так мы проверяем, что адрес действующий.
-              li.ol__li Сразу после этого вы получите письмо с промокодом.
-              li.ol__li Используйте промокод при записи на курс.
-          .mailing__column
-            h2.mailing__column-title.t2 Как сменить адрес почты
-            ol.ol
-              li.ol__li Сначала отпишите старый адрес. Для этого найдите в конце любого письма от ЦНТИ Прогресс ссылку «Отменить подписку» и нажмите на нее. Если старый email адрес по-прежнему актуален, пропустите этот пункт.
-              li.ol__li Подпишите новый email-адрес — заполните форму на этой странице и выберите рубрики.
+    .row.x4col.g3.m1.n1o1
+      section.col5.n1w5.n3w6.x3w2.x4w4
+        h2.t2d Как получить скидку 3%
+        ol.ol
+          li.ol__li Заполните форму на этой странице и подпишитесь на рассылку.
+          li.ol__li Вы получите письмо для потверждения подписки — так мы проверяем, что адрес действующий.
+          li.ol__li Сразу после этого вы получите письмо с промокодом.
+          li.ol__li Используйте промокод при записи на курс.
+      section.col5.n1w5.n3w6.x3w2.x4w4
+        h2.t2d Как сменить адрес почты
+        ol.ol
+          li.ol__li Сначала отпишите старый адрес. Для этого найдите в конце любого письма от ЦНТИ Прогресс ссылку «Отменить подписку» и нажмите на нее. Если старый email адрес по-прежнему актуален, пропустите этот пункт.
+          li.ol__li Подпишите новый email-адрес — заполните форму на этой странице и выберите рубрики.
+
+//- http://localhost:1709/page-mailing.html#mailing

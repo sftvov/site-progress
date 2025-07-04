@@ -1,0 +1,89 @@
+-
+  const hotelsData = hotelsArchive.map(hotel => ({
+    name: hotel.name,
+    address: hotel.address,
+    coords: hotel.coords,
+    slug: hotel.slug
+  }))
+
+script.
+  const hotels = !{(JSON.stringify(hotelsData))};
+
+  ymaps.ready(init);
+
+  function init() {
+    const map = new ymaps.Map("map", {
+      center: [59.951448, 30.305152],
+      zoom: 10,
+      controls: ['geolocationControl', 'routeButtonControl', 'trafficControl', 'typeSelector', 'rulerControl', 'fullscreenControl']
+    });
+
+    // Функция создания параметров иконки с номером
+    const getNumberedIconOptions = (number) => {
+      return {
+        // Используем стандартный layout с изображением и контентом
+        iconLayout: 'default#imageWithContent',
+        // Ваша кастомная иконка
+        iconImageHref: 'https://img.cntiprogress.ru/file/ivksenia/map_icon_other.png',
+        iconImageSize: [36, 52],
+        iconImageOffset: [0, -26],
+        // Параметры для отображения номера
+        iconContentOffset: [0, 5],
+        iconContentLayout: ymaps.templateLayoutFactory.createClass(
+          `<div class="hotels__pin">${number}</div>`
+        )
+      };
+    };
+
+    // Параметры для специального маркера (без номера)
+    const specialIconOptions = {
+      iconLayout: 'default#image',
+      iconImageHref: 'https://img.cntiprogress.ru/file/ivksenia/map_icon_cnti.png',
+      iconImageSize: [56, 81],
+      iconImageOffset: [-28, -81]
+    };
+
+    // Добавляем маркеры филиалов с номерами
+    hotels.forEach((hotel, index) => {
+      const placemark = new ymaps.Placemark(
+        hotel.coords, 
+        {
+          hintContent: hotel.name,
+          balloonContent: `<div class="hotels__baloon">
+                              <h3 class="t2">${hotel.name}</h3>
+                              <p class="p1 m3">${hotel.address}</p>
+                              <a class="link" href="#${hotel.slug}">Подробнее</a>
+                            </div>`
+        },
+        getNumberedIconOptions(index + 1) // Нумерация с 1
+      );
+      map.geoObjects.add(placemark);
+    });
+
+    // Специальный маркер (без номера)
+    const specialPlacemark = new ymaps.Placemark(
+      [59.942227, 30.27578],
+      {
+        hintContent: "ЦНТИ Прогресс",
+        balloonContent: `<div class="hotels__baloon">
+                            <h3 class="t2">ЦНТИ Прогресс</h3>
+                            <p class="p1 m3">Средний пр-т В.О, 36/40</p>
+                          </div>`
+      },
+      specialIconOptions
+    );
+    
+    // Добавляем контрол
+    const zoomControl = new ymaps.control.ZoomControl({
+      options: {
+        position: {
+          top: 60,
+          left: 10
+        },
+      }
+    });
+    map.controls.add(zoomControl);
+
+    map.geoObjects.add(specialPlacemark);
+    map.setBounds(map.geoObjects.getBounds());
+  }       

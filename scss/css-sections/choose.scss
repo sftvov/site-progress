@@ -1,64 +1,11 @@
 .choose {
-  &__container {
-  }
-
-  &__title {
-  }
-
-  &__main {
-    display: flex;
-    gap: 30px var(--gutter);
-    @media (min-width: $md1+px) {
-      margin-inline: var(--column);
-      padding: 0 var(--gutter);
-    }
-    @media (max-width: $md3+px) {
-      flex-wrap: wrap;
-    }
-    @media (max-width: $md4+px) {
-      row-gap: 15px;
-    }
-  }
-
-  &__block {
-    flex: var(--3columns) 0 0;
-    @media (max-width: $md1+px) {
-      flex-basis: var(--4columns);
-    }
-    @media (max-width: $md3+px) AND (min-width: $md4+px) {
-      flex-basis: var(--2columns);
-    }
-  }
-
-  &__block-name {
-    color: var(--text-accent);
-  }
-
   &__checkboxes {
-    display: flex;
     gap: 30px;
-    margin-top: 15px;
     @media (min-width: $md2+px) {
       padding: 3px 0;
     }
     @media (max-width: $md2+px) AND (min-width: $md4+px) {
       padding: 5px 0;
-    }
-    @media (max-width: $md2+px) {
-      margin-top: 7px;
-    }
-  }
-
-  &__dates {
-    margin-top: 15px;
-    @media (max-width: $md2+px) {
-      margin-top: 7px;
-    }
-  }
-
-  &__date {
-    @media (max-width: $md4+px) {
-      flex: var(--2columns) 0 0;
     }
   }
 
@@ -69,24 +16,16 @@
   }
 
   &__input {
-    width: 100%;
-  }
-
-  &__buttons {
-    display: flex;
-    align-items: flex-end;
-    gap: var(--gutter);
-    flex-grow: 1;
-    @media (max-width: $md3+px) AND (min-width: $md4+px) {
-      margin-inline: var(--column);
-      padding: 0 var(--gutter);
+    @media (max-width: $md4+px) {
+      width: 100%;
     }
   }
 
-  &__button {
-    flex: var(--2columns) 0 0;
+  &__buttons {
+    align-items: flex-end;
+    flex-grow: 1;
     @media (max-width: $md3+px) AND (min-width: $md4+px) {
-      flex-basis: var(--column);
+      margin: 0 var(--columnG);
     }
   }
 }

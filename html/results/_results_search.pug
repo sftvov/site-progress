@@ -253,59 +253,63 @@
     }
   ];
 
-section.results.section
-  .results__container.container
-    h2.results__title.title вы искали “строительство”
-    .results__main.main        
-      h3.results__results.t2 Мероприятий: 233
-      each course, index in courses
-        .results__item
-          .results__format
-            svg.results__format-svg
+section.results.section#results
+  .container
+    h2.title вы искали “строительство”
+    p.t2d.m2 Мероприятий: 233
+  .m2
+    each course, index in courses
+      article.results__item
+        .container
+          .results__body
+            header.results__format
+              svg.results__format-svg
+                if index%2 === 0
+                  use(xlink:href='img/sprite/symbols.svg#wifi')
+                else 
+                  use(xlink:href='img/sprite/symbols.svg#building')
               if index%2 === 0
-                use(xlink:href='img/sprite/symbols.svg#wifi')
+                p.results__format-span Онлайн
               else 
-                use(xlink:href='img/sprite/symbols.svg#building')
-            if index%2 === 0
-              p.results__format-span Онлайн
-            else 
-              p.results__format-span Очно
-          .results__course.course
-            if index%2 === 0
-              p.p2 Онлайн-курс
-            else
-              p.p2 Курс повышения квалификации
-            a.course__name.t2(href="#")  !{course.name}
-            .course__info-row.p1
-              if index%2 !== 0
-                p.course__info-item
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#location')
-                  | Санкт-Петербург              
+                p.results__format-span Очно
+            .results__course.course
               if index%2 === 0
-                a.course__info-item--link(href="#") 
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#building')
-                  | Доступно очно
+                p.p2 Онлайн-курс
               else
-                a.course__info-item--link(href="#") 
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#wifi')
-                  | Доступна онлайн-трансляция
-            .course__description
-              p.p2 !{course.description}
-          .results__dates.course-dates
-            .course-dates__headers.t2
-              h3.course-dates__header Дата
-              h3.course-dates__header Код
-                svg.course-dates__code-svg
-                  use(xlink:href='img/sprite/symbols.svg#attention')
-              h3.course-dates__header Цена
-                svg.course-dates__code-svg
-                  use(xlink:href='img/sprite/symbols.svg#attention')
-            each date in course.dates
-              .course-dates__row
-                a.p1.course-dates__date-link(href="#")  !{date.date}
-                p.p1 !{date.code}
-                p.p1 !{course.price} ₽
+                p.p2 Курс повышения квалификации
+              h3.m6
+                a.course__name(href="#")  !{course.name}
+              .course__info-row
+                if index%2 !== 0
+                  p.course__info-item
+                    svg.course__info-svg
+                      use(xlink:href='img/sprite/symbols.svg#location')
+                    | Санкт-Петербург              
+                if index%2 === 0
+                  a.course__info-item--link(href="#") 
+                    svg.course__info-svg
+                      use(xlink:href='img/sprite/symbols.svg#building')
+                    | Доступно очно
+                else
+                  a.course__info-item--link(href="#") 
+                    svg.course__info-svg
+                      use(xlink:href='img/sprite/symbols.svg#wifi')
+                    | Доступна онлайн-трансляция
+              p.p2.m4 !{course.description}
+            footer.results__dates.course-dates
+              .course-dates__headers
+                p.course-dates__header Дата
+                p.course-dates__header Код
+                  svg.course-dates__code-svg
+                    use(xlink:href='img/sprite/symbols.svg#attention')
+                p.course-dates__header Цена
+                  svg.course-dates__code-svg
+                    use(xlink:href='img/sprite/symbols.svg#attention')
+              each date in course.dates
+                .course-dates__row
+                  a.course-dates__date-link(href="#") !{date.date}
+                  p !{date.code}
+                  p !{course.price} ₽
     include ../pagination/_pagination_$common
+
+//- http://localhost:1709/page-search.html#results

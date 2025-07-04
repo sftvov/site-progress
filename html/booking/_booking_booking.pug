@@ -1,0 +1,71 @@
+include ../../data/hotelsArchive
+
+section.booking.section#booking
+  .container
+    h1.title.bright Бронирование гостиниц:
+    form.m2.n1o1
+      .booking__main.row.x3col.g3
+        fieldset.n1w4.n2w5.n3w6
+          legend.t2d Информация об отеле
+          .col5.m4
+            .col6
+              p.p2 Гостиница
+              .select
+                input.select__input(value=hotelsArchive[0].name readonly inert)
+                .select__variants
+                  each hotel in hotelsArchive
+                    .select__variant !{hotel.name}
+            .col6
+              p.p2 Категория номера
+              .select
+                input.select__input(value="Стандарт" readonly inert)
+                .select__variants
+                  .select__variant Стандарт
+                  .select__variant Комфорт
+                  .select__variant Эконом
+            .col6
+              p.p2 Размещение в номере
+              .select
+                input.select__input(value="Одноместное" readonly inert)
+                .select__variants
+                  .select__variant Одноместное
+                  .select__variant Двуместное
+            label.col6
+              p.p2 Дата заезда
+              input.input--date(value="2025-06-10" type="date")
+            label.col6
+              p.p2 Дата выезда
+              input.input--date(value="2025-06-17" type="date")
+        fieldset.n1w5.n3w6
+          legend.t2d Информация о слушателе
+          .col5.m4
+            label.col6
+              p.p2 Код семинара
+              input.input(placeholder="789765")
+            label.col6
+              p.p2 ФИО участника
+              input.input(placeholder="Иванов Иван Иванович")
+            label.col6
+              p.p2 Электронная почта
+              input.input(type="email" placeholder="example@mail.ru")
+            label.col6
+              p.p2 Телефон
+              input.input(type="tel" placeholder="8 (999) 999-99-99")
+            .col6
+              p.p2 Вид оплаты
+              .select
+                input.select__input(value="Наличные/Карта" readonly inert)
+                .select__variants
+                  .select__variant Наличные/Карта
+                  .select__variant Безналичный от юрлица
+      footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3
+        label.col6
+          p.p2 Примечание
+          textarea.textarea(placeholder="Напишите свое сообщение")
+        .col5
+          .row.g5.x4col
+            button(type="submit").button--primary.n2w2.n3w3.x3w2.x4w4 Отправить
+            input(type="reset" value="Отмена").button--second.n2w2.n3w3.x3w2.x4w4
+          p.p2 Нажимая кнопку, я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года № 152-ФЗ «О персональных данных», на условиях и для целей, определенных #[a.link(href="#") Политикой конфиденциальности].
+
+//- http://localhost:1709/page-booking.html#booking

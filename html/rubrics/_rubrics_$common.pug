@@ -1,38 +1,41 @@
 include ../../data/rubricsArchive
 
-section.rubric-tabs.section
-  .rubric-tabs__container.container
-    h1.rubric-tabs__title.title Семинары и&nbsp;курсы по направлениям
-    .rubric-tabs__main.main._tabs
-      .rubric-tabs__tab-titles
-        .rubric-tabs__indicator._tabs-indicator
-        button.rubric-tabs__tab-title.b1._active._tabs-title 
-          svg.rubric-tabs__tab-title-svg
+section.rubrics.section#rubrics
+  .container
+    h1.title Семинары и курсы по направлениям
+    .m2._tabs
+      .rubrics__tab-titles
+        .rubrics__indicator._tabs-indicator
+        button.rubrics__tab-title._active._tabs-title 
+          svg.icon
             use(xlink:href='img/sprite/symbols.svg#building')
           | Очно
-        button.rubric-tabs__tab-title.b1._tabs-title 
-          svg.rubric-tabs__tab-title-svg
+        button.rubrics__tab-title._tabs-title 
+          svg.icon
             use(xlink:href='img/sprite/symbols.svg#wifi')
           | Онлайн
-      .rubric-tabs__tab-blocks._tabs-blocks
-        .rubric-tabs__tab-block._tabs-block._active
+      ._tabs-blocks.m2
+        .rubrics__tab-block._tabs-block._active
           each group in rubricsArchive
-            .branch(style="--group-color:var(--" + group.color + ")")
+            article.branch(style="--group-color:var(--" + group.color + ")")
               h2.branch-title
                 span.branch-title__main 
                   span.branch-title__title !{group.title} 
               .branch__body
                 each rubric in group.rubrics
-                  p.branch__rubric
-                    a.branch__link(href="archive-courses.html") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}
-        .rubric-tabs__tab-block._tabs-block
+                  p.p1
+                    a.branch__link(href="archive-courses.html") !{rubric.name} —&nbsp;!{rubric.courses}
+        .rubrics__tab-block._tabs-block
           each group in rubricsArchive
-            .branch(style="--group-color:var(--" + group.color + ")")
+            article.branch(style="--group-color:var(--" + group.color + ")")
               h2.branch-title
                 span.branch-title__main
                   span.branch-title__title !{group.title} 
               .branch__body
                 -
                   rubric = group.rubrics[0]
-                p.branch__rubric
-                  a.branch__link(href="archive-courses.html") !{rubric.name}&nbsp;—&nbsp;!{rubric.courses}
+                p.p1
+                  a.branch__link(href="archive-courses.html") !{rubric.name} — !{rubric.courses}
+              
+//- http://localhost:1709/page-main.html#rubrics
+//- http://localhost:1709/page-rubrics.html#rubrics

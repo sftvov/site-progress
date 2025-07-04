@@ -1,15 +1,20 @@
-section.results.section
-  .results__container.container
-    h1.results__title.title вы искали “паовт”
-    .results__main.main.empty-results
+section#results.section
+  .container
+    h1.title вы искали “паовт”
+    .empty-results.m2
       img.empty-results__img(src="img/search/yama.svg", alt="ничего не найдено по поисковому запросу")
-      h2.empty-results__title.t2 Увы, мы ничего не нашли по вашему запросу.
-      .empty-results__columns
-        .empty-results__column
-          h3.empty-results__column-title.t2 Попытаться еще раз
-          ol.ol.p1
-            li.ol__li Если у вас есть код курса, введите его в поле поиска. Например, 34541.
-            li.ol__li Попробуйте упростить запрос до одного слова. Например, «бухгалтер» или&nbsp;«гособоронзаказ».
-        .empty-results__column
-          h3.empty-results__column-title.t2 Спросить вживую
-          .p1 Позвоните нам по бесплатному номеру #[a.link(href='#') #[br._n1-hide._x3-hide] #[nobr 8 (800) 333-88-44]] #[br._n2-hide._x3-hide] или закажите #[a.link(href='#') #[nobr обратный звонок]]
+      .m2
+        h2.subtitle Увы, мы ничего не нашли по вашему запросу.
+        .empty-results__columns
+          .empty-results__column
+            h3.t2d Попытаться еще раз
+            .m5
+              ol.ol
+                li.ol__li Если у вас есть код курса, введите его в поле поиска. Например, 34541.
+                li.ol__li Попробуйте упростить запрос до одного слова. Например, «бухгалтер» или «гособоронзаказ».
+          .empty-results__column
+            h3.t2d Спросить вживую
+            .m5
+              p.p1 Позвоните нам по бесплатному номеру #[a.link(href='#') #[br.n1hide.x3hide] #[nobr 8 (800) 333-88-44]] #[br.n2hide.x3hide] или закажите #[a.link(href='#') #[nobr обратный звонок]]
+
+//- http://localhost:1709/page-search-empty.html#results

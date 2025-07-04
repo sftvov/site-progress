@@ -1,61 +1,30 @@
 .results {
-  &__container {
+  &__item {
+    transition-duration: var(--transition);
+    padding: var(--spaceL) 0;
+    &:hover,
+    &:focus-visible {
+      background-color: var(--bg-second);
+    }
   }
 
   &__body {
-  }
-
-  &__title {
-  }
-
-  &__main {
-  }
-
-  &__results {
-    margin-bottom: 40px;
-    @media (max-width: $md3+px) {
-      margin-bottom: 30px;
-    }
-  }
-
-  &__item {
-    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: var(--gutter);
-    padding: 30px 0;
+    gap: var(--spaceM) var(--gutter);
     @media (max-width: $md2+px) {
       flex-wrap: wrap;
-      gap: 20px 0;
-    }
-    @media (max-width: $md3+px) {
-      gap: 15px;
-    }
-    &:hover,
-    &:focus-visible {
-      &:after {
-        background-color: var(--bg-second);
-      }
-    }
-    &::after {
-      content: '';
-      transition-duration: var(--transition);
-      z-index: -1;
-      position: absolute;
-      left: calc((100% - 100vw) / 2);
-      top: 0;
-      width: 100vw;
-      height: 100%;
     }
   }
 
   &__format {
     display: flex;
     align-items: center;
-    flex: var(--column) 0 0;
+    flex-shrink: 0;
+    width: var(--column);
     gap: 5px;
-    @media (min-width: $md3+px) AND (max-width: $md1+px) {
+    @media (max-width: $md1+px) AND (min-width: $md3+px) {
       flex-direction: column;
       gap: 3px;
     }
@@ -63,8 +32,10 @@
 
   &__format-svg {
     stroke: var(--text-bright);
+    stroke-width: 2px;
     width: 20px;
     height: 20px;
+    flex-shrink: 0;
   }
 
   &__format-span {
@@ -81,10 +52,12 @@
     grid-template-columns: var(--2columns) var(--column) var(--column);
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       grid-template-columns: var(--3columns) var(--2columns) var(--2columns);
-      margin-left: var(--column);
-      padding-left: var(--gutter);
+      margin-left: var(--columnG);
     }
     @media (max-width: $md3+px) {
+      grid-template-columns: var(--column) var(--column) var(--column);
+    }
+    @media (max-width: $md4+px) {
       grid-template-columns: var(--2columns) var(--column) var(--column);
     }
   }
@@ -107,23 +80,12 @@
     }
   }
 
-  &__title {
-    text-align: center;
-    text-wrap: balance;
-    margin-top: 40px;
-    @media (max-width: $md3+px) {
-      margin-top: 30px;
-    }
-  }
-
   &__columns {
     display: flex;
     gap: 30px var(--gutter);
     width: 100%;
-    margin-top: 50px;
     @media (max-width: $md3+px) {
       flex-direction: column;
-      margin-top: 40px;
     }
   }
 
@@ -135,10 +97,5 @@
       flex: var(--6columns) 0 0;
       padding-left: calc(var(--column) + var(--gutter));
     }
-  }
-
-  &__column-title {
-    color: var(--text-);
-    margin-bottom: 15px;
   }
 }

@@ -3,28 +3,45 @@
 @import 'css-settings/fonts';
 @import '../../web-template/src/css-libs/null';
 
-html {
-  scroll-behavior: smooth;
+*:focus-visible {
+  outline: 1px solid var(--border);
+  outline-offset: 3px;
 }
 
-body {
+html {
+  scroll-behavior: smooth;
   color: var(--text-main);
+  stroke: var(--text-main);
+  stroke-width: 1.5px;
   font-size: var(--fs);
   font-weight: 400;
   font-style: normal;
   $lh: 20;
   line-height: round-to(math.div($lh, $fz), 3);
   letter-spacing: 0;
+}
+
+body {
   height: 100%;
   background-color: var(--bg-main);
 }
 
+section,
+div {
+  scroll-margin-top: calc(var(--header-height) + 50px);
+}
+
+svg {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 // strong {
-//   font-weight: 700;
+//   
 // }
 
 // b {
-// 	font-weight: 700;
+// 	
 // }
 
 .wrapper {
@@ -48,10 +65,11 @@ body {
   margin-top: var(--header-height);
 }
 
-// @import '../../web-template/src/css-libs/lightgallery';
+@import '../../web-template/src/css-libs/lightgallery';
 // @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
 
 @import 'css-settings/functions';
+@import 'css-settings/framework';
 @import 'css-sections/content';
 @import 'css-settings/elements';
 
@@ -71,16 +89,26 @@ body {
 
 // @import 'css-sections/spollersPrice.scss';
 
+@import 'css-sections/booking.scss';
 @import 'css-sections/bottom-plan.scss';
+@import 'css-sections/conditions.scss';
+@import 'css-sections/contacts-feedback.scss';
+@import 'css-sections/contacts-hotels.scss';
 @import 'css-sections/courses.scss';
 @import 'css-sections/choose.scss';
+@import 'css-sections/feedback.scss';
+@import 'css-sections/first.scss';
+@import 'css-sections/hotels.scss';
 @import 'css-sections/mailing.scss';
+@import 'css-sections/map.scss';
 @import 'css-sections/plan.scss';
 @import 'css-sections/programms.scss';
 @import 'css-sections/recommended.scss';
 @import 'css-sections/results.scss';
+@import 'css-sections/route.scss';
 @import 'css-sections/rubrics.scss';
 @import 'css-sections/subrubrics.scss';
+@import 'css-sections/support.scss';
 @import 'css-sections/trust.scss';
 
 @import 'css-settings/variables-css';

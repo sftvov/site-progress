@@ -1,0 +1,43 @@
+section.section#feedback
+  .container
+    h1.title обратная связь
+    p.intro.m5 Если у вас есть вопросы, пожелания #[br.n4hide]или вы хотите оставить отзыв #[br]о сайте или курсе, напишите нам,  #[br.n4hide]мы с удовольствием ответим.
+    form.m2.n1o1
+      .row.x3col.g5
+        fieldset.col5.n1w5.n3w6.x3w4
+          label.col6
+            p.p2 Фамилия
+            input.input(placeholder="Иванов")
+          label.col6
+            p.p2 Имя
+            input.input(placeholder="Иван")
+          label.col6
+            p.p2 Электронная почта
+            input.input(type="email" placeholder="example@mail.ru")
+          label.col6
+            p.p2 Телефон
+            input.input(type="tel" placeholder="8 (999) 999-99-99")      
+        fieldset.col5.n1w5.n3w6.x3w4
+          .col6
+            p.p2  Сообщение для:
+            .select
+              input.select__input(value="Службы записи" readonly inert)
+              .select__variants
+                .select__variant Службы записи
+                .select__variant Службы корпоративных семинаров
+                .select__variant Службы гостиниц
+                .select__variant Отзыв о сайте или курсе
+                .select__variant Другое
+          label.col6
+            p.p2 Выш вопрос или пожелание
+            textarea.textarea(placeholder="Напишите свое сообщение")      
+      .col5.m3
+        .row
+          button(type="submit").button--primary.n1w2.n3w3.x3w2.x4w4 Отправить
+          input(type="reset" value="Отмена").button--second.n1w2.n3w3.x3w2.x4w4        
+        label.checkbox
+          input.checkbox__input(type="checkbox" checked)
+          .checkbox__span-wrapper--blue
+            span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+
+//- http://localhost:1709/page-feedback.html#feedback

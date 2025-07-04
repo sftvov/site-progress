@@ -1,0 +1,13 @@
+.booking {
+  &__main {
+    @media (min-width: $md2+px) {
+      gap: var(--columnGG);
+    }
+  }
+
+  &__bottom {
+    @media (max-width: $md2+px) AND (min-width: $md3+px) {
+      row-gap: 15px;
+    }
+  }
+}
