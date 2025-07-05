@@ -838,6 +838,7 @@
   &__link {
     transition-duration: var(--transition);
     text-align: left;
+    @extend .p2;
     @media (min-width: $md2+px) {
       break-before: avoid-column;
       display: flex;
@@ -846,10 +847,6 @@
       padding-left: 20px;
     }
     @media (max-width: $md2+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 15;
-      line-height: round-to(math.div($lh, $fs), 3);
       display: block;
       margin-top: var(--spaceXS);
       padding-left: 15px;

@@ -7,11 +7,12 @@
   &__grid {
     @media (min-width: $md3+px) {
       grid-template-columns: repeat(4, 1fr);
+      row-gap: var(--spaceXS);
     }
     @media (min-width: $md4+px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--spaceS) var(--gutter);
+      gap: var(--spaceL) var(--gutter);
     }
   }
 
@@ -21,8 +22,8 @@
       display: contents;
     }
     @media (max-width: $md4+px) {
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
       &:first-child {
         display: none;
       }
@@ -97,7 +98,11 @@
   }
 
   &__icon {
-    transition-duration: var(--transition);
+    &--stroke,
+    &--fill {
+      transition-duration: var(--transition);
+      line-height: 0;
+    }
     &--stroke {
       stroke: var(--text-second);
       &:hover,

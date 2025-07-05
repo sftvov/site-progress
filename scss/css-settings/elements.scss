@@ -506,17 +506,6 @@
     }
   }
 
-  &__first-phone {
-    color: var(--text-accent);
-    font-family: 'RobotoCondensed';
-    @media (min-width: $md1+px) {
-      $fs: 20;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fs), 3);
-    }
-  }
-
   &__svg {
     transition-duration: var(--transition);
 
@@ -567,36 +556,6 @@
       gap: var(--spaceS);
     }
   }
-
-  &__city {
-    transition-duration: var(--transition);
-    font-family: 'RobotoCondensed';
-    &._active {
-      color: var(--text-accent);
-    }
-    &:hover,
-    &:focus-visible {
-      color: var(--hover);
-    }
-  }
-
-  &__phone {
-    transition-duration: var(--transition);
-    font-family: 'RobotoCondensed';
-    @media (min-width: $md1+px) {
-      $fs: 20;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fs), 3);
-    }
-    &._active {
-      color: var(--text-accent);
-    }
-    &:hover,
-    &:focus-visible {
-      color: var(--hover);
-    }
-  }
 }
 
 .input-wrapper {
@@ -605,7 +564,8 @@
     transition-duration: var(--transition);
     @extend .p2;
   }
-  &:focus-within {
+  &:focus-within,
+  &:has(input:hover) {
     & .input-wrapper__label {
       color: var(--text-bright);
     }

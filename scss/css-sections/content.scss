@@ -327,7 +327,7 @@
   border-radius: 0; /* Явно убираем скругления */
   @media (hover: hover) {
     &:hover{
-      color: var(--border);
+      border-color: var(--border);
     }
   }
   &:focus-visible {

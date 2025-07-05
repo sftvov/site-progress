@@ -42,7 +42,7 @@ footer.footer
           .col4
             h2.footer__column-title.x4c= column.title
             .x4c
-              ul.col6
+              ul.col5
                 each item, itemIndex in column.list
                   li.p1
                     a(class='footer__list-link' + ((columnIndex === 2) ? (itemIndex === 1 ? '--accent' : (itemIndex === 2 ? '--bright' : '')) : '') href="#")= item
@@ -70,13 +70,13 @@ footer.footer
             p.p1
               a.hover(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
           .footer__icons
-            a.footer__icon.footer__icon--fill(href="https://vk.com/cntiprogress")
+            a.footer__icon--fill(href="https://vk.com/cntiprogress")
               svg.icn
                 use(xlink:href='img/sprite/symbols.svg#vk')
-            a.footer__icon.footer__icon--stroke(href="https://t.me/cntiprogress")
+            a.footer__icon--stroke(href="https://t.me/cntiprogress")
               svg.icn
                 use(xlink:href='img/sprite/symbols.svg#tg')
-            a.footer__icon.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
+            a.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
               svg.icn
                 use(xlink:href='img/sprite/symbols.svg#mail')
       .footer__additional.col5
