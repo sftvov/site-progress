@@ -206,6 +206,7 @@
 
 %button {
   transition-duration: var(--transition);
+  @extend %safari-not-round;
   cursor: pointer;
   @extend .btn;
   display: inline-block;
@@ -314,19 +315,23 @@
   @extend .hover;
 }
 
-%input {
+%safari-not-round {
   -webkit-appearance: none; /* Отключаем стандартные стили Safari */
   appearance: none; /* Для современных браузеров */
+  border-radius: 0; /* Явно убираем скругления */
+}
+
+%input {
   transition-duration: var(--transition);
   outline: none;
+  @extend %safari-not-round;
   color: var(--text-main);
   min-height: 40px;
   padding: 4px 9px;
   background-color: var(--bg-main);
   border: 1px solid var(--border-dark);
-  border-radius: 0; /* Явно убираем скругления */
   @media (hover: hover) {
-    &:hover{
+    &:hover {
       border-color: var(--border);
     }
   }

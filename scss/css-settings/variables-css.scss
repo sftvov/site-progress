@@ -94,12 +94,14 @@
   --columnGG: calc(var(--column) + var(--gutter) * 2);
   --2columnsG: calc(var(--2columns) + var(--gutter));
 
-  --spaceXXL: 50px;
-  --spaceXL: 30px;
+  
   --spaceL: 30px;
-  --spaceM: 15px;
   --spaceS: 15px;
   --spaceXS: 7px;
+
+  --spaceXXL: 50px;
+  --spaceXL: 30px;
+  --spaceM: 15px;
 
   @media (min-width: $md2+px) {
     --spaceXXL: 60px;

@@ -565,7 +565,7 @@
     @extend .p2;
   }
   &:focus-within,
-  &:has(input:hover) {
+  &:has(:is(input, textarea, .select):hover) {
     & .input-wrapper__label {
       color: var(--text-bright);
     }

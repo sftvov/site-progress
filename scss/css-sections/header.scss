@@ -62,11 +62,11 @@
   &__contacts {
     display: flex;
     justify-content: space-between;
-    column-gap: 40px;
     @media (min-width: $md2+px) {
       column-gap: var(--gutter);
     }
     @media (min-width: $md4+px) {
+      column-gap: 40px;
       margin-left: auto;
     }
     @media (max-width: $md3+px) {
