@@ -163,7 +163,7 @@
 
 .branch {
   &:not(:first-child) {
-    margin-top: var(--spaceL);
+    margin-top: var(--S);
   }
 
   &__body {
@@ -551,9 +551,9 @@
   &__variants {
     display: flex;
     flex-direction: column;
-    gap: var(--spaceXS);
+    gap: var(--2XS);
     @media (min-width: $md1+px) {
-      gap: var(--spaceS);
+      gap: var(--XS);
     }
   }
 }

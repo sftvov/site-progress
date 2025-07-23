@@ -1,0 +1,75 @@
+.main-slider {
+  &__swiper {
+  }
+
+  &__navigation {
+    z-index: 1;
+    position: absolute;
+    bottom: 85px;
+    left: var(--7columns);
+    @media (max-width: $md1+px) {
+      left: var(--6columnsG);
+      bottom: 28px;
+    }
+    @media (max-width: $md2+px) {
+      width: var(--3columnsG);
+      left: var(--6columns);
+    }
+  }
+
+  &__prev {
+    rotate: 180deg;
+  }
+
+  &__prev,
+  &__next {
+    --arrow-color: var(--text-bright);
+    transition-duration: var(--transition);
+    cursor: pointer;
+    &:hover,
+    &:focus-visible {
+      --arrow-color: var(--text-accent);
+    }
+  }
+}
+
+.main-slide {
+  display: flex;
+  height: 369px;
+  background-position: center;
+  background-size: cover;
+  @media (max-width: $md1+px) {
+    height: 314px;
+  }
+  @media (max-width: $md2+px) {
+    height: 243px;
+  }
+  &__body {
+    clip-path: polygon(var(--2columns) 0%, 100% 0%, calc(100% - var(--2columns)) 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    width: var(--7columnsG);
+    margin-left: auto;
+    padding: 0 var(--column) 137px var(--2columns);
+    background-color: #ffffffb3;
+    @media (max-width: $md1+px) {
+      clip-path: polygon(var(--columnG) 0%, 100% 0%, calc(100% - var(--columnG)) 100%, 0% 100%);
+      padding: 0 var(--columnG) 80px var(--columnG);
+    }
+    @media (max-width: $md2+px) {
+      padding: 0 var(--column) 70px var(--columnG);
+    }
+    @media (max-width: $md3+px) {
+      width: calc(var(--3columns) - (var(--column) / 2) );
+      clip-path: polygon(var(--columnG) 0%, 100% 0%, calc(100% - var(--columnG)) 100%, 0% 100%);
+    }
+  }
+
+  &__title {
+    margin-top: auto;
+  }
+
+  &__link {
+    width: var(--3columnsG);
+  }
+}

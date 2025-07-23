@@ -20,13 +20,13 @@
       position: absolute;
     }
     @media (max-width: $md2+px) {
-      margin-top: var(--spaceXS);
+      margin-top: var(--2XS);
     }
   }
 
   &__top-main {
     @media (max-width: $md2+px) {
-      margin-top: var(--spaceXXL);
+      margin-top: var(--L-XL);
     }
   }
 
@@ -49,7 +49,7 @@
   &__group {
     break-inside: avoid-column;
     &:not(:first-child) {
-      margin-top: var(--spaceL);
+      margin-top: var(--S);
     }
   }
 

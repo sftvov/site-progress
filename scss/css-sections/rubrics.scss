@@ -1,5 +1,4 @@
 .rubrics {
-
   &__tab-titles {
     position: relative;
     display: flex;
@@ -22,8 +21,6 @@
 
   &__tab-title {
     transition-duration: var(--transition);
-        
-    @extend .b1;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -31,13 +28,16 @@
     @media (max-width: $md2+px) {
       padding: 10px 15px;
     }
+
     @media (max-width: $md3+px) {
       padding: 5px 15px;
     }
+
     @media (max-width: $md4+px) {
       flex: 50% 0 0;
       justify-content: center;
     }
+
     &:not(._active) {
       &:hover,
       &:focus-visible {
@@ -53,11 +53,9 @@
     @media (min-width: $md3+px) {
       column-count: 3;
     }
+
     @media (min-width: $md4+px) {
       column-count: 2;
     }
   }
 }
-
-//- http://localhost:1709/page-main.html#rubrics
-//- http://localhost:1709/page-rubrics.html#rubrics

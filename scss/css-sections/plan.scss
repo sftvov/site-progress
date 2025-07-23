@@ -2,7 +2,6 @@
 
   &__section-num {
     color: var(--text-accent);
-    @extend .a1;
     @media (min-width: $md3+px) {
       display: flex;
       justify-content: flex-end;
@@ -13,7 +12,7 @@
   &__checkboxes {
     display: flex;
     align-items: center;
-    gap: var(--spaceXS) 30px;
+    gap: var(--2XS) 30px;
     min-height: 30px;
   }
 }

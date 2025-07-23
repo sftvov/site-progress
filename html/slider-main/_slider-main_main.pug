@@ -1,0 +1,37 @@
+-
+  mainSlider =[
+    {
+      img: 'city',
+      title: 'Готов учебный план на 2026 год. <br>Расписание курсов <br>по всем отраслевым <br>направлениям — в одной брошюре',
+      btn: 'Скачать план'
+    },
+    {
+      img: 'hands',
+      title: 'Создаем для вас <br>уникальные корпоративные <br>курсы — очно и онлайн',
+      btn: 'Узнать подробнее'
+    },
+    {
+      img: 'hands',
+      title: 'пример <br>для 2 строчек',
+      btn: 'Узнать подробнее'
+    },
+  ]
+
+.main-slider.section#slider
+  .container
+    .main-slider__swiper.swiper
+      .swiper-wrapper
+        each slide in mainSlider
+          section.main-slide.swiper-slide(style="background-image: url(/img/main/slider/" + slide.img + ".png)")
+            .main-slide__body.n2w7
+              h2.main-slide__title.t1 !{slide.title}
+              a(href="").main-slide__link.button--primary.n2w3.m5 !{slide.btn}
+      .main-slider__navigation.row.aic.n1w2.n3w3
+        .main-slider__prev.arr
+          .arr__line
+          svg.arr__head
+            use(xlink:href='img/sprite/symbols.svg#arrowhead')   
+        .main-slider__next.arr
+          .arr__line
+          svg.arr__head
+            use(xlink:href='img/sprite/symbols.svg#arrowhead')

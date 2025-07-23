@@ -1,18 +1,18 @@
 .footer {
   color: var(--text-second);
   width: 100%;
-  padding: var(--spaceXXL) 0;
+  padding: var(--L-XL) 0;
   background-color: var(--bg-dark);
 
   &__grid {
     @media (min-width: $md3+px) {
       grid-template-columns: repeat(4, 1fr);
-      row-gap: var(--spaceXS);
+      row-gap: var(--2XS);
     }
     @media (min-width: $md4+px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--spaceL) var(--gutter);
+      gap: var(--S) var(--gutter);
     }
   }
 

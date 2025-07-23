@@ -29,7 +29,7 @@
   }
   @media (max-width: $md4+px) {
     flex-wrap: wrap;
-    gap: var(--spaceS) var(--gutter);
+    gap: var(--XS) var(--gutter);
   }
 
   &__prev {
@@ -45,7 +45,7 @@
   &__pages {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spaceS) 15px;
+    gap: var(--XS) 15px;
     @media (max-width: $md4+px) {
       order: -1;
       flex-basis: 100%;

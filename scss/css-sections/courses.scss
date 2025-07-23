@@ -118,7 +118,7 @@
       flex-grow: 1;
     }
     @media (max-width: $md4+px) {
-      margin-top: var(--spaceS);
+      margin-top: var(--XS);
     }
     &:hover,
     &:focus-visible {
@@ -159,11 +159,11 @@
   &__info-row {
     display: flex;
     gap: 45px;
-    margin-top: var(--spaceS);
+    margin-top: var(--XS);
     @media (max-width: $md2+px) {
       flex-wrap: wrap;
-      gap: var(--spaceXS) 30px;
-      margin-top: var(--spaceXS);
+      gap: var(--2XS) 30px;
+      margin-top: var(--2XS);
     }
     @media (max-width: $md4+px) {
       column-gap: var(--gutter);
@@ -203,7 +203,7 @@
 .course-dates {
   display: grid;
   align-items: flex-start;
-  gap: var(--spaceXS) var(--gutter);
+  gap: var(--2XS) var(--gutter);
   &__headers {
     color: var(--text-dark);
     display: grid;
@@ -211,7 +211,7 @@
     grid-column-start: 1;
     grid-column-end: -1;
     @media (min-width: $md4+px) {
-      margin-bottom: calc(var(--spaceS) - var(--spaceXS));
+      margin-bottom: calc(var(--XS) - var(--2XS));
     }
   }
 

@@ -66,7 +66,7 @@ svg {
 }
 
 @import '../../web-template/src/css-libs/lightgallery';
-// @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
+@import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
 
 @import 'css-settings/functions';
 @import 'css-settings/framework';
@@ -82,7 +82,7 @@ svg {
 // @import 'css-sections/form-sign.scss';
 // @import 'css-sections/form-popup-sign.scss';
 
-// @import 'css-sections/slider-hero.scss';
+@import 'css-sections/slider-main.scss';
 // @import 'css-sections/slider-doctors.scss';
 
 // @import 'css-sections/grid-videos.scss';

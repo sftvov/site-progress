@@ -19,7 +19,7 @@
       padding-inline: 15px;
     }
     @media (max-width: $md3+px) {
-      padding: var(--spaceXXL) 30px;
+      padding: var(--L-XL) 30px;
     }
     @media (max-width: $md4+px) {
       padding-inline: 15px;
@@ -52,7 +52,7 @@
 
   &__info-middle {
     @media (max-width: $md3+px) {
-      gap: var(--spaceXS);
+      gap: var(--2XS);
     }
   }
 

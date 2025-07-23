@@ -65,27 +65,27 @@
 }
 
 .g1 {
-  row-gap: var(--spaceXXL);
+  row-gap: var(--L-XL);
 }
 
 .g2 {
-  row-gap: var(--spaceXL);
+  row-gap: var(--S-M);
 }
 
 .g3 {
-  row-gap: var(--spaceL);
+  row-gap: var(--S);
 }
 
 .g4 {
-  row-gap: var(--spaceM);
+  row-gap: var(--XS-S);
 }
 
 .g5 {
-  row-gap: var(--spaceS);
+  row-gap: var(--XS);
 }
 
 .g6 {
-  row-gap: var(--spaceXS);
+  row-gap: var(--2XS);
 }
 
 .col {
@@ -123,55 +123,64 @@
   @extend .g6;
 }
 
-.n1w1 { @extend .fs;
+.n1w1 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--column);
   }
 }
 
-.n1w2 { @extend .fs;
+.n1w2 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--2columns);
   }
 }
 
-.n1w3 { @extend .fs;
+.n1w3 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--3columns);
   }
 }
 
-.n1w4 { @extend .fs;
+.n1w4 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--4columns);
   }
 }
 
-.n1w5 { @extend .fs;
+.n1w5 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--5columns);
   }
 }
 
-.n1w6 { @extend .fs;
+.n1w6 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--6columns);
   }
 }
 
-.n1w7 { @extend .fs;
+.n1w7 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--7columns);
   }
 }
 
-.n1w8 { @extend .fs;
+.n1w8 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--8columns);
   }
 }
 
-.n1w9 { @extend .fs;
+.n1w9 {
+  @extend .fs;
   @media (min-width: $md1+px) {
     width: var(--9columns);
   }
@@ -195,55 +204,64 @@
   }
 }
 
-.n2w1 { @extend .fs;
+.n2w1 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--column);
   }
 }
 
-.n2w2 { @extend .fs;
+.n2w2 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--2columns);
   }
 }
 
-.n2w3 { @extend .fs;
+.n2w3 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--3columns);
   }
 }
 
-.n2w4 { @extend .fs;
+.n2w4 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--4columns);
   }
 }
 
-.n2w5 { @extend .fs;
+.n2w5 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--5columns);
   }
 }
 
-.n2w6 { @extend .fs;
+.n2w6 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--6columns);
   }
 }
 
-.n2w7 { @extend .fs;
+.n2w7 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--7columns);
   }
 }
 
-.n2w8 { @extend .fs;
+.n2w8 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--8columns);
   }
 }
 
-.n2w9 { @extend .fs;
+.n2w9 {
+  @extend .fs;
   @media (min-width: $md2+px) {
     width: var(--9columns);
   }
@@ -267,55 +285,64 @@
   }
 }
 
-.n3w1 { @extend .fs;
+.n3w1 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--column);
   }
 }
 
-.n3w2 { @extend .fs;
+.n3w2 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--2columns);
   }
 }
 
-.n3w3 { @extend .fs;
+.n3w3 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--3columns);
   }
 }
 
-.n3w4 { @extend .fs;
+.n3w4 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--4columns);
   }
 }
 
-.n3w5 { @extend .fs;
+.n3w5 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--5columns);
   }
 }
 
-.n3w6 { @extend .fs;
+.n3w6 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--6columns);
   }
 }
 
-.n3w7 { @extend .fs;
+.n3w7 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--7columns);
   }
 }
 
-.n3w8 { @extend .fs;
+.n3w8 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--8columns);
   }
 }
 
-.n3w9 { @extend .fs;
+.n3w9 {
+  @extend .fs;
   @media (min-width: $md3+px) {
     width: var(--9columns);
   }
@@ -339,50 +366,58 @@
   }
 }
 
-.x3w1 { @extend .fs;
+.x3w1 {
+  @extend .fs;
   @media (max-width: $md3+px) {
     width: var(--column);
   }
 }
 
-.x3w2 { @extend .fs;
+.x3w2 {
+  @extend .fs;
   @media (max-width: $md3+px) {
     width: var(--2columns);
   }
 }
 
-.x3w3 { @extend .fs;
+.x3w3 {
+  @extend .fs;
   @media (max-width: $md3+px) {
     width: var(--3columns);
   }
 }
 
-.x3w4 { @extend .fs;
+.x3w4 {
+  @extend .fs;
   @media (max-width: $md3+px) {
     min-width: var(--4columns);
     width: 100%;
   }
 }
 
-.x4w1 { @extend .fs;
+.x4w1 {
+  @extend .fs;
   @media (max-width: $md4+px) {
     width: var(--column);
   }
 }
 
-.x4w2 { @extend .fs;
+.x4w2 {
+  @extend .fs;
   @media (max-width: $md4+px) {
     width: var(--2columns);
   }
 }
 
-.x4w3 { @extend .fs;
+.x4w3 {
+  @extend .fs;
   @media (max-width: $md4+px) {
     width: var(--3columns);
   }
 }
 
-.x4w4 { @extend .fs;
+.x4w4 {
+  @extend .fs;
   @media (max-width: $md4+px) {
     min-width: var(--4columns);
     width: 100%;
@@ -390,27 +425,27 @@
 }
 
 .m1 {
-  margin-top: var(--spaceXXL);
+  margin-top: var(--L-XL);
 }
 
 .m2 {
-  margin-top: var(--spaceXL);
+  margin-top: var(--S-M);
 }
 
 .m3 {
-  margin-top: var(--spaceL);
+  margin-top: var(--S);
 }
 
 .m4 {
-  margin-top: var(--spaceM);
+  margin-top: var(--XS-S);
 }
 
 .m5 {
-  margin-top: var(--spaceS);
+  margin-top: var(--XS);
 }
 
 .m6 {
-  margin-top: var(--spaceXS);
+  margin-top: var(--2XS);
 }
 
 .n1ol2 {

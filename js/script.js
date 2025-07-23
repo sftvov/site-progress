@@ -32,7 +32,8 @@ function headerHeight() {
 // ----------------------------------------------------------------------
 
 
-//include('../../web-template/src/libs/swiper-bundle-11-2-1.js');
+@@include('../../web-template/src/libs/swiper-bundle-11-2-1.js');
+@@include('_swipers.js');
 //include('../../web-template/src/functions/sendmail.js');
 //include('../../web-template/src/functions/isMobile.js');
 //include('../../web-template/src/functions/webp.js');

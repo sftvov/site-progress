@@ -1,7 +1,7 @@
 .results {
   &__item {
     transition-duration: var(--transition);
-    padding: var(--spaceL) 0;
+    padding: var(--S) 0;
     &:hover,
     &:focus-visible {
       background-color: var(--bg-second);
@@ -12,7 +12,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: var(--spaceM) var(--gutter);
+    gap: var(--XS-S) var(--gutter);
     @media (max-width: $md2+px) {
       flex-wrap: wrap;
     }

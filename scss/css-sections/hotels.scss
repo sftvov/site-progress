@@ -6,7 +6,7 @@
   }
   @media (max-width: $md2+px) {
     width: 100%;
-    margin-top: var(--spaceL);
+    margin-top: var(--S);
   }
 }
 
@@ -161,7 +161,7 @@
   &__th-subtitle {
     @extend .p2;
     display: block;
-    margin-top: var(--spaceXS);
+    margin-top: var(--2XS);
   }
 
   & td {

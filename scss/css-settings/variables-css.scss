@@ -93,20 +93,27 @@
   --columnG: calc(var(--column) + var(--gutter));
   --columnGG: calc(var(--column) + var(--gutter) * 2);
   --2columnsG: calc(var(--2columns) + var(--gutter));
+  --3columnsG: calc(var(--3columns) + var(--gutter));
+  --4columnsG: calc(var(--4columns) + var(--gutter));
+  --5columnsG: calc(var(--5columns) + var(--gutter));
+  --6columnsG: calc(var(--6columns) + var(--gutter));
+  --7columnsG: calc(var(--7columns) + var(--gutter));
 
-  
-  --spaceL: 30px;
-  --spaceS: 15px;
-  --spaceXS: 7px;
+  --XL: 60px;
+  --L: 50px;
+  --M: 40px;
+  --S: 30px;
+  --XS: 15px;
+  --2XS: 7px;
 
-  --spaceXXL: 50px;
-  --spaceXL: 30px;
-  --spaceM: 15px;
+  --L-XL: var(--L);
+  --S-M: var(--S);
+  --XS-S: var(--XS);
 
   @media (min-width: $md2+px) {
-    --spaceXXL: 60px;
-    --spaceXL: 40px;
-    --spaceM: 30px;
+    --L-XL: var(--XL);
+    --S-M: var(--M);
+    --XS-S: var(--S);
   }
 
   // --cyan: #00ffff;

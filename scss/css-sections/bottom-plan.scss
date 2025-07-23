@@ -6,10 +6,10 @@
   }
 
   &__body {
-    padding-bottom: var(--spaceXXL);
+    padding-bottom: var(--L-XL);
     background-color: var(--bg-second);
     @media (max-width: $md1+px) {
-      padding-bottom: var(--spaceL);
+      padding-bottom: var(--S);
     }
   }
 
@@ -31,10 +31,10 @@
   &__main {
     align-items: flex-end;
     @media (min-width: $md2+px) {
-      margin-top: calc(-1 * var(--spaceS)) ;
+      margin-top: calc(-1 * var(--XS)) ;
     }
     @media (max-width: $md3+px) {
-      margin-top: var(--spaceS);
+      margin-top: var(--XS);
     }
   }
 }

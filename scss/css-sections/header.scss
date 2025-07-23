@@ -24,7 +24,7 @@
     @media (max-width: $md3+px) {
       display: flex;
       flex-direction: column;
-      gap: var(--spaceXS);
+      gap: var(--2XS);
     }
     @media (max-width: $md4+px) {
       flex-direction: row;
@@ -247,7 +247,7 @@
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
     text-align: center;
-    margin-top: var(--spaceS);
+    margin-top: var(--XS);
     padding: 5px 0;
     background-color: var(--bg-accent);
     @media (max-width: $md1+px) {
@@ -288,7 +288,7 @@
   @media (min-width: $md2+px) {
     display: flex;
     gap: 10px;
-    margin-top: var(--spaceS);
+    margin-top: var(--XS);
   }
 
   @media (min-width: $md2+px) OR (max-width: $md3+px) {
@@ -338,7 +338,7 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-items: start;
-    gap: var(--spaceS) 39px;
+    gap: var(--XS) 39px;
     padding: 20px;
     background-color: var(--bg-accent);
     @media (min-width: $md2+px) {
@@ -787,7 +787,7 @@
     &:not(:last-child) {
       margin-bottom: 10px;
       @media (max-width: $md2+px) {
-        margin-bottom: var(--spaceS);
+        margin-bottom: var(--XS);
       }
     }
     &:hover,
@@ -848,7 +848,7 @@
     }
     @media (max-width: $md2+px) {
       display: block;
-      margin-top: var(--spaceXS);
+      margin-top: var(--2XS);
       padding-left: 15px;
     }
     &:hover,

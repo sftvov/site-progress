@@ -8,7 +8,7 @@ section.section.plan#plan
         p.twb.p1 Создайте свой план в 3 простых шага — выберите время обучения, тематику курсов и город. Конструктор сформирует для вас pdf-расписание, с которым удобно планировать обучение.
       form.m1
         .row.aic
-          p.plan__section-num 1.
+          p.plan__section-num.a1 1.
           fieldset
             legend.t2d Выберите интервал
             .dates.m5
@@ -22,7 +22,7 @@ section.section.plan#plan
                   input.datepicker__input(value="16.02.2026")
         section.m3
           .row.aic
-            p.plan__section-num 2.
+            p.plan__section-num.a1 2.
             h2.t2d Выберите рубрики. Кликните на рубрику, чтобы увидеть подрубрики и выбрать нужные. Это займет полминуты.        
           .branch-spollers.m5(data-spollers)
             each branch in rubricsArchive
@@ -45,7 +45,7 @@ section.section.plan#plan
                         .checkbox__span-wrapper
                           span.checkbox__span !{rubric.name}
         .row.aic.m3
-          p.plan__section-num 3.
+          p.plan__section-num.a1 3.
           fieldset
             legend.t2d Выберите место
             .plan__checkboxes.x4wrap.m5

@@ -1,9 +1,9 @@
 .section {
   width: 100%;
-  margin: var(--spaceXXL) 0;
+  margin: var(--L-XL) 0;
   &--bg {
     @extend .section;
-    padding: var(--spaceXXL) 0;
+    padding: var(--L-XL) 0;
   }
 }
 
@@ -24,7 +24,7 @@
 }
 
 .body {
-  padding-top: var(--spaceXXL);
+  padding-top: var(--L-XL);
   border-top: 2px solid var(--border-light);
 }
 
