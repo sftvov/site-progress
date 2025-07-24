@@ -75,6 +75,8 @@
     --fields: 32px;
   }
 
+  --field: calc(var(--fields) / 2);
+
   --column: calc((100vw - (var(--columns) - 1) * var(--gutter) - var(--fields) - var(--scrollbar)) / var(--columns));
   @media (min-width: $md1+px) {
     --column: calc((#{$maxContainer + px} - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
@@ -93,11 +95,11 @@
   --columnG: calc(var(--column) + var(--gutter));
   --columnGG: calc(var(--column) + var(--gutter) * 2);
   --2columnsG: calc(var(--2columns) + var(--gutter));
-  --3columnsG: calc(var(--3columns) + var(--gutter));
-  --4columnsG: calc(var(--4columns) + var(--gutter));
-  --5columnsG: calc(var(--5columns) + var(--gutter));
+  // --3columnsG: calc(var(--3columns) + var(--gutter));
+  // --4columnsG: calc(var(--4columns) + var(--gutter));
+  // --5columnsG: calc(var(--5columns) + var(--gutter));
   --6columnsG: calc(var(--6columns) + var(--gutter));
-  --7columnsG: calc(var(--7columns) + var(--gutter));
+  // --7columnsG: calc(var(--7columns) + var(--gutter));
 
   --XL: 60px;
   --L: 50px;

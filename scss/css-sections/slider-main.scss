@@ -5,15 +5,22 @@
   &__navigation {
     z-index: 1;
     position: absolute;
-    bottom: 85px;
-    left: var(--7columns);
-    @media (max-width: $md1+px) {
-      left: var(--6columnsG);
-      bottom: 28px;
+    @media (min-width: $md1+px) {
+      bottom: 80px;
     }
-    @media (max-width: $md2+px) {
-      width: var(--3columnsG);
-      left: var(--6columns);
+    @media (min-width: $md2+px) {
+      bottom: 58px;
+    }
+    @media (min-width: $md3+px) {
+      bottom: 33px;
+      left: var(--6columnsG);
+    }
+    @media (max-width: $md3+px) {
+      right: var(--field);
+      bottom: 20px;
+    }
+    @media (max-width: $md4+px) {
+      left: var(--field);
     }
   }
 
@@ -35,7 +42,7 @@
 
 .main-slide {
   display: flex;
-  height: 369px;
+  height: 396px;
   background-position: center;
   background-size: cover;
   @media (max-width: $md1+px) {
@@ -44,32 +51,60 @@
   @media (max-width: $md2+px) {
     height: 243px;
   }
+  @media (max-width: $md3+px) {
+    height: 178px;
+  }
   &__body {
-    clip-path: polygon(var(--2columns) 0%, 100% 0%, calc(100% - var(--2columns)) 100%, 0% 100%);
     display: flex;
     flex-direction: column;
-    width: var(--7columnsG);
+    width: var(--6columnsG);
     margin-left: auto;
-    padding: 0 var(--column) 137px var(--2columns);
+    padding: 0 var(--gutter) 132px;
     background-color: #ffffffb3;
     @media (max-width: $md1+px) {
-      clip-path: polygon(var(--columnG) 0%, 100% 0%, calc(100% - var(--columnG)) 100%, 0% 100%);
-      padding: 0 var(--columnG) 80px var(--columnG);
+      padding-bottom: 110px;
     }
     @media (max-width: $md2+px) {
-      padding: 0 var(--column) 70px var(--columnG);
+      padding-bottom: 70px;
     }
     @media (max-width: $md3+px) {
-      width: calc(var(--3columns) - (var(--column) / 2) );
-      clip-path: polygon(var(--columnG) 0%, 100% 0%, calc(100% - var(--columnG)) 100%, 0% 100%);
+      width: calc(var(--2columnsG) + var(--field));
+      padding-bottom: 49px;
+    }
+    @media (max-width: $md4+px) {
+      width: 100%;
+      padding: 0 var(--field) 52px;
     }
   }
 
   &__title {
+    color: var(--text-dark);
     margin-top: auto;
+    @media (min-width: $md2+px) {
+      $fs: 24;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 30;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (min-width: $md3+px) {
+      font-family: 'RobotoCondensed';
+      $fs: 20;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 24;
+      line-height: round-to(math.div($lh, $fs), 3);
+      text-transform: uppercase;
+    }
+    @media (max-width: $md3+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 18;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
   }
 
   &__link {
-    width: var(--3columnsG);
   }
 }

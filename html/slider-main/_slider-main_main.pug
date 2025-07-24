@@ -2,31 +2,31 @@
   mainSlider =[
     {
       img: 'city',
-      title: 'Готов учебный план на 2026 год. <br>Расписание курсов <br>по всем отраслевым <br>направлениям — в одной брошюре',
+      title: 'Готов учебный план на 2026 год. <br>Расписание курсов <br class="n1hide x4hide">по всем отраслевым <br>направлениям — в одной брошюре',
       btn: 'Скачать план'
     },
     {
       img: 'hands',
-      title: 'Создаем для вас <br>уникальные корпоративные <br>курсы — очно и онлайн',
+      title: 'Создаем для вас уникальные корпоративные <br class="x1hide">курсы — очно и онлайн',
       btn: 'Узнать подробнее'
     },
     {
       img: 'hands',
-      title: 'пример <br>для 2 строчек',
+      title: 'пример для 1 строчки',
       btn: 'Узнать подробнее'
     },
   ]
 
 .main-slider.section#slider
-  .container
+  .container.x3contents
     .main-slider__swiper.swiper
       .swiper-wrapper
         each slide in mainSlider
-          section.main-slide.swiper-slide(style="background-image: url(/img/main/slider/" + slide.img + ".png)")
-            .main-slide__body.n2w7
-              h2.main-slide__title.t1 !{slide.title}
-              a(href="").main-slide__link.button--primary.n2w3.m5 !{slide.btn}
-      .main-slider__navigation.row.aic.n1w2.n3w3
+          section.main-slide.swiper-slide(style="background-image: url(img/main/slider/" + slide.img + ".png)")
+            .main-slide__body
+              h2.main-slide__title !{slide.title}
+              a(href="").main-slide__link.button--primary.n1w2.n2w3.n3w4.x3w2.x4w4.m5 !{slide.btn}
+      .main-slider__navigation.row.aic.n1w2.n2w3.n3w4.x3w2.x4w4
         .main-slider__prev.arr
           .arr__line
           svg.arr__head

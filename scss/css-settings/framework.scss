@@ -419,8 +419,7 @@
 .x4w4 {
   @extend .fs;
   @media (max-width: $md4+px) {
-    min-width: var(--4columns);
-    width: 100%;
+    width: var(--4columns);
   }
 }
 
@@ -580,3 +579,51 @@
     display: none;
   }
 }
+
+// .n1contents {
+//   @media (min-width: $md1+px) {
+//     display: contents;
+//   }
+// }
+
+// .x1contents {
+//   @media (max-width: $md1+px) {
+//     display: contents;
+//   }
+// }
+
+// .n2contents {
+//   @media (min-width: $md2+px) {
+//     display: contents;
+//   }
+// }
+
+// .x2contents {
+//   @media (max-width: $md2+px) {
+//     display: contents;
+//   }
+// }
+
+// .n3contents {
+//   @media (min-width: $md3+px) {
+//     display: contents;
+//   }
+// }
+
+.x3contents {
+  @media (max-width: $md3+px) {
+    display: contents;
+  }
+}
+
+// .n4contents {
+//   @media (min-width: $md4+px) {
+//     display: contents;
+//   }
+// }
+
+// .x4contents {
+//   @media (max-width: $md4+px) {
+//     display: contents;
+//   }
+// }

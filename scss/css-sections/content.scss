@@ -211,6 +211,9 @@
   @extend .btn;
   display: inline-block;
   padding: 10px;
+  @media (max-width: $md2+px) {
+    padding: 5px 10px;
+  }
 }
 
 .button--primary {
@@ -230,6 +233,9 @@
   padding: 8px;
   background-color: var(--bg-main);
   border: 2px solid var(--border);
+  @media (max-width: $md2+px) {
+    padding: 3px 10px;
+  }
   &:hover,
   &:focus-visible {
     color: var(--text-accent);
