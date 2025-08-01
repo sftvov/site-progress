@@ -4,7 +4,7 @@
   }
 
   &__link {
-    stroke: var(--text-dark);    
+    stroke: var(--text-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +85,7 @@
     @media (max-width: $md2+px) {
       display: flex;
       align-items: flex-start;
+      gap: var(--gutter);
       width: 100%;
     }
     @media (max-width: $md4+px) {
@@ -92,12 +93,21 @@
     }
   }
 
-  &__dates {
+  &__column-table {
+    grid-template-columns: var(--3columns);
+    @media (max-width: $md2+px) {
+      grid-template-columns: var(--2columns);
+    }
+    @media (max-width: $md3+px) {
+      grid-template-columns: var(--column);
+    }
+  }
+
+  &__2-columns-table {
     grid-template-columns: var(--2columns) var(--column);
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       grid-template-columns: var(--3columns) var(--3columns);
-      margin-left: var(--column);
-      padding-inline: var(--gutter);
+      margin-left: var(--columnG);
     }
     @media (max-width: $md3+px) {
       grid-template-columns: var(--column) var(--column);
@@ -114,11 +124,17 @@
     display: flex;
     align-items: center;
     gap: 0 15px;
+    @media (min-width: $md2+px) {
+      margin-top: var(--S);
+    }
+    @media (max-width: $md2+px) {
+      width: var(--4columns);
+    }
     @media (max-width: $md3+px) {
-      flex-grow: 1;
+      width: var(--2columns);
     }
     @media (max-width: $md4+px) {
-      margin-top: var(--XS);
+      width: var(--3columns);
     }
     &:hover,
     &:focus-visible {
@@ -132,15 +148,6 @@
     white-space: nowrap;
     @media (max-width: $md4+px) {
       width: var(--2columns);
-    }
-  }
-
-  &__arrow {
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      width: 76px;
-    }
-    @media (max-width: $md4+px) {
-      margin-right: var(--column);
     }
   }
 }
@@ -172,7 +179,7 @@
 
   &__info-item {
     @extend .p1;
-    
+
     display: flex;
     gap: 5px;
     align-items: center;
@@ -194,7 +201,6 @@
   }
 
   &__info-svg {
-    
     width: 20px;
     height: 20px;
   }
@@ -224,7 +230,7 @@
 
   &__code-svg {
     stroke: var(--text-dark);
-    
+
     width: 20px;
     height: 20px;
     @media (max-width: $md4+px) {

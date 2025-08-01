@@ -168,7 +168,7 @@
 
   &__body {
     break-inside: avoid-column;
-    @extend .col6;
+    @extend .col7;
     @extend .m5;
   }
 
@@ -219,7 +219,7 @@
   }
 
   &__checkboxes {
-    @extend .col6;
+    @extend .col7;
     align-items: flex-start;
   }
 }
@@ -559,7 +559,7 @@
 }
 
 .input-wrapper {
-  @extend .col6;
+  @extend .col7;
   &__label {
     transition-duration: var(--transition);
     @extend .p2;

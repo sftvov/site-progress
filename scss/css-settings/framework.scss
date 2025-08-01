@@ -85,6 +85,10 @@
 }
 
 .g6 {
+  row-gap: var(--2XS-XS);
+}
+
+.g7 {
   row-gap: var(--2XS);
 }
 
@@ -121,6 +125,11 @@
 .col6 {
   @extend .col;
   @extend .g6;
+}
+
+.col7 {
+  @extend .col;
+  @extend .g7;
 }
 
 .n1w1 {
@@ -444,7 +453,28 @@
 }
 
 .m6 {
+  margin-top: var(--2XS-XS);
+}
+
+.m7 {
   margin-top: var(--2XS);
+}
+
+.n1ol3 {
+  @media (min-width: $md1+px) {
+    margin-left: var(--3columnsG);
+  }
+}
+
+.n1or3 {
+  @media (min-width: $md1+px) {
+    margin-right: var(--3columnsG);
+  }
+}
+
+.n1o3 {
+  @extend .n1ol3;
+  @extend .n1or3;
 }
 
 .n1ol2 {

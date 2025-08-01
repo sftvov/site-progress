@@ -4,7 +4,7 @@ section.hotels.section#hotels
   .container
     #toc.n1o1
       h2.t1d !{hotelsArchive.length} отелей-партнеров в Санкт-Петербурге
-      p.p1.m6 Выберите отель на карте или из списка.
+      p.p1.m7 Выберите отель на карте или из списка.
       ol.hotels__toc-main.ol.m2        
         each hotel, index in hotelsArchive
           li.ol__li
@@ -15,10 +15,10 @@ section.hotels.section#hotels
         if hotel.price
           article.hotel.section(id=hotel.slug)
             h2.subtitle !{hotel.name}
-            header.row.x4col.aic.jcc.g6.m5
+            header.row.x4col.aic.jcc.g7.m5
               p.p1 Санкт-Петербург, !{hotel.address}
               a.p1.bright.hover-accent(href="#toc") Вернуться к карте
-            .hotel__icons.m4.g6
+            .hotel__icons.m4.g7
               .hotel__icon
                 svg.icn
                   use(xlink:href='img/sprite/symbols.svg#hotel-pin')

@@ -9,15 +9,15 @@ section.mailing.section#mailing
         fieldset.mailing__top-main.n2w9
           legend.t2d Заполните данные о себе
           .row-wrap.g5.m5
-            .wrapper-square--bright.col6.n2w3.n3w4.x3w2.x4w4
+            .wrapper-square--bright.col7.n2w3.n3w4.x3w2.x4w4
               input.input(type="text" placeholder="Фамилия")
-            .col6.n2w3.n3w4.x3w2.x4w4
+            .col7.n2w3.n3w4.x3w2.x4w4
               input.input(type="text" placeholder="Имя")
-            .col6.n2w3.n3w4.x3w2.x4w4
+            .col7.n2w3.n3w4.x3w2.x4w4
               input.input(type="text" placeholder="Отчество")
-            .wrapper-square--accent.col6.n2w3.n3w4.x3w2.x4w4
+            .wrapper-square--accent.col7.n2w3.n3w4.x3w2.x4w4
               input.input(type="email" placeholder="Электронная почта")
-            .col6.n2w3.n3w4.x3w2.x4w4
+            .col7.n2w3.n3w4.x3w2.x4w4
               input.input(type="text" placeholder="Должность")
             .n2w3.n3w4.x3w2.x4w4
               p.p2 Я отвечаю за обучение сотрудников
@@ -40,7 +40,7 @@ section.mailing.section#mailing
                   span.branch-title__title !{group.title}
               .mailing__checkboxes
                 each rubric in group.rubrics
-                  .col6(data-checkbox-group=rubric.subrubrics ? true : false)
+                  .col7(data-checkbox-group=rubric.subrubrics ? true : false)
                     label.checkbox
                       input.checkbox__input(type="checkbox" data-checkbox-all=rubric.subrubrics ? true : false)
                       .checkbox__span-wrapper

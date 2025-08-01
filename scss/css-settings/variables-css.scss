@@ -95,7 +95,7 @@
   --columnG: calc(var(--column) + var(--gutter));
   --columnGG: calc(var(--column) + var(--gutter) * 2);
   --2columnsG: calc(var(--2columns) + var(--gutter));
-  // --3columnsG: calc(var(--3columns) + var(--gutter));
+  --3columnsG: calc(var(--3columns) + var(--gutter));
   // --4columnsG: calc(var(--4columns) + var(--gutter));
   // --5columnsG: calc(var(--5columns) + var(--gutter));
   --6columnsG: calc(var(--6columns) + var(--gutter));
@@ -111,11 +111,13 @@
   --L-XL: var(--L);
   --S-M: var(--S);
   --XS-S: var(--XS);
+  --2XS-XS: var(--2XS);
 
   @media (min-width: $md2+px) {
     --L-XL: var(--XL);
     --S-M: var(--M);
     --XS-S: var(--S);
+    --2XS-XS: var(--XS);
   }
 
   // --cyan: #00ffff;

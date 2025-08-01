@@ -1,0 +1,25 @@
+.distance-hero {
+  &__body {
+    background: url(/img/distance/hero.png) 0 0 / 100% no-repeat;
+  }
+
+  &__preview {
+  }
+
+  &__subtitle {
+  }
+
+  &__main {
+    margin-top: 147px;
+    padding: var(--L-XL) 0;
+    background-color: var(--bg-second);
+  }
+
+  &__advantage {}
+
+  &__advantage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

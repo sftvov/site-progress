@@ -1,4 +1,9 @@
 const heroSlider = new Swiper('.main-slider__swiper', {
+  breakpoints: {
+    [md1]: {
+			spaceBetween: 24,
+    },
+  },
   observer: true,
   observeParents: true,
   slidesPerView: 1,
@@ -10,11 +15,6 @@ const heroSlider = new Swiper('.main-slider__swiper', {
   navigation: {
     nextEl: '.main-slider__next',
     prevEl: '.main-slider__prev',
-  },
-  breakpoints: {
-    [md1]: {
-			spaceBetween: 24,
-    },
   },
 });
 

@@ -23,7 +23,8 @@
   @extend .t2;
   display: flex;
   gap: 15px;
-  @extend .n2o2;
+  @extend .n1ol3;
+  @extend .n2ol2;
   @media (max-width: $md2+px) {
     justify-content: center;
   }
