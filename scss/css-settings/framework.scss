@@ -622,23 +622,23 @@
 //   }
 // }
 
-// .n2contents {
-//   @media (min-width: $md2+px) {
-//     display: contents;
-//   }
-// }
+.n2contents {
+  @media (min-width: $md2+px) {
+    display: contents;
+  }
+}
 
-// .x2contents {
-//   @media (max-width: $md2+px) {
-//     display: contents;
-//   }
-// }
+.x2contents {
+  @media (max-width: $md2+px) {
+    display: contents;
+  }
+}
 
-// .n3contents {
-//   @media (min-width: $md3+px) {
-//     display: contents;
-//   }
-// }
+.n3contents {
+  @media (min-width: $md3+px) {
+    display: contents;
+  }
+}
 
 .x3contents {
   @media (max-width: $md3+px) {
@@ -652,8 +652,8 @@
 //   }
 // }
 
-// .x4contents {
-//   @media (max-width: $md4+px) {
-//     display: contents;
-//   }
-// }
+.x4contents {
+  @media (max-width: $md4+px) {
+    display: contents;
+  }
+}

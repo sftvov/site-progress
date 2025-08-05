@@ -19,34 +19,54 @@
   }
 }
 
-.pagination {
-  @extend .t2;
-  display: flex;
-  gap: 15px;
-  @extend .n1ol3;
-  @extend .n2ol2;
-  @media (max-width: $md2+px) {
-    justify-content: center;
+%pagination-control {
+  @extend %pagination-item;
+
+  width: 95px;
+  @media (max-width: $md3+px) {
+    width: 89px;
   }
   @media (max-width: $md4+px) {
-    flex-wrap: wrap;
-    gap: var(--XS) var(--gutter);
+    width: 140px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  &__body {
+    @extend .t2;
+    display: flex;
+    gap: 15px;
+    @media (max-width: $md2+px) {
+      justify-content: center;
+    }
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+      gap: var(--XS) var(--gutter);
+      width: 300px;
+    }
   }
 
   &__prev {
-    @extend %pagination-item;
-
-    width: 95px;
-    @media (max-width: $md3+px) {
-      width: 89px;
+    @extend %pagination-control;
+    @media (max-width: $md4+px) {
+      margin-right: auto;
     }
-    @extend .x4w2;
+  }
+
+  &__next {
+    @extend %pagination-control;
+    @media (max-width: $md4+px) {
+      margin-left: auto;
+    }
   }
 
   &__pages {
     display: flex;
     flex-wrap: wrap;
     gap: var(--XS) 15px;
+    justify-content: center;
     @media (max-width: $md4+px) {
       order: -1;
       flex-basis: 100%;
@@ -67,9 +87,5 @@
       background-color: var(--bg-bright);
       border: none;
     }
-  }
-
-  &__next {
-    @extend .pagination__prev;
   }
 }
