@@ -3,7 +3,7 @@ include ../../data/coursesArchive
 section.courses.section#courses
   .container
     .n3o1
-      h2.t1d !{coursesTitle}
+      h2.t1d !{courses.title}
   .m4
     each course in coursesArchive
       article.courses__item
@@ -38,7 +38,8 @@ section.courses.section#courses
                   .arr__line
                   svg.arr__head
                     use(xlink:href='img/sprite/symbols.svg#arrowhead')
-  .container
-    include ../pagination/_pagination_$common
+  if courses.pagination
+    .container
+      include ../pagination/_pagination_$common
 
 //- http://localhost:1709/page-distance.html#courses
