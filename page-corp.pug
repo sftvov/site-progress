@@ -1,0 +1,16 @@
+include html\_mixins
+doctype html
+html(lang="ru")
+	+head('КОРПОРАТИВНОЕ ОБУЧЕНИЕ', 'description', [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'])
+	body
+		.wrapper
+			include html\header\_header_$common
+			main#page.page
+				include html\hero-corp\_hero-corp_corp
+				include html\section-help\_section-help_corp
+				include html\cases\_cases_corp
+				include html\form-corp\_form-corp_corp
+				include html\slider-licenses\_slider-licenses_corp
+				include html\map\_map_corp
+			include html\footer\_footer_$common
+		+js([],[])

@@ -1,0 +1,64 @@
+.cases {
+
+  &__hide-button {
+    &:has(+ .cases__show-button._active) {
+      @media (min-width: $md1+px) {
+        width: var(--3columns);
+      }
+    }
+    &._active + .cases__show-button._active {
+      @media (min-width: $md1+px) {
+        width: var(--3columns);
+      }
+    }
+  }
+  &__show-button {
+  }
+}
+
+.case-item {
+  transition-duration: var(--transition);
+  transition-property: background-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &:has(.case-item__top._active) {
+    background-color: var(--bg-second);
+  }
+  &__top {
+    cursor: pointer;
+    &._active {
+      & .case-item__title {
+        &::after {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+
+  &__img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  &__title {
+    justify-content: space-between;
+    &::after {
+      content: '';
+      transition-duration: var(--transition);
+      width: 24px;
+      flex-shrink: 0;
+      height: 24px;
+      background: url(../img/icons/chevron-l.svg) center / contain no-repeat;
+    }
+  }
+
+  &__icon-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__span {
+    text-align: end;
+  }
+}

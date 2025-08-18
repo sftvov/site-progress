@@ -9,7 +9,7 @@ section.hotels.section#hotels
         each hotel, index in hotelsArchive
           li.ol__li
             a.hover(href="#" + hotel.slug) !{hotel.name}, !{hotel.address}
-    #map.hotels__map.m2
+    #ymaps.ymaps.m2
     div
       each hotel in hotelsArchive
         if hotel.price
@@ -51,7 +51,7 @@ section.hotels.section#hotels
                   p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
                 if hotel.legalInfo
                   p.p1 !{hotel.legalInfo}
-                a.button--primary.n3w3.x3w2.x4w4(href="#") Забронировать отель
+                a.button-primary.n3w3.x3w2.x4w4(href="#") Забронировать отель
               table(class="hotel__table" + ((hotel.price.head.length) ? "-" + hotel.price.head.length : ''))
                 thead
                   tr

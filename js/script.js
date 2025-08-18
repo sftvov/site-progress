@@ -54,8 +54,8 @@ function headerHeight() {
 //include('../../web-template/src/js-elements/popups.js');
 @@include('../../web-template/src/js-elements/gallery.js');
 //include('../../web-template/src/js-elements/scroll.js');
-@@include('../../web-template/src/js-elements/spollers_v2.0.0_now.js');
-//include('../../web-template/src/js-elements/items_v2.0.0_now.js');
+@@include('../../web-template/src/js-elements/spollers_v2.0.1_now.js');
+@@include('../../web-template/src/js-elements/items_v3.0.0_now.js');
 
 const selects = document.querySelectorAll(".select");
 
@@ -73,11 +73,18 @@ if (selects) {
 
 // ----------------------------------------------------------------------
 
+
+
 document.querySelector('.header__search-close').addEventListener('click', function(e) {
 	e.preventDefault(); // Предотвращаем отправку формы (если кнопка типа submit)
 	const input = document.querySelector('.header__search-input');
 	input.value = '';    // Очищаем поле
 	input.focus();       // Возвращаем фокус
+});
+
+new Activator('._activator', {
+	removedOwn: ['._activated'],
+	onlyOne: true,
 });
 
 new Activator('.header-select', {
@@ -104,9 +111,10 @@ new Activator('.select', {
 
 new Activator('.select__variant', {
   onlyOne: true,
-  deactivate: false,
+  // deactivate: false,
   limitContainer: '.select',
 });
+
 
 new Activator('._menu-btn', {
 	stops: ['._menu-body'],
@@ -163,6 +171,7 @@ window.onload = () => {
 	headerHeight();
 	calculateScrollbarWidth();
 	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+	ItemsManager.initialize();
 	// addTouchClassForMobile();
 
 	window.addEventListener('scroll', () => {

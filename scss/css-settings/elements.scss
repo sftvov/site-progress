@@ -79,88 +79,6 @@
   }
 }
 
-// .calendar {
-//   &__table {
-//     width: 100%;
-//   }
-
-//   &__weekdays {
-//   }
-
-//   &__th {
-//     padding-bottom: 12px;
-//   }
-
-//   &__cell {
-//     @media (min-width: $md2+px) {
-//       z-index: 1;
-//       &:not(._active) {
-//         @media (hover: hover) {
-//           &:hover {
-//             &::after {
-//               background-color: var(--bg-light);
-//             }
-//           }
-//         }
-//         &:active,
-//         &:focus-visible {
-//           &::after {
-//             background-color: var(--bg-light);
-//           }
-//         }
-//       }
-//       &::after {
-//         background-color: var(--bg-main);
-//       }
-//       &._active {
-//         &::after {
-//           background-color: var(--bg-second);
-//         }
-//       }
-//     }
-//     transition-duration: var(--transition);
-//     color: var(--text-gray);
-//     $lh: 24;
-//     line-height: round-to(math.div($lh, $fz), 3);
-//
-//     text-align: center;
-//     position: relative;
-//     padding: 8px 0 7px;
-//     &::after {
-//       content: '';
-//       transition-duration: var(--transition);
-//       z-index: -1;
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       translate: -50% -50%;
-//       display: block;
-//       width: 32px;
-//       height: 32px;
-//       border-radius: 20px;
-//     }
-//     &._active {
-//       color: var(--text-second);
-//       &::after {
-//         background-color: var(--bg-second);
-//       }
-//     }
-//     &:not(._active) {
-//       cursor: pointer;
-//     }
-//   }
-
-//   &__empty {
-//   }
-
-//   &__today {
-//     color: var(--text-main);
-//     &::after {
-//       border: 1px solid var(--border-gray);
-//     }
-//   }
-// }
-
 .branch {
   &:not(:first-child) {
     margin-top: var(--S);
@@ -342,7 +260,7 @@
       }
     }
   }
-  &__span-wrapper--blue {
+  &__span-wrapper-blue {
     @extend .checkbox__span-wrapper;
     &::before {
       content: url(../img/icons/checkbox-empty-l-blue.svg);
@@ -575,7 +493,7 @@
       color: var(--text-bright);
     }
   }
-  &:has(.input:invalid) {
+  &:has(.input:user-invalid) {
     & .input-wrapper__label {
       color: var(--text-invalid);
     }
@@ -739,6 +657,89 @@
     }
   }
 }
+
+// .calendar {
+//   &__table {
+//     width: 100%;
+//   }
+
+//   &__weekdays {
+//   }
+
+//   &__th {
+//     padding-bottom: 12px;
+//   }
+
+//   &__cell {
+//     @media (min-width: $md2+px) {
+//       z-index: 1;
+//       &:not(._active) {
+//         @media (hover: hover) {
+//           &:hover {
+//             &::after {
+//               background-color: var(--bg-light);
+//             }
+//           }
+//         }
+//         &:active,
+//         &:focus-visible {
+//           &::after {
+//             background-color: var(--bg-light);
+//           }
+//         }
+//       }
+//       &::after {
+//         background-color: var(--bg-main);
+//       }
+//       &._active {
+//         &::after {
+//           background-color: var(--bg-second);
+//         }
+//       }
+//     }
+//     transition-duration: var(--transition);
+//     color: var(--text-gray);
+//     $lh: 24;
+//     line-height: round-to(math.div($lh, $fz), 3);
+//
+//     text-align: center;
+//     position: relative;
+//     padding: 8px 0 7px;
+//     &::after {
+//       content: '';
+//       transition-duration: var(--transition);
+//       z-index: -1;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       translate: -50% -50%;
+//       display: block;
+//       width: 32px;
+//       height: 32px;
+//       border-radius: 20px;
+//     }
+//     &._active {
+//       color: var(--text-second);
+//       &::after {
+//         background-color: var(--bg-second);
+//       }
+//     }
+//     &:not(._active) {
+//       cursor: pointer;
+//     }
+//   }
+
+//   &__empty {
+//   }
+
+//   &__today {
+//     color: var(--text-main);
+//     &::after {
+//       border: 1px solid var(--border-gray);
+//     }
+//   }
+// }
+
 
 // .search {
 //   display: flex;

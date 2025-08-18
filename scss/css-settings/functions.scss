@@ -22,6 +22,18 @@ body {
   }
 }
 
+[data-item],
+[data-items-btn],
+[data-items-hide] {
+  &:not(._active) {
+    display: none;
+  }
+}
+
+._activated:not(._active) {
+  display: none;
+}
+
 // input[type='checkbox']:not(:checked) {
 //   opacity: 0.3;
 // }
@@ -33,7 +45,6 @@ body {
 // [data-items-btn]:not(._active) {
 //   display: none;
 // }
-
 
 // ._blur-container {
 //   position: relative;
@@ -86,10 +97,6 @@ body {
 //   &:not(._active) {
 //     display: none;
 //   }
-// }
-
-// [data-item]:not(._active) {
-//   display: none;
 // }
 
 // ._hidden-title {

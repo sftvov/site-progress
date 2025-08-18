@@ -1,10 +1,10 @@
 .section {
   width: 100%;
   margin: var(--L-XL) 0;
-  &--bg {
-    @extend .section;
-    padding: var(--L-XL) 0;
-  }
+}
+.section-bg {
+  @extend .section;
+  padding: var(--L-XL) 0;
 }
 
 .container {
@@ -124,7 +124,7 @@
 
 .title {
   @extend .t1d;
-  text-align: center;
+  @extend .tac;
 }
 
 .t2 {
@@ -223,14 +223,29 @@
   @extend .btn;
   display: inline-block;
   padding: 10px;
+}
+%button-border {
+  @extend %button;
+  padding: 8px;
+}
+%button-non-border {
+  @extend %button;
+  padding: 10px;
+}
+%button-border-s {
+  @media (max-width: $md2+px) {
+    padding: 3px 8px;
+  }
+}
+%button-non-border-s {
   @media (max-width: $md2+px) {
     padding: 5px 10px;
   }
 }
 
-.button--primary {
+.button-primary {
   color: var(--text-second);
-  @extend %button;
+  @extend %button-non-border;
   background-color: var(--bg-bright);
   &:hover,
   &:focus-visible {
@@ -239,15 +254,16 @@
   }
 }
 
-.button--second {
+.button-primary-s {
+  @extend .button-primary;
+  @extend %button-non-border-s;
+}
+
+.button-second {
   color: var(--text-bright);
-  @extend %button;
-  padding: 8px;
+  @extend %button-border;
   background-color: var(--bg-main);
   border: 2px solid var(--border);
-  @media (max-width: $md2+px) {
-    padding: 3px 10px;
-  }
   &:hover,
   &:focus-visible {
     color: var(--text-accent);
@@ -255,9 +271,14 @@
   }
 }
 
-.button--accent {
+.button-second-s {
+  @extend .button-second;
+  @extend %button-border-s;
+}
+
+.button-accent {
   color: var(--text-second);
-  @extend %button;
+  @extend %button-non-border;
   background-color: var(--bg-accent);
   &:hover,
   &:focus-visible {
@@ -266,8 +287,12 @@
   }
 }
 
+.button-accent-s {
+  @extend .button-accent;
+  @extend %button-non-border-s;
+}
+
 .ul {
-  @extend .col5;
   &__li {
     @extend .p1;
     display: flex;
@@ -357,7 +382,7 @@
     border-color: var(--border-gray);
   }
 
-  &:invalid {
+  &:user-invalid {
     border-color: var(--border-invalid);
   }
 }

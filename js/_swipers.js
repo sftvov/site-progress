@@ -1,7 +1,7 @@
 const heroSlider = new Swiper('.main-slider__swiper', {
   breakpoints: {
     [md1]: {
-			spaceBetween: 24,
+      spaceBetween: 24,
     },
   },
   observer: true,
@@ -15,6 +15,30 @@ const heroSlider = new Swiper('.main-slider__swiper', {
   navigation: {
     nextEl: '.main-slider__next',
     prevEl: '.main-slider__prev',
+  },
+});
+
+const licensesSlider = new Swiper('.licenses-slider__swiper', {
+  breakpoints: {
+    [md1]: {
+      spaceBetween: 24,
+    },
+  },
+  observer: true,
+  observeParents: true,
+  autoHeight: true,
+  slidesPerView: 1,
+  grabCursor: true,
+  simulateTouch: true,
+  speed: 400,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.licenses-slider__next',
+    prevEl: '.licenses-slider__prev',
+  },
+  parallax: {
+    enabled: true,
   },
 });
 

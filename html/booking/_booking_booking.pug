@@ -13,14 +13,14 @@ section.booking.section#booking
               .select
                 input.select__input(value=hotelsArchive[0].name readonly inert)
                 .select__variants
-                  each hotel in hotelsArchive
-                    .select__variant !{hotel.name}
+                  each hotel, active in hotelsArchive
+                    .select__variant(class= active===0 ? '_active' : '') !{hotel.name}
             .input-wrapper
               p.input-wrapper__label Категория номера
               .select
                 input.select__input(value="Стандарт" readonly inert)
                 .select__variants
-                  .select__variant Стандарт
+                  .select__variant._active Стандарт
                   .select__variant Комфорт
                   .select__variant Эконом
             .input-wrapper
@@ -28,7 +28,7 @@ section.booking.section#booking
               .select
                 input.select__input(value="Одноместное" readonly inert)
                 .select__variants
-                  .select__variant Одноместное
+                  .select__variant._active Одноместное
                   .select__variant Двуместное
             label.input-wrapper
               p.input-wrapper__label Дата заезда
@@ -56,7 +56,7 @@ section.booking.section#booking
               .select
                 input.select__input(value="Наличные/Карта" readonly inert)
                 .select__variants
-                  .select__variant Наличные/Карта
+                  .select__variant._active Наличные/Карта
                   .select__variant Безналичный от юрлица
       footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3
         label.input-wrapper
@@ -64,8 +64,8 @@ section.booking.section#booking
           textarea.textarea(placeholder="Напишите свое сообщение")
         .col5
           .row.g5.x4col
-            button(type="submit").button--primary.n2w2.n3w3.x3w2.x4w4 Отправить
-            input(type="reset" value="Отмена").button--second.n2w2.n3w3.x3w2.x4w4
+            button(type="submit").button-primary.n2w2.n3w3.x3w2.x4w4 Отправить
+            input(type="reset" value="Отмена").button-second.n2w2.n3w3.x3w2.x4w4
           p.p2 Нажимая кнопку, я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года № 152-ФЗ «О персональных данных», на условиях и для целей, определенных #[a.link(href="#") Политикой конфиденциальности].
 
 //- http://localhost:1709/page-booking.html#booking

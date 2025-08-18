@@ -23,7 +23,7 @@ section.section#feedback
             .select
               input.select__input(value="Службы записи" readonly inert)
               .select__variants
-                .select__variant Службы записи
+                .select__variant._active Службы записи
                 .select__variant Службы корпоративных семинаров
                 .select__variant Службы гостиниц
                 .select__variant Отзыв о сайте или курсе
@@ -33,11 +33,11 @@ section.section#feedback
             textarea.textarea(placeholder="Напишите свое сообщение")      
       .col5.m3
         .row
-          button(type="submit").button--primary.n1w2.n3w3.x3w2.x4w4 Отправить
-          input(type="reset" value="Отмена").button--second.n1w2.n3w3.x3w2.x4w4        
+          button(type="submit").button-primary.n1w2.n3w3.x3w2.x4w4 Отправить
+          input(type="reset" value="Отмена").button-second.n1w2.n3w3.x3w2.x4w4        
         label.checkbox
           input.checkbox__input(type="checkbox" checked)
-          .checkbox__span-wrapper--blue
+          .checkbox__span-wrapper-blue
             span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
 
 //- http://localhost:1709/page-feedback.html#feedback

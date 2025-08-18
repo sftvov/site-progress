@@ -1,0 +1,47 @@
+.corp-hero {
+  &__container {
+  }
+
+  &__body {
+    @media (min-width: $md4+px) {
+      color: var(--text-second);
+      @include adaptiv-value-on('min-height', 390, 313, $md1, $md2);
+      @include adaptiv-value-between('min-height', 301, 316, $md3, $md4);
+      padding: var(--L-XL) 0;
+      background: url(../img/corp/hero.png) center / cover no-repeat;
+    }
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+  }
+
+  &__list {
+    @media (max-width: $md3+px) {
+      margin-top: var(--XS);
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      background: url(../img/icons/check-circle-white.svg) center / 24px 24px no-repeat;
+      @media (max-width: $md2+px) AND (min-width: $md4+px) {
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+      }
+      @media (max-width: $md4+px) {
+        background-image: url(../img/icons/check-circle.svg);
+      }
+    }
+  }
+}

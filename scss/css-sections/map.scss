@@ -1,4 +1,4 @@
-.map {
+.contact-map {
   &__info {
     text-wrap: balance;
     color: var(--text-main);
@@ -55,9 +55,9 @@
       gap: var(--2XS);
     }
   }
+}
 
-  &__ymaps {
-    width: 100%;
-    aspect-ratio: 1200/639;
-  }
+.ymaps {
+  width: 100%;
+  aspect-ratio: 1200/639;
 }

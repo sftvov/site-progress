@@ -1,0 +1,52 @@
+.licenses-slider {
+  padding: var(--S) 0;
+  background-color: var(--bg-second);
+  &__swiper {
+    overflow: visible;
+  }
+
+  &__slide {
+    &:not(.swiper-slide-visible) {
+      visibility: hidden;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $md3+px) {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0;
+    }
+    @media (max-width: $md3+px) {
+      margin: var(--S) var(--columnG) 0;
+    }
+  }
+
+  &__prev,
+  &__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__prev {
+    rotate: 90deg;
+  }
+
+  &__next {
+    rotate: -90deg;
+  }
+}
+
+.license-img {
+  aspect-ratio: 180/249;
+  object-fit: cover;
+}

@@ -1,0 +1,66 @@
+section.section#form
+  .container
+    h2.title Для расчета стоимости потребуется
+    form.m2.n1o1
+      .row-wrap.g5.x3col
+        fieldset.row.x3col.g5.aie.x3ais.n1w10.n3w12.x3w4
+          .input-wrapper.n1w5.n3w6.x3w4
+            p.input-wrapper__label Формат:
+            .select
+              input.select__input(value="Не выбрано" readonly inert required)
+              .select__variants
+                ._activator
+                  .select__variant  На территории ЦНТИ Прогресс СПб / Мск
+                ._activator
+                  .select__variant  Выездной на территории заказчика
+                ._activator
+                  .select__variant  Онлайн в режиме реального времени
+          p.t2.accent._activated Стартовая стоимость - от 300 000₽ / группа
+          p.t2.accent._activated Стартовая стоимость - от 350 000₽ / группа
+          p.t2.accent._activated Стартовая стоимость - от 240 000₽ / группа
+        fieldset.col5.n1w5.n3w6.x3w4
+          label.input-wrapper
+            p.input-wrapper__label Город проведения (кроме “Онлайн-формата”)
+            input.input(placeholder="Иркутск" required)
+          label.input-wrapper
+            p.input-wrapper__label Тема обучения
+            input.input(placeholder="Тема обучения" required)
+          label.input-wrapper
+            p.input-wrapper__label Название компании
+            input.input(placeholder="ООО “Компания”" required)
+          label.input-wrapper
+            p.input-wrapper__label Отрасль, вид деятельности
+            input.input(placeholder="Строительство" required)
+          label.input-wrapper
+            p.input-wrapper__label Целевая аудитория учебной программы (отделы, должности)
+            input.input(placeholder="Строители" required)
+          label.input-wrapper
+            p.input-wrapper__label Контактные данные: ФИО, должность, email, телефон
+            input.input(placeholder="Иванов Иван Иванович, директор, example@mail.ru, 8 (999) 999-99-99" required)
+        fieldset.col5.n1w5.n3w6.x3w4
+          label.input-wrapper
+            p.input-wrapper__label Количество часов / дней обучения
+            input.input(placeholder="5 дней" required)
+          label.input-wrapper
+            p.input-wrapper__label Количество групп и участников в каждой группе
+            input.input(placeholder="3 группы по 10 человек" required)
+          label.input-wrapper
+            p.input-wrapper__label Пожелания по срокам
+            input.input(placeholder="10.03.2026 - 15.03.2026" required)
+          label.input-wrapper
+            p.input-wrapper__label Основные вопросы / задачи обучения
+            textarea.textarea(placeholder="Напишите свое сообщение")
+      .row-wrap.g3.aie.m3
+        .col5.ais.n1w5.n3w6.x3w2.x4w4
+          button(type="submit").button-primary.n1w3.n3w4.x3w2.x4w4 Отправить  
+          label.checkbox
+            input.checkbox__input(type="checkbox" checked required)
+            .checkbox__span-wrapper-blue
+              span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+        .col7.n1w5.n3w6.x3w2.x4w4
+          p.p1 Служба корпоративного обучения
+          .row-wrap.g7
+            a.t2.link.n2w2.n3w3.x3w2(href="tel:+78123274267") +7 (812) 327-42-67
+            a.t2.link.n3w3.x3w2(href="mailto:corp@cntiprogress.ru") corp@cntiprogress.ru
+
+//- http://localhost:1709/page-corp.html#form

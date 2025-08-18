@@ -12,24 +12,54 @@
   position: relative;
 }
 
+.ais {
+  align-items: flex-start;
+}
+
+// .x2ais {
+//   @media (max-width: $md2+px) {
+//     align-items: flex-start;
+//   }
+// }
+
+.x3ais {
+  @media (max-width: $md3+px) {
+    align-items: flex-start;
+  }
+}
+
 .aic {
   align-items: center;
 }
 
-.ais {
-  align-items: flex-start;
+// .x4aic {
+//   @media (max-width: $md4+px) {
+//     align-items: center;
+//   }
+// }
+
+.aie {
+  align-items: flex-end;
 }
+
+// .x3aie {
+//   @media (max-width: $md3+px) {
+//     align-items: flex-end;
+//   }
+// }
 
 .jcc {
   justify-content: center;
 }
 
-.jce {
-  justify-content: flex-end;
+.x4jcc {
+  @media (max-width: $md4+px) {
+    justify-content: center;
+  }
 }
 
-.wrap {
-  flex-wrap: wrap;
+.jce {
+  justify-content: flex-end;
 }
 
 .fs {
@@ -610,17 +640,17 @@
   }
 }
 
-// .n1contents {
-//   @media (min-width: $md1+px) {
-//     display: contents;
-//   }
-// }
+.n1contents {
+  @media (min-width: $md1+px) {
+    display: contents;
+  }
+}
 
-// .x1contents {
-//   @media (max-width: $md1+px) {
-//     display: contents;
-//   }
-// }
+.x1contents {
+  @media (max-width: $md1+px) {
+    display: contents;
+  }
+}
 
 .n2contents {
   @media (min-width: $md2+px) {
@@ -646,11 +676,11 @@
   }
 }
 
-// .n4contents {
-//   @media (min-width: $md4+px) {
-//     display: contents;
-//   }
-// }
+.n4contents {
+  @media (min-width: $md4+px) {
+    display: contents;
+  }
+}
 
 .x4contents {
   @media (max-width: $md4+px) {
