@@ -1,0 +1,95 @@
+.n1hide {
+  @media (min-width: $md1+px) {
+    display: none;
+  }
+}
+
+.x1hide {
+  @media (max-width: $md1+px) {
+    display: none;
+  }
+}
+
+.n2hide {
+  @media (min-width: $md2+px) {
+    display: none;
+  }
+}
+
+.x2hide {
+  @media (max-width: $md2+px) {
+    display: none;
+  }
+}
+
+.n3hide {
+  @media (min-width: $md3+px) {
+    display: none;
+  }
+}
+
+.x3hide {
+  @media (max-width: $md3+px) {
+    display: none;
+  }
+}
+
+.n4hide {
+  @media (min-width: $md4+px) {
+    display: none;
+  }
+}
+
+.x4hide {
+  @media (max-width: $md4+px) {
+    display: none;
+  }
+}
+
+.n1contents {
+  @media (min-width: $md1+px) {
+    display: contents;
+  }
+}
+
+.x1contents {
+  @media (max-width: $md1+px) {
+    display: contents;
+  }
+}
+
+.n2contents {
+  @media (min-width: $md2+px) {
+    display: contents;
+  }
+}
+
+.x2contents {
+  @media (max-width: $md2+px) {
+    display: contents;
+  }
+}
+
+.n3contents {
+  @media (min-width: $md3+px) {
+    display: contents;
+  }
+}
+
+.x3contents {
+  @media (max-width: $md3+px) {
+    display: contents;
+  }
+}
+
+.n4contents {
+  @media (min-width: $md4+px) {
+    display: contents;
+  }
+}
+
+.x4contents {
+  @media (max-width: $md4+px) {
+    display: contents;
+  }
+}

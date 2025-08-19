@@ -2,6 +2,7 @@
   width: 100%;
   margin: var(--L-XL) 0;
 }
+
 .section-bg {
   @extend .section;
   padding: var(--L-XL) 0;
@@ -26,194 +27,6 @@
 .body {
   padding-top: var(--L-XL);
   border-top: 2px solid var(--border-light);
-}
-
-.tac {
-  text-align: center;
-}
-
-.twb {
-  text-wrap: balance;
-}
-
-// .n1c {
-//   @media (min-width: $md1+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n2c {
-//   @media (min-width: $md2+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n3c {
-//   @media (min-width: $md3+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n4c {
-//   @media (min-width: $md4+px) {
-//     text-align: center;
-//   }
-// }
-
-.x1c {
-  @media (max-width: $md1+px) {
-    text-align: center;
-  }
-}
-
-.x2c {
-  @media (max-width: $md2+px) {
-    text-align: center;
-  }
-}
-
-.x3c {
-  @media (max-width: $md3+px) {
-    text-align: center;
-  }
-}
-
-.x4c {
-  @media (max-width: $md4+px) {
-    text-align: center;
-  }
-}
-
-.bright {
-  color: var(--text-bright);
-}
-
-.accent {
-  color: var(--text-accent);
-}
-
-.dark {
-  color: var(--text-dark);
-}
-
-.t1 {
-  font-family: 'RobotoCondensed';
-  $fs: 24;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 30;
-  line-height: round-to(math.div($lh, $fs), 3);
-  text-transform: uppercase;
-  @media (max-width: $md2+px) {
-    $fs: 20;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 24;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-  @media (max-width: $md4+px) {
-    $fs: 16;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.t1d {
-  @extend .dark;
-  @extend .t1;
-}
-
-.title {
-  @extend .t1d;
-  @extend .tac;
-}
-
-.t2 {
-  font-family: 'RobotoCondensed';
-  $fs: 18;
-  font-size: math.div($fs, $fz) + em;
-  // $lh: 24;
-  // line-height: round-to(math.div($lh, $fs), 3);
-  line-height: 1.334;
-  @media (max-width: $md2+px) {
-    $fs: 16;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.t2d {
-  @extend .dark;
-  @extend .t2;
-}
-
-.subtitle {
-  @extend .t2d;
-  text-align: center;
-  text-wrap: balance;
-}
-
-.a1 {
-  font-family: 'Montserrat';
-  $fs: 48;
-  font-size: math.div($fs, $fz) + em;
-
-  $lh: 60;
-  line-height: round-to(math.div($lh, $fs), 3);
-  @media (max-width: $md3+px) {
-    $fs: 40;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 60;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.p1 {
-  @media (max-width: $md2+px) AND (min-width: $md4+px) {
-    $fs: 13;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 18;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.intro {
-  @extend .p1;
-  text-align: center;
-}
-
-.p2 {
-  $fs: 13;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 18;
-  line-height: round-to(math.div($lh, $fs), 3);
-  @media (max-width: $md2+px) {
-    $fs: 12;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 18;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.b1 {
-  font-family: 'RobotoCondensed';
-  text-transform: uppercase;
-  @media (min-width: $md2+px) {
-    $fs: 16;
-    font-size: math.div($fs, $fz) + rem;
-    $lh: 22;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
-}
-
-.btn {
-  text-align: center;
-  @media (max-width: $md2+px) {
-    $fs: 12;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
-  }
 }
 
 %button {
@@ -242,7 +55,6 @@
     padding: 5px 10px;
   }
 }
-
 .button-primary {
   color: var(--text-second);
   @extend %button-non-border;
@@ -253,12 +65,10 @@
     background-color: var(--bg-accent);
   }
 }
-
 .button-primary-s {
   @extend .button-primary;
   @extend %button-non-border-s;
 }
-
 .button-second {
   color: var(--text-bright);
   @extend %button-border;
@@ -270,12 +80,10 @@
     border-color: var(--border-accent);
   }
 }
-
 .button-second-s {
   @extend .button-second;
   @extend %button-border-s;
 }
-
 .button-accent {
   color: var(--text-second);
   @extend %button-non-border;
@@ -286,7 +94,6 @@
     background-color: var(--bg-dark);
   }
 }
-
 .button-accent-s {
   @extend .button-accent;
   @extend %button-non-border-s;
@@ -322,26 +129,6 @@
     &:not(:first-child) {
       margin-top: 7px;
     }
-  }
-}
-
-%hover {
-  transition-duration: var(--transition);
-}
-
-.hover {
-  @extend %hover;
-  &:hover,
-  &:focus-visible {
-    color: var(--hover);
-  }
-}
-
-.hover-accent {
-  @extend %hover;
-  &:hover,
-  &:focus-visible {
-    color: var(--hover-accent);
   }
 }
 

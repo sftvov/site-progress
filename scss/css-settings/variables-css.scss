@@ -77,10 +77,10 @@
 
   --field: calc(var(--fields) / 2);
 
-  --column: calc((100vw - (var(--columns) - 1) * var(--gutter) - var(--fields) - var(--scrollbar)) / var(--columns));
-  @media (min-width: $md1+px) {
-    --column: calc((min(#{$maxContainer + px}, calc(100vw - var(--scrollbar))) - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
-  }
+  --innerWidth: calc(100vw - var(--scrollbar));  
+  --container: min(#{$maxContainer + px}, var(--innerWidth));
+  
+  --column: calc((var(--container) - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
   --2columns: calc(var(--column) * 2 + var(--gutter));
   --3columns: calc(var(--column) * 3 + var(--gutter) * 2);
   --4columns: calc(var(--column) * 4 + var(--gutter) * 3);

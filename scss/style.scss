@@ -1,6 +1,6 @@
 @use 'sass:math';
 @import 'scss-tools';
-@import 'css-settings/fonts';
+@import 'css-settings/font-face';
 @import '../../web-template/src/css-libs/null';
 
 *:focus-visible {
@@ -68,10 +68,14 @@ svg {
 @import '../../web-template/src/css-libs/lightgallery';
 @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
 
-@import 'css-settings/functions';
-@import 'css-settings/framework';
-@import 'css-sections/content';
-@import 'css-settings/elements';
+@import 'css-framework/functions';
+@import 'css-framework/fonts';
+@import 'css-framework/hide';
+@import 'css-framework/flex';
+@import 'css-framework/width';
+@import 'css-framework/space';
+@import 'css-elements/content';
+@import 'css-elements/elements';
 
 // @import 'css-sections/popups';
 @import 'css-sections/header';

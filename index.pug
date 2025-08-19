@@ -1,7 +1,7 @@
 include html/_mixins
 doctype html
 html(lang="ru")
-  +head('NAVIGATION', 'description', [], [])
+  +head('NAVIGATION', 'description', [], [], [])
   body
     .wrapper
       include html/header/_header_$common
@@ -34,9 +34,11 @@ html(lang="ru")
               li.ol__li
                 a.link(href="page-distance.html") ДИСТАНЦИОННЫЕ КУРСЫ
               li.ol__li
-                a.link(href="page-prof.html") ПЕРЕПОДГОТОВКА
+                a.link(href="page-prof.html") ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА
               li.ol__li
                 a.link(href="page-corp.html") КОРПОРАТИВНОЕ ОБУЧЕНИЕ
+              li.ol__li
+                a.link(href="archive-promos.html") АКЦИИ
             ul.ul.m2
               li.ul__li
                 a.link(href="service-pagination.html") ПАГИНАЦИЯ

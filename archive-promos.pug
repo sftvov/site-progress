@@ -1,11 +1,11 @@
 include html/_mixins
 doctype html
 html(lang="ru")
-	+head('РУБРИКАТОР', 'description', [], [], [])
+	+head('Акции', 'description', [], [], [])
 	body
 		.wrapper
 			include html/header/_header_$common
 			main.page#page
-				include html/rubrics/_rubrics_$common
+				include html/promo/_promo_promoA
 			include html/footer/_footer_$common
 		+js([],[])
