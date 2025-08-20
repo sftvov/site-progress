@@ -30,8 +30,22 @@
   }
 }
 
+.link {
+  @extend .accent;
+  @extend .hover;
+}
+
+.link-bright {
+  @extend .bright;
+  @extend .hover-accent;
+}
+
 .tac {
   text-align: center;
+}
+
+.ttu {
+  text-transform: uppercase;
 }
 
 .twb {

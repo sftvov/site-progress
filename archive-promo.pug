@@ -1,0 +1,12 @@
+include html/_mixins
+doctype html
+html(lang="ru")
+	+head('АКЦИИ', 'description', [], [], [])
+	body
+		.wrapper
+			include html/components/header/_header_$common
+			main.page#page
+				include html/blocks/promo/_promo_promoA
+				include html/blocks/all-promo/_all-promo_promoA
+			include html/components/footer/_footer_$common
+		+js([],[])

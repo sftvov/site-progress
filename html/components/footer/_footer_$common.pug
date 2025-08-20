@@ -1,0 +1,89 @@
+-
+  footerColumns = [
+    {
+      title: 'Обучение',
+      list: [
+        'Все курсы и семинары',
+        'Онлайн-обучение',
+        'Профпереподготовка',
+        'Корпоративное обучение',
+        'Акции',
+      ]
+    },
+    {
+      title: 'О компании',
+      list: [
+        'О ЦНТИ Прогресс',
+        'Основатель компании',
+        'Учебный центр в Петербурге',
+        'Учебный центр в Москве',
+        'Благотворительность',
+        'Партнеры-рекламодатели',
+      ]
+    },
+    {
+      title: 'Участникам',
+      list: [        
+        'Задать вопрос',
+        'Отели на особых условиях',
+        'Материалы с курса',
+        'Как добраться',
+        'Личный кабинет',
+      ]
+    },
+  ]
+
+
+footer.footer
+  .container
+    .footer__grid
+      each column, columnIndex in footerColumns
+        .footer__column-wrapper
+          .col4
+            h2.footer__column-title.x4c= column.title
+            .x4c
+              ul.col5
+                each item, itemIndex in column.list
+                  li.p1
+                    a(class='footer__list-link' + ((columnIndex === 2) ? (itemIndex === 1 ? '--accent' : (itemIndex === 2 ? '--bright' : '')) : '') href="#")= item
+      .footer__column-wrapper
+        .footer__last-column.col4
+          h2.footer__column-title.x4c Контакты
+          .x4c.col5
+            p.p1
+              | Санкт-Петербург, 199004, 
+              br
+              | Средний пр-т Васильевского 
+              br.x4hide
+              | острова, д. 36/40
+              br
+              a.hover(href="tel:88003338844")  8 (800) 333-88-44
+              br
+              a.hover(href="tel:88123318888")  8 (812) 331-88-88
+            p.p1
+              | Москва, 125040, 
+              br 
+              | 3-я ул. Ямского Поля, д. 2, к#[span.x2hide орп]. 1
+              br
+              a.hover(href="tel:84952287020") 8 (495) 228-70-20
+            p.p1 Пн-Пт с 8:00 до 18:00 (Мск)
+            p.p1
+              a.hover(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
+          .footer__icons
+            a.footer__icon--fill(href="https://vk.com/cntiprogress")
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#vk')
+            a.footer__icon--stroke(href="https://t.me/cntiprogress")
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#tg')
+            a.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#mail')
+      .footer__additional.col5
+        iframe(src="https://yandex.ru/sprav/widget/rating-badge/43759856765" width="150" height="50" frameborder="0")
+        p.footer__additional-p 
+          | Cайт носит исключительно информационный#[br.n4hide] характер#[br.n3hide.x4hide] и не является публичной офертой, 
+          br
+          | определяемой ч. 2 ст. 437 ГК РФ.
+
+//- scss/css-sections/footer.scss

@@ -4,9 +4,9 @@ html(lang="ru")
 	+head('ПЛАН', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/plan/_plan_plan
-				include html/bottom-plan/_bottom-plan
-			include html/footer/_footer_$common
+				include html/blocks/plan/_plan_plan
+				include html/blocks/bottom-plan/_bottom-plan
+			include html/components/footer/_footer_$common
 		+js([],[])

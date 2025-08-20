@@ -1,0 +1,16 @@
+.promo-all {
+  &__link {
+    @media (max-width: $md1+px) {
+      flex-direction: row;
+    }
+  }
+
+  &__link-arr {
+    @media (max-width: $md1+px) {
+      order: 1;
+      flex-grow: 1;
+      width: auto;
+      column-gap: 10px;
+    }
+  }
+}

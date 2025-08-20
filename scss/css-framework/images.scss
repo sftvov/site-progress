@@ -1,0 +1,51 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.i16 {
+  @extend .fs;
+  width: 16px;
+  height: 16px;
+}
+
+.i20 {
+  @extend .fs;
+  width: 20px;
+  height: 20px;
+}
+
+.i24 {
+  @extend .fs;
+  width: 24px;
+  height: 24px;
+}
+
+.x2i16 {
+  @extend .i24;
+  @media (max-width: $md2+px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.x2i20 {
+  @extend .i24;
+  @media (max-width: $md2+px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.s-bright {
+  stroke: var(--text-bright);
+}
+
+.sw1-5 {
+  stroke-width: 1.5;
+}
+
+.sw2 {
+  stroke-width: 2;
+}

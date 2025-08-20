@@ -1,0 +1,55 @@
+-
+  cards = [
+    {
+      title: 'Дарим трансфер',
+      attention: 'Бронь через службу гостиниц',
+      text: 'Забронируйте номер в отеле <a class="link" href="#">«Династия»</a>, <a class="link" href="#">«River Palace Hotel»</a> или <a class="link" href="#">«Арт Нуво»</a> и получите бесплатный трансфер до ЦНТИ Прогресс.',
+      link: 'ВЫБРАТЬ НОМЕР',
+    },
+    {
+      title: 'Учитесь онлайн',
+      attention: 'Постоянное предложение',
+      text: 'Многие курсы идут онлайн. Выберите подходящий из расписания или оставьте заявку на трансляцию.',
+      link: 'ВЫБРАТЬ курс',
+    },
+    {
+      title: 'Скидка за подписку',
+      attention: 'Только полезные письма',
+      text: 'Подпишитесь на нашу email-рассылку и получите скидку 3% на любой курс. ',
+      link: 'НАСТРОИТЬ РАССЫЛКУ',
+    },
+  ];
+
+
+section.promo-all.section
+  .container
+    .n1ol1
+      h2.t1d Текущие акции и спецпредложения
+      .row-wrap.aic.g3.m2
+        .row-wrap.g3
+          -
+            cards = cards.concat([cards[2]]);
+          each card, index in cards
+            article.promo-card.col.n1w3.n3w4.x3w2.x4w4(class= index>=3 ? "n3hide x4hide" : "")
+              img.promo-card__img.w(src="img/promo/card.png", alt="")
+              .promo-card__main.col.fg.m3
+                h1.t1d !{card.title}
+                .row.aic.cg5.m7
+                  svg.s-bright.sw2.i24.x2i16
+                    use(xlink:href='img/sprite/symbols.svg#attention')
+                  p.p2.bright !{card.attention}
+                .row.aic.fg
+                  p.p1.m5 !{card.text}
+                a.aca-link.link.ttu.row.cg15.aic.m3
+                  p.b !{card.link}
+                  .fg
+                    .arr
+                      .arr__line              
+                      svg.arr__head
+                        use(xlink:href='img/sprite/symbols.svg#arrowhead')
+        a.promo-all__link.acb-link.link-bright.col5.cg15.aic.n1w2.n2w3.n3w4.x3w2.x4w4    
+          .promo-all__link-arr.arr
+            .arr__line              
+            svg.arr__head
+              use(xlink:href='img/sprite/symbols.svg#arrowhead')
+          p.p1.tac Показать все

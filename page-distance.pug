@@ -4,11 +4,11 @@ html(lang="ru")
 	+head('ДИСТАНЦИОННЫЕ КУРСЫ', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/breadcrumbs/_breadcrumbs_distance
-				include html/hero-distance/_hero-distance_distance
-				include html/courses/_courses_distance
-				include html/section-help/_section-help_$common
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_distance
+				include html/blocks/hero-distance/_hero-distance_distance
+				include html/blocks/courses/_courses_distance
+				include html/blocks/section-help/_section-help_$common
+			include html/components/footer/_footer_$common
 		+js([],[])

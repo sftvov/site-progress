@@ -4,10 +4,10 @@ html(lang="ru")
 	+head('ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/breadcrumbs/_breadcrumbs_distance
-				include html/hero-prof/_hero-prof_prof
-				include html/courses/_courses_prof
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_distance
+				include html/blocks/hero-prof/_hero-prof_prof
+				include html/blocks/courses/_courses_prof
+			include html/components/footer/_footer_$common
 		+js([],[])

@@ -4,7 +4,7 @@ html(lang="ru")
   +head('PAGINATION', 'description', [], [], [])
   body
     .wrapper
-      include html/header/_header_$common
+      include html/components/header/_header_$common
       main#page.page
         .section
           .container
@@ -19,7 +19,7 @@ html(lang="ru")
               each y, current in Array(total + 1).fill()
                 -
                   currentPage = current + 1;
-                include html/pagination/_pagination_!template
+                include html/blocks/pagination/_pagination_!template
           
-      include html/footer/_footer_$common
+      include html/components/footer/_footer_$common
     +js([],[])

@@ -4,12 +4,12 @@ html(lang="ru")
 	+head('РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/breadcrumbs/_breadcrumbs_coursesA
-				include html/choose/_choose_coursesA
-				include html/subrubrics/_subrubrics_coursesA
-				include html/courses/_courses_coursesA
-				include html/section-help/_section-help_$common
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_coursesA
+				include html/blocks/choose/_choose_coursesA
+				include html/blocks/subrubrics/_subrubrics_coursesA
+				include html/blocks/courses/_courses_coursesA
+				include html/blocks/section-help/_section-help_$common
+			include html/components/footer/_footer_$common
 		+js([],[])

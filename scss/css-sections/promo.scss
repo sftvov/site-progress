@@ -1,0 +1,27 @@
+.promo {
+  &__percents {
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__link {
+    @media (max-width: $md2+px) {
+      flex-direction: row;
+      column-gap: 10px;
+    }
+  }
+
+  &__link-arr {
+    @media (max-width: $md2+px) {
+      order: 1;
+      flex-grow: 1;
+      width: auto;
+    }
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      width: 140px;
+      flex-grow: 0;
+    }
+  }
+}

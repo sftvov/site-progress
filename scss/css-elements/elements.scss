@@ -25,7 +25,7 @@
 
 .arr {
   @extend %arr;
-  height: 21px;
+  height: 22px;
   padding-right: 5px;
   &__line {
     @extend %arr__line;
@@ -35,6 +35,30 @@
   &__head {
     @extend %arr__head;
     height: 21px;
+  }
+}
+
+.acb {
+  --arrow-color: var(--text-bright);
+}
+
+.acb-link {
+  @extend .acb;
+  &:hover,
+  &:focus-visible {
+    --arrow-color: var(--hover-accent);
+  }
+}
+
+.aca {
+  --arrow-color: var(--text-accent);
+}
+
+.aca-link {
+  @extend .aca;
+  &:hover,
+  &:focus-visible {
+    --arrow-color: var(--hover);
   }
 }
 

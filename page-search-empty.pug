@@ -4,9 +4,9 @@ html(lang="ru")
 	+head('ПОИСК (ПУСТОЙ)', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/breadcrumbs/_breadcrumbs_search
-				include html/results/_results_search-empty
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_search
+				include html/blocks/results/_results_search-empty
+			include html/components/footer/_footer_$common
 		+js([],[])

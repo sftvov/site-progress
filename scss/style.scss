@@ -70,6 +70,8 @@ svg {
 
 @import 'css-framework/functions';
 @import 'css-framework/fonts';
+@import 'css-framework/positions';
+@import 'css-framework/images';
 @import 'css-framework/hide';
 @import 'css-framework/flex';
 @import 'css-framework/width';
@@ -93,8 +95,10 @@ svg {
 
 // @import 'css-sections/spollersPrice.scss';
 
+@import 'css-sections/all-promo.scss';
 @import 'css-sections/booking.scss';
 @import 'css-sections/bottom-plan.scss';
+@import 'css-sections/card-promo.scss';
 @import 'css-sections/cases.scss';
 @import 'css-sections/conditions.scss';
 @import 'css-sections/contacts-feedback.scss';
@@ -110,6 +114,7 @@ svg {
 @import 'css-sections/mailing.scss';
 @import 'css-sections/map.scss';
 @import 'css-sections/plan.scss';
+@import 'css-sections/promo.scss';
 @import 'css-sections/programms.scss';
 @import 'css-sections/recommended.scss';
 @import 'css-sections/results.scss';

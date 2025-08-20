@@ -1,15 +1,15 @@
 include html/_mixins
 doctype html
 html(lang="ru")
-	+head('КОНТАКТЫ', 'description', [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'], [])
+	+head('КОНТАКТЫ', 'description', [], [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/breadcrumbs/_breadcrumbs_contacts
-				include html/map/_map_contacts
-				include html/support/_support_contacts
-				include html/route/_route_contacts_1
-				include html/route/_route_contacts_2
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_contacts
+				include html/blocks/map/_map_contacts
+				include html/blocks/support/_support_contacts
+				include html/blocks/route/_route_contacts_1
+				include html/blocks/route/_route_contacts_2
+			include html/components/footer/_footer_$common
 		+js([],[])

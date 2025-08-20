@@ -4,7 +4,7 @@ html(lang="ru")
   +head('NAVIGATION', 'description', [], [], [])
   body
     .wrapper
-      include html/header/_header_$common
+      include html/components/header/_header_$common
       main#page.page
         .section
           .container
@@ -38,11 +38,11 @@ html(lang="ru")
               li.ol__li
                 a.link(href="page-corp.html") КОРПОРАТИВНОЕ ОБУЧЕНИЕ
               li.ol__li
-                a.link(href="archive-promos.html") АКЦИИ
+                a.link(href="archive-promo.html") АКЦИИ
             ul.ul.m2
               li.ul__li
                 a.link(href="service-pagination.html") ПАГИНАЦИЯ
               li.ul__li
                 a.link(href="page-main-gothic.html")  ГЛАВНАЯ СТРАНИЦА (GOTHIC)
-      include html/footer/_footer_$common
+      include html/components/footer/_footer_$common
     +js([],[])

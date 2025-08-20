@@ -1,0 +1,41 @@
+include ../../../data/rubricsArchive
+
+section.rubrics.section#rubrics
+  .container
+    h1.title Семинары и курсы по направлениям
+    .m2._tabs
+      .rubrics__tab-titles
+        .rubrics__indicator._tabs-indicator
+        button.rubrics__tab-title.b1._active._tabs-title 
+          svg.i24.x2i20
+            use(xlink:href='img/sprite/symbols.svg#building')
+          | Очно
+        button.rubrics__tab-title.b1._tabs-title 
+          svg.i24.x2i20
+            use(xlink:href='img/sprite/symbols.svg#wifi')
+          | Онлайн
+      ._tabs-blocks.m2
+        .rubrics__tab-block._tabs-block._active
+          each group in rubricsArchive
+            article.branch(style="--group-color:var(--" + group.color + ")")
+              h2.branch-title
+                span.branch-title__main 
+                  span.branch-title__title !{group.title} 
+              .branch__body
+                each rubric in group.rubrics
+                  p.p1
+                    a.branch__link(href="archive-courses.html") !{rubric.name} —&nbsp;!{rubric.courses}
+        .rubrics__tab-block._tabs-block
+          each group in rubricsArchive
+            article.branch(style="--group-color:var(--" + group.color + ")")
+              h2.branch-title
+                span.branch-title__main
+                  span.branch-title__title !{group.title} 
+              .branch__body
+                -
+                  rubric = group.rubrics[0]
+                p.p1
+                  a.branch__link(href="archive-courses.html") !{rubric.name} — !{rubric.courses}
+              
+//- http://localhost:1709/page-main.html#rubrics
+//- http://localhost:1709/page-rubrics.html#rubrics

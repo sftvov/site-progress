@@ -118,6 +118,14 @@
   row-gap: var(--2XS);
 }
 
+.cg5 {
+  column-gap: 5px;
+}
+
+.cg15 {
+  column-gap: 15px;
+}
+
 .col {
   display: flex;
   flex-direction: column;

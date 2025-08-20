@@ -1,3 +1,11 @@
+.w {
+  width: 100%;
+}
+
+.wx {
+  max-width: 100%;
+}
+
 .n1w1 {
   @extend .fs;
   @media (min-width: $md1+px) {

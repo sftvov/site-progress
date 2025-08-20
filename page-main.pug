@@ -4,12 +4,12 @@ html(lang="ru")
 	+head('ГЛАВНАЯ СТРАНИЦА', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main.page#page
-				include html/slider-main/_slider-main_main
-				include html/rubrics/_rubrics_$common
-				include html/recommended/_recommended_main
-				include html/trust/_trust_main
-				include html/programms/_programms_main
-			include html/footer/_footer_$common
+				include html/blocks/slider-main/_slider-main_main
+				include html/blocks/rubrics/_rubrics_$common
+				include html/blocks/recommended/_recommended_main
+				include html/blocks/trust/_trust_main
+				include html/blocks/programms/_programms_main
+			include html/components/footer/_footer_$common
 		+js([],[])

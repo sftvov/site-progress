@@ -189,9 +189,9 @@
   --border: var(--orange);
   --border-second: var(--white);
   --border-accent: var(--blue);
-  --border-light: var(--blue-light);
-  --border-dark: var(--gray-dark);
-  --border-gray: var(--gray);
+  --border-light: var(--blue-light); // повсеместно
+  --border-dark: var(--gray-dark); // для инпутов 
+  --border-gray: var(--gray); // для инпутов disabled
   --border-invalid: var(--red);
   // --border-second: var(--white);
   // --border-gray: var(--gray);

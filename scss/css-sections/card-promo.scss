@@ -1,0 +1,11 @@
+.promo-card {
+  border: 1px solid var(--border-gray);
+  &__img {
+    height: 213px;
+    object-fit: cover;
+    object-position: left bottom;
+  }
+  &__main {
+    padding: 0 19px 29px;
+  }
+}

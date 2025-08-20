@@ -4,10 +4,10 @@ html(lang="ru")
 	+head('ОБРАТНАЯ СВЯЗЬ', 'description', [], [], [])
 	body
 		.wrapper
-			include html/header/_header_$common
+			include html/components/header/_header_$common
 			main#page.page
-				include html/breadcrumbs/_breadcrumbs_feedback
-				include html/feedback/_feedback_feedback
-				include html/contacts-feedback/_contacts-feedback_feedback
-			include html/footer/_footer_$common
+				include html/blocks/breadcrumbs/_breadcrumbs_feedback
+				include html/blocks/feedback/_feedback_feedback
+				include html/blocks/contacts-feedback/_contacts-feedback_feedback
+			include html/components/footer/_footer_$common
 		+js([],[])
