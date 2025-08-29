@@ -1,15 +1,23 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Каталог семинаров',
+				'Семинары и курсы по управлению производством'
+			]
+		}
+
+block head
 	+head('РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/blocks/breadcrumbs/_breadcrumbs_coursesA
-				include html/blocks/choose/_choose_coursesA
-				include html/blocks/subrubrics/_subrubrics_coursesA
-				include html/blocks/courses/_courses_coursesA
-				include html/blocks/section-help/_section-help_$common
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content 
+	
+	include html/views/choose/_choose_coursesA
+	include html/views/subrubrics/_subrubrics_coursesA
+	include html/views/courses/_courses_coursesA
+	include html/blocks/help/_help_$common
+
+block scripts
+	+js([],[])

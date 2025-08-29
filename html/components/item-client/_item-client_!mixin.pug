@@ -1,0 +1,17 @@
+mixin itemClient(props)
+  - const isLink = Boolean(props.href)
+  - const ContainerTag = isLink ? 'a' : 'article'
+  - const TitleTag = isLink ? 'p' : 'h2'
+  
+  #{ContainerTag}.client-item&attributes(attributes)(
+    href=isLink ? props.href : false
+  )
+    .client-item__body
+      img.client-item__img(
+        src=props.img, 
+        alt=`${props.name} – ${props.desc || ''}`
+      )
+      .client-item__about.col7.m4
+        #{TitleTag}.accent.p1 !{props.name}
+        if props.desc
+          p.p1 !{props.desc}

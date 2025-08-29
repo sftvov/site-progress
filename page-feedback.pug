@@ -1,13 +1,19 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Обратная связь'
+			]
+		}
+
+block head
 	+head('ОБРАТНАЯ СВЯЗЬ', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main#page.page
-				include html/blocks/breadcrumbs/_breadcrumbs_feedback
-				include html/blocks/feedback/_feedback_feedback
-				include html/blocks/contacts-feedback/_contacts-feedback_feedback
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content	
+	include html/views/feedback/_feedback_feedback
+	include html/views/contacts-feedback/_contacts-feedback_feedback
+
+block scripts
+	+js([],[])

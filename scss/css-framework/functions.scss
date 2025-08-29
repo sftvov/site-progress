@@ -24,7 +24,9 @@ body {
 
 [data-item],
 [data-items-btn],
-[data-items-hide] {
+[data-items-hide],
+[data-reset-all],
+[data-reset] {
   &:not(._active) {
     display: none;
   }

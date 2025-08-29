@@ -1,0 +1,14 @@
+mixin gridClients(props)
+  .grid-clients&attributes(attributes)
+    each item in props.items
+      +itemClient(item)
+
+mixin gridClientsAlphabet(props)
+  .grid-clients&attributes(attributes)
+    each item in props.items
+      +itemClient(item)(class='_active' data-item=item.name.charAt(0).toUpperCase())
+
+mixin gridClientsCategory(props)
+  .grid-clients&attributes(attributes)
+    each item in props.items
+      +itemClient(item)(data-item=item.category[1])

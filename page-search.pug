@@ -1,12 +1,18 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Поиск'
+			]
+		}
+
+block head
 	+head('ПОИСК (РЕЗУЛЬТАТЫ)', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/blocks/breadcrumbs/_breadcrumbs_search
-				include html/blocks/results/_results_search
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content
+	include html/views/results/_results_search
+
+block scripts
+	+js([],[])

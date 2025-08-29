@@ -529,6 +529,27 @@
   }
 }
 
+.letters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 40px);
+  gap: 15px;
+  justify-content: space-between;
+  &__letter {
+    transition-duration: var(--transition);
+    @extend .p1;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--border-gray);
+    &._active,
+    &:hover,
+    &:focus-visible {
+      color: var(--hover);
+      border-color: var(--border);
+    }
+  }
+}
+
 .select {
   cursor: pointer;
   @extend %input;
@@ -763,7 +784,6 @@
 //     }
 //   }
 // }
-
 
 // .search {
 //   display: flex;

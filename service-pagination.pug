@@ -19,7 +19,7 @@ html(lang="ru")
               each y, current in Array(total + 1).fill()
                 -
                   currentPage = current + 1;
-                include html/blocks/pagination/_pagination_!template
+                include html/views/pagination/_pagination_!template
           
       include html/components/footer/_footer_$common
     +js([],[])

@@ -1,0 +1,79 @@
+
+- 
+  categories = [...new Map(
+    partnersArchive.map(item => [
+      item.category.join(','), // Создаем строковый ключ
+      item.category            // Сохраняем оригинальный массив
+    ])
+  ).values()].sort()
+
+  partners = {
+    items: partnersArchive,
+  }
+
+  bottomInfo = [
+    {
+      title: 'По вопросам сотрудничества обращайтесь:',
+      subtitle: 'Для научных и образовательных учреждений, предприятий и организаций',
+      items: [
+        {
+          name: 'Телефон/Факс:',
+          link: 'tel:8123209714',
+          text: '(812) 320-97-14',
+        },
+        {
+          name: 'Часы работы:',
+          text: '09:00-17:30 (время московское)',
+        },
+      ]
+    },
+    {
+      title: 'Информационное партнерство:',
+      items: [
+        {
+          name: 'E-mail:',
+          link: 'client@cntiprogress.ru',
+          text: 'client@cntiprogress.ru',
+        },
+        {
+          name: 'Телефон/Факс:',
+          link: 'tel:8123277309',
+          text: '(812) 327-73-09',
+        },
+        {
+          name: 'Часы работы:',
+          text: '09:00-17:30 (время московское)',
+        },
+      ]
+    },
+  ]
+
+section.section(data-filters)
+  .container
+    .n1o1
+      h1.title Партнеры ЦНТИ Прогресс
+      .col5.m2
+        p.p1 ЦНТИ Прогресс гордится многолетними партнерскими отношениями с ведущими научными и образовательными учреждениями, отраслевыми институтами, крупнейшими производственными предприятиями и организациями.
+        p.p1 Мы благодарим наших Интернет-партнеров за плодотворную совместную работу.
+    section.m1.body
+      h2.t2d Каталог партнеров:
+      +filterContents(categories)(class="g7 m3")
+      +gridClientsCategory(partners)(class="m1")
+      .row.jcc
+        button.button-second.n1w2.n3w4.x3w2.x4w4.m3(data-reset) Свернуть
+    .m1.body
+      .row-wrap.g1.n1o1
+        each sec in bottomInfo
+          section.n1w5.n2w6.n3w12.x3w4
+            h2.t2d= sec.title
+            if sec.subtitle
+              p.p1.m7= sec.subtitle
+            .col7.m3
+              each row in sec.items
+                .row
+                  p.p2.n3w2.x3w1.x4w2= row.name
+                  - const tag = row.link ? 'a' : 'p'
+                  #{tag}.p2.n1w3.n3w10.x3w3.x4w2(
+                    class= row.link ? 'link' : false
+                    href= row.link || false
+                  )= row.text

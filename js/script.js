@@ -44,6 +44,7 @@ function headerHeight() {
 //include('../../web-template/src/functions/desktopScroll.js');
 //include('../../web-template/src/functions/updateBlur.js');
 //include('../../web-template/src/functions/calculateAge.js');
+@@include('../../web-template/src/functions/filters.js');
 @@include('../../web-template/src/js-elements/all_checkboxes.js');
 //include('../../web-template/src/js-elements/select.js');
 //include('../../web-template/src/js-elements/quantity.js');
@@ -55,7 +56,7 @@ function headerHeight() {
 @@include('../../web-template/src/js-elements/gallery.js');
 //include('../../web-template/src/js-elements/scroll.js');
 @@include('../../web-template/src/js-elements/spollers_v2.0.1_now.js');
-@@include('../../web-template/src/js-elements/items_v3.0.0_now.js');
+@@include('../../web-template/src/js-elements/items_v3.2.0_now.js');
 
 const selects = document.querySelectorAll(".select");
 

@@ -26,11 +26,6 @@ body {
   background-color: var(--bg-main);
 }
 
-section,
-div {
-  scroll-margin-top: calc(var(--header-height) + 50px);
-}
-
 svg {
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -123,5 +118,11 @@ svg {
 @import 'css-sections/subrubrics.scss';
 @import 'css-sections/support.scss';
 @import 'css-sections/trust.scss';
+
+
+@import '../html/components/item-client/_component_item-client.scss';
+@import '../html/components/grid-clients/_component_grid-clients.scss';
+@import '../html/components/contents-filter/_component_contents-filter.scss';
+
 
 @import 'css-settings/variables-css';

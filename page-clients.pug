@@ -1,0 +1,18 @@
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Постоянные клиенты на семинарах ЦНТИ Прогресс',
+			]
+		}
+
+block head
+	+head('КЛИЕНТЫ', 'description', [], [], [])
+
+block content 	
+	include html/blocks/clients/_clients_clients
+
+block scripts
+	+js([],[])

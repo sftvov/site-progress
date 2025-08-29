@@ -1,0 +1,32 @@
+.client-item {
+  border: 1px solid var(--border-gray);
+
+  &:is(a) {
+    &:hover,
+    &:focus-visible {
+      & .client-item__img {
+        scale: (1.05);
+      }
+    }
+  }
+
+  &__body {
+    padding: var(--XS-S);
+  }
+
+  &__img {
+    transition-duration: var(--transition);
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  &__about {
+    overflow-wrap: break-word; /* Современный аналог word-wrap */
+    word-break: auto-phrase;
+    hyphens: auto; /* Красивые переносы с дефисами */
+    padding-top: var(--XS-S);
+    border-top: 2px solid var(--border-gray);
+  }
+  
+}

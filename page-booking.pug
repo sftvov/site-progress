@@ -1,12 +1,18 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Бронирование гостиниц',
+			]
+		}
+
+block head
 	+head('БРОНИРОВАНИЕ', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main#page.page
-				include html/blocks/breadcrumbs/_breadcrumbs_booking.pug
-				include html/blocks/booking/_booking_booking
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content	
+	include html/views/booking/_booking_booking
+
+block scripts
+	+js([],[])

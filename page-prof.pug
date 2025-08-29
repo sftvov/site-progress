@@ -1,13 +1,19 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Профессиональная переподготовка',
+			]
+		}
+
+block head
 	+head('ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/blocks/breadcrumbs/_breadcrumbs_distance
-				include html/blocks/hero-prof/_hero-prof_prof
-				include html/blocks/courses/_courses_prof
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content	
+	include html/views/hero-prof/_hero-prof_prof
+	include html/views/courses/_courses_prof
+
+block scripts
+	+js([],[])

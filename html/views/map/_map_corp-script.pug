@@ -1,0 +1,70 @@
+include ../../../data/corpArchive
+
+-
+  const corpData = corpArchive.map(item => ({
+    name: item.name,
+    description: item.description,
+    coords: item.coords,
+  }))
+
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    const corps = !{(JSON.stringify(corpData))};
+
+    ymaps.ready(init);
+
+    function init() {
+      const map = new ymaps.Map("ymaps", {
+        center: [59.951448, 30.305152],
+        zoom: 10,
+        controls: ['geolocationControl', 'routeButtonControl', 'trafficControl', 'typeSelector', 'rulerControl', 'fullscreenControl']
+      });
+
+      // Функция создания параметров иконки с номером
+      const getNumberedIconOptions = (number) => {
+        return {
+          // Используем стандартный layout с изображением и контентом
+          iconLayout: 'default#imageWithContent',
+          // Ваша кастомная иконка
+          iconImageHref: 'https://img.cntiprogress.ru/file/ivksenia/map_icon_other.png',
+          iconImageSize: [36, 52],
+          iconImageOffset: [0, -26],
+          // Параметры для отображения номера
+          iconContentOffset: [0, 5],
+          iconContentLayout: ymaps.templateLayoutFactory.createClass(
+            `<div class="hotels__pin">${number}</div>`
+          )
+        };
+      };
+
+
+      // Добавляем маркеры филиалов с номерами
+      corps.forEach((item, index) => {
+        const placemark = new ymaps.Placemark(
+          item.coords, 
+          {
+            hintContent: item.name,
+            balloonContent: `<div class="hotels__baloon">
+                                <h3 class="t2">${item.name}</h3>
+                                <p class="p1 m3">${item.description}</p>
+                              </div>`
+          },
+          getNumberedIconOptions(index + 1) // Нумерация с 1
+        );
+        map.geoObjects.add(placemark);
+      });
+      
+      // Добавляем контрол
+      const zoomControl = new ymaps.control.ZoomControl({
+        options: {
+          position: {
+            top: 60,
+            left: 10
+          },
+        }
+      });
+      map.controls.add(zoomControl);
+
+      map.setBounds(map.geoObjects.getBounds());
+    }
+  });

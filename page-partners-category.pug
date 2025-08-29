@@ -1,0 +1,18 @@
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Партнеры ЦНТИ Прогресс',
+			]
+		}
+
+block head
+	+head('ПАРТНЕРЫ КАТЕГОРИИ', 'description', [], [], [])
+
+block content 	
+	include html/blocks/partners-category/_partners-category_partners-category
+
+block scripts
+	+js([],[])

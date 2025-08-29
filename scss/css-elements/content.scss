@@ -1,4 +1,5 @@
 .section {
+  scroll-margin-top: calc(var(--header-height) + var(--L-XL));
   width: 100%;
   margin: var(--L-XL) 0;
 }

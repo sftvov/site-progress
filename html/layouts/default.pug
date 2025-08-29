@@ -1,0 +1,22 @@
+include ../_mixins
+include ../../data/clientsArchive
+include ../../data/partnersArchive
+
+block settings
+  - var page = {};
+
+doctype html
+html(lang="ru")
+  block head
+
+  body
+    .wrapper
+      include ../components/header/_header_$common
+      main.page#page
+        if page.breadcrumbs
+          +breadcrumbs(page.breadcrumbs)
+        block content
+    include ../components/footer/_footer_$common
+    block scripts
+
+

@@ -1,14 +1,20 @@
-include html/_mixins
-doctype html
-html(lang="ru")
+extends html/layouts/default
+
+block settings
+	-
+		page = {
+			breadcrumbs: [
+				'Список дистанционных курсов',
+			]
+		}
+
+block head
 	+head('ДИСТАНЦИОННЫЕ КУРСЫ', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/blocks/breadcrumbs/_breadcrumbs_distance
-				include html/blocks/hero-distance/_hero-distance_distance
-				include html/blocks/courses/_courses_distance
-				include html/blocks/section-help/_section-help_$common
-			include html/components/footer/_footer_$common
-		+js([],[])
+
+block content	
+	include html/views/hero-distance/_hero-distance_distance
+	include html/views/courses/_courses_distance
+	include html/blocks/help/_help_$common
+
+block scripts
+	+js([],[])
