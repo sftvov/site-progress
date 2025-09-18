@@ -1,12 +1,10 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-	+head('ПЛАН', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/views/plan/_plan_plan
-				include html/views/bottom-plan/_bottom-plan
-			include html/components/footer/_footer_$common
-		+js([],[])
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ПЛАН',
+	})
+
+block content	
+	include html/views/plan/_plan_plan
+	include html/views/bottom-plan/_bottom-plan

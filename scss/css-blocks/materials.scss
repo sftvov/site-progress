@@ -1,0 +1,17 @@
+.materials {
+  &__img {
+    width: 100%;
+    @media (max-width: $md1+px) {
+      aspect-ratio: 952/235;
+      object-fit: cover;
+      object-position: left;
+    }
+    @media (max-width: $md2+px) {
+      height: 182px;
+    }
+    @media (max-width: $md4+px) {
+      height: auto;
+      aspect-ratio: 300/111;
+    }
+  }
+}

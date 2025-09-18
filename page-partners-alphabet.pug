@@ -1,18 +1,12 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Партнеры ЦНТИ Прогресс',
-			]
-		}
+	+pageConfig({
+		title: 'ПАРТНЕРЫ АЛФАВИТ',
+		breadcrumbs: [
+			'Партнеры ЦНТИ Прогресс',
+		],
+	})
 
-block head
-	+head('ПАРТНЕРЫ АЛФАВИТ', 'description', [], [], [])
-
-block content 	
-	include html/blocks/partners-alphabet/_partners-alphabet_partners-alphabet
-
-block scripts
-	+js([],[])
+block content	
+	include html/views/partners-alphabet/_partners-alphabet_partners-alphabet

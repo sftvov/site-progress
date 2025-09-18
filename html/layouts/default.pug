@@ -3,12 +3,31 @@ include ../../data/clientsArchive
 include ../../data/partnersArchive
 
 block settings
-  - var page = {};
+  +pageConfig()
 
 doctype html
 html(lang="ru")
-  block head
-
+  head    
+    meta(charset="utf-8")
+    meta(name="robots" content="noindex")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="color-scheme" content="only light")
+    meta(name="theme-color" content="#ed6824")
+    if page.description
+      meta(name="description", content=page.description)
+    if page.title
+      title= page.title
+    //- link(rel="canonical" href="")
+    if page.styles && page.styles.external
+      each link in page.styles.external
+        link(rel="stylesheet", href=link)
+    link(rel="stylesheet", href=`css/style.min.css?_v=${version}`)
+    if page.styles && page.styles.internal
+      each link in page.styles.internal
+        link(rel="stylesheet", href=`css/${link}.min.css?_v=${version}`)
+    if page.scripts && page.scripts.head
+      each link in page.scripts.head
+        script(src=link)
   body
     .wrapper
       include ../components/header/_header_$common
@@ -16,7 +35,13 @@ html(lang="ru")
         if page.breadcrumbs
           +breadcrumbs(page.breadcrumbs)
         block content
-    include ../components/footer/_footer_$common
-    block scripts
+      include ../components/footer/_footer_$common
+    if page.scripts && page.scripts.external
+      each link in page.scripts.external
+        script(src=link)
+    script(src=`js/script.min.js?_v=${version}`)
+    if page.scripts && page.scripts.internal
+      each value in page.scripts.internal
+        script(src=`js/${value}.min.js?_v=${version}`)
 
 

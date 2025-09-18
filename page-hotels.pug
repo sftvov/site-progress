@@ -1,16 +1,18 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-	+head('ОТЕЛИ', 'description', [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/views/first/_first_hotels
-				include html/views/conditions/_conditions_hotels
-				include html/views/contacts-hotels/_contacts-hotels_hotels
-				include html/views/hotels/_hotels_hotels
-				include html/views/conditions/_conditions_hotels
-				include html/views/contacts-hotels/_contacts-hotels_hotels
-			include html/components/footer/_footer_$common
-		+js([],[])
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ОТЕЛИ',
+		breadcrumbs: [
+			'Контактная информация и схема проезда',
+		],
+		scripts: {head: ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU']}
+	})
+
+block content	
+	include html/views/first/_first_hotels
+	include html/views/conditions/_conditions_hotels
+	include html/views/contacts-hotels/_contacts-hotels_hotels
+	include html/views/hotels/_hotels_hotels
+	include html/views/conditions/_conditions_hotels
+	include html/views/contacts-hotels/_contacts-hotels_hotels

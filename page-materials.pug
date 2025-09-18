@@ -1,0 +1,12 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'МАТЕРИАЛЫ',
+		breadcrumbs: [
+			'Скачать материалы',
+		]
+	})
+
+block content		
+	include html/views/materials/_materials_materials

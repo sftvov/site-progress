@@ -1,19 +1,13 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Профессиональная переподготовка',
-			]
-		}
-
-block head
-	+head('ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА', 'description', [], [], [])
+	+pageConfig({
+		title: 'ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА',
+		breadcrumbs: [
+			'Профессиональная переподготовка',
+		]
+	})
 
 block content	
 	include html/views/hero-prof/_hero-prof_prof
 	include html/views/courses/_courses_prof
-
-block scripts
-	+js([],[])

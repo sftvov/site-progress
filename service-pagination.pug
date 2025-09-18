@@ -1,25 +1,22 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-  +head('PAGINATION', 'description', [], [], [])
-  body
-    .wrapper
-      include html/components/header/_header_$common
-      main#page.page
-        .section
-          .container
-            -
-              pagintaionClass = 'm3';
-            each i, total in Array(12).fill()
-              -
-                if(total === 0) continue;
-              - 
-                totalPages = total + 1;
-              p.m3 Количество страниц пагинации: !{totalPages} 
-              each y, current in Array(total + 1).fill()
-                -
-                  currentPage = current + 1;
-                include html/views/pagination/_pagination_!template
-          
-      include html/components/footer/_footer_$common
-    +js([],[])
+extends html/layouts/default
+
+block settings
+  +pageConfig({
+    title: 'PAGINATION'
+  })
+
+block content	
+  .section
+    .container
+      -
+        pagintaionClass = 'm3';
+      each i, total in Array(12).fill()
+        -
+          if(total === 0) continue;
+        - 
+          totalPages = total + 1;
+        p.m3 Количество страниц пагинации: !{totalPages} 
+        each y, current in Array(total + 1).fill()
+          -
+            currentPage = current + 1;
+          include html/views/pagination/_pagination_!template

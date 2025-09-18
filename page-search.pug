@@ -1,18 +1,12 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Поиск'
-			]
-		}
+	+pageConfig({
+		title: 'ПОИСК (РЕЗУЛЬТАТЫ)',
+		breadcrumbs: [
+			'Поиск'
+		]
+	})
 
-block head
-	+head('ПОИСК (РЕЗУЛЬТАТЫ)', 'description', [], [], [])
-
-block content
+block content	
 	include html/views/results/_results_search
-
-block scripts
-	+js([],[])

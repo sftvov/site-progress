@@ -1,12 +1,10 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-	+head('АКЦИИ', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/views/promo/_promo_promoA
-				include html/views/all-promo/_all-promo_promoA
-			include html/components/footer/_footer_$common
-		+js([],[])
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'АКЦИИ',
+	})
+
+block content	
+	include html/views/promo/_promo_promoA
+	include html/views/all-promo/_all-promo_promoA

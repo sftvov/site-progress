@@ -1,21 +1,16 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Контактная информация и схема проезда',
-			]
-		}
-
-block head
-	+head('КОНТАКТЫ', 'description', [], [], ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU'])
+	+pageConfig({
+		title: 'КОНТАКТЫ',
+		breadcrumbs: [
+			'Контактная информация и схема проезда',
+		],
+		scripts: {head: ['https://api-maps.yandex.ru/2.1/?apikey=de140e86-bb51-4ff4-a9c6-b52842c10b4d&lang=ru_RU']}
+	})
 
 block content	
 	include html/views/map/_map_contacts
 	include html/views/support/_support_contacts
 	include html/views/route/_route_contacts_1
 	include html/views/route/_route_contacts_2
-
-block scripts
-	+js([],[])

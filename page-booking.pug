@@ -1,18 +1,12 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Бронирование гостиниц',
-			]
-		}
-
-block head
-	+head('БРОНИРОВАНИЕ', 'description', [], [], [])
-
+	+pageConfig({
+		title: 'БРОНИРОВАНИЕ',
+		breadcrumbs: [
+			'Бронирование гостиниц',
+		]
+	})
+	
 block content	
 	include html/views/booking/_booking_booking
-
-block scripts
-	+js([],[])

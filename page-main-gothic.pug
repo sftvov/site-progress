@@ -1,19 +1,17 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-	+head('ГЛАВНАЯ СТРАНИЦА', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/views/slider-main/_slider-main_main
-				include html/views/rubrics/_rubrics_$common
-				include html/views/recommended/_recommended_main
-				include html/views/trust/_trust_main
-				include html/views/programms/_programms_main
-			include html/components/footer/_footer_$common		
-			style.
-				.t1,.t1d,.title,.branch-title__num,.branch-title__title,.course-dates__header,.course__name,.courses__square,.courses__square--new,.pagination,.subrubrics__link,.subtitle,.t2,.t2d,.b1,.courses__arrow-span,.rubrics__tab-title,.footer__column-title,.header__info-panel,.header-menu__item-name {
-					font-family: 'CenturyGothic';
-				}	
-		+js([],[])
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ГЛАВНАЯ СТРАНИЦА'
+	})
+
+block content	
+	include html/views/slider-main/_slider-main_main
+	include html/views/rubrics/_rubrics_$common
+	include html/views/recommended/_recommended_main
+	include html/views/trust/_trust_main
+	include html/views/programms/_programms_main
+	style.
+		.t1,.t1d,.title,.branch-title__num,.branch-title__title,.course-dates__header,.course__name,.courses__square,.courses__square--new,.pagination,.subrubrics__link,.subtitle,.t2,.t2d,.b1,.courses__arrow-span,.rubrics__tab-title,.footer__column-title,.header__info-panel,.header-menu__item-name {
+			font-family: 'CenturyGothic';
+		}	

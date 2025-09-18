@@ -1,23 +1,13 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Каталог семинаров',
-				'Семинары и курсы по управлению производством'
-			]
-		}
+	+pageConfig({
+		title: 'РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)',
+		breadcrumbs: ['Партнеры ЦНТИ Прогресс']
+	})
 
-block head
-	+head('РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)', 'description', [], [], [])
-
-block content 
-	
+block content	
 	include html/views/choose/_choose_coursesA
 	include html/views/subrubrics/_subrubrics_coursesA
 	include html/views/courses/_courses_coursesA
-	include html/blocks/help/_help_$common
-
-block scripts
-	+js([],[])
+	include html/views/help/_help_$common

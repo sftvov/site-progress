@@ -1,19 +1,13 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Обратная связь'
-			]
-		}
-
-block head
-	+head('ОБРАТНАЯ СВЯЗЬ', 'description', [], [], [])
+	+pageConfig({
+		title: 'ОБРАТНАЯ СВЯЗЬ',
+		breadcrumbs: [
+			'Обратная связь'
+		]
+	})
 
 block content	
 	include html/views/feedback/_feedback_feedback
 	include html/views/contacts-feedback/_contacts-feedback_feedback
-
-block scripts
-	+js([],[])

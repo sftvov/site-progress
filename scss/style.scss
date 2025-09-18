@@ -3,6 +3,10 @@
 @import 'css-settings/font-face';
 @import '../../web-template/src/css-libs/null';
 
+:root {
+  color-scheme: only light;
+}
+
 *:focus-visible {
   outline: 1px solid var(--border);
   outline-offset: 3px;
@@ -32,11 +36,11 @@ svg {
 }
 
 // strong {
-//   
+//
 // }
 
 // b {
-// 	
+//
 // }
 
 .wrapper {
@@ -46,7 +50,7 @@ svg {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: $maxWidth+px;
+  max-width: $maxWidth + px;
   min-height: 100%;
   margin: 0 auto;
 }
@@ -74,55 +78,54 @@ svg {
 @import 'css-elements/content';
 @import 'css-elements/elements';
 
-// @import 'css-sections/popups';
-@import 'css-sections/header';
-@import 'css-sections/footer';
-@import 'css-sections/pagination';
-// @import 'css-sections/frame-navigation';
+// @import 'css-blocks/popups';
+@import 'css-blocks/header';
+@import 'css-blocks/footer';
+@import 'css-blocks/pagination';
+// @import 'css-blocks/frame-navigation';
 
-// @import 'css-sections/form-sign.scss';
-// @import 'css-sections/form-popup-sign.scss';
+// @import 'css-blocks/form-sign.scss';
+// @import 'css-blocks/form-popup-sign.scss';
 
-@import 'css-sections/slider-main.scss';
-@import 'css-sections/slider-licenses.scss';
+@import 'css-blocks/slider-main.scss';
+@import 'css-blocks/slider-licenses.scss';
 
-// @import 'css-sections/grid-videos.scss';
+// @import 'css-blocks/grid-videos.scss';
 
-// @import 'css-sections/spollersPrice.scss';
+// @import 'css-blocks/spollersPrice.scss';
 
-@import 'css-sections/all-promo.scss';
-@import 'css-sections/booking.scss';
-@import 'css-sections/bottom-plan.scss';
-@import 'css-sections/card-promo.scss';
-@import 'css-sections/cases.scss';
-@import 'css-sections/conditions.scss';
-@import 'css-sections/contacts-feedback.scss';
-@import 'css-sections/contacts-hotels.scss';
-@import 'css-sections/courses.scss';
-@import 'css-sections/choose.scss';
-@import 'css-sections/feedback.scss';
-@import 'css-sections/first.scss';
-@import 'css-sections/hero-corp.scss';
-@import 'css-sections/hero-distance.scss';
-@import 'css-sections/hero-prof.scss';
-@import 'css-sections/hotels.scss';
-@import 'css-sections/mailing.scss';
-@import 'css-sections/map.scss';
-@import 'css-sections/plan.scss';
-@import 'css-sections/promo.scss';
-@import 'css-sections/programms.scss';
-@import 'css-sections/recommended.scss';
-@import 'css-sections/results.scss';
-@import 'css-sections/route.scss';
-@import 'css-sections/rubrics.scss';
-@import 'css-sections/subrubrics.scss';
-@import 'css-sections/support.scss';
-@import 'css-sections/trust.scss';
-
+@import 'css-blocks/all-promo.scss';
+@import 'css-blocks/booking.scss';
+@import 'css-blocks/bottom-plan.scss';
+@import 'css-blocks/card-promo.scss';
+@import 'css-blocks/cases.scss';
+@import 'css-blocks/conditions.scss';
+@import 'css-blocks/contacts-feedback.scss';
+@import 'css-blocks/contacts-hotels.scss';
+@import 'css-blocks/courses.scss';
+@import 'css-blocks/choose.scss';
+@import 'css-blocks/feedback.scss';
+@import 'css-blocks/first.scss';
+@import 'css-blocks/hero-corp.scss';
+@import 'css-blocks/hero-distance.scss';
+@import 'css-blocks/hero-prof.scss';
+@import 'css-blocks/hotels.scss';
+@import 'css-blocks/mailing.scss';
+@import 'css-blocks/map.scss';
+@import 'css-blocks/materials.scss';
+@import 'css-blocks/plan.scss';
+@import 'css-blocks/promo.scss';
+@import 'css-blocks/programms.scss';
+@import 'css-blocks/recommended.scss';
+@import 'css-blocks/results.scss';
+@import 'css-blocks/route.scss';
+@import 'css-blocks/rubrics.scss';
+@import 'css-blocks/subrubrics.scss';
+@import 'css-blocks/support.scss';
+@import 'css-blocks/trust.scss';
 
 @import '../html/components/item-client/_component_item-client.scss';
 @import '../html/components/grid-clients/_component_grid-clients.scss';
 @import '../html/components/contents-filter/_component_contents-filter.scss';
-
 
 @import 'css-settings/variables-css';

@@ -1,18 +1,12 @@
 extends html/layouts/default
 
 block settings
-	-
-		page = {
-			breadcrumbs: [
-				'Постоянные клиенты на семинарах ЦНТИ Прогресс',
-			]
-		}
-
-block head
-	+head('КЛИЕНТЫ', 'description', [], [], [])
+	+pageConfig({
+		title: 'КЛИЕНТЫ',
+		breadcrumbs: [
+			'Постоянные клиенты на семинарах ЦНТИ Прогресс',
+		]
+	})
 
 block content 	
-	include html/blocks/clients/_clients_clients
-
-block scripts
-	+js([],[])
+	include html/views/clients/_clients_clients

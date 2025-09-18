@@ -1,11 +1,9 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-	+head('РУБРИКАТОР', 'description', [], [], [])
-	body
-		.wrapper
-			include html/components/header/_header_$common
-			main.page#page
-				include html/views/rubrics/_rubrics_$common
-			include html/components/footer/_footer_$common
-		+js([],[])
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'РУБРИКАТОР'
+	})
+
+block content	
+	include html/views/rubrics/_rubrics_$common

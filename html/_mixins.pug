@@ -1,4 +1,16 @@
 include ../../web-template/src/_mixins.pug
+
+mixin pageConfig(config = {})
+  -
+    const defaultConfig = {
+      title: '',
+      description: 'Описание',
+      styles: { external: [], internal: [] },
+      scripts: { head: [], external: [], internal: [] },
+      breadcrumbs: false,
+    }
+    page = { ...defaultConfig, ...config }
+
 include components/breadcrumbs/_breadcrumbs_!mixin
 include components/contents-filter/_contents-filter_!mixin
 include components/grid-clients/_grid-clients_!mixin
