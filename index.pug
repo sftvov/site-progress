@@ -1,56 +1,58 @@
-include html/_mixins
-doctype html
-html(lang="ru")
-  +head('NAVIGATION', 'description', [], [], [])
-  body
-    .wrapper
-      include html/components/header/_header_$common
-      main#page.page
-        .section
-          .container
-            ol.ol
-              li.ol__li
-                a.link(href="page-rubrics.html") РУБРИКАТОР
-              li.ol__li
-                a.link(href="page-main.html") ГЛАВНАЯ СТРАНИЦА
-              li.ol__li
-                a.link(href="archive-courses.html") РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)
-              li.ol__li
-                a.link(href="page-search.html") ПОИСК (РЕЗУЛЬТАТЫ)
-              li.ol__li
-                a.link(href="page-search-empty.html") ПОИСК (ПУСТОЙ)
-              li.ol__li
-                a.link(href="page-plan.html") ПЛАН
-              li.ol__li
-                a.link(href="page-mailing.html") РАССЫЛКА
-              li.ol__li
-                a.link(href="page-hotels.html") ОТЕЛИ
-              li.ol__li
-                a.link(href="page-booking.html") БРОНИРОВАНИЕ
-              li.ol__li
-                a.link(href="page-feedback.html") ОБРАТНАЯ СВЯЗЬ
-              li.ol__li
-                a.link(href="page-contacts.html") КОНТАКТЫ
-              li.ol__li
-                a.link(href="page-distance.html") ДИСТАНЦИОННЫЕ КУРСЫ
-              li.ol__li
-                a.link(href="page-prof.html") ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА
-              li.ol__li
-                a.link(href="page-corp.html") КОРПОРАТИВНОЕ ОБУЧЕНИЕ
-              li.ol__li
-                a.link(href="archive-promo.html") АКЦИИ
-              li.ol__li
-                a.link(href="page-clients.html") КЛИЕНТЫ
-              li.ol__li
-                a.link(href="page-partners-alphabet.html") ПАРТНЕРЫ АЛФАВИТ
-              li.ol__li
-                a.link(href="page-partners-category.html") ПАРТНЕРЫ КАТЕГОРИИ
-              li.ol__li
-                a.link(href="page-materials.html") МАТЕРИАЛЫ
-            ul.ul.m2
-              li.ul__li
-                a.link(href="service-pagination.html") ПАГИНАЦИЯ
-              li.ul__li
-                a.link(href="page-main-gothic.html")  ГЛАВНАЯ СТРАНИЦА (GOTHIC)
-      include html/components/footer/_footer_$common
-    +js([],[])
+extends html/layouts/default
+
+block settings
+  +pageConfig({
+    title: 'ВСЕ ШАБЛОНЫ',
+    breadcrumbs: [
+      'Все шаблоны',
+    ]
+  })
+
+block content		
+  .section
+    .container
+      h1.title Все шаблоны
+      ol.ol.m2
+        li.ol__li
+          a.link(href="page-rubrics.html") РУБРИКАТОР
+        li.ol__li
+          a.link(href="page-main.html") ГЛАВНАЯ СТРАНИЦА
+        li.ol__li
+          a.link(href="archive-courses.html") РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)
+        li.ol__li
+          a.link(href="page-search.html") ПОИСК (РЕЗУЛЬТАТЫ)
+        li.ol__li
+          a.link(href="page-search-empty.html") ПОИСК (ПУСТОЙ)
+        li.ol__li
+          a.link(href="page-plan.html") ПЛАН
+        li.ol__li
+          a.link(href="page-mailing.html") РАССЫЛКА
+        li.ol__li
+          a.link(href="page-hotels.html") ОТЕЛИ
+        li.ol__li
+          a.link(href="page-booking.html") БРОНИРОВАНИЕ
+        li.ol__li
+          a.link(href="page-feedback.html") ОБРАТНАЯ СВЯЗЬ
+        li.ol__li
+          a.link(href="page-contacts.html") КОНТАКТЫ
+        li.ol__li
+          a.link(href="page-distance.html") ДИСТАНЦИОННЫЕ КУРСЫ
+        li.ol__li
+          a.link(href="page-prof.html") ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА
+        li.ol__li
+          a.link(href="page-corp.html") КОРПОРАТИВНОЕ ОБУЧЕНИЕ
+        li.ol__li
+          a.link(href="archive-promo.html") АКЦИИ
+        li.ol__li
+          a.link(href="page-clients.html") КЛИЕНТЫ
+        li.ol__li
+          a.link(href="page-partners-alphabet.html") ПАРТНЕРЫ АЛФАВИТ
+        li.ol__li
+          a.link(href="page-partners-category.html") ПАРТНЕРЫ КАТЕГОРИИ
+        li.ol__li
+          a.link(href="page-materials.html") МАТЕРИАЛЫ
+      ul.ul.m2
+        li.ul__li
+          a.link(href="service-pagination.html") ПАГИНАЦИЯ
+        li.ul__li
+          a.link(href="page-main-gothic.html")  ГЛАВНАЯ СТРАНИЦА (GOTHIC)
