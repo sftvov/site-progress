@@ -1,0 +1,21 @@
+.center {
+  &__img {
+    object-fit: cover;
+    object-position: right;
+  }
+  &__items {
+    @media (max-width: $md2+px) {
+      row-gap: var(--XS);
+    }
+  }
+  &__item {
+    @media (max-width: $md2+px) AND (min-width: $md3+px) {
+      row-gap: 7px;
+    }
+  }
+  &__num-row {
+    @media (max-width: $md1+px) AND (min-width: $md3+px) {
+      margin-left: var(--3columnsG);
+    }
+  }
+}

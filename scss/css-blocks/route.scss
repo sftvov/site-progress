@@ -1,12 +1,4 @@
 .route {
-  &__heading {
-    color: var(--text-dark);
-    stroke: var(--text-dark);
-    stroke-width: 2px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
 
   &__link {
     transition-duration: var(--transition);

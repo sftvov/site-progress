@@ -1,0 +1,13 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'УЧЕБНЫЙ ЦЕНТР СПБ',
+		breadcrumbs: [ 
+			'Межотраслевой Учебный центр ЦНТИ Прогресс',
+		]
+	})
+
+block content		
+	include html/views/center/_center_center-spb
+	include html/views/tour/_tour_center-spb

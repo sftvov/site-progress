@@ -1,5 +1,14 @@
-.row {
+.r {
   display: flex;
+}
+
+.r10 {
+  @extend .r;
+  column-gap: 10px;
+}
+
+.row {
+  @extend .r;
   column-gap: var(--gutter);
 }
 

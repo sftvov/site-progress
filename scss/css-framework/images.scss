@@ -42,6 +42,10 @@
   }
 }
 
+.s-dark {
+  stroke: var(--text-dark)
+}
+
 .s-bright {
   stroke: var(--text-bright);
 }
