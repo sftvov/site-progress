@@ -1,0 +1,12 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'УДОСТОВЕРЕНИЕ',
+		breadcrumbs: [
+			'Удостоверение о повышении квалификации на английском',
+		]
+	})
+
+block content		
+	include html/views/certificate/_certificate_certificate
