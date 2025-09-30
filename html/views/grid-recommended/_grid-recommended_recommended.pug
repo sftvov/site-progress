@@ -1,0 +1,12 @@
+include ../../../data/recommendedArchive
+
+section.section
+  .container
+    h1.title цнти прогресс рекомендует
+    .row-wrap.g2.m2
+      each a in Array(2).fill()
+        each item in recommendedArchive
+          +itemRecommended({
+            img: item.img,
+            text: item.text,
+          })

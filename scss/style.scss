@@ -78,57 +78,49 @@ svg {
 @import 'css-elements/content';
 @import 'css-elements/elements';
 
-// @import 'css-blocks/popups';
-@import 'css-blocks/header';
-@import 'css-blocks/footer';
-@import 'css-blocks/pagination';
-// @import 'css-blocks/frame-navigation';
-
-// @import 'css-blocks/form-sign.scss';
-// @import 'css-blocks/form-popup-sign.scss';
-
-@import 'css-blocks/slider-main.scss';
-@import 'css-blocks/slider-licenses.scss';
-
-// @import 'css-blocks/grid-videos.scss';
-
-// @import 'css-blocks/spollersPrice.scss';
-
-@import 'css-blocks/all-promo.scss';
-@import 'css-blocks/booking.scss';
-@import 'css-blocks/bottom-plan.scss';
-@import 'css-blocks/card-promo.scss';
-@import 'css-blocks/cases.scss';
-@import 'css-blocks/center.scss';
-@import 'css-blocks/conditions.scss';
-@import 'css-blocks/contacts-feedback.scss';
-@import 'css-blocks/contacts-hotels.scss';
-@import 'css-blocks/courses.scss';
-@import 'css-blocks/choose.scss';
-@import 'css-blocks/feedback.scss';
-@import 'css-blocks/first.scss';
-@import 'css-blocks/hero-corp.scss';
-@import 'css-blocks/hero-distance.scss';
-@import 'css-blocks/hero-prof.scss';
-@import 'css-blocks/hotels.scss';
-@import 'css-blocks/mailing.scss';
-@import 'css-blocks/map.scss';
-@import 'css-blocks/materials.scss';
-@import 'css-blocks/plan.scss';
-@import 'css-blocks/promo.scss';
-@import 'css-blocks/programms.scss';
-@import 'css-blocks/recommended.scss';
-@import 'css-blocks/results.scss';
-@import 'css-blocks/route.scss';
-@import 'css-blocks/rubrics.scss';
-@import 'css-blocks/subrubrics.scss';
-@import 'css-blocks/support.scss';
-@import 'css-blocks/trust.scss';
-
-@import '../html/components/item-client/_component_item-client.scss';
-@import '../html/components/grid-clients/_component_grid-clients.scss';
+// @import '../html/views/popups';
+@import '../html/components/breadcrumbs/_component_breadcrumbs';
+@import '../html/components/header/_component_header';
+@import '../html/components/footer/_component_footer';
+@import '../html/components/pagination/_component_pagination';
+// @import '../html/components/popups/_component_popups';
+@import '../html/components/card-promo/_card-promo.scss';
 @import '../html/components/contents-filter/_component_contents-filter.scss';
+@import '../html/components/item-client/_component_item-client.scss';
+@import '../html/components/item-recommended/_component_item-recommended.scss';
+@import '../html/components/grid-clients/_component_grid-clients.scss';
 
+@import '../html/views/all-promo/_all-promo.scss';
+@import '../html/views/booking/_booking.scss';
+@import '../html/views/bottom-plan/_bottom-plan.scss';
+@import '../html/views/cases/_cases.scss';
+@import '../html/views/center/_center.scss';
 @import '../html/views/certificate/_certificate.scss';
+@import '../html/views/conditions/_conditions.scss';
+@import '../html/views/contacts-feedback/_contacts-feedback.scss';
+@import '../html/views/contacts-hotels/_contacts-hotels.scss';
+@import '../html/views/courses/_courses.scss';
+@import '../html/views/choose/_choose.scss';
+@import '../html/views/feedback/_feedback.scss';
+@import '../html/views/first/_first.scss';
+@import '../html/views/hero-corp/_hero-corp.scss';
+@import '../html/views/hero-distance/_hero-distance.scss';
+@import '../html/views/hero-prof/_hero-prof.scss';
+@import '../html/views/hotels/_hotels.scss';
+@import '../html/views/mailing/_mailing.scss';
+@import '../html/views/map/_map.scss';
+@import '../html/views/materials/_materials.scss';
+@import '../html/views/plan/_plan.scss';
+@import '../html/views/promo/_promo.scss';
+@import '../html/views/programms/_programms.scss';
+@import '../html/views/results/_results.scss';
+@import '../html/views/route/_route.scss';
+@import '../html/views/rubrics/_rubrics.scss';
+@import '../html/views/slider-main/_slider-main.scss';
+@import '../html/views/slider-licenses/_slider-licenses.scss';
+@import '../html/views/subrubrics/_subrubrics.scss';
+@import '../html/views/support/_support.scss';
+@import '../html/views/trust/_trust.scss';
+
 
 @import 'css-settings/variables-css';

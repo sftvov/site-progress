@@ -1,6 +1,6 @@
 .certificate {
   &__note {
-    padding-top: calc(var(--S) - 2px);
+    padding-top: var(--S);
     border-top: 2px solid var(--border-light);
   }
 }

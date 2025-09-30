@@ -1,0 +1,12 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ЦНТИ ПРОГРЕСС РЕКОМЕНДУЕТ (бывш. СПЕЦПРЕДЛОЖЕНИЯ)',
+		breadcrumbs: [
+			'ЦНТИ Прогресс рекомендует',
+		]
+	})
+
+block content		
+	include html/views/grid-recommended/_grid-recommended_recommended
