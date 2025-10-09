@@ -3,6 +3,7 @@ const wrapper = document.querySelector('.wrapper');
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
+const measure = document.querySelector('#measure');
 
 // ----------------------------------------------------------------------
 
@@ -165,34 +166,58 @@ new Activator('.burger', {
 //include('_swipers.js');
 //include('_map.js');
 
+// Throttle - вызывается не чаще чем delay
+function throttle(func, delay) {
+  let lastCall = 0;
+  return function(...args) {
+    const now = new Date().getTime();
+    if (now - lastCall < delay) return;
+    lastCall = now;
+    return func.apply(this, args);
+  };
+}
+
+// Debounce - вызывается после паузы в delay
+function debounce(func, delay) {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
 let lastScroll = 0;
 
+// Debounce для тяжелых операций при ресайзе
+const handleResize = debounce(() => {
+  getMatchMedia();
+  headerHeight();
+  calculateScrollbarWidth();
+  updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+}, 1500);
+
+// Throttle для скролла
+const handleScroll = throttle(() => {
+  const currentScroll = window.scrollY;
+  
+  if (currentScroll <= 0) {
+    header.style.transform = 'translateY(0)';
+  } else if (currentScroll < lastScroll) {
+    header.style.transform = 'translateY(0)';
+  } else if (!md1Query?.matches && currentScroll > lastScroll && currentScroll > hh) {
+    header.style.transform = 'translateY(-100%)';
+  }
+  lastScroll = currentScroll;
+}, 16);
+
 window.onload = () => {
-	getMatchMedia();
-	headerHeight();
-	calculateScrollbarWidth();
-	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-	ItemsManager.initialize();
-	// addTouchClassForMobile();
+  getMatchMedia();
+  headerHeight();
+  calculateScrollbarWidth();
+  updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+  ItemsManager.initialize();
+};
 
-	window.addEventListener('scroll', () => {
-		const currentScroll = window.scrollY;	
-		if (currentScroll <= 0) {
-			header.style.transform = 'translateY(0)';
-		} else if (currentScroll < lastScroll) {
-			header.style.transform = 'translateY(0)';
-		} else if (!md2Query.matches && currentScroll > lastScroll && currentScroll > hh) {
-			header.style.transform = 'translateY(-100%)';
-		}
-		lastScroll = currentScroll;
-	});
-}
-
-window.onresize = () => {
-	getMatchMedia();
-	headerHeight();
-	calculateScrollbarWidth();
-	updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-	// addTouchClassForMobile();
-}
+window.addEventListener('resize', handleResize);
+window.addEventListener('scroll', handleScroll);
 

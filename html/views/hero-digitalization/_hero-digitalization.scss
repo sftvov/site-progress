@@ -1,0 +1,7 @@
+.digitalization-hero {
+  &__img-body {
+    padding-top: var(--L-XL);
+    background: url(../img/digitalization/hero.png) center/cover no-repeat;
+    min-height: 455px;
+  }
+}

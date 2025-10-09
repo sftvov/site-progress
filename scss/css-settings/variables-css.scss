@@ -44,6 +44,7 @@
   --transition: 0.2s;
   --header-height: 196px;
   --scrollbar: 0px;
+  
   @media (min-width: $md1+px) {
     --header-height: 216px;
   }
@@ -77,7 +78,7 @@
 
   --field: calc(var(--fields) / 2);
 
-  --innerWidth: calc(100vw - var(--scrollbar));  
+  --innerWidth: calc(100vw - var(--scrollbar));
   --container: min(#{$maxContainer + px}, var(--innerWidth));
   
   --column: calc((var(--container) - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));

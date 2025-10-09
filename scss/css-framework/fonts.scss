@@ -185,11 +185,6 @@
   }
 }
 
-.intro {
-  @extend .p1;
-  text-align: center;
-}
-
 .p2 {
   $fs: 13;
   font-size: math.div($fs, $fz) + em;

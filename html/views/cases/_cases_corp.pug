@@ -34,17 +34,18 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
                       span.p2 !{icon}
             .m3
               .row-wrap.g3.n1ol1
-                each block in item.blocks
-                  section.case-item__block.n1w3.n3w4.x3w4
-                    h4.t2.accent !{block.title}
-                    .m5
-                      each p in block.text
-                        if Array.isArray(p)
-                          ul.ul.col6
-                            each li in p
-                              li.ul__li !{li}
-                        else 
-                          p.p1 !{p}
+                if item.blocks
+                  each block in item.blocks
+                    section.case-item__block.n1w3.n3w4.x3w4
+                      h4.t2.accent !{block.title}
+                      .m5
+                        each p in block.text
+                          if Array.isArray(p)
+                            ul.ul.col6
+                              each li in p
+                                li.ul__li !{li}
+                          else 
+                            p.p1 !{p}
                 section.case-item__block
                   h4.t2.accent Отзывы
                   .row-wrap.g5.m5

@@ -35,6 +35,11 @@ svg {
   stroke-linejoin: round;
 }
 
+#measure {
+  position: absolute;
+  width: 100vw;
+}
+
 // strong {
 //
 // }
@@ -104,6 +109,7 @@ svg {
 @import '../html/views/feedback/_feedback.scss';
 @import '../html/views/first/_first.scss';
 @import '../html/views/hero-corp/_hero-corp.scss';
+@import '../html/views/hero-digitalization/_hero-digitalization.scss';
 @import '../html/views/hero-distance/_hero-distance.scss';
 @import '../html/views/hero-prof/_hero-prof.scss';
 @import '../html/views/hotels/_hotels.scss';
@@ -121,6 +127,5 @@ svg {
 @import '../html/views/subrubrics/_subrubrics.scss';
 @import '../html/views/support/_support.scss';
 @import '../html/views/trust/_trust.scss';
-
 
 @import 'css-settings/variables-css';

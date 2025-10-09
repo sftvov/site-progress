@@ -34,6 +34,7 @@ html(lang="ru")
           +breadcrumbs(page.breadcrumbs)
         block content
       include ../components/footer/_footer_$common
+    #measure
     if page.scripts && page.scripts.external
       each link in page.scripts.external
         script(src=link)
