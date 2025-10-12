@@ -13,8 +13,8 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
             .case-item__top.row.ais(data-spoller)
               img.case-item__img.n3w1.x3hide(src=item.image alt="")
               .fg
-                h3.case-item__title.t2.accent.row !{item.title}
-                .row-wrap.g5.m4
+                h3.case-item__title.t2.ta.row !{item.title}
+                .row.wrap.g5.m4
                   each icon, i in item.icons
                     -
                       size = "n1w3 n3w4 x3w2 x4w4";
@@ -33,11 +33,11 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
                         use(xlink:href='img/sprite/symbols.svg#' + icn)
                       span.p2 !{icon}
             .m3
-              .row-wrap.g3.n1ol1
+              .row.wrap.g3.n1ol1
                 if item.blocks
                   each block in item.blocks
-                    section.case-item__block.n1w3.n3w4.x3w4
-                      h4.t2.accent !{block.title}
+                    section.case-item__block.n1w3.w4
+                      h4.t2.ta !{block.title}
                       .m5
                         each p in block.text
                           if Array.isArray(p)
@@ -47,14 +47,14 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
                           else 
                             p.p1 !{p}
                 section.case-item__block
-                  h4.t2.accent Отзывы
-                  .row-wrap.g5.m5
+                  h4.t2.ta Отзывы
+                  .row.wrap.g5.m5
                     each review in item.reviews
-                      .col7.n1w3.n3w4.x3w4
+                      .col7.n1w3.w4
                         p.p1 !{review.main}
                         p.case-item__span.p2 !{review.who}
   .container
-    .row-wrap.jcc.g5.m3
+    .row.wrap.jcc.g5.m3
       button.cases__hide-button.button-second.n1w2.n3w4.x3w2.x4w4(data-items-hide) Свернуть
       button.cases__show-button.button-primary.n1w2.n3w4.x3w2.x4w4(data-items-btn) Показать ещё
 

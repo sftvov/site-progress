@@ -1,0 +1,12 @@
+include ../../../data/coursesArchive
+
+section.section#courses
+  .container
+    .n3ol1
+      h2.t1d !{courses.title}
+  .m4
+    each course in coursesArchive
+      +courseItem(course, 'distance')
+  if courses.pagination
+    .container
+      include ../pagination/_pagination_$common

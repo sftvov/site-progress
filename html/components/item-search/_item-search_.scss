@@ -1,0 +1,6 @@
+.format {
+  @media (max-width: $md1+px) AND (min-width: $md3+px) {
+    flex-direction: column;
+    gap: 3px;
+  }
+}

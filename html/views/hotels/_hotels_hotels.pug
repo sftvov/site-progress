@@ -17,17 +17,17 @@ section.hotels.section#hotels
             h2.subtitle !{hotel.name}
             header.row.x4col.aic.jcc.g7.m5
               p.p1 Санкт-Петербург, !{hotel.address}
-              a.p1.bright.hover-accent(href="#toc") Вернуться к карте
+              a.p1.tb.hover-accent(href="#toc") Вернуться к карте
             .hotel__icons.m4.g7
               .hotel__icon
                 svg.i24
                   use(xlink:href='img/sprite/symbols.svg#pin')
-                p.p1.accent !{hotel.distance} #[br.x3hide]до #[br.n3hide]ЦНТИ&nbsp;Прогресс
+                p.p1.ta !{hotel.distance} #[br.x3hide]до #[br.n3hide]ЦНТИ&nbsp;Прогресс
               each icon in hotel.features
                 .hotel__icon
                   svg.i24
                     use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
-                  p.p1.accent !{icon.name}            
+                  p.p1.ta !{icon.name}            
             .hotel__gallery.row.x4wrap.m3._gallery
               a.n3w3.x3w1.x4w2(href="http://img.cntiprogress.ru/file/ivksenia/dinastia_1.jpg") 
                 img.hotel__gallery-img(src="http://img.cntiprogress.ru/file/ivksenia/dinastia_1_min.jpg" alt="")

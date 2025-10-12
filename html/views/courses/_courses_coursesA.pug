@@ -1,59 +1,14 @@
 include ../../../data/coursesArchive
 
-.courses.section#courses
+.section#courses
   .container
     .body
-      .courses__links.row
-        a.courses__link.b1.n3w3.x3w2._active(href="#") очные
-          svg.courses__link-svg.i20
-            use(xlink:href='img/sprite/symbols.svg#info')
-        a.courses__link.b1.n3w3.x3w2(href="#") онлайн
-          svg.courses__link-svg.i20
-            use(xlink:href='img/sprite/symbols.svg#info')
+      .row.jcc
+        +mode({ text: 'очные' })
+        +mode({ text: 'онлайн', href: '#' })
   .m2
     each course in coursesArchive
-      article.courses__item
-        .container
-          .courses__item-body
-            header.courses__squares
-              .courses__square !{course.hours}
-              if course.isNew 
-                .courses__square--new NEW
-            .courses__course.course
-              p.p2 Курс повышения квалификации
-              h2.m7
-                a.course__name(href="#")  !{course.name}
-              .course__info-row
-                p.course__info-item
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#location')
-                  | Санкт-Петербург
-                p.course__info-item
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#info')
-                  | !{course.price} ₽
-                a.course__info-item--link(href="#") 
-                  svg.course__info-svg
-                    use(xlink:href='img/sprite/symbols.svg#wifi')
-                  | Доступна онлайн-трансляция
-              p.p2.m4 !{course.description}
-            footer.courses__dates-wrapper
-              .courses__2-columns-table.course-dates
-                .course-dates__headers
-                  p.course-dates__header Дата
-                  p.course-dates__header Код
-                    svg.course-dates__code-svg
-                      use(xlink:href='img/sprite/symbols.svg#info')
-                each date in course.dates
-                  .course-dates__row
-                    a.course-dates__date-link !{date.date}
-                    span !{date.code}
-              a.courses__arrow-link(href="#") 
-                span.courses__arrow-span узнать всё о курсе
-                .arr
-                  .arr__line
-                  svg.arr__head
-                    use(xlink:href='img/sprite/symbols.svg#arrowhead')
+      +courseItem(course)
   .container
     include ../pagination/_pagination_$common
 

@@ -1,4 +1,18 @@
-include ../../web-template/src/_mixins.pug
+include ../../web-template/src/_mixins
+
+include components/arrow/_arrow_
+include components/breadcrumbs/_breadcrumbs_
+include components/contents-filter/_contents-filter_
+include components/course-dates/_course-dates_
+include components/course-info/_course-info_
+include components/grid-clients/_grid-clients_
+include components/item-client/_item-client_
+include components/item-course/_item-course_
+include components/item-recommended/_item-recommended_
+include components/item-search/_item-search_
+include components/item-search/_item-search_
+include components/mode/_mode_
+include components/square-info/_square-info_
 
 mixin pageConfig(config = {})
   -
@@ -10,9 +24,3 @@ mixin pageConfig(config = {})
       breadcrumbs: false,
     }
     page = { ...defaultConfig, ...config }
-
-include components/breadcrumbs/_breadcrumbs_!mixin
-include components/contents-filter/_contents-filter_!mixin
-include components/grid-clients/_grid-clients_!mixin
-include components/item-recommended/_item-recommended_!mixin
-include components/item-client/_item-client_!mixin

@@ -1,0 +1,8 @@
+.course-item {
+  transition-duration: var(--transition);
+  padding: var(--S) 0;
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-second);
+  }
+}

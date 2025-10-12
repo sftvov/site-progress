@@ -1,0 +1,15 @@
+mixin mode(props = {})
+  - 
+    const {
+      text = '',
+      href = false,
+      icon = 'info'
+    } = props
+
+  - const Tag = href ? 'a' : 'span'
+  #{Tag}.mode.b1.r10.aic.jcc.n3w3.x3w2.bdl(
+    href=href || false
+  )&attributes(attributes)
+    | #{text}
+    svg.sd.i20
+      use(xlink:href=`img/sprite/symbols.svg#${icon}`)

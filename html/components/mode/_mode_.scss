@@ -1,0 +1,13 @@
+.mode {
+    padding: 8px 5px;
+    @media (max-width: $md2+px) {
+      padding-block: 6px;
+    }
+    @media (max-width: $md3+px) {
+      padding-block: 3px;
+    }
+    &:is(:not(a)) {
+      background-color: var(--bg-second);
+    }
+  }
+

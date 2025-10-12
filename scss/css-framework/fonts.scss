@@ -1,13 +1,17 @@
-.accent {
+.ta {
   color: var(--text-accent);
 }
 
-.bright {
+.tb {
   color: var(--text-bright);
 }
 
-.dark {
+.td {
   color: var(--text-dark);
+}
+
+.ts {
+  color: var(--text-second);
 }
 
 %hover {
@@ -31,12 +35,12 @@
 }
 
 .link {
-  @extend .accent;
+  @extend .ta;
   @extend .hover;
 }
 
-.link-bright {
-  @extend .bright;
+.link-b {
+  @extend .tb;
   @extend .hover-accent;
 }
 
@@ -54,6 +58,10 @@
 
 .twb {
   text-wrap: balance;
+}
+
+.wsn {
+  white-space: nowrap;
 }
 
 // .n1c {
@@ -80,25 +88,25 @@
 //   }
 // }
 
-.x1c {
-  @media (max-width: $md1+px) {
-    text-align: center;
-  }
-}
+// .x1tac {
+//   @media (max-width: $md1+px) {
+//     text-align: center;
+//   }
+// }
 
-.x2c {
+.x2tac {
   @media (max-width: $md2+px) {
     text-align: center;
   }
 }
 
-.x3c {
-  @media (max-width: $md3+px) {
-    text-align: center;
-  }
-}
+// .x3tac {
+//   @media (max-width: $md3+px) {
+//     text-align: center;
+//   }
+// }
 
-.x4c {
+.x4tac {
   @media (max-width: $md4+px) {
     text-align: center;
   }
@@ -126,7 +134,7 @@
 }
 
 .t1d {
-  @extend .dark;
+  @extend .td;
   @extend .t1;
 }
 
@@ -151,7 +159,7 @@
 }
 
 .t2d {
-  @extend .dark;
+  @extend .td;
   @extend .t2;
 }
 

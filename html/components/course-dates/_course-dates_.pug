@@ -1,0 +1,43 @@
+mixin courseDates(course, variant = '1-column')
+  - const tag = attributes.tag || 'div'
+  #{tag}.course-dates(class=`course-dates--${variant}`)&attributes(attributes)
+    .course-dates__headers
+      case variant
+        when '1-column'
+          p.course-dates__header Код
+            svg.course-dates__code-svg
+              use(xlink:href='img/sprite/symbols.svg#info')
+        
+        when '2-columns'
+          p.course-dates__header Дата
+          p.course-dates__header Код
+            svg.course-dates__code-svg
+              use(xlink:href='img/sprite/symbols.svg#info')
+        
+        when '3-columns'
+          p.course-dates__header Дата
+          p.course-dates__header Код
+            svg.course-dates__code-svg
+              use(xlink:href='img/sprite/symbols.svg#info')
+          p.course-dates__header Цена
+            svg.course-dates__code-svg
+              use(xlink:href='img/sprite/symbols.svg#info')
+
+    if course.dates && course.dates.length > 0
+      case variant
+        when '1-column'
+          .course-dates__row
+            span !{course.dates[0].code}
+        
+        when '2-columns'
+          each date in course.dates
+            .course-dates__row
+              a.course-dates__date-link !{date.date}
+              span !{date.code}
+        
+        when '3-columns'
+          each date in course.dates
+            .course-dates__row
+              a.course-dates__date-link !{date.date}
+              p !{date.code}
+              p !{course.price} ₽

@@ -28,12 +28,12 @@ html(lang="ru")
         script(src=link)
   body
     .wrapper
-      include ../components/header/_header_$common
+      include ../views/header/_header_$common
       main.page#page
         if page.breadcrumbs
           +breadcrumbs(page.breadcrumbs)
         block content
-      include ../components/footer/_footer_$common
+      include ../views/footer/_footer_$common
     #measure
     if page.scripts && page.scripts.external
       each link in page.scripts.external

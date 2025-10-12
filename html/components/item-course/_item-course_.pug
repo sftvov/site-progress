@@ -1,0 +1,26 @@
+mixin courseItem(course, variant = 'default')
+  - const isDistance = variant === 'distance'
+  
+  article.course-item&attributes(attributes)
+    .container
+      .row.g5.wrap.ais(class=isDistance ? 'n3o1' : '')
+        if !isDistance
+          header.r15.g5.wrap.jce.n3w1
+            +infoSquare(course.hours)(class="bgg")
+            if course.isNew 
+              +infoSquare("NEW")(class="bgb")
+        
+        +courseInfo(course, {
+          type: isDistance ? 'distance' : 'default',
+          titleLevel: isDistance ? 'h3' : 'h2',
+          showLocation: !isDistance,
+          showPrice: true,
+          showHours: isDistance,
+          showOnlineLink: !isDistance
+        })(class=isDistance ? 'n2w7 n3w10 x3w4' : 'n2w8 n3w11 x3w4')
+        
+        footer.row.g5.wrap.n2w3.x3w4
+          +courseDates(course, isDistance ? '1-column' : '2-columns')
+          a.acb-link.link-b.r15.ais.n2w3.n3w4.x3w2.x4w3(href=course.detailsHref || "#") 
+            span.b1.wsn узнать всё о курсе
+            +arr()

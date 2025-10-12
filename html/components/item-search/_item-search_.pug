@@ -1,0 +1,18 @@
+mixin searchItem(course, type = 'offline')
+  article.course-item
+    .container
+      .row.wrap.g5.ais.jcb
+        header.format.r5.aic.n3w1.x3w1
+          svg.sb.sw2.i20
+            use(xlink:href=`img/sprite/symbols.svg#${type === 'offline' ? 'building' : 'wifi'}`)
+          p.tb #{type === 'offline' ? 'Очно' : 'Онлайн'}
+        +courseInfo(course, {
+          type: 'search',
+          isOnline: type === 'online',
+          titleLevel: 'h3',
+          showOnlineLink: type === 'offline',
+          showOfflineLink: type === 'online',
+          showLocation: type === 'offline',
+          showPrice: false,
+        })(class="n2w7 n3w11")
+        +courseDates(course, '3-columns')(tag="footer")

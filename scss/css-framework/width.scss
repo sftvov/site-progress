@@ -2,10 +2,6 @@
   width: 100%;
 }
 
-.wx {
-  max-width: 100%;
-}
-
 .n1w1 {
   @extend .fs;
   @media (min-width: $md1+px) {
@@ -270,12 +266,9 @@
   }
 }
 
-.x3w4 {
+.w4 {
   @extend .fs;
-  @media (max-width: $md3+px) {
-    min-width: var(--4columns);
-    width: 100%;
-  }
+  width: var(--4columns);
 }
 
 .x4w1 {

@@ -25,8 +25,8 @@ section.promo-all.section
   .container
     .n1ol1
       h2.t1d Текущие акции и спецпредложения
-      .row-wrap.aic.g3.m2
-        .row-wrap.g3
+      .row.wrap.aic.g3.m2
+        .row.wrap.g3
           -
             cards = cards.concat([cards[2]]);
           each card, index in cards
@@ -35,9 +35,9 @@ section.promo-all.section
               .promo-card__main.col.fg.m3
                 h1.t1d !{card.title}
                 .row.aic.cg5.m7
-                  svg.s-bright.sw2.i24.x2i16
+                  svg.sb.sw2.i24.x2i16
                     use(xlink:href='img/sprite/symbols.svg#attention')
-                  p.p2.bright !{card.attention}
+                  p.p2.tb !{card.attention}
                 .row.aic.fg
                   p.p1.m5 !{card.text}
                 a.aca-link.link.ttu.row.cg15.aic.m3
@@ -47,7 +47,7 @@ section.promo-all.section
                       .arr__line              
                       svg.arr__head
                         use(xlink:href='img/sprite/symbols.svg#arrowhead')
-        a.promo-all__link.acb-link.link-bright.col5.cg15.aic.n1w2.n2w3.n3w4.x3w2.x4w4    
+        a.promo-all__link.acb-link.link-b.col5.cg15.aic.n1w2.n2w3.n3w4.x3w2.x4w4    
           .promo-all__link-arr.arr
             .arr__line              
             svg.arr__head

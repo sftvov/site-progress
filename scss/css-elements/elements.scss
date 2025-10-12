@@ -1,82 +1,3 @@
-%arr {
-  transition-duration: var(--transition);
-  fill: var(--arrow-color);
-  stroke: var(--arrow-color);
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%; /* Резиновый контейнер */
-  padding-right: 2px;
-
-  &__line {
-    transition-duration: var(--transition);
-    flex-grow: 1; /* Растягивается на всю доступную ширину */
-    background: var(--arrow-color);
-    border-radius: 2px;
-  }
-
-  &__head {
-    position: absolute;
-    right: 0;
-    width: 20px; /* Фиксированная ширина наконечника */
-    flex-shrink: 0; /* Запрещаем сжимание */
-  }
-}
-
-.arr {
-  @extend %arr;
-  height: 22px;
-  padding-right: 5px;
-  &__line {
-    @extend %arr__line;
-    height: 3px;
-  }
-
-  &__head {
-    @extend %arr__head;
-    height: 21px;
-  }
-}
-
-.acb {
-  --arrow-color: var(--text-bright);
-}
-
-.acb-link {
-  @extend .acb;
-  &:hover,
-  &:focus-visible {
-    --arrow-color: var(--hover-accent);
-  }
-}
-
-.aca {
-  --arrow-color: var(--text-accent);
-}
-
-.aca-link {
-  @extend .aca;
-  &:hover,
-  &:focus-visible {
-    --arrow-color: var(--hover);
-  }
-}
-
-.arrow {
-  @extend %arr;
-  height: 30px; /* Фиксированная высота */
-  &__line {
-    @extend %arr__line;
-    height: 4px; /* Толщина линии */
-    margin-right: -1px; /* Чтобы наконечник прилегал вплотную */
-  }
-
-  &__head {
-    @extend %arr__head;
-    height: 30px; /* Фиксированная высота */
-  }
-}
-
 .branch {
   &:not(:first-child) {
     margin-top: var(--S);
@@ -178,7 +99,7 @@
   }
 
   &__num {
-    @extend .bright;
+    @extend .tb;
     vertical-align: middle;
     display: inline-block;
     margin-left: 10px;
@@ -616,9 +537,9 @@
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom: 12px solid var(--bg-bright); /* Цвет заливки */
+  border-bottom: 12px solid var(--bg-bright); /* Цвет внешнего треугольника */
   /* Левая рамка */
-  &::before {
+  &::after {
     content: '';
     position: absolute;
     bottom: -13px;
@@ -626,20 +547,8 @@
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
-    border-bottom: 9px solid var(--bg-main); /* Цвет левой рамки */
-    z-index: 1;
-  }
-
-  /* Правая рамка */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -13px;
-    left: 0;
-    width: 0;
-    height: 0;
     border-right: 5px solid transparent;
-    border-bottom: 9px solid var(--bg-main); /* Цвет правой рамки */
+    border-bottom: 9px solid var(--bg-main); /* Цвет внутреннего треугольника */
     z-index: 1;
   }
 }

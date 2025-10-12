@@ -12,6 +12,6 @@ mixin itemClient(props)
         alt=`${props.name} – ${props.desc || ''}`
       )
       .client-item__about.col7.m4
-        #{TitleTag}.accent.p1 !{props.name}
+        #{TitleTag}.ta.p1 !{props.name}
         if props.desc
           p.p1 !{props.desc}

@@ -40,15 +40,15 @@ footer.footer
       each column, columnIndex in footerColumns
         .footer__column-wrapper
           .col4
-            h2.footer__column-title.x4c= column.title
-            .x4c
+            h2.footer__column-title.x4tac !{column.title}
+            .x4tac
               ul.col5
                 each item, itemIndex in column.list
                   li.p1
                     a(class='footer__list-link' + ((columnIndex === 2) ? (itemIndex === 1 ? '--accent' : (itemIndex === 2 ? '--bright' : '')) : '') href="#")= item
       .footer__column-wrapper
         .footer__last-column.col4
-          h2.footer__column-title.x4c Контакты
+          h2.footer__column-title.x4tac Контакты
           .x4c.col5
             p.p1
               | Санкт-Петербург, 199004, 

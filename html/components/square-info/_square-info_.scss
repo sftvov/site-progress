@@ -1,0 +1,7 @@
+.info-square {
+  width: 40px;
+  aspect-ratio: 1;
+  @media (max-width: $md4+px) {
+    width: 35px;
+  }
+}

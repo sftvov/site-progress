@@ -42,17 +42,17 @@
   }
 }
 
-.s-dark {
+.sd {
   stroke: var(--text-dark)
 }
 
-.s-bright {
+.sb {
   stroke: var(--text-bright);
 }
 
-.sw1-5 {
-  stroke-width: 1.5;
-}
+// .sw1_5 {
+//   stroke-width: 1.5;
+// }
 
 .sw2 {
   stroke-width: 2;
