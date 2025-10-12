@@ -12,7 +12,7 @@ mixin courseInfo(course, options = {})
       courseTypeText: options.courseTypeText || 'Курс повышения квалификации'
     }
 
-  #{config.tag}.course-info&attributes(attributes)
+  #{config.tag}.-course-info&attributes(attributes)
     p.p2
       case config.type
         when 'distance'
@@ -25,38 +25,38 @@ mixin courseInfo(course, options = {})
     #{config.titleLevel}.m7
       a.t2.link(href=course.href || "#") !{course.name}
     
-    .course-info__row
+    .-course-info__row
       //- Локация
       if config.showLocation && course.location !== false
-        p.course-info__item
+        p.-course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#location')
           | #{course.location || 'Санкт-Петербург'}
       
       //- Цена
       if config.showPrice && course.price
-        p.course-info__item
+        p.-course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#info')
           | !{course.price} ₽
       
       //- Часы
       if config.showHours && course.hours
-        p.course-info__item
+        p.-course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#clock')
           | !{course.hours} #{course.hours === 1 ? 'час' : 'часа'}
       
       //- Ссылка на онлайн-трансляцию
       if config.showOnlineLink
-        a.course-info__item--link(href="#") 
+        a.-course-info__link(href="#") 
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#wifi')
           | Доступна онлайн-трансляция
       
       //- Ссылка на очный формат
       if config.showOfflineLink
-        a.course-info__item--link(href="#") 
+        a.-course-info__link(href="#") 
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#building')
           | Доступно очно

@@ -1,0 +1,8 @@
+.recommended-form {
+  @media (max-width: $md2+px) {
+    padding-block: var(--XL);
+  }
+  @media (max-width: $md3+px) {
+    padding-block: var(--S);
+  }
+}

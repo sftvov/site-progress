@@ -17,12 +17,9 @@
   column-gap: 15px;
 }
 
-.cg5 {
-  column-gap: 5px;
-}
-
-.cg15 {
-  column-gap: 15px;
+.r45 {
+  @extend .r;
+  column-gap: 45px;
 }
 
 .row {

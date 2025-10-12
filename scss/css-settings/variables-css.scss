@@ -200,16 +200,17 @@
   --shadow: 0 0 20px 10px #595f6f26;
   --shadow-big: 0 0 20px 15px #595f6f26;
 
-  // @media (prefers-color-scheme: dark) {
-  //   --text-main: var(--gray-light);
-  //   --text-dark: var(--white);
+  @media (prefers-color-scheme: dark) {
+    --text-main: var(--gray-light);
+    --text-dark: var(--white);
+    // --text-accent: var(--orange);
 
-  //   --bg-main: var(--gray-dark);
-  //   --bg-second: var(--gray);
-  //   --bg-dark: var(--dark);
+    --bg-main: var(--dark);
+    --bg-second: var(--gray);
+    // --bg-dark: var(--dark);
 
-  //   --border-dark: var(--white);
-  // }
+    --border-dark: var(--white);
+  }
 
   // --white--dark: var(--white);
   // --nw--main: var(--not-white);

@@ -8,7 +8,7 @@ include ../../../data/coursesArchive
         +mode({ text: 'онлайн', href: '#' })
   .m2
     each course in coursesArchive
-      +courseItem(course)
+      +courseItemRegular(course)
   .container
     include ../pagination/_pagination_$common
 

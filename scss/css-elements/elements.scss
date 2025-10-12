@@ -189,10 +189,10 @@
     }
     @media (max-width: $md2+px) {
       &::before {
-        content: url(../img/icons/checkbox-empty-m-blue.svg);
+        content: url(../img/icons/checkbox-empty-l-blue.svg);
       }
       &::after {
-        content: url(../img/icons/checkbox-check-m-blue.svg);
+        content: url(../img/icons/checkbox-check-l-blue.svg);
       }
     }
   }

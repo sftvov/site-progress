@@ -7,6 +7,7 @@
 .section-bg {
   @extend .section;
   padding: var(--L-XL) 0;
+  background-color: var(--bg-second);
 }
 
 .container {

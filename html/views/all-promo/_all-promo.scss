@@ -1,5 +1,6 @@
 .promo-all {
   &__link {
+    column-gap: 15px;
     @media (max-width: $md1+px) {
       flex-direction: row;
     }

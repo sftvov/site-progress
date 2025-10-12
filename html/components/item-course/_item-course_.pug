@@ -1,26 +1,100 @@
-mixin courseItem(course, variant = 'default')
-  - const isDistance = variant === 'distance'
+mixin courseItemBase(course, variant, searchType = 'offline')
+  - const config = getCourseConfig(variant, searchType)
   
   article.course-item&attributes(attributes)
     .container
-      .row.g5.wrap.ais(class=isDistance ? 'n3o1' : '')
-        if !isDistance
-          header.r15.g5.wrap.jce.n3w1
+      .row.wrap.g5.ais(class=config.wrapperClass)
+        if config.header
+          header.r15.wrap.g5.jce.n3w1
             +infoSquare(course.hours)(class="bgg")
             if course.isNew 
               +infoSquare("NEW")(class="bgb")
         
-        +courseInfo(course, {
-          type: isDistance ? 'distance' : 'default',
-          titleLevel: isDistance ? 'h3' : 'h2',
-          showLocation: !isDistance,
-          showPrice: true,
-          showHours: isDistance,
-          showOnlineLink: !isDistance
-        })(class=isDistance ? 'n2w7 n3w10 x3w4' : 'n2w8 n3w11 x3w4')
+        if config.format
+          +format({
+            text: searchType === 'offline' ? 'Очно' : 'Онлайн',
+            icon: searchType === 'offline' ? 'building' : 'wifi'
+          })
         
-        footer.row.g5.wrap.n2w3.x3w4
-          +courseDates(course, isDistance ? '1-column' : '2-columns')
-          a.acb-link.link-b.r15.ais.n2w3.n3w4.x3w2.x4w3(href=course.detailsHref || "#") 
-            span.b1.wsn узнать всё о курсе
-            +arr()
+        +courseInfo(course, config.info)(class=config.infoClass)
+        
+        if config.moreLink
+          footer.row.wrap.g5.n2w3.x3w4
+            +courseDates(course, config.datesVariant)
+            a.acb-link.link-b.r15.ais.n2w3.n3w4.w2.x4w3(href=config.moreLink || "#") 
+              span.b1.wsn узнать всё о курсе
+              +arr()
+        else
+          +courseDates(course, config.datesVariant)(tag="footer")
+
+//- Конфигурация
+-
+  const getCourseConfig = (variant, searchType) => {
+    const configs = {
+      regular: {
+        wrapperClass: '',
+        header: true,
+        format: false,
+        info: {
+          type: 'default',
+          titleLevel: 'h2',
+          showLocation: true,
+          showPrice: true,
+          showHours: false,
+          showOnlineLink: true,
+          showOfflineLink: false,
+        },
+        infoClass: 'n2w8 n3w11 w4',
+        datesVariant: '2-columns',
+        moreLink: '#'
+      },
+      distance: {
+        wrapperClass: 'n3o1', 
+        header: false,
+        format: false,
+        info: {
+          type: 'distance',
+          titleLevel: 'h3',
+          showLocation: false,
+          showPrice: true,
+          showHours: true,
+          showOnlineLink: false,
+          showOfflineLink: false,
+        },
+        infoClass: 'n2w7 n3w10 w4',
+        datesVariant: '1-column',
+        moreLink: '#'
+      },
+      search: {
+        wrapperClass: '',
+        header: false,
+        format: true,
+        info: {
+          type: 'search',
+          titleLevel: 'h3',
+          showLocation: searchType === 'offline',
+          showPrice: false,
+          showHours: false,
+          showOnlineLink: searchType === 'offline',
+          showOfflineLink: searchType === 'online'
+        },
+        infoClass: 'n2w7 n3w11 w4',
+        datesVariant: '3-columns',
+        moreLink: false
+      }
+    }
+    return configs[variant]
+  }
+
+
+  //- Очный курс
+mixin courseItemRegular(course)
+  +courseItemBase(course, 'regular')&attributes(attributes)
+
+//- Дистанционный курс  
+mixin courseItemDistance(course)
+  +courseItemBase(course, 'distance')&attributes(attributes)
+
+//- Курс в поиске
+mixin courseItemSearch(course, type = 'offline')
+  +courseItemBase(course, 'search', type)&attributes(attributes)

@@ -6,7 +6,7 @@ section.section#results
     p.t2d.m2 Мероприятий: 233
   .m2
     each course, index in coursesArchive
-      +searchItem(course, index % 2 === 0 ? 'online' : 'offline')
+      +courseItemSearch(course, index % 2 === 0 ? 'online' : 'offline')
     include ../pagination/_pagination_$common
 
 //- http://localhost:1709/page-search.html#results

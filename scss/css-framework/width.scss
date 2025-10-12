@@ -1,7 +1,3 @@
-.w {
-  width: 100%;
-}
-
 .n1w1 {
   @extend .fs;
   @media (min-width: $md1+px) {
@@ -245,6 +241,30 @@
   }
 }
 
+.w {
+  width: 100%;
+}
+
+.w1 {
+  @extend .fs;
+  width: var(--column);
+}
+
+.w2 {
+  @extend .fs;
+  width: var(--2columns);
+}
+
+.w3 {
+  @extend .fs;
+  width: var(--3columns);
+}
+
+.w4 {
+  @extend .fs;
+  width: var(--4columns);
+}
+
 .x3w1 {
   @extend .fs;
   @media (max-width: $md3+px) {
@@ -266,9 +286,11 @@
   }
 }
 
-.w4 {
+.x3w4 {
   @extend .fs;
-  width: var(--4columns);
+  @media (max-width: $md3+px) {
+    width: var(--4columns);
+  }
 }
 
 .x4w1 {

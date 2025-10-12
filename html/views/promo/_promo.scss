@@ -7,6 +7,7 @@
   }
 
   &__link {
+    column-gap: 15px;
     @media (max-width: $md2+px) {
       flex-direction: row;
       column-gap: 10px;

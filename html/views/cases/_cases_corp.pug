@@ -17,11 +17,11 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
                 .row.wrap.g5.m4
                   each icon, i in item.icons
                     -
-                      size = "n1w3 n3w4 x3w2 x4w4";
+                      size = "n1w3 n3w4 w2 x4w4";
                     if i===0
                       -
                         icn = 'user-check';
-                        size = "n3w3 x3w2 x4w4";
+                        size = "n3w3 w2 x4w4";
                     if i===1
                       -
                         icn = 'building';                        
@@ -55,7 +55,7 @@ section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data
                         p.case-item__span.p2 !{review.who}
   .container
     .row.wrap.jcc.g5.m3
-      button.cases__hide-button.button-second.n1w2.n3w4.x3w2.x4w4(data-items-hide) Свернуть
-      button.cases__show-button.button-primary.n1w2.n3w4.x3w2.x4w4(data-items-btn) Показать ещё
+      button.cases__hide-button.button-second.n1w2.n3w4.w2.x4w4(data-items-hide) Свернуть
+      button.cases__show-button.button-primary.n1w2.n3w4.w2.x4w4(data-items-btn) Показать ещё
 
 //- http://localhost:1709/page-corp.html#cases

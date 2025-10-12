@@ -4,7 +4,7 @@
 @import '../../web-template/src/css-libs/null';
 
 :root {
-  color-scheme: only light;
+  // color-scheme: only light;
 }
 
 *:focus-visible {
@@ -94,11 +94,11 @@ svg {
 @import '../html/components/contents-filter/_contents-filter_';
 @import '../html/components/course-dates/_course-dates_';
 @import '../html/components/course-info/_course-info_';
+@import '../html/components/format/_format_';
 @import '../html/components/grid-clients/_grid-clients_';
 @import '../html/components/item-client/_item-client_';
 @import '../html/components/item-course/_item-course_';
 @import '../html/components/item-recommended/_item-recommended_';
-@import '../html/components/item-search/_item-search_';
 @import '../html/components/mode/_mode_';
 @import '../html/components/pagination/_pagination_';
 // @import '../html/components/popups/_popups_';
@@ -118,6 +118,7 @@ svg {
 @import '../html/views/feedback/_feedback';
 @import '../html/views/first/_first';
 @import '../html/views/footer/_footer';
+@import '../html/views/form-recommended/_form-recommended';
 @import '../html/views/header/_header';
 @import '../html/views/hero-corp/_hero-corp';
 @import '../html/views/hero-digitalization/_hero-digitalization';

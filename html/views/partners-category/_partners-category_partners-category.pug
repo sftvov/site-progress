@@ -61,20 +61,20 @@ section.section(data-filters)
       +filterContents(categories)(class="g7 m3")
       +gridClientsCategory(partners)(class="m1")
       .row.jcc
-        button.button-second.n1w2.n3w4.x3w2.x4w4.m3(data-reset) Свернуть
+        button.button-second.n1w2.n3w4.w2.x4w4.m3(data-reset) Свернуть
     .m1.body
       .row.wrap.g1.n1o1
         each sec in bottomInfo
-          section.n1w5.n2w6.n3w12.x3w4
+          section.n1w5.n2w6.n3w12.w4
             h2.t2d= sec.title
             if sec.subtitle
               p.p1.m7= sec.subtitle
             .col7.m3
               each row in sec.items
                 .row
-                  p.p2.n3w2.x3w1.x4w2= row.name
+                  p.p2.n3w2.w1.x4w2= row.name
                   - const tag = row.link ? 'a' : 'p'
-                  #{tag}.p2.n1w3.n3w10.x3w3.x4w2(
+                  #{tag}.p2.n1w3.n3w10.w3.x4w2(
                     class= row.link ? 'link' : false
                     href= row.link || false
                   )= row.text

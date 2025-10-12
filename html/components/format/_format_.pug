@@ -1,0 +1,5 @@
+mixin format(type = 'offline')
+  header.format.r5.aic.w1&attributes(attributes)
+    svg.sb.sw2.i20
+      use(xlink:href=`img/sprite/symbols.svg#${type === 'offline' ? 'building' : 'wifi'}`)
+    p.tb #{type === 'offline' ? 'Очно' : 'Онлайн'}

@@ -6,7 +6,7 @@ section.section#courses
       h2.t1d !{courses.title}
   .m4
     each course in coursesArchive
-      +courseItem(course, 'distance')
+      +courseItemDistance(course, 'distance')
   if courses.pagination
     .container
       include ../pagination/_pagination_$common
