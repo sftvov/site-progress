@@ -1,0 +1,14 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'НАВИГАЦИЯ',
+		breadcrumbs: [
+			'Навигация по форматам обучения',
+		]
+	})
+
+block content		
+	include html/views/hero-navigation/_hero-navigation_navigation
+	include html/views/navigation/_navigation_navigation
+	include html/views/help/_help_navigation
