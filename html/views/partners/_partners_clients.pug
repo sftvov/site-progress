@@ -6,11 +6,7 @@ include ../../../data/clientsArchive
     desc: ''             
   }));
 
-  clients = {
-    items: clientsArchiveFiltered,
-  }
-
-section.section
+section.section.partners#partners
   .container
     .n1o1
       h1.title Постоянные клиенты на семинарах ЦНТИ Прогресс
@@ -26,4 +22,9 @@ section.section
           li.ul__li 85 регионов России
           li.ul__li 14 государств бывшего СССР
           li.ul__li 5 государств Европы и Северной Америки
-    +gridClients(clients)(class="m1")
+    .partners__grid.m1
+      each item in clientsArchiveFiltered
+        +itemClient(item)
+
+
+//- http://localhost:1709/page-clients.html#partners

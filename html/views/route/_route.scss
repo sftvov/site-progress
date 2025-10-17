@@ -1,16 +1,4 @@
 .route {
-
-  &__link {
-    transition-duration: var(--transition);
-    --arrow-color: var(--text-bright);
-    display: flex;
-    gap: 15px;
-    &:hover,
-    &:focus-visible {
-      color: var(--hover);
-    }
-  }
-
   &__arrow {
     width: 100px;
   }

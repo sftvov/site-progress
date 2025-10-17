@@ -23,9 +23,9 @@
   }
 }
 
-.arr {
+.-arr {
   @extend %arr;
-  height: 22px;
+  height: 21px;
   padding-right: 5px;
   &__line {
     @extend %arr__line;
@@ -38,7 +38,7 @@
   }
 }
 
-.arrow {
+.-arrow {
   @extend %arr;
   height: 30px; /* Фиксированная высота */
   &__line {

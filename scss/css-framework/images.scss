@@ -27,7 +27,7 @@
 }
 
 .x2i16 {
-  @extend .i24;
+  @extend .fs;
   @media (max-width: $md2+px) {
     width: 16px;
     height: 16px;
@@ -35,7 +35,7 @@
 }
 
 .x2i20 {
-  @extend .i24;
+  @extend .fs;
   @media (max-width: $md2+px) {
     width: 20px;
     height: 20px;
@@ -43,11 +43,23 @@
 }
 
 .sd {
-  stroke: var(--text-dark)
+  stroke: var(--text-dark);
 }
 
 .sb {
   stroke: var(--text-bright);
+}
+
+.sa {
+  stroke: var(--text-accent);
+}
+
+.sa-link {
+  @extend .sa;
+  &:hover,
+  &:focus-visible {
+    stroke: var(--hover);
+  }
 }
 
 // .sw1_5 {

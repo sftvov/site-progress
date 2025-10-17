@@ -20,36 +20,16 @@
     },
   ];
 
-
-section.promo-all.section
+section.promo-all.section#promo-all
   .container
     .n1ol1
       h2.t1d Текущие акции и спецпредложения
       .row.wrap.aic.g3.m2
         .row.wrap.g3
-          -
-            cards = cards.concat([cards[2]]);
-          each card, index in cards
-            article.promo-card.col.n1w3.n3w4.w2.x4w4(class= index>=3 ? "n3hide x4hide" : "")
-              img.promo-card__img.w(src="img/promo/card.png", alt="")
-              .promo-card__main.col.fg.m3
-                h1.t1d !{card.title}
-                .r5.aic.m7
-                  svg.sb.sw2.i24.x2i16
-                    use(xlink:href='img/sprite/symbols.svg#attention')
-                  p.p2.tb !{card.attention}
-                .row.aic.fg
-                  p.p1.m5 !{card.text}
-                a.aca-link.link.ttu.r15.aic.m3
-                  p.b !{card.link}
-                  .fg
-                    .arr
-                      .arr__line              
-                      svg.arr__head
-                        use(xlink:href='img/sprite/symbols.svg#arrowhead')
-        a.promo-all__link.acb-link.link-b.col5.aic.n1w2.n2w3.n3w4.w2.x4w4    
-          .promo-all__link-arr.arr
-            .arr__line              
-            svg.arr__head
-              use(xlink:href='img/sprite/symbols.svg#arrowhead')
-          p.p1.tac Показать все
+          each card in cards
+            +promoItem(card)
+        //- a.acb-link.link-b.col5.x1row.cg15.x2cg10.aic.n1w2.n2w3.n3w4.w2.x4w4
+        //-   +arr(class="promo-all__link-arr")
+        //-   p.p1.tac Показать все
+
+//- http://localhost:1709/archive-promo.html#promo-all

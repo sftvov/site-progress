@@ -11,10 +11,10 @@ mixin courseItemBase(course, variant, searchType = 'offline')
               +infoSquare("NEW")(class="bgb")
         
         if config.format
-          +format({
-            text: searchType === 'offline' ? 'Очно' : 'Онлайн',
-            icon: searchType === 'offline' ? 'building' : 'wifi'
-          })
+          header.format
+            svg.sb.sw2.i20
+              use(xlink:href=`img/sprite/symbols.svg#${searchType === 'offline' ? 'building' : 'wifi'}`)
+            p.tb #{searchType === 'offline' ? 'Очно' : 'Онлайн'}
         
         +courseInfo(course, config.info)(class=config.infoClass)
         

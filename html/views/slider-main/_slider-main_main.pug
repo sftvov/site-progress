@@ -1,12 +1,12 @@
 -
-  mainSlider =[
+  mainSlider = [
     {
       img: 'city',
       title: 'Готов учебный план на 2026 год. <br>Расписание курсов <br class="n1hide x4hide">по всем отраслевым <br>направлениям — в одной брошюре',
       btn: 'Скачать план'
     },
     {
-      img: 'hands',
+      img: 'hands', 
       title: 'Создаем для вас уникальные корпоративные <br class="x1hide">курсы — очно и онлайн',
       btn: 'Узнать подробнее'
     },
@@ -22,16 +22,9 @@
     .main-slider__swiper.swiper
       .swiper-wrapper
         each slide in mainSlider
-          section.main-slide.swiper-slide(style="background-image: url(img/main/slider/" + slide.img + ".png)")
-            .main-slide__body
-              h2.main-slide__title !{slide.title}
-              a(href="#").button-primary.n1w2.n2w3.n3w4.w2.x4w4.m5 !{slide.btn}
+          +mainSlide(slide)
       .main-slider__navigation.row.aic.n1w2.n2w3.n3w4.w2.x4w4
-        .main-slider__prev.arr
-          .arr__line
-          svg.arr__head
-            use(xlink:href='img/sprite/symbols.svg#arrowhead')   
-        .main-slider__next.arr
-          .arr__line
-          svg.arr__head
-            use(xlink:href='img/sprite/symbols.svg#arrowhead')
+        +arr(class="main-slider__prev acb-link")
+        +arr(class="main-slider__next acb-link")
+
+//- http://localhost:1709/page-main.html#slider

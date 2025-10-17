@@ -8,10 +8,6 @@ include ../../../data/partnersArchive
     ])
   ).values()].sort()
 
-  partners = {
-    items: partnersArchive,
-  }
-
   bottomInfo = [
     {
       title: 'По вопросам сотрудничества обращайтесь:',
@@ -49,7 +45,7 @@ include ../../../data/partnersArchive
     },
   ]
 
-section.section(data-filters)
+section.section.partners#partners(data-filters)
   .container
     .n1o1
       h1.title Партнеры ЦНТИ Прогресс
@@ -58,8 +54,12 @@ section.section(data-filters)
         p.p1 Мы благодарим наших Интернет-партнеров за плодотворную совместную работу.
     section.m1.body
       h2.t2d Каталог партнеров:
-      +filterContents(categories)(class="g7 m3")
-      +gridClientsCategory(partners)(class="m1")
+      .partners__categories.g7.m3
+        each category in categories
+          button.partners__category.link.p1(data-filter=category[1].toLowerCase())= category[0]
+      .partners__grid.m1
+        each item in partnersArchive
+          +itemClient(item)(data-item=item.category[1])
       .row.jcc
         button.button-second.n1w2.n3w4.w2.x4w4.m3(data-reset) Свернуть
     .m1.body
@@ -78,3 +78,5 @@ section.section(data-filters)
                     class= row.link ? 'link' : false
                     href= row.link || false
                   )= row.text
+
+//- http://localhost:1709/page-partners-category.html#partners

@@ -1,12 +1,9 @@
 
 
-.course-dates {
+.-course-dates {
   display: grid;
-  align-items: flex-start;
+  @extend .ais;
   gap: var(--2XS) var(--gutter);
-
-  
-
   &--1-column {
     grid-template-columns: var(--3columns);
     @media (max-width: $md2+px) {
@@ -29,9 +26,7 @@
     @media (max-width: $md4+px) {
       grid-template-columns: var(--2columns) var(--2columns);
     }
-  }
-
-  
+  } 
 
   &--3-columns {
     grid-template-columns: var(--2columns) var(--column) var(--column);
@@ -48,30 +43,12 @@
   }
 
   &__headers {
-    color: var(--text-dark);
     display: grid;
     grid-template-columns: subgrid;
     grid-column-start: 1;
     grid-column-end: -1;
     @media (min-width: $md4+px) {
       margin-bottom: calc(var(--XS) - var(--2XS));
-    }
-  }
-
-  &__header {
-    @extend .t2;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  &__code-svg {
-    stroke: var(--text-dark);
-    width: 20px;
-    height: 20px;
-    @media (max-width: $md4+px) {
-      width: 16px;
-      height: 16px;
     }
   }
 

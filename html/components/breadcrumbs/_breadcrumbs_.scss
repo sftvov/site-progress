@@ -1,21 +1,13 @@
-
-
-.breadcrumbs {
-  width: 100%;
+.-breadcrumbs {
+  @extend .w;
   &__body {
-    padding: 15px 0 10px;
+    padding: var(--XS) 0 10px;
     border-bottom: 2px solid var(--border-light);
   }
   &__item {
-    transition-duration: var(--transition);
     @extend .p1;
-    &:is(a) {
+    &:has(a) {
       color: var(--text-light);
-      display: inline-block;
-      &:hover,
-      &:focus-visible {
-        color: var(--hover);
-      }
       &::after {
         content: '/';
         color: var(--text-light);

@@ -17,7 +17,7 @@
     ],
   }
 
-section.section.promo
+section.section.promo#promo
   .container
     .n1o1
       h2.t1d Корпоративная программа «Частые гости»
@@ -43,9 +43,8 @@ section.section.promo
               li.ul__li Программа скидок действует в течение одного календарного года. Условия акции не переносятся на следующий год. Участие в программе необходимо подтверждать ежегодно.
               li.ul__li Скидки по накопительной программе не суммируются с другими действующими акциями и спецпредложениями.
               li.ul__li В расчет идут все слушатели от предприятия, которые обучились в ЦНТИ Прогресс в течение текущего календарного года. При этом перерасчет стоимости обучения ранее приехавших слушателей не производится.
-          a.promo__link.acb-link.link-b.col5.aic.n2w2.n3w5.x4w4
-            .promo__link-arr.arr
-              .arr__line              
-              svg.arr__head
-                use(xlink:href='img/sprite/symbols.svg#arrowhead')
+          a.acb-link.link-b.col5.x2row.cg15.x2cg10.aic.n2w2.n3w5.x4w4
+            +arr(class="promo__link-arr")
             p.p1.tac Заполнить #[br.x2hide]заявку на участие
+
+//- http://localhost:1709/archive-promo.html#promo

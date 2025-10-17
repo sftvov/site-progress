@@ -10,16 +10,20 @@ include ../../../data/partnersArchive
     items: partnersArchive,
   }
 
-section.section(data-filters)
+section.section.partners#partners(data-filters)
   .container
     .n1o1
       h1.title Партнеры ЦНТИ Прогресс
       .col5.m2
         p.p1 ЦНТИ Прогресс гордится многолетними партнерскими отношениями с ведущими научными и образовательными учреждениями, отраслевыми институтами, крупнейшими производственными предприятиями и организациями.
         p.p1 Мы благодарим наших Интернет-партнеров за плодотворную совместную работу.
-    .letters.m2
+    .partners__letters.m2
       each letter in firstLetters
-        button.letters__letter(data-filter=letter)= letter   
-    +gridClientsAlphabet(partners)(class="m1")
+        button.partners__letter.p1(data-filter=letter)= letter
+    .partners__grid.m1
+      each item in partnersArchive
+        +itemClient(item)(class='_active' data-item=item.name.charAt(0).toUpperCase())
     .row.jcc
       button.button-second.n1w2.n3w4.w2.x4w4.m3(data-reset-all) Сбросить
+
+//- http://localhost:1709/page-partners-alphabet.html#partners

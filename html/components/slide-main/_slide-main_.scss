@@ -1,0 +1,65 @@
+.main-slide {
+  display: flex;
+  height: 396px;
+  background-position: center;
+  background-size: cover;
+  @media (max-width: $md1+px) {
+    height: 314px;
+  }
+  @media (max-width: $md2+px) {
+    height: 243px;
+  }
+  @media (max-width: $md3+px) {
+    height: 178px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: var(--6columnsG);
+    margin-left: auto;
+    padding: 0 var(--gutter) 132px;
+    background-color: #ffffffb3;
+    @media (max-width: $md1+px) {
+      padding-bottom: 110px;
+    }
+    @media (max-width: $md2+px) {
+      padding-bottom: 70px;
+    }
+    @media (max-width: $md3+px) {
+      width: calc(var(--2columnsG) + var(--field));
+      padding-bottom: 49px;
+    }
+    @media (max-width: $md4+px) {
+      width: 100%;
+      padding: 0 var(--field) 52px;
+    }
+  }
+
+  &__title {
+    color: var(--text-dark);
+    margin-top: auto;
+    @media (min-width: $md2+px) {
+      $fs: 24;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 30;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (min-width: $md3+px) {
+      font-family: 'RobotoCondensed';
+      $fs: 20;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 24;
+      line-height: round-to(math.div($lh, $fs), 3);
+      text-transform: uppercase;
+    }
+    @media (max-width: $md3+px) {
+      $fs: 12;
+      font-size: math.div($fs, $fz) + em;
+      $lh: 18;
+      line-height: round-to(math.div($lh, $fs), 3);
+    }
+    @media (max-width: $md4+px) {
+      text-align: center;
+    }
+  }
+}

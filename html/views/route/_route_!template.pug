@@ -19,8 +19,5 @@ section.route.section(id=route.id)
               div
                 each p in block.text
                   p.p1 !{p}
-          a.route__link.t2d.aic(href="#")  Скачать инструкцию
-            .route__arrow.arr
-              .arr__line
-              svg.arr__head
-                use(xlink:href='img/sprite/symbols.svg#arrowhead')
+          a.acb-link.t2d.r15.aic(href="#")  Скачать инструкцию
+            +arr(class="route__arrow")

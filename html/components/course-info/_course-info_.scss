@@ -3,10 +3,8 @@
     @extend.r45;
     @extend.wrap;
     @extend.g7;
+    @extend.x2cg30;
     @extend.m6;
-    @media (max-width: $md2+px) {
-      column-gap: 30px;
-    }
     @media (max-width: $md4+px) {
       column-gap: var(--gutter);
     }
@@ -23,13 +21,7 @@
 
   &__link {
     @extend .-course-info__item;
-    transition-duration: var(--transition);
-    stroke: var(--text-accent);
-    color: var(--text-accent);
-    &:hover,
-    &:focus-visible {
-      stroke: var(--hover);
-      color: var(--hover);
-    }
+    @extend .sa-link;
+    @extend .link;
   }
 }

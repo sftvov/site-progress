@@ -86,22 +86,19 @@ svg {
 @import 'css-elements/elements';
 
 
-
-
 @import '../html/components/arrow/_arrow_';
 @import '../html/components/breadcrumbs/_breadcrumbs_';
-@import '../html/components/card-promo/_card-promo_';
-@import '../html/components/contents-filter/_contents-filter_';
 @import '../html/components/course-dates/_course-dates_';
 @import '../html/components/course-info/_course-info_';
 @import '../html/components/format/_format_';
-@import '../html/components/grid-clients/_grid-clients_';
 @import '../html/components/item-client/_item-client_';
 @import '../html/components/item-course/_item-course_';
+@import '../html/components/item-promo/_item-promo_';
 @import '../html/components/item-recommended/_item-recommended_';
 @import '../html/components/mode/_mode_';
 @import '../html/components/pagination/_pagination_';
 // @import '../html/components/popups/_popups_';
+@import '../html/components/slide-main/_slide-main_';
 @import '../html/components/square-info/_square-info_';
 
 
@@ -129,6 +126,7 @@ svg {
 @import '../html/views/mailing/_mailing';
 @import '../html/views/map/_map';
 @import '../html/views/materials/_materials';
+@import '../html/views/partners/_partners';
 @import '../html/views/plan/_plan';
 @import '../html/views/promo/_promo';
 @import '../html/views/programms/_programms';
