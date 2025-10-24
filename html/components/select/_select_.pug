@@ -1,0 +1,18 @@
+mixin select(props = {})
+  - 
+    const {
+      name = false,
+      value = '',
+      placeholder = false,
+      options = [],
+      activeIndex = false,
+      required = false
+    } = props
+
+  .-select&attributes(attributes)
+    input.-select__input(name=name, value=value, placeholder=placeholder, required=required, inert)
+    .-select__variants
+      each option, index in options
+        .-select__variant(
+          class=index === activeIndex ? '_active' : ''
+        )= option

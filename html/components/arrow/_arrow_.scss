@@ -1,5 +1,5 @@
 %arr {
-  transition-duration: var(--transition);
+  @extend .dur;
   fill: var(--arrow-color);
   stroke: var(--arrow-color);
   position: relative;
@@ -9,7 +9,7 @@
   padding-right: 2px;
 
   &__line {
-    transition-duration: var(--transition);
+    @extend .dur;
     flex-grow: 1; /* Растягивается на всю доступную ширину */
     background: var(--arrow-color);
     border-radius: 2px;

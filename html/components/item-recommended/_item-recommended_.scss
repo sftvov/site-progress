@@ -1,19 +1,21 @@
-.recommended-item {
-  transition-duration: var(--transition);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.-recommended-item {
+  @extend .hover-accent;
+  @extend .dur;
+  @extend .col;
+  @extend .aic;
+  @extend .n3w3;
+  @extend .w2;
+  @extend .x4w4;
   &:hover,
   &:focus-visible {
-    color: var(--hover-accent);
-    & .recommended-item__img {
+    & .-recommended-item__img {
       filter: grayscale(1);
     }
   }
 
   &__img {
-    transition-duration: var(--transition);
+    @extend .dur;
+    @extend .w;
     filter: grayscale(0);
-    width: 100%;
   }
 }

@@ -14,7 +14,7 @@
   &__category {
     display: block;
     &:not(:first-child) {
-      margin-top: var(--2XS);
+      margin-top: var(--XS);
     }
     &._active {
       color: var(--hover);
@@ -24,15 +24,10 @@
   &__letters {
     display: grid;
     grid-template-columns: repeat(auto-fill, 40px);
-    gap: var(--XS);
-    justify-content: space-between;
   }
 
   &__letter {
-    transition-duration: var(--transition);
     width: 40px;
-    height: 40px;
-    border: 2px solid var(--border-gray);
     &._active,
     &:hover,
     &:focus-visible {
@@ -46,7 +41,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--S) var(--gutter);
+    column-gap: var(--gutter);
     @media (max-width: $md3+px) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }

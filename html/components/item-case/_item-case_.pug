@@ -1,0 +1,54 @@
+mixin caseItem(item, options = {})
+  - 
+    const {
+      isActive = false,
+      showImage = true,
+      showReviews = true
+    } = options
+
+  article.-case-item(
+    class= isActive ? '_active' : '',
+    data-item
+  )&attributes(attributes)
+    .container
+      .n1o1
+        .-case-item__top(data-spoller)
+          if showImage
+            img.n3w1.x3hide(src=item.image alt="")
+          .fg
+            h3.-case-item__title !{item.title}
+            .row.wrap.g5.m4
+              each icon, i in item.icons
+                - 
+                  const iconConfig = [
+                    { icon: 'user-check', size: "n3w3 w2 x4w4" },
+                    { icon: 'building', size: "n1w3 n3w4 w2 x4w4" },
+                    { icon: 'calendar-check', size: "n1w3 n3w4 w2 x4w4" }
+                  ][i] || { icon: 'info', size: "n1w3 n3w4 w2 x4w4" }
+                
+                .r5.aic(class=iconConfig.size)
+                  svg.i24
+                    use(xlink:href='img/sprite/symbols.svg#' + iconConfig.icon)
+                  span.p2 !{icon}
+        .m3
+          .row.wrap.g3.n1ol1
+            if item.blocks
+              each block in item.blocks
+                section.n1w3.w4
+                  h4.t2.ta !{block.title}
+                  .m5
+                    each p in block.text
+                      if Array.isArray(p)
+                        ul.ul.col6
+                          each li in p
+                            li.ul__li !{li}
+                      else 
+                        p.p1 !{p}
+            if showReviews && item.reviews
+              section
+                h4.t2.ta Отзывы
+                .row.wrap.g5.m5
+                  each review in item.reviews
+                    .col7.n1w3.w4
+                      p.p1 !{review.main}
+                      p.tae.p2 !{review.who}

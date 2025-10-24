@@ -1,3 +1,7 @@
+.dur {
+  transition-duration: var(--transition);
+}
+
 .ta {
   color: var(--text-accent);
 }
@@ -10,16 +14,16 @@
   color: var(--text-dark);
 }
 
+.tl {
+  color: var(--text-light);
+}
+
 .ts {
   color: var(--text-second);
 }
 
-%hover {
-  transition-duration: var(--transition);
-}
-
 .hover {
-  @extend %hover;
+  @extend .dur;
   &:hover,
   &:focus-visible {
     color: var(--hover);
@@ -27,7 +31,7 @@
 }
 
 .hover-accent {
-  @extend %hover;
+  @extend .dur;
   &:hover,
   &:focus-visible {
     color: var(--hover-accent);
@@ -42,70 +46,6 @@
 .link-b {
   @extend .tb;
   @extend .hover-accent;
-}
-
-.tac {
-  text-align: center;
-}
-
-.ttu {
-  text-transform: uppercase;
-}
-
-.twb {
-  text-wrap: balance;
-}
-
-.wsn {
-  white-space: nowrap;
-}
-
-// .n1c {
-//   @media (min-width: $md1+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n2c {
-//   @media (min-width: $md2+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n3c {
-//   @media (min-width: $md3+px) {
-//     text-align: center;
-//   }
-// }
-
-// .n4c {
-//   @media (min-width: $md4+px) {
-//     text-align: center;
-//   }
-// }
-
-// .x1tac {
-//   @media (max-width: $md1+px) {
-//     text-align: center;
-//   }
-// }
-
-.x2tac {
-  @media (max-width: $md2+px) {
-    text-align: center;
-  }
-}
-
-// .x3tac {
-//   @media (max-width: $md3+px) {
-//     text-align: center;
-//   }
-// }
-
-.x4tac {
-  @media (max-width: $md4+px) {
-    text-align: center;
-  }
 }
 
 .t1 {
@@ -161,8 +101,7 @@
 
 .subtitle {
   @extend .t2d;
-  text-align: center;
-  text-wrap: balance;
+  @extend .tac;
 }
 
 .a1 {
@@ -214,11 +153,55 @@
 }
 
 .btn {
-  text-align: center;
+  @extend .tac;
   @media (max-width: $md2+px) {
     $fs: 12;
     font-size: math.div($fs, $fz) + em;
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
   }
+}
+
+.tac {
+  text-align: center;
+}
+
+// .x1tac {
+//   @media (max-width: $md1+px) {
+//     text-align: center;
+//   }
+// }
+
+.x2tac {
+  @media (max-width: $md2+px) {
+    text-align: center;
+  }
+}
+
+// .x3tac {
+//   @media (max-width: $md3+px) {
+//     text-align: center;
+//   }
+// }
+
+.x4tac {
+  @media (max-width: $md4+px) {
+    text-align: center;
+  }
+}
+
+.tae {
+  text-align: end;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
+.twb {
+  text-wrap: balance;
+}
+
+.wsn {
+  white-space: nowrap;
 }

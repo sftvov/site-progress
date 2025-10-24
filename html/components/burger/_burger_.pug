@@ -1,0 +1,12 @@
+mixin burger(props = {})
+  - 
+    const {
+      lines = 3,
+      active = false
+    } = props
+
+  button.-burger(
+    class=active ? '_active' : ''
+  )&attributes(attributes)
+    - for (let i = 0; i < lines; i++)
+      span.-burger__line

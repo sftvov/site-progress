@@ -1,0 +1,28 @@
+mixin checkbox(props = {})
+  - 
+    const {
+      label = '',
+      type="checkbox",
+      name = false,
+      checked = false,
+      required = false,
+      blueWrapper = false,
+      all = false,
+      item = false
+    } = props
+
+  label.-checkbox&attributes(attributes)
+    input.-checkbox__input(
+      type=type,
+      name=name,
+      checked=checked,
+      required=required,
+      data-checkbox-all=all,
+      data-checkbox-item=item
+    )
+    if blueWrapper
+      .-checkbox__span-wrapper-blue
+        span.-checkbox__span!= label
+    else
+      .-checkbox__span-wrapper
+        span.-checkbox__span!= label

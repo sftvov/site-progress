@@ -1,46 +1,8 @@
 .prof-hero {
-  &__bg {
-    @media (min-width: $md3+px) {
-      padding-top: var(--L-XL);
-    }
-    @media (min-width: $md4+px) {
-      width: 100%;
-      aspect-ratio: 1200/456;
-      padding-top: var(--XS);
-      background: url(../img/prof/hero.png) top center / 100% no-repeat;
-    }
-    @media (max-width: $md4+px) {
-      margin-bottom: var(--S);
-    }
-  }
-
-  // &__preview {
-  //   @media (max-width: $md4+px) {
-  //
-  //   }
-  // }
-
-  // &__subtitle {
-  // }
-
-  // &__main {
-  // }
-
-  // &__text {
-  // }
-
-  // &__p {
-  // }
-
-  &__items {
-    counter-reset: prof-items;
-  }
-
+  counter-reset: prof-items;
   &__item {
     list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    column-gap: 7px;
     &::before {
       counter-increment: prof-items;
       content: counter(prof-items) '.';

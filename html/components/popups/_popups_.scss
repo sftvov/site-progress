@@ -1,5 +1,5 @@
 // .popup {
-//   transition-duration: var(--transition);
+//   @extend .dur;
 //   opacity: 0;
 //   visibility: hidden;
 //   overflow-y: scroll;
@@ -57,7 +57,7 @@
 //       top: 20px;
 //       right: 20px;
 //       & svg {
-//         transition-duration: var(--transition);
+//         @extend .dur;
 //         fill: var(--white);
 //         width: 50px;
 //         height: 50px;
@@ -93,7 +93,7 @@
 //   }
 
 //   &__close-btn {
-//     transition-duration: var(--transition);
+//     @extend .dur;
 //     stroke: rgb(var(--white));
 //     position: absolute;
 //     top: 10px;

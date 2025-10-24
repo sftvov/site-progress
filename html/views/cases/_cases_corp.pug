@@ -1,61 +1,16 @@
 include ../../../data/casesArchive
 
-
-
 section.cases.section#cases(data-items data-start-items=3 data-show-items=5 data-items-animate)
   .container
     h2.title ПРИМЕРЫ КУРСОВ
   .m3(data-spollers data-one-spoller data-items-container)
-    each item, active in casesArchive
-      article.case-item(class= (active >= 0 && active <= 2) ? '_active' : '', data-item)
-        .container
-          .n1o1
-            .case-item__top.row.ais(data-spoller)
-              img.case-item__img.n3w1.x3hide(src=item.image alt="")
-              .fg
-                h3.case-item__title.t2.ta.row !{item.title}
-                .row.wrap.g5.m4
-                  each icon, i in item.icons
-                    -
-                      size = "n1w3 n3w4 w2 x4w4";
-                    if i===0
-                      -
-                        icn = 'user-check';
-                        size = "n3w3 w2 x4w4";
-                    if i===1
-                      -
-                        icn = 'building';                        
-                    if i===2
-                      -
-                        icn = 'calendar-check';
-                    .case-item__icon-item(class=size)
-                      svg.i24
-                        use(xlink:href='img/sprite/symbols.svg#' + icn)
-                      span.p2 !{icon}
-            .m3
-              .row.wrap.g3.n1ol1
-                if item.blocks
-                  each block in item.blocks
-                    section.case-item__block.n1w3.w4
-                      h4.t2.ta !{block.title}
-                      .m5
-                        each p in block.text
-                          if Array.isArray(p)
-                            ul.ul.col6
-                              each li in p
-                                li.ul__li !{li}
-                          else 
-                            p.p1 !{p}
-                section.case-item__block
-                  h4.t2.ta Отзывы
-                  .row.wrap.g5.m5
-                    each review in item.reviews
-                      .col7.n1w3.w4
-                        p.p1 !{review.main}
-                        p.case-item__span.p2 !{review.who}
+    each item, index in casesArchive
+      +caseItem(item, {
+        isActive: index >= 0 && index <= 2
+      })
   .container
     .row.wrap.jcc.g5.m3
       button.cases__hide-button.button-second.n1w2.n3w4.w2.x4w4(data-items-hide) Свернуть
-      button.cases__show-button.button-primary.n1w2.n3w4.w2.x4w4(data-items-btn) Показать ещё
+      button.button-primary.n1w2.n3w4.w2.x4w4(data-items-btn) Показать ещё
 
 //- http://localhost:1709/page-corp.html#cases

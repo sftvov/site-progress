@@ -1,32 +1,25 @@
-.client-item {
-  border: 1px solid var(--border-gray);
-
+.-client-item {
+  @extend .bdg;
   &:is(a) {
     &:hover,
     &:focus-visible {
-      & .client-item__img {
+      & img {
         scale: (1.05);
       }
     }
   }
 
   &__body {
-    padding: var(--XS-S);
-  }
-
-  &__img {
-    transition-duration: var(--transition);
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: contain;
+    padding: var(--S-M);
   }
 
   &__about {
     overflow-wrap: break-word; /* Современный аналог word-wrap */
     word-break: auto-phrase;
     hyphens: auto; /* Красивые переносы с дефисами */
-    padding-top: var(--XS-S);
+    @extend .col7;
+    @extend .m4;
+    padding-top: var(--S-M);
     border-top: 2px solid var(--border-gray);
   }
-  
 }

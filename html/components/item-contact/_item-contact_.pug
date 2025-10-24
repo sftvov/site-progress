@@ -1,0 +1,22 @@
+mixin contactsCard(props = {})
+  - 
+    const {
+      name = '',
+      position = '',
+      phone = '',
+      email = '',
+      image = '',
+      imageAlt = ''
+    } = props
+
+  article.-contact-item&attributes(attributes)
+    img.-contact-item__img(src=image alt=imageAlt)
+    .col5.jcb
+      .col7
+        h2.t2d= name
+        p.p2= position
+      .col7.ais
+        if phone
+          a.p2.hover(href=`tel:${phone}`)= phone
+        if email
+          a.p2.hover(href=`mailto:${email}`)= email

@@ -4,59 +4,83 @@ section.section#form
     form.m2.n1o1
       .row.wrap.g5.x3col
         fieldset.row.x3col.g5.aie.x3ais.n1w10.n3w12.w4
-          .input-wrapper.n1w5.n3w6.w4
-            p.input-wrapper__label Формат:
-            .select
-              input.select__input(value="Не выбрано" readonly inert required)
-              .select__variants
-                ._activator
-                  .select__variant  На территории ЦНТИ Прогресс СПб / Мск
-                ._activator
-                  .select__variant  Выездной на территории заказчика
-                ._activator
-                  .select__variant  Онлайн в режиме реального времени
-          p.t2.ta._activated Стартовая стоимость - от 300 000₽ / группа
-          p.t2.ta._activated Стартовая стоимость - от 350 000₽ / группа
-          p.t2.ta._activated Стартовая стоимость - от 240 000₽ / группа
+          +inputWrapper({
+            label: 'Формат:',
+            placeholder: 'Не выбрано',
+            fieldType: 'select',
+            selectConfig: {
+              options: [
+                'На территории ЦНТИ Прогресс СПб / Мск',
+                'Выездной на территории заказчика',
+                'Онлайн в режиме реального времени',
+              ]
+            },            
+            required: true
+          })(class="n1w5 n3w6 w4 _select-activator")
+          p.t2.ta._select-activated Стартовая стоимость - от 300 000₽ / группа
+          p.t2.ta._select-activated Стартовая стоимость - от 350 000₽ / группа
+          p.t2.ta._select-activated Стартовая стоимость - от 240 000₽ / группа
+        fieldset.col5.n1w5.n3w6.w4          
+          +inputWrapper({
+            label: 'Город проведения (кроме “Онлайн-формата”)',
+            placeholder: 'Иркутск',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Тема обучения',
+            placeholder: 'Тема обучения',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Название компании',
+            placeholder: 'ООО “Компания”',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Отрасль, вид деятельности',
+            placeholder: 'Строительство',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Целевая аудитория учебной программы (отделы, должности)',
+            placeholder: 'Строители',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Контактные данные: ФИО, должность, email, телефон',
+            placeholder: 'Иванов Иван Иванович, директор, example@mail.ru, 8 (999) 999-99-99',
+            required: true,
+          })
         fieldset.col5.n1w5.n3w6.w4
-          label.input-wrapper
-            p.input-wrapper__label Город проведения (кроме “Онлайн-формата”)
-            input.input(placeholder="Иркутск" required)
-          label.input-wrapper
-            p.input-wrapper__label Тема обучения
-            input.input(placeholder="Тема обучения" required)
-          label.input-wrapper
-            p.input-wrapper__label Название компании
-            input.input(placeholder="ООО “Компания”" required)
-          label.input-wrapper
-            p.input-wrapper__label Отрасль, вид деятельности
-            input.input(placeholder="Строительство" required)
-          label.input-wrapper
-            p.input-wrapper__label Целевая аудитория учебной программы (отделы, должности)
-            input.input(placeholder="Строители" required)
-          label.input-wrapper
-            p.input-wrapper__label Контактные данные: ФИО, должность, email, телефон
-            input.input(placeholder="Иванов Иван Иванович, директор, example@mail.ru, 8 (999) 999-99-99" required)
-        fieldset.col5.n1w5.n3w6.w4
-          label.input-wrapper
-            p.input-wrapper__label Количество часов / дней обучения
-            input.input(placeholder="5 дней" required)
-          label.input-wrapper
-            p.input-wrapper__label Количество групп и участников в каждой группе
-            input.input(placeholder="3 группы по 10 человек" required)
-          label.input-wrapper
-            p.input-wrapper__label Пожелания по срокам
-            input.input(placeholder="10.03.2026 - 15.03.2026" required)
-          label.input-wrapper
-            p.input-wrapper__label Основные вопросы / задачи обучения
-            textarea.textarea(placeholder="Напишите свое сообщение")
+          +inputWrapper({
+            label: 'Количество часов / дней обучения',
+            placeholder: '5 дней',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Количество групп и участников в каждой группе',
+            placeholder: '3 группы по 10 человек',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Пожелания по срокам',
+            placeholder: '10.03.2026 - 15.03.2026',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Основные вопросы / задачи обучения',
+            placeholder: 'Напишите свое сообщение',
+            fieldType: 'textarea',
+          })
       .row.wrap.g3.aie.m3
         .col5.ais.n1w5.n3w6.w2.x4w4
-          button(type="submit").button-primary.n1w3.n3w4.w2.x4w4 Отправить  
-          label.checkbox
-            input.checkbox__input(type="checkbox" checked required)
-            .checkbox__span-wrapper-blue
-              span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+          button(type="submit").button-primary.n1w3.n3w4.w2.x4w4 Отправить
+          +checkbox({
+            label: 'Отправляя форму, я принимаю <a class="link" href="#"> пользовательское соглашение</a>',
+            name: 'agreement',
+            blueWrapper: true,
+            checked: true,
+          })
         .col7.n1w5.n3w6.w2.x4w4
           p.p1 Служба корпоративного обучения
           .row.wrap.g7

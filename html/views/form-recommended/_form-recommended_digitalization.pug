@@ -1,7 +1,7 @@
-section.section-bg.recommended-form
+section.section-bg.recommended-form#form
   .container
     .n1o1.row.ais.jcc
-      img.n1w4.n2w5.x2hide(src="img/recommended/form.png", alt="")
+      img.n1w4.n2w5.x2hide(src="img/recommended/form.png" alt="")
       .col3.n1w6.n2w7.n3w10.w4
         h3.t1d На странице нет необходимого курса, отвечающего целям и потребностям вашей организации? Не проблема.
         .col5
@@ -9,21 +9,30 @@ section.section-bg.recommended-form
           p.p2 Заполните форму, а мы свяжемся с вами в ближайшее время и начнем подготовку персонального предложения.
         form.col3
           fieldset.col5
-            label.input-wrapper
-              p.input-wrapper__label Имя
-              input.input(placeholder="Иван")
-            label.input-wrapper
-              p.input-wrapper__label Электронная почта
-              input.input(type="email" placeholder="example@mail.ru")
-            label.input-wrapper
-              p.input-wrapper__label Телефон
-              input.input(type="tel" placeholder="8 (999) 999-99-99")            
-            label.input-wrapper
-              p.input-wrapper__label Сфера деятельности вашей компании
-              input.input(placeholder="Строительство")      
+            +inputWrapper({
+              label: 'Имя',
+              placeholder: 'Иван'
+            })
+            +inputWrapper({
+              label: 'Электронная почта',
+              placeholder: 'example@mail.ru',
+              type: "email",
+            })
+            +inputWrapper({
+              label: 'Телефон',
+              placeholder: '8 (999) 999-99-99',
+              type: "tel",
+            })
+            +inputWrapper({
+              label: 'Сфера деятельности вашей компании',
+              placeholder: 'Строительство',
+            })
           .col5
-            button(type="submit").button-primary Отправить   
-            label.checkbox
-              input.checkbox__input(type="checkbox" checked)
-              .checkbox__span-wrapper-blue
-                span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+            button(type="submit").button-primary Отправить 
+            +checkbox({
+              label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
+              checked: true,
+              blueWrapper: true
+            })
+
+//- http://localhost:1709/single-recommended.html#form

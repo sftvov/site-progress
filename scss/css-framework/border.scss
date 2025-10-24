@@ -1,3 +1,15 @@
+.bd {
+  border: 1px solid var(--border);
+}
+
+.bdg {
+  border: 1px solid var(--border-gray);
+}
+
 .bdl {
-  border: 2px solid var(--border-light);
+  border: 1px solid var(--border-light);
+}
+
+.bd2 {
+  border-width: 2px;
 }

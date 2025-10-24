@@ -1,6 +1,11 @@
-.info-square {
+.-info-square {
+  @extend .ts;
+  @extend .t2;
+  @extend .r;
+  @extend .aic;
+  @extend .jcc;
   width: 40px;
-  aspect-ratio: 1;
+  @extend .sqr;
   @media (max-width: $md4+px) {
     width: 35px;
   }

@@ -7,6 +7,9 @@ section.section#results
   .m2
     each course, index in coursesArchive
       +courseItemSearch(course, index % 2 === 0 ? 'online' : 'offline')
-    include ../pagination/_pagination_$common
+    +pagination({
+      totalPages: 10,
+      currentPage: 2,
+    })(class='m3')
 
 //- http://localhost:1709/page-search.html#results

@@ -1,30 +1,4 @@
--
-  searchResults = [
-    {
-      name: "Строительство и эксплуатация автомобильных дорог",
-      date: "25 октября - 6 ноября 2025"
-    },
-    {
-      name: "<b>Строительн</b>ый надзор. Реализация функций государственного надзора в ходе контрольных (надзорных) мероприятий",
-      date: "25 - 29 мая 2025"
-    },
-    {
-      name: "<b>Строительн</b>ый надзор. Реализация функций государственного надзора в ходе контрольных (надзорных) мероприятий",
-      date: "25 - 29 мая 2025"
-    },
-    {
-      name: "Строительство и эксплуатация автомобильных дорог",
-      date: "25 - 29 мая 2025"
-    },
-    {
-      name: "Строительство и эксплуатация автомобильных дорог",
-      date: "25 октября - 6 ноября 2025"
-    },
-    {
-      name: "Строительство и эксплуатация автомобильных дорог",
-      date: "25 октября - 6 ноября 2025"
-    }
-  ];
+
 
 //- .download-plan
   svg.download-plan__svg
@@ -38,79 +12,103 @@
       p.download-plan__window-p Расписание курсов по всем отраслевым направлениям — в одной брошюре.
       a.download-plan__window-link(href="https://img.cntiprogress.ru/Image/pdf/cntiprogress_plan_2026.pdf?from=widget") Скачать>>
 
-header.header._lpr
+-
+  const menuItems = [
+    {
+      name: "СЕМИНАРЫ И КУРСЫ",
+      subitems: [
+        { 
+          name: "Семинары и курсы", link: "page-rubrics.html",
+        },
+        { name: "Онлайн-обучение" },
+        { 
+          name: "Дистанционные курсы",
+          children: [
+            { name: "Профпереподготовка" },
+            { name: "Повышение квалификации" }
+          ]
+        },
+        { name: "Корпоративное обучение" }
+      ]
+    },
+    {
+      name: "О КОМПАНИИ",
+      subitems: [
+        { name: "О нас" },
+        { name: "Основатель Компании", style:"break-after: column;" },
+        { name: "Учебный комплекс" },
+        { name: "Аренда аудиторий" },
+        { name: "Клиенты" },
+        { name: "Благотворительность" },
+        { name: "Партнеры" }
+      ]
+    },
+    { name: "АКЦИИ", link: "#" },
+    { name: "КОНТАКТЫ", link: "#" }
+  ];
+
+
+header.header.w.bgm._lpr
   .container
     .header__top-level.row.x4col
-      .header__mobile-logo-city-wrapper
+      .n3contents.col7.x4row.x4jcb.x4aic
         a.n3hide(href="index.html") 
           img.header__mobile-logo-img(src="img/logo.svg" alt="")
         .n2w2
-          button.header-select
-            .triangle
-            p.p1 Санкт-Петербург
-            svg.header-select__svg
-              use(xlink:href='img/sprite/symbols.svg#chevron-down')
-            .header-select__variants-wrapper
-              .header-select__variants-border
-                .header-select__variants
-                  a.p1.hover.ta(href="page-main.html") Санкт-Петербург
-                  a.p1.hover(href="page-main.html") Москва
+          +headerSelect({
+            text: 'Санкт-Петербург',
+            options: [
+              { text: 'Санкт-Петербург', href: 'page-main.html' },
+              { text: 'Москва', href: 'page-main.html' }
+            ]
+          })
       .header__icon-links.row.x2hide
-        a.header__icon-link(href="#")
+        a.dur.s-hover.hover.r5.aic(href="#")
           svg.i24.x2i20
             use(xlink:href='img/sprite/symbols.svg#plan')
           | План обучения
-        a.header__icon-link(href="#")
+        a.dur.s-hover.hover.r5.aic(href="#")
           svg.i24.x2i20
             use(xlink:href='img/sprite/symbols.svg#key')
           | Бронь отелей
-        a.header__icon-link(href="#")
+        a.dur.s-hover.hover.r5.aic(href="#")
           svg.i24.x2i20
             use(xlink:href='img/sprite/symbols.svg#mail')
           | Рассылка
-      .header__contacts.x3col.g5
+      .header__contacts.r.x3col.x4row.jcb.x3aie.g5
         .n1w2
-          button.header-select
-            .triangle
-            p.p1.ta 8 (800) 333-88-44
-            svg.header-select__svg.header-select__svg--accent
-              use(xlink:href='img/sprite/symbols.svg#chevron-down')
-            .header-select__variants-wrapper
-              .header-select__variants-border
-                .header-select__variants
-                  a.p1.hover.ta(href="tel:88003338844") 8 (800) 333-88-44
-                  a.p1.hover(href="tel:88123318888") 8 (812) 331-88-88
-        a.header__mail.p1.n1w2(href="mailto:client@cntiprogress.ru")
-          svg.header__mail-svg
+          +headerSelect({
+            text: '8 (800) 333-88-44',
+            options: ['8 (800) 333-88-44', '8 (812) 331-88-88'],
+            accent: true,
+            phone: true
+          })
+        a.dur.hover.s-hover.p1.r5.aic.n1w2(href="mailto:client@cntiprogress.ru")
+          svg.i20.x2hide
             use(xlink:href='img/sprite/symbols.svg#email')
           span.header__mail-span client@cntiprogress.ru
-    .header__body.aic.m5
-      a.header__logo-link.x3hide(href="index.html") 
+    .row.aic.m5
+      a.w2.x3hide(href="index.html") 
         img.header__logo-link-img(src="img/logo.svg" alt="")
-      form.header__search
-        .header__search-input-wrapper.n3w8.w3
-          input.header__search-input.p1(placeholder='Поиск по сайту')
-          button.header__search-close
-            svg.i24.x2i20
-              use(xlink:href='img/sprite/symbols.svg#x-close')
-          .search-results
-            each course in searchResults
-              a.search-results__item(href="#") 
-                p.search-results__number 71455
-                p.search-results__name !{course.name}
-                p.search-results__dates !{course.date}  
-        button.header__search-btn.p1.n2w2 #[span.x4hide Найти #[span.x2hide курс]]          
-          svg.header__search-btn-svg.n4hide
-            use(xlink:href='img/sprite/symbols.svg#search')
-      .header__burger-wrapper.n2hide
-        button.header__burger.burger
-          span.burger__line
-          span.burger__line
-          span.burger__line
-    include _header_#template_menu.pug
-    .header__info-panel
+      .r.fg
+        form.header__search.r.fg
+          .header__search-input-wrapper.por.r.aic.bd.bd2.n3w8.w3
+            input.header__search-input.p1.fg(placeholder='Поиск по сайту')
+            button.header__search-close.dur
+              svg.i24.x2i20
+                use(xlink:href='img/sprite/symbols.svg#x-close')
+            +headerResults(searchResults)
+          button.header__search-btn.dur.ts.r.aic.jcc.bgb.p1.n2w2 
+            span.x4hide Найти 
+              span.x2hide курс
+            svg.ss.i16.sw2.n4hide
+              use(xlink:href='img/sprite/symbols.svg#search')
+        .r.jce.w1.n2hide.x3contents
+          +burger(class="header__burger _burger")
+    +headerMenu(menuItems)
+    .header__info-panel.ts.tac.m5.bga
       p #[span.x3hide Готов учебный план на 2025 год.] Расписание курсов по всем отраслевым направлениям #[span.x4hide — в одной брошюре.]#[br.n3hide] #[span.n3hide Готов учебный план на 2025 год.]
-        a.header__info-link.b1(href="#") скачать
+        a.header__info-link.dur.ss.b1.aic(href="#") скачать
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#arrow-right')
 

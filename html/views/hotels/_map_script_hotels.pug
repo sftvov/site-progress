@@ -30,7 +30,7 @@ script.
         // Параметры для отображения номера
         iconContentOffset: [0, 5],
         iconContentLayout: ymaps.templateLayoutFactory.createClass(
-          `<div class="hotels__pin">${number}</div>`
+          `<div class="hotels__pin p2 tac">${number}</div>`
         )
       };
     };
@@ -49,7 +49,7 @@ script.
         hotel.coords, 
         {
           hintContent: hotel.name,
-          balloonContent: `<div class="hotels__baloon">
+          balloonContent: `<div class="rob">
                               <h3 class="t2">${hotel.name}</h3>
                               <p class="p1 m3">${hotel.address}</p>
                               <a class="link" href="#${hotel.slug}">Подробнее</a>
@@ -65,7 +65,7 @@ script.
       [59.942227, 30.27578],
       {
         hintContent: "ЦНТИ Прогресс",
-        balloonContent: `<div class="hotels__baloon">
+        balloonContent: `<div class="rob">
                             <h3 class="t2">ЦНТИ Прогресс</h3>
                             <p class="p1 m3">Средний пр-т В.О, 36/40</p>
                           </div>`

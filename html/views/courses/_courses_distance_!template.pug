@@ -9,4 +9,7 @@ section.section#courses
       +courseItemDistance(course, 'distance')
   if courses.pagination
     .container
-      include ../pagination/_pagination_$common
+      +pagination({
+        totalPages: 10,
+        currentPage: 2,
+      })(class='m3')

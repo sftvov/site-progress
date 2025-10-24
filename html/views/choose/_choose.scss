@@ -1,6 +1,5 @@
 .choose {
   &__checkboxes {
-    gap: 30px;
     @media (min-width: $md2+px) {
       padding: 3px 0;
     }
@@ -22,8 +21,6 @@
   }
 
   &__buttons {
-    align-items: flex-end;
-    flex-grow: 1;
     @media (max-width: $md3+px) AND (min-width: $md4+px) {
       margin: 0 var(--columnG);
     }

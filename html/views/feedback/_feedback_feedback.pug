@@ -5,39 +5,55 @@ section.section#feedback
     form.m2.n1o1
       .row.x3col.g5
         fieldset.col5.n1w5.n3w6.w4
-          label.input-wrapper
-            p.input-wrapper__label Фамилия
-            input.input(placeholder="Иванов")
-          label.input-wrapper
-            p.input-wrapper__label Имя
-            input.input(placeholder="Иван")
-          label.input-wrapper
-            p.input-wrapper__label Электронная почта
-            input.input(type="email" placeholder="example@mail.ru")
-          label.input-wrapper
-            p.input-wrapper__label Телефон
-            input.input(type="tel" placeholder="8 (999) 999-99-99")      
+          +inputWrapper({
+            label: 'Фамилия',
+            placeholder: 'Иванов'
+          })
+          +inputWrapper({
+            label: 'Имя',
+            placeholder: 'Иван',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Электронная почта',
+            type: 'email',
+            placeholder: 'example@mail.ru'
+          })
+          +inputWrapper({
+            label: 'Телефон',
+            type: 'tel',
+            placeholder: '8 (999) 999-99-99',
+            required: true,
+          })
         fieldset.col5.n1w5.n3w6.w4
-          .input-wrapper
-            p.input-wrapper__label Сообщение для:
-            .select
-              input.select__input(value="Службы записи" readonly inert)
-              .select__variants
-                .select__variant._active Службы записи
-                .select__variant Службы корпоративных семинаров
-                .select__variant Службы гостиниц
-                .select__variant Отзыв о сайте или курсе
-                .select__variant Другое
-          label.input-wrapper
-            p.input-wrapper__label Выш вопрос или пожелание
-            textarea.textarea(placeholder="Напишите свое сообщение")      
-      .col5.m3
+          +inputWrapper({
+            label: 'Сообщение для:',
+            value: 'Службы записи',
+            fieldType: 'select',
+            selectConfig: {
+              options: [
+                'Службы записи',
+                'Службы корпоративных семинаров',
+                'Службы гостиниц',
+                'Отзыв о сайте или курсе',
+                'Другое'
+              ],
+              activeIndex: 0
+            }
+          })
+          +inputWrapper({
+            label: 'Ваш вопрос или пожелание',
+            fieldType: 'textarea',
+            placeholder: 'Напишите свое сообщение'
+          })
+      .col5.ais.m3
         .row
           button(type="submit").button-primary.n1w2.n3w3.w2.x4w4 Отправить
-          input(type="reset" value="Отмена").button-second.n1w2.n3w3.w2.x4w4        
-        label.checkbox
-          input.checkbox__input(type="checkbox" checked)
-          .checkbox__span-wrapper-blue
-            span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+          input(type="reset" value="Отмена").button-second.n1w2.n3w3.w2.x4w4
+        +checkbox({
+          label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
+          checked: true,
+          blueWrapper: true
+        })
 
 //- http://localhost:1709/page-feedback.html#feedback

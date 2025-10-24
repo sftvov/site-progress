@@ -18,14 +18,15 @@
     },
   ]
 
-section.section.digitalization-hero
+.section#hero
   .container.x2contents
-    .digitalization-hero__img-body
-      .container.n2contents
-        .col5.n2o1
+    .baner
+      img.bg.x4hide(src="img/digitalization/hero.png", alt="")
+      .announcement.n2o1
+        .container.n2contents
           p.p1 Будущее начинается сейчас
-          h1.t1 Цифровая трансформация.#[br.n2hide] Каталог курсов
-  .container    
+          h1.t1.m6 Цифровая трансформация.#[br.n3hide] Каталог курсов
+  .container
     p.p1.td.n1w9.n2w7.n3w9.w3.x4w4.n1ol1.n1or2 Что общего между заводом, медицинской клиникой и библиотекой? Возможность оптимизации их деятельности с помощью цифровых технологий.
     .col5.m3.n1w9.n2w11.n1ol1.n1or2
       p.p1 Цифровая трансформация стала глобальным процессом современности и охватила множество отраслей — от промышленности до сферы культуры и досуга. Цифровизация позволяет бизнесу достичь активного роста, высокого уровня экспертизы, гибкости и продуктивности. Более того, она открывает новые перспективы развития в областях, которые на первый взгляд кажутся достаточно консервативными — например, в государственном и муниципальном управлении.
@@ -39,3 +40,5 @@ section.section.digitalization-hero
           svg.i24
             use(xlink:href='img/sprite/symbols.svg#' + item.icon)
           p.p1 !{item.text}
+
+//- http://localhost:1709/single-recommended.html#hero

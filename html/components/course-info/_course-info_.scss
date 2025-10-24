@@ -1,6 +1,7 @@
 .-course-info {
   &__row {
-    @extend.r45;
+    @extend.r;
+    column-gap: 45px;
     @extend.wrap;
     @extend.g7;
     @extend.x2cg30;

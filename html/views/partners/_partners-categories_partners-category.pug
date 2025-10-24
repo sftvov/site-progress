@@ -57,7 +57,7 @@ section.section.partners#partners(data-filters)
       .partners__categories.g7.m3
         each category in categories
           button.partners__category.link.p1(data-filter=category[1].toLowerCase())= category[0]
-      .partners__grid.m1
+      .partners__grid.g3.m1
         each item in partnersArchive
           +itemClient(item)(data-item=item.category[1])
       .row.jcc

@@ -8,60 +8,106 @@ section.booking.section#booking
         fieldset.n1w4.n2w5.n3w6
           legend.t2d Информация об отеле
           .col5.m4
-            .input-wrapper
-              p.input-wrapper__label Гостиница
-              .select
-                input.select__input(value=hotelsArchive[0].name readonly inert)
-                .select__variants
-                  each hotel, active in hotelsArchive
-                    .select__variant(class= active===0 ? '_active' : '') !{hotel.name}
-            .input-wrapper
-              p.input-wrapper__label Категория номера
-              .select
-                input.select__input(value="Стандарт" readonly inert)
-                .select__variants
-                  .select__variant._active Стандарт
-                  .select__variant Комфорт
-                  .select__variant Эконом
-            .input-wrapper
-              p.input-wrapper__label Размещение в номере
-              .select
-                input.select__input(value="Одноместное" readonly inert)
-                .select__variants
-                  .select__variant._active Одноместное
-                  .select__variant Двуместное
-            label.input-wrapper
-              p.input-wrapper__label Дата заезда
-              input.input--date(value="2025-06-10" type="date")
-            label.input-wrapper
-              p.input-wrapper__label Дата выезда
-              input.input--date(value="2025-06-17" type="date")
-        fieldset.n1w5.n3w6
+            -
+              hotelsNames = hotelsArchive.map((hotel) => {
+                return hotel.name;
+              })
+            +inputWrapper({
+              label: 'Гостиница',
+              name: 'hotel',
+              value: hotelsArchive[0].name,
+              fieldType: 'select',
+              selectConfig: {
+                options: hotelsNames,
+                activeIndex: 0,
+              }
+            })
+            +inputWrapper({
+              label: 'Категория номера',
+              name: 'category',
+              value: 'Стандарт',
+              fieldType: 'select',
+              selectConfig: {
+                options: [
+                  'Стандарт',
+                  'Комфорт',
+                  'Эконом',
+                ],
+                activeIndex: 0,
+              }
+            })
+            +inputWrapper({
+              label: 'Размещение в номере',
+              name: 'accommodation',
+              value: 'Одноместное',
+              fieldType: 'select',
+              selectConfig: {
+                options: [
+                  'Одноместное',
+                  'Двуместное',
+                ],
+                activeIndex: 0,
+              }
+            })
+            +inputWrapper({
+              label: 'Дата заезда',
+              type: 'date',
+              inputClass: 'input--date',
+              name: 'date-in',
+              value: '2025-06-10'
+            })
+            +inputWrapper({
+              label: 'Дата выезда',
+              type: 'date',
+              inputClass: 'input--date',
+              name: 'date-out',
+              value: '2025-06-10'
+            })
+        fieldset.n2ol1.n1w5.n3w6
           legend.t2d Информация о слушателе
           .col5.m4
-            label.input-wrapper
-              p.input-wrapper__label Код семинара
-              input.input(placeholder="789765")
-            label.input-wrapper
-              p.input-wrapper__label ФИО участника
-              input.input(placeholder="Иванов Иван Иванович")
-            label.input-wrapper
-              p.input-wrapper__label Электронная почта
-              input.input(type="email" placeholder="example@mail.ru")
-            label.input-wrapper
-              p.input-wrapper__label Телефон
-              input.input(type="tel" placeholder="8 (999) 999-99-99")
-            .input-wrapper
-              p.input-wrapper__label Вид оплаты
-              .select
-                input.select__input(value="Наличные/Карта" readonly inert)
-                .select__variants
-                  .select__variant._active Наличные/Карта
-                  .select__variant Безналичный от юрлица
-      footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3
-        label.input-wrapper
-          p.input-wrapper__label Примечание
-          textarea.textarea(placeholder="Напишите свое сообщение")
+            +inputWrapper({
+              label: 'Код семинара',
+              name: 'code',
+              placeholder: '789765'
+            })
+            +inputWrapper({
+              label: 'ФИО участника',
+              name: 'fio',
+              placeholder: 'Иванов Иван Иванович'
+            })
+            +inputWrapper({
+              label: 'Электронная почта',
+              type: 'email',
+              name: 'email',
+              placeholder: 'example@mail.ru'
+            })
+            +inputWrapper({
+              label: 'Телефон',
+              name: 'tel',
+              type: 'tel',
+              placeholder: '8 (999) 999-99-99'
+            })
+            +inputWrapper({
+              label: 'Вид оплаты',
+              name: 'payment',
+              value: 'Наличные/Карта',
+              fieldType: 'select',
+              selectConfig: {
+                options: [
+                  'Наличные/Карта',
+                  'Безналичный от юрлица',
+                ],
+                activeIndex: 0,
+              }
+            })
+      footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3        
+        +inputWrapper({
+          label: 'Примечание',
+          name: 'note',
+          placeholder: 'Напишите свое сообщение',
+          fieldType: 'textarea',
+        })
         .col5
           .row.g5.x4col
             button(type="submit").button-primary.n2w2.n3w3.w2.x4w4 Отправить

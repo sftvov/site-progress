@@ -1,6 +1,18 @@
+%mailing-square {
+  @media (min-width: $md2+px) {
+    &::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
 .mailing {
   &__top {
-    justify-content: flex-end;
     @include adaptiv-value-on('height', 457, 361, $md1, $md2);
     @include adaptiv-value-on('padding-bottom', 40, 20, $md1, $md2);
     @media (min-width: $md2+px) {
@@ -20,19 +32,30 @@
       position: absolute;
     }
     @media (max-width: $md2+px) {
-      margin-top: var(--2XS);
+      margin-top: var(--XS);
     }
   }
 
-  &__top-main {
-    @media (max-width: $md2+px) {
-      margin-top: var(--L-XL);
+  &__square {
+    &-bright {
+      @extend %mailing-square;
+      @media (min-width: $md2+px) {
+        &::before {
+          background-color: var(--bg-bright);
+        }
+      }
+    }
+    &-accent {
+      @extend %mailing-square;
+      @media (min-width: $md2+px) {
+        &::before {
+          background-color: var(--bg-accent);
+        }
+      }
     }
   }
 
   &__top-checkboxes {
-    display: flex;
-    gap: 40px;
     margin-top: 5px;
   }
 
@@ -42,28 +65,22 @@
     }
     @media (min-width: $md4+px) {
       columns: 2 var(--2columns);
-      gap: var(--gutter);
+      column-gap: var(--gutter);
     }
   }
 
   &__group {
     break-inside: avoid-column;
     &:not(:first-child) {
-      margin-top: var(--S);
+      margin-top: var(--M);
     }
   }
 
   &__checkboxes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    @extend .m5;
+    row-gap: 10px;
   }
 
   &__subrubrics {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
     padding-left: 27px;
   }
 }

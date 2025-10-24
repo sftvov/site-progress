@@ -1,35 +1,38 @@
 include ../../../data/rubricsArchive
 
-section.mailing.section#mailing
+.mailing.section#mailing
   .container
     h1.title Простая рассылка #[br.n4hide]о серьёзном обучении
     form.col1
-      section.mailing__top
+      section.mailing__top.jce
         h2.mailing__top-title.t2d.x2tac В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
-        fieldset.mailing__top-main.n2w9
+        fieldset.n2w9.m1
           legend.t2d Заполните данные о себе
           .row.wrap.g5.m5
-            .wrapper-square--bright.col7.n2w3.n3w4.w2.x4w4
+            .mailing__square-bright.por.col7.n2w3.n3w4.w2.x4w4
               input.input(type="text" placeholder="Фамилия")
             .col7.n2w3.n3w4.w2.x4w4
               input.input(type="text" placeholder="Имя")
             .col7.n2w3.n3w4.w2.x4w4
               input.input(type="text" placeholder="Отчество")
-            .wrapper-square--accent.col7.n2w3.n3w4.w2.x4w4
+            .mailing__square-accent.por.col7.n2w3.n3w4.w2.x4w4
               input.input(type="email" placeholder="Электронная почта")
             .col7.n2w3.n3w4.w2.x4w4
               input.input(type="text" placeholder="Должность")
             .n2w3.n3w4.w2.x4w4
               p.p2 Я отвечаю за обучение сотрудников
-              .mailing__top-checkboxes
-                label.checkbox
-                  input.checkbox__input(type="radio" name="employee_training_responsible" checked)
-                  .checkbox__span-wrapper
-                    span.checkbox__span Да
-                label.checkbox
-                  input.checkbox__input(type="radio" name="employee_training_responsible")
-                  .checkbox__span-wrapper
-                    span.checkbox__span Нет
+              .mailing__top-checkboxes.r40
+                +checkbox({
+                  label: 'Да',
+                  type: 'radio',
+                  checked: true,
+                  name: 'responsible'
+                })
+                +checkbox({
+                  label: 'Нет',
+                  type: 'radio',
+                  name: 'responsible'
+                })
       section.col2
         h2.t1d Выберите рубрики — это займёт полминуты
         .mailing__choose
@@ -38,28 +41,29 @@ section.mailing.section#mailing
               legend.branch-title
                 span.branch-title__main
                   span.branch-title__title !{group.title}
-              .mailing__checkboxes
+              .mailing__checkboxes.col.m5
                 each rubric in group.rubrics
                   .col7(data-checkbox-group=rubric.subrubrics ? true : false)
-                    label.checkbox
-                      input.checkbox__input(type="checkbox" data-checkbox-all=rubric.subrubrics ? true : false)
-                      .checkbox__span-wrapper
-                        span.checkbox__span !{rubric.name}
+                    +checkbox({
+                      label: rubric.name,
+                      all: rubric.subrubrics ? true : false,
+                    })
                     if rubric.subrubrics
-                      .mailing__subrubrics
+                      .mailing__subrubrics.col8
                         each subrubric in rubric.subrubrics
-                          label.checkbox
-                            input.checkbox__input(type="checkbox" data-checkbox-item)
-                            .checkbox__span-wrapper
-                              span.checkbox__span !{subrubric}
+                          +checkbox({
+                            label: subrubric,
+                            item: true,
+                          })
       section.col3.aic
         h2.t1d.x4tac Вы у цели! Осталось нажать #[br.n4hide]главную кнопку...
         .col5.aic
           button.button-primary.n3w4.w2.x4w4(type="submit") Подписаться на рассылку
-          label.checkbox
-            input.checkbox__input(type="checkbox" checked)
-            .checkbox__span-wrapper-blue
-              span.checkbox__span Отправляя форму, я принимаю #[a.link(href="#") пользовательское соглашение]
+          +checkbox({
+            label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
+            checked: true,
+            blueWrapper: true
+          })
     .row.x4col.g3.m1.n1o1
       section.col5.n1w5.n3w6.w2.x4w4
         h2.t2d Как получить скидку 3%

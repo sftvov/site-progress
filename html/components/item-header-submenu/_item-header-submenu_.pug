@@ -1,0 +1,16 @@
+
+//- Миксин для подменю
+mixin headerSubmenuItem(item)
+  if item.children
+    .-header-submenu-item.col.ais
+      span.-header-submenu-item__name= item.name
+      .-header-submenu-item__links
+        each child in item.children
+          a.-header-submenu-item__link(href="#")= child.name
+            svg.sw2.deg-90.i20.x2hide
+              use(xlink:href='img/sprite/symbols.svg#chevron-down')
+  else
+    a.-header-submenu-item.hover.s-hover.r5.aic(href=item.link ? item.link : "#", style=item.style ? item.style : false)
+      span.-header-submenu-item__name= item.name
+      svg.dur.deg-90.i24.x2hide
+        use(xlink:href='img/sprite/symbols.svg#chevron-down')

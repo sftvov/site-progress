@@ -1,16 +1,10 @@
 .center {
   &__img {
-    object-fit: cover;
     object-position: right;
-  }
-  &__items {
-    @media (max-width: $md2+px) {
-      row-gap: var(--XS);
-    }
   }
   &__item {
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      row-gap: 7px;
+      row-gap: var(--XS);
     }
   }
   &__num-row {

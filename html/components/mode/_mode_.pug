@@ -7,9 +7,9 @@ mixin mode(props = {})
     } = props
 
   - const Tag = href ? 'a' : 'span'
-  #{Tag}.mode.b1.r10.aic.jcc.n3w3.w2.bdl(
+  #{Tag}.-mode(
     href=href || false
   )&attributes(attributes)
-    | #{text}
-    svg.sd.i20
+    p.b1 #{text}
+    svg.sd.i24.x2i20
       use(xlink:href=`img/sprite/symbols.svg#${icon}`)

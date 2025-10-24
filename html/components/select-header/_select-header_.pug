@@ -1,0 +1,29 @@
+mixin headerSelect(props = {})
+  - 
+    const {
+      text = '',
+      options = [],
+      accent = false,
+      phone = false
+    } = props
+
+  button.-header-select&attributes(attributes)
+    .triangle
+    p.p1(class=phone ? 'ta' : '')= text
+    svg.dur.i24.x2i16(
+      class=accent ? 'dur sa i24 x2i16' : ''
+    )
+      use(xlink:href='img/sprite/symbols.svg#chevron-down')
+    .-header-select__variants-wrapper
+      .-header-select__variants-border
+        .-header-select__variants
+          each option, index in options
+            -
+              itemClass = '';
+              if(index===0) {
+                itemClass='ta';
+              }
+            if phone
+              a.p1.hover(class=itemClass, href=`tel:${option}`)= option
+            else
+              a.p1.hover(class=itemClass, href=option.href || "#")= option.text || option

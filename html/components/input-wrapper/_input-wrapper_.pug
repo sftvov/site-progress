@@ -1,0 +1,43 @@
+mixin inputWrapper(props = {})
+  - 
+    const {
+      label = '',
+      type = 'text',
+      inputClass = false,
+      name = false,
+      value = false,
+      placeholder = false,
+      required = false,
+      fieldType = 'input', // 'input', 'textarea', 'select'
+      selectConfig = {}
+    } = props;
+
+    selectConfig.name = name;
+    selectConfig.placeholder = placeholder;
+    selectConfig.value = value;
+    selectConfig.required = required;
+    
+  -
+    const wrapperTag = fieldType === 'select' ? 'div' : 'label';
+
+  #{wrapperTag}.-input-wrapper&attributes(attributes)
+    if label
+      p.-input-wrapper__label= label
+    
+    case fieldType
+      when 'textarea'
+        textarea.textarea(
+          placeholder=placeholder,
+          required=required
+        )
+      when 'select'
+        +select(selectConfig)
+      default
+        input.input(
+          type = type,
+          class = inputClass,
+          name = name,
+          value = value,
+          placeholder = placeholder,
+          required = required
+        )

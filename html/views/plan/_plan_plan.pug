@@ -8,7 +8,7 @@ section.section.plan#plan
         p.twb.p1 Создайте свой план в 3 простых шага — выберите время обучения, тематику курсов и город. Конструктор сформирует для вас pdf-расписание, с которым удобно планировать обучение.
       form.m1
         .row.aic
-          p.plan__section-num.a1 1.
+          p.ta.a1.r.jce.n3w1 1.
           fieldset
             legend.t2d Выберите интервал
             .dates.m5
@@ -22,45 +22,45 @@ section.section.plan#plan
                   input.datepicker__input(value="16.02.2026")
         section.m3
           .row.aic
-            p.plan__section-num.a1 2.
+            p.ta.a1.r.jce.n3w1 2.
             h2.t2d Выберите рубрики. Кликните на рубрику, чтобы увидеть подрубрики и выбрать нужные. Это займет полминуты.        
-          .branch-spollers.m5(data-spollers)
+          .m5(data-spollers)
             each branch in rubricsArchive
-              .branch-spollers__spoller(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
-                button.branch-spollers__spoller-title(data-spoller)
+              .plan__spoller(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
+                button.plan__spoller-title.r.jcb.w(data-spoller)
                   span.branch-title
                     span.branch-title__main
                       span.branch-title__title !{branch.title}
                       |  
                       span.branch-title__num(data-checkbox-num)
                 .m5
-                  fieldset.branch-spollers__checkboxes
-                    label.checkbox
-                      input.checkbox__input(type="checkbox" data-checkbox-all)
-                      .checkbox__span-wrapper
-                        span.checkbox__span Выбрать все
+                  fieldset.col7
+                    +checkbox({
+                      label: 'Выбрать все',
+                      all: true
+                    })
                     each rubric in branch.rubrics
-                      label.checkbox
-                        input.checkbox__input(type="checkbox" data-checkbox-item)
-                        .checkbox__span-wrapper
-                          span.checkbox__span !{rubric.name}
+                      +checkbox({
+                        label: rubric.name,
+                        item: true
+                      })
         .row.aic.m3
-          p.plan__section-num.a1 3.
+          p.ta.a1.r.jce.n3w1 3.
           fieldset
             legend.t2d Выберите место
-            .plan__checkboxes.x4wrap.m5
-              label.checkbox
-                input.checkbox__input(type="checkbox" checked)
-                .checkbox__span-wrapper
-                  span.checkbox__span Санкт-Петербург
-              label.checkbox
-                input.checkbox__input(type="checkbox")
-                .checkbox__span-wrapper
-                  span.checkbox__span Москва
-              label.checkbox
-                input.checkbox__input(type="checkbox")
-                .checkbox__span-wrapper
-                  span.checkbox__span Онлайн
+            .plan__format.r30.g7.x4wrap.m5
+              +checkbox({
+                label: 'Санкт-Петербург',
+                name: 'format'
+              })
+              +checkbox({
+                label: 'Москва',
+                name: 'format'
+              })
+              +checkbox({
+                label: 'Онлайн',
+                name: 'format'
+              })
         section.row.aic.x4col.m1
           h2.t1d.n1w3.n3w4.n4w2 готово! теперь можно
           button.button-primary.n3w3.w2.x4w4(type="submit") Скачать план

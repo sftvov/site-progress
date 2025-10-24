@@ -8,8 +8,6 @@ block settings
 block content	
   .section
     .container
-      -
-        pagintaionClass = 'm3';
       each i, total in Array(12).fill()
         -
           if(total === 0) continue;
@@ -19,4 +17,7 @@ block content
         each y, current in Array(total + 1).fill()
           -
             currentPage = current + 1;
-          include html/views/pagination/_pagination_!template
+          +pagination({
+            totalPages: totalPages,
+            currentPage: currentPage,
+          })(class='m3')

@@ -14,8 +14,12 @@
   column-gap: 15px;
 }
 
-.cg45 {
-  column-gap: 45px;
+.cg30 {
+  column-gap: 30px;
+}
+
+.cg40 {
+  column-gap: 40px;
 }
 
 .x2cg10 {
@@ -45,9 +49,14 @@
   @extend .cg15;
 }
 
-.r45 {
+.r30 {
   @extend .r;
-  @extend .cg45;
+  @extend .cg30;
+}
+
+.r40 {
+  @extend .r;
+  @extend .cg40;
 }
 
 .row {
@@ -63,11 +72,11 @@
   align-items: flex-start;
 }
 
-// .x2ais {
-//   @media (max-width: $md2+px) {
-//     align-items: flex-start;
-//   }
-// }
+.x2ais {
+  @media (max-width: $md2+px) {
+    align-items: flex-start;
+  }
+}
 
 .x3ais {
   @media (max-width: $md3+px) {
@@ -79,24 +88,30 @@
   align-items: center;
 }
 
-// .x4aic {
-//   @media (max-width: $md4+px) {
-//     align-items: center;
-//   }
-// }
+.x4aic {
+  @media (max-width: $md4+px) {
+    align-items: center;
+  }
+}
 
 .aie {
   align-items: flex-end;
 }
 
-// .x3aie {
-//   @media (max-width: $md3+px) {
-//     align-items: flex-end;
-//   }
-// }
+.x3aie {
+  @media (max-width: $md3+px) {
+    align-items: flex-end;
+  }
+}
 
 .jcc {
   justify-content: center;
+}
+
+.x2jcc {
+  @media (max-width: $md2+px) {
+    justify-content: center;
+  }
 }
 
 .x4jcc {
@@ -107,6 +122,18 @@
 
 .jcb {
   justify-content: space-between;
+}
+
+.x3jcb {
+  @media (max-width: $md3+px) {
+    justify-content: space-between;
+  }
+}
+
+.x4jcb {
+  @media (max-width: $md4+px) {
+    justify-content: space-between;
+  }
 }
 
 .jce {
@@ -151,6 +178,12 @@
   }
 }
 
+.x3row {
+  @media (max-width: $md3+px) {
+    flex-direction: row;
+  }
+}
+
 .x3col {
   @media (max-width: $md3+px) {
     flex-direction: column;
@@ -160,6 +193,12 @@
 .x3wrap {
   @media (max-width: $md3+px) {
     flex-wrap: wrap;
+  }
+}
+
+.x4row {
+  @media (max-width: $md4+px) {
+    flex-direction: row;
   }
 }
 
@@ -176,30 +215,34 @@
 }
 
 .g1 {
-  row-gap: var(--L-XL);
+  row-gap: var(--XL-2XL);
 }
 
 .g2 {
-  row-gap: var(--S-M);
+  row-gap: var(--M-L);
 }
 
 .g3 {
-  row-gap: var(--S);
+  row-gap: var(--M);
 }
 
 .g4 {
-  row-gap: var(--XS-S);
+  row-gap: var(--S-M);
 }
 
 .g5 {
-  row-gap: var(--XS);
+  row-gap: var(--S);
 }
 
 .g6 {
-  row-gap: var(--2XS-XS);
+  row-gap: var(--XS-S);
 }
 
 .g7 {
+  row-gap: var(--XS);
+}
+
+.g8 {
   row-gap: var(--2XS);
 }
 
@@ -241,4 +284,9 @@
 .col7 {
   @extend .col;
   @extend .g7;
+}
+
+.col8 {
+  @extend .col;
+  @extend .g8;
 }

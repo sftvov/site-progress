@@ -1,25 +1,21 @@
 .contact-map {
   &__info {
-    text-wrap: balance;
-    color: var(--text-main);
-    justify-content: flex-end;
     height: calc(100% - 40px);
     padding: 50px;
-    background-color: var(--bg-second);
     @media (min-width: $md3+px) {
       z-index: 1;
       position: absolute;
       top: 0;
-      left: calc(var(--column) + var(--gutter));
+      left: var(--columnG);
     }
     @media (max-width: $md1+px) {
-      padding: 30px;
+      padding: var(--M) 30px;
     }
     @media (max-width: $md2+px) {
       padding-inline: 15px;
     }
     @media (max-width: $md3+px) {
-      padding: var(--L-XL) 30px;
+      padding: var(--XL-2XL) 30px;
     }
     @media (max-width: $md4+px) {
       padding-inline: 15px;
@@ -27,20 +23,14 @@
   }
 
   &__info-link {
-    --arrow-color: var(--text-bright);
-    transition-duration: var(--transition);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    white-space: nowrap;
     @media (max-width: $md3+px) AND (min-width: $md4+px) {
       max-width: calc(var(--2columns) - 30px);
     }
     &::before {
       content: '';
       display: block;
-      width: 16px;
       flex-shrink: 0;
+      width: 16px;
       height: 16px;
       background-color: var(--bg-bright);
     }
@@ -52,12 +42,7 @@
 
   &__info-middle {
     @media (max-width: $md3+px) {
-      gap: var(--2XS);
+      row-gap: var(--XS);
     }
   }
-}
-
-.ymaps {
-  width: 100%;
-  aspect-ratio: 1200/639;
 }

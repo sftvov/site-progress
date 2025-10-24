@@ -3,7 +3,8 @@
 .-course-dates {
   display: grid;
   @extend .ais;
-  gap: var(--2XS) var(--gutter);
+  @extend .g7;
+  column-gap: var(--gutter);
   &--1-column {
     grid-template-columns: var(--3columns);
     @media (max-width: $md2+px) {
@@ -48,7 +49,7 @@
     grid-column-start: 1;
     grid-column-end: -1;
     @media (min-width: $md4+px) {
-      margin-bottom: calc(var(--XS) - var(--2XS));
+      margin-bottom: calc(var(--S) - var(--XS));
     }
   }
 

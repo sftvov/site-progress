@@ -1,11 +1,20 @@
 .-promo-item {
+  @extend .col;
+  @extend .n1w3;
+  @extend .n3w4;
+  @extend .w2;
+  @extend .x4w4;
   border: 1px solid var(--border-gray);
   &__img {
+    @extend .w;
     height: 213px;
-    object-fit: cover;
+    @extend .cvr;
     object-position: left bottom;
   }
   &__main {
+    @extend .col;
+    @extend .fg;
+    @extend .m3;
     padding: 0 19px 29px;
   }
 }

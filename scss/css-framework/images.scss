@@ -1,11 +1,15 @@
-.img {
-  max-width: 100%;
+.cnt {
+  object-fit: contain;
+}
+
+.cvr {
+  object-fit: cover;
 }
 
 .bg {
-  width: 100%;
+  @extend .w;
   height: 100%;
-  object-fit: cover;
+  @extend .cvr;
 }
 
 .i16 {
@@ -46,6 +50,10 @@
   stroke: var(--text-dark);
 }
 
+.ss {
+  stroke: var(--text-second);
+}
+
 .sb {
   stroke: var(--text-bright);
 }
@@ -54,12 +62,23 @@
   stroke: var(--text-accent);
 }
 
-.sa-link {
-  @extend .sa;
+.s-hover {
   &:hover,
   &:focus-visible {
     stroke: var(--hover);
   }
+}
+
+.sa-link {
+  @extend .dur;
+  @extend .sa;
+  @extend .s-hover;
+}
+
+.ss-link {
+  @extend .dur;
+  @extend .ss;
+  @extend .s-hover;
 }
 
 // .sw1_5 {

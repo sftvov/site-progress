@@ -18,22 +18,25 @@
     },
   ]
 
-section.distance-hero.section
+.distance-hero.section#hero
   .container.x3contents
-    .distance-hero__body
-      .container.n3contents
-        .distance-hero__preview.n3ol1
-          p.distance-hero__subtitle.p1 Еще удобнее и мобильнее
+    .baner
+      img.distance-hero__img.bg.x4hide(src="img/distance/hero.png", alt="")
+      .announcement.n3ol1
+        .container.n3contents          
+          p.p1 Еще удобнее и мобильнее
           h1.t1d.m6 дистанционные курсы #[br]повышения квалификации
-      .distance-hero__main.n1ol1
-        .container.n3contents
-          .n3o1
-            p.p1 Дистанционные курсы доступны из любой точки мира, не привязаны к датам и всегда открыты для записи. Комфортный темп и график обучения задаете вы. Учебные материалы дистанционных курсов — видеолекции, задания и решения, презентации и документы — будут собраны в вашем личном кабинете. По итогам обучения мы высылаем удостоверение о повышении квалификации почтой.
-            .m2
-              h2.t2d Больше преимуществ:
-              .distance-hero__advantages.row.wrap.g5.m4
-                each item in advantages
-                  .distance-hero__advantage.n1w4.n3w5.w2.x4w4
-                    svg.i24
-                      use(xlink:href='img/sprite/symbols.svg#' + item.icon)
-                    p.p2 !{item.text}
+    section.distance-hero__main.bgs.por.n1ol1
+      .container.n3contents
+        .n3o1
+          p.p1 Дистанционные курсы доступны из любой точки мира, не привязаны к датам и всегда открыты для записи. Комфортный темп и график обучения задаете вы. Учебные материалы дистанционных курсов — видеолекции, задания и решения, презентации и документы — будут собраны в вашем личном кабинете. По итогам обучения мы высылаем удостоверение о повышении квалификации почтой.
+          .m2
+            h2.t2d Больше преимуществ:
+            .row.wrap.g5.m4
+              each item, index in advantages
+                .r10.aic.n1w4.n3w5.w2.x4w4(class=index%2===1 ? 'n1ol1' : '')
+                  svg.i24
+                    use(xlink:href='img/sprite/symbols.svg#' + item.icon)
+                  p.p2 !{item.text}
+
+//- http://localhost:1709/page-distance.html#hero

@@ -1,0 +1,14 @@
+.-contact-item {
+  @extend .r15;
+  &__img {
+    height: 107px;
+    aspect-ratio: 97/107;
+    @extend .cvr;
+    @media (max-width: $md2+px) {
+      height: 121px;
+    }
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      height: 103px;
+    }
+  }
+}

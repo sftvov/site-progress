@@ -1,0 +1,30 @@
+
+
+.-input-wrapper {
+  @extend .col7;
+  &__label {
+    @extend .dur;
+    @extend .p2;
+  }
+  &:focus-within,
+  &:has(:is(input, textarea, .-select):hover) {
+    & .-input-wrapper__label {
+      color: var(--text-bright);
+    }
+  }
+  &:has(.-select._active) {
+    & .-input-wrapper__label {
+      color: var(--text-bright);
+    }
+  }
+  &:has(:is(.input, .-select__input):user-invalid) {
+    & .-input-wrapper__label {
+      color: var(--text-invalid);
+    }
+  }
+  &:has(.input:disabled) {
+    & .-input-wrapper__label {
+      color: var(--text-light);
+    }
+  }
+}

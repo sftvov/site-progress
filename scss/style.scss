@@ -88,16 +88,27 @@ svg {
 
 @import '../html/components/arrow/_arrow_';
 @import '../html/components/breadcrumbs/_breadcrumbs_';
+@import '../html/components/burger/_burger_';
+@import '../html/components/checkbox/_checkbox_';
 @import '../html/components/course-dates/_course-dates_';
 @import '../html/components/course-info/_course-info_';
-@import '../html/components/format/_format_';
+@import '../html/components/input-wrapper/_input-wrapper_';
+@import '../html/components/item-case/_item-case_';
 @import '../html/components/item-client/_item-client_';
+@import '../html/components/item-contact/_item-contact_';
 @import '../html/components/item-course/_item-course_';
+@import '../html/components/item-header-menu/_item-header-menu_';
+@import '../html/components/item-header-submenu/_item-header-submenu_';
+@import '../html/components/item-hotel/_item-hotel_';
 @import '../html/components/item-promo/_item-promo_';
 @import '../html/components/item-recommended/_item-recommended_';
+@import '../html/components/menu-header/_menu-header_';
 @import '../html/components/mode/_mode_';
 @import '../html/components/pagination/_pagination_';
 // @import '../html/components/popups/_popups_';
+@import '../html/components/results-header/_results-header_';
+@import '../html/components/select/_select_';
+@import '../html/components/select-header/_select-header_';
 @import '../html/components/slide-main/_slide-main_';
 @import '../html/components/square-info/_square-info_';
 
@@ -118,7 +129,6 @@ svg {
 @import '../html/views/form-recommended/_form-recommended';
 @import '../html/views/header/_header';
 @import '../html/views/hero-corp/_hero-corp';
-@import '../html/views/hero-digitalization/_hero-digitalization';
 @import '../html/views/hero-distance/_hero-distance';
 @import '../html/views/hero-navigation/_hero-navigation';
 @import '../html/views/hero-prof/_hero-prof';
@@ -130,7 +140,6 @@ svg {
 @import '../html/views/plan/_plan';
 @import '../html/views/promo/_promo';
 @import '../html/views/programms/_programms';
-@import '../html/views/results-empty/_results-empty';
 @import '../html/views/route/_route';
 @import '../html/views/rubrics/_rubrics';
 @import '../html/views/slider-main/_slider-main';

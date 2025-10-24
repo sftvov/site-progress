@@ -102,23 +102,24 @@
   --6columnsG: calc(var(--6columns) + var(--gutter));
   // --7columnsG: calc(var(--7columns) + var(--gutter));
 
-  --XL: 60px;
-  --L: 50px;
-  --M: 40px;
-  --S: 30px;
-  --XS: 15px;
-  --2XS: 7px;
+  --2XL: 60px;
+  --XL: 50px;
+  --L: 40px;
+  --M: 30px;
+  --S: 15px;
+  --XS: 7px;
+  --2XS: 3px;
 
-  --L-XL: var(--L);
+  --XL-2XL: var(--XL);
+  --M-L: var(--M);
   --S-M: var(--S);
   --XS-S: var(--XS);
-  --2XS-XS: var(--2XS);
 
   @media (min-width: $md2+px) {
-    --L-XL: var(--XL);
+    --XL-2XL: var(--2XL);
+    --M-L: var(--L);
     --S-M: var(--M);
     --XS-S: var(--S);
-    --2XS-XS: var(--XS);
   }
 
   // --cyan: #00ffff;

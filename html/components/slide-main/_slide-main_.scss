@@ -1,5 +1,5 @@
-.main-slide {
-  display: flex;
+.-main-slide {
+  @extend .r;
   height: 396px;
   background-position: center;
   background-size: cover;
@@ -36,7 +36,7 @@
   }
 
   &__title {
-    color: var(--text-dark);
+    @extend .td;
     margin-top: auto;
     @media (min-width: $md2+px) {
       $fs: 24;
@@ -58,8 +58,6 @@
       $lh: 18;
       line-height: round-to(math.div($lh, $fs), 3);
     }
-    @media (max-width: $md4+px) {
-      text-align: center;
-    }
+    @extend .x4tac;
   }
 }

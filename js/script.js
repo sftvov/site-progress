@@ -32,9 +32,7 @@ function headerHeight() {
 
 // ----------------------------------------------------------------------
 
-
 @@include('../../web-template/src/libs/swiper-bundle-11-2-1.js');
-@@include('_swipers.js');
 //include('../../web-template/src/functions/sendmail.js');
 //include('../../web-template/src/functions/isMobile.js');
 //include('../../web-template/src/functions/webp.js');
@@ -59,12 +57,15 @@ function headerHeight() {
 @@include('../../web-template/src/js-elements/spollers_v2.0.1_now.js');
 @@include('../../web-template/src/js-elements/items_v3.2.0_now.js');
 
-const selects = document.querySelectorAll(".select");
+@@include('_activator.js');
+@@include('_swipers.js');
+
+const selects = document.querySelectorAll(".-select");
 
 if (selects) {
   for (let select of selects) {
-    const variants = select.querySelectorAll(".select__variant");
-    const input = select.querySelector(".select__input");
+    const variants = select.querySelectorAll(".-select__variant");
+    const input = select.querySelector(".-select__input");
     for (const variant of variants) {
       variant.addEventListener("click", () => {
         input.setAttribute("value", variant.textContent);
@@ -75,96 +76,12 @@ if (selects) {
 
 // ----------------------------------------------------------------------
 
-
-
 document.querySelector('.header__search-close').addEventListener('click', function(e) {
 	e.preventDefault(); // Предотвращаем отправку формы (если кнопка типа submit)
 	const input = document.querySelector('.header__search-input');
 	input.value = '';    // Очищаем поле
 	input.focus();       // Возвращаем фокус
 });
-
-new Activator('._activator', {
-	removedOwn: ['._activated'],
-	onlyOne: true,
-});
-
-new Activator('.header-select', {
-	stops: ['.header-select__variants-wrapper'],
-	removedOwn: ['.header-select__variants-wrapper'],
-	clickOutClose: true,
-	escClose: true,
-	onlyOne: true,
-});
-
-new Activator('.select', {
-	removedOwn: ['.select__variants'],
-	stops: ['.select__variants'],
-	removing: ['.select__variant'],
-	clickOutClose: true,
-	escClose: true,
-	effects: 'U',
-	effectDuration: 300,
-	//bodyLock: true,
-	onlyOne: true,
-	//deactivate: false,
-	//focus
-});
-
-new Activator('.select__variant', {
-  onlyOne: true,
-  // deactivate: false,
-  limitContainer: '.select',
-});
-
-
-new Activator('._menu-btn', {
-	stops: ['._menu-body'],
-	removedOwn: ['._menu-body'],
-	escClose: true,
-	onlyOne: true,
-	effects: 'U',
-	effectDuration: 300,
-	breakpoints: {
-		[md3]: {			
-			effects: null,
-			effectDuration: null,
-			clickOutClose: true,
-		}
-	}
-}, true);
-
-new Activator('.burger', {
-	removed: ['.header-menu__mobile-container'],
-	removing: ['.header-menu__icon-close'],
-	// effects: 'F',
-	// effectDuration: 300,
-	clickOutClose: true,
-	escClose: true,
-	bodyLock: true,
-});
-
-// const burgerActivator = new Activator('.burger', {
-// 	removed: ['header','.header__container'],
-// 	bodyLock: true,
-// });
-
-// const accessActivator = new Activator('.access', {
-// 	removed: ['.access-menu'],
-// 	effects: 'U',
-// 	effectDuration: 200,
-// 	clickOutClose: true,
-// 	escClose: true,
-// 	// bodyLock: true,
-// });
-
-// const closeActivator = new Activator('._close', {
-// 	removedOwn: ['._removed'],
-// });
-
-//include('_access.js');
-//include('_swipers.js');
-//include('_map.js');
 
 // Throttle - вызывается не чаще чем delay
 function throttle(func, delay) {

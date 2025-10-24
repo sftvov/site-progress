@@ -4,15 +4,17 @@ section.choose.section#choose
     form.row.x3wrap.g3.m2.n1o1
       fieldset.n1w3.n3w4.w2.x4w4
         legend.t2.ta Показать курсы в:
-        .choose__checkboxes.row.m5
-          label.checkbox
-            input.checkbox__input(type="checkbox" checked)
-            .checkbox__span-wrapper
-              span.checkbox__span Санкт-Петербурге
-          label.checkbox
-            input.checkbox__input(type="checkbox" checked)
-            .checkbox__span-wrapper
-              span.checkbox__span Москве
+        .choose__checkboxes.r30.m5
+          +checkbox({
+            label: 'Санкт-Петербурге',
+            name: 'city',
+            checked: true,
+          })
+          +checkbox({
+            label: 'Москве',
+            name: 'city',
+            checked: true,
+          })
       fieldset.n1w3.n3w4.w2.x4w4
         legend.t2.ta Период проведения:
         .dates.m5
@@ -24,7 +26,7 @@ section.choose.section#choose
             span.p1.ta по
             .choose__datepicker.datepicker
               input.choose__input.datepicker__input(value="16.02.2026")
-      .choose__buttons.row
+      .choose__buttons.row.aie.fg
         button.button-primary-s.n3w2.w1.x4w2 Подобрать
         a.button-second-s.n3w2.w1.x4w2(href="#" download)  Скачать PDF
 

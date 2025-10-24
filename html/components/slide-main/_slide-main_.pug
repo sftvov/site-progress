@@ -1,7 +1,7 @@
 mixin mainSlide(slide)
-  section.main-slide.swiper-slide(
+  section.-main-slide.swiper-slide(
     style="background-image: url(img/main/slider/" + slide.img + ".png)"
   )&attributes(attributes)
-    .main-slide__body
-      h2.main-slide__title !{slide.title}
+    .-main-slide__body
+      h2.-main-slide__title !{slide.title}
       a(href="#").button-primary.n1w2.n2w3.n3w4.w2.x4w4.m5 !{slide.btn}

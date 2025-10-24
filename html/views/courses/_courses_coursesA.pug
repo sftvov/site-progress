@@ -10,6 +10,9 @@ include ../../../data/coursesArchive
     each course in coursesArchive
       +courseItemRegular(course)
   .container
-    include ../pagination/_pagination_$common
+    +pagination({
+      totalPages: 10,
+      currentPage: 2,
+    })(class='m3')
 
 //- http://localhost:1709/archive-courses.html#courses

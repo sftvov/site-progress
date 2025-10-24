@@ -1,7 +1,7 @@
 mixin courseItemBase(course, variant, searchType = 'offline')
   - const config = getCourseConfig(variant, searchType)
   
-  article.course-item&attributes(attributes)
+  article.-course-item&attributes(attributes)
     .container
       .row.wrap.g5.ais(class=config.wrapperClass)
         if config.header
@@ -11,7 +11,7 @@ mixin courseItemBase(course, variant, searchType = 'offline')
               +infoSquare("NEW")(class="bgb")
         
         if config.format
-          header.format
+          header.r5.x1col.x3row.aic.g8.w1
             svg.sb.sw2.i20
               use(xlink:href=`img/sprite/symbols.svg#${searchType === 'offline' ? 'building' : 'wifi'}`)
             p.tb #{searchType === 'offline' ? 'Очно' : 'Онлайн'}

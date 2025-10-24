@@ -6,10 +6,9 @@
   }
 
   &__body {
-    padding-bottom: var(--L-XL);
-    background-color: var(--bg-second);
+    padding-bottom: var(--XL-2XL);
     @media (max-width: $md1+px) {
-      padding-bottom: var(--S);
+      padding-bottom: var(--M);
     }
   }
 
@@ -29,12 +28,11 @@
   }
 
   &__main {
-    align-items: flex-end;
     @media (min-width: $md2+px) {
-      margin-top: calc(-1 * var(--XS)) ;
+      margin-top: calc(-1 * var(--S)) ;
     }
     @media (max-width: $md3+px) {
-      margin-top: var(--XS);
+      margin-top: var(--S);
     }
   }
 }

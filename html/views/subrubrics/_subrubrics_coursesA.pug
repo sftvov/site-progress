@@ -2,9 +2,9 @@
   subrubrics = [
     'Руководителям производств',
     'Управление цехов',
-    'Конструкторам',
-    'Технологам',
     'Обслуживание оборудования',
+    'Технологам',
+    'Конструкторам',
     'Автоматизация',
   ]
   
@@ -12,8 +12,8 @@ section#subrubrics.subrubrics.section
   .container
     .body
       h2.title показать курсы по теме
-      .subrubrics__main.m2
+      .subrubrics__main.g7.m2
         each link in subrubrics
-          a.subrubrics__link(href="#") !{link}
+          a.hover.t2(href="#") !{link}
 
 //- http://localhost:1709/archive-courses.html#subrubrics

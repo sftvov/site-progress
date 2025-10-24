@@ -2,22 +2,14 @@
   &__main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px var(--gutter);
+    column-gap: var(--gutter);
     @media (max-width: $md3+px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: $md4+px) {
       grid-template-columns: 1fr;
+      row-gap: var(--S);
       justify-items: center;
-    }
-  }
-
-  &__link {
-    transition-duration: var(--transition);
-    @extend .t2;
-    &:hover,
-    &:focus-visible {
-      color: var(--hover);
     }
   }
 }

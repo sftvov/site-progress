@@ -1,0 +1,33 @@
+.-case-item {
+  transition-property: background-color;
+  padding-top: var(--M);
+  padding-bottom: var(--M);
+  &:has(.-case-item__top._active) {
+    background-color: var(--bg-second);
+  }
+  &__top {
+    cursor: pointer;
+    @extend .row;
+    @extend .ais;
+    &._active {
+      & .-case-item__title {
+        &::after {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @extend.ta;
+    @extend.t2;
+    @extend.row;
+    @extend .jcb;
+    &::after {
+      content: '';
+      @extend .dur;
+      @extend .i24;
+      background: url(../img/icons/chevron-l.svg) center / contain no-repeat;
+    }
+  }
+}

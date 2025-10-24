@@ -11,7 +11,7 @@ body {
 }
 
 ._tabs-block {
-  transition-duration: var(--transition);
+  @extend .dur;
   &:not(._active) {
     position: absolute;
     top: 0;
@@ -26,14 +26,11 @@ body {
 [data-items-btn],
 [data-items-hide],
 [data-reset-all],
-[data-reset] {
+[data-reset],
+._select-activated {
   &:not(._active) {
     display: none;
   }
-}
-
-._activated:not(._active) {
-  display: none;
 }
 
 // input[type='checkbox']:not(:checked) {
@@ -63,7 +60,7 @@ body {
 
 //   &__blur-left,
 //   &__blur-right {
-//     transition-duration: var(--transition);
+//     @extend .dur;
 //     position: absolute;
 //     top: 0;
 //     width: 70px;

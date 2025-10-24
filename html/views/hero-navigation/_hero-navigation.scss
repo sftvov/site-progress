@@ -1,15 +1,7 @@
-.baner {
-  display: grid;
-  & > * {
-    grid-row: 1/2;
-    grid-column: 1/2;
-  }
-}
-
 .hero-navigation {
   &__text {
     @media (min-width: $md1+px) {
-      margin-top: var(--XL);
+      margin-top: var(--2XL);
     }
     @media (min-width: $md2+px) {
       margin-top: 10px;

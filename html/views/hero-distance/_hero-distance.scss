@@ -1,45 +1,18 @@
 .distance-hero {
-  &__body {
+  &__img {
     @media (max-width: $md3+px) {
-      background-size: 135%;
-      background-position: 35% top;
+      width: 110%;
     }
-    @media (min-width: $md4+px) {
-      padding-top: var(--L-XL);
-      background: url(../img/distance/hero.png) 0 0 / 100% no-repeat;
-    }
-  }
-
-  &__preview {
-  }
-
-  &__subtitle {
   }
 
   &__main {
-    margin-top: 147px;
-    padding: var(--L-XL) 0;
-    background-color: var(--bg-second);
-    @include adaptiv-value-on('margin-top', 147, 84, $md1, $md2);
-    @include adaptiv-value-between('margin-top', 84, 62, $md2, $md3);
-    @media (max-width: $md3+px) {
-      margin-top: 57px;
-    }
+    z-index: 1;
+    padding: var(--XL-2XL) 0;
+    @include adaptiv-value-on('margin-top', -92, -73, $md1, $md2);
+    @include adaptiv-value-between('margin-top', -76, -57, $md2, $md3);
+    @include adaptiv-value-between('margin-top', -65, -46, $md3, $md4);
     @media (max-width: $md4+px) {
-      margin-top: var(--S);
-      padding: var(--S) 0;
+      padding: var(--M) 0;
     }
-  }
-
-  &__advantages {
-    @media (min-width: $md1+px) {
-      column-gap: var(--columnGG);
-    }
-  }
-
-  &__advantage {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 }

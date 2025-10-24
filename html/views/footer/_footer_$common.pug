@@ -34,21 +34,28 @@
   ]
 
 
-footer.footer
+footer.footer.w.ts.bgd
   .container
     .footer__grid
-      each column, columnIndex in footerColumns
-        .footer__column-wrapper
-          .col4
-            h2.footer__column-title.x4tac !{column.title}
-            .x4tac
-              ul.col5
-                each item, itemIndex in column.list
-                  li.p1
-                    a(class='footer__list-link' + ((columnIndex === 2) ? (itemIndex === 1 ? '--accent' : (itemIndex === 2 ? '--bright' : '')) : '') href="#")= item
-      .footer__column-wrapper
+      each column, columnIndex in footerColumns.slice(0,2)
+        .col4.x4hide
+          h2.footer__column-title.ttu.x4tac !{column.title}
+          .x4tac
+            ul.col5
+              each item in column.list
+                li.p1
+                  a.hover(href="#")= item
+      .footer__column-wrapper.por.n4contents
+        .col4
+          h2.footer__column-title.ttu.x4tac !{footerColumns[2].title}
+          .x4tac
+            ul.col5
+              each item, itemIndex in footerColumns[2].list
+                li.p1
+                  a(class='hover' + ((itemIndex === 1 ? ' por footer__accent' : (itemIndex === 2 ? ' por footer__bright' : ''))) href="#")= item
+      .footer__column-wrapper.por.n4contents
         .footer__last-column.col4
-          h2.footer__column-title.x4tac Контакты
+          h2.footer__column-title.ttu.x4tac Контакты
           .x4tac.col5
             p.p1
               | Санкт-Петербург, 199004, 
@@ -69,19 +76,19 @@ footer.footer
             p.p1 Пн-Пт с 8:00 до 18:00 (Мск)
             p.p1
               a.hover(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru
-          .footer__icons
-            a.footer__icon--fill(href="https://vk.com/cntiprogress")
+          .r10.x4jcc
+            a.footer__icon-fill.i24(href="https://vk.com/cntiprogress")
               svg.i24
                 use(xlink:href='img/sprite/symbols.svg#vk')
-            a.footer__icon--stroke(href="https://t.me/cntiprogress")
+            a.ss-link.i24(href="https://t.me/cntiprogress")
               svg.i24
                 use(xlink:href='img/sprite/symbols.svg#tg')
-            a.footer__icon--stroke(href="mailto:client@cntiprogress.ru")
+            a.ss-link.i24(href="mailto:client@cntiprogress.ru")
               svg.i24
                 use(xlink:href='img/sprite/symbols.svg#mail')
-      .footer__additional.col5
+      .footer__additional.col5.x4tac.x4aic
         iframe(src="https://yandex.ru/sprav/widget/rating-badge/43759856765" width="150" height="50" frameborder="0")
-        p.footer__additional-p 
+        p.footer__additional-p.tl
           | Cайт носит исключительно информационный#[br.n4hide] характер#[br.n3hide.x4hide] и не является публичной офертой, 
           br
           | определяемой ч. 2 ст. 437 ГК РФ.

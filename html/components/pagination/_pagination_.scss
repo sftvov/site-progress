@@ -1,10 +1,11 @@
 %pagination-item {
-  transition-duration: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend .dur;
+  @extend .r;
+  @extend .jcc;
+  @extend .aic;
   height: 45px;
-  border: 2px solid var(--border-light);
+  @extend .bdl;
+  @extend .bd2;
   @media (max-width: $md2+px) {
     height: 35px;
   }
@@ -13,9 +14,7 @@
   }
   &:hover,
   &:focus-visible {
-    color: var(--text-second);
-    background-color: var(--bg-bright);
-    border: none;
+    border-color: var(--bg-bright);
   }
 }
 
@@ -31,19 +30,17 @@
   }
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
+.-pagination {
+  @extend .r;
+  @extend .jcc;
   &__body {
     @extend .t2;
-    display: flex;
-    gap: 15px;
-    @media (max-width: $md2+px) {
-      justify-content: center;
-    }
+    @extend .r15;
+    @extend .g5;
+    @extend .x2jcc;
+    @extend .x4wrap;
     @media (max-width: $md4+px) {
-      flex-wrap: wrap;
-      gap: var(--XS) var(--gutter);
+      column-gap: var(--gutter);
       width: 300px;
     }
   }
@@ -63,10 +60,9 @@
   }
 
   &__pages {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--XS) 15px;
-    justify-content: center;
+    @extend .r15;
+    @extend .g5;
+    @extend .jcc;
     @media (max-width: $md4+px) {
       order: -1;
       flex-basis: 100%;
@@ -83,9 +79,9 @@
       min-width: 30px;
     }
     &._active {
-      color: var(--text-second);
-      background-color: var(--bg-bright);
-      border: none;
+      @extend .ts;
+      @extend .bgb;
+      @extend .bd;
     }
   }
 }

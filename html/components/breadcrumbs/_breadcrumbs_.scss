@@ -1,7 +1,7 @@
 .-breadcrumbs {
   @extend .w;
   &__body {
-    padding: var(--XS) 0 10px;
+    padding: var(--S) 0 10px;
     border-bottom: 2px solid var(--border-light);
   }
   &__item {
