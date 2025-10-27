@@ -1,0 +1,26 @@
+mixin branch(props = {})
+  - 
+    const {
+      color = '',
+      title = '',
+      tag = 'h2',
+      content = '',
+      rubrics = '',
+      link = '#',
+      date = '',
+    } = props
+
+  article.-branch(
+    style=color ? `--group-color:var(--${color})` : false
+  )&attributes(attributes)
+    +branchTitle({
+      title: title,
+      tag: tag,
+      date: date,
+    })
+    .-branch__body
+      if rubrics
+        each rubric in rubrics
+          a.-branch__link(href=link) !{rubric.name} —&nbsp;!{rubric.courses}
+      else if content
+        a.-branch__link(href=link)= content

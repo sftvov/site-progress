@@ -1,0 +1,20 @@
+.-branch {
+  &:not(:first-child) {
+    margin-top: var(--M);
+  }
+
+  &__body {
+    break-inside: avoid-column;
+    @extend .col7;
+    @extend .m5;
+  }
+
+  &__link {
+    @extend .dur;
+    @extend .p1;
+    &:hover,
+    &:focus-visible {
+      color: var(--group-color);
+    }
+  }
+}

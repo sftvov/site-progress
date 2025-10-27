@@ -28,11 +28,11 @@ section.section.plan#plan
             each branch in rubricsArchive
               .plan__spoller(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
                 button.plan__spoller-title.r.jcb.w(data-spoller)
-                  span.branch-title
-                    span.branch-title__main
-                      span.branch-title__title !{branch.title}
-                      |  
-                      span.branch-title__num(data-checkbox-num)
+                  +branchTitle({
+                    tag: 'span',
+                    title: branch.title,
+                    num: true,
+                  })
                 .m5
                   fieldset.col7
                     +checkbox({

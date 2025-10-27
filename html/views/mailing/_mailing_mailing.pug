@@ -38,9 +38,10 @@ include ../../../data/rubricsArchive
         .mailing__choose
           each group in rubricsArchive
             fieldset.mailing__group(style="--group-color:var(--" + group.color + ")")
-              legend.branch-title
-                span.branch-title__main
-                  span.branch-title__title !{group.title}
+              +branchTitle({
+                tag: 'legend',
+                title: group.title,
+              })
               .mailing__checkboxes.col.m5
                 each rubric in group.rubrics
                   .col7(data-checkbox-group=rubric.subrubrics ? true : false)

@@ -1,0 +1,22 @@
+mixin branchTitle(props = {})
+  - 
+    let {
+      color = '',
+      title = '',
+      tag = 'h2', // h2, h3
+      date = '',
+      num = false,
+    } = props;
+
+    title+= date ? " " : "";
+
+  #{tag}.-branch-title(
+    style=color ? `--group-color:var(--${color})` : false
+  )&attributes(attributes)
+    span.-branch-title__main
+      span.-branch-title__title= title
+      if date
+        |
+        span.-branch-title__date= date
+      if num
+        span.-branch-title__num(data-checkbox-num="")

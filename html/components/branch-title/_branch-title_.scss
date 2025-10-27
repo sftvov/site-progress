@@ -1,0 +1,42 @@
+.-branch-title {
+  @extend .twb;
+  break-inside: avoid-column;
+  break-after: avoid-column;
+  @extend .r10;
+  @extend .ais;
+  &::before {
+    content: '';
+    vertical-align: text-top;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    @extend .i16;
+    background-color: var(--group-color);
+    @media (max-width: $md2+px) {
+      top: 2px;
+    }
+  }
+
+  &__main {
+    line-height: 1;
+  }
+
+  &__title {
+    @extend .t2d;
+    vertical-align: middle;
+  }
+
+  &__date {
+    @extend .wsn;
+    vertical-align: middle;
+    @extend .p1;
+  }
+
+  &__num {
+    @extend .tb;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+    @extend .t2;
+  }
+}

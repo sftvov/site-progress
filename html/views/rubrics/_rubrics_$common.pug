@@ -1,41 +1,52 @@
 include ../../../data/rubricsArchive
 
+-
+  const rubricsTabs = [
+    {
+      type: 'offline',
+      title: 'Очно',
+      icon: 'building',
+      active: true,
+      modifier: (rubrics) => rubrics
+    },
+    {
+      type: 'online', 
+      title: 'Онлайн',
+      icon: 'wifi',
+      modifier: (rubrics) => rubrics
+        .map(rubric => ({
+          ...rubric,
+          courses: Math.max(0, rubric.courses - 2)
+        }))
+        .filter(rubric => rubric.courses > 0) // убираем рубрики с 0 курсов
+    }
+  ]
+
 section.rubrics.section#rubrics
   .container
     h1.title Семинары и курсы по направлениям
     .m2._tabs
       .rubrics__tab-titles.por.r.x4jcb
         .rubrics__indicator.dur.bgs._tabs-indicator
-        button.rubrics__tab-title.dur.b1.r10.aic.x4jcc.x4w2._active._tabs-title 
-          svg.i24.x2i20
-            use(xlink:href='img/sprite/symbols.svg#building')
-          | Очно
-        button.rubrics__tab-title.dur.b1.r10.aic.x4jcc.x4w2._tabs-title 
-          svg.i24.x2i20
-            use(xlink:href='img/sprite/symbols.svg#wifi')
-          | Онлайн
+        each tab in rubricsTabs
+          button.rubrics__tab-title.dur.b1.r10.aic.x4jcc.x4w2(
+            class=tab.active ? '_active' : '',
+            class='_tabs-title'
+          ) 
+            svg.i24.x2i20
+              use(xlink:href=`img/sprite/symbols.svg#${tab.icon}`)
+            | #{tab.title}
       ._tabs-blocks.m2
-        .rubrics__tab-block._tabs-block._active
-          each group in rubricsArchive
-            article.branch(style="--group-color:var(--" + group.color + ")")
-              h2.branch-title
-                span.branch-title__main 
-                  span.branch-title__title !{group.title} 
-              .branch__body
-                each rubric in group.rubrics
-                  p.p1
-                    a.branch__link(href="archive-courses.html") !{rubric.name} —&nbsp;!{rubric.courses}
-        .rubrics__tab-block._tabs-block
-          each group in rubricsArchive
-            article.branch(style="--group-color:var(--" + group.color + ")")
-              h2.branch-title
-                span.branch-title__main
-                  span.branch-title__title !{group.title} 
-              .branch__body
-                -
-                  rubric = group.rubrics[0]
-                p.p1
-                  a.branch__link(href="archive-courses.html") !{rubric.name} — !{rubric.courses}
-              
+        each tab in rubricsTabs
+          .rubrics__tab-block._tabs-block(class=tab.active ? '_active' : '')
+            each group in rubricsArchive
+              +branch({
+                title: group.title,
+                color: group.color,
+                tag: 'h2',
+                rubrics: tab.modifier(group.rubrics),
+                link: 'archive-courses.html'
+              })
+
 //- http://localhost:1709/page-main.html#rubrics
 //- http://localhost:1709/page-rubrics.html#rubrics
