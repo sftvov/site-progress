@@ -1,0 +1,13 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'КУРС',
+		breadcrumbs: [
+			'Каталог семинаров',
+			'Семинары и курсы по управлению производством',
+		]
+	})
+
+block content		
+	include html/views/course/_course_courseS
