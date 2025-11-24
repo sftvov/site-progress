@@ -1,0 +1,15 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ЦИФРОВИЗАЦИЯ',
+		breadcrumbs: [
+			'ЦНТИ Прогресс рекомендует',
+			'Цифровая трансформация. Каталог курсов',
+		]
+	})
+
+block content		
+	include html/views/hero-recommended/_hero-recommended_recommendedS-digital
+	include html/views/courses/_courses_recommendedS-digital
+	include html/views/form-recommended/_form-recommended_digitalizationS

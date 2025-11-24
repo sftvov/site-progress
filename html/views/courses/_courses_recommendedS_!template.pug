@@ -1,0 +1,11 @@
+each section in sections
+  section.section
+    .container
+      .body
+        if section.title || section.description
+          .n1o1.col3
+            h2.t1d= section.title
+            p.p1= section.description
+    div(class = (section.title || section.description) ? 'm3' : false)
+      each course in section.courses
+        +courseItemRegular(course)

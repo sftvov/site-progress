@@ -1,0 +1,28 @@
+.section#hero
+  .container.x2contents
+    .baner
+      img.bg.x4hide(src=recommendedHero.img alt="")
+      .announcement.n2o1
+        .container.n2contents
+          if recommendedHero.underTitle
+            p.p1 !{recommendedHero.underTitle}
+          if recommendedHero.title
+            h1.t1.m6 !{recommendedHero.title}
+  .container
+    if recommendedHero.textIntro
+      p.p1.td.n1w9.n2w7.n3w9.w3.x4w4.n1ol1.n1or2 !{recommendedHero.textIntro}
+    if recommendedHero.text
+      .col5.m3.n1w9.n2w11.n1ol1.n1or2
+        each p in recommendedHero.text
+          p.p1 !{p}
+    .row.wrap.g5.n2o1(class = (recommendedHero.textIntro || recommendedHero.text) ? 'm2' : false)
+      each item, index in recommendedHero.advantages
+        -
+          let className = '';
+          if(index%2 === 1) className = 'n1ol1';
+        .row.aic.n1w4.n2w5.n3w6.w4(class=className)
+          svg.i24
+            use(xlink:href='img/sprite/symbols.svg#' + item.icon)
+          p.p1 !{item.text}
+
+//- http://localhost:1709/single-recommended.html#hero

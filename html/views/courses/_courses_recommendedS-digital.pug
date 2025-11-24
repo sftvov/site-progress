@@ -17,13 +17,4 @@ include ../../../data/coursesArchive
     }
   ]
 
-each section in sections
-  section.section
-    .container
-      .body
-        .n1o1.col3
-          h2.t1d= section.title
-          p.p1= section.description
-    .m3
-      each course in section.courses
-        +courseItemRegular(course)
+include _courses_recommendedS_!template
