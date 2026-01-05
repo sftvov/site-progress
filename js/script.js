@@ -4,6 +4,9 @@ const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
 const measure = document.querySelector('#measure');
+const sticky = document.querySelector('#sticky');
+const sidebar = document.querySelector('#sidebar');
+const sidebarWrapper = document.querySelector('#sidebar-wrapper');
 
 // ----------------------------------------------------------------------
 
@@ -24,10 +27,14 @@ function getMatchMedia() {
 }
 
 let hh;
+let sh;
 
 function headerHeight() {
 	hh = header.offsetHeight;
-	document.documentElement.style.setProperty('--header-height', hh + 'px');	
+	document.documentElement.style.setProperty('--header-height', hh + 'px');
+  if(sticky) {
+    sh = sticky.offsetHeight;
+  }
 }
 
 // ----------------------------------------------------------------------
@@ -109,27 +116,88 @@ let lastScroll = 0;
 const handleResize = debounce(() => {
   getMatchMedia();
   headerHeight();
+  calculateClientWidth();
   calculateScrollbarWidth();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
 }, 250);
 
 // Throttle для скролла
 const handleScroll = throttle(() => {
-  const currentScroll = window.scrollY;
-  
+  const windowHeight = window.innerHeight;
+  const currentScroll = window.scrollY;  
+
+  const isUp = currentScroll < lastScroll;
+  const isDown = currentScroll > lastScroll;
+
+  // если в самом вверху
   if (currentScroll <= 0) {
     header.style.transform = 'translateY(0)';
-  } else if (currentScroll < lastScroll) {
+    if (sticky) {
+      sticky.style.transform = 'translateY(0)';
+    }
+  } else if (isUp) {
     header.style.transform = 'translateY(0)';
-  } else if (!md1Query?.matches && currentScroll > lastScroll && currentScroll > hh) {
+    if (sticky) {
+      sticky.style.transform = 'translateY(0)';
+    }
+  } else if (!md1Query?.matches && currentScroll > hh) {
     header.style.transform = 'translateY(-100%)';
+    if (sticky) {      
+      sticky.style.transform = `translateY(-${hh}px)`;
+    }
+  }
+
+  if(sidebar && sidebarWrapper) {
+    
+    // Высота сайдбара и его враппера
+    const sidebarHeight = sidebar.offsetHeight;
+    const sidebarWrapperHeight = sidebarWrapper.offsetHeight;
+    
+    // Если высота враппера больше высоты сайдбара
+    if (sidebarWrapperHeight > sidebarHeight) {
+      const sidebarWrapperTop = sidebarWrapper.offsetTop;
+      const sidebarTop = sidebar.offsetTop;
+      const sidebarWrapperBottom = sidebarWrapperTop + sidebarWrapperHeight;
+      const sidebarBottom = sidebarTop + sidebarHeight;
+      const currentScrollBottom = currentScroll + windowHeight;
+      const currentScrollTop = currentScroll + hh + sh;
+
+      if(currentScrollTop <= sidebarWrapperTop) {
+        sidebar.style.removeProperty('top');
+        sidebar.style.removeProperty('position');
+      } else if (currentScrollBottom >= sidebarWrapperBottom) {
+        sidebar.style.top = sidebarWrapperHeight - sidebarHeight + 'px';
+        sidebar.style.position = 'relative';
+      } else {        
+        if(isDown) {
+          if (sidebarTop === hh + sh) {
+            sidebar.style.top = currentScrollTop - sidebarWrapperTop + 'px';
+            sidebar.style.position = 'relative';
+          } else if (currentScrollBottom >= sidebarBottom) {
+            sidebar.style.top = windowHeight - sidebarHeight + 'px';
+            sidebar.style.position = 'fixed';
+          }
+        }        
+        if(isUp) {
+          if (sidebarTop === windowHeight - sidebarHeight) {            
+            sidebar.style.top = currentScroll - sidebarWrapperTop - (sidebarHeight - (windowHeight)) + 'px';
+            sidebar.style.position = 'relative';
+          } else if (currentScrollTop <= sidebarTop) {
+            sidebar.style.top = hh + sh + 'px';
+            sidebar.style.position = 'fixed';
+          }
+        }
+      }
+    }
   }
   lastScroll = currentScroll;
 }, 16);
 
+
 window.onload = () => {
   getMatchMedia();
   headerHeight();
+  calculateClientWidth();
   calculateScrollbarWidth();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
   ItemsManager.initialize();

@@ -6,7 +6,6 @@
   }
 
   &__body {
-    padding-bottom: var(--XL-2XL);
     @media (max-width: $md1+px) {
       padding-bottom: var(--M);
     }

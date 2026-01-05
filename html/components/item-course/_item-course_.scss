@@ -1,8 +1,26 @@
 .-course-item {
-  @extend .dur;
-  padding: var(--M) 0;
+  @extend .por;
+  @extend .pd3;
+  &::before {
+    content: '';
+    transition-duration: var(--transition);
+    position: absolute;
+    top: 0;
+    left: var(--offsetLeft);
+    width: var(--inner-width);
+    height: 100%;
+  }
   &:hover,
   &:focus-visible {
-    background-color: var(--bg-second);
+    &::before {
+      background-color: var(--bg-second);
+    }
+  }
+  &--relating {
+    &::before {
+      @media (min-width: $md2+px) {
+        width: calc(100% - var(--offsetLeft) + var(--columnG));
+      }
+    }
   }
 }

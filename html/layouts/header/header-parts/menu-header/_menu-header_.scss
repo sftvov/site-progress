@@ -1,0 +1,203 @@
+.-header-menu {
+  @extend .cg10;
+  @media (min-width: $md2+px) {
+    display: flex;
+    margin-top: var(--S);
+  }
+
+  @media (min-width: $md2+px) OR (max-width: $md3+px) {
+    padding-right: 0 !important;
+  }
+
+  @media (max-width: $md2+px) {
+    transition-duration: var(--transition);
+    transition-property: opacity, visibility;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #555a6580;
+    &:not(:has(.-header-menu__mobile-container._active)) {
+      @media (max-width: $md2+px) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__mobile-container {
+    overflow-y: auto;
+    @extend .n2contents;
+    @extend .wrap;
+    @extend .ais;
+    @extend .jcb;
+    @extend .n3w12;
+    max-height: calc(100vh - 115px);
+    margin: 98px auto 0;
+    @extend .bgm;
+    @media (max-width: $md3+px) {
+      width: 100%;
+      height: 100dvh;
+      max-height: none;
+      margin: 0;
+    }
+  }
+
+  &__icon-links {
+    @extend .n2hide;
+    @extend .x3wrap;
+    @extend .x3jcb;
+    @extend .aic;
+    @extend .bga;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+    @extend .g5;
+    column-gap: 39px;
+    padding: 20px;
+    @media (max-width: $md3+px) {
+      display: flex;
+      padding: 80px calc(var(--fields) / 2) 20px;
+      background-color: var(--bg-main);
+    }
+  }
+
+  &__icon-link {
+    @extend .dur;
+    @extend .ts;
+    @extend .ss;
+    @extend .p1;
+    @extend .por;
+    @extend .r5;
+    @extend .aic;
+    &::before {
+      content: '';
+      transition-duration: var(--transition);
+      position: absolute;
+      top: calc(100% - 1px);
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      height: 1px;
+      background-color: var(--text-second);
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--text-second);
+      stroke: var(--text-second);
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &:active {
+      color: var(--hover-light);
+      stroke: var(--hover-light);
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    @media (max-width: $md3+px) {
+      color: var(--text-main);
+      stroke: var(--text-main);
+      &:hover,
+      &:focus-visible {
+        color: var(--text-main);
+        stroke: var(--text-main);
+        &::before {
+          background-color: var(--text-main);
+        }
+      }
+      &:active {
+        color: var(--hover);
+        stroke: var(--hover);
+      }
+    }
+  }
+
+  &__icon-close-wrapper {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @extend .r;
+    @extend .n3contents;
+    @extend .aic;
+    @extend .jce;
+    @extend .w;
+    min-height: 60px;
+    padding: 0 calc(var(--fields) / 2);
+    @extend .bga;
+  }
+
+  &__icon-close {
+    @media (max-width: $md3+px) {
+      color: var(--text-second);
+      stroke: var(--text-second);
+      flex-direction: row-reverse;
+      &:hover,
+      &:focus-visible {
+        color: var(--text-second);
+        stroke: var(--text-second);
+        &::before {
+          opacity: 1;
+          visibility: visible;
+          background-color: var(--text-second);
+        }
+      }
+      &:active {
+        color: var(--hover-light);
+        stroke: var(--hover-light);
+        &::before {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__items {
+    @extend .por;
+    @extend .r;
+    @extend .x3col;
+    @extend .aic;
+    @extend .x2ais;
+    // @extend .x2jcb;
+    @media (min-width: $md2+px) {
+      column-gap: 40px;
+      padding: 0 50px;
+      background-color: var(--bg-second);
+    }
+    @media (min-width: $md3+px) {
+      column-gap: 39px;
+    }
+    @media (max-width: $md2+px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: flex-start;
+      padding: 8px 18px 18px;
+      border: 2px solid var(--border-accent);
+    }
+    @media (max-width: $md3+px) {
+      display: flex;
+      align-items: stretch;
+      border: none;
+      padding: 0 calc(var(--fields) / 2);
+    }
+  }
+
+  &__square {
+    @extend .sqr;
+    @extend .x2hide;
+    width: 44px;
+    @media (max-width: $md1+px) {
+      width: 34px;
+    }
+  }
+}

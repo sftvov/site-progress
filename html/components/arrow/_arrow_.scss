@@ -2,15 +2,15 @@
   @extend .dur;
   fill: var(--arrow-color);
   stroke: var(--arrow-color);
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%; /* Резиновый контейнер */
+  @extend .por;
+  @extend .r;
+  @extend .aic;
+  @extend .w;
   padding-right: 2px;
 
   &__line {
     @extend .dur;
-    flex-grow: 1; /* Растягивается на всю доступную ширину */
+    flex-grow: 1;
     background: var(--arrow-color);
     border-radius: 2px;
   }
@@ -18,8 +18,8 @@
   &__head {
     position: absolute;
     right: 0;
-    width: 20px; /* Фиксированная ширина наконечника */
-    flex-shrink: 0; /* Запрещаем сжимание */
+    width: 20px;
+    flex-shrink: 0;
   }
 }
 

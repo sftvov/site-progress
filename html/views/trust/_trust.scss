@@ -8,7 +8,6 @@
   }
 
   &__photos-img {
-    object-fit: cover;
     @media (min-width: $md2+px) {
       height: 100%;
     }

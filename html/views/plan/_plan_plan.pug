@@ -26,7 +26,7 @@ section.section.plan#plan
             h2.t2d Выберите рубрики. Кликните на рубрику, чтобы увидеть подрубрики и выбрать нужные. Это займет полминуты.        
           .m5(data-spollers)
             each branch in rubricsArchive
-              .plan__spoller(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
+              .plan__spoller.bbd2l(style="--group-color:var(--" + branch.color + ")" data-checkbox-group)
                 button.plan__spoller-title.r.jcb.w(data-spoller)
                   +branchTitle({
                     tag: 'span',

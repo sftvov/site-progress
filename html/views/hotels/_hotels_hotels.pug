@@ -5,9 +5,9 @@ section.hotels.section#hotels
     .n1o1#toc
       h2.t1d !{hotelsArchive.length} отелей-партнеров в Санкт-Петербурге
       p.p1.m7 Выберите отель на карте или из списка.
-      ol.hotels__toc-main.ol.m2        
+      ol.hotels__toc.ol.m2        
         each hotel, index in hotelsArchive
-          li.ol__li
+          li.hotels__toc-link.ol__li
             a.hover(href="#" + hotel.slug) !{hotel.name}, !{hotel.address}
     .ymaps.m2#ymaps
     each hotel in hotelsArchive

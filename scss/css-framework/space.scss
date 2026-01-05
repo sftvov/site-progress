@@ -30,6 +30,46 @@
   margin-top: var(--2XS);
 }
 
+.pd1 {
+  padding-block: calc(var(--XL-2XL) - var(--border-reduce));
+}
+
+// .pd2 {
+//   padding-block: var(--M-L);
+// }
+
+.pd3 {
+  padding-block: calc(var(--M) - var(--border-reduce));
+}
+
+.pd4 {
+  padding-block: calc(var(--S-M) - var(--border-reduce));
+}
+
+// .pd5 {
+//   padding-block: var(--S);
+// }
+
+// .pd6 {
+//   padding-block: var(--XS-S);
+// }
+
+// .pd7 {
+//   padding-block: var(--XS);
+// }
+
+// .pd8 {
+//   padding-block: var(--2XS);
+// }
+
+.pdt {
+  padding-bottom: 0;
+}
+
+.pdb {
+  padding-top: 0;
+}
+
 .n1ol3 {
   @media (min-width: $md1+px) {
     margin-left: var(--3columnsG);
@@ -81,6 +121,23 @@
   @extend .n1or1;
 }
 
+// .n1ol0 {
+//   @media (min-width: $md1+px) {
+//     margin-left: 0;
+//   }
+// }
+
+// .n1or0 {
+//   @media (min-width: $md1+px) {
+//     margin-right: 0;
+//   }
+// }
+
+// .n1o0 {
+//   @extend .n2ol0;
+//   @extend .n2or0;
+// }
+
 .n2ol2 {
   @media (min-width: $md2+px) {
     margin-left: var(--2columnsG);
@@ -113,6 +170,23 @@
 .n2o1 {
   @extend .n2ol1;
   @extend .n2or1;
+}
+
+.n2ol0 {
+  @media (min-width: $md2+px) {
+    margin-left: 0;
+  }
+}
+
+.n2or0 {
+  @media (min-width: $md2+px) {
+    margin-right: 0;
+  }
+}
+
+.n2o0 {
+  @extend .n2ol0;
+  @extend .n2or0;
 }
 
 .n3ol1 {

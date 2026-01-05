@@ -7,7 +7,7 @@ body {
 }
 
 ._tabs-blocks {
-  position: relative;
+  @extend .por;
 }
 
 ._tabs-block {
@@ -118,3 +118,10 @@ body {
 // 	height: 100vh;
 // 	background: var(--dark) url('../img/icons/loading.gif') center / 50px no-repeat;
 // }
+
+#sticky {
+  transition-duration: 0.6s;
+  z-index: 1;
+  position: sticky;
+  top: var(--header-height);
+}

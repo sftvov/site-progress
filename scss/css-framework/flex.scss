@@ -247,7 +247,7 @@
 }
 
 .col {
-  display: flex;
+  @extend .r;
   flex-direction: column;
 }
 

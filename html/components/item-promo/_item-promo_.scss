@@ -4,7 +4,9 @@
   @extend .n3w4;
   @extend .w2;
   @extend .x4w4;
-  border: 1px solid var(--border-gray);
+  @extend .bdg;
+  @extend .pd3;
+  @extend .pdb;
   &__img {
     @extend .w;
     height: 213px;
@@ -15,6 +17,6 @@
     @extend .col;
     @extend .fg;
     @extend .m3;
-    padding: 0 19px 29px;
+    padding-inline: 19px;
   }
 }

@@ -1,5 +1,5 @@
 .-client-item {
-  @extend .bdg;
+  @extend .bd2g;
   &:is(a) {
     &:hover,
     &:focus-visible {
@@ -8,18 +8,7 @@
       }
     }
   }
-
   &__body {
-    padding: var(--S-M);
-  }
-
-  &__about {
-    overflow-wrap: break-word; /* Современный аналог word-wrap */
-    word-break: auto-phrase;
-    hyphens: auto; /* Красивые переносы с дефисами */
-    @extend .col7;
-    @extend .m4;
-    padding-top: var(--S-M);
-    border-top: 2px solid var(--border-gray);
+    padding: calc(var(--S-M) - var(--border-reduce));
   }
 }

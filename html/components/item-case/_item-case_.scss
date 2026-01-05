@@ -1,7 +1,6 @@
 .-case-item {
   transition-property: background-color;
-  padding-top: var(--M);
-  padding-bottom: var(--M);
+  @extend .pd3;
   &:has(.-case-item__top._active) {
     background-color: var(--bg-second);
   }

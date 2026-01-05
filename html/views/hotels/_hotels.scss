@@ -1,7 +1,5 @@
-
-
 .hotels {
-  &__toc-main {
+  &__toc {
     @media (min-width: $md1+px) {
       columns: var(--4columns) 2;
     }
@@ -14,5 +12,11 @@
   &__pin {
     width: 36px;
     padding-top: 3px;
+  }
+
+  &__toc-link {
+    &:not(:first-child) {
+      margin-top: 7px;
+    }
   }
 }

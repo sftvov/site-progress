@@ -1,7 +1,4 @@
 .rubrics {
-  &__tab-titles {
-    border-bottom: 2px solid var(--border-light);
-  }
 
   &__indicator {
     position: absolute;
@@ -10,25 +7,6 @@
     left: var(--indicator-left);
     width: var(--indicator-width);
     height: 100%;
-  }
-
-  &__tab-title {
-    padding: 10px 20px;
-    @media (max-width: $md2+px) {
-      padding: 10px 15px;
-    }
-
-    @media (max-width: $md3+px) {
-      padding: 5px 15px;
-    }
-
-    &:not(._active) {
-      &:hover,
-      &:focus-visible {
-        color: var(--hover);
-        stroke: var(--hover);
-      }
-    }
   }
 
   &__tab-block {

@@ -4,12 +4,17 @@ include ../../../data/coursesArchive
   .container
     .body
       .row.jcc
-        +mode({ text: 'очные' })
-        +mode({ text: 'онлайн', href: '#' })
-  .m2
-    each course in coursesArchive
-      +courseItemRegular(course)
-  .container
+        +mode({ 
+          text: 'Очные' 
+        })(class='n3w3 w2')
+        +mode({ 
+          text: 'Онлайн',          
+          tag: 'a',       
+        })(class='n3w3 w2 bd2l', href='#')
+    .m2
+      each course in coursesArchive
+        +courseItemRegular(course)
+
     +pagination({
       totalPages: 10,
       currentPage: 2,

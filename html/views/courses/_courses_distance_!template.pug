@@ -4,11 +4,10 @@ section.section#courses
   .container
     .n3ol1
       h2.t1d !{courses.title}
-  .m4
-    each course in coursesArchive
-      +courseItemDistance(course, 'distance')
-  if courses.pagination
-    .container
+    .m4
+      each course in coursesArchive
+        +courseItemDistance(course, 'distance')
+    if courses.pagination
       +pagination({
         totalPages: 10,
         currentPage: 2,

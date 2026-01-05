@@ -1,0 +1,33 @@
+.course {
+  &__tab-indicator {
+    z-index: -1;
+    position: absolute;
+    top: var(--indicator-top);
+    left: var(--indicator-left);
+    width: var(--indicator-width);
+    height: var(--indicator-height);
+  }
+
+  &__tab-title {
+    border-top: none;
+    border-left: none;
+    flex-grow: 1;
+    padding: 10px;
+    &._active {
+      cursor: auto;
+      color: var(--text-second);
+    }
+    &:not(._active) {
+      &:hover,
+      &:focus-visible {
+        color: var(--hover);
+      }
+    }
+    // &:not(:first-child) {
+    //   border-left-width: 1px;
+    // }
+    // &:not(:last-child) {
+    //   border-right-width: 1px;
+    // }
+  }
+}

@@ -1,0 +1,61 @@
+-
+  const menuItems = [
+    {
+      name: "СЕМИНАРЫ И КУРСЫ",
+      subitems: [
+        { 
+          name: "Семинары и курсы", link: "page-rubrics.html",
+        },
+        { name: "Онлайн-обучение" },
+        { 
+          name: "Дистанционные курсы",
+          children: [
+            { name: "Профпереподготовка" },
+            { name: "Повышение квалификации" }
+          ]
+        },
+        { name: "Корпоративное обучение" }
+      ]
+    },
+    {
+      name: "О КОМПАНИИ",
+      subitems: [
+        { name: "О нас" },
+        { name: "Основатель Компании", style:"break-after: column;" },
+        { name: "Учебный комплекс" },
+        { name: "Аренда аудиторий" },
+        { name: "Клиенты" },
+        { name: "Благотворительность" },
+        { name: "Партнеры" }
+      ]
+    },
+    { name: "АКЦИИ", link: "#" },
+    { name: "КОНТАКТЫ", link: "#" }
+  ];
+
+.-header-menu._lpr
+  .-header-menu__mobile-container._burger-menu
+    .-header-menu__icon-links
+      a.-header-menu__icon-link(href="#")
+        svg.i16
+          use(xlink:href='img/sprite/symbols.svg#plan')
+        | План обучения
+      a.-header-menu__icon-link(href="#")
+        svg.i16
+          use(xlink:href='img/sprite/symbols.svg#key')
+        | Бронь отелей
+      a.-header-menu__icon-link(href="#")
+        svg.i16
+          use(xlink:href='img/sprite/symbols.svg#mail')
+        | Рассылка
+      .-header-menu__icon-close-wrapper
+        button.-header-menu__icon-link.-header-menu__icon-close._burger-menu-close(href="#")
+          svg.i16
+            use(xlink:href='img/sprite/symbols.svg#x-close')
+          | Закрыть
+    .-header-menu__items
+      each item in menuItems
+        +headerMenuItem(item)
+  .-header-menu__square.bga
+  .-header-menu__square.bgb
+  .fg.bgs.x2hide

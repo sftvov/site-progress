@@ -1,15 +1,19 @@
+mixin modeSvg(icon)
+  svg.i24.x2i20
+    use(xlink:href=`img/sprite/symbols.svg#${icon}`)
+
 mixin mode(props = {})
   - 
     const {
+      tag = 'span',
       text = '',
-      href = false,
-      icon = 'info'
+      icon = 'info',
+      iconBefore = false
     } = props
 
-  - const Tag = href ? 'a' : 'span'
-  #{Tag}.-mode(
-    href=href || false
-  )&attributes(attributes)
-    p.b1 #{text}
-    svg.sd.i24.x2i20
-      use(xlink:href=`img/sprite/symbols.svg#${icon}`)
+  #{tag}.-mode&attributes(attributes)
+    if iconBefore
+      +modeSvg(icon)
+    span #{text}
+    unless iconBefore
+      +modeSvg(icon)

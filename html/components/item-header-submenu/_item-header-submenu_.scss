@@ -1,0 +1,38 @@
+.-header-submenu-item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+    @media (max-width: $md2+px) {
+      margin-bottom: var(--S);
+    }
+  }
+
+  &__name {
+    @extend .dur;
+    @extend .p1;
+    $lh: 24;
+    line-height: round-to(math.div($lh, $fz), 3);
+  }
+
+  &__links {
+    @media (min-width: $md2+px) {
+      margin-top: 5px;
+    }
+  }
+
+  &__link {
+    @extend .hover;
+    @extend .s-hover;
+    @extend .p2;
+    @extend .r5;
+    @extend .aic;
+    @media (min-width: $md2+px) {
+      break-before: avoid-column;
+      padding-left: 20px;
+    }
+    @media (max-width: $md2+px) {
+      display: block;
+      margin-top: var(--XS);
+      padding-left: 15px;
+    }
+  }
+}

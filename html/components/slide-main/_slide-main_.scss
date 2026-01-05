@@ -13,8 +13,7 @@
     height: 178px;
   }
   &__body {
-    display: flex;
-    flex-direction: column;
+    @extend .col;
     width: var(--6columnsG);
     margin-left: auto;
     padding: 0 var(--gutter) 132px;

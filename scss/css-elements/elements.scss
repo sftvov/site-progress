@@ -16,10 +16,10 @@
   &__input {
     @extend .dur;
     @extend .p2;
-    text-align: center;
+    @extend .tac;
     width: 81px;
     padding: 4px;
-    border: 2px solid var(--border-light);
+    @extend .bd2l;
     @media (min-width: $md2+px) {
       width: 86px;
       padding: 3px;
@@ -31,7 +31,6 @@
   }
 
   // &__header {
-  //   color: var(--text-second);
   //   background-color: var(--bg-second);
   //   padding: 20px 32px;
   //   border-radius: 20px 20px 0 0;

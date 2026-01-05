@@ -1,0 +1,28 @@
+mixin courseDates(course, config)
+  - const tag = attributes.tag || 'div'
+  #{tag}.-course-dates&attributes(attributes)
+    .row
+      
+      if config.date
+        p.t2d(class=config.date) Дата
+
+      if config.code
+        p.t2d.r5.aic(class=config.code) Код
+          svg.i20.x2i16
+            use(xlink:href='img/sprite/symbols.svg#info')
+      
+      if config.price
+        p.t2d(class=config.price).r5.aic Цена
+          svg.i20.x2i16
+            use(xlink:href='img/sprite/symbols.svg#info')
+
+    if course.dates && course.dates.length > 0
+      .col7
+        each date in course.dates
+          .row
+            if config.date 
+              a.-course-dates__date-link(class=config.date) !{date.date}
+            if config.code
+              p(class=config.code) !{date.code}
+            if config.price
+              p(class=config.price) !{course.price} ₽

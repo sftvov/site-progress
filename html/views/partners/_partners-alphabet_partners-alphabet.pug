@@ -19,7 +19,7 @@ section.section.partners#partners(data-filters)
         p.p1 Мы благодарим наших Интернет-партнеров за плодотворную совместную работу.
     .partners__letters.m2.g5.cg15
       each letter in firstLetters
-        button.partners__letter.dur.p1.sqr.bdg.bd2(data-filter=letter)= letter
+        button.partners__letter.dur.p1.sqr.bd2g(data-filter=letter)= letter
     .partners__grid.g3.m1
       each item in partnersArchive
         +itemClient(item)(class='_active' data-item=item.name.charAt(0).toUpperCase())

@@ -1,15 +1,96 @@
+%bdr1 {
+  --border-reduce: 1px;
+}
+
+%bdr2 {
+  --border-reduce: 2px;
+}
+
 .bd {
+  @extend %bdr1;
   border: 1px solid var(--border);
 }
 
+.bda {
+  @extend %bdr1;
+  border: 1px solid var(--border-accent);
+}
+
+.bdd {
+  @extend %bdr1;
+  border: 1px solid var(--border-dark);
+}
+
 .bdg {
+  @extend %bdr1;
   border: 1px solid var(--border-gray);
 }
 
 .bdl {
+  @extend %bdr1;
   border: 1px solid var(--border-light);
 }
 
 .bd2 {
-  border-width: 2px;
+  @extend %bdr2;
+  border: 2px solid var(--border);
+}
+
+.bd2a {
+  @extend %bdr2;
+  border: 2px solid var(--border-accent);
+}
+
+.tbd2a {
+  @extend %bdr2;
+  border-top: 2px solid var(--border-accent);
+}
+
+.rbd2a {
+  @extend %bdr2;
+  border-right: 2px solid var(--border-accent);
+}
+
+.bbd2a {
+  @extend %bdr2;
+  border-bottom: 2px solid var(--border-accent);
+}
+
+.lbd2a {
+  @extend %bdr2;
+  border-left: 2px solid var(--border-accent);
+}
+
+.bd2g {
+  @extend %bdr2;
+  border: 2px solid var(--border-gray);
+}
+
+.bd2l {
+  @extend %bdr2;
+  border: 2px solid var(--border-light);
+}
+
+.tbd2g {
+  @extend %bdr2;
+  border-top: 2px solid var(--border-gray);
+}
+
+.tbd2l {
+  @extend %bdr2;
+  border-top: 2px solid var(--border-light);
+}
+
+.rbd2l {
+  @extend %bdr2;
+  border-right: 2px solid var(--border-light);
+}
+
+.bbd2l {
+  @extend %bdr2;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.bdr0 {
+  --border-reduce: 0px;
 }

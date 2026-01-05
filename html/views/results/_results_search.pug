@@ -4,12 +4,12 @@ section.section#results
   .container
     h2.title вы искали “строительство”
     p.t2d.m2 Мероприятий: 233
-  .m2
-    each course, index in coursesArchive
-      +courseItemSearch(course, index % 2 === 0 ? 'online' : 'offline')
-    +pagination({
-      totalPages: 10,
-      currentPage: 2,
-    })(class='m3')
+    .m2
+      each course, index in coursesArchive
+        +courseItemSearch(course, index % 2 === 0 ? true : false)
+      +pagination({
+        totalPages: 10,
+        currentPage: 2,
+      })(class='m3')
 
 //- http://localhost:1709/page-search.html#results

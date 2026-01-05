@@ -1,5 +1,65 @@
-.section
+.section.course#course
   .container
-    .col7
-      p.tb.t2 Курс повышения квалификации
-      h1.t1d Перспективные полимерные материалы в промышленности — герметики, компаунды, лакокрасочные покрытия
+    .row.aic.jcb.bgm.bbd2l.bdr0#sticky
+      .r
+        +mode({
+          text: 'Очный формат курса',
+        })
+        +mode({
+          tag: 'a',
+          text: 'Онлайн-курс',
+        })(href="#")
+      p.t2d Код курса: 71473
+    .row.x2col.g1
+      .col1.n2w9.rbd2l.x2contents
+        .col2.m3
+          .col7.n1w8
+            p.tb.t2 Курс повышения квалификации
+            h1.t1d Перспективные полимерные материалы в промышленности&ZeroWidthSpace; — герметики, компаунды, лакокрасочные покрытия
+          ._tabs.col3.n2w8
+            .por
+              .r.wrap.tbd2a.lbd2a
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title._active О мероприятии
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title Преподаватели
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title Фото и видео
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title Отзывы
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title Также по теме
+                button.course__tab-title.dur.rbd2a.bbd2a._tabs-title Памятка участнику
+              .course__tab-indicator.dur.bga._tabs-indicator
+            ._tabs-blocks
+              ._tabs-block._active
+                include course-parts/tabs/_about-course_
+              ._tabs-block
+                include course-parts/tabs/_teachers-course_
+              ._tabs-block
+                include course-parts/tabs/_gallery-course_
+              ._tabs-block
+                include course-parts/tabs/_reviews-course_
+              ._tabs-block
+                include course-parts/tabs/_relating-course_
+              ._tabs-block
+                include course-parts/tabs/_memo-course_
+        hr.bbd2l
+        .col3.n2w8.n3o1.n2o0
+          .col5
+            p.tb.t2 Условия участия:
+            p.p1 для регистрации слушателям необходимо иметь при себе копию платежного поручения, которая является пропуском на курс повышения квалификации. Занятия проходят по очно-заочной форме. Срок обучения: заочная форма - с 17 февраля по 23 февраля 2025 года, очная форма с 24 февраля по 28 февраля 2025 года.
+          .col5
+            p.tb.t2 Для оформления финансовых документов необходимы:
+            ul.ul
+              li.ul__li полные реквизиты вашей организации, включая юридический адрес.
+          .col5
+            p.tb.t2 Для оформления удостоверения необходимо предоставить:
+            ul.ul
+              li.ul__li копию диплома о высшем или среднем профессиональном образовании (в случае получения диплома не в РФ, просим уточнить необходимость процедуры признания иностранного диплома в РФ по контактным телефонам или электронной почте);
+              li.ul__li справку с места учебы (для студентов);
+              li.ul__li копию документа, подтверждающего изменение фамилии (если менялась).
+            p.p1 В первый день курса потребуются данные СНИЛС (сам документ предоставлять не требуется) и для физических лиц данные ИНН (сам документ предоставлять не требуется).
+            p.p1 Обращаем ваше внимание на #[a.link(href="#") особые] случаи при выдаче Удостоверения о повышении квалификации. 
+          .col5
+            p.tb.t2 В пакет участника входит:
+            ul.ul.col5
+              li.ul__li обучение по заявленной программе;
+              li.ul__li комплект информационно-справочных материалов;
+              li.ul__li кофе-брейки.
+      include course-parts/_sidebar-course_

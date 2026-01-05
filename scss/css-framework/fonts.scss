@@ -1,5 +1,15 @@
+.hyp {
+  overflow-wrap: break-word; /* Современный аналог word-wrap */
+  word-break: auto-phrase;
+  hyphens: auto; /* Красивые переносы с дефисами */
+}
+
 .dur {
   transition-duration: var(--transition);
+}
+
+.i {
+  font-style: italic;
 }
 
 .ta {
@@ -54,7 +64,7 @@
   font-size: math.div($fs, $fz) + em;
   $lh: 30;
   line-height: round-to(math.div($lh, $fs), 3);
-  text-transform: uppercase;
+  @extend .ttu;
   @media (max-width: $md2+px) {
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
@@ -141,9 +151,16 @@
   }
 }
 
+.p3 {
+  $fs: 10;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 19;
+  line-height: round-to(math.div($lh, $fs), 3);
+}
+
 .b1 {
   font-family: 'RobotoCondensed';
-  text-transform: uppercase;
+  @extend .ttu;
   @media (min-width: $md2+px) {
     $fs: 16;
     font-size: math.div($fs, $fz) + rem;

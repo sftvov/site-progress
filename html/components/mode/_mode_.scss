@@ -1,15 +1,32 @@
 .-mode {
+  @extend .dur;
+  @extend .sd;
+  @extend .td;
+  @extend .b1;
   @extend .r10;
   @extend .aic;
   @extend .jcc;
-  @extend .n3w3;
-  @extend .w2;
-  @extend .bdl;
-  padding: 9px 5px;
-  @media (max-width: $md4+px) {
-    padding-block: 5px;
+  padding: calc(10px - var(--border-reduce)) calc(20px - var(--border-reduce));
+  @media (max-width: $md2+px) {
+    padding-inline: calc(15px - var(--border-reduce));
   }
-  &:is(:not(a)) {
+  @media (max-width: $md3+px) {
+    padding-block: calc(5px - var(--border-reduce));
+  }
+
+  &._active {
+    cursor: auto;
+  }
+
+  &:is(span) {
     background-color: var(--bg-second);
+  }
+
+  &:is(a, button):not(._active) {
+    &:hover,
+    &:focus-visible {
+      color: var(--hover);
+      stroke: var(--hover);
+    }
   }
 }

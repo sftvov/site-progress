@@ -6,8 +6,8 @@
 
 .section-bg {
   @extend .section;
-  padding: var(--XL-2XL) 0;
-  background-color: var(--bg-second);
+  @extend .bgs;
+  @extend .pd1;
 }
 
 .max {
@@ -64,29 +64,17 @@
   cursor: pointer;
   @extend .btn;
   display: inline-block;
-  padding: 10px;
+  padding: calc(10px - var(--border-reduce));
 }
-%button-border {
-  @extend %button;
-  padding: 8px;
-}
-%button-non-border {
-  @extend %button;
-  padding: 10px;
-}
-%button-border-s {
+%button-s {
   @media (max-width: $md2+px) {
-    padding: 3px 8px;
+    padding-block: calc(5px - var(--border-reduce));
   }
 }
-%button-non-border-s {
-  @media (max-width: $md2+px) {
-    padding: 5px 10px;
-  }
-}
+
 .button-primary {
-  color: var(--text-second);
-  @extend %button-non-border;
+  @extend %button;
+  @extend .ts;
   background-color: var(--bg-bright);
   &:hover,
   &:focus-visible {
@@ -96,26 +84,28 @@
 }
 .button-primary-s {
   @extend .button-primary;
-  @extend %button-non-border-s;
+  @extend %button-s;
 }
+
 .button-second {
   color: var(--text-bright);
-  @extend %button-border;
-  background-color: var(--bg-main);
-  border: 2px solid var(--border);
+  @extend .hover-accent;
+  @extend %button;
+  @extend .bgm;
+  @extend .bd2;
   &:hover,
   &:focus-visible {
-    color: var(--text-accent);
     border-color: var(--border-accent);
   }
 }
 .button-second-s {
   @extend .button-second;
-  @extend %button-border-s;
+  @extend %button-s;
 }
+
 .button-accent {
-  color: var(--text-second);
-  @extend %button-non-border;
+  @extend %button;
+  @extend .ts;
   background-color: var(--bg-accent);
   &:hover,
   &:focus-visible {
@@ -125,13 +115,13 @@
 }
 .button-accent-s {
   @extend .button-accent;
-  @extend %button-non-border-s;
+  @extend %button-s;
 }
 
 .ul {
   &__li {
     @extend .p1;
-    display: flex;
+    @extend .r;
     &::before {
       content: '';
       vertical-align: top;
@@ -141,22 +131,46 @@
       margin: 8px 10px 9px 9px;
       border-radius: 50%;
       background-color: var(--text-main);
-    }
-    &--bright {
-      @extend .ul__li;
-      &::before {
-        background-color: var(--text-bright);
+      @media (max-width: $md2+px) {
+      margin: 7px 9px 8px 8px;
       }
+    }
+  }
+  &__li-bright {
+    @extend .ul__li;
+    &::before {
+      background-color: var(--text-bright);
     }
   }
 }
 
+// .ol {
+//   &__li {
+//     @extend .p1;
+//     list-style-position: inside;
+//     &:not(:first-child) {
+//       margin-top: 7px;
+//     }
+//   }
+//   &__li-dark {
+//     @extend .ol__li;
+//   }
+// }
+
 .ol {
+  counter-reset: ol;
   &__li {
+    list-style-type: none;
     @extend .p1;
-    list-style-position: inside;
-    &:not(:first-child) {
-      margin-top: 7px;
+    &::before {
+      content: counter(ol) '. ';
+      counter-increment: ol;
+    }
+  }
+  &__li-dark {
+    @extend .ol__li;
+    &::before {
+      color: var(--text-dark);
     }
   }
 }
@@ -175,7 +189,7 @@
   min-height: 40px;
   padding: 4px 9px;
   background-color: var(--bg-main);
-  border: 1px solid var(--border-dark);
+  @extend .bdd;
   @media (hover: hover) {
     &:hover {
       border-color: var(--border);

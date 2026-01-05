@@ -1,0 +1,15 @@
+
+
+.-course-dates {
+  @extend .col5;
+  @media (max-width: $md4+px) {
+    row-gap: var(--XS);
+  }
+
+  &__date-link {
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}

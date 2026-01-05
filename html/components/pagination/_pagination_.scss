@@ -4,8 +4,7 @@
   @extend .jcc;
   @extend .aic;
   height: 45px;
-  @extend .bdl;
-  @extend .bd2;
+  @extend .bd2l;
   @media (max-width: $md2+px) {
     height: 35px;
   }
