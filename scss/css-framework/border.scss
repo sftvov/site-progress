@@ -1,4 +1,13 @@
+@mixin bdr1 {
+  --border-reduce: 1px;
+}
+
+@mixin bdr2 {
+  --border-reduce: 2px;
+}
+
 @mixin bd {
+  @include bdr1;
   border: 1px solid #{$border};
 }
 .bd {
@@ -6,6 +15,7 @@
 }
 
 @mixin bd2 {
+  @include bdr2;
   border: 2px solid #{$border};
 }
 .bd2 {
@@ -13,6 +23,7 @@
 }
 
 @mixin bda {
+  @include bdr1;
   border: 1px solid #{$border-accent};
 }
 .bda {
@@ -20,6 +31,7 @@
 }
 
 @mixin bd2a {
+  @include bdr2;
   border: 2px solid #{$border-accent};
 }
 .bd2a {
@@ -27,6 +39,7 @@
 }
 
 @mixin tbd2a {
+  @include bdr2;
   border-top: 2px solid #{$border-accent};
 }
 .tbd2a {
@@ -34,6 +47,7 @@
 }
 
 @mixin rbd2a {
+  @include bdr2;
   border-right: 2px solid #{$border-accent};
 }
 .rbd2a {
@@ -41,6 +55,7 @@
 }
 
 @mixin bbd2a {
+  @include bdr2;
   border-bottom: 2px solid #{$border-accent};
 }
 .bbd2a {
@@ -48,6 +63,7 @@
 }
 
 @mixin lbd2a {
+  @include bdr2;
   border-left: 2px solid #{$border-accent};
 }
 .lbd2a {
@@ -55,6 +71,7 @@
 }
 
 @mixin bdd {
+  @include bdr1;
   border: 1px solid #{$border-dark};
 }
 .bdd {
@@ -62,27 +79,31 @@
 }
 
 @mixin bdg {
-  border: 1px solid #{$border-gray};
+  @include bdr1;
+  border: 1px solid var(--border-gray);
 }
 .bdg {
   @include bdg;
 }
 
 @mixin bd2g {
-  border: 2px solid #{$border-gray};
+  @include bdr2;
+  border: 2px solid var(--border-gray);
 }
 .bd2g {
   @include bd2g;
 }
 
 @mixin tbd2g {
-  border-top: 2px solid #{$border-gray};
+  @include bdr2;
+  border-top: 2px solid var(--border-gray);
 }
 .tbd2g {
   @include tbd2g;
 }
 
 @mixin bdl {
+  @include bdr1;
   border: 1px solid #{$border-light};
 }
 .bdl {
@@ -90,6 +111,7 @@
 }
 
 @mixin bd2l {
+  @include bdr2;
   border: 2px solid #{$border-light};
 }
 .bd2l {
@@ -97,6 +119,7 @@
 }
 
 @mixin tbd2l {
+  @include bdr2;
   border-top: 2px solid #{$border-light};
 }
 .tbd2l {
@@ -104,6 +127,7 @@
 }
 
 @mixin rbd2l {
+  @include bdr2;
   border-right: 2px solid #{$border-light};
 }
 .rbd2l {
@@ -111,8 +135,16 @@
 }
 
 @mixin bbd2l {
+  @include bdr2;
   border-bottom: 2px solid #{$border-light};
 }
 .bbd2l {
   @include bbd2l;
+}
+
+@mixin bdr0 {
+  --border-reduce: 0px;
+}
+.bdr0 {
+  @include bdr0;
 }
