@@ -10,7 +10,7 @@ mixin branch(props = {})
       date = '',
     } = props
 
-  article.-branch(
+  article.branch(
     style=color ? `--group-color:var(--${color})` : false
   )&attributes(attributes)
     +branchTitle({
@@ -18,9 +18,9 @@ mixin branch(props = {})
       tag: tag,
       date: date,
     })
-    .-branch__body
+    .branch__body
       if rubrics
         each rubric in rubrics
-          a.-branch__link(href=link) !{rubric.name} —&nbsp;!{rubric.courses}
+          a.branch__link(href=link) !{rubric.name} —&nbsp;!{rubric.courses}
       else if content
-        a.-branch__link(href=link)= content
+        a.branch__link(href=link)= content

@@ -1,15 +1,15 @@
-.-case-item {
+.case-item {
   transition-property: background-color;
-  @extend .pd3;
-  &:has(.-case-item__top._active) {
-    background-color: var(--bg-second);
+  @include pd3;
+  &:has(.case-item__top._active) {
+    background-color: #{$bg-second};
   }
   &__top {
     cursor: pointer;
-    @extend .row;
-    @extend .ais;
+    @include row;
+    @include ais;
     &._active {
-      & .-case-item__title {
+      & .case-item__title {
         &::after {
           rotate: 180deg;
         }
@@ -21,11 +21,11 @@
     @extend.ta;
     @extend.t2;
     @extend.row;
-    @extend .jcb;
+    @include jcb;
     &::after {
       content: '';
-      @extend .dur;
-      @extend .i24;
+      @include dur;
+      @include i24;
       background: url(../img/icons/chevron-l.svg) center / contain no-repeat;
     }
   }

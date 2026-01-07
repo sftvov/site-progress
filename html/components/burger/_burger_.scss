@@ -1,31 +1,31 @@
-.-burger {
+.burger {
   cursor: pointer;
-  @extend .col;
-  @extend .aic;
-  @extend .jcc;
+  @include col;
+  @include aic;
+  @include jcc;
   row-gap: 2px;
   padding: 10px;
-  @extend .bga;
+  @include bga;
   // &._active {
-  //   & .-burger__line {
+  //   & .burger__line {
   //   }
-  //   & .-burger__line:nth-child(1) {
+  //   & .burger__line:nth-child(1) {
   //     rotate: 45deg;
   //     translate: 0 7.75px;
   //   }
-  //   & .-burger__line:nth-child(2) {
+  //   & .burger__line:nth-child(2) {
   //     width: 0;
   //   }
-  //   & .-burger__line:nth-child(3) {
+  //   & .burger__line:nth-child(3) {
   //     rotate: -45deg;
   //     translate: 0 -7.75px;
   //   }
   // }
   &__line {
-    // @extend .dur;
+    // @include dur;
     width: 15px;
     height: 2px;
-    background-color: var(--text-second);
+    background-color: #{$text-second};
     border-radius: 2px;
   }
 }

@@ -1,9 +1,9 @@
-.-course-item {
-  @extend .por;
-  @extend .pd3;
+.course-item {
+  @include por;
+  @include pd3;
   &::before {
     content: '';
-    transition-duration: var(--transition);
+    transition-duration: #{$transition};
     position: absolute;
     top: 0;
     left: var(--offsetLeft);
@@ -13,7 +13,7 @@
   &:hover,
   &:focus-visible {
     &::before {
-      background-color: var(--bg-second);
+      background-color: #{$bg-second};
     }
   }
   &--relating {

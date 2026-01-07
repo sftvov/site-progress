@@ -1,21 +1,21 @@
-.-header-select {
+.header-select {
   text-align: left;
-  @extend .por;
-  @extend .r10;
-  @extend .aic;
+  @include por;
+  @include r10;
+  @include aic;
   @media (max-width: $md1+px) {
     column-gap: 5px;
   }
 
   &._active {
-    & .-header-select__svg {
+    & .header-select__svg {
       rotate: 180deg;
     }
     & .triangle {
       opacity: 1;
       visibility: visible;
     }
-    & .-header-select__variants-wrapper {
+    & .header-select__variants-wrapper {
       opacity: 1;
       visibility: visible;
     }
@@ -23,23 +23,23 @@
 
   &__variants-wrapper {
     cursor: auto;
-    @extend .dur;
+    @include dur;
     z-index: 1;
     position: absolute;
     top: 100%;
     left: 0;
     opacity: 0;
     visibility: hidden;
-    @extend .w;
+    @include w;
     padding-top: 10px;
   }
 
   &__variants-border {
-    @extend .r;
-    @extend .jcc;
+    @include r;
+    @include jcc;
     padding: 18px 0;
-    @extend .bgm;
-    @extend .bd2;
+    @include bgm;
+    @include bd2;
     box-shadow: var(--shadow);
     @media (max-width: $md1+px) {
       padding: 13px 0;
@@ -50,10 +50,10 @@
   }
 
   &__variants {
-    @extend .col;
-    @extend .g7;
+    @include col;
+    @include g7;
     @media (min-width: $md1+px) {
-      row-gap: var(--S);
+      row-gap: #{$S};
     }
   }
 }

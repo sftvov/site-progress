@@ -7,20 +7,20 @@ mixin pagination(props = {})
       baseUrl = '?page='
     } = props
 
-  .-pagination(class=className)&attributes(attributes)
-    .-pagination__body
+  .pagination(class=className)&attributes(attributes)
+    .pagination__body
       // Кнопка "Назад"
       if currentPage > 1
-        a.-pagination__prev(href=`${baseUrl}${currentPage - 1}`) Назад
+        a.pagination__prev(href=`${baseUrl}${currentPage - 1}`) Назад
 
-      .-pagination__pages
+      .pagination__pages
         if totalPages < 8
           // Простой вариант для малого количества страниц
           each page in Array.from({length: totalPages}, (_, i) => i + 1)
             if page === currentPage
-              span.-pagination__num._active= page
+              span.pagination__num._active= page
             else
-              a.-pagination__num(href=`${baseUrl}${page}`)= page
+              a.pagination__num(href=`${baseUrl}${page}`)= page
         else
           // Сложный вариант с троеточиями
           - 
@@ -31,32 +31,32 @@ mixin pagination(props = {})
 
           // Первая страница
           if currentPage === 1
-            span.-pagination__num._active 1
+            span.pagination__num._active 1
           else
-            a.-pagination__num(href=`${baseUrl}1`) 1
+            a.pagination__num(href=`${baseUrl}1`) 1
 
           // Левое троеточие или страница 2
           if showLeftEllipsis
-            a.-pagination__num(href=`${baseUrl}${currentPage - 2}`) #{currentPage === 4 ? '2' : '...'}
+            a.pagination__num(href=`${baseUrl}${currentPage - 2}`) #{currentPage === 4 ? '2' : '...'}
 
           // Центральные страницы
           each page in Array.from({length: endMiddle - startMiddle + 1}, (_, i) => startMiddle + i)
             if page === currentPage
-              span.-pagination__num._active= page
+              span.pagination__num._active= page
             else
-              a.-pagination__num(href=`${baseUrl}${page}`)= page
+              a.pagination__num(href=`${baseUrl}${page}`)= page
 
           // Правое троеточие или предпоследняя страница
           if showRightEllipsis
-            a.-pagination__num(href=`${baseUrl}${currentPage + 2}`) #{currentPage === totalPages - 3 ? totalPages - 1 : '...'}
+            a.pagination__num(href=`${baseUrl}${currentPage + 2}`) #{currentPage === totalPages - 3 ? totalPages - 1 : '...'}
 
           // Последняя страница (если не единственная)
           if totalPages > 1
             if currentPage === totalPages
-              span.-pagination__num._active= totalPages
+              span.pagination__num._active= totalPages
             else
-              a.-pagination__num(href=`${baseUrl}${totalPages}`)= totalPages
+              a.pagination__num(href=`${baseUrl}${totalPages}`)= totalPages
 
       // Кнопка "Вперед"
       if currentPage < totalPages
-        a.-pagination__next(href=`${baseUrl}${currentPage + 1}`) Вперед
+        a.pagination__next(href=`${baseUrl}${currentPage + 1}`) Вперед

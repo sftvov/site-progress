@@ -1,90 +1,138 @@
-.cnt {
+@mixin cnt {
   object-fit: contain;
 }
+.cnt {
+  @include cnt;
+}
 
-.cvr {
+@mixin cvr {
   object-fit: cover;
 }
-
-.bg {
-  @extend .w;
-  height: 100%;
-  @extend .cvr;
+.cvr {
+  @include cvr;
 }
 
-.i16 {
-  @extend .fs;
+@mixin bg {
+  @include w;
+  height: 100%;
+  @include cvr;
+}
+.bg {
+  @include bg;
+}
+
+@mixin i16 {
+  @include fs;
   width: 16px;
   height: 16px;
 }
+.i16 {
+  @include i16;
+}
 
-.i20 {
-  @extend .fs;
+@mixin i20 {
+  @include fs;
   width: 20px;
   height: 20px;
 }
+.i20 {
+  @include i20;
+}
 
-.i24 {
-  @extend .fs;
+@mixin i24 {
+  @include fs;
   width: 24px;
   height: 24px;
 }
+.i24 {
+  @include i24;
+}
 
-.x2i16 {
-  @extend .fs;
+@mixin x2i16 {
+  @include fs;
   @media (max-width: $md2+px) {
     width: 16px;
     height: 16px;
   }
 }
+.x2i16 {
+  @include x2i16;
+}
 
-.x2i20 {
-  @extend .fs;
+@mixin x2i20 {
+  @include fs;
   @media (max-width: $md2+px) {
     width: 20px;
     height: 20px;
   }
 }
+.x2i20 {
+  @include x2i20;
+}
 
+@mixin sd {
+  stroke: #{$text-dark};
+}
 .sd {
-  stroke: var(--text-dark);
+  @include sd;
 }
 
+@mixin ss {
+  stroke: #{$text-second};
+}
 .ss {
-  stroke: var(--text-second);
+  @include ss;
 }
 
+@mixin sb {
+  stroke: #{$text-bright};
+}
 .sb {
-  stroke: var(--text-bright);
+  @include sb;
 }
 
+@mixin sa {
+  stroke: #{$text-accent};
+}
 .sa {
-  stroke: var(--text-accent);
+  @include sa;
 }
 
-.s-hover {
+@mixin s-hover {
   &:hover,
   &:focus-visible {
-    stroke: var(--hover);
+    stroke: #{$hover};
   }
 }
-
-.sa-link {
-  @extend .dur;
-  @extend .sa;
-  @extend .s-hover;
+.s-hover {
+  @include s-hover;
 }
 
+@mixin sa-link {
+  @include dur;
+  @include sa;
+  @include s-hover;
+}
+.sa-link {
+  @include sa-link;
+}
+
+@mixin ss-link {
+  @include dur;
+  @include ss;
+  @include s-hover;
+}
 .ss-link {
-  @extend .dur;
-  @extend .ss;
-  @extend .s-hover;
+  @include ss-link;
 }
 
 // .sw1_5 {
 //   stroke-width: 1.5;
 // }
 
-.sw2 {
+@mixin sw2 {
   stroke-width: 2;
+}
+.sw2 {
+  @include sw2;
 }

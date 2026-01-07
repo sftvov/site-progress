@@ -97,7 +97,7 @@ include item-course-parts/course-info/_course-info_
 
 mixin courseItemBase(course, config)
 
-  article.-course-item&attributes(attributes)
+  article.course-item&attributes(attributes)
     .por.row.ais.wrap.g5(class=config.wrapperClass)
       if config.header
         header.r15.wrap.g5.jce.n3w1
@@ -144,4 +144,4 @@ mixin courseItemSearch(course, isOnline)
 
 //- Курсы в карточке курса по той же теме
 mixin courseItemRelating(course)
-  +courseItemBase(course, configs.relating)(class="-course-item--relating")&attributes(attributes)
+  +courseItemBase(course, configs.relating)(class="course-item--relating")&attributes(attributes)

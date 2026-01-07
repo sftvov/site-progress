@@ -11,8 +11,8 @@ mixin checkbox(props = {})
       item = false
     } = props
 
-  label.-checkbox&attributes(attributes)
-    input.-checkbox__input(
+  label.checkbox&attributes(attributes)
+    input.checkbox__input(
       type=type,
       name=name,
       checked=checked,
@@ -21,8 +21,8 @@ mixin checkbox(props = {})
       data-checkbox-item=item
     )
     if blueWrapper
-      .-checkbox__span-wrapper-blue
-        span.-checkbox__span!= label
+      .checkbox__span-wrapper-blue
+        span.checkbox__span!= label
     else
-      .-checkbox__span-wrapper
-        span.-checkbox__span!= label
+      .checkbox__span-wrapper
+        span.checkbox__span!= label

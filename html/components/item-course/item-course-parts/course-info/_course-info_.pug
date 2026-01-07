@@ -11,37 +11,37 @@ mixin courseInfo(course, options = {})
       type: options.type || 'Курс повышения квалификации',
     }
 
-  .-course-info(class=config.class)&attributes(attributes)
+  .course-info(class=config.class)&attributes(attributes)
     p.p2 #{config.type}
     
     #{config.titleLevel}.m7
       a.t2.link(href=course.href || "#") !{course.name}
     
-    .-course-info__row
+    .course-info__row
       //- Локация
       if config.showLocation && !config.isOnline && course.location !== false
-        p.-course-info__item
+        p.course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#location')
           | #{course.location || 'Санкт-Петербург'}
       
       //- Цена
       if config.showPrice && course.price
-        p.-course-info__item
+        p.course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#info')
           | !{course.price} ₽
       
       //- Часы
       if config.showHours && course.hours
-        p.-course-info__item
+        p.course-info__item
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#clock')
           | !{course.hours} #{course.hours === 1 ? 'час' : 'часа'}
       
       //- Ссылка на другой формат
       if config.showLink
-        a.-course-info__link(href="#") 
+        a.course-info__link(href="#") 
           svg.i20
             use(xlink:href=`img/sprite/symbols.svg#${config.isOnline ? 'building' : 'wifi'}`)
           | !{config.isOnline ? 'Доступно очно' : 'Доступна онлайн-трансляция'}

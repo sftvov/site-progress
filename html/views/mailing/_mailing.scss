@@ -28,11 +28,11 @@
     @include adaptiv-value-on('margin-right', 165, 66, $md1, $md2);
     @include adaptiv-value-on('top', 135, 104, $md1, $md2);
     @media (min-width: $md2+px) {
-      color: var(--text-second);
+      color: #{$text-second};
       position: absolute;
     }
     @media (max-width: $md2+px) {
-      margin-top: var(--XS);
+      margin-top: #{$XS};
     }
   }
 
@@ -41,7 +41,7 @@
       @extend %mailing-square;
       @media (min-width: $md2+px) {
         &::before {
-          background-color: var(--bg-bright);
+          background-color: #{$bg-bright};
         }
       }
     }
@@ -49,7 +49,7 @@
       @extend %mailing-square;
       @media (min-width: $md2+px) {
         &::before {
-          background-color: var(--bg-accent);
+          background-color: #{$bg-accent};
         }
       }
     }
@@ -72,7 +72,7 @@
   &__group {
     break-inside: avoid-column;
     &:not(:first-child) {
-      margin-top: var(--M);
+      margin-top: #{$M};
     }
   }
 

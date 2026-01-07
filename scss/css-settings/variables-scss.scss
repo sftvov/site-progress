@@ -1,3 +1,64 @@
+$transition: 0.2s;
+
+  // $cyan: #00ffff;
+  // $yellow: #ffff00;
+  // $black: #252525;
+  // $purple: #8434e1;
+  // $navy: #345eff;
+  // $grey: #e4e5e8;6
+  // $red: #bf0000;
+  // $broom: #c05a17;
+  // $pink: #e08d9d;
+  // $orange-ok: #f2720c;
+  // $green: #2ab194;
+  // $green-wa: #12af0a;
+  // $blue-tg: #2ca5e0;
+  // $blue-vk: #587ea3;
+  // $gold: #edd146;
+
+
+
+$red: #f34759;
+$orange: #ed6824;
+$orange-light: #f9b277;
+$blue: #0083c1;
+$blue-light: #d9eafb;
+
+// $black: #000000;
+$dark: #2b2d33;
+$gray-dark: #555a65;
+$gray: #999ead;
+$gray-light: #d8dce5;
+$light: #e5e8ef;
+$white: #ffffff;  
+
+$hover: #{$orange};
+$hover-light: #{$orange-light};
+$hover-accent: #{$blue};
+
+$text-main: light-dark(#{$gray-dark}, #{$gray-light});
+$text-second: #{$white};
+$text-bright: #{$orange};
+$text-accent: #{$blue};
+$text-dark: light-dark(#{$dark}, #{$white});
+$text-light: #{$gray};
+$text-invalid: #{$red};
+
+$bg-main: light-dark(#{$white}, #{$dark});
+$bg-second: light-dark(#{$blue-light}, #{$gray});
+$bg-bright: #{$orange};
+$bg-accent: #{$blue};
+$bg-dark: #{$gray-dark};
+$bg-gray: #{$gray};
+
+$border: #{$orange};
+// $border-second: #{$white};
+$border-accent: #{$blue};
+$border-light: #{$blue-light}; // повсеместно
+$border-dark: light-dark(#{$gray-dark}, #{$white}); // для инпутов 
+$border-gray: #{$gray}; // повсеместно и для инпутов disabled
+$border-invalid: #{$red};
+
 $fontFamily: 'Roboto';
 $fz: 14;
 
@@ -10,7 +71,7 @@ $mobileSpace: 20;
 $minContainer: $minWidth - $mobileSpace;
 
 /* Fixed container variant 1 */
-
+// {
 // $md1: 1359.95;
 // $md2: 1023.95;
 // $md3: 767.95;
@@ -20,9 +81,9 @@ $minContainer: $minWidth - $mobileSpace;
 // $laptopContainer: $md2 - $mdSpace;
 // $padContainer: $md3 - $mdSpace;
 // $mobileContainer: $md4 - $mdSpace;
-
+// }
 /* Fixed container variant 2 */
-
+// {
 // $maxContainer: 1280;
 // $laptopContainer: 1080;
 // $padContainer: 770;
@@ -32,14 +93,20 @@ $minContainer: $minWidth - $mobileSpace;
 // $md2: $laptopContainer + $mdSpace;
 // $md3: $padContainer + $mdSpace;
 // $md4: $mobileContainer + $mdSpace;
-
+// }
 /* Adaptive container variant */
 
 $maxContainer: 1280;
-// $maxContainer: 1412;
 
-// $md0: $maxContainer - 0.05;
 $md1: $maxContainer - 0.05;
 $md2: 1031.95;
 $md3: 767.95;
 $md4: 539.95;
+
+$XXL: 60px;
+$XL: 50px;
+$L: 40px;
+$M: 30px;
+$S: 15px;
+$XS: 7px;
+$XXS: 3px;

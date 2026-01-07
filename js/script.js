@@ -67,12 +67,12 @@ function headerHeight() {
 @@include('_activator.js');
 @@include('_swipers.js');
 
-const selects = document.querySelectorAll(".-select");
+const selects = document.querySelectorAll(".select");
 
 if (selects) {
   for (let select of selects) {
-    const variants = select.querySelectorAll(".-select__variant");
-    const input = select.querySelector(".-select__input");
+    const variants = select.querySelectorAll(".select__variant");
+    const input = select.querySelector(".select__input");
     for (const variant of variants) {
       variant.addEventListener("click", () => {
         input.setAttribute("value", variant.textContent);

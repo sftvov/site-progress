@@ -14,10 +14,10 @@
   &__category {
     display: block;
     &:not(:first-child) {
-      margin-top: var(--XS);
+      margin-top: #{$XS};
     }
     &._active {
-      color: var(--hover);
+      color: #{$hover};
     }
   }
 
@@ -31,10 +31,10 @@
     &._active,
     &:hover,
     &:focus-visible {
-      border-color: var(--border);
+      border-color: #{$border};
     }
     &._active {
-      color: var(--hover);
+      color: #{$hover};
     }
   }
 

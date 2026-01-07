@@ -5,8 +5,8 @@ mixin burger(props = {})
       active = false
     } = props
 
-  button.-burger(
+  button.burger(
     class=active ? '_active' : ''
   )&attributes(attributes)
     - for (let i = 0; i < lines; i++)
-      span.-burger__line
+      span.burger__line

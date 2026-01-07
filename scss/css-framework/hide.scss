@@ -1,95 +1,143 @@
+@mixin n1hide {
+  @media (min-width: $md1+px) {
+    display: none;
+  }
+}
 .n1hide {
-  @media (min-width: $md1+px) {
+  @include n1hide;
+}
+
+@mixin x1hide {
+  @media (max-width: $md1+px) {
     display: none;
   }
 }
-
 .x1hide {
-  @media (max-width: $md1+px) {
-    display: none;
-  }
+  @include x1hide;
 }
 
-.n2hide {
+@mixin n2hide {
   @media (min-width: $md2+px) {
     display: none;
   }
 }
+.n2hide {
+  @include n2hide;
+}
 
-.x2hide {
+@mixin x2hide {
   @media (max-width: $md2+px) {
     display: none;
   }
 }
+.x2hide {
+  @include x2hide;
+}
 
-.n3hide {
+@mixin n3hide {
   @media (min-width: $md3+px) {
     display: none;
   }
 }
+.n3hide {
+  @include n3hide;
+}
 
-.x3hide {
+@mixin x3hide {
   @media (max-width: $md3+px) {
     display: none;
   }
 }
+.x3hide {
+  @include x3hide;
+}
 
-.n4hide {
+@mixin n4hide {
   @media (min-width: $md4+px) {
     display: none;
   }
 }
+.n4hide {
+  @include n4hide;
+}
 
-.x4hide {
+@mixin x4hide {
   @media (max-width: $md4+px) {
     display: none;
   }
 }
+.x4hide {
+  @include x4hide;
+}
 
-.n1contents {
+@mixin n1contents {
   @media (min-width: $md1+px) {
     display: contents;
   }
 }
+.n1contents {
+  @include n1contents;
+}
 
-.x1contents {
+@mixin x1contents {
   @media (max-width: $md1+px) {
     display: contents;
   }
 }
+.x1contents {
+  @include x1contents;
+}
 
-.n2contents {
+@mixin n2contents {
   @media (min-width: $md2+px) {
     display: contents;
   }
 }
+.n2contents {
+  @include n2contents;
+}
 
-.x2contents {
+@mixin x2contents {
   @media (max-width: $md2+px) {
     display: contents;
   }
 }
+.x2contents {
+  @include x2contents;
+}
 
-.n3contents {
+@mixin n3contents {
   @media (min-width: $md3+px) {
     display: contents;
   }
 }
+.n3contents {
+  @include n3contents;
+}
 
-.x3contents {
+@mixin x3contents {
   @media (max-width: $md3+px) {
     display: contents;
   }
 }
+.x3contents {
+  @include x3contents;
+}
 
-.n4contents {
+@mixin n4contents {
   @media (min-width: $md4+px) {
     display: contents;
   }
 }
+.n4contents {
+  @include n4contents;
+}
 
-.x4contents {
+@mixin x4contents {
   @media (max-width: $md4+px) {
     display: contents;
   }
+}
+.x4contents {
+  @include x4contents;
 }

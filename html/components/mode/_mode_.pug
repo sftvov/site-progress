@@ -11,7 +11,7 @@ mixin mode(props = {})
       iconBefore = false
     } = props
 
-  #{tag}.-mode&attributes(attributes)
+  #{tag}.mode&attributes(attributes)
     if iconBefore
       +modeSvg(icon)
     span #{text}

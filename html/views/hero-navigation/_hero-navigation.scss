@@ -1,7 +1,7 @@
 .hero-navigation {
   &__text {
     @media (min-width: $md1+px) {
-      margin-top: var(--2XL);
+      margin-top: #{$XXL};
     }
     @media (min-width: $md2+px) {
       margin-top: 10px;

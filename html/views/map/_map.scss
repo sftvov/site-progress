@@ -9,13 +9,13 @@
       left: var(--columnG);
     }
     @media (max-width: $md1+px) {
-      padding: var(--M) 30px;
+      padding: #{$M} 30px;
     }
     @media (max-width: $md2+px) {
       padding-inline: 15px;
     }
     @media (max-width: $md3+px) {
-      padding: var(--XL-2XL) 30px;
+      padding: var(--S1) 30px;
     }
     @media (max-width: $md4+px) {
       padding-inline: 15px;
@@ -32,13 +32,13 @@
       flex-shrink: 0;
       width: 16px;
       height: 16px;
-      background-color: var(--bg-bright);
+      background-color: #{$bg-bright};
     }
   }
 
   &__info-middle {
     @media (max-width: $md3+px) {
-      row-gap: var(--XS);
+      row-gap: #{$XS};
     }
   }
 }

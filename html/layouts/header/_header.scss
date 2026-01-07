@@ -47,7 +47,7 @@
         left: calc(var(--fields) / -2);
         width: calc(100% + var(--fields));
         height: 2px;
-        background-color: var(--bg-second);
+        background-color: #{$bg-second};
       }
     }
   }
@@ -131,7 +131,7 @@
     cursor: pointer;
     &:hover,
     &:focus-visible {
-      background-color: var(--bg-accent);
+      background-color: #{$bg-accent};
     }
   }
 
@@ -170,8 +170,8 @@
     margin-left: 10px;
     &:hover,
     &:focus-visible {
-      color: var(--hover-light);
-      stroke: var(--hover-light);
+      color: #{$hover-light};
+      stroke: #{$hover-light};
     }
   }
 }

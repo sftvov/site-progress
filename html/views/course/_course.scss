@@ -4,23 +4,21 @@
     position: absolute;
     top: var(--indicator-top);
     left: var(--indicator-left);
-    width: var(--indicator-width);
-    height: var(--indicator-height);
+    width: calc(var(--indicator-width) + 1px);
+    height: calc(var(--indicator-height) + 1px);
   }
 
   &__tab-title {
-    border-top: none;
-    border-left: none;
     flex-grow: 1;
     padding: 10px;
     &._active {
       cursor: auto;
-      color: var(--text-second);
+      color: #{$text-second};
     }
     &:not(._active) {
       &:hover,
       &:focus-visible {
-        color: var(--hover);
+        color: #{$hover};
       }
     }
     // &:not(:first-child) {

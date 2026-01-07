@@ -9,10 +9,10 @@ mixin select(props = {})
       required = false
     } = props
 
-  .-select&attributes(attributes)
-    input.-select__input(name=name, value=value, placeholder=placeholder, required=required, inert)
-    .-select__variants
+  .select&attributes(attributes)
+    input.select__input(name=name, value=value, placeholder=placeholder, required=required, inert)
+    .select__variants
       each option, index in options
-        .-select__variant(
+        .select__variant(
           class=index === activeIndex ? '_active' : ''
         )= option

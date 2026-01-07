@@ -1,292 +1,469 @@
-.r {
+@mixin r {
   display: flex;
 }
+.r {
+  @include r;
+}
 
-.cg5 {
+@mixin cg5 {
   column-gap: 5px;
 }
+.cg5 {
+  @include cg5;
+}
 
-.cg10 {
+@mixin cg10 {
   column-gap: 10px;
 }
+.cg10 {
+  @include cg10;
+}
 
-.cg15 {
+@mixin cg15 {
   column-gap: 15px;
 }
+.cg15 {
+  @include cg15;
+}
 
-.cg30 {
+@mixin cg30 {
   column-gap: 30px;
 }
-
-.cg40 {
-  column-gap: 40px;
+.cg30 {
+  @include cg30;
 }
 
-.x2cg10 {
+@mixin cg40 {
+  column-gap: 40px;
+}
+.cg40 {
+  @include cg40;
+}
+
+@mixin x2cg10 {
   @media (max-width: $md2+px) {
     column-gap: 10px;
   }
 }
+.x2cg10 {
+  @include x2cg10;
+}
 
-.x2cg30 {
+@mixin x2cg30 {
   @media (max-width: $md2+px) {
     column-gap: 30px;
   }
 }
+.x2cg30 {
+  @include x2cg30;
+}
 
+@mixin r5 {
+  @include r;
+  @include cg5;
+}
 .r5 {
-  @extend .r;
-  @extend .cg5;
+  @include r5;
 }
 
+@mixin r10 {
+  @include r;
+  @include cg10;
+}
 .r10 {
-  @extend .r;
-  @extend .cg10;
+  @include r10;
 }
 
+@mixin r15 {
+  @include r;
+  @include cg15;
+}
 .r15 {
-  @extend .r;
-  @extend .cg15;
+  @include r15;
 }
 
+@mixin r30 {
+  @include r;
+  @include cg30;
+}
 .r30 {
-  @extend .r;
-  @extend .cg30;
+  @include r30;
 }
 
+@mixin r40 {
+  @include r;
+  @include cg40;
+}
 .r40 {
-  @extend .r;
-  @extend .cg40;
+  @include r40;
 }
 
-.row {
-  @extend .r;
+@mixin row {
+  @include r;
   column-gap: var(--gutter);
 }
+.row {
+  @include row;
+}
 
-.wrap {
+@mixin wrap {
   flex-wrap: wrap;
 }
-
-.ais {
-  align-items: flex-start;
+.wrap {
+  @include wrap;
 }
 
-.x2ais {
+@mixin ais {
+  align-items: flex-start;
+}
+.ais {
+  @include ais;
+}
+
+@mixin x2ais {
   @media (max-width: $md2+px) {
     align-items: flex-start;
   }
 }
+.x2ais {
+  @include x2ais;
+}
 
-.x3ais {
+@mixin x3ais {
   @media (max-width: $md3+px) {
     align-items: flex-start;
   }
 }
-
-.aic {
-  align-items: center;
+.x3ais {
+  @include x3ais;
 }
 
-.x4aic {
+@mixin aic {
+  align-items: center;
+}
+.aic {
+  @include aic;
+}
+
+@mixin x4aic {
   @media (max-width: $md4+px) {
     align-items: center;
   }
 }
-
-.aie {
-  align-items: flex-end;
+.x4aic {
+  @include x4aic;
 }
 
-.x3aie {
+@mixin aie {
+  align-items: flex-end;
+}
+.aie {
+  @include aie;
+}
+
+@mixin x3aie {
   @media (max-width: $md3+px) {
     align-items: flex-end;
   }
 }
+.x3aie {
+  @include x3aie;
+}
 
-.jcc {
+@mixin jcc {
   justify-content: center;
 }
+.jcc {
+  @include jcc;
+}
 
-.x2jcc {
+@mixin x2jcc {
   @media (max-width: $md2+px) {
     justify-content: center;
   }
 }
+.x2jcc {
+  @include x2jcc;
+}
 
-.x4jcc {
+@mixin x4jcc {
   @media (max-width: $md4+px) {
     justify-content: center;
   }
 }
+.x4jcc {
+  @include x4jcc;
+}
 
-.jcb {
+@mixin jcb {
   justify-content: space-between;
 }
+.jcb {
+  @include jcb;
+}
 
-.x3jcb {
+@mixin x3jcb {
   @media (max-width: $md3+px) {
     justify-content: space-between;
   }
 }
+.x3jcb {
+  @include x3jcb;
+}
 
-.x4jcb {
+@mixin x4jcb {
   @media (max-width: $md4+px) {
     justify-content: space-between;
   }
 }
+.x4jcb {
+  @include x4jcb;
+}
 
-.jce {
+@mixin jce {
   justify-content: flex-end;
 }
+.jce {
+  @include jce;
+}
 
-.fs {
+@mixin fs {
   flex-shrink: 0;
 }
+.fs {
+  @include fs;
+}
 
-.fg {
+@mixin fg {
   flex-grow: 1;
 }
+.fg {
+  @include fg;
+}
 
+@mixin x1row {
+  @media (max-width: $md1+px) {
+    flex-direction: row;
+  }
+}
 .x1row {
-  @media (max-width: $md1+px) {
-    flex-direction: row;
-  }
+  @include x1row;
 }
 
+@mixin x1col {
+  @media (max-width: $md1+px) {
+    flex-direction: column;
+  }
+}
 .x1col {
-  @media (max-width: $md1+px) {
-    flex-direction: column;
-  }
+  @include x1col;
 }
 
+@mixin x2row {
+  @media (max-width: $md2+px) {
+    flex-direction: row;
+  }
+}
 .x2row {
-  @media (max-width: $md2+px) {
-    flex-direction: row;
-  }
+  @include x2row;
 }
 
+@mixin x2col {
+  @media (max-width: $md2+px) {
+    flex-direction: column;
+  }
+}
 .x2col {
-  @media (max-width: $md2+px) {
-    flex-direction: column;
-  }
+  @include x2col;
 }
 
+@mixin x2wrap {
+  @media (max-width: $md2+px) {
+    flex-wrap: wrap;
+  }
+}
 .x2wrap {
-  @media (max-width: $md2+px) {
-    flex-wrap: wrap;
-  }
+  @include x2wrap;
 }
 
+@mixin x3row {
+  @media (max-width: $md3+px) {
+    flex-direction: row;
+  }
+}
 .x3row {
-  @media (max-width: $md3+px) {
-    flex-direction: row;
-  }
+  @include x3row;
 }
 
+@mixin x3col {
+  @media (max-width: $md3+px) {
+    flex-direction: column;
+  }
+}
 .x3col {
-  @media (max-width: $md3+px) {
-    flex-direction: column;
-  }
+  @include x3col;
 }
 
-.x3wrap {
+@mixin x3wrap {
   @media (max-width: $md3+px) {
     flex-wrap: wrap;
   }
 }
+.x3wrap {
+  @include x3wrap;
+}
 
-.x4row {
+@mixin x4row {
   @media (max-width: $md4+px) {
     flex-direction: row;
   }
 }
+.x4row {
+  @include x4row;
+}
 
-.x4col {
+@mixin x4col {
   @media (max-width: $md4+px) {
     flex-direction: column;
   }
 }
+.x4col {
+  @include x4col;
+}
 
-.x4wrap {
+@mixin x4wrap {
   @media (max-width: $md4+px) {
     flex-wrap: wrap;
   }
 }
+.x4wrap {
+  @include x4wrap;
+}
 
+@mixin g1 {
+  row-gap: var(--S1);
+}
 .g1 {
-  row-gap: var(--XL-2XL);
+  @include g1;
 }
 
+@mixin g2 {
+  row-gap: var(--S2);
+}
 .g2 {
-  row-gap: var(--M-L);
+  @include g2;
 }
 
+@mixin g3 {
+  row-gap: #{$M};
+}
 .g3 {
-  row-gap: var(--M);
+  @include g3;
 }
 
+@mixin g4 {
+  row-gap: var(--S4);
+}
 .g4 {
-  row-gap: var(--S-M);
+  @include g4;
 }
 
+@mixin g5 {
+  row-gap: #{$S};
+}
 .g5 {
-  row-gap: var(--S);
+  @include g5;
 }
 
+@mixin g6 {
+  row-gap: var(--S6);
+}
 .g6 {
-  row-gap: var(--XS-S);
+  @include g6;
 }
 
+@mixin g7 {
+  row-gap: #{$XS};
+}
 .g7 {
-  row-gap: var(--XS);
+  @include g7;
 }
 
+@mixin g8 {
+  row-gap: #{$XXS};
+}
 .g8 {
-  row-gap: var(--2XS);
+  @include g8;
 }
 
-.col {
-  @extend .r;
+@mixin col {
+  @include r;
   flex-direction: column;
 }
+.col {
+  @include col;
+}
 
+@mixin col1 {
+  @include col;
+  @include g1;
+}
 .col1 {
-  @extend .col;
-  @extend .g1;
+  @include col1;
 }
 
+@mixin col2 {
+  @include col;
+  @include g2;
+}
 .col2 {
-  @extend .col;
-  @extend .g2;
+  @include col2;
 }
 
+@mixin col3 {
+  @include col;
+  @include g3;
+}
 .col3 {
-  @extend .col;
-  @extend .g3;
+  @include col3;
 }
 
+@mixin col4 {
+  @include col;
+  @include g4;
+}
 .col4 {
-  @extend .col;
-  @extend .g4;
+  @include col4;
 }
 
+@mixin col5 {
+  @include col;
+  @include g5;
+}
 .col5 {
-  @extend .col;
-  @extend .g5;
+  @include col5;
 }
 
+@mixin col6 {
+  @include col;
+  @include g6;
+}
 .col6 {
-  @extend .col;
-  @extend .g6;
+  @include col6;
 }
 
+@mixin col7 {
+  @include col;
+  @include g7;
+}
 .col7 {
-  @extend .col;
-  @extend .g7;
+  @include col7;
 }
 
+@mixin col8 {
+  @include col;
+  @include g8;
+}
 .col8 {
-  @extend .col;
-  @extend .g8;
+  @include col8;
 }

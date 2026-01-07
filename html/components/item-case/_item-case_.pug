@@ -6,17 +6,17 @@ mixin caseItem(item, options = {})
       showReviews = true
     } = options
 
-  article.-case-item(
+  article.case-item(
     class= isActive ? '_active' : '',
     data-item
   )&attributes(attributes)
     .container
       .n1o1
-        .-case-item__top(data-spoller)
+        .case-item__top(data-spoller)
           if showImage
             img.n3w1.x3hide(src=item.image alt="")
           .fg
-            h3.-case-item__title !{item.title}
+            h3.case-item__title !{item.title}
             .row.wrap.g5.m4
               each icon, i in item.icons
                 - 

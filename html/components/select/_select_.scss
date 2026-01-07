@@ -1,36 +1,36 @@
-.-select {
+.select {
   cursor: pointer;
   @extend %input;
   // text-align: left;
-  @extend .por;
-  @extend .r10;
-  @extend .aic;
-  @extend .jcb;
+  @include por;
+  @include r10;
+  @include aic;
+  @include jcb;
   &._active {
-    border-color: var(--border);
+    border-color: #{$border};
     &::after {
       rotate: 180deg;
     }
-    & .-select__variants {
+    & .select__variants {
       z-index: 2;
     }
   }
 
-  &:has(.-select__input:user-invalid) {
-    border-color: var(--border-invalid);
+  &:has(.select__input:user-invalid) {
+    border-color: #{$border-invalid};
   }
 
   &::after {
     content: '';
-    @extend .dur;
-    @extend .i24;
+    @include dur;
+    @include i24;
     background: url(../img/icons/chevron-l.svg) center/cover no-repeat;
   }
 
   &__input {
     cursor: pointer;
     outline: none;
-    @extend .fg;
+    @include fg;
   }
 
   &__variants {
@@ -39,25 +39,25 @@
     position: absolute;
     top: 100%;
     left: -1px;
-    @extend .col;
+    @include col;
     width: calc(100% + 2px);
     padding: 4px 0;
-    @extend .bgm;
-    @extend .bd;
+    @include bgm;
+    @include bd;
     &:not(._active) {
       display: none;
     }
   }
 
   &__variant {
-    @extend .dur;
+    @include dur;
     display: block;
-    @extend .wsn;
+    @include wsn;
     padding: 5px 9px;
     &:hover,
     &:focus-visible {
       outline: none;
-      @extend .bgs;
+      @include bgs;
     }
     &._active {
       display: none;

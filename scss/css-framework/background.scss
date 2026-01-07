@@ -1,23 +1,41 @@
+@mixin bgm {
+  background-color: #{$bg-main};
+}
 .bgm {
-  background-color: var(--bg-main);
+  @include bgm;
 }
 
+@mixin bgs {
+  background-color: #{$bg-second};
+}
 .bgs {
-  background-color: var(--bg-second);
+  @include bgs;
 }
 
+@mixin bgb {
+  background-color: #{$bg-bright};
+}
 .bgb {
-  background-color: var(--bg-bright);
+  @include bgb;
 }
 
+@mixin bga {
+  background-color: #{$bg-accent};
+}
 .bga {
-  background-color: var(--bg-accent);
+  @include bga;
 }
 
+@mixin bgd {
+  background-color: #{$bg-dark};
+}
 .bgd {
-  background-color: var(--bg-dark);
+  @include bgd;
 }
 
+@mixin bgg {
+  background-color: #{$bg-gray};
+}
 .bgg {
-  background-color: var(--bg-gray);
+  @include bgg;
 }

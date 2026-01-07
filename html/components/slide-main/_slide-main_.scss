@@ -1,5 +1,5 @@
-.-main-slide {
-  @extend .r;
+.main-slide {
+  @include r;
   height: 396px;
   background-position: center;
   background-size: cover;
@@ -13,7 +13,7 @@
     height: 178px;
   }
   &__body {
-    @extend .col;
+    @include col;
     width: var(--6columnsG);
     margin-left: auto;
     padding: 0 var(--gutter) 132px;
@@ -35,7 +35,7 @@
   }
 
   &__title {
-    @extend .td;
+    @include td;
     margin-top: auto;
     @media (min-width: $md2+px) {
       $fs: 24;
@@ -57,6 +57,6 @@
       $lh: 18;
       line-height: round-to(math.div($lh, $fs), 3);
     }
-    @extend .x4tac;
+    @include x4tac;
   }
 }

@@ -1,96 +1,118 @@
-%bdr1 {
-  --border-reduce: 1px;
+@mixin bd {
+  border: 1px solid #{$border};
 }
-
-%bdr2 {
-  --border-reduce: 2px;
-}
-
 .bd {
-  @extend %bdr1;
-  border: 1px solid var(--border);
+  @include bd;
 }
 
-.bda {
-  @extend %bdr1;
-  border: 1px solid var(--border-accent);
+@mixin bd2 {
+  border: 2px solid #{$border};
 }
-
-.bdd {
-  @extend %bdr1;
-  border: 1px solid var(--border-dark);
-}
-
-.bdg {
-  @extend %bdr1;
-  border: 1px solid var(--border-gray);
-}
-
-.bdl {
-  @extend %bdr1;
-  border: 1px solid var(--border-light);
-}
-
 .bd2 {
-  @extend %bdr2;
-  border: 2px solid var(--border);
+  @include bd2;
 }
 
+@mixin bda {
+  border: 1px solid #{$border-accent};
+}
+.bda {
+  @include bda;
+}
+
+@mixin bd2a {
+  border: 2px solid #{$border-accent};
+}
 .bd2a {
-  @extend %bdr2;
-  border: 2px solid var(--border-accent);
+  @include bd2a;
 }
 
+@mixin tbd2a {
+  border-top: 2px solid #{$border-accent};
+}
 .tbd2a {
-  @extend %bdr2;
-  border-top: 2px solid var(--border-accent);
+  @include tbd2a;
 }
 
+@mixin rbd2a {
+  border-right: 2px solid #{$border-accent};
+}
 .rbd2a {
-  @extend %bdr2;
-  border-right: 2px solid var(--border-accent);
+  @include rbd2a;
 }
 
+@mixin bbd2a {
+  border-bottom: 2px solid #{$border-accent};
+}
 .bbd2a {
-  @extend %bdr2;
-  border-bottom: 2px solid var(--border-accent);
+  @include bbd2a;
 }
 
+@mixin lbd2a {
+  border-left: 2px solid #{$border-accent};
+}
 .lbd2a {
-  @extend %bdr2;
-  border-left: 2px solid var(--border-accent);
+  @include lbd2a;
 }
 
+@mixin bdd {
+  border: 1px solid #{$border-dark};
+}
+.bdd {
+  @include bdd;
+}
+
+@mixin bdg {
+  border: 1px solid #{$border-gray};
+}
+.bdg {
+  @include bdg;
+}
+
+@mixin bd2g {
+  border: 2px solid #{$border-gray};
+}
 .bd2g {
-  @extend %bdr2;
-  border: 2px solid var(--border-gray);
+  @include bd2g;
 }
 
-.bd2l {
-  @extend %bdr2;
-  border: 2px solid var(--border-light);
+@mixin tbd2g {
+  border-top: 2px solid #{$border-gray};
 }
-
 .tbd2g {
-  @extend %bdr2;
-  border-top: 2px solid var(--border-gray);
+  @include tbd2g;
 }
 
+@mixin bdl {
+  border: 1px solid #{$border-light};
+}
+.bdl {
+  @include bdl;
+}
+
+@mixin bd2l {
+  border: 2px solid #{$border-light};
+}
+.bd2l {
+  @include bd2l;
+}
+
+@mixin tbd2l {
+  border-top: 2px solid #{$border-light};
+}
 .tbd2l {
-  @extend %bdr2;
-  border-top: 2px solid var(--border-light);
+  @include tbd2l;
 }
 
+@mixin rbd2l {
+  border-right: 2px solid #{$border-light};
+}
 .rbd2l {
-  @extend %bdr2;
-  border-right: 2px solid var(--border-light);
+  @include rbd2l;
 }
 
+@mixin bbd2l {
+  border-bottom: 2px solid #{$border-light};
+}
 .bbd2l {
-  @extend %bdr2;
-  border-bottom: 2px solid var(--border-light);
-}
-
-.bdr0 {
-  --border-reduce: 0px;
+  @include bbd2l;
 }

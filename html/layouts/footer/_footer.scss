@@ -1,22 +1,27 @@
 .footer {
-
+  @include ts;
+  @include w;
+  @include pd1;
+  @include bgd;
   &__grid {
     @media (min-width: $md3+px) {
       grid-template-columns: repeat(4, 1fr);
-      row-gap: var(--XS);
+      row-gap: #{$XS};
     }
     @media (min-width: $md4+px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: var(--gutter);
-      row-gap: var(--M);
+      row-gap: #{$M};
     }
   }
 
   &__column-wrapper {
+    @include por;
+    @include n4contents;
     @media (max-width: $md4+px) {
-      padding-bottom: var(--M);
-      margin-bottom: var(--M);
+      padding-bottom: #{$M};
+      margin-bottom: #{$M};
       &::after {
         content: '';
         position: absolute;
@@ -25,16 +30,19 @@
         display: block;
         width: calc(100% + 20px);
         height: 2px;
-        background-color: var(--bg-second);
+        background-color: #{$bg-second};
       }
     }
   }
 
   &__last-column {
+    @include col4;
     grid-row: span 2;
   }
 
   &__column-title {
+    @include ttu;
+    @include x4tac;
     font-family: 'RobotoCondensed';
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
@@ -59,26 +67,31 @@
 
   &__bright {
     &::before {
-      background-color: var(--bg-bright);
+      background-color: #{$bg-bright};
     }
   }
 
   &__accent {
     &::before {
-      background-color: var(--bg-accent);
+      background-color: #{$bg-accent};
     }
   }
 
   &__icon-fill {
+    @include dur;
+    @include i24;
     stroke: none;
-    fill: var(--text-second);
+    fill: #{$text-second};
     &:hover,
     &:focus-visible {
-      fill: var(--hover);
+      fill: #{$hover};
     }
   }
 
   &__additional {
+    @include col5;
+    @include x4tac;
+    @include x4aic;
     @media (min-width: $md3+px) {
       grid-column: span 3;
     }
@@ -88,6 +101,7 @@
   }
 
   &__additional-p {
+    @include tl;
     $fs: 12;
     font-size: math.div($fs, $fz) + em;
     $lh: 14;

@@ -3,7 +3,7 @@
   &__spoller {
     padding: 20px var(--columnG) 18px;
     @media (max-width: $md2+px) {
-      padding-top: var(--S);
+      padding-top: #{$S};
       padding-bottom: 13px;
     }
     @media (max-width: $md3+px) {
@@ -17,7 +17,7 @@
   &__spoller-title {
     text-align: left;
     &::after {
-      transition-duration: var(--transition);
+      transition-duration: #{$transition};
       content: url('../img/icons/chevron-l.svg');
       height: 24px;
       @media (max-width: $md3+px) {

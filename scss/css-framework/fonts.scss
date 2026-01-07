@@ -1,70 +1,172 @@
-.hyp {
+@mixin dur {
+  transition-duration: #{$transition};
+}
+.dur {
+  @include dur;
+}
+
+@mixin i {
+  font-style: italic;
+}
+.i {
+  @include i;
+}
+
+@mixin ta {
+  color: #{$text-accent};
+}
+.ta {
+  @include ta;
+}
+
+@mixin tb {
+  color: #{$text-bright};
+}
+.tb {
+  @include tb;
+}
+
+@mixin td {
+  color: #{$text-dark};
+}
+.td {
+  @include td;
+}
+
+@mixin tl {
+  color: #{$text-light};
+}
+.tl {
+  @include tl;
+}
+
+@mixin ts {
+  color: #{$text-second};
+}
+.ts {
+  @include ts;
+}
+
+@mixin hover {
+  @include dur;
+  &:hover,
+  &:focus-visible {
+    color: #{$hover};
+  }
+}
+.hover {
+  @include hover;
+}
+
+@mixin hover-accent {
+  @include dur;
+  &:hover,
+  &:focus-visible {
+    color: #{$hover-accent};
+  }
+}
+.hover-accent {
+  @include hover-accent;
+}
+
+@mixin link {
+  @include ta;
+  @include hover;
+}
+.link {
+  @include link;
+}
+
+@mixin link-b {
+  @include tb;
+  @include hover-accent;
+}
+.link-b {
+  @include link-b;
+}
+
+@mixin tac {
+  text-align: center;
+}
+.tac {
+  @include tac;
+}
+
+
+// .x1tac {
+//   @media (max-width: $md1+px) {
+//     text-align: center;
+//   }
+// }
+@mixin x2tac {
+  @media (max-width: $md2+px) {
+    text-align: center;
+  }
+}
+.x2tac {
+  @include x2tac;
+}
+
+
+// .x3tac {
+//   @media (max-width: $md3+px) {
+//     text-align: center;
+//   }
+// }
+
+@mixin x4tac {
+  @media (max-width: $md4+px) {
+    text-align: center;
+  }
+}
+.x4tac {
+  @include x4tac;
+}
+
+@mixin tae {
+  text-align: end;
+}
+.tae {
+  @include tae;
+}
+
+@mixin ttu {
+  text-transform: uppercase;
+}
+.ttu {
+  @include ttu;
+}
+
+@mixin twb {
+  text-wrap: balance;
+}
+.twb {
+  @include twb;
+}
+
+@mixin wsn {
+  white-space: nowrap;
+}
+.wsn {
+  @include wsn;
+}
+
+@mixin hyp {
   overflow-wrap: break-word; /* Современный аналог word-wrap */
   word-break: auto-phrase;
   hyphens: auto; /* Красивые переносы с дефисами */
 }
-
-.dur {
-  transition-duration: var(--transition);
+.hyp {
+  @include hyp;
 }
 
-.i {
-  font-style: italic;
-}
-
-.ta {
-  color: var(--text-accent);
-}
-
-.tb {
-  color: var(--text-bright);
-}
-
-.td {
-  color: var(--text-dark);
-}
-
-.tl {
-  color: var(--text-light);
-}
-
-.ts {
-  color: var(--text-second);
-}
-
-.hover {
-  @extend .dur;
-  &:hover,
-  &:focus-visible {
-    color: var(--hover);
-  }
-}
-
-.hover-accent {
-  @extend .dur;
-  &:hover,
-  &:focus-visible {
-    color: var(--hover-accent);
-  }
-}
-
-.link {
-  @extend .ta;
-  @extend .hover;
-}
-
-.link-b {
-  @extend .tb;
-  @extend .hover-accent;
-}
-
-.t1 {
+@mixin t1 {
   font-family: 'RobotoCondensed';
   $fs: 24;
   font-size: math.div($fs, $fz) + em;
   $lh: 30;
   line-height: round-to(math.div($lh, $fs), 3);
-  @extend .ttu;
+  @include ttu;
   @media (max-width: $md2+px) {
     $fs: 20;
     font-size: math.div($fs, $fz) + em;
@@ -78,18 +180,27 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.t1 {
+  @include t1;
+}
 
+@mixin t1d {
+  @include td;
+  @include t1;
+}
 .t1d {
-  @extend .td;
-  @extend .t1;
+  @include t1d;
 }
 
+@mixin title {
+  @include t1d;
+  @include tac;
+}
 .title {
-  @extend .t1d;
-  @extend .tac;
+  @include title;
 }
 
-.t2 {
+@mixin t2 {
   font-family: 'RobotoCondensed';
   $fs: 18;
   font-size: math.div($fs, $fz) + em;
@@ -103,18 +214,27 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.t2 {
+  @include t2;
+}
 
+@mixin t2d {
+  @include td;
+  @include t2;
+}
 .t2d {
-  @extend .td;
-  @extend .t2;
+  @include t2d;
 }
 
+@mixin subtitle {
+  @include t2d;
+  @include tac;
+}
 .subtitle {
-  @extend .t2d;
-  @extend .tac;
+  @include subtitle;
 }
 
-.a1 {
+@mixin a1 {
   font-family: 'Montserrat';
   $fs: 48;
   font-size: math.div($fs, $fz) + em;
@@ -128,8 +248,11 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.a1 {
+  @include a1;
+}
 
-.p1 {
+@mixin p1 {
   @media (max-width: $md2+px) AND (min-width: $md4+px) {
     $fs: 13;
     font-size: math.div($fs, $fz) + em;
@@ -137,8 +260,11 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.p1 {
+  @include p1;
+}
 
-.p2 {
+@mixin p2 {
   $fs: 13;
   font-size: math.div($fs, $fz) + em;
   $lh: 18;
@@ -150,17 +276,23 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.p2 {
+  @include p2;
+}
 
-.p3 {
+@mixin p3 {
   $fs: 10;
   font-size: math.div($fs, $fz) + em;
   $lh: 19;
   line-height: round-to(math.div($lh, $fs), 3);
 }
+.p3 {
+  @include p3;
+}
 
-.b1 {
+@mixin b1 {
   font-family: 'RobotoCondensed';
-  @extend .ttu;
+  @include ttu;
   @media (min-width: $md2+px) {
     $fs: 16;
     font-size: math.div($fs, $fz) + rem;
@@ -168,9 +300,12 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
+.b1 {
+  @include b1;
+}
 
-.btn {
-  @extend .tac;
+@mixin btn {
+  @include tac;
   @media (max-width: $md2+px) {
     $fs: 12;
     font-size: math.div($fs, $fz) + em;
@@ -178,47 +313,7 @@
     line-height: round-to(math.div($lh, $fs), 3);
   }
 }
-
-.tac {
-  text-align: center;
+.btn {
+  @include btn;
 }
 
-// .x1tac {
-//   @media (max-width: $md1+px) {
-//     text-align: center;
-//   }
-// }
-
-.x2tac {
-  @media (max-width: $md2+px) {
-    text-align: center;
-  }
-}
-
-// .x3tac {
-//   @media (max-width: $md3+px) {
-//     text-align: center;
-//   }
-// }
-
-.x4tac {
-  @media (max-width: $md4+px) {
-    text-align: center;
-  }
-}
-
-.tae {
-  text-align: end;
-}
-
-.ttu {
-  text-transform: uppercase;
-}
-
-.twb {
-  text-wrap: balance;
-}
-
-.wsn {
-  white-space: nowrap;
-}

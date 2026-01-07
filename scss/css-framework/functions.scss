@@ -7,11 +7,11 @@ body {
 }
 
 ._tabs-blocks {
-  @extend .por;
+  @include por;
 }
 
 ._tabs-block {
-  @extend .dur;
+  @include dur;
   &:not(._active) {
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@ body {
 
 //   &__blur-left,
 //   &__blur-right {
-//     @extend .dur;
+//     @include dur;
 //     position: absolute;
 //     top: 0;
 //     width: 70px;
@@ -73,12 +73,12 @@ body {
 
 //   &__blur-left {
 //     left: -1px;
-//     background-image: linear-gradient(to right, var(--bg-main) 20px, transparent);
+//     background-image: linear-gradient(to right, #{$bg-main} 20px, transparent);
 //   }
 
 //   &__blur-right {
 //     right: -1px;
-//     background-image: linear-gradient(to left, var(--bg-main) 20px, transparent);
+//     background-image: linear-gradient(to left, #{$bg-main} 20px, transparent);
 //   }
 // }
 // ._disable {

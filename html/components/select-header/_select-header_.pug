@@ -7,16 +7,16 @@ mixin headerSelect(props = {})
       phone = false
     } = props
 
-  button.-header-select&attributes(attributes)
+  button.header-select&attributes(attributes)
     .triangle
     p.p1(class=phone ? 'ta' : '')= text
     svg.dur.i24.x2i16(
       class=accent ? 'dur sa i24 x2i16' : ''
     )
       use(xlink:href='img/sprite/symbols.svg#chevron-down')
-    .-header-select__variants-wrapper
-      .-header-select__variants-border
-        .-header-select__variants
+    .header-select__variants-wrapper
+      .header-select__variants-border
+        .header-select__variants
           each option, index in options
             -
               itemClass = '';

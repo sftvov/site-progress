@@ -1,4 +1,4 @@
-.-course-info {
+.course-info {
   &__row {
     @extend.r;
     column-gap: 45px;
@@ -12,17 +12,17 @@
   }
 
   &__item {
-    @extend .p1;
-    @extend .r5;
-    @extend .aic;
+    @include p1;
+    @include r5;
+    @include aic;
     @media (max-width: $md4+px) {
       min-width: var(--2columns);
     }
   }
 
   &__link {
-    @extend .-course-info__item;
-    @extend .sa-link;
-    @extend .link;
+    @extend .course-info__item;
+    @include sa-link;
+    @include link;
   }
 }

@@ -1,9 +1,9 @@
 
 
-.-course-dates {
-  @extend .col5;
+.course-dates {
+  @include col5;
   @media (max-width: $md4+px) {
-    row-gap: var(--XS);
+    row-gap: #{$XS};
   }
 
   &__date-link {

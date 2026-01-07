@@ -1,13 +1,13 @@
 .plan-bottom {
   &__container {
     @media (max-width: $md3+px) {
-      background-color: var(--bg-second);
+      background-color: #{$bg-second};
     }
   }
 
   &__body {
     @media (max-width: $md1+px) {
-      padding-bottom: var(--M);
+      padding-bottom: #{$M};
     }
   }
 
@@ -28,10 +28,10 @@
 
   &__main {
     @media (min-width: $md2+px) {
-      margin-top: calc(-1 * var(--S)) ;
+      margin-top: calc(-1 * #{$S}) ;
     }
     @media (max-width: $md3+px) {
-      margin-top: var(--S);
+      margin-top: #{$S};
     }
   }
 }

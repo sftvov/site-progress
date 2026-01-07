@@ -1,20 +1,20 @@
-.-recommended-item {
-  @extend .hover-accent;
-  @extend .col;
-  @extend .aic;
-  @extend .n3w3;
-  @extend .w2;
-  @extend .x4w4;
+.recommended-item {
+  @include hover-accent;
+  @include col;
+  @include aic;
+  @include n3w3;
+  @include w2;
+  @include x4w4;
   &:hover,
   &:focus-visible {
-    & .-recommended-item__img {
+    & .recommended-item__img {
       filter: grayscale(1);
     }
   }
 
   &__img {
-    @extend .dur;
-    @extend .w;
+    @include dur;
+    @include w;
     filter: grayscale(0);
   }
 }

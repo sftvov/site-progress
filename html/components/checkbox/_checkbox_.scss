@@ -1,9 +1,9 @@
-.-checkbox {
+.checkbox {
   cursor: pointer;
   &__input {
     display: none;
     &:checked {
-      & + .-checkbox__span-wrapper {
+      & + .checkbox__span-wrapper {
         &::after {
           opacity: 1;
         }
@@ -11,16 +11,16 @@
     }
   }
   &__span-wrapper {
-    @extend .por;
-    @extend .r5;
-    @extend .aic;
+    @include por;
+    @include r5;
+    @include aic;
     &::before {
-      @extend .dur;
+      @include dur;
       content: url(../img/icons/checkbox-empty-l.svg);
       line-height: 0;
     }
     &::after {
-      @extend .dur;
+      @include dur;
       content: url(../img/icons/checkbox-check-l.svg);
       line-height: 0;
       position: absolute;
@@ -37,7 +37,7 @@
     }
   }
   &__span-wrapper-blue {
-    @extend .-checkbox__span-wrapper;
+    @extend .checkbox__span-wrapper;
     &::before {
       content: url(../img/icons/checkbox-empty-l-blue.svg);
     }
@@ -54,7 +54,7 @@
     }
   }
   &__span {
-    @extend .p2;
+    @include p2;
     vertical-align: middle;
     // translate: 0 3px;
     @media (max-width: $md2+px) {

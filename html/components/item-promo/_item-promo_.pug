@@ -5,9 +5,9 @@ mixin promoItem(card, options = {})
       imgAlt = ""
     } = options
 
-  article.-promo-item&attributes(attributes)
-    img.-promo-item__img(src=imgSrc, alt=imgAlt)
-    .-promo-item__main
+  article.promo-item&attributes(attributes)
+    img.promo-item__img(src=imgSrc, alt=imgAlt)
+    .promo-item__main
       h1.t1d !{card.title}
       .r5.aic.m7
         svg.sb.sw2.i24.x2i16

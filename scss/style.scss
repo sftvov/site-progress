@@ -3,21 +3,36 @@
 @import 'css-settings/font-face';
 @import '../../web-template/src/css-libs/null';
 
+
+
+@import 'css-framework/fonts';
+@import 'css-framework/positions';
+@import 'css-framework/flex';
+@import 'css-framework/width';
+@import 'css-framework/images';
+@import 'css-framework/hide';
+@import 'css-framework/space';
+@import 'css-framework/background';
+@import 'css-framework/border';
+@import 'css-elements/content';
+@import 'css-elements/elements';
+@import 'css-framework/functions';
+
 :root {
-  // color-scheme: only light;
+  color-scheme: light dark;
 }
 
 *:focus-visible {
-  outline: 1px solid var(--border);
+  outline: 1px solid #{$border};
   outline-offset: 3px;
 }
 
 html {
   scroll-behavior: smooth;
-  stroke: var(--text-main);
+  stroke: #{$text-main};
   stroke-width: 1.5px;
-  color: var(--text-main);
-  font-size: var(--fs);
+  color: #{$text-main};
+  font-size: #{$fz} + px;
   font-weight: 400;
   font-style: normal;
   $lh: 20;
@@ -27,7 +42,7 @@ html {
 
 body {
   height: 100%;
-  @extend .bgm;
+  @include bgm;
 }
 
 svg {
@@ -71,19 +86,6 @@ svg {
 
 @import '../../web-template/src/css-libs/lightgallery';
 @import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
-
-@import 'css-framework/functions';
-@import 'css-framework/fonts';
-@import 'css-framework/positions';
-@import 'css-framework/images';
-@import 'css-framework/hide';
-@import 'css-framework/flex';
-@import 'css-framework/width';
-@import 'css-framework/space';
-@import 'css-framework/background';
-@import 'css-framework/border';
-@import 'css-elements/content';
-@import 'css-elements/elements';
 
 @import '../html/components/arrow/_arrow_';
 @import '../html/components/branch/_branch_';

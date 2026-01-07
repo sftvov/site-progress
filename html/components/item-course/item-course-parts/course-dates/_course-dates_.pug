@@ -1,6 +1,6 @@
 mixin courseDates(course, config)
   - const tag = attributes.tag || 'div'
-  #{tag}.-course-dates&attributes(attributes)
+  #{tag}.course-dates&attributes(attributes)
     .row
       
       if config.date
@@ -21,7 +21,7 @@ mixin courseDates(course, config)
         each date in course.dates
           .row
             if config.date 
-              a.-course-dates__date-link(class=config.date) !{date.date}
+              a.course-dates__date-link(class=config.date) !{date.date}
             if config.code
               p(class=config.code) !{date.code}
             if config.price

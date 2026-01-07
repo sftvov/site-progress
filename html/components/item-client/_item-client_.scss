@@ -1,5 +1,5 @@
-.-client-item {
-  @extend .bd2g;
+.client-item {
+  @include bd2g;
   &:is(a) {
     &:hover,
     &:focus-visible {
@@ -9,6 +9,6 @@
     }
   }
   &__body {
-    padding: calc(var(--S-M) - var(--border-reduce));
+    padding: calc(var(--S4) - var(--border-reduce));
   }
 }

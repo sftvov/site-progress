@@ -1,5 +1,5 @@
 // .popup {
-//   @extend .dur;
+//   @include dur;
 //   opacity: 0;
 //   visibility: hidden;
 //   overflow-y: scroll;
@@ -9,7 +9,7 @@
 //   left: 0;
 //   width: 100%;
 //   height: 100%;
-//   background-color: rgba(var(--bg-second), 0.4);
+//   background-color: rgba(#{$bg-second}, 0.4);
 
 //   &._active {
 //     opacity: 1;
@@ -57,7 +57,7 @@
 //       top: 20px;
 //       right: 20px;
 //       & svg {
-//         @extend .dur;
+//         @include dur;
 //         fill: var(--white);
 //         width: 50px;
 //         height: 50px;
@@ -93,7 +93,7 @@
 //   }
 
 //   &__close-btn {
-//     @extend .dur;
+//     @include dur;
 //     stroke: rgb(var(--white));
 //     position: absolute;
 //     top: 10px;

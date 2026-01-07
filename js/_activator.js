@@ -1,20 +1,20 @@
-new Activator('._select-activator .-select__variant', {
+new Activator('._select-activator .select__variant', {
 	removedOwn: ['._select-activated'],
 	onlyOne: true,
 });
 
-new Activator('.-header-select', {
-	stops: ['.-header-select__variants-wrapper'],
-	removedOwn: ['.-header-select__variants-wrapper'],
+new Activator('.header-select', {
+	stops: ['.header-select__variants-wrapper'],
+	removedOwn: ['.header-select__variants-wrapper'],
 	clickOutClose: true,
 	escClose: true,
 	onlyOne: true,
 });
 
-new Activator('.-select', {
-	removedOwn: ['.-select__variants'],
-	stops: ['.-select__variants'],
-	removing: ['.-select__variant'],
+new Activator('.select', {
+	removedOwn: ['.select__variants'],
+	stops: ['.select__variants'],
+	removing: ['.select__variant'],
 	clickOutClose: true,
 	escClose: true,
 	effects: 'U',
@@ -25,10 +25,10 @@ new Activator('.-select', {
 	//focus
 });
 
-new Activator('.-select__variant', {
+new Activator('.select__variant', {
   onlyOne: true,
   // deactivate: false,
-  limitContainer: '.-select',
+  limitContainer: '.select',
 });
 
 new Activator('._menu-btn', {

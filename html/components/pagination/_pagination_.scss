@@ -1,10 +1,10 @@
 %pagination-item {
-  @extend .dur;
-  @extend .r;
-  @extend .jcc;
-  @extend .aic;
+  @include dur;
+  @include r;
+  @include jcc;
+  @include aic;
   height: 45px;
-  @extend .bd2l;
+  @include bd2l;
   @media (max-width: $md2+px) {
     height: 35px;
   }
@@ -13,7 +13,7 @@
   }
   &:hover,
   &:focus-visible {
-    border-color: var(--bg-bright);
+    border-color: #{$bg-bright};
   }
 }
 
@@ -29,15 +29,15 @@
   }
 }
 
-.-pagination {
-  @extend .r;
-  @extend .jcc;
+.pagination {
+  @include r;
+  @include jcc;
   &__body {
-    @extend .t2;
-    @extend .r15;
-    @extend .g5;
-    @extend .x2jcc;
-    @extend .x4wrap;
+    @include t2;
+    @include r15;
+    @include g5;
+    @include x2jcc;
+    @include x4wrap;
     @media (max-width: $md4+px) {
       column-gap: var(--gutter);
       width: 300px;
@@ -59,9 +59,9 @@
   }
 
   &__pages {
-    @extend .r15;
-    @extend .g5;
-    @extend .jcc;
+    @include r15;
+    @include g5;
+    @include jcc;
     @media (max-width: $md4+px) {
       order: -1;
       flex-basis: 100%;
@@ -78,9 +78,9 @@
       min-width: 30px;
     }
     &._active {
-      @extend .ts;
-      @extend .bgb;
-      @extend .bd;
+      @include ts;
+      @include bgb;
+      @include bd;
     }
   }
 }

@@ -1,8 +1,8 @@
 .-header-menu {
-  @extend .cg10;
+  @include cg10;
   @media (min-width: $md2+px) {
     display: flex;
-    margin-top: var(--S);
+    margin-top: #{$S};
   }
 
   @media (min-width: $md2+px) OR (max-width: $md3+px) {
@@ -10,7 +10,7 @@
   }
 
   @media (max-width: $md2+px) {
-    transition-duration: var(--transition);
+    transition-duration: #{$transition};
     transition-property: opacity, visibility;
     z-index: 1;
     position: absolute;
@@ -29,14 +29,14 @@
 
   &__mobile-container {
     overflow-y: auto;
-    @extend .n2contents;
-    @extend .wrap;
-    @extend .ais;
-    @extend .jcb;
-    @extend .n3w12;
+    @include n2contents;
+    @include wrap;
+    @include ais;
+    @include jcb;
+    @include n3w12;
     max-height: calc(100vh - 115px);
     margin: 98px auto 0;
-    @extend .bgm;
+    @include bgm;
     @media (max-width: $md3+px) {
       width: 100%;
       height: 100dvh;
@@ -46,35 +46,35 @@
   }
 
   &__icon-links {
-    @extend .n2hide;
-    @extend .x3wrap;
-    @extend .x3jcb;
-    @extend .aic;
-    @extend .bga;
+    @include n2hide;
+    @include x3wrap;
+    @include x3jcb;
+    @include aic;
+    @include bga;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: start;
-    @extend .g5;
+    @include g5;
     column-gap: 39px;
     padding: 20px;
     @media (max-width: $md3+px) {
       display: flex;
       padding: 80px calc(var(--fields) / 2) 20px;
-      background-color: var(--bg-main);
+      background-color: #{$bg-main};
     }
   }
 
   &__icon-link {
-    @extend .dur;
-    @extend .ts;
-    @extend .ss;
-    @extend .p1;
-    @extend .por;
-    @extend .r5;
-    @extend .aic;
+    @include dur;
+    @include ts;
+    @include ss;
+    @include p1;
+    @include por;
+    @include r5;
+    @include aic;
     &::before {
       content: '';
-      transition-duration: var(--transition);
+      transition-duration: #{$transition};
       position: absolute;
       top: calc(100% - 1px);
       display: block;
@@ -82,12 +82,12 @@
       visibility: hidden;
       width: 100%;
       height: 1px;
-      background-color: var(--text-second);
+      background-color: #{$text-second};
     }
     &:hover,
     &:focus-visible {
-      color: var(--text-second);
-      stroke: var(--text-second);
+      color: #{$text-second};
+      stroke: #{$text-second};
     }
     &:hover {
       &::before {
@@ -96,27 +96,27 @@
       }
     }
     &:active {
-      color: var(--hover-light);
-      stroke: var(--hover-light);
+      color: #{$hover-light};
+      stroke: #{$hover-light};
       &::before {
         opacity: 0;
         visibility: hidden;
       }
     }
     @media (max-width: $md3+px) {
-      color: var(--text-main);
-      stroke: var(--text-main);
+      color: #{$text-main};
+      stroke: #{$text-main};
       &:hover,
       &:focus-visible {
-        color: var(--text-main);
-        stroke: var(--text-main);
+        color: #{$text-main};
+        stroke: #{$text-main};
         &::before {
-          background-color: var(--text-main);
+          background-color: #{$text-main};
         }
       }
       &:active {
-        color: var(--hover);
-        stroke: var(--hover);
+        color: #{$hover};
+        stroke: #{$hover};
       }
     }
   }
@@ -126,34 +126,34 @@
     position: fixed;
     top: 0;
     left: 0;
-    @extend .r;
-    @extend .n3contents;
-    @extend .aic;
-    @extend .jce;
-    @extend .w;
+    @include r;
+    @include n3contents;
+    @include aic;
+    @include jce;
+    @include w;
     min-height: 60px;
     padding: 0 calc(var(--fields) / 2);
-    @extend .bga;
+    @include bga;
   }
 
   &__icon-close {
     @media (max-width: $md3+px) {
-      color: var(--text-second);
-      stroke: var(--text-second);
+      color: #{$text-second};
+      stroke: #{$text-second};
       flex-direction: row-reverse;
       &:hover,
       &:focus-visible {
-        color: var(--text-second);
-        stroke: var(--text-second);
+        color: #{$text-second};
+        stroke: #{$text-second};
         &::before {
           opacity: 1;
           visibility: visible;
-          background-color: var(--text-second);
+          background-color: #{$text-second};
         }
       }
       &:active {
-        color: var(--hover-light);
-        stroke: var(--hover-light);
+        color: #{$hover-light};
+        stroke: #{$hover-light};
         &::before {
           opacity: 0;
           visibility: hidden;
@@ -163,16 +163,16 @@
   }
 
   &__items {
-    @extend .por;
-    @extend .r;
-    @extend .x3col;
-    @extend .aic;
-    @extend .x2ais;
-    // @extend .x2jcb;
+    @include por;
+    @include r;
+    @include x3col;
+    @include aic;
+    @include x2ais;
+    // @include x2jcb;
     @media (min-width: $md2+px) {
       column-gap: 40px;
       padding: 0 50px;
-      background-color: var(--bg-second);
+      background-color: #{$bg-second};
     }
     @media (min-width: $md3+px) {
       column-gap: 39px;
@@ -182,7 +182,7 @@
       grid-template-columns: repeat(4, 1fr);
       justify-items: flex-start;
       padding: 8px 18px 18px;
-      border: 2px solid var(--border-accent);
+      border: 2px solid #{$border-accent};
     }
     @media (max-width: $md3+px) {
       display: flex;
@@ -193,8 +193,8 @@
   }
 
   &__square {
-    @extend .sqr;
-    @extend .x2hide;
+    @include sqr;
+    @include x2hide;
     width: 44px;
     @media (max-width: $md1+px) {
       width: 34px;

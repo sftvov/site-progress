@@ -1,20 +1,20 @@
 .corp-hero {
   &__body {
     @media (min-width: $md4+px) {
-      color: var(--text-second);
-      padding: var(--XL-2XL) 0;
+      color: #{$text-second};
+      padding: var(--S1) 0;
     }
   }
 
   &__list {
     @media (max-width: $md3+px) {
-      margin-top: var(--S);
+      margin-top: #{$S};
     }
   }
 
   &__svg {
     @media (max-width: $md4+px) {
-      stroke: var(--text-main);
+      stroke: #{$text-main};
       width: 24px;
       height: 24px;
     }

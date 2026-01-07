@@ -1,16 +1,16 @@
-.-header-menu-item {
-  @extend .x4col;
-  @extend .x3ais;
-  @extend .x3jcb;
+.header-menu-item {
+  @include x4col;
+  @include x3ais;
+  @include x3jcb;
   @media (min-width: $md2+px) {
     @media (hover: hover) {
       &:hover {
-        & .-header-menu-item__punkt {
-          color: var(--hover);
-          stroke: var(--hover);
+        & .header-menu-item__punkt {
+          color: #{$hover};
+          stroke: #{$hover};
         }
 
-        & .-header-menu-item__punkt-svg {
+        & .header-menu-item__punkt-svg {
           rotate: 180deg;
         }
 
@@ -19,18 +19,18 @@
           visibility: visible;
         }
 
-        & .-header-menu-item__submenu {
+        & .header-menu-item__submenu {
           opacity: 1;
           visibility: visible;
         }
 
-        & .-header-menu-item__dropdown._active {
-          & .-header-menu-item__punkt {
-            color: var(--hover);
-            stroke: var(--hover);
+        & .header-menu-item__dropdown._active {
+          & .header-menu-item__punkt {
+            color: #{$hover};
+            stroke: #{$hover};
           }
 
-          & .-header-menu-item__punkt-svg {
+          & .header-menu-item__punkt-svg {
             rotate: 180deg;
           }
 
@@ -39,19 +39,19 @@
             visibility: visible;
           }
 
-          & + .-header-menu-item__submenu {
+          & + .header-menu-item__submenu {
             opacity: 1;
             visibility: visible;
           }
         }
       }
-      &:has(.-header-menu-item__dropdown._active + .-header-menu-item__submenu:focus-within) {
-        & .-header-menu-item__punkt {
-          color: var(--hover);
-          stroke: var(--hover);
+      &:has(.header-menu-item__dropdown._active + .header-menu-item__submenu:focus-within) {
+        & .header-menu-item__punkt {
+          color: #{$hover};
+          stroke: #{$hover};
         }
 
-        & .-header-menu-item__punkt-svg {
+        & .header-menu-item__punkt-svg {
           rotate: 180deg;
         }
 
@@ -60,7 +60,7 @@
           visibility: visible;
         }
 
-        & .-header-menu-item__submenu {
+        & .header-menu-item__submenu {
           opacity: 1;
           visibility: visible;
         }
@@ -73,7 +73,7 @@
     padding: 18px 0;
     border-bottom: 2px solid var(---accent);
     &:first-child {
-      border-top: 2px solid var(--border-accent);
+      border-top: 2px solid #{$border-accent};
     }
   }
   // @media (max-width: $md4+px) {
@@ -86,12 +86,12 @@
     }
     @media (min-width: $md2+px) {
       &._active {
-        & .-header-menu-item__punkt {
-          color: var(--text-bright);
-          stroke: var(--text-bright);
+        & .header-menu-item__punkt {
+          color: #{$text-bright};
+          stroke: #{$text-bright};
         }
 
-        & .-header-menu-item__punkt-svg {
+        & .header-menu-item__punkt-svg {
           rotate: 180deg;
         }
 
@@ -100,18 +100,18 @@
           visibility: visible;
         }
 
-        & + .-header-menu-item__submenu {
+        & + .header-menu-item__submenu {
           opacity: 1;
           visibility: visible;
         }
 
         @media (hover: hover) {
-          & .-header-menu-item__punkt {
-            color: var(--text-main);
-            stroke: var(--text-main);
+          & .header-menu-item__punkt {
+            color: #{$text-main};
+            stroke: #{$text-main};
           }
 
-          & .-header-menu-item__punkt-svg {
+          & .header-menu-item__punkt-svg {
             rotate: 0deg;
           }
 
@@ -120,18 +120,18 @@
             visibility: hidden;
           }
 
-          & + .-header-menu-item__submenu {
+          & + .header-menu-item__submenu {
             opacity: 0;
             visibility: hidden;
           }
 
           &:focus-visible {
-            & .-header-menu-item__punkt {
-              color: var(--text-bright);
-              stroke: var(--text-bright);
+            & .header-menu-item__punkt {
+              color: #{$text-bright};
+              stroke: #{$text-bright};
             }
 
-            & .-header-menu-item__punkt-svg {
+            & .header-menu-item__punkt-svg {
               rotate: 180deg;
             }
 
@@ -140,7 +140,7 @@
               visibility: visible;
             }
 
-            & + .-header-menu-item__submenu {
+            & + .header-menu-item__submenu {
               opacity: 1;
               visibility: visible;
             }
@@ -149,20 +149,20 @@
       }
 
       &:focus-visible {
-        & .-header-menu-item__punkt {
-          color: var(--hover);
-          stroke: var(--hover);
+        & .header-menu-item__punkt {
+          color: #{$hover};
+          stroke: #{$hover};
         }
       }
     }
     @media (max-width: $md3+px) {
       &._active {
-        & .-header-menu-item__punkt {
-          color: var(--text-bright);
-          stroke: var(--text-bright);
+        & .header-menu-item__punkt {
+          color: #{$text-bright};
+          stroke: #{$text-bright};
         }
 
-        & .-header-menu-item__punkt-svg {
+        & .header-menu-item__punkt-svg {
           rotate: 180deg;
         }
       }
@@ -173,16 +173,16 @@
   }
 
   &__punkt {
-    @extend .dur;
-    @extend .r10;
-    @extend .aic;
-    @extend .x4jcb;
+    @include dur;
+    @include r10;
+    @include aic;
+    @include x4jcb;
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       &:is(a) {
         &:hover,
         &:focus-visible {
-          color: var(--hover);
-          stroke: var(--hover);
+          color: #{$hover};
+          stroke: #{$hover};
         }
       }
     }
@@ -192,8 +192,8 @@
     @media (max-width: $md3+px) {
       &:hover,
       &:focus-visible {
-        color: var(--hover);
-        stroke: var(--hover);
+        color: #{$hover};
+        stroke: #{$hover};
       }
     }
   }
@@ -224,9 +224,9 @@
   }
 
   &__punkt-svg {
-    @extend .dur;
+    @include dur;
     transition-property: rotate;
-    @extend .i24;
+    @include i24;
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       display: none;
     }
@@ -238,7 +238,7 @@
   }
 
   &__submenu {
-    @extend .dur;
+    @include dur;
     padding-top: 10px;
     @media (min-width: $md1+px) {
       width: calc(100% + 58px);
@@ -267,8 +267,8 @@
       columns: 3 225px;
       column-fill: balance;
       padding: 25px 28px 28px;
-      background-color: var(--bg-main);
-      border: 2px solid var(--border);
+      background-color: #{$bg-main};
+      border: 2px solid #{$border};
       box-shadow: var(--shadow);
     }
     @media (max-width: $md3+px) {

@@ -1,14 +1,14 @@
-.-header-submenu-item {
+.header-submenu-item {
   &:not(:last-child) {
     margin-bottom: 10px;
     @media (max-width: $md2+px) {
-      margin-bottom: var(--S);
+      margin-bottom: #{$S};
     }
   }
 
   &__name {
-    @extend .dur;
-    @extend .p1;
+    @include dur;
+    @include p1;
     $lh: 24;
     line-height: round-to(math.div($lh, $fz), 3);
   }
@@ -20,18 +20,18 @@
   }
 
   &__link {
-    @extend .hover;
-    @extend .s-hover;
-    @extend .p2;
-    @extend .r5;
-    @extend .aic;
+    @include hover;
+    @include s-hover;
+    @include p2;
+    @include r5;
+    @include aic;
     @media (min-width: $md2+px) {
       break-before: avoid-column;
       padding-left: 20px;
     }
     @media (max-width: $md2+px) {
       display: block;
-      margin-top: var(--XS);
+      margin-top: #{$XS};
       padding-left: 15px;
     }
   }

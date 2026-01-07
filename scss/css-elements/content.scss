@@ -1,13 +1,13 @@
 .section {
-  scroll-margin-top: calc(var(--header-height) + var(--XL-2XL));
+  scroll-margin-top: calc(var(--header-height) + var(--S1));
   width: 100%;
-  margin: var(--XL-2XL) 0;
+  margin: var(--S1) 0;
 }
 
 .section-bg {
   @extend .section;
-  @extend .bgs;
-  @extend .pd1;
+  @include bgs;
+  @include pdb1;
 }
 
 .max {
@@ -31,8 +31,8 @@
 }
 
 .body {
-  padding-top: var(--XL-2XL);
-  border-top: 2px solid var(--border-light);
+  padding-top: var(--S1);
+  border-top: 2px solid #{$border-light};
 }
 
 .baner {
@@ -44,25 +44,25 @@
 }
 
 .announcement {
-  padding-bottom: var(--M);
+  padding-bottom: #{$M};
   @media (min-width: $md3+px) {
-    padding: var(--XL-2XL) 0;
+    padding: var(--S1) 0;
   }
   @media (min-width: $md4+px) {
-    padding-top: var(--M);
+    padding-top: #{$M};
   }
 }
 
 .ymaps {
-  @extend .w;
+  @include w;
   aspect-ratio: 1200/639;
 }
 
 %button {
-  @extend .dur;
+  @include dur;
   @extend %safari-not-round;
   cursor: pointer;
-  @extend .btn;
+  @include btn;
   display: inline-block;
   padding: calc(10px - var(--border-reduce));
 }
@@ -74,12 +74,12 @@
 
 .button-primary {
   @extend %button;
-  @extend .ts;
-  background-color: var(--bg-bright);
+  @include ts;
+  background-color: #{$bg-bright};
   &:hover,
   &:focus-visible {
-    color: var(--text-second);
-    background-color: var(--bg-accent);
+    color: #{$text-second};
+    background-color: #{$bg-accent};
   }
 }
 .button-primary-s {
@@ -88,14 +88,14 @@
 }
 
 .button-second {
-  color: var(--text-bright);
-  @extend .hover-accent;
+  color: #{$text-bright};
+  @include hover-accent;
   @extend %button;
-  @extend .bgm;
-  @extend .bd2;
+  @include bgm;
+  @include bd2;
   &:hover,
   &:focus-visible {
-    border-color: var(--border-accent);
+    border-color: #{$border-accent};
   }
 }
 .button-second-s {
@@ -105,12 +105,12 @@
 
 .button-accent {
   @extend %button;
-  @extend .ts;
-  background-color: var(--bg-accent);
+  @include ts;
+  background-color: #{$bg-accent};
   &:hover,
   &:focus-visible {
-    color: var(--text-second);
-    background-color: var(--bg-dark);
+    color: #{$text-second};
+    background-color: #{$bg-dark};
   }
 }
 .button-accent-s {
@@ -120,8 +120,8 @@
 
 .ul {
   &__li {
-    @extend .p1;
-    @extend .r;
+    @include p1;
+    @include r;
     &::before {
       content: '';
       vertical-align: top;
@@ -130,7 +130,7 @@
       height: 3px;
       margin: 8px 10px 9px 9px;
       border-radius: 50%;
-      background-color: var(--text-main);
+      background-color: #{$text-main};
       @media (max-width: $md2+px) {
       margin: 7px 9px 8px 8px;
       }
@@ -139,21 +139,21 @@
   &__li-bright {
     @extend .ul__li;
     &::before {
-      background-color: var(--text-bright);
+      background-color: #{$text-bright};
     }
   }
 }
 
 // .ol {
 //   &__li {
-//     @extend .p1;
+//     @include p1;
 //     list-style-position: inside;
 //     &:not(:first-child) {
 //       margin-top: 7px;
 //     }
 //   }
 //   &__li-dark {
-//     @extend .ol__li;
+//     @include ol__li;
 //   }
 // }
 
@@ -161,7 +161,7 @@
   counter-reset: ol;
   &__li {
     list-style-type: none;
-    @extend .p1;
+    @include p1;
     &::before {
       content: counter(ol) '. ';
       counter-increment: ol;
@@ -170,7 +170,7 @@
   &__li-dark {
     @extend .ol__li;
     &::before {
-      color: var(--text-dark);
+      color: #{$text-dark};
     }
   }
 }
@@ -182,37 +182,37 @@
 }
 
 %input {
-  @extend .dur;
+  @include dur;
   outline: none;
   @extend %safari-not-round;
-  color: var(--text-main);
+  color: #{$text-main};
   min-height: 40px;
   padding: 4px 9px;
-  background-color: var(--bg-main);
-  @extend .bdd;
+  background-color: #{$bg-main};
+  @include bdd;
   @media (hover: hover) {
     &:hover {
-      border-color: var(--border);
+      border-color: #{$border};
     }
   }
   &:focus-visible {
-    border-color: var(--border);
+    border-color: #{$border};
   }
 
   &::placeholder {
-    color: var(--text-light);
+    color: #{$text-light};
   }
 
   &:disabled {
-    border-color: var(--border-gray);
+    border-color: #{$border-gray};
   }
 }
 
 .input {
-  @extend .dur;
+  @include dur;
   @extend %input;
   &:user-invalid {
-    border-color: var(--border-invalid);
+    border-color: #{$border-invalid};
   }
   &--date {
     -moz-appearance: textfield;
@@ -230,7 +230,7 @@
 }
 
 //   &__showmore {
-//     @extend .dur;
+//     @include dur;
 //     // order: 1;
 //     margin-top: 10px;
 //     @media (max-width: $md4+px) {

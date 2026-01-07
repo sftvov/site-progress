@@ -8,7 +8,7 @@
 
 
 mixin hotel(hotel)
-  article.-hotel-item(id=hotel.slug)
+  article.hotel-item(id=hotel.slug)
     h2.subtitle !{hotel.name}
     header.row.x4col.aic.jcc.g7.m5
       p.p1 Санкт-Петербург, !{hotel.address}
@@ -23,10 +23,10 @@ mixin hotel(hotel)
           svg.i24
             use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
           p.p1.ta !{icon.name}            
-    .-hotel-item__gallery._gallery
+    .hotel-item__gallery._gallery
       each image in hotel.gallery || hotelGallery
         a.n3w3.w1.x4w2(href=image.full) 
-          img.-hotel-item__gallery-img(src=image.thumb alt="")
+          img.hotel-item__gallery-img(src=image.thumb alt="")
     .row.wrap.ais.g3.m3
       .col5.n1w6.n2w4.n3w12.x4w4
         each p in hotel.description

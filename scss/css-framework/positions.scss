@@ -1,7 +1,13 @@
-.por {
+@mixin por {
   position: relative;
 }
+.por {
+  @include por;
+}
 
-.deg-90 {
+@mixin deg-90 {
   rotate: -90deg;
+}
+.deg-90 {
+  @include deg-90;
 }

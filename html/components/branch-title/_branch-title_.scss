@@ -1,16 +1,16 @@
-.-branch-title {
-  @extend .twb;
+.branch-title {
+  @include twb;
   break-inside: avoid-column;
   break-after: avoid-column;
-  @extend .r10;
-  @extend .ais;
+  @include r10;
+  @include ais;
   &::before {
     content: '';
     vertical-align: text-top;
     position: relative;
     top: 4px;
     display: inline-block;
-    @extend .i16;
+    @include i16;
     background-color: var(--group-color);
     @media (max-width: $md2+px) {
       top: 2px;
@@ -22,21 +22,21 @@
   }
 
   &__title {
-    @extend .t2d;
+    @include t2d;
     vertical-align: middle;
   }
 
   &__date {
-    @extend .wsn;
+    @include wsn;
     vertical-align: middle;
-    @extend .p1;
+    @include p1;
   }
 
   &__num {
-    @extend .tb;
+    @include tb;
     vertical-align: middle;
     display: inline-block;
     margin-left: 10px;
-    @extend .t2;
+    @include t2;
   }
 }

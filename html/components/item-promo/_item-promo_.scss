@@ -1,22 +1,22 @@
-.-promo-item {
-  @extend .col;
-  @extend .n1w3;
-  @extend .n3w4;
-  @extend .w2;
-  @extend .x4w4;
-  @extend .bdg;
-  @extend .pd3;
-  @extend .pdb;
+.promo-item {
+  @include col;
+  @include n1w3;
+  @include n3w4;
+  @include w2;
+  @include x4w4;
+  @include bdg;
+  @include pd3;
+  @include pdb;
   &__img {
-    @extend .w;
+    @include w;
     height: 213px;
-    @extend .cvr;
+    @include cvr;
     object-position: left bottom;
   }
   &__main {
-    @extend .col;
-    @extend .fg;
-    @extend .m3;
+    @include col;
+    @include fg;
+    @include m3;
     padding-inline: 19px;
   }
 }

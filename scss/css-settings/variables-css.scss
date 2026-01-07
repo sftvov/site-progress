@@ -1,54 +1,68 @@
 :root {
-  // @include common-value('--adaptive-1', 1);
-  // @include common-value('--adaptive-4', 4);
-  // @include common-value('--adaptive-7', 7);
-  // @include common-value('--adaptive-10', 10);
-  // @include common-value('--adaptive-13', 13);
-  // @include common-value('--adaptive-16', 16);
-  // @include common-value('--adaptive-19', 19);
-  // @include common-value('--adaptive-22', 22);
-  // @include common-value('--adaptive-25', 25);
-  // @include common-value('--adaptive-28', 28);
-  // @include common-value('--adaptive-31', 31);
-  // @include common-value('--adaptive-34', 34);
-  // @include common-value('--adaptive-37', 37);
-  // @include common-value('--adaptive-40', 40);
-  // @include common-value('--adaptive-43', 43);
-  // @include common-value('--adaptive-46', 46);
-  // @include common-value('--adaptive-49', 49);
-  // @include common-value('--adaptive-52', 52);
-  // @include common-value('--adaptive-55', 55);
-  // @include common-value('--adaptive-58', 58);
-  // @include common-value('--adaptive-61', 61);
-  // @include common-value('--adaptive-64', 64);
-  // @include common-value('--adaptive-67', 67);
-  // @include common-value('--adaptive-70', 70);
-  // @include common-value('--adaptive-73', 73);
-  // @include common-value('--adaptive-76', 76);
-  // @include common-value('--adaptive-79', 79);
-  // @include common-value('--adaptive-82', 82);
-  // @include common-value('--adaptive-85', 85);
-  // @include common-value('--adaptive-88', 88);
-  // @include common-value('--adaptive-91', 91);
-  // @include common-value('--adaptive-94', 94);
-  // @include common-value('--adaptive-97', 97);
-  // @include common-value('--adaptive-100', 100);
+// {
+//   @include common-value('--adaptive-1', 1);
+//   @include common-value('--adaptive-4', 4);
+//   @include common-value('--adaptive-7', 7);
+//   @include common-value('--adaptive-10', 10);
+//   @include common-value('--adaptive-13', 13);
+//   @include common-value('--adaptive-16', 16);
+//   @include common-value('--adaptive-19', 19);
+//   @include common-value('--adaptive-22', 22);
+//   @include common-value('--adaptive-25', 25);
+//   @include common-value('--adaptive-28', 28);
+//   @include common-value('--adaptive-31', 31);
+//   @include common-value('--adaptive-34', 34);
+//   @include common-value('--adaptive-37', 37);
+//   @include common-value('--adaptive-40', 40);
+//   @include common-value('--adaptive-43', 43);
+//   @include common-value('--adaptive-46', 46);
+//   @include common-value('--adaptive-49', 49);
+//   @include common-value('--adaptive-52', 52);
+//   @include common-value('--adaptive-55', 55);
+//   @include common-value('--adaptive-58', 58);
+//   @include common-value('--adaptive-61', 61);
+//   @include common-value('--adaptive-64', 64);
+//   @include common-value('--adaptive-67', 67);
+//   @include common-value('--adaptive-70', 70);
+//   @include common-value('--adaptive-73', 73);
+//   @include common-value('--adaptive-76', 76);
+//   @include common-value('--adaptive-79', 79);
+//   @include common-value('--adaptive-82', 82);
+//   @include common-value('--adaptive-85', 85);
+//   @include common-value('--adaptive-88', 88);
+//   @include common-value('--adaptive-91', 91);
+//   @include common-value('--adaptive-94', 94);
+//   @include common-value('--adaptive-97', 97);
+//   @include common-value('--adaptive-100', 100);
+// }
 
-  --fs: #{$fz}px;
+  // --fs: #{$fz}px;
+
+  --jade: #00775f; /* Тёмно-зелёный (нефритовый) */
+  --turquoise: #00b5aa; /* Бирюзовый */
+  --lime: #b1d355; /* Лаймовый */
+  --apricot: #f89f65; /* Абрикосовый */
+  --gold: #dca90e; /* Золотой */
+  --graphite: #4d4d4f; /* Графитовый */
+  --ocean: #00749e; /* Океанский синий */
+  --lavender: #9056a3; /* Лавандовый */
+  --berry: #ae2763; /* Ягодный */
+  --periwinkle: #685bc7; /* Барвинковый */
+  --blush: #de82a9; /* Розоватый (румянец) */
+  --scarlet: #ff1b22; /* Алый */
 
   --md1: #{$md1};
   --md2: #{$md2};
   --md3: #{$md3};
   --md4: #{$md4};
-
-  --transition: 0.2s;
   
   --header-height: 196px;
   --inner-width: 100vw;
   --scrollbar: 0px;
-  
+
+  --container: min(#{$maxContainer + px}, var(--inner-width));
   --half-inner-width: calc(var(--inner-width) / 2);
-  --offsetLeft: calc(50% - var(--half-inner-width));
+  --offsetLeft: calc(50% - var(--half-inner-width));  
   
   @media (min-width: $md1+px) {
     --header-height: 216px;
@@ -82,8 +96,6 @@
   }
 
   --field: calc(var(--fields) / 2);
-
-  --container: min(#{$maxContainer + px}, var(--inner-width));
   
   --column: calc((var(--container) - (var(--columns) - 1) * var(--gutter) - var(--fields)) / var(--columns));
   --2columns: calc(var(--column) * 2 + var(--gutter));
@@ -106,130 +118,27 @@
   --6columnsG: calc(var(--6columns) + var(--gutter));
   // --7columnsG: calc(var(--7columns) + var(--gutter));
 
-  --2XL: 60px;
-  --XL: 50px;
-  --L: 40px;
-  --M: 30px;
-  --S: 15px;
-  --XS: 7px;
-  --2XS: 3px;
 
-  --XL-2XL: var(--XL);
-  --M-L: var(--M);
-  --S-M: var(--S);
-  --XS-S: var(--XS);
+  --S1: #{$XL};
+  --S2: #{$M};
+  --S4: #{$S};
+  --S6: #{$XS};
 
   @media (min-width: $md2+px) {
-    --XL-2XL: var(--2XL);
-    --M-L: var(--L);
-    --S-M: var(--M);
-    --XS-S: var(--S);
+    --S1: #{$XXL};
+    --S2: #{$L};
+    --S4: #{$M};
+    --S6: #{$S};
   }
 
-  // --cyan: #00ffff;
-  // --yellow: #ffff00;
-  // --black: #252525;
-  // --purple: #8434e1;
-  // --navy: #345eff;
-  // --grey: #e4e5e8;6
-  // --red: #bf0000;
-  // --broom: #c05a17;
-  // --pink: #e08d9d;
-  // --orange-ok: #f2720c;
-  // --green: #2ab194;
-  // --green-wa: #12af0a;
-  // --blue-tg: #2ca5e0;
-  // --blue-vk: #587ea3;
-  // --gold: #edd146;
-
-  --jade: #00775f; /* Тёмно-зелёный (нефритовый) */
-  --turquoise: #00b5aa; /* Бирюзовый */
-  --lime: #b1d355; /* Лаймовый */
-  --apricot: #f89f65; /* Абрикосовый */
-  --gold: #dca90e; /* Золотой */
-  --graphite: #4d4d4f; /* Графитовый */
-  --ocean: #00749e; /* Океанский синий */
-  --lavender: #9056a3; /* Лавандовый */
-  --berry: #ae2763; /* Ягодный */
-  --periwinkle: #685bc7; /* Барвинковый */
-  --blush: #de82a9; /* Розоватый (румянец) */
-  --scarlet: #ff1b22; /* Алый */
-
-  --red: #f34759;
-  --orange: #ed6824;
-  --orange-light: #f9b277;
-  --blue: #0083c1;
-  --blue-light: #d9eafb;
-
-  // --black: #000000;
-  --dark: #2b2d33;
-  --gray-dark: #555a65;
-  --gray: #999ead;
-  --gray-light: #d8dce5;
-  --light: #e5e8ef;
-  --white: #ffffff;
-
-  --hover: var(--orange);
-  --hover-light: var(--orange-light);
-  --hover-accent: var(--blue);
-
-  --text-main: var(--gray-dark);
-  --text-second: var(--white);
-  --text-bright: var(--orange);
-  --text-accent: var(--blue);
-  --text-dark: var(--dark);
-  --text-light: var(--gray);
-  --text-invalid: var(--red);
-  // --text-second-light: var(--white-60);
-  // --text-bright: var(--blue-bright);
-  // --text-gray: var(--gray);
-
-  --bg-main: var(--white);
-  --bg-second: var(--blue-light);
-  --bg-bright: var(--orange);
-  --bg-accent: var(--blue);
-  --bg-dark: var(--gray-dark);
-  --bg-gray: var(--gray);
-
-  --border-reduce: 0px;
-
-  --border: var(--orange);
-  --border-second: var(--white);
-  --border-accent: var(--blue);
-  --border-light: var(--blue-light); // повсеместно
-  --border-dark: var(--gray-dark); // для инпутов 
-  --border-gray: var(--gray); // повсеместно и для инпутов disabled
-  --border-invalid: var(--red);
-  // --border-second: var(--white);
-  // --border-gray: var(--gray);
 
   --shadow: 0 0 20px 10px #595f6f26;
   --shadow-big: 0 0 20px 15px #595f6f26;
 
-  @media (prefers-color-scheme: dark) {
-    --text-main: var(--gray-light);
-    --text-dark: var(--white);
-    // --text-accent: var(--orange);
 
-    --bg-main: var(--dark);
-    --bg-second: var(--gray);
-    // --bg-dark: var(--dark);
-
-    --border-dark: var(--white);
-  }
-
-  // --white--dark: var(--white);
-  // --nw--main: var(--not-white);
-  // --nw--dark: var(--not-white);
-  // --nw--black: var(--not-white);
-  // --gray--light: var(--gray);
-  // --dark--nw: var(--dark);
-  // --dark--main: var(--dark);
-  // --dark--black: var(--dark);
-
-  --swiper-theme-color: var(--bg-accent);
+  --swiper-theme-color: #{$bg-accent};
   // --swiper-preloader-color: var(--swiper-theme-color);
-  --swiper-wrapper-transition-timing-function: var(--transition);
+  --swiper-wrapper-transition-timing-function: #{$transition};
 
   // --swiper-navigation-size: 50px;
   // --swiper-navigation-top-offset: 50%;

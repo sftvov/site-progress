@@ -3,10 +3,10 @@ mixin itemClient(props)
   - const ContainerTag = isLink ? 'a' : 'article'
   - const TitleTag = isLink ? 'p' : 'h2'
   
-  #{ContainerTag}.-client-item&attributes(attributes)(
+  #{ContainerTag}.client-item&attributes(attributes)(
     href=isLink ? props.href : false
   )
-    .-client-item__body
+    .client-item__body
       img.w.sqr.cnt(
         class=isLink ? 'dur' : '',
         src=props.img, 

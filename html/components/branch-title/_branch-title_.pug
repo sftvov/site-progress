@@ -10,13 +10,13 @@ mixin branchTitle(props = {})
 
     title+= date ? " " : "";
 
-  #{tag}.-branch-title(
+  #{tag}.branch-title(
     style=color ? `--group-color:var(--${color})` : false
   )&attributes(attributes)
-    span.-branch-title__main
-      span.-branch-title__title= title
+    span.branch-title__main
+      span.branch-title__title= title
       if date
         |
-        span.-branch-title__date= date
+        span.branch-title__date= date
       if num
-        span.-branch-title__num(data-checkbox-num="")
+        span.branch-title__num(data-checkbox-num="")

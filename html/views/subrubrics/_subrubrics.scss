@@ -8,7 +8,7 @@
     }
     @media (max-width: $md4+px) {
       grid-template-columns: 1fr;
-      row-gap: var(--S);
+      row-gap: #{$S};
       justify-items: center;
     }
   }

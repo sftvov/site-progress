@@ -1,9 +1,9 @@
-.-contact-item {
-  @extend .r15;
+.contact-item {
+  @include r15;
   &__img {
     height: 107px;
     aspect-ratio: 97/107;
-    @extend .cvr;
+    @include cvr;
     @media (max-width: $md2+px) {
       height: 121px;
     }

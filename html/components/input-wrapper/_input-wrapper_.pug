@@ -20,9 +20,9 @@ mixin inputWrapper(props = {})
   -
     const wrapperTag = fieldType === 'select' ? 'div' : 'label';
 
-  #{wrapperTag}.-input-wrapper&attributes(attributes)
+  #{wrapperTag}.input-wrapper&attributes(attributes)
     if label
-      p.-input-wrapper__label= label
+      p.input-wrapper__label= label
     
     case fieldType
       when 'textarea'

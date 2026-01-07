@@ -6,8 +6,8 @@
     &::before {
       counter-increment: prof-items;
       content: counter(prof-items) '.';
-      color: var(--text-accent);
-      @extend .a1;
+      color: #{$text-accent};
+      @include a1;
       width: 50px;
       flex-shrink: 0;
       @media (max-width: $md2+px) {

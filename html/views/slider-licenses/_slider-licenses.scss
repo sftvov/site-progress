@@ -19,7 +19,7 @@
       height: 0;
     }
     @media (max-width: $md3+px) {
-      margin: var(--M) var(--columnG) 0;
+      margin: #{$M} var(--columnG) 0;
     }
   }
 

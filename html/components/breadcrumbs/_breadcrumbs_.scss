@@ -1,16 +1,16 @@
-.-breadcrumbs {
-  @extend .w;
+.breadcrumbs {
+  @include w;
   &__body {
-    padding: var(--S) 0 10px;
-    @extend .bbd2l;
+    padding: #{$S} 0 10px;
+    @include bbd2l;
   }
   &__item {
-    @extend .p1;
+    @include p1;
     &:has(a) {
-      color: var(--text-light);
+      color: #{$text-light};
       &::after {
         content: '/';
-        color: var(--text-light);
+        color: #{$text-light};
         display: inline-block;
         margin: 0 5px;
       }
