@@ -5,8 +5,7 @@
   @include w2;
   @include x4w4;
   @include bdg;
-  @include pd3;
-  @include pdb;
+  @include bpd3(1px);
   &__img {
     @include w;
     height: 213px;

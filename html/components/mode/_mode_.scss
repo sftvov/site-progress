@@ -6,12 +6,12 @@
   @include r10;
   @include aic;
   @include jcc;
-  padding: calc(10px - var(--border-reduce)) calc(20px - var(--border-reduce));
+  padding: calc(10px - var(--bd-rd)) calc(20px - var(--bd-rd));
   @media (max-width: $md2+px) {
-    padding-inline: calc(15px - var(--border-reduce));
+    padding-inline: calc(10px - var(--bd-rd));
   }
   @media (max-width: $md3+px) {
-    padding-block: calc(5px - var(--border-reduce));
+    padding-block: calc(5px - var(--bd-rd));
   }
 
   &._active {

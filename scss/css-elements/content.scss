@@ -64,11 +64,11 @@
   cursor: pointer;
   @include btn;
   display: inline-block;
-  padding: calc(10px - var(--border-reduce));
+  padding: calc(10px - var(--bd-rd));
 }
 %button-s {
   @media (max-width: $md2+px) {
-    padding-block: calc(5px - var(--border-reduce));
+    padding-block: calc(5px - var(--bd-rd));
   }
 }
 

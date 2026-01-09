@@ -1,4 +1,5 @@
 .case-item {
+  @include dur;
   transition-property: background-color;
   @include pd3;
   &:has(.case-item__top._active) {

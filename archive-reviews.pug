@@ -37,7 +37,7 @@ block content
 		];
 
 	mixin reviewItem(review, last = false)
-		.row.x4wrap.g5.w.pd3.pdb(class=last ? '' : 'bbd2l')
+		.row.x4wrap.g5.w.bpd3(class=last ? '' : 'bbd2l')
 			.col7.n1w3.w4.x3w2.x4w4
 				p.td.t2 #{review.name}
 				p.p2 #{review.position}
@@ -64,7 +64,8 @@ block content
 							span.ta.p1 Все отзывы
 							a.p1.hover(href="#") За последний месяц
 							a.p1.hover(href="#") За последний год
-					.col3.ais.pd3.pdt.tbd2l
+					.col3
+						hr.bbd2l
 						each review in reviewsArchive
 							+reviewItem(review)
 				+pagination({

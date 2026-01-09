@@ -54,59 +54,88 @@
   @include m8;
 }
 
-@mixin pd1 {
-  padding-block: calc(var(--S1) - var(--border-reduce));
+@mixin tpd1($rd: null) {
+  @if $rd {
+    padding-top: calc(var(--S1) - #{$rd});
+  } @else {
+    padding-top: var(--S1);
+  }
+}
+.tpd1 {
+  @include tpd1(var(--bd-rd-t));
+}
+@mixin bpd1($rd: null) {
+  @if $rd {
+    padding-bottom: calc(var(--S1) - #{$rd});
+  } @else {
+    padding-bottom: var(--S1);
+  }
+}
+.bpd1 {
+  @include bpd1(var(--bd-rd-b));
+}
+@mixin pd1($rd: null) {
+  @include tpd1($rd);
+  @include bpd1($rd);
 }
 .pd1 {
-  @include pd1;
+  @include pd1(var(--bd-rd));
 }
 
-// .pd2 {
-//   padding-block: var(--S2);
-// }
-
-@mixin pd3 {
-  padding-block: calc(#{$M} - var(--border-reduce));
+@mixin tpd3($rd: null) {
+  @if $rd {
+    padding-top: calc(#{$M} - #{$rd});
+  } @else {
+    padding-top: #{$M};
+  }
+}
+.tpd3 {
+  @include tpd3(var(--bd-rd-t));
+}
+@mixin bpd3($rd: null) {
+  @if $rd {
+    padding-bottom: calc(#{$M} - #{$rd});
+  } @else {
+    padding-bottom: #{$M};
+  }
+}
+.bpd3 {
+  @include bpd3(var(--bd-rd-b));
+}
+@mixin pd3($rd: null) {
+  @include tpd3($rd);
+  @include bpd3($rd);
 }
 .pd3 {
-  @include pd3;
+  @include pd3(var(--bd-rd));
 }
 
-@mixin pd4 {
-  padding-block: calc(var(--S4) - var(--border-reduce));
+@mixin tpd4($rd: null) {
+  @if $rd {
+    padding-top: calc(var(--S4) - #{$rd});
+  } @else {
+    padding-top: var(--S4);
+  }
+}
+.tpd4 {
+  @include tpd4(var(--bd-rd-t));
+}
+@mixin bpd4($rd: null) {
+  @if $rd {
+    padding-bottom: calc(var(--S4) - #{$rd});
+  } @else {
+    padding-bottom: var(--S4);
+  }
+}
+.bpd4 {
+  @include bpd4(var(--bd-rd-b));
+}
+@mixin pd4($rd: null) {
+  @include tpd4($rd);
+  @include bpd4($rd);
 }
 .pd4 {
-  @include pd4;
-}
-
-// .pd5 {
-//   padding-block: #{$S};
-// }
-
-// .pd6 {
-//   padding-block: var(--S6);
-// }
-
-// .pd7 {
-//   padding-block: #{$XS};
-// }
-
-// .pd8 {
-//   padding-block: #{$XXS};
-// }
-
-@mixin pdt {
-  padding-bottom: 0;
-}
-.pdt {
-  @include pdt;
-}
-
-@mixin pdb {
-  padding-top: 0;
-}
-.pdb {
-  @include pdb;
+  @include pd4(var(--bd-rd));
 }
 
 @mixin n1ol3 {

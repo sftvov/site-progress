@@ -1,3 +1,19 @@
+@property --bd-rd-t {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --bd-rd-b {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --bd-rd {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
 :root {
 // {
 //   @include common-value('--adaptive-1', 1);
@@ -59,6 +75,7 @@
   --header-height: 196px;
   --inner-width: 100vw;
   --scrollbar: 0px;
+  --bd-rd: 0px;
 
   --container: min(#{$maxContainer + px}, var(--inner-width));
   --half-inner-width: calc(var(--inner-width) / 2);

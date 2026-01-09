@@ -1,53 +1,69 @@
+@mixin tbdr1 {
+  --bd-rd-t: 1px;
+}
+@mixin bbdr1 {
+  --bd-rd-b: 1px;
+}
 @mixin bdr1 {
-  --border-reduce: 1px;
+  @include tbdr1;
+  @include bbdr1;
+  --bd-rd: 1px;
 }
 
-@mixin bdr2 {
-  --border-reduce: 2px;
+@mixin tbdr2 {
+  --bd-rd-t: 2px;
 }
+@mixin bbdr2 {
+  --bd-rd-b: 2px;
+}
+@mixin bdr2 {
+  @include tbdr2;
+  @include bbdr2;
+  --bd-rd: 2px;
+}
+
 
 @mixin bd {
-  @include bdr1;
   border: 1px solid #{$border};
 }
 .bd {
+  @include bdr1;
   @include bd;
 }
 
 @mixin bd2 {
-  @include bdr2;
   border: 2px solid #{$border};
 }
 .bd2 {
+  @include bdr2;
   @include bd2;
 }
 
 @mixin bda {
-  @include bdr1;
   border: 1px solid #{$border-accent};
 }
 .bda {
+  @include bdr1;
   @include bda;
 }
 
 @mixin bd2a {
-  @include bdr2;
   border: 2px solid #{$border-accent};
 }
 .bd2a {
+  @include bdr2;
   @include bd2a;
 }
 
 @mixin tbd2a {
-  @include bdr2;
   border-top: 2px solid #{$border-accent};
 }
 .tbd2a {
+  @include tbdr2;
   @include tbd2a;
 }
 
 @mixin rbd2a {
-  @include bdr2;
   border-right: 2px solid #{$border-accent};
 }
 .rbd2a {
@@ -55,15 +71,14 @@
 }
 
 @mixin bbd2a {
-  @include bdr2;
   border-bottom: 2px solid #{$border-accent};
 }
 .bbd2a {
+  @include bbdr2;
   @include bbd2a;
 }
 
 @mixin lbd2a {
-  @include bdr2;
   border-left: 2px solid #{$border-accent};
 }
 .lbd2a {
@@ -71,63 +86,62 @@
 }
 
 @mixin bdd {
-  @include bdr1;
   border: 1px solid #{$border-dark};
 }
 .bdd {
+  @include bdr1;
   @include bdd;
 }
 
 @mixin bdg {
-  @include bdr1;
-  border: 1px solid var(--border-gray);
+  border: 1px solid #{$border-gray};
 }
 .bdg {
+  @include bdr1;
   @include bdg;
 }
 
 @mixin bd2g {
-  @include bdr2;
-  border: 2px solid var(--border-gray);
+  border: 2px solid #{$border-gray};
 }
 .bd2g {
+  @include bdr2;
   @include bd2g;
 }
 
 @mixin tbd2g {
-  @include bdr2;
-  border-top: 2px solid var(--border-gray);
+  border-top: 2px solid #{$border-gray};
 }
 .tbd2g {
+  @include tbdr2;
   @include tbd2g;
 }
 
 @mixin bdl {
-  @include bdr1;
   border: 1px solid #{$border-light};
 }
 .bdl {
+  @include bdr1;
   @include bdl;
 }
 
 @mixin bd2l {
-  @include bdr2;
   border: 2px solid #{$border-light};
 }
 .bd2l {
+  @include bdr2;
   @include bd2l;
 }
 
 @mixin tbd2l {
-  @include bdr2;
   border-top: 2px solid #{$border-light};
 }
 .tbd2l {
+  @include tbdr2;
   @include tbd2l;
 }
 
 @mixin rbd2l {
-  @include bdr2;
   border-right: 2px solid #{$border-light};
 }
 .rbd2l {
@@ -135,16 +149,9 @@
 }
 
 @mixin bbd2l {
-  @include bdr2;
   border-bottom: 2px solid #{$border-light};
 }
 .bbd2l {
+  @include bbdr2;
   @include bbd2l;
-}
-
-@mixin bdr0 {
-  --border-reduce: 0px;
-}
-.bdr0 {
-  @include bdr0;
 }

@@ -14,6 +14,6 @@ mixin mode(props = {})
   #{tag}.mode&attributes(attributes)
     if iconBefore
       +modeSvg(icon)
-    span #{text}
+    span !{text}
     unless iconBefore
       +modeSvg(icon)

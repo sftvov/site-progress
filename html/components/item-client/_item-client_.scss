@@ -9,6 +9,6 @@
     }
   }
   &__body {
-    padding: calc(var(--S4) - var(--border-reduce));
+    padding: calc(var(--S4) - 2px);
   }
 }
