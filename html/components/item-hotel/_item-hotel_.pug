@@ -43,7 +43,7 @@ mixin hotel(hotel)
           p.p1 !{hotel.legalInfo}
         a.button-primary.n3w3.w2.x4w4(href="#") Забронировать отель
       if hotel.price
-        table(class="-hotel-item__table-" + hotel.price.head.length)
+        table(class="hotel-item__table-" + hotel.price.head.length)
           thead
             tr
               each th in hotel.price.head

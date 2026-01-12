@@ -1,0 +1,6 @@
+include ../../../../../data/reviewsArchive
+
+.col3.ais.n3o1.n2o0
+  each review, index in reviewsArchive
+    +reviewItem(review, reviewConfigs.compact, index!==reviewsArchive.length-1)
+  a.link-b.t2(href="#") Все отзывы о курсе &gt;&gt;

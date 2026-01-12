@@ -1,11 +1,11 @@
 .course-info {
   &__row {
-    @extend.r;
+    @include r;
     column-gap: 45px;
-    @extend.wrap;
-    @extend.g7;
-    @extend.x2cg30;
-    @extend.m6;
+    @include wrap;
+    @include g7;
+    @include x2cg30;
+    @include m6;
     @media (max-width: $md4+px) {
       column-gap: var(--gutter);
     }

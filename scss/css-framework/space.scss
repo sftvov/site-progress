@@ -161,7 +161,8 @@
   @include n1or3;
 }
 .n1o3 {
-  @include n1o3;
+  @extend .n1ol3;
+  @extend .n1or3;
 }
 
 @mixin n1ol2 {
@@ -187,7 +188,8 @@
   @include n1or2;
 }
 .n1o2 {
-  @include n1o2;
+  @extend .n1ol2;
+  @extend .n1or2;
 }
 
 @mixin n1ol1 {
@@ -213,7 +215,8 @@
   @include n1or1;
 }
 .n1o1 {
-  @include n1o1;
+  @extend .n1ol1;
+  @extend .n1or1;
 }
 
 // .n1ol0 {
@@ -256,7 +259,8 @@
   @include n2or2;
 }
 .n2o2 {
-  @include n2o2;
+  @extend .n2ol2;
+  @extend .n2or2;
 }
 
 @mixin n2ol1 {
@@ -282,7 +286,8 @@
   @include n2or1;
 }
 .n2o1 {
-  @include n2o1;
+  @extend .n2ol1;
+  @extend .n2or1;
 }
 
 @mixin n2ol0 {
@@ -308,7 +313,8 @@
   @include n2or0;
 }
 .n2o0 {
-  @include n2o0;
+  @extend .n2ol0;
+  @extend .n2or0;
 }
 
 @mixin n3ol1 {
@@ -334,5 +340,6 @@
   @include n3or1;
 }
 .n3o1 {
-  @include n3o1;
+  @extend .n3ol1;
+  @extend .n3or1;
 }

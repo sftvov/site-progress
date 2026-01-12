@@ -1,6 +1,6 @@
 
-.-header-results {
-  @extend.dur;
+.header-results {
+  @include dur;
   z-index: 1;
   position: absolute;
   left: -2px;
@@ -8,17 +8,17 @@
   opacity: 0;
   visibility: hidden;
   width: calc(100% + 4px);
-  @extend.bgm;
-  @extend.bd2;
+  @include bgm;
+  @include bd2;
   box-shadow: var(--shadow-big);
   @media (max-width: $md3+px) {
     width: var(--4columns);
   }
   &__item {
-    @extend.dur;
-    @extend.r;
+    @include dur;
+    @include r;
     column-gap: 20px;
-    @extend.x2cg10;
+    @include x2cg10;
     padding: 10px 20px;
     @media (max-width: $md2+px) {
       $fs: 12;

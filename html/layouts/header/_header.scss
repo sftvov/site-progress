@@ -69,7 +69,7 @@
       opacity: 1;
       visibility: visible;
     }
-    :has(.header__search-input:not(:placeholder-shown):focus) .-header-results {
+    :has(.header__search-input:not(:placeholder-shown):focus) .header-results {
       opacity: 1;
       visibility: visible;
     }
@@ -175,3 +175,7 @@
     }
   }
 }
+
+
+@import 'header-parts/menu-header/__menu-header';
+@import 'header-parts/results-header/__results-header';

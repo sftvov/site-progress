@@ -5,6 +5,13 @@
   @include sqr;
 }
 
+@mixin w {
+  width: 100%;
+}
+.w {
+  @include w;
+}
+
 @mixin n1w1 {
   @include fs;
   @media (min-width: $md1+px) {
@@ -354,13 +361,6 @@
 }
 .n3w12 {
   @include n3w12;
-}
-
-@mixin w {
-  width: 100%;
-}
-.w {
-  @include w;
 }
 
 // .wx{

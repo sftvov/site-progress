@@ -63,7 +63,8 @@
   @include cg5;
 }
 .r5 {
-  @include r5;
+  @extend .r;
+  @extend .cg5;
 }
 
 @mixin r10 {
@@ -71,7 +72,8 @@
   @include cg10;
 }
 .r10 {
-  @include r10;
+  @extend .r;
+  @extend .cg10;
 }
 
 @mixin r15 {
@@ -79,7 +81,8 @@
   @include cg15;
 }
 .r15 {
-  @include r15;
+  @extend .r;
+  @extend .cg15;
 }
 
 @mixin r30 {
@@ -87,7 +90,8 @@
   @include cg30;
 }
 .r30 {
-  @include r30;
+  @extend .r;
+  @extend .cg30;
 }
 
 @mixin r40 {
@@ -95,7 +99,8 @@
   @include cg40;
 }
 .r40 {
-  @include r40;
+  @extend .r;
+  @extend .cg40;
 }
 
 @mixin row {
@@ -143,6 +148,15 @@
 }
 .aic {
   @include aic;
+}
+
+@mixin x3aic {
+  @media (max-width: $md3+px) {
+    align-items: center;
+  }
+}
+.x3aic {
+  @include x3aic;
 }
 
 @mixin x4aic {
@@ -409,7 +423,8 @@
   @include g1;
 }
 .col1 {
-  @include col1;
+  @extend .col;
+  @extend .g1;
 }
 
 @mixin col2 {
@@ -417,7 +432,8 @@
   @include g2;
 }
 .col2 {
-  @include col2;
+  @extend .col;
+  @extend .g2;
 }
 
 @mixin col3 {
@@ -425,7 +441,8 @@
   @include g3;
 }
 .col3 {
-  @include col3;
+  @extend .col;
+  @extend .g3;
 }
 
 @mixin col4 {
@@ -433,7 +450,8 @@
   @include g4;
 }
 .col4 {
-  @include col4;
+  @extend .col;
+  @extend .g4;
 }
 
 @mixin col5 {
@@ -441,7 +459,8 @@
   @include g5;
 }
 .col5 {
-  @include col5;
+  @extend .col;
+  @extend .g5;
 }
 
 @mixin col6 {
@@ -449,7 +468,8 @@
   @include g6;
 }
 .col6 {
-  @include col6;
+  @extend .col;
+  @extend .g6;
 }
 
 @mixin col7 {
@@ -457,7 +477,8 @@
   @include g7;
 }
 .col7 {
-  @include col7;
+  @extend .col;
+  @extend .g7;
 }
 
 @mixin col8 {
@@ -465,5 +486,6 @@
   @include g8;
 }
 .col8 {
-  @include col8;
+  @extend .col;
+  @extend .g8;
 }

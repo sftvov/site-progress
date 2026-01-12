@@ -5,9 +5,7 @@
     @include bbd2l;
   }
   &__item {
-    @include p1;
     &:has(a) {
-      color: #{$text-light};
       &::after {
         content: '/';
         color: #{$text-light};

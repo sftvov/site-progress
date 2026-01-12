@@ -8,7 +8,7 @@
   @include jcc;
   padding: calc(10px - var(--bd-rd)) calc(20px - var(--bd-rd));
   @media (max-width: $md2+px) {
-    padding-inline: calc(10px - var(--bd-rd));
+    padding-inline: calc(15px - var(--bd-rd));
   }
   @media (max-width: $md3+px) {
     padding-block: calc(5px - var(--bd-rd));

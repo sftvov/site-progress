@@ -19,9 +19,9 @@
   }
 
   &__title {
-    @extend.ta;
-    @extend.t2;
-    @extend.row;
+    @include ta;
+    @include t2;
+    @include row;
     @include jcb;
     &::after {
       content: '';

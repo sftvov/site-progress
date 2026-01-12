@@ -1,44 +1,45 @@
 .section.course#course
   .container
     .row.aic.jcb.bgm.bbd2l#sticky
-      .r
+      .r.x4jcb.fg
         +mode({
-          text: 'Очный формат<span class="x4hide"> курса</span>',
-        })
+          text: '<span class="x4hide">Очный формат курса</span><span class="n4hide">Очно</span>',
+        })(class="x4w2")
         +mode({
           tag: 'a',
-          text: 'Онлайн-курс',
-        })(href="#")
+          text: '<span class="x4hide">Онлайн-курс</span><span class="n4hide">Онлайн</span>',
+        })(class="x4w2" href="#")
       p.t2d.x4hide Код курса: 71473
     .row.x2col.g1
       .col1.n2w9.rbd2l.x2contents
         .col2.m3
           .col7.n1w8
             p.tb.t2 Курс повышения квалификации
+            p.t2d.n4hide Код курса: 71473
             h1.t1d Перспективные полимерные материалы в промышленности&ZeroWidthSpace; — герметики, компаунды, лакокрасочные покрытия
           ._tabs.col3.n2w8
             .por
               .r.wrap.bbd2a.rbd2a
-                button.course__tab-title.dur.lbd2a.tbd2a._tabs-title О мероприятии
+                button.course__tab-title.dur.lbd2a.tbd2a._tabs-title._active О мероприятии
                 button.course__tab-title.dur.lbd2a.tbd2a._tabs-title Преподаватели
                 button.course__tab-title.dur.lbd2a.tbd2a._tabs-title Фото и видео
                 button.course__tab-title.dur.lbd2a.tbd2a._tabs-title Отзывы
                 button.course__tab-title.dur.lbd2a.tbd2a._tabs-title Также по теме
-                button.course__tab-title.dur.lbd2a.tbd2a._tabs-title._active Памятка участнику
+                button.course__tab-title.dur.lbd2a.tbd2a._tabs-title Памятка участнику
               .course__tab-indicator.dur.bga._tabs-indicator
             ._tabs-blocks
-              ._tabs-block
-                include course-parts/tabs/_about-course_
-              ._tabs-block
-                include course-parts/tabs/_teachers-course_
-              ._tabs-block
-                include course-parts/tabs/_gallery-course_
-              ._tabs-block
-                include course-parts/tabs/_reviews-course_
-              ._tabs-block
-                include course-parts/tabs/_relating-course_
               ._tabs-block._active
-                include course-parts/tabs/_memo-course_
+                include course-parts/tabs/__about-course
+              ._tabs-block
+                include course-parts/tabs/__teachers-course
+              ._tabs-block
+                include course-parts/tabs/__gallery-course
+              ._tabs-block
+                include course-parts/tabs/__reviews-course
+              ._tabs-block
+                include course-parts/tabs/__relating-course
+              ._tabs-block
+                include course-parts/tabs/__memo-course
         hr.bbd2l
         .col3.n2w8.n3o1.n2o0
           .col5

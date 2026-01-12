@@ -14,9 +14,10 @@
 @import 'css-framework/space';
 @import 'css-framework/background';
 @import 'css-framework/border';
+@import 'css-framework/functions';
+
 @import 'css-elements/content';
 @import 'css-elements/elements';
-@import 'css-framework/functions';
 
 :root {
   color-scheme: light dark;
@@ -98,8 +99,6 @@ svg {
 @import '../html/components/item-client/_item-client_';
 @import '../html/components/item-contact/_item-contact_';
 @import '../html/components/item-course/_item-course_';
-@import '../html/components/item-course/item-course-parts/course-dates/_course-dates_';
-@import '../html/components/item-course/item-course-parts/course-info/_course-info_';
 @import '../html/components/item-header-menu/_item-header-menu_';
 @import '../html/components/item-header-submenu/_item-header-submenu_';
 @import '../html/components/item-hotel/_item-hotel_';
@@ -114,8 +113,6 @@ svg {
 
 // @import '../html/components/popups/_popups_';
 @import '../html/layouts/header/_header';
-@import '../html/layouts/header/header-parts/menu-header/_menu-header_';
-@import '../html/layouts/header/header-parts/results-header/_results-header_';
 @import '../html/layouts/footer/_footer';
 
 @import '../html/views/all-promo/_all-promo';
@@ -124,12 +121,8 @@ svg {
 @import '../html/views/cases/_cases';
 @import '../html/views/center/_center';
 @import '../html/views/conditions/_conditions';
-@import '../html/views/contacts-feedback/_contacts-feedback';
-@import '../html/views/contacts-hotels/_contacts-hotels';
 @import '../html/views/choose/_choose';
 @import '../html/views/course/_course';
-@import '../html/views/feedback/_feedback';
-@import '../html/views/first/_first';
 @import '../html/views/form-recommended/_form-recommended';
 @import '../html/views/hero-corp/_hero-corp';
 @import '../html/views/hero-distance/_hero-distance';
@@ -148,7 +141,6 @@ svg {
 @import '../html/views/slider-main/_slider-main';
 @import '../html/views/slider-licenses/_slider-licenses';
 @import '../html/views/subrubrics/_subrubrics';
-@import '../html/views/support/_support';
 @import '../html/views/trust/_trust';
 
 @import 'css-settings/variables-css';

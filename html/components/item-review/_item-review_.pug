@@ -1,0 +1,41 @@
+//- Конфигурации для отзывов
+- 
+  const reviewConfigs = {
+    default: {
+      container: ['row', 'x4wrap', 'g5', 'w'],
+      leftCol: 'col7 n1w3 w4 x3w2 x4w4',
+      rightCol: 'col7 w n3ol1',
+      nameTag: 'h2',
+      nameClass: 't2d',
+      positionClass: 'p2',
+      textClass: 'p1 i',
+      dateClass: 'ta p2 tae'
+    },
+    compact: {
+      container: ['row', 'x4wrap', 'g5', 'w'],
+      leftCol: 'col7 n2w3 n3w4 w2 x4w4',
+      rightCol: 'col7 w',
+      nameTag: 'h2',
+      nameClass: 't2d',
+      positionClass: 'p2',
+      textClass: 'p1 i',
+      dateClass: 'ta p2 tae'
+    }
+  };
+
+//- Универсальный миксин для отзыва
+mixin reviewItem(review, config, showBorder = true)
+  -
+    const containerClasses = [...config.container];
+    if (showBorder) {
+      containerClasses.push('bpd3', 'bbd2l');
+    }
+  
+  article(class=containerClasses.join(' '))&attributes(attributes)
+    div(class=config.leftCol)
+      #{config.nameTag}(class=config.nameClass) #{review.name}
+      p(class=config.positionClass) #{review.position}
+    div(class=config.rightCol)
+      p(class=config.textClass) #{review.text}
+      if review.date
+        p(class=config.dateClass) #{review.date}

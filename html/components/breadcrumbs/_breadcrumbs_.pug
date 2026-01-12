@@ -3,10 +3,11 @@ mixin breadcrumbs(props)
     .container
       .breadcrumbs__body
         span.breadcrumbs__item
-          a.hover(href="/page-main.html") Главная
+          a.tl.hover.p1(href="/page-main.html") Главная
         each b, index in props
           if index === props.length - 1
-            span.breadcrumbs__item !{b}
+            span.breadcrumbs__item 
+              span.p1 !{b}
           else
             span.breadcrumbs__item 
-              a.hover(href="#") !{b}
+              a.tl.hover.p1(href="#") !{b}
