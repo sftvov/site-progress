@@ -4,9 +4,13 @@
   z-index: 3;
   position: fixed;
   left: 0;
+  @include w;
   padding-top: 20px;
+  @include bgm;
 
   &__top-level {
+    @include row;
+    @include x4col;
     @media (min-width: $md4+px) {
       align-items: center;
     }
@@ -25,12 +29,20 @@
   }
 
   &__icon-links {
+    @include row;
+    @include x2hide;
     @media (min-width: $md1+px) {
       column-gap: 40px;
     }
   }
 
   &__contacts {
+    @include r;
+    @include x3col;
+    @include x4row;
+    @include jcb;
+    @include x3aie;
+    @include g5;
     @media (min-width: $md2+px) {
       column-gap: var(--gutter);
     }
@@ -65,6 +77,8 @@
   }
 
   &__search {
+    @include r;
+    @include fg;
     :has(.header__search-input:not(:placeholder-shown)) .header__search-close {
       opacity: 1;
       visibility: visible;
@@ -76,7 +90,14 @@
   }
 
   &__search-input-wrapper {
+    @include por;
+    @include r;
+    @include aic;
+    @include fs;
+    @include n3w8;
+    @include w3;
     padding: 6px 20px 6px 0;
+    @include bd2;
     border-right: none;
     @media (min-width: $md2+px) {
       flex-grow: 1;
@@ -104,6 +125,8 @@
   }
 
   &__search-input {
+    @include p1;
+    @include fg;
     padding: 0 20px 0 18px;
     @media (max-width: $md2+px) {
       padding: 0 10px 0 13px;
@@ -117,12 +140,22 @@
   }
 
   &__search-close {
+    @include dur;
     opacity: 0;
     visibility: hidden;
     line-height: 0;
   }
 
   &__search-btn {
+    @include dur;
+    @include ts;
+    @include p1;
+    @include r;
+    @include aic;
+    @include jcc;
+    @include fs;
+    @include n2w2;
+    @include bgb;
     padding: 10px 0;
     @media (max-width: $md2+px) {
       flex-grow: 1;
@@ -142,12 +175,16 @@
   }
 
   &__info-panel {
+    @include ts;
     font-family: 'RobotoCondensed';
     $fs: 15;
     font-size: math.div($fs, $fz) + em;
     $lh: 20;
     line-height: round-to(math.div($lh, $fs), 3);
+    @include tac;
+    @include m5;
     padding: 5px 0;
+    @include bga;
     @media (max-width: $md1+px) {
       $fs: 14;
       font-size: math.div($fs, $fz) + em;
@@ -165,7 +202,11 @@
   }
 
   &__info-link {
+    @include dur;
+    @include ss;
+    @include b1;
     display: inline-flex;
+    @include aic;
     column-gap: 3px;
     margin-left: 10px;
     &:hover,
@@ -175,7 +216,6 @@
     }
   }
 }
-
 
 @import 'header-parts/menu-header/__menu-header';
 @import 'header-parts/results-header/__results-header';

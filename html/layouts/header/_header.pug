@@ -10,9 +10,9 @@
       p.download-plan__window-p Расписание курсов по всем отраслевым направлениям — в одной брошюре.
       a.download-plan__window-link(href="https://img.cntiprogress.ru/Image/pdf/cntiprogress_plan_2026.pdf?from=widget") Скачать>>
 
-header.header.w.bgm._lpr
+header.header._lpr
   .container
-    .header__top-level.row.x4col
+    .header__top-level
       .n3contents.col7.x4row.x4jcb.x4aic
         a.n3hide(href="index.html") 
           img.header__mobile-logo-img(src="img/logo.svg" alt="")
@@ -24,7 +24,7 @@ header.header.w.bgm._lpr
               { text: 'Москва', href: 'page-main.html' }
             ]
           })
-      .header__icon-links.row.x2hide
+      .header__icon-links
         a.s-hover.hover.r5.aic(href="#")
           svg.i24.x2i20
             use(xlink:href='img/sprite/symbols.svg#plan')
@@ -37,7 +37,7 @@ header.header.w.bgm._lpr
           svg.i24.x2i20
             use(xlink:href='img/sprite/symbols.svg#mail')
           | Рассылка
-      .header__contacts.r.x3col.x4row.jcb.x3aie.g5
+      .header__contacts
         .n1w2
           +headerSelect({
             text: '8 (800) 333-88-44',
@@ -53,14 +53,14 @@ header.header.w.bgm._lpr
       a.w2.x3hide(href="index.html") 
         img.header__logo-link-img(src="img/logo.svg" alt="")
       .r.fg
-        form.header__search.r.fg
-          .header__search-input-wrapper.por.r.aic.bd2.n3w8.w3
-            input.header__search-input.p1.fg(placeholder='Поиск по сайту')
-            button.header__search-close.dur
+        form.header__search
+          .header__search-input-wrapper
+            input.header__search-input(placeholder='Поиск по сайту')
+            button.header__search-close
               svg.i24.x2i20
                 use(xlink:href='img/sprite/symbols.svg#x-close')
             include header-parts/results-header/__results-header
-          button.header__search-btn.dur.ts.r.aic.jcc.bgb.p1.n2w2 
+          button.header__search-btn
             span.x4hide Найти 
               span.x2hide курс
             svg.ss.i16.sw2.n4hide
@@ -69,9 +69,9 @@ header.header.w.bgm._lpr
           +burger(class="header__burger _burger")
     
     include header-parts/menu-header/__menu-header
-    .header__info-panel.ts.tac.m5.bga
+    .header__info-panel
       p #[span.x3hide Готов учебный план на 2025 год.] Расписание курсов по всем отраслевым направлениям #[span.x4hide — в одной брошюре.]#[br.n3hide] #[span.n3hide Готов учебный план на 2025 год.]
-        a.header__info-link.dur.ss.b1.aic(href="#") скачать
+        a.header__info-link(href="#") скачать
           svg.i20
             use(xlink:href='img/sprite/symbols.svg#arrow-right')
 

@@ -3,6 +3,8 @@ extends html/layouts/default
 block settings
 	+pageConfig({
 		title: 'РУБРИКА (РАЗВОДЯЩАЯ КУРСОВ)',
+		styles: { external: ['https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css']},
+		scripts: {external: ['https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js']},
 		breadcrumbs: ['Каталог семинаров', 'Семинары и курсы по управлению производством']
 	})
 

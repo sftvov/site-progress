@@ -33,6 +33,7 @@
     @include wrap;
     @include ais;
     @include jcb;
+    @include fs;
     @include n3w12;
     max-height: calc(100vh - 115px);
     margin: 98px auto 0;

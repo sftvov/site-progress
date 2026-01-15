@@ -1,5 +1,6 @@
 %hotel-table {
   border-collapse: collapse;
+  @include fs;
   @include n1w6;
   @include n2w8;
   @media (max-width: $md2+px) {

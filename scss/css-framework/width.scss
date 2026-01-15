@@ -13,92 +13,92 @@
 }
 
 @mixin n1w1 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--column);
   }
 }
 .n1w1 {
+  @extend .fs;
   @include n1w1;
 }
 
 @mixin n1w2 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--2columns);
   }
 }
 .n1w2 {
+  @extend .fs;
   @include n1w2;
 }
 
 @mixin n1w3 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--3columns);
   }
 }
 .n1w3 {
+  @extend .fs;
   @include n1w3;
 }
 
 @mixin n1w4 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--4columns);
   }
 }
 .n1w4 {
+  @extend .fs;
   @include n1w4;
 }
 
 @mixin n1w5 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--5columns);
   }
 }
 .n1w5 {
+  @extend .fs;
   @include n1w5;
 }
 
 @mixin n1w6 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--6columns);
   }
 }
 .n1w6 {
+  @extend .fs;
   @include n1w6;
 }
 
 @mixin n1w7 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--7columns);
   }
 }
 .n1w7 {
+  @extend .fs;
   @include n1w7;
 }
 
 @mixin n1w8 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--8columns);
   }
 }
 .n1w8 {
+  @extend .fs;
   @include n1w8;
 }
 
 @mixin n1w9 {
-  @include fs;
   @media (min-width: $md1+px) {
     width: var(--9columns);
   }
 }
 .n1w9 {
+  @extend .fs;
   @include n1w9;
 }
 
@@ -108,6 +108,7 @@
   }
 }
 .n1w10 {
+  @extend .fs;
   @include n1w10;
 }
 
@@ -117,6 +118,7 @@
   }
 }
 .n1w11 {
+  @extend .fs;
   @include n1w11;
 }
 
@@ -126,96 +128,97 @@
   }
 }
 .n1w12 {
+  @extend .fs;
   @include n1w12;
 }
 
 @mixin n2w1 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--column);
   }
 }
 .n2w1 {
+  @extend .fs;
   @include n2w1;
 }
 
 @mixin n2w2 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--2columns);
   }
 }
 .n2w2 {
+  @extend .fs;
   @include n2w2;
 }
 
 @mixin n2w3 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--3columns);
   }
 }
 .n2w3 {
+  @extend .fs;
   @include n2w3;
 }
 
 @mixin n2w4 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--4columns);
   }
 }
 .n2w4 {
+  @extend .fs;
   @include n2w4;
 }
 
 @mixin n2w5 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--5columns);
   }
 }
 .n2w5 {
+  @extend .fs;
   @include n2w5;
 }
 
 @mixin n2w6 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--6columns);
   }
 }
 .n2w6 {
+  @extend .fs;
   @include n2w6;
 }
 
 @mixin n2w7 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--7columns);
   }
 }
 .n2w7 {
+  @extend .fs;
   @include n2w7;
 }
 
 @mixin n2w8 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--8columns);
   }
 }
 .n2w8 {
+  @extend .fs;
   @include n2w8;
 }
 
 @mixin n2w9 {
-  @include fs;
   @media (min-width: $md2+px) {
     width: var(--9columns);
   }
 }
 .n2w9 {
+  @extend .fs;
   @include n2w9;
 }
 
@@ -225,6 +228,7 @@
   }
 }
 .n2w10 {
+  @extend .fs;
   @include n2w10;
 }
 
@@ -234,6 +238,7 @@
   }
 }
 .n2w11 {
+  @extend .fs;
   @include n2w11;
 }
 
@@ -243,96 +248,97 @@
   }
 }
 .n2w12 {
+  @extend .fs;
   @include n2w12;
 }
 
 @mixin n3w1 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--column);
   }
 }
 .n3w1 {
+  @extend .fs;
   @include n3w1;
 }
 
 @mixin n3w2 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--2columns);
   }
 }
 .n3w2 {
+  @extend .fs;
   @include n3w2;
 }
 
 @mixin n3w3 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--3columns);
   }
 }
 .n3w3 {
+  @extend .fs;
   @include n3w3;
 }
 
 @mixin n3w4 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--4columns);
   }
 }
 .n3w4 {
+  @extend .fs;
   @include n3w4;
 }
 
 @mixin n3w5 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--5columns);
   }
 }
 .n3w5 {
+  @extend .fs;
   @include n3w5;
 }
 
 @mixin n3w6 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--6columns);
   }
 }
 .n3w6 {
+  @extend .fs;
   @include n3w6;
 }
 
 @mixin n3w7 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--7columns);
   }
 }
 .n3w7 {
+  @extend .fs;
   @include n3w7;
 }
 
 @mixin n3w8 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--8columns);
   }
 }
 .n3w8 {
+  @extend .fs;
   @include n3w8;
 }
 
 @mixin n3w9 {
-  @include fs;
   @media (min-width: $md3+px) {
     width: var(--9columns);
   }
 }
 .n3w9 {
+  @extend .fs;
   @include n3w9;
 }
 
@@ -342,6 +348,7 @@
   }
 }
 .n3w10 {
+  @extend .fs;
   @include n3w10;
 }
 
@@ -351,6 +358,7 @@
   }
 }
 .n3w11 {
+  @extend .fs;
   @include n3w11;
 }
 
@@ -360,6 +368,7 @@
   }
 }
 .n3w12 {
+  @extend .fs;
   @include n3w12;
 }
 
@@ -368,113 +377,113 @@
 // }
 
 @mixin w1 {
-  @include fs;
   width: var(--column);
 }
 .w1 {
+  @extend .fs;
   @include w1;
 }
 
 @mixin w2 {
-  @include fs;
   width: var(--2columns);
 }
 .w2 {
+  @extend .fs;
   @include w2;
 }
 
 @mixin w3 {
-  @include fs;
   width: var(--3columns);
 }
 .w3 {
+  @extend .fs;
   @include w3;
 }
 
 @mixin w4 {
-  @include fs;
   width: var(--4columns);
 }
 .w4 {
+  @extend .fs;
   @include w4;
 }
 
 @mixin x3w1 {
-  @include fs;
   @media (max-width: $md3+px) {
     width: var(--column);
   }
 }
 .x3w1 {
+  @extend .fs;
   @include x3w1;
 }
 
 @mixin x3w2 {
-  @include fs;
   @media (max-width: $md3+px) {
     width: var(--2columns);
   }
 }
 .x3w2 {
+  @extend .fs;
   @include x3w2;
 }
 
 @mixin x3w3 {
-  @include fs;
   @media (max-width: $md3+px) {
     width: var(--3columns);
   }
 }
 .x3w3 {
+  @extend .fs;
   @include x3w3;
 }
 
 @mixin x3w4 {
-  @include fs;
   @media (max-width: $md3+px) {
     width: var(--4columns);
   }
 }
 .x3w4 {
+  @extend .fs;
   @include x3w4;
 }
 
 @mixin x4w1 {
-  @include fs;
   @media (max-width: $md4+px) {
     width: var(--column);
   }
 }
 .x4w1 {
+  @extend .fs;
   @include x4w1;
 }
 
 @mixin x4w2 {
-  @include fs;
   @media (max-width: $md4+px) {
     width: var(--2columns);
   }
 }
 .x4w2 {
+  @extend .fs;
   @include x4w2;
 }
 
 @mixin x4w3 {
-  @include fs;
   @media (max-width: $md4+px) {
     width: var(--3columns);
   }
 }
 .x4w3 {
+  @extend .fs;
   @include x4w3;
 }
 
 @mixin x4w4 {
-  @include fs;
   @media (max-width: $md4+px) {
     width: var(--4columns);
   }
 }
 .x4w4 {
+  @extend .fs;
   @include x4w4;
 }

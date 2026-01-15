@@ -90,6 +90,11 @@ document.querySelector('.header__search-close').addEventListener('click', functi
 	input.focus();       // Возвращаем фокус
 });
 
+// flatpickr(".datepicker__input", {
+//     locale: "ru",
+//     dateFormat: "d.m"
+// });
+
 // Throttle - вызывается не чаще чем delay
 function throttle(func, delay) {
   let lastCall = 0;
