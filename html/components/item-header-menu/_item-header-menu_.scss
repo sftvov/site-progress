@@ -70,10 +70,10 @@
   @media (max-width: $md3+px) {
     display: flex;
     width: 100%;
-    padding: 18px 0;
-    border-bottom: 2px solid var(---accent);
+    padding: 20px 0;
+    @include bbs2a;
     &:first-child {
-      border-top: 2px solid #{$border-accent};
+      @include tbbs2a;
     }
   }
   // @media (max-width: $md4+px) {
@@ -268,7 +268,7 @@
       column-fill: balance;
       padding: 25px 28px 28px;
       background-color: #{$bg-main};
-      border: 2px solid #{$border};
+      @include bd2;
       box-shadow: var(--shadow);
     }
     @media (max-width: $md3+px) {

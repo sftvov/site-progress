@@ -31,8 +31,8 @@
 }
 
 .body {
-  padding-top: var(--S1);
-  border-top: 2px solid #{$border-light};
+  @extend .tpd1;
+  @include tbd2l;
 }
 
 .baner {
@@ -64,11 +64,11 @@
   cursor: pointer;
   @include btn;
   display: inline-block;
-  padding: calc(10px - var(--bd-rd));
+  padding: 10px;
 }
 %button-s {
   @media (max-width: $md2+px) {
-    padding-block: calc(5px - var(--bd-rd));
+    padding-block: 5px;
   }
 }
 
@@ -92,10 +92,10 @@
   @include hover-accent;
   @extend %button;
   @include bgm;
-  @include bd2;
+  @include bs2;
   &:hover,
   &:focus-visible {
-    border-color: #{$border-accent};
+    @include bs2a;
   }
 }
 .button-second-s {
@@ -132,7 +132,7 @@
       border-radius: 50%;
       background-color: #{$text-main};
       @media (max-width: $md2+px) {
-      margin: 7px 9px 8px 8px;
+        margin: 7px 9px 8px 8px;
       }
     }
   }

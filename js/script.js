@@ -120,9 +120,9 @@ let lastScroll = 0;
 // Debounce для тяжелых операций при ресайзе
 const handleResize = debounce(() => {
   getMatchMedia();
-  headerHeight();
   calculateClientWidth();
-  calculateScrollbarWidth();
+  calculateScrollbarWidth();  
+  headerHeight();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
 }, 250);
 
@@ -201,9 +201,9 @@ const handleScroll = throttle(() => {
 
 window.onload = () => {
   getMatchMedia();
-  headerHeight();
   calculateClientWidth();
-  calculateScrollbarWidth();
+  calculateScrollbarWidth();  
+  headerHeight();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
   ItemsManager.initialize();
 };

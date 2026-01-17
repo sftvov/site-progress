@@ -1,19 +1,19 @@
 .course {
-  &__tab-indicator {
-    z-index: -1;
-    position: absolute;
-    top: var(--indicator-top);
-    left: var(--indicator-left);
-    width: calc(var(--indicator-width) + 1px);
-    height: calc(var(--indicator-height) + 1px);
-  }
+  // &__tab-indicator {
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: var(--indicator-top);
+  //   left: var(--indicator-left);
+  //   width: var(--indicator-width);
+  //   height: var(--indicator-height);
+  // }
 
   &__tab-title {
-    flex-grow: 1;
     padding: 10px;
     &._active {
       cursor: auto;
       color: #{$text-second};
+      background-color: #{$bg-accent};
     }
     &:not(._active) {
       &:hover,
@@ -21,11 +21,5 @@
         color: #{$hover};
       }
     }
-    // &:not(:first-child) {
-    //   border-left-width: 1px;
-    // }
-    // &:not(:last-child) {
-    //   border-right-width: 1px;
-    // }
   }
 }

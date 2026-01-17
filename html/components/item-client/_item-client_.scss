@@ -1,5 +1,5 @@
 .client-item {
-  @include bd2g;
+  @include bs2g;
   &:is(a) {
     &:hover,
     &:focus-visible {
@@ -9,6 +9,7 @@
     }
   }
   &__body {
-    padding: calc(var(--S4) - 2px);
+    @include col4;
+    padding: var(--S4);
   }
 }

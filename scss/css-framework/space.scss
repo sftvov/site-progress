@@ -54,88 +54,46 @@
   @include m8;
 }
 
-@mixin tpd1($rd: null) {
-  @if $rd {
-    padding-top: calc(var(--S1) - #{$rd});
-  } @else {
-    padding-top: var(--S1);
-  }
+@mixin tpd1 {
+  padding-top: var(--S1);
 }
 .tpd1 {
-  @include tpd1(var(--bd-rd-t));
+  @include tpd1;
 }
-@mixin bpd1($rd: null) {
-  @if $rd {
-    padding-bottom: calc(var(--S1) - #{$rd});
-  } @else {
-    padding-bottom: var(--S1);
-  }
+@mixin bpd1 {
+  padding-bottom: var(--S1);
 }
 .bpd1 {
-  @include bpd1(var(--bd-rd-b));
+  @include bpd1;
 }
-@mixin pd1($rd: null) {
-  @include tpd1($rd);
-  @include bpd1($rd);
+@mixin pd1 {
+  @include tpd1;
+  @include bpd1;
 }
 .pd1 {
-  @include pd1(var(--bd-rd));
+  @extend .tpd1;
+  @extend .bpd1;
 }
 
-@mixin tpd3($rd: null) {
-  @if $rd {
-    padding-top: calc(#{$M} - #{$rd});
-  } @else {
-    padding-top: #{$M};
-  }
+@mixin tpd3 {
+  padding-top: #{$M};
 }
 .tpd3 {
-  @include tpd3(var(--bd-rd-t));
+  @include tpd3;
 }
-@mixin bpd3($rd: null) {
-  @if $rd {
-    padding-bottom: calc(#{$M} - #{$rd});
-  } @else {
-    padding-bottom: #{$M};
-  }
+@mixin bpd3 {
+  padding-bottom: #{$M};
 }
 .bpd3 {
-  @include bpd3(var(--bd-rd-b));
+  @include bpd3;
 }
-@mixin pd3($rd: null) {
-  @include tpd3($rd);
-  @include bpd3($rd);
+@mixin pd3 {
+  @include tpd3;
+  @include bpd3;
 }
 .pd3 {
-  @include pd3(var(--bd-rd));
-}
-
-@mixin tpd4($rd: null) {
-  @if $rd {
-    padding-top: calc(var(--S4) - #{$rd});
-  } @else {
-    padding-top: var(--S4);
-  }
-}
-.tpd4 {
-  @include tpd4(var(--bd-rd-t));
-}
-@mixin bpd4($rd: null) {
-  @if $rd {
-    padding-bottom: calc(var(--S4) - #{$rd});
-  } @else {
-    padding-bottom: var(--S4);
-  }
-}
-.bpd4 {
-  @include bpd4(var(--bd-rd-b));
-}
-@mixin pd4($rd: null) {
-  @include tpd4($rd);
-  @include bpd4($rd);
-}
-.pd4 {
-  @include pd4(var(--bd-rd));
+  @extend .tpd3;
+  @extend .bpd3;
 }
 
 @mixin n1ol3 {

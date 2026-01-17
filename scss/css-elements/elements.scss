@@ -1,32 +1,25 @@
 .dates {
-  display: flex;
-  gap: 15px;
+  @include r15;
   @media (max-width: $md4+px) {
     gap: var(--gutter);
-  }
-
-  &__date {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 }
 
 .datepicker {
   &__input {
-    @extend .dur;
-    @extend .p2;
-    @extend .tac;
+    @include dur;
+    @include p2;
+    @include tac;
     width: 81px;
     padding: 4px;
-    @extend .bd2l;
+    @include bd2l;
     @media (min-width: $md2+px) {
       width: 86px;
       padding: 3px;
     }
     &:focus {
       outline: none;
-      border: 2px solid #{$border};
+      @include bd2;
     }
   }
 
@@ -87,7 +80,7 @@
 }
 
 .triangle {
-  @extend .dur;
+  @include dur;
   z-index: 2;
   position: absolute;
   top: 100%;

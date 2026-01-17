@@ -4,7 +4,7 @@
   @include jcc;
   @include aic;
   height: 45px;
-  @include bd2l;
+  @include bd2g;
   @media (max-width: $md2+px) {
     height: 35px;
   }
@@ -80,7 +80,7 @@
     &._active {
       @include ts;
       @include bgb;
-      @include bd;
+      @include bd2;
     }
   }
 }

@@ -182,13 +182,13 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       justify-items: flex-start;
-      padding: 8px 18px 18px;
-      border: 2px solid #{$border-accent};
+      padding: 10px 20px 20px;
+      @include bs2a;
     }
     @media (max-width: $md3+px) {
       display: flex;
       align-items: stretch;
-      border: none;
+      box-shadow: none;
       padding: 0 calc(var(--fields) / 2);
     }
   }

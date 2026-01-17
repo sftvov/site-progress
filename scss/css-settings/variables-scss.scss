@@ -1,22 +1,20 @@
-$transition: 0.2s;
+$transition: .3s;
 
-  // $cyan: #00ffff;
-  // $yellow: #ffff00;
-  // $black: #252525;
-  // $purple: #8434e1;
-  // $navy: #345eff;
-  // $grey: #e4e5e8;6
-  // $red: #bf0000;
-  // $broom: #c05a17;
-  // $pink: #e08d9d;
-  // $orange-ok: #f2720c;
-  // $green: #2ab194;
-  // $green-wa: #12af0a;
-  // $blue-tg: #2ca5e0;
-  // $blue-vk: #587ea3;
-  // $gold: #edd146;
-
-
+// $cyan: #00ffff;
+// $yellow: #ffff00;
+// $black: #252525;
+// $purple: #8434e1;
+// $navy: #345eff;
+// $grey: #e4e5e8;6
+// $red: #bf0000;
+// $broom: #c05a17;
+// $pink: #e08d9d;
+// $orange-ok: #f2720c;
+// $green: #2ab194;
+// $green-wa: #12af0a;
+// $blue-tg: #2ca5e0;
+// $blue-vk: #587ea3;
+// $gold: #edd146;
 
 $red: #f34759;
 $orange: #ed6824;
@@ -30,22 +28,22 @@ $gray-dark: #555a65;
 $gray: #999ead;
 $gray-light: #d8dce5;
 $light: #e5e8ef;
-$white: #ffffff;  
+$white: #ffffff;
 
 $hover: #{$orange};
 $hover-light: #{$orange-light};
 $hover-accent: #{$blue};
 
-$text-main: light-dark(#{$gray-dark}, #{$gray-light});
+$text-main: #{$gray-dark};
 $text-second: #{$white};
 $text-bright: #{$orange};
 $text-accent: #{$blue};
-$text-dark: light-dark(#{$dark}, #{$white});
+$text-dark: #{$dark};
 $text-light: #{$gray};
 $text-invalid: #{$red};
 
-$bg-main: light-dark(#{$white}, #{$dark});
-$bg-second: light-dark(#{$blue-light}, #{$gray});
+$bg-main: #{$white};
+$bg-second: #{$blue-light};
 $bg-bright: #{$orange};
 $bg-accent: #{$blue};
 $bg-dark: #{$gray-dark};
@@ -53,10 +51,10 @@ $bg-gray: #{$gray};
 
 $border: #{$orange};
 // $border-second: #{$white};
-$border-accent: #{$blue};
-$border-light: #{$blue-light}; // повсеместно
-$border-dark: light-dark(#{$gray-dark}, #{$white}); // для инпутов 
-$border-gray: #{$gray}; // повсеместно и для инпутов disabled
+$border-accent: #{$blue}; // для табов курсов
+$border-light: #{$blue-light}; // повсеместно и для инпутов дат
+$border-dark: #{$gray-dark}; ; // для инпутов
+$border-gray: #{$gray}; // акции, партнеры, пагинация и для инпутов disabled
 $border-invalid: #{$red};
 
 $fontFamily: 'Roboto';

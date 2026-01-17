@@ -487,3 +487,13 @@
   @extend .fs;
   @include x4w4;
 }
+
+@mixin x4p50 {
+  @media (max-width: $md4+px) {
+    width: 50%;
+  }
+}
+.x4p50 {
+  @extend .fs;
+  @include x4p50;
+}

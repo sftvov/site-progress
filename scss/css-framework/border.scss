@@ -1,156 +1,133 @@
-@mixin tbdr1 {
-  --bd-rd-t: 1px;
-}
-@mixin bbdr1 {
-  --bd-rd-b: 1px;
-}
-@mixin bdr1 {
-  @include tbdr1;
-  @include bbdr1;
-  --bd-rd: 1px;
-}
-
-@mixin tbdr2 {
-  --bd-rd-t: 2px;
-}
-@mixin bbdr2 {
-  --bd-rd-b: 2px;
-}
-@mixin bdr2 {
-  @include tbdr2;
-  @include bbdr2;
-  --bd-rd: 2px;
-}
-
 @mixin bd {
   border: 1px solid #{$border};
 }
-.bd {
-  @include bdr1;
-  @include bd;
-}
+// .bd {
+//   @include bd;
+// }
 
 @mixin bd2 {
   border: 2px solid #{$border};
 }
-.bd2 {
-  @include bdr2;
-  @include bd2;
+// .bd2 {
+//   @include bd2;
+// }
+@mixin bs2 {
+  box-shadow:
+    inset 2px 2px 0 0 #{$border},
+    inset -2px -2px 0 0 #{$border};
 }
-
-@mixin bda {
-  border: 1px solid #{$border-accent};
-}
-.bda {
-  @include bdr1;
-  @include bda;
-}
-
-@mixin bd2a {
-  border: 2px solid #{$border-accent};
-}
-.bd2a {
-  @include bdr2;
-  @include bd2a;
-}
-
-@mixin tbd2a {
-  border-top: 2px solid #{$border-accent};
-}
-.tbd2a {
-  @include tbdr2;
-  @include tbd2a;
-}
-
-@mixin rbd2a {
-  border-right: 2px solid #{$border-accent};
-}
-.rbd2a {
-  @include rbd2a;
-}
-
-@mixin bbd2a {
-  border-bottom: 2px solid #{$border-accent};
-}
-.bbd2a {
-  @include bbdr2;
-  @include bbd2a;
-}
-
-@mixin lbd2a {
-  border-left: 2px solid #{$border-accent};
-}
-.lbd2a {
-  @include lbd2a;
-}
+// .bs2 {
+//   @include bs2;
+// }
 
 @mixin bdd {
   border: 1px solid #{$border-dark};
 }
-.bdd {
-  @include bdr1;
-  @include bdd;
-}
+// .bdd {
+//   @include bdd;
+// }
 
 @mixin bdg {
   border: 1px solid #{$border-gray};
 }
 .bdg {
-  @include bdr1;
   @include bdg;
 }
-
+// @mixin bsg {
+//   box-shadow:
+//     inset 1px 1px 0 0 #{$border-gray},
+//     inset -1px -1px 0 0 #{$border-gray};
+// }
+// .bsg {
+//   @include bsg;
+// }
 @mixin bd2g {
   border: 2px solid #{$border-gray};
 }
 .bd2g {
-  @include bdr2;
   @include bd2g;
 }
+@mixin bs2g {
+  box-shadow:
+    inset 2px 2px 0 0 #{$border-gray},
+    inset -2px -2px 0 0 #{$border-gray};
+}
+// .bs2g {
+//   @include bs2g;
+// }
 
-@mixin tbd2g {
-  border-top: 2px solid #{$border-gray};
+@mixin bsa {
+  box-shadow:
+    inset 1px 1px 0 0 #{$border-accent},
+    inset -1px -1px 0 0 #{$border-accent};
 }
-.tbd2g {
-  @include tbdr2;
-  @include tbd2g;
+.bsa {
+  @include bsa;
 }
+@mixin bs2a {
+  box-shadow:
+    inset 2px 2px 0 0 #{$border-accent},
+    inset -2px -2px 0 0 #{$border-accent};
+}
+.bs2a {
+  @include bs2a;
+}
+@mixin tbs2a {
+  box-shadow: inset 0 2px 0 0 #{$border-accent};
+}
+// .tbs2a {
+//   @include tbs2a;
+// }
+@mixin bbs2a {
+  box-shadow: inset 0 -2px 0 0 #{$border-accent};
+}
+// .bbs2a {
+//   @include bbs2a;
+// }
+@mixin tbbs2a {
+  box-shadow:
+    inset 0 2px 0 0 #{$border-accent},
+    inset 0 -2px 0 0 #{$border-accent};
+}
+// .tbbs2a {
+//   @include tbbs2a;
+// }
 
 @mixin bdl {
   border: 1px solid #{$border-light};
 }
 .bdl {
-  @include bdr1;
   @include bdl;
 }
-
 @mixin bd2l {
   border: 2px solid #{$border-light};
 }
-.bd2l {
-  @include bdr2;
-  @include bd2l;
+// .bd2l {
+//   @include bd2l;
+// }
+@mixin bs2l {
+  box-shadow:
+    inset 2px 2px 0 0 #{$border-light},
+    inset -2px -2px 0 0 #{$border-light};
 }
-
+.bs2l {
+  @include bs2l;
+}
 @mixin tbd2l {
   border-top: 2px solid #{$border-light};
 }
-.tbd2l {
-  @include tbdr2;
-  @include tbd2l;
-}
-
+// .tbd2l {
+//   @include tbd2l;
+// }
 @mixin rbd2l {
   border-right: 2px solid #{$border-light};
 }
 .rbd2l {
   @include rbd2l;
 }
-
 @mixin bbd2l {
   border-bottom: 2px solid #{$border-light};
 }
 .bbd2l {
-  @include bbdr2;
   @include bbd2l;
 }
