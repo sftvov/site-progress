@@ -39,6 +39,58 @@ function headerHeight() {
 
 // ----------------------------------------------------------------------
 
+class DownloadPlanWidget {
+    constructor() {
+        this.widget = document.querySelector('.widget-plan');
+        if (!this.widget) return;
+        
+        this.window = this.widget.querySelector('.widget-plan__window');
+        this.closeBtn = this.widget.querySelector('.widget-plan__window-top-svg');
+        
+        this.init();
+    }
+    
+    init() {
+        this.setInitialState();
+        this.bindEvents();
+    }
+    
+    setInitialState() {
+        const isClosed = localStorage.getItem('downloadWindowClosed');
+        if (window.innerWidth >= 1024 && isClosed !== 'true') {
+            this.window.classList.add('_active');
+        }
+    }
+    
+    bindEvents() {
+        this.widget.addEventListener('click', this.handleWidgetClick.bind(this));
+        this.closeBtn.addEventListener('click', this.handleCloseClick.bind(this));
+    }
+    
+    handleWidgetClick() {
+        if (!this.window.classList.contains('_active')) {
+            this.open();
+        }
+    }
+    
+    handleCloseClick(e) {
+        e.stopPropagation();
+        this.close();
+    }
+    
+    open() {
+        this.window.classList.add('_active');
+        localStorage.setItem('downloadWindowClosed', 'false');
+    }
+    
+    close() {
+        this.window.classList.remove('_active');
+        localStorage.setItem('downloadWindowClosed', 'true');
+    }
+}
+
+// ----------------------------------------------------------------------
+
 @@include('../../web-template/src/libs/swiper-bundle-11-2-1.js');
 //include('../../web-template/src/functions/sendmail.js');
 //include('../../web-template/src/functions/isMobile.js');
@@ -135,22 +187,26 @@ const handleScroll = throttle(() => {
   const isDown = currentScroll > lastScroll;
 
   // если в самом вверху
-  if (currentScroll <= 0) {
-    header.style.transform = 'translateY(0)';
-    if (sticky) {
-      sticky.style.transform = 'translateY(0)';
+  if(currentScroll <= 0) {
+    header.style.removeProperty('transform');
+    if(sticky) {
+      sticky.style.removeProperty('transform');
+      // sticky.style.removeProperty('padding-top');
     }
-  } else if (isUp) {
-    header.style.transform = 'translateY(0)';
+  } else if(isUp) {
+    header.style.removeProperty('transform');
     if (sticky) {
-      sticky.style.transform = 'translateY(0)';
+      sticky.style.removeProperty('transform');
+      // sticky.style.paddingTop = '15px';
     }
-  } else if (!md1Query?.matches && currentScroll > hh) {
+  } else if(!md1Query?.matches && currentScroll > hh) {
     header.style.transform = 'translateY(-100%)';
     if (sticky) {      
-      sticky.style.transform = `translateY(-${hh}px)`;
+      sticky.style.transform = `translateY(-${hh+15}px)`;
+      // sticky.style.removeProperty('padding-top');
     }
   }
+  
 
   if(sidebar && sidebarWrapper) {
     
@@ -196,7 +252,7 @@ const handleScroll = throttle(() => {
     }
   }
   lastScroll = currentScroll;
-}, 16);
+}, 50);
 
 
 window.onload = () => {
@@ -205,7 +261,8 @@ window.onload = () => {
   calculateScrollbarWidth();  
   headerHeight();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-  ItemsManager.initialize();
+  ItemsManager.initialize();  
+  new DownloadPlanWidget();
 };
 
 window.addEventListener('resize', handleResize);

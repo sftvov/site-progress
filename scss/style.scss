@@ -3,8 +3,6 @@
 @import 'css-settings/font-face';
 @import '../../web-template/src/css-libs/null';
 
-
-
 @import 'css-framework/fonts';
 @import 'css-framework/positions';
 @import 'css-framework/flex';
@@ -112,8 +110,9 @@ svg {
 @import '../html/components/square-info/_square-info_';
 
 // @import '../html/components/popups/_popups_';
-@import '../html/layouts/header/_header';
 @import '../html/layouts/footer/_footer';
+@import '../html/layouts/header/_header';
+@import '../html/layouts/widget-plan/_widget-plan';
 
 @import '../html/views/all-promo/_all-promo';
 @import '../html/views/booking/_booking';

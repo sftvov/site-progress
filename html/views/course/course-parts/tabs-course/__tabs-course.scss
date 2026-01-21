@@ -1,0 +1,49 @@
+.course-tabs {
+  // &__tab-indicator {
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: var(--indicator-top);
+  //   left: var(--indicator-left);
+  //   width: var(--indicator-width);
+  //   height: var(--indicator-height);
+  // }
+
+  &:has(.course-tabs__title:nth-child(6):last-child) {
+    & .course-tabs__title {
+      @media (max-width: $md1+px) AND (min-width: $md4+px) {
+        width: 25%;
+        &:nth-child(5),
+        &:nth-child(6) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &:has(.course-tabs__title:nth-child(5):last-child) {
+    & .course-tabs__title {
+      @media ((max-width: $md1+px) AND (min-width: $md2+px)) OR ((max-width: $md3+px) AND (min-width: $md4+px)) {
+        width: calc(100% / 3);
+        &:nth-child(4),
+        &:nth-child(5) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    padding: 10px;
+    &._active {
+      cursor: auto;
+      color: #{$text-second};
+      background-color: #{$bg-accent};
+    }
+    &:not(._active) {
+      &:hover,
+      &:focus-visible {
+        color: #{$hover};
+      }
+    }
+  }
+}

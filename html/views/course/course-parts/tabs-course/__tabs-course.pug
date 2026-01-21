@@ -1,0 +1,40 @@
+- 
+  const courseTabs = [
+    'О мероприятии',
+    'Преподаватели',
+    'Фото и видео',
+    'Отзывы',
+    'Также по теме',
+    'Памятка участнику'
+  ]
+
+.course-tabs.col3.n2w8.col3.n2w8._tabs
+  .course-tabs__row.r.wrap.bs2a
+    each tab, index in courseTabs
+      //- if courseTabs.length === 6
+      //-   - const widthClass = index < 4 ? 'wp25' : 'wp50'
+      //-   button.course-tabs__title.dur.fg.bsa.n1wa(
+      //-     class=`${widthClass} x4w4 _tabs-title ${index === 0 ? '_active' : ''}`
+      //-   ) #{tab}
+      //- else if courseTabs.length === 5
+      //-   - const widthClass = index < 3 ? '' : 'wp50'
+      //-   button.course-tabs__title.dur.fg.bsa.n1wa(
+      //-     class=`${widthClass} x4w4 _tabs-title ${index === 0 ? '_active' : ''}`
+      //-   ) #{tab}
+      //- else
+      button.course-tabs__title.dur.fg.bsa.x4w4._tabs-title(
+        class=index === 0 ? '_active' : ''
+      ) #{tab}
+  ._tabs-blocks
+    ._tabs-block._active
+      include tabs-course-parts/__about-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__teachers-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__gallery-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__reviews-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__relating-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__memo-tabs-course

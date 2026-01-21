@@ -123,5 +123,15 @@ body {
   transition-duration: 0.6s;
   z-index: 1;
   position: sticky;
-  top: var(--header-height);
+  // top: var(--header-height);
+  top: calc(var(--header-height) + #{$S});
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(0px - var(--S1));
+    width: 100%;
+    height: var(--S1);
+    background-color: #{$bg-main};
+  }
 }

@@ -28,6 +28,7 @@ html(lang="ru")
       each link in page.scripts.head
         script(src=link)
   body
+    include widget-plan/_widget-plan
     .wrapper
       include header/_header
       main.page#page

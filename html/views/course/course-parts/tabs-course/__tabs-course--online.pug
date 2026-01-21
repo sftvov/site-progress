@@ -1,0 +1,26 @@
+- 
+  const courseTabs = [
+    'О мероприятии',
+    'Преподаватели',
+    'Отзывы',
+    'Также по теме',
+    'Памятка участнику'
+  ]
+
+.course-tabs.col3.n2w8.col3.n2w8._tabs
+  .course-tabs__row.r.wrap.bs2a
+    each tab, index in courseTabs
+      button.course-tabs__title.dur.fg.bsa.x4w4._tabs-title(
+        class=index === 0 ? '_active' : ''
+      ) #{tab}
+  ._tabs-blocks
+    ._tabs-block._active
+      include tabs-course-parts/__about-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__teachers-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__reviews-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__relating-tabs-course
+    ._tabs-block
+      include tabs-course-parts/__memo-tabs-course

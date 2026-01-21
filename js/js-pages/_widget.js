@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadPlan = document.querySelector('.download-plan');
   const downloadWindow = downloadPlan.querySelector('.download-plan__window');
   const closeBtn = downloadPlan.querySelector('.download-plan__window-top-svg');
-  
-  // Проверяем, было ли окно закрыто ранее
   const isWindowClosed = localStorage.getItem('downloadWindowClosed');
   
   // Устанавливаем начальное состояние в зависимости от устройства

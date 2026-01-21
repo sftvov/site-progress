@@ -56,7 +56,7 @@
   --md3: #{$md3};
   --md4: #{$md4};
   
-  --header-height: 196px;
+  --header-height: 137px;
   --inner-width: 100vw;
   --scrollbar: 0px;
 
@@ -65,16 +65,16 @@
   --offsetLeft: calc(50% - var(--half-inner-width));  
   
   @media (min-width: $md1+px) {
-    --header-height: 216px;
+    --header-height: 169px;
   }
   @media (min-width: $md2+px) {
-    --header-height: 195px;
+    --header-height: 148px;
   }
   @media (min-width: $md3+px) {
-    --header-height: 128px;
+    --header-height: 83px;
   }
   @media (min-width: $md4+px) {
-    --header-height: 187px;
+    --header-height: 122px;
   }
 
   --gutter: 20px;

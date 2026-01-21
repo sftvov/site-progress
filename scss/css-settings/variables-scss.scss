@@ -50,12 +50,12 @@ $bg-dark: #{$gray-dark};
 $bg-gray: #{$gray};
 
 $border: #{$orange};
-// $border-second: #{$white};
 $border-accent: #{$blue}; // для табов курсов
 $border-light: #{$blue-light}; // повсеместно и для инпутов дат
 $border-dark: #{$gray-dark}; ; // для инпутов
 $border-gray: #{$gray}; // акции, партнеры, пагинация и для инпутов disabled
 $border-invalid: #{$red};
+// $border-second: #{$white};
 
 $fontFamily: 'Roboto';
 $fz: 14;
@@ -67,6 +67,12 @@ $mobileSpace: 20;
 // $mdSpace: 79.95;
 
 $minContainer: $minWidth - $mobileSpace;
+
+
+// $text-dark: #{$white};
+// $bg-main: #{$dark};
+// $bg-second: #{$gray};
+// $text-main: #{$white};
 
 /* Fixed container variant 1 */
 // {

@@ -3,12 +3,12 @@
     .row.aic.jcb.bgm.bbd2l#sticky
       .r.fg
         +mode({
-          text: '<span class="x4hide">Очный формат курса</span><span class="n4hide">Очно</span>',
-        })(class="x4wp50")
-        +mode({
           tag: 'a',
-          text: '<span class="x4hide">Онлайн-курс</span><span class="n4hide">Онлайн</span>',
+          text: '<span class="x4hide">Очный формат курса</span><span class="n4hide">Очно</span>',
         })(class="x4wp50" href="#")
+        +mode({
+          text: '<span class="x4hide">Онлайн-курс</span><span class="n4hide">Онлайн</span>',
+        })(class="x4wp50")
       p.t2d.x4hide Код курса: 71473
     .row.x2col.g1
       .col1.n2w9.rbd2l.x2contents
@@ -17,7 +17,7 @@
             p.tb.t2 Курс повышения квалификации
             p.t2d.n4hide Код курса: 71473
             h1.t1d Перспективные полимерные материалы в промышленности&ZeroWidthSpace; — герметики, компаунды, лакокрасочные покрытия
-          include course-parts/tabs-course/__tabs-course
+          include course-parts/tabs-course/__tabs-course--online
         hr.bdl
         .col3.n2w8.n3o1.n2o0
           .col5
@@ -42,4 +42,4 @@
               li.ul__li комплект информационно-справочных материалов;
               li.ul__li кофе-брейки.
       hr.bdl.n2hide
-      include course-parts/sidebar-course/__sidebar-course
+      include course-parts/sidebar-course/__sidebar-course--online

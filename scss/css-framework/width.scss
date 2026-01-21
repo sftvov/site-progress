@@ -12,6 +12,16 @@
   @include w;
 }
 
+// @mixin n1wa {
+//   @media (min-width: $md1+px) {
+//     width: auto;
+//   }
+// }
+// .n1wa {
+//   flex-shrink: 1;
+//   @include n1wa;
+// }
+
 @mixin n1w1 {
   @media (min-width: $md1+px) {
     width: var(--column);
@@ -488,12 +498,28 @@
   @include x4w4;
 }
 
-@mixin x4p50 {
+// @mixin wp25 {
+//     width: 25%;
+// }
+// .wp25 {
+//   @extend .fs;
+//   @include wp25;
+// }
+
+// @mixin wp50 {
+//     width: 50%;
+// }
+// .wp50 {
+//   @extend .fs;
+//   @include wp50;
+// }
+
+@mixin x4wp50 {
   @media (max-width: $md4+px) {
     width: 50%;
   }
 }
-.x4p50 {
+.x4wp50 {
   @extend .fs;
-  @include x4p50;
+  @include x4wp50;
 }

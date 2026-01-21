@@ -173,49 +173,8 @@
       margin-left: calc(var(--fields) / 2);
     }
   }
-
-  &__info-panel {
-    @include ts;
-    font-family: 'RobotoCondensed';
-    $fs: 15;
-    font-size: math.div($fs, $fz) + em;
-    $lh: 20;
-    line-height: round-to(math.div($lh, $fs), 3);
-    @include tac;
-    @include m5;
-    padding: 5px 0;
-    @include bga;
-    @media (max-width: $md1+px) {
-      $fs: 14;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fs), 3);
-    }
-    @media (max-width: $md2+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 20;
-      line-height: round-to(math.div($lh, $fs), 3);
-      translate: calc(var(--fields) / -2) 0;
-      width: var(--inner-width);
-    }
-  }
-
-  &__info-link {
-    @include dur;
-    @include ss;
-    @include b1;
-    display: inline-flex;
-    @include aic;
-    column-gap: 3px;
-    margin-left: 10px;
-    &:hover,
-    &:focus-visible {
-      color: #{$hover-light};
-      stroke: #{$hover-light};
-    }
-  }
 }
 
 @import 'header-parts/menu-header/__menu-header';
+// @import 'header-parts/info-header/__info-header';
 @import 'header-parts/results-header/__results-header';
