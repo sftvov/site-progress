@@ -127,11 +127,12 @@ body {
   top: calc(var(--header-height) + #{$S});
   &::before {
     content: '';
+    z-index: -1;
     position: absolute;
     left: 0;
-    top: calc(0px - var(--S1));
+    top: -$S;
     width: 100%;
-    height: var(--S1);
+    height: $M;
     background-color: #{$bg-main};
   }
 }

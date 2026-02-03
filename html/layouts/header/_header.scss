@@ -7,7 +7,15 @@
   @include w;
   padding-top: 20px;
   @include bgm;
-
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: -$S;
+    width: 100%;
+    height: $M;
+    background-color: $bg-main;
+  }
   &__top-level {
     @include row;
     @include x4col;

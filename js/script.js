@@ -191,19 +191,16 @@ const handleScroll = throttle(() => {
     header.style.removeProperty('transform');
     if(sticky) {
       sticky.style.removeProperty('transform');
-      // sticky.style.removeProperty('padding-top');
     }
   } else if(isUp) {
     header.style.removeProperty('transform');
     if (sticky) {
       sticky.style.removeProperty('transform');
-      // sticky.style.paddingTop = '15px';
     }
   } else if(!md1Query?.matches && currentScroll > hh) {
-    header.style.transform = 'translateY(-100%)';
+    header.style.transform = `translateY(-${hh+15}px)`;
     if (sticky) {      
       sticky.style.transform = `translateY(-${hh+15}px)`;
-      // sticky.style.removeProperty('padding-top');
     }
   }
   
@@ -221,7 +218,7 @@ const handleScroll = throttle(() => {
       const sidebarWrapperBottom = sidebarWrapperTop + sidebarWrapperHeight;
       const sidebarBottom = sidebarTop + sidebarHeight;
       const currentScrollBottom = currentScroll + windowHeight;
-      const currentScrollTop = currentScroll + hh + sh;
+      const currentScrollTop = currentScroll + hh + sh + 15;
 
       if(currentScrollTop <= sidebarWrapperTop) {
         sidebar.style.removeProperty('top');
@@ -231,7 +228,7 @@ const handleScroll = throttle(() => {
         sidebar.style.position = 'relative';
       } else {        
         if(isDown) {
-          if (sidebarTop === hh + sh) {
+          if (sidebarTop === hh + sh + 15) {
             sidebar.style.top = currentScrollTop - sidebarWrapperTop + 'px';
             sidebar.style.position = 'relative';
           } else if (currentScrollBottom >= sidebarBottom) {
@@ -244,7 +241,7 @@ const handleScroll = throttle(() => {
             sidebar.style.top = currentScroll - sidebarWrapperTop - (sidebarHeight - (windowHeight)) + 'px';
             sidebar.style.position = 'relative';
           } else if (currentScrollTop <= sidebarTop) {
-            sidebar.style.top = hh + sh + 'px';
+            sidebar.style.top = hh + sh + 15 + 'px';
             sidebar.style.position = 'fixed';
           }
         }

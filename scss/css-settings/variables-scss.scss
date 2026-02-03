@@ -49,12 +49,12 @@ $bg-accent: #{$blue};
 $bg-dark: #{$gray-dark};
 $bg-gray: #{$gray};
 
-$border: #{$orange};
+$border: #{$orange}; // кнопка
 $border-accent: #{$blue}; // для табов курсов
-$border-light: #{$blue-light}; // повсеместно и для инпутов дат
+$border-light: #{$blue-light}; // повсеместно, разделители, рамки блоков, и курсов  и для инпутов дат
 $border-dark: #{$gray-dark}; ; // для инпутов
 $border-gray: #{$gray}; // акции, партнеры, пагинация и для инпутов disabled
-$border-invalid: #{$red};
+$border-invalid: #{$red}; // инпут ошибка
 // $border-second: #{$white};
 
 $fontFamily: 'Roboto';
