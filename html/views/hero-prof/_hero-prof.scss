@@ -2,7 +2,6 @@
   counter-reset: prof-items;
   &__item {
     list-style: none;
-    column-gap: 7px;
     &::before {
       counter-increment: prof-items;
       content: counter(prof-items) '.';

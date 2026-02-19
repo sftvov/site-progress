@@ -6,6 +6,7 @@
   &__body {
     break-inside: avoid-column;
     @include col7;
+    @include ais;
     @include m5;
   }
 

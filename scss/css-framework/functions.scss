@@ -124,15 +124,15 @@ body {
   z-index: 1;
   position: sticky;
   // top: var(--header-height);
-  top: calc(var(--header-height) + #{$S});
+  top: calc(var(--header-height) + #{$XS});
   &::before {
     content: '';
     z-index: -1;
     position: absolute;
     left: 0;
-    top: -$S;
+    top: -$XS;
     width: 100%;
-    height: $M;
+    height: $S;
     background-color: #{$bg-main};
   }
 }

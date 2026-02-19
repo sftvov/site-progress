@@ -198,9 +198,9 @@ const handleScroll = throttle(() => {
       sticky.style.removeProperty('transform');
     }
   } else if(!md1Query?.matches && currentScroll > hh) {
-    header.style.transform = `translateY(-${hh+15}px)`;
+    header.style.transform = `translateY(-${hh+7}px)`;
     if (sticky) {      
-      sticky.style.transform = `translateY(-${hh+15}px)`;
+      sticky.style.transform = `translateY(-${hh+7}px)`;
     }
   }
   
@@ -218,7 +218,7 @@ const handleScroll = throttle(() => {
       const sidebarWrapperBottom = sidebarWrapperTop + sidebarWrapperHeight;
       const sidebarBottom = sidebarTop + sidebarHeight;
       const currentScrollBottom = currentScroll + windowHeight;
-      const currentScrollTop = currentScroll + hh + sh + 15;
+      const currentScrollTop = currentScroll + hh + sh + 7;
 
       if(currentScrollTop <= sidebarWrapperTop) {
         sidebar.style.removeProperty('top');
@@ -228,7 +228,7 @@ const handleScroll = throttle(() => {
         sidebar.style.position = 'relative';
       } else {        
         if(isDown) {
-          if (sidebarTop === hh + sh + 15) {
+          if (sidebarTop === hh + sh + 7) {
             sidebar.style.top = currentScrollTop - sidebarWrapperTop + 'px';
             sidebar.style.position = 'relative';
           } else if (currentScrollBottom >= sidebarBottom) {
@@ -241,7 +241,7 @@ const handleScroll = throttle(() => {
             sidebar.style.top = currentScroll - sidebarWrapperTop - (sidebarHeight - (windowHeight)) + 'px';
             sidebar.style.position = 'relative';
           } else if (currentScrollTop <= sidebarTop) {
-            sidebar.style.top = hh + sh + 15 + 'px';
+            sidebar.style.top = hh + sh + 7 + 'px';
             sidebar.style.position = 'fixed';
           }
         }
@@ -249,7 +249,7 @@ const handleScroll = throttle(() => {
     }
   }
   lastScroll = currentScroll;
-}, 50);
+}, 10);
 
 
 window.onload = () => {

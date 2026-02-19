@@ -14,12 +14,12 @@ mixin hotel(hotel)
       p.p1 Санкт-Петербург, !{hotel.address}
       a.p1.link-b(href="#hotels") Вернуться к карте
     .r40.wrap.jcc.x2cg30.m4.g7
-      .sa.sw2.r15.aic.x2cg10
+      .sa.sw2.r5.aic
         svg.i24
           use(xlink:href='img/sprite/symbols.svg#pin')
         p.p1.ta !{hotel.distance} #[br.x3hide]до #[br.n3hide]ЦНТИ&nbsp;Прогресс
       each icon in hotel.features
-        .sa.sw2.r15.aic.x2cg10
+        .sa.sw2.r5.aic
           svg.i24
             use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
           p.p1.ta !{icon.name}            
@@ -35,7 +35,7 @@ mixin hotel(hotel)
         if hotel.info
           each p in hotel.info
             p.p1 !{p}
-        .sb.sw2.tb.twb.r10.aic
+        .sb.tb.twb.r5.aic
           svg.i24
             use(xlink:href='img/sprite/symbols.svg#info')
           p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].

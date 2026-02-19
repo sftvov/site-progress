@@ -60,16 +60,18 @@
 
 %button {
   @include dur;
+  @include tac;
   @extend %safari-not-round;
   cursor: pointer;
-  @include btn;
   display: inline-block;
   padding: 10px;
 }
 %button-s {
-  @media (max-width: $md2+px) {
-    padding-block: 5px;
-  }
+  padding-block: 5px;
+  $fs: 12;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 20;
+  line-height: round-to(math.div($lh, $fs), 3);
 }
 
 .button-primary {

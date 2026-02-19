@@ -11,9 +11,9 @@
     content: '';
     z-index: -1;
     position: absolute;
-    bottom: -$S;
+    bottom: -$XS;
     width: 100%;
-    height: $M;
+    height: $S;
     background-color: $bg-main;
   }
   &__top-level {

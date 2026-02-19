@@ -15,7 +15,7 @@
     @include bd2l;
     @media (min-width: $md2+px) {
       width: 86px;
-      padding: 3px;
+      padding: 4px;
     }
     &:focus {
       outline: none;
@@ -151,7 +151,7 @@
 //     color: var(--text-gray);
 //     $lh: 24;
 //     line-height: round-to(math.div($lh, $fz), 3);
-//
+
 //     text-align: center;
 //     position: relative;
 //     padding: 8px 0 7px;
