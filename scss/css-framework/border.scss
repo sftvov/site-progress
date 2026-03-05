@@ -116,9 +116,9 @@
 @mixin tbd2l {
   border-top: 2px solid #{$border-light};
 }
-// .tbd2l {
-//   @include tbd2l;
-// }
+.tbd2l {
+  @include tbd2l;
+}
 @mixin rbd2l {
   border-right: 2px solid #{$border-light};
 }

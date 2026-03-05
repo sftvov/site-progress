@@ -27,7 +27,7 @@ body {
 [data-items-hide],
 [data-reset-all],
 [data-reset],
-._select-activated {
+._select-activated, ._removed {
   &:not(._active) {
     display: none;
   }

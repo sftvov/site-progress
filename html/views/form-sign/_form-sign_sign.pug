@@ -1,0 +1,187 @@
+.section
+  .container
+    form.col1
+      fieldset.n1o1
+        .row.aic.x1jcb
+          legend.t1d.n1w3.n3w4 Данные участника | 1
+        .col2
+          .grid2.x3grid1.cg.aie.g3.m2
+            +inputWrapper({
+              label: 'Фамилия Имя Отчество',
+              name: 'participant',
+              placeholder: 'Иванов Иван Иванович',
+              required: true,
+            })
+            +inputWrapper({
+              label: 'Должность',
+              name: 'post',
+              placeholder: 'Должность',
+              required: true,
+            })
+            +inputWrapper({
+              label: 'Телефоны',
+              labelAdd: ' (мобильный, рабочий)',
+              name: 'phones',
+              placeholder: 'Телефоны (мобильный, рабочий)',
+              type: 'text',
+              required: true,
+            })
+            +inputWrapper({
+              label: 'E-mail',
+              labelAdd: ' (слушателя или контактного лица. Необходим для отправки финансовых документов)',
+              name: 'email',
+              placeholder: 'Иванов Иван Иванович',
+              type: 'email',
+              required: true,
+            })
+          .col3
+            .col5.ais
+              +checkbox({
+                label: 'У меня есть промокод',
+                name: 'code-exist[]',
+                blueWrapper: true,
+              })(class='_activator')
+              +inputWrapper({
+                label: 'Введите промокод (код Вы можете получить, только <a class="link" href="#">подписавшись на рассылку</a>)',
+                name: 'code-num[]',
+                placeholder: 'XXXXXX',
+              })(class='w _removed')
+            +checkbox({
+              label: 'Хочу получить дополнительное удостоверение на английском языке (+3000 рублей)',
+              checked: true,
+              name: 'certificate',
+              blueWrapper: true,
+            })
+      fieldset.tpd1.tbd2l
+        .n1o1
+          .row.x4wrap.g5.aic.x1jcb
+            legend.t1d.n1w3.n3w4 Данные участника | 2
+            button.button-second.n1w2.n2w3.w4.x3w2.x4w4 Удалить участника
+          .col2
+            .grid2.x3grid1.cg.aie.g3.m2
+              +inputWrapper({
+                label: 'Фамилия Имя Отчество',
+                name: 'participant',
+                placeholder: 'Иванов Иван Иванович',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'Должность',
+                name: 'post',
+                placeholder: 'Должность',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'Телефоны',
+                labelAdd: ' (мобильный, рабочий)',
+                name: 'phones',
+                placeholder: 'Телефоны (мобильный, рабочий)',
+                type: 'text',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'E-mail',
+                labelAdd: ' (слушателя или контактного лица. Необходим для отправки финансовых документов)',
+                name: 'email',
+                placeholder: 'Иванов Иван Иванович',
+                type: 'email',
+                required: true,
+              })
+            .col3
+              .col5.ais
+                +checkbox({
+                  label: 'У меня есть промокод',
+                  name: 'code-exist[]',
+                  blueWrapper: true,
+                })(class='_activator')
+                +inputWrapper({
+                  label: 'Введите промокод (код Вы можете получить, только <a class="link" href="#">подписавшись на рассылку</a>)',
+                  name: 'code-num[]',
+                  placeholder: 'XXXXXX',
+                })(class='w _removed')
+              +checkbox({
+                label: 'Хочу получить дополнительное удостоверение на английском языке (+3000 рублей)',
+                checked: true,
+                name: 'certificate',
+                blueWrapper: true,
+              })
+      .tpd1.tbd2l
+        .n1o1
+          button.button-else.r5.aic.jcc.n1w3.w4.x3w2.x4w4 
+            svg.sa.sw2.i24
+              use(xlink:href='img/sprite/symbols.svg#plus')
+            span Добавить 3-го участника
+      fieldset.tpd1.tbd2l
+        .n1o1
+          legend.t1d Данные организации
+          .col3.m2            
+            +inputWrapper({
+              label: 'Полное название организации',
+              labelAdd: '(с указанием формы собственности – ООО, ЗАО, ОАО или другое)',
+              name: 'post',
+              placeholder: 'Должность',
+              type: 'text',
+              required: true,
+              wrapperClass: 'col5',
+              labelClass: 'col7',
+              labelMainClass: 'td p1'
+            })
+            +inputWrapper({
+              label: 'Адрес',
+              labelAdd: 'Полный почтовый адрес организации (Пример: 607190 Нижегородская обл., г. Саров, ул. Курчатова д.55, оф.101)',
+              name: 'phones',
+              placeholder: 'Телефоны (мобильный, рабочий)',
+              type: 'text',
+              required: true,
+              wrapperClass: 'col5',
+              labelClass: 'col7',
+              labelMainClass: 'td p1'
+            })
+            +inputWrapper({
+              label: 'Контактное лицо: Имя и фамилия, телефон контактного лица в организации',
+              labelAdd: 'Не заполняется, если совпадает с участником',
+              name: 'person',
+              placeholder: 'Иванов Иван Иванович',
+              type: 'text',
+              wrapperClass: 'col5',
+              labelClass: 'col7',
+              labelMainClass: 'td p1'
+            })
+      .tpd1.tbd2l
+        .row.x3wrap.g7.n1o1
+          .col.ais.n2w3.w4
+            +checkbox({
+              label: 'Нужна ли вам гостиница?',
+              checked: true,
+              name: 'code-exist',
+              blueWrapper: true,
+            })
+          p.p1.twb Мы #[a.link(href="#") бесплатно забронируем гостиницу] недалеко от учебного центра. В отелях-партнерах действуют привилегии и скидки для наших слушателей.
+      fieldset.tpd1.tbd2l
+        .n1o1.col3
+          .col5
+            legend.t2d Рассылка новостей
+            p.p1 Я хочу получать электронную рассылку анонсов семинаров по направлениям:
+          .col7.ais
+            +checkbox({
+              label: 'Общий менеджмент',
+              checked: true,
+              name: 'general-management',
+              blueWrapper: true,
+            })
+            +checkbox({
+              label: 'Руководителям производств',
+              checked: true,
+              name: 'production-managers',
+              blueWrapper: true,
+            })
+      .tpd1.tbd2l
+        .n1o1.n2o0.n3o2.col5.ais
+          button.button-primary.n1w5.n2w6.n3w8.w4 Записаться на курс в учебном центре
+          +checkbox({
+            label: 'С <a class="link" href="#">информацией</a> об ограничении ответственности ознакомлен',
+            checked: true,
+            name: 'information-received',
+            blueWrapper: true,
+            required: true
+          })

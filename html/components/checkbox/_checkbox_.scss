@@ -9,6 +9,21 @@
         }
       }
     }
+    &:user-invalid {
+      & + .checkbox__span-wrapper {
+        &::before {
+          content: url(../img/icons/checkbox-empty-l-red.svg);
+        }
+        @media (max-width: $md2+px) {
+          &::before {
+            content: url(../img/icons/checkbox-empty-l-red.svg);
+          }
+        }
+        & .checkbox__span{
+          color: $red;
+        }
+      }
+    }
   }
   &__span-wrapper {
     @include por;
@@ -56,9 +71,5 @@
   &__span {
     @include p2;
     vertical-align: middle;
-    // translate: 0 3px;
-    @media (max-width: $md2+px) {
-      // translate: 0 1px;
-    }
   }
 }

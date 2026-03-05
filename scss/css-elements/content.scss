@@ -1,7 +1,10 @@
-.section {
+@mixin section {
   scroll-margin-top: calc(var(--header-height) + var(--S1));
   width: 100%;
   margin: var(--S1) 0;
+}
+.section {
+  @include section;
 }
 
 .section-bg {
@@ -63,7 +66,7 @@
   @include tac;
   @extend %safari-not-round;
   cursor: pointer;
-  display: inline-block;
+  // display: inline-block;
   padding: 10px;
 }
 %button-s {
@@ -117,6 +120,21 @@
 }
 .button-accent-s {
   @extend .button-accent;
+  @extend %button-s;
+}
+
+.button-else {
+  @include link;
+  @extend %button;
+  @include bgm;
+  @include bs2a;
+  &:hover,
+  &:focus-visible {
+    @include bs2;
+  }
+}
+.button-else-s {
+  @extend .button-else;
   @extend %button-s;
 }
 
@@ -185,22 +203,21 @@
 
 %input {
   @include dur;
-  outline: none;
   @extend %safari-not-round;
   color: #{$text-main};
   min-height: 40px;
   padding: 4px 9px;
   background-color: #{$bg-main};
   @include bdd;
+  &:focus {
+    outline: none;
+    border-color: #{$border};
+  }
   @media (hover: hover) {
     &:hover {
       border-color: #{$border};
     }
   }
-  &:focus-visible {
-    border-color: #{$border};
-  }
-
   &::placeholder {
     color: #{$text-light};
   }

@@ -20,7 +20,7 @@
 }
 
 .hotel-item {
-  @extend .section;
+  @include section;
   // &__icons {}
 
   // &__icon {

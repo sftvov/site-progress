@@ -1,29 +1,47 @@
-
-
 .input-wrapper {
-  @include col7;
+  // @include col7;
   &__label {
+    // @include p2;
+  }
+
+  &__label-main {
+    @include dur;
+  }
+
+  &__label-add {
     @include dur;
     @include p2;
   }
   &:focus-within,
   &:has(:is(input, textarea, .select):hover) {
-    & .input-wrapper__label {
+    & .input-wrapper__label-main,
+    & .input-wrapper__label-add {
       color: #{$text-bright};
     }
   }
   &:has(.select._active) {
-    & .input-wrapper__label {
+    & .input-wrapper__label-main,
+    & .input-wrapper__label-add {
       color: #{$text-bright};
     }
   }
   &:has(:is(.input, .select__input):user-invalid) {
-    & .input-wrapper__label {
+    & .input-wrapper__label-main,
+    & .input-wrapper__label-add {
       color: #{$text-invalid};
     }
   }
+  &:has(.input[required]) {
+    & .input-wrapper__label-main {
+      &::after {
+        content: ' *';
+        color: $red;
+      }
+    }
+  }
   &:has(.input:disabled) {
-    & .input-wrapper__label {
+    & .input-wrapper__label-main,
+    & .input-wrapper__label-add {
       color: #{$text-light};
     }
   }

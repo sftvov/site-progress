@@ -56,3 +56,17 @@ new Activator('._burger', {
 	escClose: true,
 	bodyLock: true,
 });
+
+new Activator('._activator', {
+	removedOwn: ['._removed'],
+	// stops: ['.select__variants'],
+	// removing: ['.select__variant'],
+	// clickOutClose: true,
+	// escClose: true,
+	// effects: 'U',
+	// effectDuration: 300,
+	//bodyLock: true,
+	// onlyOne: true,
+	//deactivate: false,
+	//focus
+});

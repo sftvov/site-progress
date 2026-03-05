@@ -275,6 +275,33 @@
   @extend .n2or0;
 }
 
+@mixin n3ol2 {
+  @media (min-width: $md3+px) {
+    margin-left: var(--2columnsG);
+  }
+}
+.n3ol2 {
+  @include n3ol2;
+}
+
+@mixin n3or2 {
+  @media (min-width: $md3+px) {
+    margin-right: var(--2columnsG);
+  }
+}
+.n3or2 {
+  @include n3or2;
+}
+
+@mixin n3o2 {
+  @include n3ol2;
+  @include n3or2;
+}
+.n3o2 {
+  @extend .n3ol2;
+  @extend .n3or2;
+}
+
 @mixin n3ol1 {
   @media (min-width: $md3+px) {
     margin-left: var(--columnG);

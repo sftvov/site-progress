@@ -5,6 +5,13 @@
   @include r;
 }
 
+@mixin cg {
+  column-gap: var(--gutter);
+}
+.cg {
+  @include cg;
+}
+
 @mixin cg5 {
   column-gap: 5px;
 }
@@ -104,8 +111,8 @@
 }
 
 @mixin row {
-  @include r;
-  column-gap: var(--gutter);
+  @extend .r;
+  @extend .cg;
 }
 .row {
   @include row;
@@ -148,6 +155,15 @@
 }
 .aic {
   @include aic;
+}
+
+@mixin x2aic {
+  @media (max-width: $md2+px) {
+    align-items: center;
+  }
+}
+.x2aic {
+  @include x2aic;
 }
 
 @mixin x3aic {
@@ -214,6 +230,15 @@
 }
 .jcb {
   @include jcb;
+}
+
+@mixin x1jcb {
+  @media (max-width: $md1+px) {
+    justify-content: space-between;
+  }
+}
+.x1jcb {
+  @include x1jcb;
 }
 
 @mixin x3jcb {
@@ -488,4 +513,15 @@
 .col8 {
   @extend .col;
   @extend .g8;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.x3grid1 {
+  @media (max-width: $md3+px) {
+    grid-template-columns: 1fr;
+  }
 }

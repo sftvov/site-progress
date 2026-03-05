@@ -9,7 +9,11 @@ mixin inputWrapper(props = {})
       placeholder = false,
       required = false,
       fieldType = 'input', // 'input', 'textarea', 'select'
-      selectConfig = {}
+      selectConfig = {},
+      wrapperClass = 'col7',
+      labelClass = '',
+      labelMainClass = 'p2',
+      labelAdd = '',
     } = props;
 
     selectConfig.name = name;
@@ -20,10 +24,12 @@ mixin inputWrapper(props = {})
   -
     const wrapperTag = fieldType === 'select' ? 'div' : 'label';
 
-  #{wrapperTag}.input-wrapper&attributes(attributes)
+  #{wrapperTag}.input-wrapper(class=wrapperClass)&attributes(attributes)
     if label
-      p.input-wrapper__label= label
-    
+      p.input-wrapper__label(class=labelClass)
+        span.input-wrapper__label-main(class=labelMainClass) !{label}
+        if labelAdd
+          span.input-wrapper__label-add !{labelAdd}
     case fieldType
       when 'textarea'
         textarea.textarea(
