@@ -1,0 +1,131 @@
+.popup {
+  @include dur;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include w;
+  height: 100%;
+  background-color: #00000088;
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    & .popup__body {
+      transition-duration: 0.6s;
+      transform: translateY(0);
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+  }
+
+  &__body {
+    transition-duration: 0.3s;
+    transform: translateY(-50px);
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+  }
+
+  &__close-svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__form {
+  }
+
+  &__video-container {
+    @include r;
+    @include aic;
+    @include jcc;
+    height: 100%;
+  }
+
+  &__video-wrapper {
+    @include por;
+    width: 100%;
+    background: #000;
+    box-shadow: inset 0 0 0 4px $bg-main;
+    @media (max-width: $md2+px) {
+      box-shadow: inset 0 0 0 2px $bg-main;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    max-height: calc(100dvh - 40px);
+    height: 720px;
+    @media (max-width: $md2+px) {
+      max-height: calc(100dvh - 30px);
+    }
+    @media (max-width: $md4+px) {
+      max-height: calc(100dvh - 20px);
+    }
+    & iframe {
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      translate: 4px 4px;
+    }
+  }
+
+  &__close-btn {
+    cursor: pointer;
+    @include dur;
+    stroke: $bg-second;
+    z-index: 1;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    @include sw2;
+    @include r;
+    @include aic;
+    @include jcc;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4px $bg-second;
+    @media (max-width: $md2+px) {
+      top: -15px;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      box-shadow: inset 0 0 0 2px $bg-second;
+    }
+    @media (max-width: $md4+px) {
+      top: -10px;
+      right: -10px;
+      width: 20px;
+      height: 20px;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: $bg-dark;
+      }
+    }
+    &:active,
+    &:focus-visible {
+      opacity: 0.8;
+    }
+  }
+
+  &__close-svg {
+    @include i24;
+    @media (max-width: $md4+px) {
+      @include i16;
+    }
+  }
+}

@@ -96,7 +96,7 @@ class DownloadPlanWidget {
 //include('../../web-template/src/functions/isMobile.js');
 //include('../../web-template/src/functions/webp.js');
 @@include('../../web-template/src/functions/slide.js');
-@@include('../../web-template/src/functions/activator_v3.0.2_now.js');
+@@include('../../web-template/src/functions/activator_v3.1.1_now.js');
 @@include('../../web-template/src/functions/body_lock_v1.2.0_now.js');
 //include('../../web-template/src/functions/dynamic_adapt.js');
 //include('../../web-template/src/functions/desktopScroll.js');
@@ -110,7 +110,7 @@ class DownloadPlanWidget {
 //include('../../web-template/src/js-elements/search.js');
 @@include('../../web-template/src/js-elements/indicator.js');
 @@include('../../web-template/src/js-elements/tabs_v2.0.0_now.js');
-//include('../../web-template/src/js-elements/popups.js');
+@@include('../../web-template/src/js-elements/popups.js');
 @@include('../../web-template/src/js-elements/gallery.js');
 //include('../../web-template/src/js-elements/scroll.js');
 @@include('../../web-template/src/js-elements/spollers_v2.0.1_now.js');

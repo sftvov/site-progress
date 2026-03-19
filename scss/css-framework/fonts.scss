@@ -270,17 +270,42 @@
   @include p1;
 }
 
-@mixin p2 {
-  $fs: 13;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 18;
-  line-height: round-to(math.div($lh, $fs), 3);
+@mixin x2p2 {
   @media (max-width: $md2+px) {
     $fs: 12;
     font-size: math.div($fs, $fz) + em;
     $lh: 18;
     line-height: round-to(math.div($lh, $fs), 3);
   }
+}
+.x2p2 {
+  @include x2p2;
+}
+
+@mixin n1p2 {
+  $fs: 13;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 18;
+  line-height: round-to(math.div($lh, $fs), 3);
+}
+.n1p2 {
+  @include n1p2;
+}
+
+@mixin p2 {
+  @extend .n1p2;
+  @extend .x2p2;
+}
+.p2 {
+  @include p2;
+}
+
+@mixin p2 {
+  $fs: 13;
+  font-size: math.div($fs, $fz) + em;
+  $lh: 18;
+  line-height: round-to(math.div($lh, $fs), 3);
+  @extend .p2;
 }
 .p2 {
   @include p2;

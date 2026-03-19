@@ -63,7 +63,6 @@ svg {
 // }
 
 .wrapper {
-  // overflow: hidden;
   // position: relative;
   display: flex;
   align-items: center;
@@ -72,6 +71,9 @@ svg {
   max-width: $maxWidth + px;
   min-height: 100%;
   margin: 0 auto;
+  &:not(:has(#course)) {
+    overflow: hidden;
+  }
 }
 
 .page {
@@ -109,9 +111,9 @@ svg {
 @import '../html/components/slide-main/_slide-main_';
 @import '../html/components/square-info/_square-info_';
 
-// @import '../html/components/popups/_popups_';
 @import '../html/layouts/footer/_footer';
 @import '../html/layouts/header/_header';
+@import '../html/layouts/popups/_popups_';
 @import '../html/layouts/widget-plan/_widget-plan';
 
 @import '../html/views/all-promo/_all-promo';
@@ -133,8 +135,9 @@ svg {
 @import '../html/views/materials/_materials';
 @import '../html/views/partners/_partners';
 @import '../html/views/plan/_plan';
-@import '../html/views/promo/_promo';
 @import '../html/views/programms/_programms';
+@import '../html/views/promo/_promo';
+@import '../html/views/receive/_receive';
 @import '../html/views/route/_route';
 @import '../html/views/rubrics/_rubrics';
 @import '../html/views/slider-main/_slider-main';

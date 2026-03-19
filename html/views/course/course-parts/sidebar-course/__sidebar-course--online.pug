@@ -28,20 +28,19 @@
         .col7
           p.tb.t2 58 590 рублей
           p.p3 (Стоимость для нерезидентов РФ может отличаться)
-        .col7        
-          +inputWrapper({
-            label: 'Формат обучения',
-            name: 'format',
-            placeholder: 'Формат не  выбран',
-            fieldType: 'select',
-            selectConfig: {
-              options: [
-                'Стандарт',
-                'Комфорт',
-                'Эконом',
-              ],
-            }
-          })
+        +inputWrapper({
+          label: 'Формат обучения',
+          name: 'format',
+          placeholder: 'Формат не  выбран',
+          fieldType: 'select',
+          selectConfig: {
+            options: [
+              'Стандарт',
+              'Комфорт',
+              'Эконом',
+            ],
+          }
+        })
         button.button-primary.w Записаться
       .col7
         p.td.p1 Документ

@@ -70,6 +70,17 @@
   @include x2i20;
 }
 
+@mixin x4i40 {
+  @include fs;
+  @media (max-width: $md4+px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+.x4i40 {
+  @include x4i40;
+}
+
 @mixin sd {
   stroke: #{$text-dark};
 }

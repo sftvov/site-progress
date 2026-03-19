@@ -33,6 +33,13 @@
   @include cg15;
 }
 
+// @mixin cg20 {
+//   column-gap: 20px;
+// }
+// .cg20 {
+//   @include cg20;
+// }
+
 @mixin cg30 {
   column-gap: 30px;
 }
@@ -91,6 +98,15 @@
   @extend .r;
   @extend .cg15;
 }
+
+// @mixin r20 {
+//   @include r;
+//   @include cg15;
+// }
+// .r20 {
+//   @extend .r;
+//   @extend .cg20;
+// }
 
 @mixin r30 {
   @include r;

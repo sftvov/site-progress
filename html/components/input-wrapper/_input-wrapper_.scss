@@ -25,7 +25,7 @@
       color: #{$text-bright};
     }
   }
-  &:has(:is(.input, .select__input):user-invalid) {
+  &:has(:is(.input, .select__input):is(:user-invalid, .user-invalid)) {
     & .input-wrapper__label-main,
     & .input-wrapper__label-add {
       color: #{$text-invalid};

@@ -75,6 +75,27 @@
   @extend .bpd1;
 }
 
+@mixin tpd2 {
+  padding-top: var(--S2);
+}
+.tpd2 {
+  @include tpd2;
+}
+@mixin bpd2 {
+  padding-bottom: var(--S2);
+}
+.bpd2 {
+  @include bpd2;
+}
+@mixin pd2 {
+  @include tpd2;
+  @include bpd2;
+}
+.pd2 {
+  @extend .tpd2;
+  @extend .bpd2;
+}
+
 @mixin tpd3 {
   padding-top: #{$M};
 }

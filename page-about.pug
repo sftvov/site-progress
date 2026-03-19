@@ -1,0 +1,15 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'О КОМПАНИИ',
+		breadcrumbs: [
+			'О ЦНТИ ПРОГРЕСС',
+		]
+	})
+	
+block content	
+	include html/views/hero-about/_hero-about_about
+	include html/views/receive/_receive_about
+	include html/views/values/_values_about
+	include html/views/video-about/_video-about_about

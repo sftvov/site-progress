@@ -27,7 +27,8 @@ body {
 [data-items-hide],
 [data-reset-all],
 [data-reset],
-._select-activated, ._removed {
+._select-activated,
+._checkbox-body {
   &:not(._active) {
     display: none;
   }

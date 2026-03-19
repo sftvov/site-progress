@@ -1,116 +1,67 @@
 .section
   .container
     form.col1
-      fieldset.n1o1
-        .row.aic.x1jcb
-          legend.t1d.n1w3.n3w4 Данные участника | 1
-        .col2
-          .grid2.x3grid1.cg.aie.g3.m2
-            +inputWrapper({
-              label: 'Фамилия Имя Отчество',
-              name: 'participant',
-              placeholder: 'Иванов Иван Иванович',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Должность',
-              name: 'post',
-              placeholder: 'Должность',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Телефоны',
-              labelAdd: ' (мобильный, рабочий)',
-              name: 'phones',
-              placeholder: 'Телефоны (мобильный, рабочий)',
-              type: 'text',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'E-mail',
-              labelAdd: ' (слушателя или контактного лица. Необходим для отправки финансовых документов)',
-              name: 'email',
-              placeholder: 'Иванов Иван Иванович',
-              type: 'email',
-              required: true,
-            })
-          .col3
-            .col5.ais
-              +checkbox({
-                label: 'У меня есть промокод',
-                name: 'code-exist[]',
-                blueWrapper: true,
-              })(class='_activator')
-              +inputWrapper({
-                label: 'Введите промокод (код Вы можете получить, только <a class="link" href="#">подписавшись на рассылку</a>)',
-                name: 'code-num[]',
-                placeholder: 'XXXXXX',
-              })(class='w _removed')
-            +checkbox({
-              label: 'Хочу получить дополнительное удостоверение на английском языке (+3000 рублей)',
-              checked: true,
-              name: 'certificate',
-              blueWrapper: true,
-            })
-      fieldset.tpd1.tbd2l
-        .n1o1
-          .row.x4wrap.g5.aic.x1jcb
-            legend.t1d.n1w3.n3w4 Данные участника | 2
-            button.button-second.n1w2.n2w3.w4.x3w2.x4w4 Удалить участника
-          .col2
-            .grid2.x3grid1.cg.aie.g3.m2
-              +inputWrapper({
-                label: 'Фамилия Имя Отчество',
-                name: 'participant',
-                placeholder: 'Иванов Иван Иванович',
-                required: true,
-              })
-              +inputWrapper({
-                label: 'Должность',
-                name: 'post',
-                placeholder: 'Должность',
-                required: true,
-              })
-              +inputWrapper({
-                label: 'Телефоны',
-                labelAdd: ' (мобильный, рабочий)',
-                name: 'phones',
-                placeholder: 'Телефоны (мобильный, рабочий)',
-                type: 'text',
-                required: true,
-              })
-              +inputWrapper({
-                label: 'E-mail',
-                labelAdd: ' (слушателя или контактного лица. Необходим для отправки финансовых документов)',
-                name: 'email',
-                placeholder: 'Иванов Иван Иванович',
-                type: 'email',
-                required: true,
-              })
-            .col3
-              .col5.ais
-                +checkbox({
-                  label: 'У меня есть промокод',
-                  name: 'code-exist[]',
-                  blueWrapper: true,
-                })(class='_activator')
+      .col1#participants
+        fieldset.tpd1.tbd2l
+          .n1o1
+            legend.t1d.n1w3.n3w4 Данные участника | 1
+            .col2
+              .grid2.x3grid1.cg.aie.g3.m2
                 +inputWrapper({
-                  label: 'Введите промокод (код Вы можете получить, только <a class="link" href="#">подписавшись на рассылку</a>)',
-                  name: 'code-num[]',
-                  placeholder: 'XXXXXX',
-                })(class='w _removed')
-              +checkbox({
-                label: 'Хочу получить дополнительное удостоверение на английском языке (+3000 рублей)',
-                checked: true,
-                name: 'certificate',
-                blueWrapper: true,
-              })
+                  label: 'Фамилия Имя Отчество',
+                  name: 'participant[]',
+                  placeholder: 'Иванов Иван Иванович',
+                  required: true,
+                  inputClass: '_req',
+                })
+                +inputWrapper({
+                  label: 'Должность',
+                  name: 'post[]',
+                  placeholder: 'Должность',
+                  required: true,
+                  inputClass: '_req',
+                })
+                +inputWrapper({
+                  label: 'Телефоны',
+                  labelAdd: ' (мобильный, рабочий)',
+                  name: 'phones[]',
+                  placeholder: 'Телефоны (мобильный, рабочий)',
+                  type: 'text',
+                  required: true,
+                  inputClass: '_req',
+                })
+                +inputWrapper({
+                  label: 'E-mail',
+                  labelAdd: ' (слушателя или контактного лица. Необходим для отправки финансовых документов)',
+                  name: 'email[]',
+                  placeholder: 'Иванов Иван Иванович',
+                  type: 'email',
+                  required: true,
+                  inputClass: '_req',
+                })
+              .col3
+                div
+                  +checkbox({
+                    label: 'У меня есть промокод',
+                    name: 'code-exist[]',
+                    blueWrapper: true,
+                  })(class='_checkbox')
+                  +inputWrapper({
+                    label: 'Введите промокод (код Вы можете получить, только <a class="link" href="#">подписавшись на рассылку</a>)',
+                    name: 'code-num[]',
+                    placeholder: 'XXXXXX',
+                  })(class='w m5 _checkbox-body')
+                +checkbox({
+                  label: 'Хочу получить дополнительное удостоверение на английском языке (+3000 рублей)',
+                  name: 'certificate[]',
+                  blueWrapper: true,
+                })
       .tpd1.tbd2l
         .n1o1
-          button.button-else.r5.aic.jcc.n1w3.w4.x3w2.x4w4 
-            svg.sa.sw2.i24
+          button.button-else.sa.sa-link.r5.aic.jcc.n1w3.w4.x3w2.x4w4#add-participant
+            svg.sw2.i24
               use(xlink:href='img/sprite/symbols.svg#plus')
-            span Добавить 3-го участника
+            span Добавить 2-го участника
       fieldset.tpd1.tbd2l
         .n1o1
           legend.t1d Данные организации
@@ -185,3 +136,161 @@
             blueWrapper: true,
             required: true
           })
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    const addButton = document.getElementById('add-participant');
+    const participantsContainer = document.getElementById('participants');
+
+    // Шаблон для новых участников (без номера)
+    const templateHTML = `
+      <fieldset class="tpd1 tbd2l">
+        <div class="n1o1">
+          <div class="row x4wrap g5 aic x1jcb">
+            <legend class="t1d n1w3 n3w4">Данные участника | </legend>
+            <button class="button-second n1w2 n2w3 w4 x3w2 x4w4">Удалить участника</button>
+          </div>
+          <div class="col2">
+            <div class="grid2 x3grid1 cg aie g3 m2">
+              <label class="input-wrapper col7">
+                <p class="input-wrapper__label"><span class="input-wrapper__label-main p2">Фамилия Имя Отчество</span></p>
+                <input class="input _req" type="text" name="participant[]" placeholder="Иванов Иван Иванович" required>
+              </label>
+              <label class="input-wrapper col7">
+                <p class="input-wrapper__label"><span class="input-wrapper__label-main p2">Должность</span></p>
+                <input class="input _req" type="text" name="post[]" placeholder="Должность" required>
+              </label>
+              <label class="input-wrapper col7">
+                <p class="input-wrapper__label"><span class="input-wrapper__label-main p2">Телефоны</span><span class="input-wrapper__label-add"> (мобильный, рабочий)</span></p>
+                <input class="input _req" type="text" name="phones[]" placeholder="Телефоны (мобильный, рабочий)" required>
+              </label>
+              <label class="input-wrapper col7">
+                <p class="input-wrapper__label"><span class="input-wrapper__label-main p2">E-mail</span><span class="input-wrapper__label-add"> (слушателя или контактного лица. Необходим для отправки финансовых документов)</span></p>
+                <input class="input _req" type="email" name="email[]" placeholder="email@example.com" required>
+              </label>
+            </div>
+            <div class="col3">
+              <div>
+                <label class="checkbox _checkbox">
+                  <input class="checkbox__input" type="checkbox" name="code-exist[]">
+                  <div class="checkbox__span-wrapper-blue"><span class="checkbox__span">У&nbsp;меня есть промокод</span></div>
+                </label>
+                <label class="input-wrapper col7 w m5 _checkbox-body">
+                  <p class="input-wrapper__label"><span class="input-wrapper__label-main p2">Введите промокод (код Вы&nbsp;можете получить, только <a class="link" href="#">подписавшись на&nbsp;рассылку</a>)</span></p>
+                  <input class="input" type="text" name="code-num[]" placeholder="XXXXXX">
+                </label>
+              </div>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="certificate[]">
+                <div class="checkbox__span-wrapper-blue"><span class="checkbox__span">Хочу получить дополнительное удостоверение на&nbsp;английском языке (+3000 рублей)</span></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    `;
+
+    function attachValidationListeners() {
+      const requiredInputs = document.querySelectorAll('._req');
+
+      requiredInputs.forEach(input => {
+        input.removeEventListener('change', inputValidationHandler);
+        input.removeEventListener('input', inputValidationHandler);
+        input.addEventListener('change', inputValidationHandler);
+        input.addEventListener('input', inputValidationHandler);
+      });
+    }
+
+    function validateField(input) {
+
+      if (input.checkValidity()) {
+        input.classList.remove('user-invalid');
+      }
+    }
+
+    // Обработчик для валидации поля
+    function inputValidationHandler(e) {
+      validateField(e.target);
+    }
+
+    // Функция валидации всех required полей
+    function validateAllRequired() {
+      const requiredInputs = document.querySelectorAll('._req');
+      let hasErrors = false;
+
+      // Сначала убираем класс ошибки со всех полей
+      requiredInputs.forEach(input => {
+        input.classList.remove('user-invalid');
+      });
+
+      for (let input of requiredInputs) {
+        if (!input.checkValidity()) {
+          input.classList.add('user-invalid');
+          hasErrors = true;
+        }
+      }
+
+      if (hasErrors) {
+        // Фокусируемся на первом невалидном поле
+        const firstInvalid = document.querySelector('._req:invalid');
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
+        return false;
+      }
+
+      return true;
+    }
+
+    // Функция создания нового участника
+    function createParticipantBlock() {
+      const template = document.createElement('div');
+      template.innerHTML = templateHTML;
+      return template.firstElementChild;
+    }
+
+    // Функция обновления нумерации
+    function updateLegends() {
+      document.querySelectorAll('#participants fieldset legend').forEach((legend, index) => {
+        legend.textContent = `Данные участника | ${index + 1}`;
+      });
+    }
+
+    // Функция обновления текста кнопки
+    function updateAddButtonText() {
+      const count = participantsContainer.children.length;
+      addButton.querySelector('span').textContent = `Добавить ${count + 1}-го участника`;
+    }
+
+    // Делегирование событий для удаления
+    participantsContainer.addEventListener('click', function(e) {
+      const deleteButton = e.target.closest('.button-second');
+      if (!deleteButton) return;
+
+      const fieldset = deleteButton.closest('fieldset');
+      if (!fieldset) return;
+
+      fieldset.remove();
+      updateLegends();
+      updateAddButtonText();
+    });
+
+    // Обработчик добавления
+    addButton.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Сначала проверяем все required поля
+      if (!validateAllRequired()) {
+        return; // Если есть ошибки, не добавляем нового участника
+      }
+
+      const newParticipant = createParticipantBlock();
+      participantsContainer.appendChild(newParticipant);
+      attachValidationListeners();
+      checkboxes.refresh();
+
+      updateLegends();
+      updateAddButtonText();
+    });
+
+    attachValidationListeners();
+  });

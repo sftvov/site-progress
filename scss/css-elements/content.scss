@@ -46,6 +46,21 @@
   }
 }
 
+.x4wide {
+  @media (max-width: $md4+px) {
+    translate: -10px 0;
+    width: calc(100% + 20px);
+    
+  }
+}
+
+.x2wide {
+  @media (max-width: $md2+px) {
+    translate: -16px 0;
+    width: calc(100% + 32px);
+  }
+}
+
 .announcement {
   padding-bottom: #{$M};
   @media (min-width: $md3+px) {
@@ -230,7 +245,7 @@
 .input {
   @include dur;
   @extend %input;
-  &:user-invalid {
+  &:is(:user-invalid, .user-invalid) {
     border-color: #{$border-invalid};
   }
   &--date {
