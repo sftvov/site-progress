@@ -16,6 +16,8 @@
   &__img {
     @include dur;
     @include w;
+    @include sqr;
+    @include cvr;
     filter: grayscale(0);
   }
 }

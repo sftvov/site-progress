@@ -122,15 +122,20 @@ class DownloadPlanWidget {
 const selects = document.querySelectorAll(".select");
 
 if (selects) {
-  for (let select of selects) {
-    const variants = select.querySelectorAll(".select__variant");
-    const input = select.querySelector(".select__input");
-    for (const variant of variants) {
-      variant.addEventListener("click", () => {
-        input.setAttribute("value", variant.textContent);
-      });
+    for (let select of selects) {
+        const variants = select.querySelectorAll(".select__variant");
+        const input = select.querySelector(".select__input");
+        const hiddenInput = select.querySelector(".select__hidden-value");
+        
+        for (const variant of variants) {
+            variant.addEventListener("click", () => {
+                input.value = variant.textContent;
+                if (hiddenInput) {
+                    hiddenInput.value = variant.dataset.value;
+                }
+            });
+        }
     }
-  }
 }
 
 // ----------------------------------------------------------------------

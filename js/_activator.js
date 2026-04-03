@@ -31,9 +31,7 @@ new Activator('.select__variant', {
   limitContainer: '.select',
 });
 
-new Activator(
-  '._menu-btn',
-  {
+new Activator('._menu-btn', {
     stops: ['._menu-body'],
     removedOwn: ['._menu-body'],
     escClose: true,
