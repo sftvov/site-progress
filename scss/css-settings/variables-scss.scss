@@ -1,4 +1,4 @@
-$transition: .3s;
+$transition: 0.3s;
 
 // $cyan: #00ffff;
 // $yellow: #ffff00;
@@ -30,7 +30,33 @@ $gray-light: #d8dce5;
 $light: #e5e8ef;
 $white: #ffffff;
 
-$hover: #{$orange};
+// ----------- vc
+$vcLightExtraDouble: $light; // rgb only
+$vcLightExtra: $light; // rgb only
+
+$vcLightMedium: $gray-light; // выделение ячейки после клика если на буднях, выделение ряда после второго клика если на циферках другого месяца
+
+$vcLight: $gray; // выделение последнего дня периода если на циферках другого месяца
+$vcGrayLight: $gray; // !d циферки текущего месяца
+
+$vcGray: $gray-dark; // недели и дни недели
+
+$vcGrayDark: $gray-light; // !d циферки другого месяца 
+$vcDarkLight: $gray; // !d выделение текущей ячейки будней после клика
+$vcDarkMedium: $gray-dark; // !d выделение ячейки и ряда после клика
+
+$vcDark: $dark; // основные цифры !d фон
+
+$vcBrightExtraLight: lighten($orange-light, 10%); // rgb only
+$vcBrightLight: $orange-light; // rgb only
+$vcBright: $orange;
+$vcBrightHover: darken($orange, 10%);
+$vcMain: $blue;
+$vcBorderLight: $orange-light; // rgb only
+$vcBorder: $orange;
+// ----------- vc
+
+$hover: #{$orange}; 
 $hover-light: #{$orange-light};
 $hover-accent: #{$blue};
 
@@ -52,7 +78,7 @@ $bg-gray: #{$gray};
 $border: #{$orange}; // кнопка
 $border-accent: #{$blue}; // для табов курсов
 $border-light: #{$blue-light}; // повсеместно, разделители, рамки блоков, и курсов  и для инпутов дат
-$border-dark: #{$gray-dark}; ; // для инпутов
+$border-dark: #{$gray-dark}; // для инпутов
 $border-gray: #{$gray}; // акции, партнеры, пагинация и для инпутов disabled
 $border-invalid: #{$red}; // инпут ошибка
 // $border-second: #{$white};
@@ -67,7 +93,6 @@ $mobileSpace: 20;
 // $mdSpace: 79.95;
 
 $minContainer: $minWidth - $mobileSpace;
-
 
 // $text-dark: #{$white};
 // $bg-main: #{$dark};

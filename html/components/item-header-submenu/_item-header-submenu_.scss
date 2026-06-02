@@ -25,6 +25,7 @@
     @include p2;
     @include r5;
     @include aic;
+    @include jcb;
     @media (min-width: $md2+px) {
       break-before: avoid-column;
       padding-left: 20px;

@@ -2,7 +2,7 @@
   @include dur;
   @include sd;
   @include td;
-  @include b1;
+  @include por;
   @include r10;
   @include aic;
   @include jcc;
@@ -12,17 +12,23 @@
   }
   &._active {
     cursor: auto;
+    @include bgs; 
   }
-
-  &:is(span) {
-    background-color: #{$bg-second};
+  &:is(button):not(._active) {
+    @include s-hover;
+    @include hover;
   }
-
-  &:is(a, button):not(._active) {
-    &:hover,
-    &:focus-visible {
-      color: #{$hover};
-      stroke: #{$hover};
+  &__link {
+    @include hover;
+    &:hover + .tooltip {
+      stroke: $hover;
     }
   }
+  // &:not(._active) {
+  //   &:hover,
+  //   &:focus-visible {
+  //     color: #{$hover};
+  //     stroke: #{$hover};
+  //   }
+  // }
 }

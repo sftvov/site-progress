@@ -1,0 +1,63 @@
+extends html/layouts/default
+
+block settings
+  +pageConfig({
+    title: 'litepicker',
+    breadcrumbs: [
+      'litepicker',
+    ]
+  })
+
+block content		
+  .container
+    .row
+      +inputWrapper({
+        label: 'Дата заезда',
+        type: 'date',
+        inputClass: 'input--date',
+        name: 'date-in',
+        value: '2025-06-10'
+      })(class="w4")
+      +inputWrapper({
+        label: 'Дата выезда',
+        type: 'date',
+        inputClass: 'input--date',
+        name: 'date-out',
+        value: '2025-06-10'
+      })(class="w4")
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+
+    script.
+      // Находим все элементы с классом .input--date
+      const dateInputs = document.querySelectorAll('.input--date');
+
+      // Для каждого элемента создаём свой экземпляр Litepicker
+      dateInputs.forEach(input => {
+          new Litepicker({
+              weekNumbersTitle: 'Нед.',
+              element: input,                    // текущий элемент в цикле
+              showWeekNumbers: true,             // Номера недель
+              lang: {
+                  days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                  daysFull: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+                  months: [
+                      'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+                  ],
+              }
+          });
+      });
+
+    style.
+      .litepicker .container__months .month-item-weekdays-row > div:first-child {
+          font-size: 0; /* Делаем текст невидимым */
+      }
+
+      /* Вставляем на ее место русский текст */
+      .litepicker .container__months .month-item-weekdays-row > div:first-child::before {
+          content: "нед."; /* Текст, который вы хотите видеть */
+          font-size: 9.52px;
+          display: block;
+      }

@@ -4,6 +4,11 @@
   @include x3jcb;
   @media (min-width: $md2+px) {
     @media (hover: hover) {
+      &:not(:hover) {
+        & .header-menu-item__submenu {
+          pointer-events: none;
+        }
+      }
       &:hover {
         & .header-menu-item__punkt {
           color: #{$hover};

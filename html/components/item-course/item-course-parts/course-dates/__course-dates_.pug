@@ -7,21 +7,27 @@ mixin courseDates(course, config)
         p.t2d(class=config.date) Дата
 
       if config.code
-        p.t2d.r5.aic(class=config.code) Код
-          svg.i20.x2i16
-            use(xlink:href='img/sprite/symbols.svg#info')
+        .r5.aic(class=config.code)
+          p.t2d Код          
+          .tooltip
+            .tooltip__text Код — это уникальный ID программы, по которому вы можете быстро и безошибочно записаться.
+            svg.i20.x2i16
+              use(xlink:href='img/sprite/symbols.svg#info')
       
       if config.price
-        p.t2d(class=config.price).r5.aic Цена
-          svg.i20.x2i16
-            use(xlink:href='img/sprite/symbols.svg#info')
+        .r5.aic(class=config.price) 
+          p.t2d Цена
+          .tooltip
+            .tooltip__text Цена действует на ближайшую дату. В течение года цена может расти — записывайтесь заранее.
+            svg.i20.x2i16
+              use(xlink:href='img/sprite/symbols.svg#info')
 
     if course.dates && course.dates.length > 0
       .col7
         each date in course.dates
           .row
             if config.date 
-              a.course-dates__date-link(class=config.date) !{date.date}
+              a.course-dates__date-link(class=config.date href=date.href || "#") !{date.date}
             if config.code
               p(class=config.code) !{date.code}
             if config.price

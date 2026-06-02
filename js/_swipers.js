@@ -12,6 +12,9 @@ const heroSlider = new Swiper('.main-slider__swiper', {
   speed: 400,
   spaceBetween: 20,
   loop: true,
+  autoplay: {
+    delay: 10000,
+  },
   navigation: {
     nextEl: '.main-slider__next',
     prevEl: '.main-slider__prev',

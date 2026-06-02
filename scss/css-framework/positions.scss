@@ -1,3 +1,10 @@
+@mixin poa {
+  position: absolute;
+}
+.poa {
+  @include poa;
+}
+
 @mixin por {
   position: relative;
 }

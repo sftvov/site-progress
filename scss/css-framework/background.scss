@@ -1,40 +1,40 @@
 @mixin bgm {
-  background-color: #{$bg-main};
+  background-color: $bg-main;
 }
 .bgm {
   @include bgm;
 }
 
 @mixin bgs {
-  background-color: #{$bg-second};
+  background-color: $bg-second;
 }
 .bgs {
   @include bgs;
 }
 
 @mixin bgb {
-  background-color: #{$bg-bright};
+  background-color: $bg-bright;
 }
 .bgb {
   @include bgb;
 }
 
 @mixin bga {
-  background-color: #{$bg-accent};
+  background-color: $bg-accent;
 }
 .bga {
   @include bga;
 }
 
 @mixin bgd {
-  background-color: #{$bg-dark};
+  background-color: $bg-dark;
 }
 .bgd {
   @include bgd;
 }
 
 @mixin bgg {
-  background-color: #{$bg-gray};
+  background-color: $bg-gray;
 }
 .bgg {
   @include bgg;

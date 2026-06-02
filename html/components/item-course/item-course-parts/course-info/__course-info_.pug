@@ -7,7 +7,6 @@ mixin courseInfo(course, options = {})
       showLocation: options.showLocation || false,
       showPrice: options.showPrice || false, 
       showHours: options.showHours || false,
-      showLink: options.showLink || false,
       type: options.type || 'Курс повышения квалификации',
     }
 
@@ -27,9 +26,11 @@ mixin courseInfo(course, options = {})
       
       //- Цена
       if config.showPrice && course.price
-        p.course-info__item
-          svg.i20
-            use(xlink:href='img/sprite/symbols.svg#info')
+        .course-info__item
+          .tooltip
+            .tooltip__text Цена действует на ближайшую дату. В течение года цена может расти — записывайтесь заранее.
+            svg.i20
+              use(xlink:href='img/sprite/symbols.svg#info')
           | !{course.price} ₽
       
       //- Часы
@@ -40,8 +41,8 @@ mixin courseInfo(course, options = {})
           | !{course.hours} #{course.hours === 1 ? 'час' : 'часа'}
       
       //- Ссылка на другой формат
-      if config.showLink
-        a.course-info__link(href="#") 
+      if course.otherFormatLink
+        a.course-info__link(href=course.otherFormatLink || "#") 
           svg.i20
             use(xlink:href=`img/sprite/symbols.svg#${config.isOnline ? 'building' : 'wifi'}`)
           | !{config.isOnline ? 'Доступно очно' : 'Доступна онлайн-трансляция'}

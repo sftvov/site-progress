@@ -16,7 +16,7 @@ include item-course-parts/course-info/__course-info_
         showLocation: true,
         showPrice: true,
         showHours: false,
-        showLink: true,
+        //- showLink: true, нужно поправить
       },
       date: 'n2w2 n3w3 w1 x4w2',
       code: 'n2w1 n3w3 w1',
@@ -24,7 +24,7 @@ include item-course-parts/course-info/__course-info_
       dateClass: 'ais wrap g3 n2w3 n3w10 w4 n2ol0 n3ol1',
       moreLink: {
         class: 'n2w3 n3w4 w2 x4w3',
-        link: '#',
+        link: '',
       },
     },
     distance: {
@@ -39,7 +39,7 @@ include item-course-parts/course-info/__course-info_
         showLocation: false,
         showPrice: true,
         showHours: true,
-        showLink: false,
+        //- showLink: false, нужно поправить
       },
       //- date: 'n2w2 n3w3 w1 x4w2',
       code: 'n2w1 n3w2 w1',
@@ -47,7 +47,7 @@ include item-course-parts/course-info/__course-info_
       dateClass: 'ais wrap g3 n2w3 n3w10 w4',
       moreLink: {
         class: 'n2w3 n3w4 w2 x4w3',
-        link: '#',
+        link: '',
       },
     },
     search: {
@@ -62,7 +62,7 @@ include item-course-parts/course-info/__course-info_
         showLocation: true,
         showPrice: false,
         showHours: false,
-        showLink: true,
+        //- showLink: true, нужно поправить
       },
       dateClass: 'ais wrap g3 n2w3 n3w10 w4 n2ol0 n3ol1',
       date: 'n2w2 n3w3 w1 x4w2',
@@ -82,7 +82,7 @@ include item-course-parts/course-info/__course-info_
         showLocation: true,
         showPrice: true,
         showHours: false,
-        showLink: true,
+        //- showLink: true, нужно поправить
       },
       date: 'w2',
       code: false,
@@ -90,7 +90,7 @@ include item-course-parts/course-info/__course-info_
       dateClass: 'ais wrap g3 n2w2 n3w3 x3w4',
       moreLink: {
         class: 'wrap g5 w x3w2',
-        link: '#',
+        link: '',
       },
     },
   }
@@ -101,9 +101,16 @@ mixin courseItemBase(course, config)
     .por.row.ais.wrap.g5(class=config.wrapperClass)
       if config.header
         header.r15.wrap.g5.jce.n3w1
-          +infoSquare(course.hours)(class="bgg")
+          if course.hours 
+            +infoSquare({
+              text: course.hours,
+              textToolTip: `Удостоверение о повышении квалификации ${course.hours} часов`,
+            })(class="bgg")
           if course.isNew 
-            +infoSquare("NEW")(class="bgb")
+            +infoSquare({
+              text: "NEW",
+              textToolTip: 'Новая программа',
+            })(class="bgb")
 
       else if config.format
         header.r5.x1col.x3row.aic.g8.w1
@@ -117,7 +124,7 @@ mixin courseItemBase(course, config)
       footer.row.wrap(class=config.dateClass)
         +courseDates(course, config)
         if config.moreLink
-          a.acb-link.link-b.r15.aic(class=config.moreLink.class, href="#") 
+          a.acb-link.link-b.r15.aic(class=config.moreLink.class, href=config.moreLink.link || course.href || "#") 
             span.b1.wsn Узнать всё о курсе
             +arr()
 

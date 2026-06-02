@@ -14,6 +14,20 @@ mixin mode(props = {})
   #{tag}.mode&attributes(attributes)
     if iconBefore
       +modeSvg(icon)
-    span !{text}
+    span.b1 !{text}
     unless iconBefore
       +modeSvg(icon)
+
+mixin modeTooltip(props = {})
+  - 
+    const {
+      tag = 'span',
+      text = '',
+      toolTipText = '',
+    } = props
+
+  span.mode&attributes(attributes)    
+    #{tag}.b1(class = (tag === 'a') ? 'mode__link' : false) !{text}
+    .tooltip
+      span.tooltip__text !{toolTipText}
+      +modeSvg('info')

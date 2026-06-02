@@ -117,6 +117,7 @@ class DownloadPlanWidget {
 @@include('../../web-template/src/js-elements/items_v3.2.0_now.js');
 
 @@include('_activator.js');
+@@include('_calendar.js');
 @@include('_swipers.js');
 
 const selects = document.querySelectorAll(".select");

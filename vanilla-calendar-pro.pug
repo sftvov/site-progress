@@ -1,0 +1,53 @@
+extends html/layouts/default
+
+block settings
+  +pageConfig({
+    title: 'vanilla-calendar-pro',
+    breadcrumbs: [
+      'vanilla-calendar-pro',
+    ]
+  })
+
+block content		
+  .section
+    .container
+      .col3
+        .col5
+          p.t2d Календари независимые
+          .row
+            .col7.w4
+              label Дата 1
+              input(type="text" class="input _date" placeholder="ДД.ММ.ГГГГ")
+            .col7.w4
+              label Дата 2
+              input(type="text" class="input _date" placeholder="ДД.ММ.ГГГГ")
+        .col5
+          p.t2d Календарь с двумя input (парный)
+          .row.wrap.g7
+            .col7.w4
+              label Дата начала
+              input(type="text" class="input _dateStart" placeholder="ДД.ММ.ГГГГ")
+            .col7.w4
+              label Дата окончания
+              input(type="text" class="input _dateEnd" placeholder="ДД.ММ.ГГГГ")
+        .row.wrap.g5
+          .col5
+            p.t2d Календарь range (1 месяц)
+            .col7.w4
+              label Период проведения
+              input(type="text" class="input _range1" placeholder="ДД.ММ.ГГГГ — ДД.ММ.ГГГГ")
+
+          .col5
+            p.t2d Календарь range (2 месяца)
+            .col7.w4
+              label Период проведения
+              input(type="text" class="input _range2" placeholder="ДД.ММ.ГГГГ — ДД.ММ.ГГГГ")
+
+          .col5
+            p.t2d Календарь range (3 месяца)
+            .col7.w4
+              label Период проведения
+              input(type="text" class="input _range3" placeholder="ДД.ММ.ГГГГ — ДД.ММ.ГГГГ")
+              
+  script(src='https://cdn.jsdelivr.net/npm/vanilla-calendar-pro@3.1.0/index.min.js')
+  //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vanilla-calendar-pro@3.1.0/styles/index.min.css')

@@ -121,11 +121,14 @@ body {
 // }
 
 #sticky {
-  transition-duration: 0.6s;
-  z-index: 1;
+  // transition-duration: 0.6s;
+  z-index: 2;
   position: sticky;
   // top: var(--header-height);
   top: calc(var(--header-height) + #{$XS});
+  &:has(.tooltip:hover) {
+    z-index: 3;
+  }
   &::before {
     content: '';
     z-index: -1;
@@ -137,3 +140,44 @@ body {
     background-color: #{$bg-main};
   }
 }
+
+._select-button-disabler:not(:has(.select__variant._active)) + button {
+  cursor: not-allowed;
+  user-select: none;
+  background-color: $bg-gray;
+}
+
+._select-button-disabler:not(:has(.select__variant._active)):has(+ button:is(:focus,:active,:hover)) .select__input::placeholder {
+  color: $text-invalid;
+}
+
+// ---------- vc
+
+[data-vc-week-numbers='content'] {
+  flex-grow: 1;
+  align-content: center;
+}
+
+[data-vc='wrapper'] {
+  column-gap: 10px;
+}
+
+[data-vc='month'],
+[data-vc='year'] {
+  @include p1;
+}
+
+[data-vc-date-btn],
+[data-vc-week-number],
+[data-vc-week-day],
+[data-vc-week-numbers='title'] {
+  @include p2;
+}
+
+.vc {
+  @media (max-width: $md4+px) {
+    right: 10px;
+  }
+}
+
+// ---------- vc

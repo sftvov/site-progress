@@ -1,0 +1,129 @@
+extends html/layouts/default
+
+block settings
+  +pageConfig({
+    title: 'flatpickr',
+    breadcrumbs: [
+      'flatpickr',
+    ]
+  })
+
+block content
+  .section
+    .container
+      .col3
+        .col5
+          p.t2d Календарь с двумя input
+          .row
+            +inputWrapper({
+              label: 'Дата начала',
+              type: 'date',
+              inputClass: 'input--date input0-1',
+              name: 'date-in',
+            })(class="w4")
+            +inputWrapper({
+              label: 'Дата окончания',
+              type: 'date',
+              inputClass: 'input--date input0-2',
+              name: 'date-out',
+            })(class="w4")
+        .col5
+          p.t2d Календари range
+          .row
+            +inputWrapper({
+              label: 'Период проведения',
+              type: 'date',
+              inputClass: 'input--date input1',
+              name: 'date-in',
+            })(class="w4")
+            +inputWrapper({
+              label: 'Период проведения',
+              type: 'date',
+              inputClass: 'input--date input2',
+              name: 'date-in',
+            })(class="w4")
+            +inputWrapper({
+              label: 'Период проведения',
+              type: 'date',
+              inputClass: 'input--date input3',
+              name: 'date-in',
+            })(class="w4")
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+
+    script.
+      const today = new Date();
+      const threeDaysLater = new Date();
+      threeDaysLater.setDate(today.getDate() + 3);
+      // Получаем reference на второй picker, чтобы управлять им из первого
+      let dateOutPicker = null;
+
+      // Первый календарь (Дата заезда)
+      const dateInPicker = flatpickr(".input0-1", {        
+        weekNumbers: true,
+        locale: "ru",
+        minDate: "today",
+        defaultDate: "today",
+        altInput: true,
+        altFormat: "d.m.Y",
+        onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates[0]) {
+            // Устанавливаем minDate для второго календаря = выбранная дата заезда
+            if (dateOutPicker) {
+              dateOutPicker.set('minDate', selectedDates[0]);
+              dateOutPicker.jumpToDate(selectedDates[0]);
+              // Если текущая дата выезда стала меньше даты заезда - очищаем
+              if (dateOutPicker.selectedDates[0] && 
+                dateOutPicker.selectedDates[0] < selectedDates[0]) {
+                dateOutPicker.clear();
+              }
+            }
+          }
+        }
+      });
+
+      // Второй календарь (Дата выезда)
+      dateOutPicker = flatpickr(".input0-2", {        
+        weekNumbers: true,
+        locale: "ru",
+        defaultDate: threeDaysLater,
+        altInput: true,
+        altFormat: "d.m.Y",
+        minDate: new Date() // начальный minDate (сегодня или дата из date-in)
+      });
+
+      flatpickr(".input1", {    
+        mode: "range",   // Включаем режим выбора диапазона
+        minDate: "today", // Нельзя выбрать вчера     
+        weekNumbers: true,           // Показывать номера недель
+        defaultDate: ["today", threeDaysLater],
+        altInput: true,                    // отдельное поле для красивого отображения
+        altFormat: "d.m.Y",
+        locale: "ru" 
+      });
+      flatpickr(".input2", {    
+        mode: "range",   // Включаем режим выбора диапазона
+        showMonths: 2, 
+        minDate: "today", // Нельзя выбрать вчера
+        defaultDate: ["today", threeDaysLater],
+        altInput: true,                    // отдельное поле для красивого отображения
+        altFormat: "d.m.Y",
+        locale: "ru" 
+      });
+      flatpickr(".input3", {    
+        mode: "range",   // Включаем режим выбора диапазона
+        showMonths: 3, 
+        minDate: "today", // Нельзя выбрать вчера
+        defaultDate: ["today", threeDaysLater],
+        altInput: true,                    // отдельное поле для красивого отображения
+        altFormat: "d.m.Y",
+        locale: "ru" 
+      });
+
+    style.
+      .flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {
+        -webkit-box-shadow: -5px 0 0 #e6e6e6 !important;
+        box-shadow: -5px 0 0 #e6e6e6 !important;
+      }

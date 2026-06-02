@@ -1,31 +1,31 @@
 
 .trust {
 
-  &__photos {
-    @media (max-width: $md4+px) {
-      order: 1;
-    }
-  }
+  // &__photos {
+  //   @media (max-width: $md4+px) {
+  //     order: 1;
+  //   }
+  // }
 
-  &__photos-img {
-    @media (min-width: $md2+px) {
-      height: 100%;
-    }
-    @media (max-width: $md2+px) {
-      aspect-ratio: 358/321;
-    }
-    @media (max-width: $md3+px) {
-      aspect-ratio: 244/387;
-    }
-    @media (max-width: $md4+px) {
-      aspect-ratio: 300/498;
-    }
-  }  
+  // &__photos-img {
+  //   @media (min-width: $md2+px) {
+  //     height: 100%;
+  //   }
+  //   @media (max-width: $md2+px) {
+  //     aspect-ratio: 358/321;
+  //   }
+  //   @media (max-width: $md3+px) {
+  //     aspect-ratio: 244/387;
+  //   }
+  //   @media (max-width: $md4+px) {
+  //     aspect-ratio: 300/498;
+  //   }
+  // }  
 
-  &__photos-img-narrow {
-    @extend .trust__photos-img;
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      display: none;
-    }
-  }
+  // &__photos-img-narrow {
+  //   @extend .trust__photos-img;
+  //   @media (max-width: $md2+px) AND (min-width: $md3+px) {
+  //     display: none;
+  //   }
+  // }
 }

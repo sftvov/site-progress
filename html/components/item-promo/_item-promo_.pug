@@ -6,7 +6,7 @@ mixin promoItem(card, options = {})
     } = options
 
   article.promo-item&attributes(attributes)
-    img.promo-item__img(src=imgSrc, alt=imgAlt)
+    img.promo-item__img(src='img/promo/cards/' + card.img + '.png', alt=imgAlt)
     .promo-item__main
       h1.t1d !{card.title}
       .r5.aic.m7

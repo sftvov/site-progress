@@ -1,2 +1,9 @@
-mixin infoSquare(text)
-  span.info-square&attributes(attributes)= text
+mixin infoSquare(props = {})
+  - 
+    const {
+      text = '',
+      textToolTip = '',
+    } = props
+  .tooltip
+    .tooltip__text !{textToolTip}
+    span.info-square&attributes(attributes) !{text}

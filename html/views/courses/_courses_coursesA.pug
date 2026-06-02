@@ -4,12 +4,14 @@ include ../../../data/coursesArchive
   .container
     .body
       .row.jcc
-        +mode({ 
-          text: 'Очные' 
-        })(class='n3w3 w2')
-        +mode({ 
+        +modeTooltip({ 
+          text: 'Очные',
+          toolTipText: 'Личная встреча и очное обучение в нашем образовательном центре в Петербурге или Москве.',
+        })(class='n3w3 w2 bs2l _active')
+        +modeTooltip({ 
+          tag: 'a',
           text: 'Онлайн',          
-          tag: 'a',       
+          toolTipText: 'Обучение из любой точки мира — требуется лишь удобный гаджет и сеть. Подтверждающий документ по итогу обучения вы получите почтой.',
         })(class='n3w3 w2 bs2l', href='#')
     .m2
       each course in coursesArchive

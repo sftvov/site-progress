@@ -243,7 +243,6 @@
 }
 
 .input {
-  @include dur;
   @extend %input;
   &:is(:user-invalid, .user-invalid) {
     border-color: #{$border-invalid};

@@ -23,21 +23,20 @@
       .col5
         .col7
           p.tb.t2 58 590 рублей
-          p.p3 (Стоимость для нерезидентов РФ может отличаться)
-        .col7        
-          +inputWrapper({
-            label: 'Формат обучения',
-            name: 'format',
-            placeholder: 'Формат не  выбран',
-            fieldType: 'select',
-            selectConfig: {
-              options: [
-                'Стандарт',
-                'Комфорт',
-                'Эконом',
-              ],
-            }
-          })
+          p.p3 (Стоимость для нерезидентов РФ может отличаться)        
+        +inputWrapper({
+          label: 'Формат обучения',
+          name: 'format',
+          placeholder: 'Формат не  выбран',
+          fieldType: 'select',
+          selectConfig: {
+            options: [
+              'Стандарт',
+              'Комфорт',
+              'Эконом',
+            ],
+          }
+        })(class="_select-button-disabler")
         button.button-primary.w Записаться
       .col7
         p.td.p1 Документ
@@ -59,8 +58,8 @@
         .col7.tac
           p.t2d Руководитель программы
           p.p1 Данилова Ирина Игоревна
-        img.n2w2.n3w4.w2(src="img/course/danilova.png", alt="")
-        button.button-accent.n2w2.n3w4.w2 Задать вопрос
+        img(src="img/course/danilova.png", alt="" width=175)
+        button.button-accent.wa175 Задать вопрос
       .col3
         .col7
           p.td.p1 Закупки

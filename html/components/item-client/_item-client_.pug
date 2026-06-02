@@ -2,9 +2,12 @@ mixin itemClient(props)
   - const isLink = Boolean(props.href)
   - const ContainerTag = isLink ? 'a' : 'article'
   - const TitleTag = isLink ? 'p' : 'h2'
+  - const NameClass = isLink ? 'ta p1' : 'p1'
   
   #{ContainerTag}.client-item&attributes(attributes)(
-    href=isLink ? props.href : false
+    href=isLink ? props.href : false, 
+    target=isLink ? '_blank' : false,
+    rel=isLink ? 'nofollow' : false,
   )
     .client-item__body
       img.w.sqr.cnt(
@@ -14,6 +17,6 @@ mixin itemClient(props)
       )
       hr.bdg
       .hyp.col7
-        #{TitleTag}.ta.p1 !{props.name}
+        #{TitleTag}(class=NameClass) !{props.name}
         if props.desc
           p.p1 !{props.desc}

@@ -1,7 +1,11 @@
 @use 'sass:math';
 @import 'scss-tools';
 @import 'css-settings/font-face';
+
 @import '../../web-template/src/css-libs/null';
+@import '../../web-template/src/css-libs/lightgallery';
+@import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
+@import '../../web-template/src/css-libs/vc';
 
 @import 'css-framework/fonts';
 @import 'css-framework/positions';
@@ -68,7 +72,7 @@ svg {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: $maxWidth + px;
+  // max-width: $maxWidth + px;
   min-height: 100%;
   margin: 0 auto;
   &:not(:has(#course)) {
@@ -84,9 +88,6 @@ svg {
   flex: 1 1 auto;
   margin-top: var(--header-height);
 }
-
-@import '../../web-template/src/css-libs/lightgallery';
-@import '../../web-template/src/css-libs/swiper-bundle-11-2-1';
 
 @import '../html/components/arrow/_arrow_';
 @import '../html/components/branch/_branch_';

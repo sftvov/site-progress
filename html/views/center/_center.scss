@@ -1,7 +1,4 @@
 .center {
-  &__img {
-    object-position: right;
-  }
   &__item {
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       row-gap: #{$XS};
