@@ -1,9 +1,4 @@
 .distance-hero {
-  &__img {
-    @media (max-width: $md3+px) {
-      width: 110%;
-    }
-  }
 
   &__main {
     z-index: 1;

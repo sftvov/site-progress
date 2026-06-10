@@ -1,14 +1,17 @@
 .materials {
   &__img {
     @media (max-width: $md1+px) {
-      aspect-ratio: 952/235;
-      object-position: left;
+      // aspect-ratio: 952/235;
+      // object-position: left;
     }
     @media (max-width: $md2+px) {
-      aspect-ratio: 737/182;
+      // aspect-ratio: 737/182;
+    }
+    @media (max-width: $md3+px) {
+      aspect-ratio: 508/227;
     }
     @media (max-width: $md4+px) {
-      aspect-ratio: 300/111;
+      aspect-ratio: 300/233;
     }
   }
 }

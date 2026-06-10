@@ -1,34 +1,102 @@
 export const font_names = '{Roboto,RobotoCondensed,Montserrat,CenturyGothic}';
 
-// const maxWidth = 2560;
-// const maxContainer = 1920;
-// const md4 = 1024;
-
-const lightArr = [
-	// '/popups/',
-	// '/site-types/'
-];
-
-const resizeArr = [
-	// ['/products/', false, true, [800, 0], [400, 0], [300, 0], [200, 0]],
-	// ['/site-types/', false, true, [200, 0]],
-];
-
-const retinaArr = [
-	// ['/hero/', 2, [0, 768, 100], [maxWidth, 0, 100]],
-	// ['/site-types/', 2, [maxContainer - 400, 0, 33], [md4, 0, 100]],
-];
+// imageSet = {
+//   quality: {
+//     jpeg: 80,
+//     png: 80,
+//     webp: 80,
+//     avif: 80,
+//   },
+//   sources: [
+//     {
+//       src: 'about/**/*.{jpg,jpeg,png}', // (путь) предполагается что это все внутри папки img
+//       sizes: [
+//         [1920, 600],
+//         [1280, 400],
+//         [768, 300],
+//       ], // массив массивов (размеров), у вложенных массивов длина всегда 2, может быть 0 или 1 эделемент или оба сразу
+//       retina: 2,
+//       crop: true,
+//       upscale: true,
+//       quality: {
+//         jpeg: 80,
+//         png: 80,
+//         webp: 80,
+//         avif: 80,
+//       },
+//       format: {
+//         webp: {
+//           sizes: [
+//             [1920, 600],
+//             [1280, 400],
+//             [768, 300],
+//           ],
+//           retina: 2,
+//           crop: true,
+//           upscale: true,
+//           quality: 80,
+//         },
+//         avif: {
+//           sizes: [
+//             [1920, 600],
+//             [1280, 400],
+//             [768, 300],
+//           ],
+//           retina: 2,
+//           crop: true,
+//           upscale: true,
+//           quality: 80,
+//         },
+//       },
+//     },
+//   ],
+// };
 
 export const imageSet = {
-	lightArr: lightArr,
-	resizeArr: resizeArr,
-	retinaArr: retinaArr,
+  sources: [
+    {
+      folder: '', // (путь) предполагается что это все внутри папки img
+      src: '/**/*.{jpg,jpeg,png}', // (путь) предполагается что это все внутри папки img
+      // sizes: [
+      //   [1000, 0],
+      //   [800, 400],
+      //   [0, 400],
+      // ],
+      // retina: {
+      //   scale: 2.4,
+      //   step: 0.6,
+      // },
+      crop: true,
+      upscale: true,
+      transform: {
+        webp: {
+          // sizes: [
+          //   [1000, 0],
+          //   [800, 400],
+          //   [0, 400],
+          // ],
+          retina: {
+            scale: 2.4,
+            step: 0.6,
+          },
+          crop: true,
+          upscale: true,
+        }
+      }
+    },
+    {
+      folder: '',
+      src: '/**/*.svg',
+      crop: false,
+      upscale: false,
+    },
+  ],
 };
 
 //gulp changeNames
 export const renameObj = {
-	folder: '/img/inspections/items/',
-	name: 'in-',
+  folder: '/img/inspections/items/',
+  name: 'in-',
 };
 // gulp getHtml
 export const pugFile = 'slider-main/_slider-main_main';

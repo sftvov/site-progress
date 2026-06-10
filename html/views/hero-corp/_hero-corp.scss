@@ -1,7 +1,6 @@
 .corp-hero {
   &__body {
     @media (min-width: $md4+px) {
-      color: #{$text-second};
       padding: var(--S1) 0;
     }
   }

@@ -5,12 +5,20 @@ mixin contactsCard(props = {})
       position = '',
       phone = '',
       email = '',
-      image = '',
+      imageFolder = '',
+      imageName = '',
+      imageExt = '',
       imageAlt = ''
     } = props
 
   article.contact-item&attributes(attributes)
-    img.contact-item__img(src=image alt=imageAlt)
+    picture
+      source(type='image/webp', sizes='(max-width: 1031.95px) 106px, (max-width: 767.95px) 93px, (max-width: 539.95px) 109px, 97px', srcset=`\
+        ${imageFolder}/${imageName}@0.6x.webp 66w,\
+        ${imageFolder}/${imageName}@1.2x.webp 131w,\
+        ${imageFolder}/${imageName}@1.8x.webp 197w,\
+        ${imageFolder}/${imageName}@2.4x.webp 262w`)
+      img.contact-item__img(src=`${imageFolder}/${imageName}.${imageExt}`, alt='', width='97', height='auto')
     .col5.jcb
       .col7
         h2.t2d= name

@@ -2,10 +2,10 @@ include ../../../data/hotelsArchive
 
 section.booking.section#booking
   .container
-    h1.title.tb Бронирование гостиниц:
+    h1.tb.t1.tac Бронирование гостиниц:
     form.m2.n1o1
       .booking__main.row.x3col.g3
-        fieldset.n1w4.n2w5.n3w6
+        fieldset.n1w5.n3w6
           legend.t2d Информация об отеле
           .col5.m4
             -
@@ -61,7 +61,7 @@ section.booking.section#booking
               name: 'date-out',
               value: '2025-06-10'
             })
-        fieldset.n2ol1.n1w5.n3w6
+        fieldset.n1w5.n3w6
           legend.t2d Информация о слушателе
           .col5.m4
             +inputWrapper({
@@ -99,7 +99,7 @@ section.booking.section#booking
                 activeIndex: 0,
               }
             })
-      footer.booking__bottom.col3.n1w4.n2w5.n3w6.m3        
+      footer.booking__bottom.col3.n1w5.n3w6.m3        
         +inputWrapper({
           label: 'Примечание',
           name: 'note',

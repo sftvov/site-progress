@@ -34,3 +34,56 @@ mixin pageConfig(config = {})
       breadcrumbs: false,
     }
     page = { ...defaultConfig, ...config }
+
+mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, columns = [12,12,12,12])
+  -
+    const widths = {
+      '0.6x': Math.ceil(width * 0.6),
+      '1.2x': Math.ceil(width * 1.2),
+      '1.8x': Math.ceil(width * 1.8),
+      '2.4x': Math.ceil(width * 2.4)
+    };
+    
+    function getColumnWidth(n, field) {
+      if (n === 12) return `calc(100vw - ${field}px)`;
+      if (n === 6) return `calc(50vw - ${10 + field}px)`;
+      if (n === 3) return `calc(25vw - ${15 + field}px)`;
+      return `calc((100vw + 20px) / 12 * ${n} - ${20 + field}px)`;
+    }
+    
+    function getColumnValue(index) {
+      for (let i = index; i >= 0; i--) {
+        if (columns[i] !== undefined) return columns[i];
+      }
+      return 12;
+    }
+    
+    const breakpoints = [
+      { max: 539.95, cols: getColumnValue(3), field: 20},
+      { max: 767.95, cols: getColumnValue(2), field: 32 },
+      { max: 1031.95, cols: getColumnValue(1), field: 32 },
+      { max: 1279.95, cols: getColumnValue(0), field: 80 }
+    ];
+    
+    const sizesList = breakpoints.map(bp => `(max-width: ${bp.max}px) ${getColumnWidth(bp.cols, bp.field)}`);
+    sizesList.push(`${width}px`);
+    
+    const sizesAttr = sizesList.join(', ');
+    const srcsetWebp = Object.entries(widths)
+      .map(([scale, w]) => `${folder}${baseName}@${scale}.webp ${w}w`)
+      .join(', ');
+
+  picture
+    source(
+      type='image/webp'
+      sizes=sizesAttr
+      srcset=srcsetWebp
+    )
+    img(
+      src=`${folder}${baseName}.${extension}`
+      alt=alt
+      width=width
+      height='auto'
+      loading=lazy ? 'lazy' : false
+      class=imgClass
+    )

@@ -1,20 +1,21 @@
 section.section.materials#materials
   .container
-    img.materials__img.w.cvr(src="img/materials/hero.png", alt="")
-    .row.wrap.g1.m1.n1o2.n2o1
-      .col3.n1w4.n2w5.n3w6.w2.x4w4
-        h1.t1d информационные материалы
-        p.p1 Здесь вы можете скачать материалы от преподавателей курса, на котором вы учились в ЦНТИ ПРОГРЕСС. #[br] Все материалы предназначены только для личного использования. Вы не можете распространять или продавать их.
-      form.col3.n1w4.n2w5.n3w6.w2.x4w4
-        .col5
-          +inputWrapper({
-            label: 'Код курса',
-            placeholder: '00000'
-          })
-          +inputWrapper({
-            label: 'Код доступа',
-            placeholder: '00000'
-          })
-        button(type="submit").button-primary Отправить
+    .row.wrap.g3.n2o1
+      +picture(588, 'img/materials/', 'hero', 'png', 'materials__img n1w6 n2w5 n3w6 x3w4 bg','',false,[5,6,12,12])
+      .row.wrap.g3.n1w4.n2w5.n3w6.w4.x4w4
+        .col3.w.x3w2.x4w4
+          h1.t1d информационные материалы
+          p.p1 Здесь вы можете скачать материалы от преподавателей курса, на котором вы учились в ЦНТИ ПРОГРЕСС. #[br] Все материалы предназначены только для личного использования. Вы не можете распространять или продавать их.
+        form.col3.fg
+          .col5
+            +inputWrapper({
+              label: 'Код курса',
+              placeholder: '00000'
+            })
+            +inputWrapper({
+              label: 'Код доступа',
+              placeholder: '00000'
+            })
+          button(type="submit").button-primary Отправить
 
 //- http://localhost:1709/page-materials.html#materials
