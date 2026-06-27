@@ -39,55 +39,55 @@ function headerHeight() {
 
 // ----------------------------------------------------------------------
 
-class DownloadPlanWidget {
-    constructor() {
-        this.widget = document.querySelector('.widget-plan');
-        if (!this.widget) return;
+// class DownloadPlanWidget {
+//     constructor() {
+//         this.widget = document.querySelector('.widget-plan');
+//         if (!this.widget) return;
         
-        this.window = this.widget.querySelector('.widget-plan__window');
-        this.closeBtn = this.widget.querySelector('.widget-plan__window-top-svg');
+//         this.window = this.widget.querySelector('.widget-plan__window');
+//         this.closeBtn = this.widget.querySelector('.widget-plan__window-top-svg');
         
-        this.init();
-    }
+//         this.init();
+//     }
     
-    init() {
-        this.setInitialState();
-        this.bindEvents();
-    }
+//     init() {
+//         this.setInitialState();
+//         this.bindEvents();
+//     }
     
-    setInitialState() {
-        const isClosed = localStorage.getItem('downloadWindowClosed');
-        if (window.innerWidth >= 1024 && isClosed !== 'true') {
-            this.window.classList.add('_active');
-        }
-    }
+//     setInitialState() {
+//         const isClosed = localStorage.getItem('downloadWindowClosed');
+//         if (window.innerWidth >= 1024 && isClosed !== 'true') {
+//             this.window.classList.add('_active');
+//         }
+//     }
     
-    bindEvents() {
-        this.widget.addEventListener('click', this.handleWidgetClick.bind(this));
-        this.closeBtn.addEventListener('click', this.handleCloseClick.bind(this));
-    }
+//     bindEvents() {
+//         this.widget.addEventListener('click', this.handleWidgetClick.bind(this));
+//         this.closeBtn.addEventListener('click', this.handleCloseClick.bind(this));
+//     }
     
-    handleWidgetClick() {
-        if (!this.window.classList.contains('_active')) {
-            this.open();
-        }
-    }
+//     handleWidgetClick() {
+//         if (!this.window.classList.contains('_active')) {
+//             this.open();
+//         }
+//     }
     
-    handleCloseClick(e) {
-        e.stopPropagation();
-        this.close();
-    }
+//     handleCloseClick(e) {
+//         e.stopPropagation();
+//         this.close();
+//     }
     
-    open() {
-        this.window.classList.add('_active');
-        localStorage.setItem('downloadWindowClosed', 'false');
-    }
+//     open() {
+//         this.window.classList.add('_active');
+//         localStorage.setItem('downloadWindowClosed', 'false');
+//     }
     
-    close() {
-        this.window.classList.remove('_active');
-        localStorage.setItem('downloadWindowClosed', 'true');
-    }
-}
+//     close() {
+//         this.window.classList.remove('_active');
+//         localStorage.setItem('downloadWindowClosed', 'true');
+//     }
+// }
 
 // ----------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ window.onload = () => {
   headerHeight();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
   ItemsManager.initialize();  
-  new DownloadPlanWidget();
+  // new DownloadPlanWidget();
 };
 
 window.addEventListener('resize', handleResize);

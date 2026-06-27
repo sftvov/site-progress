@@ -1,4 +1,21 @@
 .licenses-slider {
+  @media (max-width: $md3+px) {
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: -16px;
+      width: calc(100% + 32px);
+      height: 100%;
+      background-color: $bg-second;
+    }
+  }
+  @media (max-width: $md4+px) {
+    left: -10px;
+    width: calc(100% + 20px);
+  }
+
   &__swiper {
     overflow: visible;
   }
@@ -25,10 +42,16 @@
 
   &__prev {
     rotate: 90deg;
+    @media (max-width: $md1+px) {
+      translate: calc(var(--column) - 24px) 0;
+    }
   }
 
   &__next {
     rotate: -90deg;
+    @media (max-width: $md1+px) {
+      translate: calc(24px - var(--column)) 0;
+    }
   }
 
   &__img {

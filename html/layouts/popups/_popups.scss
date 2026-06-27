@@ -2,13 +2,14 @@
   @include dur;
   opacity: 0;
   visibility: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   @include w;
   height: 100%;
+  padding-right: var(--scrollbar);
   background-color: #00000088;
 
   &._active {

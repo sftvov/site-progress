@@ -1,0 +1,31 @@
+.top-courses {
+  &__spoller {
+  }
+
+  &__spoller-title {
+    @media (min-width: $md1+px) {
+      padding: #{$M} var(--columnG) #{$M};
+    }
+    @media (min-width: $md2+px) {
+      padding: #{$M} 45px #{$M};
+    }
+    padding: 20px 0 20px;
+    text-align: left;
+    &::after {
+      transition-duration: #{$transition};
+      content: url('../img/icons/chevron-l.svg');
+      height: 24px;
+      @media (max-width: $md3+px) {
+        content: url('../img/icons/chevron-m.svg');
+        height: 20px;
+      }
+    }
+    &._active {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
+  &__spoller-body {
+  }
+}

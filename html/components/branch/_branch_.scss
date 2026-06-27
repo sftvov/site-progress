@@ -1,10 +1,12 @@
 .branch {
+  break-inside: avoid;
   &:not(:first-child) {
     margin-top: #{$M};
   }
 
   &__body {
-    break-inside: avoid-column;
+    break-before: avoid;
+    break-inside: avoid;
     @include col7;
     @include ais;
     @include m5;

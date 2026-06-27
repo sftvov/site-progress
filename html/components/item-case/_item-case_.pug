@@ -46,7 +46,10 @@ mixin caseItem(item, options = {})
                         p.p1 !{p}
             if showReviews && item.reviews
               section
-                h4.t2.ta Отзывы
+                if item.reviews.length > 1
+                  h4.t2.ta Отзывы
+                else
+                  h4.t2.ta Отзыв
                 .row.wrap.g5.m5
                   each review in item.reviews
                     .col7.n1w3.w4

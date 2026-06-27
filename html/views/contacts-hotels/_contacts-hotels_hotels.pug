@@ -1,12 +1,23 @@
-section.hotels-contacts.section-bg#contacts
+section.hotels-contacts#contacts
   .container
-    h2.title Бронируйте по телефону или почтой
-    .row.jcb.x4col.x4aic.g5.m2.n2o2.n3o1
-      .col7.x4aic.n2w3.n3w4.w2.x4w4
-        a.t2.link(href="mailto:hotel@cntiprogress.ru") hotel@cntiprogress.ru
-        p.p1 Вы получите ответ в течение дня
-      .col7.x4aic.n2w3.n3w4.w2.x4w4
-        a.t2.link(href="tel:89216503779") 8 (921) 650-37-79
-        p.p1 Вы получите ответ в течение дня
+    .hotels-contacts__section.section-bg.r40.x3col.g5.jcc.x1jcb
+      .col7
+        h2.t1d.x4tac Бронируйте по телефону #[br.n1hide.x3hide]#[br.n4hide]или почтой
+        p.p1.x1hide Свяжитесь с нами любым удобным способом 
+      hr.rbd2a.x3hide
+      .n3contents.row.x4col.g5
+        .hotels-contacts__contact.col7.ais.x4aic
+          a.t2.sa-link.link.r10.x2cg5.aic(href="mailto:hotel@cntiprogress.ru")
+            svg.i24.x2i16
+              use(xlink:href='img/sprite/symbols.svg#mail')
+            span hotel@cntiprogress.ru
+          span.hotels-contacts__contact-sign.p1 Вы получите ответ в течение дня
+        hr.rbd2a.bbd2a
+        .hotels-contacts__contact.col7.ais.x4aic
+          a.t2.sa-link.link.r10.x2cg5.aic(href="tel:89216503779")
+            svg.i24.x2i16
+              use(xlink:href='img/sprite/symbols.svg#phone-call')
+            span 8 (921) 650-37-79
+          span.hotels-contacts__contact-sign.p1 С 8:00 до 17:00 пн-пт (Мск)
 
 //- http://localhost:1709/page-hotels.html#contacts

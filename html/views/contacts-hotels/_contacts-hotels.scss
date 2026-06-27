@@ -1,0 +1,21 @@
+.hotels-contacts {
+  &__section {
+    @media (max-width: $md1+px) {
+      padding: 35px 30px;
+      column-gap: normal;
+    }
+    @media (max-width: $md2+px) {
+      padding: 25px 30px;
+    }
+  }
+  &__contact {
+    @media (min-width: $md2+px) {
+      margin-right: 34px;
+    }
+  }
+  &__contact-sign {
+    @media (min-width: $md2+px) {
+      translate: 34px 0;
+    }
+  }
+}

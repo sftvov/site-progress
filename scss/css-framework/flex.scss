@@ -54,6 +54,14 @@
   @include cg40;
 }
 
+@mixin x2cg5 {
+  @media (max-width: $md2+px) {
+    column-gap: 5px;
+  }
+}
+.x2cg5 {
+  @include x2cg5;
+}
 @mixin x2cg10 {
   @media (max-width: $md2+px) {
     column-gap: 10px;

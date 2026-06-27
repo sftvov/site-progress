@@ -1,0 +1,40 @@
+
+section.popup.popup-dates
+  .container.popup-dates__container
+    .popup__body.popup-dates__body
+      button.popup-dates__close-btn._popup-close(aria-label='Закрыть')
+        svg.popup__close-svg
+          use(xlink:href='img/sprite/symbols.svg#x-close')
+      .col3
+        .col7
+          p.t1.ta Запросить другие даты
+          p.p1 Оставьте контактные данные, и мы сообщим о новой дате проведения семинара.
+        form.popup-dates__form.col5 
+          +inputWrapper({
+            label: 'Как к вам обращаться?',
+            placeholder: 'Иван Иванович',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Телефон',
+            type: 'tel',
+            placeholder: '8 (999) 999-99-99',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Электронная почта',
+            type: 'email',
+            placeholder: 'example@mail.ru',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Ваши пожелания по дате проведения?<br>Сколько человек планирует обучение?',
+            fieldType: 'textarea',
+            placeholder: '14 июня 2027 года, 4 человека'
+          })
+          button(type="submit").button-primary Отправить
+          +checkbox({
+            label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
+            checked: true,
+            blueWrapper: true
+          })

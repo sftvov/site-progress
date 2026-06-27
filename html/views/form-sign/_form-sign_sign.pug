@@ -130,12 +130,20 @@
         .n1o1.n2o0.n3o2.col5.ais
           button.button-primary.n1w5.n2w6.n3w8.w4 Записаться на курс в учебном центре
           +checkbox({
-            label: 'С <a class="link" href="#">информацией</a> об ограничении ответственности ознакомлен',
+            label: 'С <span class="link _spoller-btn">информацией</span> об ограничении ответственности ознакомлен',
             checked: true,
             name: 'information-received',
             blueWrapper: true,
             required: true
           })
+    .col5.m3.n1o1._spoller-body
+      p.t2d Ограничение ответственности
+      p.p1 ВНИМАНИЕ! Для зачисления на обучение, по итогам которого будет выдаваться Удостоверение о повышении квалификации, согласно Закону об Образовании и локальным актам образовательного учреждения слушатель обязан предоставить:
+      p.p1 Юр.лицо: АНО ДПО "ЦНТИ "Прогресс" #[a.link(href="https://img.cntiprogress.ru/file/pdf/doc/reg/privacy_ano.pdf") https://img.cntiprogress.ru/file/pdf/doc/reg/privacy_ano.pdf]
+      ul.ul.col7
+        li.ul__li копию диплома о высшем или среднем профессиональном образовании (в случае получения диплома не в РФ, просим уточнить необходимость процедуры признания иностранного диплома в РФ по контактным телефонам или электронной почте);
+        li.ul__li справку с места учебы (для студентов);
+        li.ul__li копию документа, подтверждающего изменение фамилии (если менялась).
 script.
   document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add-participant');
@@ -292,5 +300,5 @@ script.
       updateAddButtonText();
     });
 
-    attachValidationListeners();
+    attachValidationListeners();    
   });

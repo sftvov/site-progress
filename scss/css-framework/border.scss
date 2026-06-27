@@ -78,6 +78,19 @@
 // .tbs2a {
 //   @include tbs2a;
 // }
+
+@mixin rbd2a {
+  border-right: 2px solid #{$border-accent};
+}
+.rbd2a {
+  @include rbd2a;
+}
+@mixin bbd2a {
+  border-bottom: 2px solid #{$border-accent};
+}
+.bbd2a {
+  @include bbd2a;
+}
 @mixin bbs2a {
   box-shadow: inset 0 -2px 0 0 #{$border-accent};
 }
@@ -112,6 +125,13 @@
 }
 .bs2l {
   @include bs2l;
+}
+@mixin bbs2l {
+  box-shadow:
+    inset 0 -2px 0 0 #{$border-light};
+}
+.bbs2l {
+  @include bbs2l;
 }
 @mixin tbd2l {
   border-top: 2px solid #{$border-light};

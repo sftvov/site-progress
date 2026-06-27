@@ -31,7 +31,9 @@ new Activator('.select__variant', {
   limitContainer: '.select',
 });
 
-new Activator('._menu-btn', {
+new Activator(
+  '._menu-btn',
+  {
     stops: ['._menu-body'],
     removedOwn: ['._menu-body'],
     escClose: true,
@@ -52,17 +54,18 @@ new Activator('._menu-btn', {
 new Activator('._burger', {
   removed: ['._burger-menu'],
   removing: ['._burger-menu-close'],
+  stops: ['.loading'],
   // effects: 'F',
   // effectDuration: 300,
-  clickOutClose: true,
-  escClose: true,
+  // clickOutClose: true,
+  // escClose: true,
   bodyLock: true,
 });
 
 let checkboxes = new Activator('._checkbox', {
   removedOwn: ['._checkbox-body'],
-	effects: 'U',
-	effectDuration: 300,
+  effects: 'U',
+  effectDuration: 300,
   beforeFunction: (activators) => {
     activators.forEach((btn) => {
       btn.querySelector('.checkbox__input').addEventListener('click', (e) => {
@@ -77,5 +80,18 @@ let checkboxes = new Activator('._checkbox', {
   afterDeactivateFunction: (btn, index, currentParams) => {
     let checkbox = btn.querySelector('input');
     checkbox.checked = false;
+  },
+});
+
+new Activator('._spoller-btn', {
+  removedOwn: ['._spoller-body'],
+  effects: 'U',
+  effectDuration: 300,
+  beforeFunction: (activators) => {
+    activators.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    });
   },
 });

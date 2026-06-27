@@ -1,26 +1,35 @@
 %hotel-table {
+  table-layout: fixed;
   border-collapse: collapse;
-  @include fs;
-  @include n1w6;
-  @include n2w8;
-  @media (max-width: $md2+px) {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 %td {
   text-align: left;
-  padding: 10px;
+  padding: 10px 0;
   @media (min-width: $md3+px) {
     white-space: nowrap;
   }
   @media (max-width: $md4+px) {
     padding: 10px 5px;
   }
+
+  &:first-child {
+    @media (min-width: $md3+px) {
+      width: var(--4columnsG);
+      padding-left: var(--columnG);
+    }
+  }
+  &:nth-child(2) {
+    @media (min-width: $md3+px) {
+      width: var(--3columnsG);
+    }
+  }
 }
 
 .hotel-item {
   @include section;
+  @include col3;
   // &__icons {}
 
   // &__icon {
@@ -51,9 +60,6 @@
 
   &__table-3 {
     @extend %hotel-table;
-    @media (min-width: $md1+px) {
-      table-layout: fixed;
-    }
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       table-layout: fixed;
     }
@@ -61,6 +67,14 @@
 
   &__table-4 {
     @extend %hotel-table;
+    & th,
+    td {
+      &:nth-child(3) {
+        @media (min-width: $md3+px) {
+          width: var(--3columnsG);
+        }
+      }
+    }
     @media (max-width: $md2+px) AND (min-width: $md3+px) {
       & th,
       td {
@@ -70,12 +84,6 @@
           width: calc(var(--3columns) + 10px);
         }
       }
-    }
-  }
-
-  & tr {
-    &:nth-child(2n) {
-      background-color: #{$bg-second};
     }
   }
 

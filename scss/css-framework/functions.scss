@@ -28,7 +28,8 @@ body {
 [data-reset-all],
 [data-reset],
 ._select-activated,
-._checkbox-body {
+._checkbox-body,
+._spoller-body {
   &:not(._active) {
     display: none;
   }
@@ -147,7 +148,7 @@ body {
   background-color: $bg-gray;
 }
 
-._select-button-disabler:not(:has(.select__variant._active)):has(+ button:is(:focus,:active,:hover)) .select__input::placeholder {
+._select-button-disabler:not(:has(.select__variant._active)):has(+ button:is(:focus, :active, :hover)) .select__input::placeholder {
   color: $text-invalid;
 }
 

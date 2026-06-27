@@ -28,7 +28,7 @@ html(lang="ru")
       each link in page.scripts.head
         script(src=link)
   body
-    include widget-plan/_widget-plan
+    //- include widget-plan/_widget-plan
     .wrapper
       include header/_header
       main.page#page
@@ -37,6 +37,7 @@ html(lang="ru")
         block content
       include footer/_footer
     include popups/_popups
+    include loading/_loading
     #measure
     if page.scripts && page.scripts.external
       each link in page.scripts.external

@@ -70,6 +70,17 @@
   @include x2i20;
 }
 
+@mixin x4i20 {
+  @include fs;
+  @media (max-width: $md2+px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+.x4i20 {
+  @include x4i20;
+}
+
 @mixin x4i40 {
   @include fs;
   @media (max-width: $md4+px) {

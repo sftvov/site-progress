@@ -156,6 +156,23 @@
   }
 }
 
+.icon-area {
+  @include r;
+  @include aic;
+  @include jcc;
+  width: 60px;
+  @include sqr;
+  @include fs;
+  @include bgs;
+  border-radius: 50%;
+  @media (max-width: $md1+px) {
+    width: 50px;
+  }
+  @media (max-width: $md2+px) {
+    width: 35px;
+  }
+}
+
 // .calendar {
 //   &__table {
 //     width: 100%;

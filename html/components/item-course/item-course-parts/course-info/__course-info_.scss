@@ -26,3 +26,70 @@
     @include link;
   }
 }
+
+
+.course-info-case {
+    padding-block: 20px;
+    padding-inline: 26px;
+    @media (min-width: $md1+px) {
+      padding-inline: 26px;
+    }
+    @media (min-width: $md2+px) {
+      padding-inline: 71px;
+    }
+    @include bs2l;
+  &__row {
+    @include row;
+    @include wrap;
+    @include g7;
+    @media (max-width: $md4+px) {
+      column-gap: var(--gutter);
+    }
+  }
+
+  &__item {
+    @include p1;
+    @include r5;
+    @include ais;
+    @media (max-width: $md4+px) {
+      min-width: var(--2columns);
+    }
+    &--company {
+      @media (min-width: $md1+px) {
+        width: calc(var(--3columns) - 26px);
+      }
+      @include n2w3;
+      @media (min-width: $md3+px) {
+        width: calc(var(--4columns) - 26px);
+      }
+      @media (min-width: $md4+px) {
+        width: calc(var(--2columns) - 26px);
+      }
+      @media (max-width: $md4+px) {
+        width: calc(var(--4columns) - 52px);
+      }
+    }
+    &--format {
+      @include n1w4;
+      @include n3w5;
+      @media (min-width: $md4+px) {
+        width: calc(var(--2columns) - 26px);
+      }
+      @media (max-width: $md4+px) {
+        width: calc(var(--4columns) - 52px);
+      }
+    }
+    &--date {
+      @include n1w2;
+      @media (min-width: $md2+px) {
+        width: calc(var(--2columns) - 26px);
+      }
+      @media (min-width: $md4+px) {
+        width: calc(var(--3columns) - 26px);
+      }
+      @media (max-width: $md4+px) {
+        width: calc(var(--4columns) - 52px);
+      }
+    }
+  }
+}

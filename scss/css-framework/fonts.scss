@@ -125,6 +125,15 @@
   @include x4tac;
 }
 
+@mixin x4tas {
+  @media (max-width: $md4+px) {
+    text-align: start;
+  }
+}
+.x4tas {
+  @include x4tas;
+}
+
 @mixin tae {
   text-align: end;
 }

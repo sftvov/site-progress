@@ -99,4 +99,4 @@ export const renameObj = {
   name: 'in-',
 };
 // gulp getHtml
-export const pugFile = 'slider-main/_slider-main_main';
+export const pugFile = 'views/top-courses/_top-courses_corp';

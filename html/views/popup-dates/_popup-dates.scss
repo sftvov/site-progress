@@ -1,0 +1,35 @@
+.popup-dates {
+  &__container {
+    @include r;
+    @include aic;
+    @include jcc;
+    @include w;
+    height: 100%;
+  }
+
+  &__body {
+    @include w;
+    max-width: 497px;
+    padding: var(--S2);
+    @include bgm;
+  }
+
+  &__close-btn {
+    cursor: pointer;
+    @include dur;
+    z-index: 1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    @include sw2;
+    @include i24;
+    &:active,
+    &:focus-visible {
+      opacity: 0.8;
+    }
+  }
+
+  &__form {
+    @include w;
+  }
+}

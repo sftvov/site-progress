@@ -1,0 +1,13 @@
+.hotels-hero {
+  &__announcement {
+    padding: $XL 0 0;
+    @media (max-width: $md3+px) {
+      padding-top: 36px;
+    }
+  }
+  &__main {
+    @media (min-width: $md2+px) {
+      padding-left: $L;
+    }
+  }
+}

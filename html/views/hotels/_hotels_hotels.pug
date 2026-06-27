@@ -10,9 +10,11 @@ section.hotels.section#hotels
           li.hotels__toc-link.ol__li
             a.hover(href="#" + hotel.slug) !{hotel.name}, !{hotel.address}
     .ymaps.m2#ymaps
-    each hotel in hotelsArchive
+    each hotel, i in hotelsArchive
       if hotel.price
         +hotel(hotel)
+        if i !== hotelsArchive.length-1
+          hr.bbd2l
 
 //- http://localhost:1709/page-hotels.html#hotels
 
