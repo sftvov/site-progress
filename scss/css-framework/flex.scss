@@ -80,6 +80,15 @@
   @include x2cg30;
 }
 
+@mixin x3cg7 {
+  @media (max-width: $md3+px) {
+    column-gap: 7px;
+  }
+}
+.x3cg7 {
+  @include x3cg7;
+}
+
 @mixin r5 {
   @include r;
   @include cg5;
@@ -459,6 +468,15 @@
   @include g8;
 }
 
+@mixin x4g5 {
+  @media (max-width: $md4+px) {
+    @include g5;
+  }
+}
+.x4g5 {
+  @include x4g5;
+}
+
 @mixin col {
   @include r;
   flex-direction: column;
@@ -537,6 +555,24 @@
 .col8 {
   @extend .col;
   @extend .g8;
+}
+
+@mixin x3od1 {
+  @media (max-width: $md3+px) {
+    order: 1;
+  }
+}
+.x3od1 {
+  @include x3od1;
+}
+
+@mixin x4od-1 {
+  @media (max-width: $md4+px) {
+    order: -1;
+  }
+}
+.x4od-1 {
+  @include x4od-1;
 }
 
 .grid2 {

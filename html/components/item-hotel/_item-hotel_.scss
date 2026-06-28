@@ -1,5 +1,7 @@
 %hotel-table {
-  table-layout: fixed;
+  @media (min-width: $md4+px) {
+    table-layout: fixed;
+  }
   border-collapse: collapse;
   width: 100%;
 }
@@ -9,6 +11,9 @@
   padding: 10px 0;
   @media (min-width: $md3+px) {
     white-space: nowrap;
+  }
+  @media (max-width: $md3+px) {
+    padding-left: 10px;
   }
   @media (max-width: $md4+px) {
     padding: 10px 5px;
@@ -30,39 +35,49 @@
 .hotel-item {
   @include section;
   @include col3;
-  // &__icons {}
 
-  // &__icon {
-  // }
-
-  &__gallery {
-    @include row;
-    @include x4wrap;
-    @include m3;
+  &__img {
+    @include w;
+    height: 60px;
+    @include cvr;
+    @media (max-width: $md1+px) {
+      height: 45px;
+    }
+    @media (max-width: $md2+px) {
+      height: 37px;
+    }
+    @media (max-width: $md3+px) {
+      height: 35px;
+    }
+    @media (max-width: $md3+px) {
+      width: 46px;
+    }
     @media (max-width: $md4+px) {
-      row-gap: 20px;
+      width: var(--column);
+      height: 52px;
     }
   }
 
-  &__gallery-img {
+  &__img-main {
     @include w;
-    aspect-ratio: 282/209;
+    height: 210px;
     @include cvr;
-  }
-
-  // &__attention {
-  // }
-
-  &__table-2 {
-    @extend %hotel-table;
-    table-layout: fixed;
+    @media (max-width: $md1+px) {
+      height: 165px;
+    }
+    @media (max-width: $md2+px) {
+      height: 142px;
+    }
+    @media (max-width: $md3+px) {
+      height: 119px;
+    }
+    @media (max-width: $md4+px) {
+      height: 170px;
+    }
   }
 
   &__table-3 {
     @extend %hotel-table;
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      table-layout: fixed;
-    }
   }
 
   &__table-4 {
@@ -75,27 +90,12 @@
         }
       }
     }
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      & th,
-      td {
-        width: calc(var(--3columns) + 20px);
-        &:first-child,
-        &:last-child {
-          width: calc(var(--3columns) + 10px);
-        }
-      }
-    }
   }
 
   & th {
     font-weight: 400;
     vertical-align: top;
     @extend %td;
-    @media (min-width: $md1+px) {
-      &:last-child {
-        padding-right: 0;
-      }
-    }
   }
 
   & td {

@@ -48,6 +48,17 @@
   @include i24;
 }
 
+@mixin x1i20 {
+  @include fs;
+  @media (max-width: $md1+px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+.x1i20 {
+  @include x1i20;
+}
+
 @mixin x2i16 {
   @include fs;
   @media (max-width: $md2+px) {

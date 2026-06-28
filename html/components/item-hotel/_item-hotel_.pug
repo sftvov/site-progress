@@ -1,40 +1,54 @@
 mixin hotel(hotel)
   article.hotel-item(id=hotel.slug)
-    .row        
-      .row.n3w4._gallery
-        .col5.n3w1
-          each image, i in hotel.images
-            if i !== 0
-              a(href=image.src) 
-                img.hotel-item__gallery-img(src=image.thumb alt="")
-        .fg
-          a(href=hotel.images[0].src) 
-            img.hotel-item__gallery-img(src=hotel.images[0].thumb alt="")
-      .n3w8.col.jcb
-        .col5
-          h2.t1d !{hotel.name}
-          .row.ais
-            p.p1.n3w3 Санкт-Петербург, !{hotel.address}
-            .r5.aic.n3w3
-              svg.i24
-                use(xlink:href='img/sprite/symbols.svg#train')
-              p.p1 Метро
-            .fg.r.jce
-              a.p1.link-b(href="#hotels") Вернуться к карте
-        .row.aie.m7
-          .col7.fg
-            .r5.aic
-              svg.i24
-                use(xlink:href='img/sprite/symbols.svg#pin')
-              p.p1 !{hotel.distance} до ЦНТИ&nbsp;ПРОГРЕСС
-            each icon in hotel.features
-              .sa.r5.aic
-                svg.i24
-                  use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
-                p.p1.ta !{icon.name}
-          .n3w5
-            p.p1= hotel.description
-              |  Регистрационный номер в Федеральном перечне туристских объектов #[a.link(href="#") !{hotel.registrationNumber}]
+    .col5
+      .row.jcb.aie
+        h2.t1d.n1hide !{hotel.name}
+        a.n2p2.x2p3.link-b.n3hide.x4hide(href="#hotels") Вернуться к карте
+      .row.x4col.g5
+        .row.x3cg7.n3w4.w2.x4w4._gallery
+          .col5.n3w1.x3contents
+            .col7.n3contents
+              each image, i in hotel.images
+                if i !== 0
+                  a(href=image.src) 
+                    img.hotel-item__img(src=image.thumb alt="")
+          .fg
+            a(href=hotel.images[0].src) 
+              img.hotel-item__img-main(src=hotel.images[0].thumb alt="")
+        .n3w8.w2.col.jcb.x4g5.x4w4
+          .col7.n3contents
+            .col5.x3contents
+              p.t1d.x1hide !{hotel.name}
+              .row.ais.x3contents
+                p.n2p2.x2p3.n3w3 Санкт-Петербург, !{hotel.address}
+                .r5.aic.n3w3
+                  svg.i20.x2i16
+                    use(xlink:href='img/sprite/symbols.svg#train')
+                  p.n2p2.x2p3 !{hotel.metro || 'Метро'}
+                .fg.r.jce.x3hide
+                  a.n2p2.x2p3.link-b(href="#hotels") Вернуться к карте                
+                a.n2p2.x2p3.link-b.n4hide(href="#hotels") Вернуться к карте
+          .col7.n3contents
+            .row.aie.n3w8.m7.x3contents
+              .col7.n3w3.x3contents
+                .r5.aic
+                  svg.i20.x2i16
+                    use(xlink:href='img/sprite/symbols.svg#pin')
+                  p.n2p2.x2p3.wsn !{hotel.distance} до ЦНТИ&nbsp;ПРОГРЕСС'
+                if hotel.food
+                  .r5.aic
+                    svg.i20.x2i16
+                      use(xlink:href='img/sprite/symbols.svg#food')
+                    p.n2p2.x2p3.wsn !{hotel.food}
+                if hotel.features
+                  each icon in hotel.features
+                    .sa.r5.aic
+                      svg.i20.x2i16
+                        use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
+                      p.ta.n2p2.x2p3.wsn !{icon.name}
+              .n3w5.x3hide
+                p.n2p2.x2p3= hotel.description
+                  |  Регистрационный номер в Федеральном перечне туристских объектов #[a.link(href="#") !{hotel.registrationNumber}]
     if hotel.price
       table(class="hotel-item__table-" + hotel.price.head.length)
           thead
@@ -43,34 +57,34 @@ mixin hotel(hotel)
                 th
                   .r5.wrap.aic.g7
                     if th.title
-                      p.td.p1 !{th.title}
+                      p.td.p2 !{th.title}
                     if th.subtitle
                       p.p2 !{th.subtitle}
           tbody 
             each tr, index in hotel.price.rows
               tr(class=index%2===0 ? "bgs" : "")
                 each td, index in tr
-                  td.p1 !{td}
-      if hotel.legalInfo || hotel.info        
-        .row.wrap.ais
-          .sb.tb.twb.r5.aic.n3w4
-            svg.i16
+                  td.p2 !{td}
+    .row.x3wrap.g5.ais.n1o1
+      if hotel.legalInfo || hotel.info
+        .col5.x3row.x4col.jcb.n1w3.w4
+          .sb.tb.twb.r5.aic.x3w2.x4w4.x3od1.x4od-1
+            svg.i24
               use(xlink:href='img/sprite/symbols.svg#info')
-            p.p2 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
-          .col7.n3w7
-            if hotel.legalInfo
-              p.p1 !{hotel.legalInfo}
-            if hotel.info
-              each p in hotel.info
-                p.ta.p1 !{p}
-          a.button-primary.n3w4(href="#") Забронировать отель
+            p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
+          a.button-primary.x3w2.x4w4(href="#") Забронировать отель
+        .col7.n1w7.n3w8.w4
+          if hotel.legalInfo
+            p.p2 !{hotel.legalInfo}
+          if hotel.info
+            each p in hotel.info
+              p.ta.p2 !{p}
       else
-        .col5
-          .sb.tb.twb.r5.aic.n3w4
-            svg.i16
-              use(xlink:href='img/sprite/symbols.svg#info')
-            p.p2 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
-          a.button-primary.n3w4(href="#") Забронировать отель
+        a.button-primary.n1w3.n3w4.w2.x4w4(href="#") Забронировать отель
+        .sb.tb.twb.r5.aic.n1w3.n3w4.w2.x4w4.x4od-1
+          svg.i24
+            use(xlink:href='img/sprite/symbols.svg#info')
+          p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
 
 
 

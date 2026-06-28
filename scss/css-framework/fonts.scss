@@ -94,7 +94,6 @@
   @include tac;
 }
 
-
 // .x1tac {
 //   @media (max-width: $md1+px) {
 //     text-align: center;
@@ -108,7 +107,6 @@
 .x2tac {
   @include x2tac;
 }
-
 
 // .x3tac {
 //   @media (max-width: $md3+px) {
@@ -291,43 +289,46 @@
   @include x2p2;
 }
 
-@mixin n1p2 {
-  $fs: 13;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 18;
-  line-height: round-to(math.div($lh, $fs), 3);
+@mixin n2p2 {
+  @media (min-width: $md2+px) {
+    $fs: 13;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 18;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
 }
-.n1p2 {
-  @include n1p2;
+.n2p2 {
+  @include n2p2;
 }
 
 @mixin p2 {
-  @extend .n1p2;
+  @extend .n2p2;
   @extend .x2p2;
 }
 .p2 {
   @include p2;
 }
 
-@mixin p2 {
-  $fs: 13;
-  font-size: math.div($fs, $fz) + em;
-  $lh: 18;
-  line-height: round-to(math.div($lh, $fs), 3);
-  @extend .p2;
+@mixin x2p3 {
+  @media (max-width: $md2+px) {
+    $fs: 12;
+    font-size: math.div($fs, $fz) + em;
+    $lh: 15;
+    line-height: round-to(math.div($lh, $fs), 3);
+  }
 }
-.p2 {
-  @include p2;
+.x2p3 {
+  @include x2p3;
 }
 
-@mixin p3 {
+@mixin p4 {
   $fs: 10;
   font-size: math.div($fs, $fz) + em;
   $lh: 19;
   line-height: round-to(math.div($lh, $fs), 3);
 }
-.p3 {
-  @include p3;
+.p4 {
+  @include p4;
 }
 
 @mixin b1 {
@@ -356,4 +357,3 @@
 // .btn {
 //   @include btn;
 // }
-
