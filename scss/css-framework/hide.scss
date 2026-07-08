@@ -1,3 +1,7 @@
+.oh {
+  overflow: hidden;
+}
+
 @mixin n1hide {
   @media (min-width: $md1+px) {
     display: none;

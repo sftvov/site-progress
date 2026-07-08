@@ -264,6 +264,7 @@ window.onload = () => {
   calculateScrollbarWidth();  
   headerHeight();
   updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+  activateActivators();
   ItemsManager.initialize();  
   // new DownloadPlanWidget();
 };
