@@ -20,42 +20,49 @@ mixin hotel(hotel)
             .col5.x3contents
               p.t1d.x1hide !{hotel.name}
               .row.ais.x3contents
-                p.n2p2.x2p3.n3w3 Санкт-Петербург, !{hotel.address}
+                p.n2p2.x2p3.n3w3.x4hide Санкт-Петербург, !{hotel.address}
+                p.p1.n4hide Санкт-Петербург, !{hotel.address}
                 .r5.aic.n3w3
-                  svg.i20.x2i16
+                  svg.i20
                     use(xlink:href='img/sprite/symbols.svg#train')
-                  p.n2p2.x2p3 !{hotel.metro || 'Метро'}
+                  p.n2p2.x2p3.x4hide !{hotel.metro}
+                  p.p1.n4hide !{hotel.metro}
                 .fg.r.jce.x3hide
-                  a.n2p2.x2p3.link-b(href="#hotels") Вернуться к карте                
-                a.n2p2.x2p3.link-b.n4hide(href="#hotels") Вернуться к карте
+                  a.n2p2.x2p3.link-b(href="#hotels") Вернуться к карте
+                a.p1.link-b.n4hide(href="#hotels") Вернуться к карте
           .col7.n3contents
             .row.aie.n3w8.m7.x3contents
               .col7.n3w3.x3contents
                 .r5.aic
-                  svg.i20.x2i16
+                  svg.i20
                     use(xlink:href='img/sprite/symbols.svg#pin')
-                  p.n2p2.x2p3.wsn !{hotel.distance} до ЦНТИ&nbsp;ПРОГРЕСС'
+                  p.n2p2.x2p3.wsn.x4hide !{hotel.distance} до ЦНТИ&nbsp;ПРОГРЕСС
+                  p.p1.n4hide !{hotel.distance} до ЦНТИ&nbsp;ПРОГРЕСС'
                 if hotel.food
                   .r5.aic
-                    svg.i20.x2i16
+                    svg.i20
                       use(xlink:href='img/sprite/symbols.svg#food')
-                    p.n2p2.x2p3.wsn !{hotel.food}
+                    p.n2p2.x2p3.wsn.x4hide !{hotel.food}
+                    p.p1.n4hide !{hotel.food}
                 if hotel.features
                   each icon in hotel.features
                     .sa.r5.aic
-                      svg.i20.x2i16
+                      svg.i20
                         use(xlink:href='img/sprite/symbols.svg#' + icon.icon)
-                      p.ta.n2p2.x2p3.wsn !{icon.name}
+                      p.ta.n2p2.x2p3.wsn.x4hide !{icon.name}
+                      p.ta.p1.n4hide !{icon.name}
               .n3w5.x3hide
                 p.n2p2.x2p3= hotel.description
                   |  Регистрационный номер в Федеральном перечне туристских объектов #[a.link(href="#") !{hotel.registrationNumber}]
+      p.p2.n3hide= hotel.description
+        |  Регистрационный номер в Федеральном перечне туристских объектов #[a.link(href="#") !{hotel.registrationNumber}]
     if hotel.price
       table(class="hotel-item__table-" + hotel.price.head.length)
           thead
             tr
               each th in hotel.price.head
                 th
-                  .r5.wrap.aic.g7
+                  .r5.wrap.aic
                     if th.title
                       p.td.p2 !{th.title}
                     if th.subtitle
@@ -69,10 +76,10 @@ mixin hotel(hotel)
       if hotel.legalInfo || hotel.info
         .col5.x3row.x4col.jcb.n1w3.w4
           .sb.tb.twb.r5.aic.x3w2.x4w4.x3od1.x4od-1
-            svg.i24
+            svg.i20
               use(xlink:href='img/sprite/symbols.svg#info')
-            p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
-          a.button-primary.x3w2.x4w4(href="#") Забронировать отель
+            p.x2p2 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
+          a.button-primary.x3w2.x4w4(href=`/hotelorder.aspx?id=${hotel.id}`) Забронировать отель
         .col7.n1w7.n3w8.w4
           if hotel.legalInfo
             p.p2 !{hotel.legalInfo}
@@ -80,11 +87,11 @@ mixin hotel(hotel)
             each p in hotel.info
               p.ta.p2 !{p}
       else
-        a.button-primary.n1w3.n3w4.w2.x4w4(href="#") Забронировать отель
+        a.button-primary.n1w3.n3w4.w2.x4w4(href=`/hotelorder.aspx?id=${hotel.id}`) Забронировать отель
         .sb.tb.twb.r5.aic.n1w3.n3w4.w2.x4w4.x4od-1
-          svg.i24
+          svg.i20
             use(xlink:href='img/sprite/symbols.svg#info')
-          p.p1 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
+          p.x2p2 Бронируйте онлайн, по почте или по тел. #[a(href="tel:89216503779") 8 (921) 650-37-79].
 
 
 

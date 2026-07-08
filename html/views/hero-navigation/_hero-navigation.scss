@@ -1,4 +1,13 @@
 .hero-navigation {
+  &__img {
+    @include poa;
+    top: 0;
+    right: 0;
+    @media (min-width: $md1+px) {
+      width: var(--3columnsG);
+    }
+    @include n2w2;
+  }
   &__text {
     @media (min-width: $md1+px) {
       margin-top: #{$XXL};

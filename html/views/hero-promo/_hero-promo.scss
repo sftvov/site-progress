@@ -1,0 +1,18 @@
+.promo-hero {
+  &__baner {
+    @media (max-width: $md4+px) {
+      @include col3;
+    }
+  }
+  &__main {
+    @media (min-width: $md1+px) {
+      padding: 0 30px 0 60px;
+    }
+    @media (min-width: $md2+px) {
+      padding-left: var(--column);
+    }
+    @media (max-width: $md3+px) AND (min-width: $md4+px) {
+      padding-right: 40px;
+    }
+  }
+}

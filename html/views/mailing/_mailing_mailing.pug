@@ -2,37 +2,35 @@ include ../../../data/rubricsArchive
 
 .mailing.section#mailing
   .container
-    h1.title Простая рассылка #[br.n4hide]о серьёзном обучении
-    form.col1
-      section.mailing__top.jce
-        h2.mailing__top-title.t2d.x2tac В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
-        fieldset.n2w9.m1
-          legend.t2d Заполните данные о себе
-          .row.wrap.g5.m5
-            .mailing__square-bright.por.col7.n2w3.n3w4.w2.x4w4
-              input.input(type="text" placeholder="Фамилия")
-            .col7.n2w3.n3w4.w2.x4w4
-              input.input(type="text" placeholder="Имя")
-            .col7.n2w3.n3w4.w2.x4w4
-              input.input(type="text" placeholder="Отчество")
-            .mailing__square-accent.por.col7.n2w3.n3w4.w2.x4w4
-              input.input(type="email" placeholder="Электронная почта")
-            .col7.n2w3.n3w4.w2.x4w4
-              input.input(type="text" placeholder="Должность")
-            .n2w3.n3w4.w2.x4w4
-              p.p2 Я отвечаю за обучение сотрудников
-              .mailing__top-checkboxes.r40
-                +checkbox({
-                  label: 'Да',
-                  type: 'radio',
-                  checked: true,
-                  name: 'responsible'
-                })
-                +checkbox({
-                  label: 'Нет',
-                  type: 'radio',
-                  name: 'responsible'
-                })
+    .col5.aic
+      h1.title Простая рассылка #[br.n4hide]о серьёзном обучении
+      p.ta.t2 В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
+    form.col1.m2
+      fieldset.row.wrap.g5.aic      
+        .mailing__square-bright.n3w4.w2.x4w4
+          input.input.fg(type="text" placeholder="Фамилия")
+        .col7.n3w4.w2.x4w4
+          input.input(type="text" placeholder="Имя")
+        .col7.n3w4.w2.x4w4
+          input.input(type="text" placeholder="Отчество")
+        .mailing__square-accent.n3w4.w2.x4w4
+          input.input.fg(type="email" placeholder="Электронная почта")
+        .col7.n3w4.w2.x4w4
+          input.input(type="text" placeholder="Должность")
+        .n3w4.w2.x4w4
+          p.p2 Я отвечаю за обучение сотрудников
+          .mailing__top-checkboxes.r40
+            +checkbox({
+              label: 'Да',
+              type: 'radio',
+              checked: true,
+              name: 'responsible'
+            })
+            +checkbox({
+              label: 'Нет',
+              type: 'radio',
+              name: 'responsible'
+            })
       section.col2
         h2.t1d Выберите рубрики — это займёт полминуты
         .mailing__choose

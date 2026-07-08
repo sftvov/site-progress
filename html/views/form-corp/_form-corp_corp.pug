@@ -1,13 +1,13 @@
 section.section#form
   .container.col1
     .col5      
-      h2.title.x4tas Стартовая стоимость корпоративного курса для одной группы
-      ul.ul.col7.aic
-        li.ul__li В нашем учебном центре в Санкт-Петербурге / Москве — от 320 000 рублей
-        li.ul__li Онлайн-обучение в режиме реального времени — от 250 000 рублей
-        li.ul__li Выезд на территорию заказчика — от 370 000 рублей
+      h2.title Стартовая стоимость корпоративного курса для одной группы
+      ul.ul.col7
+        li.ul__li.jcc.x4jcs В нашем учебном центре в Санкт-Петербурге / Москве — от&nbsp;320&nbsp;000&nbsp;рублей
+        li.ul__li.jcc.x4jcs Онлайн-обучение в режиме реального времени — от&nbsp;250&nbsp;000&nbsp;рублей
+        li.ul__li.jcc.x4jcs Выезд на территорию заказчика — от&nbsp;370&nbsp;000&nbsp;рублей
     section
-      h2.title.x4tas Для расчета стоимости потребуется
+      h3.title.x4tas Для расчета стоимости потребуется
       form.m2.n1o1
         .row.wrap.g5.x3col
           fieldset.row.x3col.g5.aie.x3ais.n1w10.n3w12.w4
@@ -29,13 +29,8 @@ section.section#form
             p.t2.ta._select-activated Стартовая стоимость - от 250 000₽ / группа
           fieldset.col5.n1w5.n3w6.w4          
             +inputWrapper({
-              label: 'Город проведения (кроме “Онлайн-формата”)',
+              label: 'Город проведения',
               placeholder: 'Иркутск',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Тема обучения',
-              placeholder: 'Тема обучения',
               required: true,
             })
             +inputWrapper({
@@ -49,29 +44,8 @@ section.section#form
               required: true,
             })
             +inputWrapper({
-              label: 'Целевая аудитория учебной программы (отделы, должности)',
-              placeholder: 'Строители',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Контактные данные: ФИО, должность, email, телефон',
-              placeholder: 'Иванов Иван Иванович, директор, example@mail.ru, 8 (999) 999-99-99',
-              required: true,
-            })
-          fieldset.col5.n1w5.n3w6.w4
-            +inputWrapper({
-              label: 'Количество часов / дней обучения',
-              placeholder: '5 дней',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Количество групп и участников в каждой группе',
-              placeholder: '3 группы по 10 человек',
-              required: true,
-            })
-            +inputWrapper({
-              label: 'Пожелания по срокам',
-              placeholder: '10.03.2026 - 15.03.2026',
+              label: 'Тема обучения',
+              placeholder: 'Тема обучения',
               required: true,
             })
             +inputWrapper({
@@ -79,19 +53,48 @@ section.section#form
               placeholder: 'Напишите свое сообщение',
               fieldType: 'textarea',
             })
-        .row.wrap.g3.aie.m3
-          .col5.ais.n1w5.n3w6.w2.x4w4
-            button(type="submit").button-primary.n1w3.n3w4.w2.x4w4 Отправить
-            +checkbox({
-              label: 'Отправляя форму, я принимаю <a class="link" href="#"> пользовательское соглашение</a>',
-              name: 'agreement',
-              blueWrapper: true,
-              checked: true,
+            +inputWrapper({
+              label: 'Пожелания по срокам',
+              placeholder: '10.03.2026 - 15.03.2026',
+              required: true,
             })
-          .col7.n1w5.n3w6.w2.x4w4
-            p.p1 Служба корпоративного обучения
-            .row.wrap.g7
-              a.t2.link.n2w2.n3w3.w2(href="tel:+78123274267") +7 (812) 327-42-67
-              a.t2.link.n3w3.w2(href="mailto:corp@cntiprogress.ru") corp@cntiprogress.ru
+          .col2-
+            fieldset.col5.n1w5.n3w6.w4
+              +inputWrapper({
+                label: 'Количество часов / дней обучения',
+                placeholder: '5 дней',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'Количество групп и участников в каждой группе',
+                placeholder: '3 группы по 10 человек',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'Целевая аудитория учебной программы (отделы, должности)',
+                placeholder: 'Строители',
+                required: true,
+              })
+              +inputWrapper({
+                label: 'Контактные данные: ФИО, должность, email, телефон',
+                placeholder: 'Иванов Иван Иванович, директор, example@mail.ru, 8 (999) 999-99-99',
+                required: true,
+              })
+            .col.x3row.wrap.g3.aie.x3aie.jcb.fg
+              .col5.ais.n1w5.n3w6.w2.x4w4
+                button(type="submit").button-primary.n1w3.n3w4.w2.x4w4 Отправить
+                +checkbox({
+                  label: 'Отправляя форму, я принимаю <a class="link" href="#"> пользовательское соглашение</a>',
+                  name: 'agreement',
+                  blueWrapper: true,
+                  checked: true,
+                })
+              .col7.aie.x3ais.n1w5.n3w6.w2.x4w4
+                p.p1 Служба корпоративного обучения
+                .row.wrap.g7
+                  .r.jce.x3jcs.n1w2.n3w3.w2
+                    a.t2.link(href="tel:+78123274267") +7 (812) 327-42-67
+                  .r.jce.x3jcs.n1w2.n3w3.w2
+                    a.t2.link(href="mailto:corp@cntiprogress.ru") corp@cntiprogress.ru
 
 //- http://localhost:1709/page-corp.html#form

@@ -1,0 +1,30 @@
+.promo-conditions {
+  &__main {
+    @media (min-width: $md1+px) {
+      padding-inline: 60px;
+    }
+    @media (min-width: $md2+px) {
+      @include pd1;
+      padding-inline: 55px;
+    }
+    @media (min-width: $md3+px) {
+      padding-block: 42px;
+      padding-inline: 22px;
+    }
+    @media (max-width: $md3+px) {
+      padding: 30px 46px;
+    }
+    @media (max-width: $md4+px) {
+      padding: 30px 10px;
+    }
+  }
+  &__percent {
+    flex-shrink: 0;
+    width: 92px;
+  }
+  &__conditions {
+    @media (min-width: $md1+px) {
+      @include tpd1;
+    }
+  }
+}

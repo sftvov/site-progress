@@ -1,0 +1,13 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'АКЦИИ',
+	})
+
+block content	
+	include html/views/hero-promo/_hero-promo_promo
+	include html/views/conditions-promo/_conditions-promo_promo
+	include html/views/gift-promo/_gift-promo_promo
+	//- include html/views/promo/_promo_promoA
+	//- include html/views/all-promo/_all-promo_promoA

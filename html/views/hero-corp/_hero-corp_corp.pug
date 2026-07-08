@@ -1,7 +1,18 @@
 .corp-hero.section#hero
   .container.x1contents
     .baner
-      +picture(1200, 'img/corp/', 'hero', 'png', 'bg x4hide')
+      picture
+        source(type='image/webp' sizes='1200px' srcset='img/corp/n1hero@0.6x.webp 720w, img/corp/n1hero@1.2x.webp 1440w, img/corp/n1hero@1.8x.webp 2160w, img/corp/n1hero@2.4x.webp 2880w')
+        img.bg.x1hide(src='img/corp/n1hero.png' alt='' width='1200' height='auto')
+      picture
+        source(type='image/webp', sizes='calc(100vw - 80px)', srcset='img/corp/n2hero@0.6x.webp 571w, img/corp/n2hero@1.2x.webp 1143w, img/corp/n2hero@1.8x.webp 1714w, img/corp/n2hero@2.4x.webp 2285w')
+        img.bg.n1hide.x2hide(src='img/corp/n2hero.png', alt='', width='952', height='auto')
+      picture
+        source(type='image/webp', sizes='100vw', srcset='img/corp/n3hero@0.6x.webp 461w, img/corp/n3hero@1.2x.webp 922w, img/corp/n3hero@1.8x.webp 1383w, img/corp/n3hero@2.4x.webp 1844w')
+        img.bg.n2hide.x3hide(src='img/corp/n3hero.png', alt='', width='768', height='auto')
+      picture
+        source(type='image/webp', sizes='100vw', srcset='img/corp/n4hero@0.6x.webp 324w, img/corp/n4hero@1.2x.webp 648w, img/corp/n4hero@1.8x.webp 972w, img/corp/n4hero@2.4x.webp 1296w')
+        img.bg.n3hide.x4hide(src='img/corp/n4hero.png', alt='', width='540', height='auto')
       .corp-hero__body.td.n1o1
         .container.n1contents          
           h1.t1 КОРПОРАТИВНОЕ ОБУЧЕНИЕ ДЛЯ ГРУППЫ СОТРУДНИКОВ

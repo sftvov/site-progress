@@ -43,31 +43,33 @@ mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClas
       '1.8x': Math.ceil(width * 1.8),
       '2.4x': Math.ceil(width * 2.4)
     };
-    
+
     function getColumnWidth(n, field) {
-      if (n === 12) return `calc(100vw - ${field}px)`;
-      if (n === 6) return `calc(50vw - ${10 + field}px)`;
-      if (n === 3) return `calc(25vw - ${15 + field}px)`;
-      return `calc((100vw + 20px) / 12 * ${n} - ${20 + field}px)`;
+      if (n === 12) return `calc((100vw - ${field - 20}px)) - 20px`;
+      if (n === 6) return `calc((100vw - ${field - 20}px)) / 2 - 20px`;
+      if (n === 4) return `calc((100vw - ${field - 20}px)) / 3 - 20px`;
+      if (n === 3) return `calc((100vw - ${field - 20}px)) / 4 - 20px`;
+      if (n === 2) return `calc((100vw - ${field - 20}px)) / 6 - 20px`;
+      return `calc((100vw - ${field - 20}px)) / 12 * ${n} - 20px`;
     }
-    
+
     function getColumnValue(index) {
       for (let i = index; i >= 0; i--) {
         if (columns[i] !== undefined) return columns[i];
       }
       return 12;
     }
-    
+
     const breakpoints = [
       { max: 539.95, cols: getColumnValue(3), field: 20},
       { max: 767.95, cols: getColumnValue(2), field: 32 },
       { max: 1031.95, cols: getColumnValue(1), field: 32 },
       { max: 1279.95, cols: getColumnValue(0), field: 80 }
     ];
-    
+
     const sizesList = breakpoints.map(bp => `(max-width: ${bp.max}px) ${getColumnWidth(bp.cols, bp.field)}`);
     sizesList.push(`${width}px`);
-    
+
     const sizesAttr = sizesList.join(', ');
     const srcsetWebp = Object.entries(widths)
       .map(([scale, w]) => `${folder}${baseName}@${scale}.webp ${w}w`)
@@ -79,6 +81,77 @@ mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClas
       sizes=sizesAttr
       srcset=srcsetWebp
     )
+    img(
+      src=`${folder}${baseName}.${extension}`
+      alt=alt
+      width=width
+      height='auto'
+      loading=lazy ? 'lazy' : false
+      class=imgClass
+    )
+
+
+mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, sources = [{ max: 539.95, key: 'x4', sizes: 'calc(100vw - 20px)', width: 320 },{ max: 767.95, key: 'x3', sizes: 'calc(100vw - 32px)', width: 540 },{ max: 1031.95, key: 'x2', sizes: 'calc(100vw - 32px)', width: 768 },{ max: 1279.95, key: 'x1', sizes: 'calc(100vw - 80px)', width: 1032 }])
+  -
+    // Функция для расчета ширины для разных плотностей
+    function getWidths(baseWidth) {
+      return {
+        '0.6x': Math.ceil(baseWidth * 0.6),
+        '1.2x': Math.ceil(baseWidth * 1.2),
+        '1.8x': Math.ceil(baseWidth * 1.8),
+        '2.4x': Math.ceil(baseWidth * 2.4)
+      };
+    }    
+    // Функция для генерации srcset
+    function getSrcset(baseName, folder, baseWidth, extension) {
+      if (!baseName) return '';
+      
+      const widths = getWidths(baseWidth);
+      
+      // Для webp
+      const webpSrcset = Object.entries(widths)
+        .filter(([_, w]) => w > 0)
+        .map(([scale, w]) => `${folder}${baseName}${baseName.includes('@') ? '' : '@'}${scale}.webp ${w}w`)
+        .join(', ');
+      
+      // Для обычного формата
+      const imgSrcset = `${folder}${baseName}.${extension}`;
+      
+      return { webpSrcset, imgSrcset };
+    }    
+    // Фильтруем sources - убираем те, где key === false или key === null
+    const activeSources = sources.filter(s => s.key !== false && s.key !== null);    
+    // Формируем baseName с ключом
+    function getFullBaseName(baseName, key) {
+      if (!key) return baseName;
+      return `${key}${baseName}`;
+    }
+  picture
+    each source in activeSources
+      - const fullBaseName = getFullBaseName(baseName, source.key);
+      - const srcset = getSrcset(fullBaseName, folder, source.width, extension);
+      
+      if (srcset.webpSrcset)
+        source(
+          type='image/webp'
+          media=`(max-width: ${source.max}px)`
+          sizes=source.sizes
+          srcset=srcset.webpSrcset
+        )
+        source(
+          type=`image/${extension}`
+          media=`(max-width: ${source.max}px)`
+          srcset=srcset.imgSrcset
+        )
+    
+    - const defaultSrcset = getSrcset(baseName, folder, width, extension);
+    if (defaultSrcset.webpSrcset)
+      source(
+        type='image/webp'
+        sizes=`${width}px`
+        srcset=defaultSrcset.webpSrcset
+      )
+    
     img(
       src=`${folder}${baseName}.${extension}`
       alt=alt

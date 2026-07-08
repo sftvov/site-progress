@@ -98,10 +98,10 @@ mixin courseInfoCase(course)
                 | !{item.format} 
 
             //- Дата
-            if item.date
-              p.course-info-case__item.course-info-case__item--date
-                svg.i16
-                  use(xlink:href='img/sprite/symbols.svg#clock')
-                | !{item.date}          
+            //- if item.date
+              //- p.course-info-case__item.course-info-case__item--date
+              //-   svg.i16
+              //-     use(xlink:href='img/sprite/symbols.svg#clock')
+              //-   | !{item.date}          
           if i !== course.items.length - 1 
             hr.bbd2l

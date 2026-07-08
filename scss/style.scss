@@ -118,21 +118,21 @@ svg {
 @import '../html/layouts/popups/_popups';
 // @import '../html/layouts/widget-plan/_widget-plan';
 
-@import '../html/views/all-promo/_all-promo';
 @import '../html/views/booking/_booking';
 @import '../html/views/bottom-plan/_bottom-plan';
-// @import '../html/views/cases/_cases';
 @import '../html/views/center/_center';
-@import '../html/views/conditions/_conditions';
+@import '../html/views/conditions-promo/_conditions-promo';
 @import '../html/views/contacts-hotels/_contacts-hotels';
 @import '../html/views/choose/_choose';
 @import '../html/views/course/_course';
 @import '../html/views/form-recommended/_form-recommended';
+@import '../html/views/gift-promo/_gift-promo';
 @import '../html/views/hero-corp/_hero-corp';
 @import '../html/views/hero-distance/_hero-distance';
 @import '../html/views/hero-hotels/_hero-hotels';
 @import '../html/views/hero-navigation/_hero-navigation';
 @import '../html/views/hero-prof/_hero-prof';
+@import '../html/views/hero-promo/_hero-promo';
 @import '../html/views/hotels/_hotels';
 @import '../html/views/mailing/_mailing';
 @import '../html/views/map/_map';
@@ -141,7 +141,6 @@ svg {
 @import '../html/views/plan/_plan';
 @import '../html/views/popup-dates/_popup-dates';
 @import '../html/views/programms/_programms';
-@import '../html/views/promo/_promo';
 @import '../html/views/receive/_receive';
 @import '../html/views/route/_route';
 @import '../html/views/rubrics/_rubrics';

@@ -1,0 +1,76 @@
+-
+  percents = [
+    {
+      percent: 5,
+      text: 'Вы отправляете на обучение  <nobr>4–10 человек</nobr> в течение года',
+    },
+    {
+      percent: 7,
+      text: 'Вы отправляете на обучение <nobr>11–15 человек</nobr> в течение года',
+    },
+    {
+      percent: 10,
+      text: 'Вы отправляете на обучение <nobr>от 16 человек</nobr> в течение года',
+    }
+  ]
+
+  icons = [
+    {
+      icon: 'location',
+      text: 'Действие программы распространяется на стандартные курсы и тренинги (как очные, так и онлайн).'
+    },
+    {
+      icon: 'tablet',
+      text: 'Программа скидок закрепляется за предприятием и действует автоматически после поступления полной предоплаты за первых 3 слушателей (начиная с 4-го участника).'
+    },
+    {
+      icon: 'calendar-check',
+      text: 'Программа скидок действует в течение одного календарного года. Условия акции не переносятся на следующий год. Участие в программе необходимо подтверждать ежегодно.'
+    },
+    {
+      icon: 'x-close',
+      text: 'Скидки по накопительной программе не суммируются с другими действующими акциями и спецпредложениями.'
+    },
+    {
+      icon: 'repeat',
+      text: 'В расчет идут все слушатели от предприятия, которые обучились в ЦНТИ ПРОГРЕСС в течение текущего календарного года. При этом перерасчет стоимости обучения ранее приехавших слушателей не производится.'
+    },
+  ]
+
+
+section.promo-conditions.section
+  .container
+    .col3.n2contents
+      h2.t1d.n2hide Важные условия участия
+      .col7.n2hide
+        .r5.aic.x2ais
+          svg.i24.x2i20
+            use(xlink:href='img/sprite/symbols.svg#mail')
+          p.p1 Чтобы вступить в программу, скачайте заявку, заполните и отправьте её на почту #[a.link(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru] 
+        a.link.t2(href="https://img.cntiprogress.ru/image/1_cnti/CNTI_Form_discounts_2025.doc") Заполнить заявку на участие
+      .row.x2aie.x3contents
+        section.promo-conditions__main.col3.x2od1.x3od-1.n1w5.n3w6.bgs
+          .col7
+            h3.t2d Система прогрессивных скидок для компаний
+            p.td.p1 Больше слушателей — больше скидка
+          .col5.n2contents
+            each percent, i in percents
+              .r15.x2cg10.aic
+                .promo-conditions__percent.ta.a1 !{percent.percent}%
+                p.p1 !{percent.text}
+              if i !== percents.length-1
+                hr.bbd2s
+        .promo-conditions__conditions.col3
+          p.t1d.x2hide Важные условия участия
+          .col7.x2hide
+            .r5.aic
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#mail')
+              p.p1 Чтобы вступить в программу, скачайте заявку, заполните и отправьте её на почту #[a.link(href="mailto:client@cntiprogress.ru") client@cntiprogress.ru] 
+            a.link.t2(href="https://img.cntiprogress.ru/image/1_cnti/CNTI_Form_discounts_2025.doc") Заполнить заявку на участие
+          .col5
+            each icon in icons
+              .r5.aic.x2ais
+                svg.i24.x2i20
+                  use(xlink:href=`img/sprite/symbols.svg#${icon.icon}`)
+                p.p1 !{icon.text}

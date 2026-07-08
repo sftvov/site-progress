@@ -56,11 +56,11 @@
     }
     &--company {
       @media (min-width: $md1+px) {
-        width: calc(var(--3columns) - 26px);
+        width: calc(var(--5columns) - 26px);
       }
-      @include n2w3;
+      @include n2w4;
       @media (min-width: $md3+px) {
-        width: calc(var(--4columns) - 26px);
+        width: calc(var(--5columns) - 26px);
       }
       @media (min-width: $md4+px) {
         width: calc(var(--2columns) - 26px);

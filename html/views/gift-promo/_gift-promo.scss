@@ -1,0 +1,49 @@
+.promo-gift {
+  &__main {
+    @media (min-width: $md1+px) {
+      padding-inline: 50px;
+    }
+    @media (min-width: $md2+px) {
+      padding-inline: 40px;
+    }
+    padding-inline: 20px;
+  }
+  &__top {
+    @media (max-width: $md3+px) {
+      @include w;
+    }
+  }
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    @media (max-width: $md2+px) {
+      width: 51px;
+      height: 51px;
+    }
+    @media (max-width: $md4+px) {
+      @include r;
+    }
+  }
+  &__separator {
+    @media (min-width: $md4+px) {
+      height: 50px;
+      @include rbd2l;
+    }
+    @media (max-width: $md4+px) {
+      display: block;
+      width: 100%;
+      @include bbd2l;
+    }
+  }
+  &__attention-block {
+    @media (max-width: $md4+px) {
+      @include r;
+    }
+  }
+  &__attention {
+    @media (max-width: $md3+px) {
+      margin-left: auto;
+    }
+  }
+}

@@ -54,6 +54,15 @@
   @include cg40;
 }
 
+@mixin x1cg15 {
+  @media (max-width: $md1+px) {
+    column-gap: 15px;
+  }
+}
+.x1cg15 {
+  @include x1cg15;
+}
+
 @mixin x2cg5 {
   @media (max-width: $md2+px) {
     column-gap: 5px;
@@ -80,6 +89,15 @@
   @include x2cg30;
 }
 
+@mixin x3cg5 {
+  @media (max-width: $md3+px) {
+    column-gap: 5px;
+  }
+}
+.x3cg5 {
+  @include x3cg5;
+}
+
 @mixin x3cg7 {
   @media (max-width: $md3+px) {
     column-gap: 7px;
@@ -87,6 +105,17 @@
 }
 .x3cg7 {
   @include x3cg7;
+}
+
+
+
+@mixin x4cg15 {
+  @media (max-width: $md4+px) {
+    column-gap: 15px;
+  }
+}
+.x4cg15 {
+  @include x4cg15;
 }
 
 @mixin r5 {
@@ -183,6 +212,15 @@
   @include x3ais;
 }
 
+@mixin x4ais {
+  @media (max-width: $md4+px) {
+    align-items: flex-start;
+  }
+}
+.x4ais {
+  @include x4ais;
+}
+
 @mixin aic {
   align-items: center;
 }
@@ -222,6 +260,15 @@
 }
 .aie {
   @include aie;
+}
+
+@mixin x2aie {
+  @media (max-width: $md2+px) {
+    align-items: flex-end;
+  }
+}
+.x2aie {
+  @include x2aie;
 }
 
 @mixin x3aie {
@@ -297,6 +344,24 @@
 }
 .jce {
   @include jce;
+}
+
+@mixin x3jcs {
+  @media (max-width: $md3+px) {
+    justify-content: flex-start;
+  }
+}
+.x3jcs {
+  @include x3jcs;
+}
+
+@mixin x4jcs {
+  @media (max-width: $md4+px) {
+    justify-content: flex-start;
+  }
+}
+.x4jcs {
+  @include x4jcs;
 }
 
 @mixin fs {
@@ -419,6 +484,13 @@
   @include g1;
 }
 
+@mixin g2- {
+  row-gap: $L;
+}
+.g2- {
+  @include g2-;
+}
+
 @mixin g2 {
   row-gap: var(--S2);
 }
@@ -494,6 +566,15 @@
   @extend .g1;
 }
 
+@mixin col2- {
+  @include col;
+  @include g2-;
+}
+.col2- {
+  @extend .col;
+  @extend .g2-;
+}
+
 @mixin col2 {
   @include col;
   @include g2;
@@ -557,6 +638,15 @@
   @extend .g8;
 }
 
+@mixin x2od1 {
+  @media (max-width: $md2+px) {
+    order: 1;
+  }
+}
+.x2od1 {
+  @include x2od1;
+}
+
 @mixin x3od1 {
   @media (max-width: $md3+px) {
     order: 1;
@@ -565,6 +655,24 @@
 .x3od1 {
   @include x3od1;
 }
+
+@mixin x3od-1 {
+  @media (max-width: $md3+px) {
+    order: -1;
+  }
+}
+.x3od-1 {
+  @include x3od-1;
+}
+
+// @mixin x4od1 {
+//   @media (max-width: $md4+px) {
+//     order: 1;
+//   }
+// }
+// .x4od1 {
+//   @include x4od1;
+// }
 
 @mixin x4od-1 {
   @media (max-width: $md4+px) {

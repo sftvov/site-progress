@@ -1,9 +1,8 @@
 %mailing-square {
-  @media (min-width: $md2+px) {
+  display: flex;
+  @media (min-width: $md3+px) {
     &::before {
       content: '';
-      position: absolute;
-      right: 100%;
       display: block;
       width: 40px;
       height: 40px;
@@ -12,34 +11,10 @@
 }
 
 .mailing {
-  &__top {
-    @include adaptiv-value-on('height', 457, 361, $md1, $md2);
-    @include adaptiv-value-on('padding-bottom', 40, 20, $md1, $md2);
-    @media (min-width: $md2+px) {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      background: url(../img/mailing/mailing.png) bottom right / calc(100% - 30px) no-repeat;
-    }
-  }
-
-  &__top-title {
-    @include adaptiv-value-on('margin-right', 165, 66, $md1, $md2);
-    @include adaptiv-value-on('top', 135, 104, $md1, $md2);
-    @media (min-width: $md2+px) {
-      color: #{$text-second};
-      position: absolute;
-    }
-    @media (max-width: $md2+px) {
-      margin-top: #{$XS};
-    }
-  }
-
   &__square {
     &-bright {
       @extend %mailing-square;
-      @media (min-width: $md2+px) {
+      @media (min-width: $md3+px) {
         &::before {
           background-color: #{$bg-bright};
         }
@@ -47,7 +22,7 @@
     }
     &-accent {
       @extend %mailing-square;
-      @media (min-width: $md2+px) {
+      @media (min-width: $md3+px) {
         &::before {
           background-color: #{$bg-accent};
         }

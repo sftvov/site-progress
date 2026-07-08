@@ -81,7 +81,7 @@ $border-light: #{$blue-light}; // повсеместно, разделители
 $border-dark: #{$gray-dark}; // для инпутов
 $border-gray: #{$gray}; // акции, партнеры, пагинация и для инпутов disabled
 $border-invalid: #{$red}; // инпут ошибка
-// $border-second: #{$white};
+$border-second: #{$white}; // на промо разделитель на голубом фоне
 
 $fontFamily: 'Roboto';
 $fz: 14;
