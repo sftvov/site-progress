@@ -181,8 +181,10 @@ const handleResize = debounce(() => {
   calculateClientWidth();
   calculateScrollbarWidth();  
   headerHeight();
-  updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
-}, 250);
+  setTimeout(() => {
+    updateIndicator('._tabs', '._tabs-title._active', '._tabs-indicator');
+  }, 200);  
+}, 200);
 
 // Throttle для скролла
 const handleScroll = throttle(() => {

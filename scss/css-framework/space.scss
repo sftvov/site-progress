@@ -1,3 +1,10 @@
+@mixin mba {
+  margin-bottom: auto;
+}
+.mba {
+  @include mba;
+}
+
 @mixin m1 {
   margin-top: var(--S1);
 }

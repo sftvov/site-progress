@@ -173,6 +173,24 @@
   }
 }
 
+.play {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 80px;
+    height: 80px;
+    background: url(/img/icons/play.svg) 100%/cover;
+    @media (max-width: $md2+px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
 // .calendar {
 //   &__table {
 //     width: 100%;

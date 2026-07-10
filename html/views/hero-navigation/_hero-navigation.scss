@@ -6,7 +6,13 @@
     @media (min-width: $md1+px) {
       width: var(--3columnsG);
     }
-    @include n2w2;
+    @include n2w4;
+    @media (min-width: $md3+px) {
+      width: var(--3columnsG);
+    }
+    @media (min-width: $md4+px) {
+      width: var(--column);
+    }
   }
   &__text {
     @media (min-width: $md1+px) {
