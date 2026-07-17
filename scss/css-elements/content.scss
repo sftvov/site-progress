@@ -62,7 +62,6 @@
 }
 
 .announcement {
-  padding-bottom: #{$M};
   @media (min-width: $md3+px) {
     padding: var(--S1) 0;
   }
