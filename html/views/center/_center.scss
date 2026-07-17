@@ -1,12 +1,13 @@
-.center {
-  &__item {
-    @media (max-width: $md2+px) AND (min-width: $md3+px) {
-      row-gap: #{$XS};
-    }
+
+
+.x3ar244_163 {
+  @media (max-width: $md3+px) {
+    aspect-ratio: 244/163;
   }
-  &__num-row {
-    @media (max-width: $md1+px) AND (min-width: $md3+px) {
-      margin-left: var(--3columnsG);
-    }
+}
+
+.x4ar140_84 {
+  @media (max-width: $md4+px) {
+    aspect-ratio: 140/84;
   }
 }

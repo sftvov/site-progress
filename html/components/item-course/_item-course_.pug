@@ -124,9 +124,13 @@ mixin courseItemBase(course, config)
       footer.row.wrap(class=config.dateClass)
         +courseDates(course, config)
         if config.moreLink
-          a.acb-link.link-b.r15.aic(class=config.moreLink.class, href=config.moreLink.link || course.href || "#") 
-            span.b1.wsn Узнать всё о курсе
-            +arr()
+          .r.jcs(class=config.moreLink.class)
+            a.fb-link.sb-link.link-b.t2.ttu.wsn.r.aic(href=config.moreLink.link || course.href || "#")
+              | Узнать всё о курсе
+              svg.t-1.i24
+                use(xlink:href='img/sprite/symbols.svg#triangle-right')
+
+
 
 
 

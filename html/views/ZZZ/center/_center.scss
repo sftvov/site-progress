@@ -1,0 +1,12 @@
+.center {
+  &__item {
+    @media (max-width: $md2+px) AND (min-width: $md3+px) {
+      row-gap: #{$XS};
+    }
+  }
+  &__num-row {
+    @media (max-width: $md1+px) AND (min-width: $md3+px) {
+      margin-left: var(--3columnsG);
+    }
+  }
+}

@@ -18,3 +18,7 @@
 .deg-90 {
   @include deg-90;
 }
+
+.t-1 {
+  translate: 0 -1px;
+}

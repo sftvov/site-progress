@@ -12,6 +12,13 @@
   @include w;
 }
 
+@mixin h {
+  height: 100%;
+}
+.h {
+  @include h;
+}
+
 // @mixin n1wa {
 //   @media (min-width: $md1+px) {
 //     width: auto;

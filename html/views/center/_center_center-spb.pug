@@ -1,42 +1,47 @@
--
-  centerItems = [
-    {
-      icon: 'pin',
-      title: 'Расположение',
-      text: 'Собственный Учебный центр ЦНТИ ПРОГРЕСС расположен на Васильевском острове — в исторической части Петербурга. Близость выдающихся памятников истории и культуры, знаменитых музеев и театров, уникальная атмосфера петербургских улиц и набережных обогащает процесс обучения яркими эстетическими впечатлениями.',
-    },
-    {
-      icon: 'hand',
-      title: 'Возможности',
-      text: 'Вся территория Учебного центра общей площадью более 1500 кв. метров — зона бесплатного Wi-Fi без ограничений. В холле установлены компьютеры с открытым доступом в Интернет, навигационные стойки с информацией о городе и учебном центре. Из некоторых гостиниц до Учебного центра организован утренний трансфер.',
-    },
-    {
-      icon: 'smile',
-      title: 'Атмосфера',
-      text: 'Решенный в стиле hi-tech эргономичный интерьер Учебного центра создает благоприятную атмосферу для обучения, делового общения и отдыха между занятиями.',
-    },
-  ]
-
 section.center.section#center
   .container
-    h1.title Межотраслевой Учебный центр ЦНТИ ПРОГРЕСС
-    .row.wrap.g2.m2
-      .por.n3w6.x3hide
-        img.poa.bg(src="img/center/spb.jpg" alt="")      
-      img.n3hide.w(src="img/center/spb-m.jpg" alt="")
-      .col2.x1contents
-        .col4.n3w6.w4
-          each item in centerItems
-            article.center__item.col5
-              .r10.aic
-                svg.sd.sw2.i24
-                  use(xlink:href='img/sprite/symbols.svg#' + item.icon)
-                h2.t2d !{item.title}
-              p.p1 !{item.text}
-        .center__num-row.row.wrap.aie.g3
-          .col7.aic.n1w2.n3w3.w2.x4w4
-            p.a1 800
-            p.p1.tac.twb человек мы можем одновременно обучать в нашем центре
-          p.p1.n2w4.n3w5.w2.x4w4 Аудитории, конференц-залы, компьютерные классы Учебного центра оснащены современным мультимедийным презентационным оборудованием, системами кондиционирования, охраны и пожарной безопасности.
+    h1.title.x4tas Межотраслевой Учебный центр ЦНТИ ПРОГРЕСС    
+    +picture(1200, 'img/center/', 'hero', 'png', 'w m3', '', false, [12,12,12,12])(class="r")
+    .col.g.m2
+      section.row.wrap.g
+        +picture(690, 'img/center/', 'gallery1', 'png', 'n3w7 w4', '', false, [7,7,12,12])(class="r")
+        .n3w5.w4.col4.jce.x3od-1
+          h2.tb.t1 Расположение
+          p.p1 Собственный Учебный комплекс ЦНТИ Прогресс расположен на Васильевском острове — в исторической части Петербурга. Близость выдающихся памятников истории и культуры, знаменитых музеев и театров, уникальная атмосфера петербургских улиц и набережных обогащает процесс обучения яркими эстетическими впечатлениями.
+        +picture(384, 'img/center/', 'gallery2', 'png', 'n3w4 w2 h cvr', '', false, [4,'auto'])(class="r")
+        +picture(282, 'img/center/', 'gallery3', 'png', 'n3w3 w2 h cvr', '', false, [3,'auto'])(class="r")
+        +picture(180, 'img/center/', 'gallery4', 'png', 'n3w2 w2 h cvr', '', false, [2,'auto'])(class="r")
+        +picture(282, 'img/center/', 'gallery5', 'png', 'n3w3 w2 h cvr', '', false, [3,'auto'])(class="r")
+      section.row.wrap.g
+        .n3w4.w4.col4.jce.x3od-1
+          h2.tb.t1 Возможности
+          p.p1 Вся территория Учебного комплекса общей площадью более 1500 кв. метров — зона бесплатного Wi-Fi без ограничений. В холле установлены компьютеры с открытым доступом в Интернет, навигационные стойки с информацией о городе и учебном комплексе.
+          p.p1 Из некоторых гостиниц до Учебного комплекса организован утренний трансфер.
+        +picture(304, 'img/center/', 'gallery6', 'png', 'n3w4 w2 h cvr', '', true, [4,'auto'])(class="r")
+        +picture(304, 'img/center/', 'gallery7', 'png', 'n3w4 w2 h cvr', '', true, [4,'auto'])(class="r")
+      section.row.wrap.g
+        +picture(385, 'img/center/', 'gallery8', 'png', 'n3w5 w2 h x3ar244_163 cvr', '', true, [5,'auto'])(class="r")
+        +picture(223, 'img/center/', 'gallery9', 'png', 'n3w3 w2 h x3ar244_163 cvr', '', true, [3,'auto'])(class="r")
+        .n3w4.w4.col4.jce.x3od-1
+          h2.tb.t1 Атмосфера
+          p.p1 Решенный в стиле hi-tech эргономичный интерьер Учебного комплекса создает благоприятную атмосферу для обучения, делового общения и отдыха между занятиями.
+        +picture(304, 'img/center/', 'gallery10', 'png', 'n3w4 w1 x4w2 h x4ar140_84 cvr', '', true, [4,'auto'])(class="r x4hide")
+        picture.r.n4hide
+          source(type='image/webp', sizes='(min-width: 320px) auto, 140px', srcset='img/center/gallery19@0.6x.webp 84w, img/center/gallery19@1.2x.webp 168w, img/center/gallery19@1.8x.webp 252w, img/center/gallery19@2.4x.webp 336w')
+          img.x4w2.x4ar140_84.cvr(src='img/center/gallery19.png', alt='', width='140', height='auto', loading='lazy')
+        +picture(223, 'img/center/', 'gallery11', 'png', 'n3w3 w1 h cvr', '', true, [3,'auto'])(class="r x4hide")
+        +picture(385, 'img/center/', 'gallery12', 'png', 'n3w5 w2 x4w2 h x4ar140_84 cvr', '', true, [5,'auto'])(class="r")
+      section.row.wrap.g
+        .n3w5.w4.col4.jce.x3od-1
+          .col7
+            h2.tb.t1 800 человек
+            p.t2d мы можем одновременно обучать в нашем комплексе
+          p.p1 Аудитории, конференц-залы, компьютерные классы Учебного комплекса оснащены современным мультимедийным презентационным оборудованием, системами кондиционирования, охраны и пожарной безопасности.
+        +picture(690, 'img/center/', 'gallery13', 'png', 'n3w3 w2 x4w2 h cvr', '', true, [3,'auto'])(class="r")
+        +picture(384, 'img/center/', 'gallery14', 'png', 'n3w4 w2 x4w2 h cvr', '', true, [4,'auto'])(class="r")
+        +picture(282, 'img/center/', 'gallery15', 'png', 'n3w4 w3 x4w4 h cvr', '', true, [4,'auto'])(class="r")
+        +picture(180, 'img/center/', 'gallery16', 'png', 'n3w2 w1 h cvr', '', true, [2,'auto'])(class="r x4hide")
+        +picture(180, 'img/center/', 'gallery17', 'png', 'n3w4 w3 x4w4 h cvr', '', true, [4,'auto'])(class="r x3od1")
+        +picture(282, 'img/center/', 'gallery18', 'png', 'n3w2 w1 h cvr', '', true, [2,'auto'])(class="r x4hide")
 
 //- http://localhost:1709/page-center-spb.html#center

@@ -12,81 +12,6 @@
   @include i;
 }
 
-@mixin ta {
-  color: #{$text-accent};
-}
-.ta {
-  @include ta;
-}
-
-@mixin tb {
-  color: #{$text-bright};
-}
-.tb {
-  @include tb;
-}
-
-@mixin td {
-  color: #{$text-dark};
-}
-.td {
-  @include td;
-}
-
-@mixin tl {
-  color: #{$text-light};
-}
-.tl {
-  @include tl;
-}
-
-@mixin ts {
-  color: #{$text-second};
-}
-.ts {
-  @include ts;
-}
-
-@mixin hover {
-  @include dur;
-  &:hover,
-  &:focus-visible {
-    color: #{$hover};
-  }
-}
-.hover {
-  @include hover;
-}
-
-@mixin hover-accent {
-  @include dur;
-  &:hover,
-  &:focus-visible {
-    color: #{$hover-accent};
-  }
-}
-.hover-accent {
-  @include hover-accent;
-}
-
-@mixin link {
-  @include ta;
-  @include hover;
-}
-.link {
-  @extend .ta;
-  @extend .hover;
-}
-
-@mixin link-b {
-  @include tb;
-  @include hover-accent;
-}
-.link-b {
-  @extend .tb;
-  @extend .hover-accent;
-}
-
 @mixin tac {
   text-align: center;
 }
@@ -138,6 +63,20 @@
 .tae {
   @include tae;
 }
+
+@mixin vat {
+  vertical-align: top;
+}
+.vat {
+  @include vat;
+}
+
+// @mixin vam {
+//   vertical-align: middle;
+// }
+// .vam {
+//   @include vam;
+// }
 
 @mixin ttu {
   text-transform: uppercase;

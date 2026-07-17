@@ -17,7 +17,7 @@
         }
         @media (max-width: $md2+px) {
           &::before {
-            content: url(../img/icons/checkbox-empty-l-red.svg);
+            content: url(../img/icons/checkbox-empty-m-red.svg);
           }
         }
         & .checkbox__span{
@@ -34,6 +34,7 @@
       @include dur;
       content: url(../img/icons/checkbox-empty-l.svg);
       line-height: 0;
+      @include i24;
     }
     &::after {
       @include dur;
@@ -46,6 +47,7 @@
     @media (max-width: $md2+px) {
       &::before {
         content: url(../img/icons/checkbox-empty-m.svg);
+        @include i20;
       }
       &::after {
         content: url(../img/icons/checkbox-check-m.svg);
@@ -59,13 +61,13 @@
     }
     &::after {
       content: url(../img/icons/checkbox-check-l-blue.svg);
-    }
+    } 
     @media (max-width: $md2+px) {
       &::before {
-        content: url(../img/icons/checkbox-empty-l-blue.svg);
+        content: url(../img/icons/checkbox-empty-m-blue.svg);
       }
       &::after {
-        content: url(../img/icons/checkbox-check-l-blue.svg);
+        content: url(../img/icons/checkbox-check-m-blue.svg);
       }
     }
   }

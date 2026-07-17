@@ -39,6 +39,15 @@
   @include i20;
 }
 
+// @mixin i22 {
+//   @include fs;
+//   width: 22px;
+//   height: 22px;
+// }
+// .i22 {
+//   @include i22;
+// }
+
 @mixin i24 {
   @include fs;
   width: 24px;
@@ -46,6 +55,15 @@
 }
 .i24 {
   @include i24;
+}
+
+@mixin i60 {
+  @include fs;
+  width: 60px;
+  height: 60px;
+}
+.i60 {
+  @include i60;
 }
 
 @mixin x1i20 {
@@ -103,62 +121,6 @@
   @include x4i40;
 }
 
-@mixin sd {
-  stroke: #{$text-dark};
-}
-.sd {
-  @include sd;
-}
-
-@mixin ss {
-  stroke: #{$text-second};
-}
-.ss {
-  @include ss;
-}
-
-@mixin sb {
-  stroke: #{$text-bright};
-}
-.sb {
-  @include sb;
-}
-
-@mixin sa {
-  stroke: #{$text-accent};
-}
-.sa {
-  @include sa;
-}
-
-@mixin s-hover {
-  &:hover,
-  &:focus-visible {
-    stroke: #{$hover};
-  }
-}
-.s-hover {
-  @include s-hover;
-}
-
-@mixin sa-link {
-  @include dur;
-  @include sa;
-  @include s-hover;
-}
-.sa-link {
-  @include sa-link;
-}
-
-@mixin ss-link {
-  @include dur;
-  @include ss;
-  @include s-hover;
-}
-.ss-link {
-  @include ss-link;
-}
-
 // .sw1_5 {
 //   stroke-width: 1.5;
 // }
@@ -168,4 +130,11 @@
 }
 .sw2 {
   @include sw2;
+}
+
+@mixin sw3 {
+  stroke-width: 3;
+}
+.sw3 {
+  @include sw3;
 }

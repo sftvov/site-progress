@@ -12,8 +12,11 @@ section.contact-map.section#map
             br
             a(href="tel:88003338844") 8 (800) 333-88-44
           p.p1 Пн-Пт с 8:00 до 18:00 (Мск)
-        a.contact-map__info-link.acb.hover.t2d.wsn.r15.aic(href="#spb")  Как добраться
-          +arr
+        a.contact-map__info-link.hover.t2d.wsn.r15.aic(href="#spb")
+          span.r.aic
+            | Как добраться
+            svg.fb.sb.i24
+              use(xlink:href='img/sprite/symbols.svg#triangle-right')
 include _map_contacts-script
 
 //- http://localhost:1709/page-contacts.html#map

@@ -1,0 +1,202 @@
+@mixin ta {
+  color: #{$text-accent};
+}
+.ta {
+  @include ta;
+}
+
+@mixin tb {
+  color: #{$text-bright};
+}
+.tb {
+  @include tb;
+}
+
+@mixin td {
+  color: #{$text-dark};
+}
+.td {
+  @include td;
+}
+
+@mixin tl {
+  color: #{$text-light};
+}
+.tl {
+  @include tl;
+}
+
+@mixin ts {
+  color: #{$text-second};
+}
+.ts {
+  @include ts;
+}
+
+@mixin hover {
+  @include dur;
+  &:hover,
+  &:focus-visible {
+    color: #{$hover};
+  }
+}
+.hover {
+  @include hover;
+}
+
+@mixin hover-accent {
+  @include dur;
+  &:hover,
+  &:focus-visible {
+    color: #{$hover-accent};
+  }
+}
+.hover-accent {
+  @include hover-accent;
+}
+
+@mixin link {
+  @include ta;
+  @include hover;
+}
+.link {
+  @extend .ta;
+  @extend .hover;
+}
+
+@mixin link-b {
+  @include tb;
+  @include hover-accent;
+}
+.link-b {
+  @extend .tb;
+  @extend .hover-accent;
+}
+
+
+@mixin sd {
+  stroke: #{$text-dark};
+}
+.sd {
+  @include sd;
+}
+
+@mixin ss {
+  stroke: #{$text-second};
+}
+.ss {
+  @include ss;
+}
+
+@mixin sb {
+  stroke: #{$text-bright};
+}
+.sb {
+  @include sb;
+}
+
+@mixin sa {
+  stroke: #{$text-accent};
+}
+.sa {
+  @include sa;
+}
+
+@mixin s-hover {
+  &:hover,
+  &:focus-visible {
+    stroke: #{$hover};
+  }
+}
+.s-hover {
+  @include s-hover;
+}
+
+@mixin sa-hover {
+  &:hover,
+  &:focus-visible {
+    stroke: #{$hover-accent};
+  }
+}
+.sa-hover {
+  @include sa-hover;
+}
+
+@mixin sa-link {
+  @include dur;
+  @include sa;
+  @include s-hover;
+}
+.sa-link {
+  @include sa-link;
+}
+
+@mixin sb-link {
+  @include dur;
+  @include sb;
+  @include sa-hover;
+}
+.sb-link {
+  @include sb-link;
+}
+
+@mixin ss-link {
+  @include dur;
+  @include ss;
+  @include s-hover;
+}
+.ss-link {
+  @include ss-link;
+}
+
+@mixin fb {
+  fill: #{$text-bright};
+}
+.fb {
+  @include fb;
+}
+
+@mixin fa {
+  fill: #{$text-accent};
+}
+.fa {
+  @include fa;
+}
+
+@mixin f-hover {
+  &:hover,
+  &:focus-visible {
+    fill: #{$hover};
+  }
+}
+.f-hover {
+  @include f-hover;
+}
+
+@mixin fa-hover {
+  &:hover,
+  &:focus-visible {
+    fill: #{$hover-accent};
+  }
+}
+.fa-hover {
+  @include fa-hover;
+}
+
+@mixin fb-link {
+  @include dur;
+  @include fb;
+  @include fa-hover;
+}
+.fb-link {
+  @include fb-link;
+}
+
+@mixin fa-link {
+  @include dur;
+  @include fa;
+  @include f-hover;
+}
+.fa-link {
+  @include fa-link;
+}

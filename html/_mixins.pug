@@ -69,7 +69,7 @@ mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClas
       .map(([scale, w]) => `${folder}${baseName}@${scale}.webp ${w}w`)
       .join(', ');
 
-  picture
+  picture&attributes(attributes)
     source(
       type='image/webp'
       sizes=sizesAttr
