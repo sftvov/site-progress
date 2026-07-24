@@ -19,6 +19,16 @@
   @include deg-90;
 }
 
-.t-1 {
+@mixin t-1 {
   translate: 0 -1px;
+}
+.t-1 {
+  @include t-1;
+}
+
+@mixin t-2 {
+  translate: 0 -2px;
+}
+.t-2 {
+  @include t-2;
 }

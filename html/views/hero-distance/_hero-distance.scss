@@ -6,6 +6,7 @@
     @include adaptiv-value-between('margin-top', -76, -57, $md2, $md3);
     @include adaptiv-value-between('margin-top', -65, -46, $md3, $md4);
     @media (max-width: $md4+px) {
+      margin-top: $M;
       padding: #{$M} 0;
     }
   }

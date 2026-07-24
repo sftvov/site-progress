@@ -152,6 +152,12 @@
 .bbd2l {
   @include bbd2l;
 }
+@mixin lbd2l {
+  border-left: 2px solid #{$border-light};
+}
+.lbd2l {
+  @include lbd2l;
+}
 
 @mixin bs2l {
   box-shadow:

@@ -24,10 +24,11 @@ mixin modeTooltip(props = {})
       tag = 'span',
       text = '',
       toolTipText = '',
+      toolTipTextClass = '',
     } = props
 
   span.mode&attributes(attributes)    
     #{tag}.b1(class = (tag === 'a') ? 'mode__link' : false) !{text}
     .tooltip
-      span.tooltip__text !{toolTipText}
+      span.tooltip__text(class=toolTipTextClass) !{toolTipText}
       +modeSvg('info')

@@ -1,15 +1,17 @@
 .section#course
   .container
     .row.aic.jcb.bgm.bbd2l#sticky
-      .oh.r.fg
+      .r.fg
         +modeTooltip({
           text: '<span class="x4hide">Очный формат курса</span><span class="n4hide">Очно</span>',
           toolTipText: 'Очные занятия идут параллельно с онлайн-курсом.',
+          toolTipTextClass: 'tooltip__text--left'
         })(class="x4wp50 _active")
         +modeTooltip({
           tag: 'a',
           text: '<span class="x4hide">Онлайн-курс</span><span class="n4hide">Онлайн</span>',
           toolTipText: 'Онлайн-занятия проходят по расписанию очного курса.',
+          toolTipTextClass: 'tooltip__text--right'
         })(class="x4wp50")
       p.t2d.x4hide Код курса: 71473
     .row.x2col.g1

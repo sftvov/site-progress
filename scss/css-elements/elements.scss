@@ -131,8 +131,10 @@
     bottom: calc(100% + $XS + 10px);
     @include r;
     @include jcc;
-    width: 245px;
     padding: 15px 20px;
+    @media (min-width: $md4+px) {
+      width: 245px;
+    }
     &::before {
       content: '';
       z-index: -1;
@@ -152,6 +154,22 @@
       border-top: 8px solid $gray-dark;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
+    }
+    &--right {
+      @media (max-width: $md4+px) {
+        right: -10px;
+        &::after {
+          right: 10px;
+        }
+      }
+    }
+    &--left {
+      @media (max-width: $md4+px) {
+        left: -10px;
+        &::after {
+          left: 10px;
+        }
+      }
     }
   }
 }
@@ -183,11 +201,19 @@
     translate: -50% -50%;
     width: 80px;
     height: 80px;
-    background: url(/img/icons/play.svg) 100%/cover;
+    background: url(/img/icons/play.svg) 100% / cover;
     @media (max-width: $md2+px) {
       width: 40px;
       height: 40px;
     }
+  }
+}
+
+.play-gallery {
+  @extend .play;
+  &::after {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -376,24 +402,6 @@
 //   &::after {
 //     right: -40px;
 //     box-shadow: -20px -20px 0 0 var(--bg-cutout);
-//   }
-// }
-
-// .play {
-//   &::after {
-//     content: '';
-//     @extend .dur;
-//     position: absolute;
-//     left: 50%;
-//     top: 50%;
-//     translate: -50% -50%;
-//     width: 64px;
-//     height: 64px;
-//     background: url(../img/icons/play.svg) 100% 100% / contain no-repeat;
-//     @media (max-width: $md3+px) {
-//       width: 37px;
-//       height: 37px;
-//     }
 //   }
 // }
 

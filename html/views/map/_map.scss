@@ -28,6 +28,7 @@
     }
     &::before {
       content: '';
+      @include t-2;
       display: block;
       flex-shrink: 0;
       width: 16px;

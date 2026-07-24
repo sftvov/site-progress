@@ -7,6 +7,7 @@ mixin courseInfo(course, options = {})
       showLocation: options.showLocation || false,
       showPrice: options.showPrice || false, 
       showHours: options.showHours || false,
+      showLink: options.showLink || false,
       type: options.type || false,
     }
 
@@ -63,7 +64,7 @@ mixin courseInfo(course, options = {})
           | #{course.date}
 
       //- Ссылка на другой формат
-      if course.otherFormatLink
+      if course.otherFormatLink || config.showLink
         a.course-info__link(href=course.otherFormatLink || "#") 
           svg.i20
             use(xlink:href=`img/sprite/symbols.svg#${config.isOnline ? 'building' : 'wifi'}`)

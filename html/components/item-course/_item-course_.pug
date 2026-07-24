@@ -89,7 +89,30 @@ include item-course-parts/course-info/__course-info_
       price: false,
       dateClass: 'ais wrap g3 n2w2 n3w3 x3w4',
       moreLink: {
-        class: 'wrap g5 w x3w2',
+        class: 'wrap g5 w x3w2 x4w4',
+        link: '',
+      },
+    },
+    relatingArchive: {
+      wrapperClass: '',
+      header: false,
+      format: false,
+      info: {
+        isOnline: false,
+        class: 'n1w10 n3w9 w4',
+        type: 'Курс повышения квалификации',
+        titleLevel: 'h2',
+        showLocation: true,
+        showPrice: true,
+        showHours: false,
+        showLink: true,
+      },
+      date: 'w2',
+      code: false,
+      price: false,
+      dateClass: 'ais wrap g3 n1w2 n3w3 x3w4',
+      moreLink: {
+        class: 'wrap g5 w x3w2 x4w4',
         link: '',
       },
     },
@@ -156,3 +179,6 @@ mixin courseItemSearch(course, isOnline)
 //- Курсы в карточке курса по той же теме
 mixin courseItemRelating(course)
   +courseItemBase(course, configs.relating)(class="course-item--relating")&attributes(attributes)
+
+mixin courseItemRelatingArchive(course)
+  +courseItemBase(course, configs.relatingArchive)&attributes(attributes)
