@@ -31,6 +31,7 @@
     opacity: 0;
     visibility: hidden;
     @include w;
+    min-width: 140px;
     padding-top: 10px;
   }
 
