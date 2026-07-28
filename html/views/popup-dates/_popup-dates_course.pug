@@ -9,7 +9,7 @@ section.popup.popup-dates
         .col7
           p.t1.ta Запросить другие даты
           p.p1 Оставьте контактные данные, и мы сообщим о новой дате проведения семинара.
-        form.popup-dates__form.col5 
+        form.popup-dates__form.col5._invalid
           +inputWrapper({
             label: 'Как к вам обращаться?',
             placeholder: 'Иван Иванович',
@@ -32,9 +32,26 @@ section.popup.popup-dates
             fieldType: 'textarea',
             placeholder: '14 июня 2027 года, 4 человека'
           })
-          button(type="submit").button-primary Отправить
+          p.ti.p2._invalid__el Заполните данные корректно
+          button(type="submit").button-primary Сообщите мне о новой дате
           +checkbox({
             label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
             checked: true,
-            blueWrapper: true
+            blueWrapper: true,
+            required: true,
           })
+        a.link.t2._popup-link(href="#success") Попап успешной отправки формы
+
+section.popup.popup-success
+  .container.popup-dates__container    
+    .popup__body.popup-dates__body
+      button.popup-dates__close-btn._popup-close(aria-label='Закрыть')
+        svg.popup__close-svg
+          use(xlink:href='img/sprite/symbols.svg#x-close')
+      .col3.aic
+        svg.sa.i96
+          use(xlink:href='img/sprite/symbols.svg#check')
+        .col7.aic
+          p.t1 Спасибо! 
+          p.t1 Ваша заявка принята
+        

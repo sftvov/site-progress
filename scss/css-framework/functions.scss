@@ -6,6 +6,12 @@ body {
   }
 }
 
+._hidden {
+  &:not(._active) {
+    display: none;
+  }
+}
+
 ._tabs-blocks {
   @include por;
 }
@@ -19,6 +25,12 @@ body {
     opacity: 0;
     visibility: hidden;
     width: 100%;
+  }
+}
+
+._invalid:not(:has(input:user-invalid)) {
+  & ._invalid__el {
+    display: none;
   }
 }
 
@@ -94,31 +106,12 @@ body {
 //   }
 // }
 
-// ._hidden {
-//   &:not(._active) {
-//     display: none;
-//   }
-// }
-
 // ._hidden-title {
 // 	overflow: hidden;
 // 	position: absolute;
 // 	left: 0;
 // 	width: 0;
 // 	height: 0;
-// }
-
-// ._loading {
-// 	content: '';
-// 	z-index: 100;
-// 	opacity: 0;
-// 	visibility: hidden;
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	width: 100vw;
-// 	height: 100vh;
-// 	background: var(--dark) url('../img/icons/loading.gif') center / 50px no-repeat;
 // }
 
 #sticky {

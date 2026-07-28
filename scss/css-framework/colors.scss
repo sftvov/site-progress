@@ -5,6 +5,13 @@
   @include ta;
 }
 
+@mixin ti {
+  color: #{$text-invalid};
+}
+.ti {
+  @include ti;
+}
+
 @mixin tb {
   color: #{$text-bright};
 }

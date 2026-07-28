@@ -66,6 +66,15 @@
   @include i60;
 }
 
+@mixin i96 {
+  @include fs;
+  width: 96px;
+  height: 96px;
+}
+.i96 {
+  @include i96;
+}
+
 @mixin x1i20 {
   @include fs;
   @media (max-width: $md1+px) {
@@ -119,6 +128,13 @@
 }
 .x4i40 {
   @include x4i40;
+}
+
+@mixin sw1 {
+  stroke-width: 1;
+}
+.sw1 {
+  @include sw1;
 }
 
 // .sw1_5 {
