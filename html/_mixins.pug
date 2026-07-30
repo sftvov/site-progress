@@ -85,7 +85,7 @@ mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClas
     )
 
 
-mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, sources = [{ max: 539.95, key: 'x4', sizes: 'calc(100vw - 20px)', width: 320 },{ max: 767.95, key: 'x3', sizes: 'calc(100vw - 32px)', width: 540 },{ max: 1031.95, key: 'x2', sizes: 'calc(100vw - 32px)', width: 768 },{ max: 1279.95, key: 'x1', sizes: 'calc(100vw - 80px)', width: 1032 }], defaultSizes = [])
+mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, sources = [{ max: 539.95, key: 'x4', sizes: 'calc(100vw - 20px)', width: 320, columns: undefined },{ max: 767.95, key: 'x3', sizes: 'calc(100vw - 32px)', width: 540, columns: undefined },{ max: 1031.95, key: 'x2', sizes: 'calc(100vw - 32px)', width: 768, columns: undefined },{ max: 1279.95, key: 'x1', sizes: 'calc(100vw - 80px)', width: 1032, columns: undefined }], defaultSizes = [])
   -
     // Функция для расчета ширины для разных плотностей
     function getWidths(baseWidth) {
@@ -95,7 +95,19 @@ mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', i
         '1.8x': Math.ceil(baseWidth * 1.8),
         '2.4x': Math.ceil(baseWidth * 2.4)
       };
-    }    
+    }
+    
+    // Функция для расчета ширины по колонкам (из первого миксина)
+    function getColumnWidth(n, field) {
+      if (typeof n === 'string') return n;
+      if (n === 12) return `calc(100vw - ${field}px)`;
+      if (n === 6) return `calc((100vw - ${field - 20}px) / 2 - 20px)`;
+      if (n === 4) return `calc((100vw - ${field - 20}px) / 3 - 20px)`;
+      if (n === 3) return `calc((100vw - ${field - 20}px) / 4 - 20px)`;
+      if (n === 2) return `calc((100vw - ${field - 20}px) / 6 - 20px)`;
+      return `calc((100vw - ${field - 20}px) / 12 * ${n} - 20px)`;
+    }
+    
     // Функция для генерации srcset
     function getSrcset(baseName, folder, baseWidth, extension) {
       if (!baseName) return '';
@@ -129,14 +141,54 @@ mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', i
     }
 
     // Фильтруем sources - убираем те, где key === false или key === null
-    const activeSources = sources.filter(s => s.key !== false && s.key !== null);    
+    const activeSources = sources.filter(s => s.key !== false && s.key !== null);
+    
     // Формируем baseName с ключом
     function getFullBaseName(baseName, key) {
       if (!key) return baseName;
       return `${key}${baseName}`;
     }
-  picture
-    each source in activeSources
+    
+    // Обрабатываем sources - преобразуем sizes в колонки если нужно
+    const processedSources = activeSources.map(source => {
+      const processed = { ...source };
+      
+      // Если sizes не строка, считаем как колонки
+      if (source.sizes !== undefined && typeof source.sizes !== 'string') {
+        // Для sizes колонок используем field из source или дефолтный
+        const field = source.field || 20;
+        processed.sizes = getColumnWidth(source.sizes, field);
+      }
+      
+      return processed;
+    });
+    
+    // Аналогично обрабатываем defaultSizes
+    let processedDefaultSizes = defaultSizes;
+    if (defaultSizes && defaultSizes.length > 0) {
+      processedDefaultSizes = defaultSizes.map(item => {
+        const processed = { ...item };
+        if (item.sizes !== undefined && typeof item.sizes !== 'string') {
+          const field = item.field || 20;
+          processed.sizes = getColumnWidth(item.sizes, field);
+        }
+        return processed;
+      });
+      
+      // Пересобираем defaultSizesAttr с обработанными значениями
+      const sortedSizes = [...processedDefaultSizes].sort((a, b) => (a.max || Infinity) - (b.max || Infinity));
+      const fallback = sortedSizes.find(s => !s.max);
+      const withMedia = sortedSizes.filter(s => s.max);
+      const sizesParts = withMedia.map(s => `(max-width: ${s.max}px) ${s.sizes}`);
+      if (fallback) {
+        sizesParts.push(fallback.sizes);
+      } else {
+        sizesParts.push(`${width}px`);
+      }
+      defaultSizesAttr = sizesParts.join(', ');
+    }
+  picture&attributes(attributes)
+    each source in processedSources
       - const fullBaseName = getFullBaseName(baseName, source.key);
       - const srcset = getSrcset(fullBaseName, folder, source.width, extension);
       

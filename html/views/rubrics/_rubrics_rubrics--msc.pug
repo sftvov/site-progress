@@ -1,0 +1,50 @@
+include ../../../data/rubricsArchive
+
+-
+  const rubricsTabs = [
+    {
+      type: 'offline',
+      title: 'Очно',
+      icon: 'building',
+      active: true,
+      modifier: (rubrics) => rubrics
+    },
+    {
+      type: 'online', 
+      title: 'Онлайн',
+      icon: 'wifi',
+      modifier: (rubrics) => rubrics
+        .map(rubric => ({
+          ...rubric,
+          courses: Math.max(0, rubric.courses - 2)
+        }))
+        .filter(rubric => rubric.courses > 0) // убираем рубрики с 0 курсов
+    }
+  ]
+
+section.rubrics.section#rubrics
+  .container
+    ._tabs
+      .por.r.x4jcb.bbd2l
+        .rubrics__indicator.dur.bgs._tabs-indicator
+        each tab in rubricsTabs
+          +mode({ 
+            text: tab.title,          
+            tag: 'button',
+            icon: tab.icon,
+            iconBefore: true,
+          })(class= tab.active ? 'x4w2 _tabs-title _active' : 'x4w2 _tabs-title')
+      ._tabs-blocks.m2
+        each tab in rubricsTabs
+          .rubrics__tab-block._tabs-block(class=tab.active ? '_active' : '')
+            each group in rubricsArchive
+              +branch({
+                title: group.title,
+                color: group.color,
+                tag: 'h2',
+                rubrics: tab.modifier(group.rubrics),
+                link: 'archive-courses.html'
+              })
+
+//- http://localhost:1709/page-main.html#rubrics
+//- http://localhost:1709/page-rubrics.html#rubrics
