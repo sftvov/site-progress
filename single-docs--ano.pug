@@ -1,0 +1,12 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ДОКУМЕНТЫ АНО',
+		breadcrumbs: [
+			'Документы АНО',
+		]
+	})
+
+block content		
+	include html/views/docs/_docs_docsS--ano.pug

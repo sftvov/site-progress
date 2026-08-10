@@ -1,0 +1,12 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'ДОКУМЕНТЫ ЦЕНТР',
+		breadcrumbs: [
+			'Документы Центр',
+		]
+	})
+
+block content		
+	include html/views/docs/_docs_docsS--cen.pug

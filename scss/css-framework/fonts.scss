@@ -24,6 +24,7 @@
 //     text-align: center;
 //   }
 // }
+
 @mixin x2tac {
   @media (max-width: $md2+px) {
     text-align: center;
@@ -46,6 +47,15 @@
 }
 .x4tac {
   @include x4tac;
+}
+
+@mixin x1tas {
+  @media (max-width: $md1+px) {
+    text-align: start;
+  }
+}
+.x1tas {
+  @include x1tas;
 }
 
 @mixin x4tas {

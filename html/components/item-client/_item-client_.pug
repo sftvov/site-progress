@@ -10,13 +10,13 @@ mixin itemClient(props)
     rel=isLink ? 'nofollow' : false,
   )
     .client-item__body
-      img.w.sqr.cnt(
+      img.client-item__img(
         class=isLink ? 'dur' : '',
         src=props.img, 
         alt=`${props.name} – ${props.desc || ''}`
       )
-      hr.bdg
+      hr.bdl
       .hyp.col7
         #{TitleTag}(class=NameClass) !{props.name}
         if props.desc
-          p.p1 !{props.desc}
+          p.p2 !{props.desc}

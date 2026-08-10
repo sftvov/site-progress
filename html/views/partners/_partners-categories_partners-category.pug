@@ -45,38 +45,38 @@ include ../../../data/partnersArchive
     },
   ]
 
-section.section.partners#partners(data-filters)
+.section.partners#partners(data-filters)
   .container
-    .n1o1
-      h1.title Партнеры ЦНТИ ПРОГРЕСС
-      .col5.m2
-        p.p1 ЦНТИ ПРОГРЕСС гордится многолетними партнерскими отношениями с ведущими научными и образовательными учреждениями, отраслевыми институтами, крупнейшими производственными предприятиями и организациями.
+    .col3
+      h1.title Партнеры ЦНТИ&nbsp;ПРОГРЕСС
+      .col7.tac.x1tas
+        p.p1 ЦНТИ&nbsp;ПРОГРЕСС гордится многолетними партнерскими отношениями с ведущими научными и образовательными учреждениями, отраслевыми институтами, крупнейшими производственными предприятиями и организациями.
         p.p1 Мы благодарим наших Интернет-партнеров за плодотворную совместную работу.
-    section.m1.body
+    section.col3.m3.tpd3.tbd2l
       h2.t2d Каталог партнеров:
-      .partners__categories.g7.m3
+      .partners__categories.g7
         each category in categories
           button.partners__category.link.p1(data-filter=category[1].toLowerCase())= category[0]
-      .partners__grid.g3.m1
+      .partners__grid
         each item in partnersArchive
           +itemClient(item)(data-item=item.category[1])
-      .row.jcc
-        button.button-second.n1w2.n3w4.w2.x4w4.m3(data-reset) Свернуть
-    .m1.body
-      .row.wrap.g1.n1o1
-        each sec in bottomInfo
-          section.n1w5.n2w6.n3w12.w4
-            h2.t2d= sec.title
-            if sec.subtitle
-              p.p1.m7= sec.subtitle
-            .col7.m3
-              each row in sec.items
-                .row
-                  p.p2.n3w2.w1.x4w2= row.name
-                  - const tag = row.link ? 'a' : 'p'
-                  #{tag}.p2.n1w3.n3w10.w3.x4w2(
-                    class= row.link ? 'link' : false
-                    href= row.link || false
-                  )= row.text
+      .partners__grid
+        button.button-accent.partners__button(data-reset) Свернуть
+      .tpd3.tbd2l
+        .row.wrap.g1.n1o1
+          each sec in bottomInfo
+            section.n1w5.n2w6.n3w12.w4
+              h2.t2d= sec.title
+              if sec.subtitle
+                p.p1.m7= sec.subtitle
+              .col7.m3
+                each row in sec.items
+                  .row
+                    p.p2.n3w2.w1.x4w2= row.name
+                    - const tag = row.link ? 'a' : 'p'
+                    #{tag}.p2.n1w3.n3w10.w3.x4w2(
+                      class= row.link ? 'link' : false
+                      href= row.link || false
+                    )= row.text
 
 //- http://localhost:1709/page-partners-category.html#partners

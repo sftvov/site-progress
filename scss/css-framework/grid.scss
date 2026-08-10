@@ -1,0 +1,10 @@
+.n3columns3 {
+  @media (min-width: $md3+px) {
+    column-count: 3;
+  }
+}
+.n4columns2 {
+  @media (min-width: $md4+px) {
+    column-count: 2;
+  }
+}

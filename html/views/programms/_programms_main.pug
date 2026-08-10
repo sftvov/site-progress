@@ -28,7 +28,8 @@
           color: 'jade',
         },
       ],
-      class: 'w4'
+      class: 'w4',
+      more: 'Больше курсов'
     },
     {
       title: 'новые программы', 
@@ -82,25 +83,32 @@
           color: 'jade',
         },
       ],
-      class: 'n3w8 w4'
+      class: 'n3w8 w4',
+      more: 'Больше новинок'
     }
   ]
 
 .programms.section#programms
   .container
     .body.row.x3col.g1
-      each section in programmSections
-        section(class=section.class)
-          h2.t1d= section.title
-          .programms__main.m2
-            each group in section.data
-              +branch({
-                color: group.color,
-                title: group.title,
-                date: group.date,
-                content: group.name,
-                link: '#',
-                tag: 'h3'
-              })
+      each section,i in programmSections
+        .col3.jcb
+          section(class=section.class)
+            h2.t1d= section.title
+            .programms__main.m2
+              each group in section.data
+                +branch({
+                  color: group.color,
+                  title: group.title,
+                  date: group.date,
+                  content: group.name,
+                  link: '#',
+                  tag: 'h3'
+                })
+          .r.ais
+            a.fa-link.sa-link.link.t2.r.aic(href="") 
+              | !{section.more}
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#triangle-right')
 
 //- http://localhost:1709/page-main.html#programms

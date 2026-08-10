@@ -6,25 +6,20 @@ include ../../../data/clientsArchive
     desc: ''             
   }));
 
-section.section.partners#partners
+.section.partners#partners
   .container
-    .n1o1
-      h1.title Постоянные клиенты на семинарах ЦНТИ ПРОГРЕСС
-      .col5.m2
-        p.p1 Компании – лидеры современной экономики России и стран СНГ доверяют повышение квалификации своих сотрудников ЦНТИ ПРОГРЕСС.
-        p.p1 #[span.ta Свыше 50 000 компаний] стали нашими клиентами и постоянными партнерами.
-        p.p1 Среди них такие компании, как АК "АЛРОСА", ОАО "КАМАЗ", ОАО "СЕВЕРСТАЛЬ", ООО "Газпром трансгаз", ОАО "Новокузнецкий металлургический комбинат", ОАО "АВТОВАЗ", ОАО "МЕГАФОН" и многие другие.
-        p.p1 #[span.ta Более 20 000 специалистов] и руководителей #[span.ta ежегодно] проходят повышение квалификации в ЦНТИ ПРОГРЕСС.
-      section.col5.m3
-        //- h2.t2.ta Посмотрите видеоотзывы участников семинаров
-        p.p1 В ЦНТИ ПРОГРЕСС уже обучились представители:
-        ul.ul
-          li.ul__li 85 регионов России
-          li.ul__li 14 государств СНГ
-          li.ul__li 5 государств Европы и Северной Америки
-    .partners__grid.g3.m1
-      each item in clientsArchiveFiltered
-        +itemClient(item)
+    .col3(data-items data-start-items-md2=15 data-start-items=12 data-show-items=999)
+      h1.title Постоянные клиенты на семинарах ЦНТИ&nbsp;ПРОГРЕСС
+      .col7.tac.x1tas
+        p.p1 Компании – лидеры современной экономики России и стран СНГ доверяют повышение квалификации своих сотрудников ЦНТИ&nbsp;ПРОГРЕСС.
+        p.p1 За годы работы #[span.ta свыше 50 000 компаний] стали нашими постоянными партнерами по организации обучения своих сотрудников.
+        p.p1 #[span.ta Более 20 000 специалистов] и руководителей #[span.ta ежегодно] проходят повышение квалификации в ЦНТИ&nbsp;ПРОГРЕСС.
+      .partners__grid(data-items-container)
+        each item in clientsArchiveFiltered
+          +itemClient(item)(data-item='')
+      .partners__grid
+        button.button-accent.partners__button(data-items-btn) Показать еще
+        button.button-accent.partners__button(data-items-hide) Свернуть
 
 
 //- http://localhost:1709/page-clients.html#partners

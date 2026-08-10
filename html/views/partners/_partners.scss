@@ -40,13 +40,31 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: var(--gutter);
-    @media (max-width: $md3+px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $S;
+    @media (min-width: $md2+px) {
+      grid-template-columns: repeat(5, 1fr);
     }
-    @media (max-width: $md4+px) {
-      grid-template-columns: 1fr;
+    @media (min-width: $md3+px) {
+      grid-template-columns: repeat(4, 1fr);
     }
+    @media (min-width: $md4+px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    grid-template-columns: repeat(2, 1fr);
+    &:not(:has( ._active)) {
+      display: none;
+    }
+  }
+  &__button {
+    @media (min-width: $md2+px) {
+      grid-column: 3/4;
+    }
+    @media (min-width: $md3+px) {
+      grid-column: 2/4;
+    }
+    @media (min-width: $md4+px) {
+      grid-column: 2/3;
+    }
+    grid-column: 1/3;
   }
 }
