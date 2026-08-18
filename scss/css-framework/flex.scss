@@ -194,12 +194,14 @@
   @include ais;
 }
 
-// @mixin ait {
-//   align-items: stretch;
-// }
-// .ait {
-//   @include ait;
-// }
+@mixin x1ais {
+  @media (max-width: $md1+px) {
+    align-items: flex-start;
+  }
+}
+.x1ais {
+  @include x1ais;
+}
 
 @mixin x2ais {
   @media (max-width: $md2+px) {
@@ -227,6 +229,13 @@
 .x4ais {
   @include x4ais;
 }
+
+// @mixin ait {
+//   align-items: stretch;
+// }
+// .ait {
+//   @include ait;
+// }
 
 @mixin aic {
   align-items: center;
@@ -482,175 +491,6 @@
 }
 .x4wrap {
   @include x4wrap;
-}
-
-
-@mixin g {
-  row-gap: var(--gutter);
-}
-.g {
-  @include g;
-}
-
-@mixin g1 {
-  row-gap: var(--S1);
-}
-.g1 {
-  @include g1;
-}
-
-@mixin g2- {
-  row-gap: $L;
-}
-.g2- {
-  @include g2-;
-}
-
-@mixin g2 {
-  row-gap: var(--S2);
-}
-.g2 {
-  @include g2;
-}
-
-@mixin g3 {
-  row-gap: #{$M};
-}
-.g3 {
-  @include g3;
-}
-
-@mixin g4 {
-  row-gap: var(--S4);
-}
-.g4 {
-  @include g4;
-}
-
-@mixin g5 {
-  row-gap: #{$S};
-}
-.g5 {
-  @include g5;
-}
-
-@mixin g6 {
-  row-gap: var(--S6);
-}
-.g6 {
-  @include g6;
-}
-
-@mixin g7 {
-  row-gap: #{$XS};
-}
-.g7 {
-  @include g7;
-}
-
-@mixin g8 {
-  row-gap: #{$XXS};
-}
-.g8 {
-  @include g8;
-}
-
-@mixin x4g5 {
-  @media (max-width: $md4+px) {
-    @include g5;
-  }
-}
-.x4g5 {
-  @include x4g5;
-}
-
-@mixin col {
-  @include r;
-  flex-direction: column;
-}
-.col {
-  @include col;
-}
-
-@mixin col1 {
-  @include col;
-  @include g1;
-}
-.col1 {
-  @extend .col;
-  @extend .g1;
-}
-
-@mixin col2- {
-  @include col;
-  @include g2-;
-}
-.col2- {
-  @extend .col;
-  @extend .g2-;
-}
-
-@mixin col2 {
-  @include col;
-  @include g2;
-}
-.col2 {
-  @extend .col;
-  @extend .g2;
-}
-
-@mixin col3 {
-  @include col;
-  @include g3;
-}
-.col3 {
-  @extend .col;
-  @extend .g3;
-}
-
-@mixin col4 {
-  @include col;
-  @include g4;
-}
-.col4 {
-  @extend .col;
-  @extend .g4;
-}
-
-@mixin col5 {
-  @include col;
-  @include g5;
-}
-.col5 {
-  @extend .col;
-  @extend .g5;
-}
-
-@mixin col6 {
-  @include col;
-  @include g6;
-}
-.col6 {
-  @extend .col;
-  @extend .g6;
-}
-
-@mixin col7 {
-  @include col;
-  @include g7;
-}
-.col7 {
-  @extend .col;
-  @extend .g7;
-}
-
-@mixin col8 {
-  @include col;
-  @include g8;
-}
-.col8 {
-  @extend .col;
-  @extend .g8;
 }
 
 @mixin x2od1 {

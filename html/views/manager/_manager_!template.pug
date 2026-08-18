@@ -1,0 +1,81 @@
+.section
+  .container
+    .row.x3col.g1.aic.x1ais
+      .col.x3row.x4col.n3w4.bgs
+        +mediaPicture(
+          384,
+          'img/manager/',
+          manager.img,
+          'png',
+          'w x3w2 x4w4',
+          '',
+          false,
+          {
+            x4: { key: 'x4', sizes: 12, width: 300 },
+            x3: { key: 'x3', sizes: 6, width: 304 },
+            x2: { key: '', sizes: 4, width: 384 },
+            x1: { key: '', sizes: 4, width: 384 }
+          }
+        )
+        .col3.pd1xf.x1rpd3.x1lpd3.x4tpd3.x4bpd3
+          h1.ta.t1 !{manager.name}
+          .col5
+            if manager.phones
+              .r5.aic
+                svg.i24
+                  use(xlink:href='img/sprite/symbols.svg#phone')
+                p.p1
+                  each phone,i in manager.phones
+                    if i !==0
+                      br
+                    a.hover(href='tel:' + phone.href) !{phone.tel}
+            if manager.mail
+              .r5.aic
+                svg.i24
+                  use(xlink:href='img/sprite/symbols.svg#mail')
+                p.p1
+                  a.hover(href="mailto:" + manager.mail) !{manager.mail}
+            .r5.aic
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#pin')
+              p.p1 Санкт-Петербург, Средний пр-т Васильевского острова, д. 36/40, 199004
+      section.col1.x2g3.fg
+        .col4
+          h2.t1 Добрый день! На связи ваш персональный менеджер !{manager.name}, ваш помощник и консультант.
+          .col6 
+            p.ta.t2 Приглашаю к диалогу вас, руководителей подразделений вашего предприятия и других сотрудников, участвующих в планировании обучения.
+            p.p1 Мы хотим стать ближе к нашим постоянным клиентам и познакомиться лично!
+        section.col4
+          h3.t1 Чем я могу помочь и какие задачи возьму на себя?
+          .col5
+            .r5.aic
+              svg.i24
+                use(xlink:href='img/sprite/symbols.svg#plan')
+              p.p1 Прежде всего, я представлю ассортимент наших учебных программ по интересующему вас тематическому направлению и помогу составить оптимальный план обучения сотрудников вашего предприятия на длительный период.
+            section.r5.aic
+              .i24
+              .col5
+                h4.t2d Мы предлагаем множество форматов обучения:
+                ul.ul.col7
+                  li.ul__li-accent
+                    span #[a.link(href='/seminars/rubrics/default.aspx') очные курсы] в наших учебных комплексах в Петербурге и Москве;
+                  li.ul__li-accent
+                    span #[a.link(href='/seminars/rubrics/default.aspx?online=1') онлайн-трансляции] очных курсов;
+                  li.ul__li-accent
+                    span #[a.link(href='/online/default.aspx') дистанционные курсы] повышения квалификации;
+                  li.ul__li-accent
+                    span #[a.link(href='/prof/default.aspx') дистанционную профессиональную переподготовку];
+                  li.ul__li-accent
+                    span #[a.link(href='/crporate/default.aspx') корпоративное обучение] индивидуально для ваших сотрудников — в учебных комплексах ЦНТИ ПРОГРЕСС, с выездом на вашу площадку или онлайн.
+          .r5.aic
+            svg.i24
+              use(xlink:href='img/sprite/symbols.svg#tablet')
+            p.p1 Согласую ваши формы документов с юридическим отделом или предложу наш вариант оформления документов, который устроит обе стороны. А затем проконтролирую документооборот, сопровождающий обучение.
+          .r5.aic
+            svg.i24
+              use(xlink:href='img/sprite/symbols.svg#user-check')
+            p.p1 Оперативно зарегистрирую слушателей на выбранные курсы, а по итогу обучения отправлю оригиналы документов без задержек.
+          .r5.aic
+            svg.i24
+              use(xlink:href='img/sprite/symbols.svg#message')
+            p.p1 Кроме того, я готов организовать онлайн-встречу в Skype или телефонный разговор с руководителями тематических направлений нашего отдела разработки. Обращайтесь ко мне по любым вопросам! Мои контакты можно передать всем сотрудникам вашего предприятия, я открыт для общения с каждым.

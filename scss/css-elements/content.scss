@@ -170,6 +170,12 @@
       }
     }
   }
+  &__li-accent {
+    @extend .ul__li;
+    &::before {
+      background-color: #{$text-accent};
+    }
+  }
   &__li-bright {
     @extend .ul__li;
     &::before {

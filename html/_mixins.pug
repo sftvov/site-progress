@@ -85,9 +85,15 @@ mixin picture(width, folder = 'img/promo/', baseName, extension = 'png', imgClas
     )
 
 
-mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, sources = [{ max: 539.95, key: 'x4', sizes: 'calc(100vw - 20px)', width: 320, columns: undefined },{ max: 767.95, key: 'x3', sizes: 'calc(100vw - 32px)', width: 540, columns: undefined },{ max: 1031.95, key: 'x2', sizes: 'calc(100vw - 32px)', width: 768, columns: undefined },{ max: 1279.95, key: 'x1', sizes: 'calc(100vw - 80px)', width: 1032, columns: undefined }], defaultSizes = [])
+mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', imgClass = '', alt = '', lazy = false, sources = {}, defaultSizes = [])
   -
-    // Функция для расчета ширины для разных плотностей
+    const defaultBreakpoints = {
+      x4: { max: 539.95, key: 'x4', sizes: 'calc(100vw - 20px)', width: 320, field: 20 },
+      x3: { max: 767.95, key: 'x3', sizes: 'calc(100vw - 32px)', width: 540, field: 32 },
+      x2: { max: 1031.95, key: 'x2', sizes: 'calc(100vw - 32px)', width: 768, field: 32 },
+      x1: { max: 1279.95, key: 'x1', sizes: 'calc(100vw - 80px)', width: 1032, field: 80 }
+    };
+
     function getWidths(baseWidth) {
       return {
         '0.6x': Math.ceil(baseWidth * 0.6),
@@ -97,7 +103,6 @@ mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', i
       };
     }
     
-    // Функция для расчета ширины по колонкам (из первого миксина)
     function getColumnWidth(n, field) {
       if (typeof n === 'string') return n;
       if (n === 12) return `calc(100vw - ${field}px)`;
@@ -108,110 +113,59 @@ mixin mediaPicture(width, folder = 'img/hotels/', baseName, extension = 'png', i
       return `calc((100vw - ${field - 20}px) / 12 * ${n} - 20px)`;
     }
     
-    // Функция для генерации srcset
     function getSrcset(baseName, folder, baseWidth, extension) {
       if (!baseName) return '';
-      
       const widths = getWidths(baseWidth);
-      
-      // Для webp
       const webpSrcset = Object.entries(widths)
         .filter(([_, w]) => w > 0)
         .map(([scale, w]) => `${folder}${baseName}${baseName.includes('@') ? '' : '@'}${scale}.webp ${w}w`)
         .join(', ');
-      
-      // Для обычного формата
-      const imgSrcset = `${folder}${baseName}.${extension}`;
-      
-      return { webpSrcset, imgSrcset };
-    }    
-
-    let defaultSizesAttr = `${width}px`;
-    if (defaultSizes && defaultSizes.length > 0) {
-      const sortedSizes = [...defaultSizes].sort((a, b) => (a.max || Infinity) - (b.max || Infinity));
-      const fallback = sortedSizes.find(s => !s.max);
-      const withMedia = sortedSizes.filter(s => s.max);
-      const sizesParts = withMedia.map(s => `(max-width: ${s.max}px) ${s.sizes}`);
-      if (fallback) {
-        sizesParts.push(fallback.sizes);
-      } else {
-        sizesParts.push(`${width}px`);
-      }
-      defaultSizesAttr = sizesParts.join(', ');
+      return { webpSrcset, imgSrcset: `${folder}${baseName}.${extension}` };
     }
-
-    // Фильтруем sources - убираем те, где key === false или key === null
-    const activeSources = sources.filter(s => s.key !== false && s.key !== null);
     
-    // Формируем baseName с ключом
     function getFullBaseName(baseName, key) {
-      if (!key) return baseName;
-      return `${key}${baseName}`;
+      return key ? `${key}${baseName}` : baseName;
     }
     
-    // Обрабатываем sources - преобразуем sizes в колонки если нужно
-    const processedSources = activeSources.map(source => {
-      const processed = { ...source };
-      
-      // Если sizes не строка, считаем как колонки
-      if (source.sizes !== undefined && typeof source.sizes !== 'string') {
-        // Для sizes колонок используем field из source или дефолтный
-        const field = source.field || 20;
-        processed.sizes = getColumnWidth(source.sizes, field);
-      }
-      
-      return processed;
-    });
-    
-    // Аналогично обрабатываем defaultSizes
-    let processedDefaultSizes = defaultSizes;
-    if (defaultSizes && defaultSizes.length > 0) {
-      processedDefaultSizes = defaultSizes.map(item => {
-        const processed = { ...item };
-        if (item.sizes !== undefined && typeof item.sizes !== 'string') {
-          const field = item.field || 20;
-          processed.sizes = getColumnWidth(item.sizes, field);
+    // Формируем массив sources одной строкой
+    const processedSources = ['x4', 'x3', 'x2', 'x1']
+      .filter(key => sources[key] !== undefined && sources[key] !== false && sources[key] !== null)
+      .map(key => {
+        const source = { ...defaultBreakpoints[key], ...sources[key] };
+        if (typeof source.sizes !== 'string') {
+          source.sizes = getColumnWidth(source.sizes, source.field);
         }
-        return processed;
+        return source;
       });
+    
+    // defaultSizes обрабатываем так же
+    let defaultSizesAttr = `${width}px`;
+    if (defaultSizes?.length) {
+      const processedDefaultSizes = defaultSizes.map(item => ({
+        ...item,
+        sizes: typeof item.sizes === 'string' ? item.sizes : getColumnWidth(item.sizes, item.field || 20)
+      }));
       
-      // Пересобираем defaultSizesAttr с обработанными значениями
       const sortedSizes = [...processedDefaultSizes].sort((a, b) => (a.max || Infinity) - (b.max || Infinity));
+      const sizesParts = sortedSizes
+        .filter(s => s.max)
+        .map(s => `(max-width: ${s.max}px) ${s.sizes}`);
       const fallback = sortedSizes.find(s => !s.max);
-      const withMedia = sortedSizes.filter(s => s.max);
-      const sizesParts = withMedia.map(s => `(max-width: ${s.max}px) ${s.sizes}`);
-      if (fallback) {
-        sizesParts.push(fallback.sizes);
-      } else {
-        sizesParts.push(`${width}px`);
-      }
+      sizesParts.push(fallback ? fallback.sizes : `${width}px`);
       defaultSizesAttr = sizesParts.join(', ');
     }
+    
   picture&attributes(attributes)
     each source in processedSources
       - const fullBaseName = getFullBaseName(baseName, source.key);
       - const srcset = getSrcset(fullBaseName, folder, source.width, extension);
-      
       if (srcset.webpSrcset)
-        source(
-          type='image/webp'
-          media=`(max-width: ${source.max}px)`
-          sizes=source.sizes
-          srcset=srcset.webpSrcset
-        )
-        source(
-          type=`image/${extension}`
-          media=`(max-width: ${source.max}px)`
-          srcset=srcset.imgSrcset
-        )
+        source(type='image/webp' media=`(max-width: ${source.max}px)` sizes=source.sizes srcset=srcset.webpSrcset)
+        source(type=`image/${extension}` media=`(max-width: ${source.max}px)` srcset=srcset.imgSrcset)
     
     - const defaultSrcset = getSrcset(baseName, folder, width, extension);
     if (defaultSrcset.webpSrcset)
-      source(
-        type='image/webp'
-        sizes=defaultSizesAttr
-        srcset=defaultSrcset.webpSrcset
-      )
+      source(type='image/webp' sizes=defaultSizesAttr srcset=defaultSrcset.webpSrcset)
     
     img(
       src=`${folder}${baseName}.${extension}`

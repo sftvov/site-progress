@@ -5,6 +5,7 @@ const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
 const measure = document.querySelector('#measure');
 const sticky = document.querySelector('#sticky');
+const loading = document.querySelector('#loading');
 const sidebar = document.querySelector('#sidebar');
 const sidebarWrapper = document.querySelector('#sidebar-wrapper');
 
@@ -273,4 +274,19 @@ window.onload = () => {
 
 window.addEventListener('resize', handleResize);
 window.addEventListener('scroll', handleScroll);
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        loading.classList.remove('_active');
+        body_lock_remove();
+    } 
+    
+    // else {
+    //     // Обычная загрузка страницы
+    //     // Проверяем sessionStorage
+    //     if (sessionStorage.getItem('loaderActive') === 'true') {
+    //         loader.classList.remove('_active');
+    //         sessionStorage.removeItem('loaderActive');
+    //     }
+    // }
+});
 

@@ -1,0 +1,13 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'МЕНЕДЖЕР ГАРКАВАЯ',
+		breadcrumbs: [
+			'Менеджеры',
+			'Гаркавая',
+		]
+	})
+
+block content		
+	include html/views/manager/_manager_managerS--garkavaya

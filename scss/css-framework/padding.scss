@@ -1,0 +1,156 @@
+@mixin tpd1 {
+  padding-top: var(--S1);
+}
+.tpd1 {
+  @include tpd1;
+}
+@mixin bpd1 {
+  padding-bottom: var(--S1);
+}
+.bpd1 {
+  @include bpd1;
+}
+@mixin pd1 {
+  @include tpd1;
+  @include bpd1;
+}
+.pd1 {
+  @extend .tpd1;
+  @extend .bpd1;
+}
+
+@mixin tpd1x {
+  padding-top: $XL;
+}
+.tpd1x {
+  @include tpd1x;
+}
+@mixin rpd1x {
+  padding-right: $XL;
+}
+.rpd1x {
+  @include rpd1x;
+}
+@mixin bpd1x {
+  padding-bottom: $XL;
+}
+.bpd1x {
+  @include bpd1x;
+}
+@mixin lpd1x {
+  padding-left: $XL;
+}
+.lpd1x {
+  @include lpd1x;
+}
+@mixin pd1x {
+  padding-block: $XL;
+}
+.pd1x {
+  @extend .tpd1x;
+  @extend .bpd1x;
+}
+@mixin pd1xf {
+  padding: $XL;
+}
+.pd1xf {
+  @extend .tpd1x;
+  @extend .rpd1x;
+  @extend .bpd1x;
+  @extend .lpd1x;
+}
+
+@mixin tpd2 {
+  padding-top: var(--S2);
+}
+.tpd2 {
+  @include tpd2;
+}
+@mixin bpd2 {
+  padding-bottom: var(--S2);
+}
+.bpd2 {
+  @include bpd2;
+}
+@mixin pd2 {
+  @include tpd2;
+  @include bpd2;
+}
+.pd2 {
+  @extend .tpd2;
+  @extend .bpd2;
+}
+
+@mixin tpd3 {
+  padding-top: #{$M};
+}
+.tpd3 {
+  @include tpd3;
+}
+@mixin bpd3 {
+  padding-bottom: #{$M};
+}
+.bpd3 {
+  @include bpd3;
+}
+@mixin pd3 {
+  @include tpd3;
+  @include bpd3;
+}
+.pd3 {
+  @extend .tpd3;
+  @extend .bpd3;
+}
+@mixin x1rpd3 {
+  @media (max-width: $md1+px) {
+    padding-right: $M;
+  }
+}
+.x1rpd3 {
+  @include x1rpd3;
+}
+@mixin x1lpd3 {
+  @media (max-width: $md1+px) {
+    padding-left: $M;
+  }
+}
+.x1lpd3 {
+  @include x1lpd3;
+}
+@mixin x4tpd3 {
+  @media (max-width: $md4+px) {
+    padding-top: $M;
+  }
+}
+.x4tpd3 {
+  @include x4tpd3;
+}
+@mixin x4bpd3 {
+  @media (max-width: $md4+px) {
+    padding-bottom: $M;
+  }
+}
+.x4bpd3 {
+  @include x4bpd3;
+}
+
+@mixin tpd7 {
+  padding-top: $XS;
+}
+.tpd7 {
+  @include tpd7;
+}
+@mixin bpd7 {
+  padding-bottom: $XS;
+}
+.bpd7 {
+  @include bpd7;
+}
+@mixin pd7 {
+  @include tpd7;
+  @include bpd7;
+}
+.pd7 {
+  @extend .tpd7;
+  @extend .bpd7;
+}

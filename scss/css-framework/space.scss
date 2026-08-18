@@ -61,69 +61,6 @@
   @include m8;
 }
 
-@mixin tpd1 {
-  padding-top: var(--S1);
-}
-.tpd1 {
-  @include tpd1;
-}
-@mixin bpd1 {
-  padding-bottom: var(--S1);
-}
-.bpd1 {
-  @include bpd1;
-}
-@mixin pd1 {
-  @include tpd1;
-  @include bpd1;
-}
-.pd1 {
-  @extend .tpd1;
-  @extend .bpd1;
-}
-
-@mixin tpd2 {
-  padding-top: var(--S2);
-}
-.tpd2 {
-  @include tpd2;
-}
-@mixin bpd2 {
-  padding-bottom: var(--S2);
-}
-.bpd2 {
-  @include bpd2;
-}
-@mixin pd2 {
-  @include tpd2;
-  @include bpd2;
-}
-.pd2 {
-  @extend .tpd2;
-  @extend .bpd2;
-}
-
-@mixin tpd3 {
-  padding-top: #{$M};
-}
-.tpd3 {
-  @include tpd3;
-}
-@mixin bpd3 {
-  padding-bottom: #{$M};
-}
-.bpd3 {
-  @include bpd3;
-}
-@mixin pd3 {
-  @include tpd3;
-  @include bpd3;
-}
-.pd3 {
-  @extend .tpd3;
-  @extend .bpd3;
-}
-
 @mixin n1ol3 {
   @media (min-width: $md1+px) {
     margin-left: var(--3columnsG);

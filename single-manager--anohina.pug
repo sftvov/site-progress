@@ -1,0 +1,13 @@
+extends html/layouts/default
+
+block settings
+	+pageConfig({
+		title: 'МЕНЕДЖЕР АНОХИНА',
+		breadcrumbs: [
+			'Менеджеры',
+			'Анохина',
+		]
+	})
+
+block content		
+	include html/views/manager/_manager_managerS--anohina
