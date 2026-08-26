@@ -50,7 +50,6 @@
   @media (max-width: $md4+px) {
     translate: -10px 0;
     width: calc(100% + 20px);
-    
   }
 }
 
@@ -184,19 +183,6 @@
   }
 }
 
-// .ol {
-//   &__li {
-//     @include p1;
-//     list-style-position: inside;
-//     &:not(:first-child) {
-//       margin-top: 7px;
-//     }
-//   }
-//   &__li-dark {
-//     @include ol__li;
-//   }
-// }
-
 .ol {
   counter-reset: ol;
   &__li {
@@ -229,13 +215,20 @@
   padding: 4px 9px;
   background-color: #{$bg-main};
   @include bdd;
+  &:is(:user-invalid, .user-invalid) {
+    border-color: #{$border-invalid};
+  }
   &:focus {
     outline: none;
-    border-color: #{$border};
+    &:not(:disabled) {
+      border-color: #{$border};
+    }
   }
   @media (hover: hover) {
     &:hover {
-      border-color: #{$border};
+      &:not(:disabled) {
+        border-color: #{$border};
+      }
     }
   }
   &::placeholder {
@@ -243,15 +236,13 @@
   }
 
   &:disabled {
+    color: #{$text-light};
     border-color: #{$border-gray};
   }
 }
 
 .input {
   @extend %input;
-  &:is(:user-invalid, .user-invalid) {
-    border-color: #{$border-invalid};
-  }
   &--date {
     -moz-appearance: textfield;
     &::-webkit-calendar-picker-indicator {
@@ -265,6 +256,76 @@
   resize: vertical;
   padding: 9px;
   min-height: 120px;
+}
+
+.course-tabs ._tabs-block:first-child {
+  & h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include t2;
+  }
+  & ul {
+    @include col7;
+    & > li {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 10px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #{$text-main};
+      }
+    }
+  }
+
+  ol {
+    @include col7;
+    counter-reset: ol;
+    & > li {
+      list-style-type: none;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: counter(ol) '. ';
+        counter-increment: ol;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  & .os {
+    @include ta;
+  }
+
+  & .os_orange_block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 7px;
+    padding: $M;
+    background-color: $bg-second;
+    border-top: 0 !important;
+    & a {
+      @include link-b;
+      @include t2;
+    }
+  }
+
+  .os_sq {
+    display: none !important;
+  }
 }
 
 //   &__showmore {

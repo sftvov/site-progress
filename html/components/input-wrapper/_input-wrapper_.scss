@@ -26,13 +26,13 @@
       color: #{$text-bright};
     }
   }
-  &:has(:is(.input, .select__input):is(:user-invalid, .user-invalid)) {
+  &:has(:is(.input, .select__input, textarea):is(:user-invalid, .user-invalid)) {
     & .input-wrapper__label-main,
     & .input-wrapper__label-add {
       color: #{$text-invalid};
     }
   }
-  &:has(.input[required]) {
+  &:has(:is(.input, .select__input, textarea)[required]) {
     & .input-wrapper__label-main {
       &::after {
         content: ' *';
@@ -40,7 +40,7 @@
       }
     }
   }
-  &:has(.input:disabled) {
+  &:has(:is(.input, .select__input, textarea):disabled) {
     & .input-wrapper__label-main,
     & .input-wrapper__label-add {
       color: #{$text-light};

@@ -28,9 +28,20 @@ body {
   }
 }
 
-._invalid:not(:has(input:user-invalid)) {
-  & ._invalid__el {
-    display: none;
+._invalid {
+  &__el,
+  &__red {
+    @include dur;
+  }
+  &:not(:has(input:user-invalid, textarea:user-invalid)) {
+    & ._invalid__el {
+      display: none;
+    }
+  }
+  &:has(input:user-invalid, textarea:user-invalid) {
+    & ._invalid__red {
+      @include ti;
+    }
   }
 }
 
@@ -43,6 +54,12 @@ body {
 ._checkbox-body,
 ._spoller-body {
   &:not(._active) {
+    display: none;
+  }
+}
+
+._empty {
+  &:empty {
     display: none;
   }
 }
