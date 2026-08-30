@@ -1,39 +1,62 @@
 include ../../../data/rubricsArchive
+script(type='text/javascript').
+  var PS_ErrPref = 'Поля не заполнены или заполнены неверно: \\n';
+script(type='text/javascript' src='https://sendsay.ru/account/js/formCheck.js?20170516')
 
 .mailing.section#mailing
   .container
     .col5.aic
       h1.title Простая рассылка #[br.n4hide]о серьёзном обучении
       p.ta.t2 В рассылке: скидка 3% новым подписчикам, акции, премьеры курсов
-    form.col1.m2
+    form.col1.m2(id="sendsay_form"
+      name="form_879"
+      action="https://sendsay.ru/form/cnti_progress/6"
+      method="post"
+      onsubmit="javascript:if(typeof sendsay_check_form === 'function'){ return sendsay_check_form(this); }" 
+      accept-charset="utf-8")
       fieldset.row.wrap.g5.aic      
-        .mailing__square-bright.n3w4.w2.x4w4
-          input.input.fg(type="text" placeholder="Фамилия")
-        .col7.n3w4.w2.x4w4
-          input.input(type="text" placeholder="Имя")
-        .col7.n3w4.w2.x4w4
-          input.input(type="text" placeholder="Отчество")
-        .mailing__square-accent.n3w4.w2.x4w4
-          input.input.fg(type="email" placeholder="Электронная почта")
-        .col7.n3w4.w2.x4w4
-          input.input(type="text" placeholder="Должность")
+        .mailing__square-bright.n3w4.w2.x4w4(id="q837")
+          input.input.fg(type="text" 
+          placeholder="Фамилия" 
+          name="q837"
+          required)
+        .col7.n3w4.w2.x4w4(id="q203")
+          input.input(type="text" 
+            placeholder="Имя"
+            name="q203"
+            required)
+        .col7.n3w4.w2.x4w4(id="q882")
+          input.input(type="text" 
+            placeholder="Отчество"
+            name="q882"
+            required)
+        .mailing__square-accent.n3w4.w2.x4w4(id="_member_email")
+          input.input.fg(type="email" 
+            placeholder="Электронная почта"
+            name="_member_email"
+            required)
+        .col7.n3w4.w2.x4w4(id="q261")
+          input.input(type="text" 
+            placeholder="Должность"
+            name="q261"
+            required)
         .n3w4.w2.x4w4
           p.p2 Я отвечаю за обучение сотрудников
-          .mailing__top-checkboxes.r40
+          .mailing__top-checkboxes.r40(id="q260")
             +checkbox({
               label: 'Да',
               type: 'radio',
               checked: true,
-              name: 'responsible'
+              name: 'q260'
             })
             +checkbox({
               label: 'Нет',
               type: 'radio',
-              name: 'responsible'
+              name: 'q260'
             })
-      section.col2
+      section.col2(id="q854")
         h2.t1d Выберите рубрики — это займёт полминуты
-        .mailing__choose
+        .mailing__choose(id="seminarTabs1")
           each group in rubricsArchive
             fieldset.mailing__group(style="--group-color:var(--" + group.color + ")")
               +branchTitle({
@@ -45,13 +68,17 @@ include ../../../data/rubricsArchive
                   .col7(data-checkbox-group=rubric.subrubrics ? true : false)
                     +checkbox({
                       label: rubric.name,
+                      name: "q1",
+                      value: rubric.value,
                       all: rubric.subrubrics ? true : false,
                     })
                     if rubric.subrubrics
                       .mailing__subrubrics.col8
                         each subrubric in rubric.subrubrics
                           +checkbox({
-                            label: subrubric,
+                            label: subrubric.name,
+                            name: "q1",
+                            value: subrubric.value,
                             item: true,
                           })
       section.col3.aic
@@ -59,9 +86,10 @@ include ../../../data/rubricsArchive
         .col5.aic
           button.button-primary.n3w4.w2.x4w4(type="submit") Подписаться на рассылку
           +checkbox({
-            label: 'Отправляя форму, я принимаю <a class="link" href="#">пользовательское соглашение</a>',
+            label: 'Отправляя форму, я принимаю <a class="link" href="https://img.cntiprogress.ru/file/pdf/doc/reg/privacy_centr.pdf">пользовательское соглашение</a>',
             checked: true,
-            blueWrapper: true
+            blueWrapper: true,
+            required: true,
           })
     .row.x4col.g3.m1.n1o1
       section.col5.n1w5.n3w6.w2.x4w4

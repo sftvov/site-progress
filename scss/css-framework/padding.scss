@@ -60,6 +60,23 @@
   @extend .lpd1x;
 }
 
+// @mixin x3rpd2- {
+//   @media (max-width: $md3+px) {
+//     padding-right: $L;
+//   }
+// }
+// .x3rpd2- {
+//   @include x3rpd2-;
+// }
+// @mixin x3lpd2- {
+//   @media (max-width: $md3+px) {
+//     padding-left: $L;
+//   }
+// }
+// .x3lpd2- {
+//   @include x3lpd2-;
+// }
+
 @mixin tpd2 {
   padding-top: var(--S2);
 }
@@ -116,6 +133,38 @@
 }
 .x1lpd3 {
   @include x1lpd3;
+}
+@mixin x3rpd3 {
+  @media (max-width: $md3+px) {
+    padding-right: $M;
+  }
+}
+@mixin x2rpd3 {
+  @media (max-width: $md2+px) {
+    padding-right: $M;
+  }
+}
+.x2rpd3 {
+  @include x2rpd3;
+}
+@mixin x2lpd3 {
+  @media (max-width: $md2+px) {
+    padding-left: $M;
+  }
+}
+.x2lpd3 {
+  @include x2lpd3;
+}
+.x3rpd3 {
+  @include x3rpd3;
+}
+@mixin x3lpd3 {
+  @media (max-width: $md3+px) {
+    padding-left: $M;
+  }
+}
+.x3lpd3 {
+  @include x3lpd3;
 }
 @mixin x4tpd3 {
   @media (max-width: $md4+px) {

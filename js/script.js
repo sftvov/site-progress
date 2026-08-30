@@ -127,11 +127,15 @@ if (selects) {
     for (let select of selects) {
         const variants = select.querySelectorAll(".select__variant");
         const input = select.querySelector(".select__input");
+        const hiddenInput = select.querySelector(".select__hidden-value");
         
         for (const variant of variants) {
             variant.addEventListener("click", function() {
                 const value = this.textContent.trim();
                 input.value = variant.textContent;
+                if (hiddenInput) {
+                    hiddenInput.value = variant.dataset.value;
+                }
                 const callback = this.dataset.callback;
                 if (callback && typeof window[callback] === 'function') {
                     window[callback](value);

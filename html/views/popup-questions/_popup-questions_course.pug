@@ -1,0 +1,52 @@
+section.popup.popup-questions.modal-form
+  .container.modal-form__container
+    .popup__body.modal-form__body
+      button.modal-form__close-btn._popup-close(aria-label='Закрыть')
+        svg.popup__close-svg
+          use(xlink:href='img/sprite/symbols.svg#x-close')
+      .col3
+        .col7
+          p.t1.ta Задать вопрос
+          p.p1 Пожалуйста, оставьте Вашу контактную информацию. Руководители мероприятия обязательно ответят на Ваши вопросы.
+        form.modal-form__form.col5._invalid
+          +inputWrapper({
+            label: 'Фамилия',
+            placeholder: 'Иванов',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Имя',
+            placeholder: 'Иван',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Отчество',
+            placeholder: 'Иванович',
+          })
+          +inputWrapper({
+            label: 'Телефон (мобильный или рабочий)',
+            type: 'tel',
+            placeholder: '8 (999) 999-99-99',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Электронная почта',
+            type: 'email',
+            placeholder: 'example@mail.ru',
+            required: true,
+          })
+          +inputWrapper({
+            label: 'Сообщение',
+            fieldType: 'textarea',
+            placeholder: 'Ваши вопросы',
+            required: true,
+          })
+          p.ti.p2._invalid__el Заполните данные корректно
+          button(type="submit").button-primary Отправить
+          +checkbox({
+            label: 'Отправляя форму, я принимаю <a class="link" href="https://img.cntiprogress.ru/file/pdf/doc/reg/privacy_centr.pdf">пользовательское соглашение</a>',
+            checked: true,
+            blueWrapper: true,
+            required: true,
+          })
+        

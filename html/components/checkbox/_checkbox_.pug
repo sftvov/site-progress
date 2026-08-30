@@ -4,6 +4,7 @@ mixin checkbox(props = {})
       label = '',
       type="checkbox",
       name = false,
+      value = '',
       checked = false,
       required = false,
       blueWrapper = false,
@@ -15,6 +16,7 @@ mixin checkbox(props = {})
     input.checkbox__input(
       type=type,
       name=name,
+      value=value,
       checked=checked,
       required=required,
       data-checkbox-all=all,

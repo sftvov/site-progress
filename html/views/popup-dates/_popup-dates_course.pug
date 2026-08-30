@@ -1,15 +1,15 @@
 
-section.popup.popup-dates
-  .container.popup-dates__container
-    .popup__body.popup-dates__body
-      button.popup-dates__close-btn._popup-close(aria-label='Закрыть')
+section.popup.popup-dates.modal-form
+  .container.modal-form__container
+    .popup__body.modal-form__body
+      button.modal-form__close-btn._popup-close(aria-label='Закрыть')
         svg.popup__close-svg
           use(xlink:href='img/sprite/symbols.svg#x-close')
       .col3
         .col7
           p.t1.ta Запросить другие даты
           p.p1 Оставьте контактные данные, и мы сообщим о новой дате проведения семинара.
-        form.popup-dates__form.col5._invalid
+        form.modal-form__form.col5._invalid
           +inputWrapper({
             label: 'Как к вам обращаться?',
             placeholder: 'Иван Иванович',
@@ -42,10 +42,10 @@ section.popup.popup-dates
           })
         a.link.t2._popup-link(href="#success") Попап успешной отправки формы
 
-section.popup.popup-success
-  .container.popup-dates__container    
-    .popup__body.popup-dates__body
-      button.popup-dates__close-btn._popup-close(aria-label='Закрыть')
+section.popup.popup-success.modal-form
+  .container.modal-form__container    
+    .popup__body.modal-form__body
+      button.modal-form__close-btn._popup-close(aria-label='Закрыть')
         svg.popup__close-svg
           use(xlink:href='img/sprite/symbols.svg#x-close')
       .col3.aic

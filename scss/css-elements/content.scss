@@ -258,54 +258,68 @@
   min-height: 120px;
 }
 
-.course-tabs ._tabs-block:first-child {
-  & h2,
+#content-programm {
+  & h1,
+  h2,
   h3,
   h4,
   h5,
   h6 {
-    @include t2;
+    &:not(:is(.t1, .t1d, .t2, .t2d)) {
+      font-weight: bold;
+    }
   }
+
+  h1,
+  h2,
+  h3 {
+    &:not(:is(.t1, .t1d, .t2, .t2d)) {
+      @include t2;
+    }
+  }
+
   & ul {
     @include col7;
     & > li {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: 10px;
-      &::before {
-        content: '';
-        position: absolute;
-        top: 7px;
-        left: 0;
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background-color: #{$text-main};
-      }
+      list-style-type: disc;
+      list-style-position: inside;
     }
   }
 
-  ol {
+  & ol {
     @include col7;
-    counter-reset: ol;
     & > li {
-      list-style-type: none;
-      position: relative;
-      padding-left: 15px;
-      &::before {
-        content: counter(ol) '. ';
-        counter-increment: ol;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
+      list-style-type: decimal;
+      list-style-position: inside;
     }
   }
 
-  & .os {
+  & li {
+    & > ol,
+    & > ul {
+      margin-top: $XS;
+    }
+  }
+
+  & ul > li > ul > li {
+    list-style-type: circle;
+    padding-left: $XS;
+  }
+
+  & p,
+  li,
+  a {
+    &:not(:is(.t1, .t1d, .t2, .t2d)) {
+      @include p1;
+    }
+  }
+
+  & .os_blue_text {
     @include ta;
+  }
+
+  .os_price {
+    @include tb;
   }
 
   & .os_orange_block {

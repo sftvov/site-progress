@@ -1,15 +1,15 @@
-@mixin ta {
-  color: #{$text-accent};
-}
-.ta {
-  @include ta;
-}
-
 @mixin ti {
   color: #{$text-invalid};
 }
 .ti {
   @include ti;
+}
+
+@mixin ta {
+  color: #{$text-accent};
+}
+.ta {
+  @include ta;
 }
 
 @mixin tb {
@@ -80,7 +80,6 @@
   @extend .hover-accent;
 }
 
-
 @mixin sd {
   stroke: #{$text-dark};
 }
@@ -93,6 +92,13 @@
 }
 .ss {
   @include ss;
+}
+
+@mixin si {
+  stroke: #{$text-invalid};
+}
+.si {
+  @include si;
 }
 
 @mixin sb {
