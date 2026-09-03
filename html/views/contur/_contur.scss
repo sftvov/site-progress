@@ -1,0 +1,58 @@
+.contur {
+  &__main {
+    @include row;
+    @include x3col;
+    @include g5;
+    @include jcb;
+    @include pd2;
+    @include rpd1;
+    @include x1rpd3;
+    @include lpd1;
+    @include x1lpd3;
+    @include bs2l;
+    @media (max-width: $md2+px) {
+      padding-inline: 20px;
+    }
+    @media (max-width: $md3+px) {
+      padding-block: 20px;
+    }
+  }
+  &__icon-area {
+    @include r;
+    @include aic;
+    @include jcc;
+    @include i60;
+    @include bd2a;
+    border-radius: 50%;
+    @media (max-width: $md3+px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__info-area {
+    @include r15;
+    @include x2col;
+    @include x3row;
+    @include x4col;
+    @include aic;
+    @include x2ais;
+    @include x3aic;
+    @include g7;
+    @media (max-width: $md2+px) {
+      max-width: 248px;
+    }
+    @media (max-width: $md3+px) {
+      max-width: none;
+    }
+  }
+
+  &__img {
+    @media (max-width: $md1+px) {
+      max-width: 166px;
+    }
+    @media (max-width: $md3+px) {
+      max-width: 121px;
+    }
+  }
+}

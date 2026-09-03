@@ -4,11 +4,23 @@
 .tpd1 {
   @include tpd1;
 }
+@mixin rpd1 {
+  padding-right: var(--S1);
+}
+.rpd1 {
+  @include rpd1;
+}
 @mixin bpd1 {
   padding-bottom: var(--S1);
 }
 .bpd1 {
   @include bpd1;
+}
+@mixin lpd1 {
+  padding-left: var(--S1);
+}
+.lpd1 {
+  @include lpd1;
 }
 @mixin pd1 {
   @include tpd1;
@@ -182,6 +194,24 @@
 .x4bpd3 {
   @include x4bpd3;
 }
+
+
+// @mixin x2rpd5 {
+//   @media (max-width: $md2+px) {
+//     padding-right: $S;
+//   }
+// }
+// .x2rpd5 {
+//   @include x2rpd5;
+// }
+// @mixin x2lpd5 {
+//   @media (max-width: $md2+px) {
+//     padding-left: $S;
+//   }
+// }
+// .x2lpd5 {
+//   @include x2lpd5;
+// }
 
 @mixin tpd7 {
   padding-top: $XS;

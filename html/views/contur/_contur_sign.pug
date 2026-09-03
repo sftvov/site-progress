@@ -1,16 +1,24 @@
 
-.section.pd1.bgs
+.contur.section
   .container
-    .col5
-      .col7.aic
-        p.p1 Заполните, пожалуйста, информацию об участниках или позвоните по телефону службы записи
-        p.p2.r.aic
-          a.sa-link.link.r5.aic
-            svg.i24
-              use(xlink:href='img/sprite/symbols.svg#phone')
+    .contur__main
+      .r15.aic.fs
+        .contur__icon-area
+          svg.sa.i24
+            use(xlink:href='img/sprite/symbols.svg#tablet')
+        p.p2
+          | Заполните, пожалуйста, информацию об участниках #[br.n1hide.x3hide ]или позвоните #[br.x1hide ]
+          span.n1hide &ensp;
+          | по телефону службы записи #[br.n1hide.x3hide ]
+          span.x1hide &ensp;
+          a.sa-link.link.vat.ri5
+            svg.sw2.i16
+              use(xlink:href='img/sprite/symbols.svg#phone-call')
             span +7(812)327-49-55
           | &ensp;
           span (многоканальный)
-      .col7.aic
-        p.p1 Для оперативного обмена документами присоединяйтесь к нам в ЭДО
-        img(src="img/sign/contur.png", alt="")
+      hr.bdl
+      .contur__info-area
+        .contur__icon-area.n3hide.x4hide(style="visibility: hidden;")
+        p.p2.x4tac.twb.fg Для оперативного обмена документами присоединяйтесь к нам в ЭДО
+        img.contur__img(src="img/sign/contur.png", alt="")

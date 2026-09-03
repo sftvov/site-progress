@@ -5,6 +5,13 @@
   @include r;
 }
 
+@mixin ri {
+  display: inline-flex;
+}
+.ri { 
+  @include ri;
+}
+
 @mixin cg {
   column-gap: var(--gutter);
 }
@@ -124,6 +131,14 @@
 }
 .r5 {
   @extend .r;
+  @extend .cg5;
+}
+@mixin ri5 {
+  @include ri;
+  @include cg5;
+}
+.ri5 {
+  @extend .ri;
   @extend .cg5;
 }
 
