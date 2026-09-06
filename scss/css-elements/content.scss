@@ -303,15 +303,14 @@
 
   & ul > li > ul > li {
     list-style-type: circle;
+  }
+
+  & :is(ul, ol) > li > :is(ul, ol) > li {
     padding-left: $XS;
   }
 
-  & p,
-  li,
-  a {
-    &:not(:is(.t1, .t1d, .t2, .t2d)) {
-      @include p1;
-    }
+  & li {
+    @include p1;
   }
 
   & .os_blue_text {

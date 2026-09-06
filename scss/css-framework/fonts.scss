@@ -80,6 +80,12 @@
 .vat {
   @include vat;
 }
+@mixin vam {
+  vertical-align: middle;
+}
+.vam {
+  @include vam;
+}
 @mixin vab {
   vertical-align: bottom;
 }
