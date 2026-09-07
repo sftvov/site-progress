@@ -17,9 +17,9 @@ $transition: 0.3s;
 // $gold: #edd146;
 
 $red: #f34759;
-$orange: #ed6824;
+$orange: #ed6924;
 $orange-light: #f9b277;
-$blue: #0083c1;
+$blue: #0083C1;
 $blue-light: #d9eafb;
 
 $dark: #2b2d33;
@@ -40,7 +40,7 @@ $vcGrayLight: $gray; // !d циферки текущего месяца
 
 $vcGray: $gray-dark; // недели и дни недели
 
-$vcGrayDark: $gray-light; // !d циферки другого месяца 
+$vcGrayDark: $gray-light; // !d циферки другого месяца
 $vcDarkLight: $gray; // !d выделение текущей ячейки будней после клика
 $vcDarkMedium: $gray-dark; // !d выделение ячейки и ряда после клика
 
@@ -55,7 +55,7 @@ $vcBorderLight: $orange-light; // rgb only
 $vcBorder: $orange;
 // ----------- vc
 
-$hover: #{$orange}; 
+$hover: #{$orange};
 $hover-light: #{$orange-light};
 $hover-accent: #{$blue};
 

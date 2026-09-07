@@ -1,3 +1,11 @@
+.oh {
+  overflow: hidden;
+}
+
+.vh {
+  visibility: hidden;
+}
+
 // .db {
 //   display: block;
 // }
@@ -5,10 +13,6 @@
 // .dib {
 //   display: inline-block;
 // }
-
-.oh {
-  overflow: hidden;
-}
 
 @mixin n1hide {
   @media (min-width: $md1+px) {
