@@ -3,6 +3,11 @@
   @include x3ais;
   @include x3jcb;
   @media (min-width: $md2+px) {
+    &:not(:has(.header-submenu-item:nth-child(4))) {
+      & .header-submenu-item {
+        margin-bottom: 0;
+      }
+    }
     @media (hover: hover) {
       &:not(:hover) {
         & .header-menu-item__submenu {
