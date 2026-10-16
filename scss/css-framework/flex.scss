@@ -377,6 +377,25 @@
   @include jce;
 }
 
+@mixin x1jce {
+  @media (max-width: $md1+px) {
+    justify-content: flex-end;
+  }
+}
+.x1jce {
+  @include x1jce;
+}
+
+
+@mixin x1jcs {
+  @media (max-width: $md1+px) {
+    justify-content: flex-start;
+  }
+}
+.x1jcs {
+  @include x1jcs;
+}
+
 @mixin x3jcs {
   @media (max-width: $md3+px) {
     justify-content: flex-start;

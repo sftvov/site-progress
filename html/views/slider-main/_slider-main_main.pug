@@ -1,20 +1,25 @@
 -
   mainSlider = [
-    //- {
-    //-   img: 'city',
-    //-   title: 'Готов учебный план на 2026 год. <br>Расписание курсов <br class="n1hide x4hide">по всем отраслевым <br>направлениям — в одной брошюре',
-    //-   btn: 'Скачать план'
-    //- },
     {
-      img: 'ekb', 
-      title: 'Выездной мультитрековый форум-практикум от экспертов ЦНТИ ПРОГРЕСС <br class="x1hide">в Екатеринбурге',
-      btn: 'Подробнее'
+      img: 'ai', 
+      title: 'Внедрение ии в бизнес и профессиональные процессы. курсы для разных отраслей',
+      btn: 'Узнать подробнее'
     },
     {
-      img: 'hands', 
+      img: 'corp', 
       title: 'Создаем для вас уникальные корпоративные <br class="x1hide">курсы — очно и онлайн',
       btn: 'Узнать подробнее'
     }
+    //- {
+    //-   img: 'ekb', 
+    //-   title: 'Выездной мультитрековый форум-практикум от экспертов ЦНТИ ПРОГРЕСС <br class="x1hide">в Екатеринбурге',
+    //-   btn: 'Подробнее'
+    //- },
+    //- {
+    //-   img: 'hands', 
+    //-   title: 'Создаем для вас уникальные корпоративные <br class="x1hide">курсы — очно и онлайн',
+    //-   btn: 'Узнать подробнее'
+    //- }
   ]
 
 .main-slider.section#slider
@@ -23,8 +28,12 @@
       .swiper-wrapper
         each slide in mainSlider
           +mainSlide(slide)
-      .main-slider__navigation.row.aic.n1w2.n2w3.n3w4.w2.x4w4
-        +arr(class="main-slider__prev acb-link")
-        +arr(class="main-slider__next acb-link")
+      .main-slider__navigation.row.aic.jcb.n1w6.n2w3.n3w4.w2.x4w4
+        .main-slider__prev.sb-link.r.aic.jce.x1jcs.w1
+          svg.deg90.i24
+            use(xlink:href='img/sprite/symbols.svg#chevron-down')
+        .main-slider__next.sb-link.r.x1jce.aic.w1
+          svg.deg-90.i24
+            use(xlink:href='img/sprite/symbols.svg#chevron-down')
 
 //- http://localhost:1709/page-main.html#slider

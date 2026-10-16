@@ -3,28 +3,28 @@
   }
 
   &__navigation {
-    z-index: 1;
     position: absolute;
+    bottom: 75px;
     @media (min-width: $md1+px) {
-      bottom: 80px;
+      right: 0;
+      bottom: 148px;
     }
     @media (min-width: $md2+px) {
-      bottom: 58px;
+      right: var(--3columnsG);
     }
     @media (min-width: $md3+px) {
-      bottom: 33px;
-      left: var(--6columnsG);
+      right: var(--2columnsG);
+      bottom: $M;
     }
-    @media (max-width: $md3+px) {
-      right: var(--field);
-      bottom: 20px;
+    @media (min-width: $md4+px) {
+      bottom: $S;
     }
-    @media (max-width: $md4+px) {
-      left: var(--field);
-    }
+    right: var(--field);
   }
 
-  &__prev {
-    rotate: 180deg;
+  &__prev,
+  &__next {
+    
+    z-index: 1;
   }
 }

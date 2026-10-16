@@ -1,62 +1,36 @@
 .main-slide {
-  @include r;
-  height: 396px;
-  background-position: center;
-  background-size: cover;
-  @media (max-width: $md1+px) {
-    height: 314px;
-  }
-  @media (max-width: $md2+px) {
-    height: 243px;
-  }
-  @media (max-width: $md3+px) {
-    height: 178px;
-  }
-  &__body {
-    @include col;
-    width: var(--6columnsG);
-    margin-left: auto;
-    padding: 0 var(--gutter) 132px;
-    background-color: #ffffffb3;
-    @media (max-width: $md1+px) {
-      padding-bottom: 110px;
-    }
-    @media (max-width: $md2+px) {
-      padding-bottom: 70px;
-    }
+  &__picture {
     @media (max-width: $md3+px) {
-      width: calc(var(--2columnsG) + var(--field));
-      padding-bottom: 49px;
+      width: calc(50vw - var(--gutter) / 2);
     }
     @media (max-width: $md4+px) {
-      width: 100%;
-      padding: 0 var(--field) 52px;
+      width: 100vw;
     }
   }
-
-  &__title {
-    @include td;
-    margin-top: auto;
+  &__body {
+    @include col5;
+    @include jce;
+    @include n1w4;
+    @include n2w5;
+    @include w4;
+    @include n1o1;
+    padding-bottom: $S;
+    @media (min-width: $md1+px) {
+      padding-bottom: $XXL;
+    }
     @media (min-width: $md2+px) {
-      $fs: 24;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 30;
-      line-height: round-to(math.div($lh, $fs), 3);
+      padding-bottom: 84px;
     }
     @media (min-width: $md3+px) {
-      font-family: 'RobotoCondensed';
-      $fs: 20;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 24;
-      line-height: round-to(math.div($lh, $fs), 3);
-      text-transform: uppercase;
+      padding-bottom: 69px;
     }
-    @media (max-width: $md3+px) {
-      $fs: 12;
-      font-size: math.div($fs, $fz) + em;
-      $lh: 18;
-      line-height: round-to(math.div($lh, $fs), 3);
+    @media (min-width: $md4+px) {
+      padding-bottom: 49px;
     }
-    @include x4tac;
+  }
+  &__m-text {
+    @media (max-width: $md4+px) {
+      padding-inline: 24px;
+    }
   }
 }

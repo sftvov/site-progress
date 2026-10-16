@@ -1,7 +1,9 @@
 mixin mainSlide(slide)
-  section.main-slide.swiper-slide(
-    style="background-image: url(img/main/slider/" + slide.img + ".png)"
-  )&attributes(attributes)
-    .main-slide__body
-      h2.main-slide__title !{slide.title}
-      a(href="#").button-primary.n1w2.n2w3.n3w4.w2.x4w4.m5 !{slide.btn}
+  article.main-slide.swiper-slide&attributes(attributes)
+    .row.x4col.x4aic.g5.bgs
+      +picture(588, 'img/main/slider/', slide.img, 'png', 'main-slide__picture n3w6', '', false, [6,6,'calc(50vw - var(--gutter)/2)','100vw'])
+      .main-slide__body
+        h2.t1.x3hide !{slide.title}
+        p.main-slide__m-text.p2.x4tac.n3hide !{slide.title}
+        a(href="#").button-primary.x2hide.n1w2.n2w3 !{slide.btn}
+        a(href="#").button-primary-s.n2hide.n3w4.w2.x4w4 !{slide.btn}
