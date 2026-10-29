@@ -157,3 +157,30 @@
 .x4contents {
   @include x4contents;
 }
+
+
+@media (max-width: $md1+px) {
+  picture:has(> img.x1hide) { display: none; }
+}
+@media (max-width: $md2+px) {
+  picture:has(> img.x2hide) { display: none; }
+}
+@media (max-width: $md3+px) {
+  picture:has(> img.x3hide) { display: none; }
+}
+@media (max-width: $md4+px) {
+  picture:has(> img.x4hide) { display: none; }
+}
+
+@media (min-width: $md1+px) {
+  picture:has(> img.n1hide) { display: none; }
+}
+@media (min-width: $md2+px) {
+  picture:has(> img.n2hide) { display: none; }
+}
+@media (min-width: $md3+px) {
+  picture:has(> img.n3hide) { display: none; }
+}
+@media (min-width: $md4+px) {
+  picture:has(> img.n4hide) { display: none; }
+}

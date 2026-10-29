@@ -1,7 +1,19 @@
 .prof-hero.section.col2
   .container.x2contents
+    +mediaPicture(
+      1200,
+      'img/prof/',
+      'hero',
+      'png',
+      'w n4hide',
+      '',
+      false,
+      {
+        x4: { sizes: '100vw', width: 320 },
+      }
+    )
     .baner
-      +picture(1200, 'img/prof/', 'hero', 'png', 'distance-hero__img bg x4hide')
+      +picture(1200, 'img/prof/', 'hero', 'png', 'bg x4hide')
       .announcement.n2ol1
         .container.n2contents          
           p.p1 Университет там, где я

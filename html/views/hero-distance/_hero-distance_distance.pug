@@ -18,14 +18,26 @@
     },
   ]
 
-.distance-hero.section#hero
+.distance-hero.section.col2#hero
   .container.x3contents
+    +mediaPicture(
+      1200,
+      'img/distance/',
+      'hero',
+      'png',
+      'w n4hide',
+      '',
+      false,
+      {
+        x4: { sizes: '100vw', width: 320 },
+      }
+    )
     .baner      
       +picture(1200, 'img/distance/', 'hero', 'png', 'bg x4hide')
       .announcement.n3ol1
         .container.n3contents          
           p.p1 Еще удобнее и мобильнее
-          h1.t1d.m6 дистанционные курсы #[br]повышения квалификации
+          h1.t1d.m6 дистанционные курсы #[br.x4hide]повышения квалификации
     section.distance-hero__main.por.n1ol1.pd1.bgs
       .container.n3contents
         .n3o1
