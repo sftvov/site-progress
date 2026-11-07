@@ -195,23 +195,60 @@
   @include x4bpd3;
 }
 
+@mixin x4tpd5 {
+  @media (max-width: $md4+px) {
+    padding-top: $S;
+  }
+}
+.x4tpd5 {
+  @include x4tpd5;
+}
+@mixin x4rpd5 {
+  @media (max-width: $md4+px) {
+    padding-right: $S;
+  }
+}
+.x4rpd5 {
+  @include x4rpd5;
+}
+@mixin x4bpd5 {
+  @media (max-width: $md4+px) {
+    padding-bottom: $S;
+  }
+}
+.x4bpd5 {
+  @include x4bpd5;
+}
+@mixin x4lpd5 {
+  @media (max-width: $md4+px) {
+    padding-left: $S;
+  }
+}
+.x4lpd5 {
+  @include x4lpd5;
+}
+@mixin x4pd5 {
+  @media (max-width: $md4+px) {
+    padding-block: $S;
+  }
+}
+.x4pd5 {
+  @extend .x4tpd5;
+  @extend .x4bpd5;
+}
+@mixin x4pd5f {
+  @media (max-width: $md4+px) {
+    padding: $S;    
+  }
+}
+.x4pd5f {
+  @extend .x4tpd5;
+  @extend .x4rpd5;
+  @extend .x4bpd5;
+  @extend .x4lpd5;
+}
 
-// @mixin x2rpd5 {
-//   @media (max-width: $md2+px) {
-//     padding-right: $S;
-//   }
-// }
-// .x2rpd5 {
-//   @include x2rpd5;
-// }
-// @mixin x2lpd5 {
-//   @media (max-width: $md2+px) {
-//     padding-left: $S;
-//   }
-// }
-// .x2lpd5 {
-//   @include x2lpd5;
-// }
+
 
 @mixin tpd7 {
   padding-top: $XS;
